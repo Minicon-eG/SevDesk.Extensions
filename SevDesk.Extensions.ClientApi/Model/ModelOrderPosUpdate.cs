@@ -21,24 +21,24 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelOrderPosUpdate : IEquatable<ModelOrderPosUpdate>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelOrderPosUpdate" /> class.
-    /// </summary>
-    /// <param name="order">order.</param>
-    /// <param name="part">part.</param>
-    /// <param name="quantity">Quantity of the article/part.</param>
-    /// <param name="price">Price of the article/part. Is either gross or net, depending on the sevDesk account setting..</param>
-    /// <param name="priceTax">Tax on the price of the part.</param>
-    /// <param name="priceGross">Gross price of the part.</param>
-    /// <param name="name">Name of the article/part..</param>
-    /// <param name="unity">unity.</param>
-    /// <param name="sevClient">sevClient.</param>
-    /// <param name="positionNumber">Position number of your position. Can be used to order multiple positions..</param>
-    /// <param name="text">A text describing your position..</param>
-    /// <param name="discount">An optional discount of the position..</param>
-    /// <param name="optional">Defines if the position is optional..</param>
-    /// <param name="taxRate">Tax rate of the position..</param>
-    public ModelOrderPosUpdate(ModelOrderPosOrder order = default, ModelInvoicePosPart part = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelOrderPosUpdate" /> class.
+	/// </summary>
+	/// <param name="order">order.</param>
+	/// <param name="part">part.</param>
+	/// <param name="quantity">Quantity of the article/part.</param>
+	/// <param name="price">Price of the article/part. Is either gross or net, depending on the sevDesk account setting..</param>
+	/// <param name="priceTax">Tax on the price of the part.</param>
+	/// <param name="priceGross">Gross price of the part.</param>
+	/// <param name="name">Name of the article/part..</param>
+	/// <param name="unity">unity.</param>
+	/// <param name="sevClient">sevClient.</param>
+	/// <param name="positionNumber">Position number of your position. Can be used to order multiple positions..</param>
+	/// <param name="text">A text describing your position..</param>
+	/// <param name="discount">An optional discount of the position..</param>
+	/// <param name="optional">Defines if the position is optional..</param>
+	/// <param name="taxRate">Tax rate of the position..</param>
+	public ModelOrderPosUpdate(ModelOrderPosOrder order = default, ModelInvoicePosPart part = default,
 		decimal? quantity = default, decimal? price = default, decimal? priceTax = default,
 		decimal? priceGross = default, decimal? name = default, ModelCreditNotePosUnity unity = default,
 		ModelOrderPosSevClient sevClient = default, int? positionNumber = default, string text = default,
@@ -60,149 +60,149 @@ public class ModelOrderPosUpdate : IEquatable<ModelOrderPosUpdate>, IValidatable
 		TaxRate = taxRate;
 	}
 
-    /// <summary>
-    ///     The order position id
-    /// </summary>
-    /// <value>The order position id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     The order position id
+	/// </summary>
+	/// <value>The order position id</value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public int? Id { get; private set; }
 
-    /// <summary>
-    ///     The order position object name
-    /// </summary>
-    /// <value>The order position object name</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     The order position object name
+	/// </summary>
+	/// <value>The order position object name</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; private set; }
 
-    /// <summary>
-    ///     Date of order position creation
-    /// </summary>
-    /// <value>Date of order position creation</value>
-    [DataMember(Name = "create", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of order position creation
+	/// </summary>
+	/// <value>Date of order position creation</value>
+	[DataMember(Name = "create", EmitDefaultValue = false)]
 	public DateTime? Create { get; private set; }
 
-    /// <summary>
-    ///     Date of last order position update
-    /// </summary>
-    /// <value>Date of last order position update</value>
-    [DataMember(Name = "update", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of last order position update
+	/// </summary>
+	/// <value>Date of last order position update</value>
+	[DataMember(Name = "update", EmitDefaultValue = false)]
 	public DateTime? Update { get; private set; }
 
-    /// <summary>
-    ///     Gets or Sets Order
-    /// </summary>
-    [DataMember(Name = "order", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Order
+	/// </summary>
+	[DataMember(Name = "order", EmitDefaultValue = false)]
 	public ModelOrderPosOrder Order { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Part
-    /// </summary>
-    [DataMember(Name = "part", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Part
+	/// </summary>
+	[DataMember(Name = "part", EmitDefaultValue = false)]
 	public ModelInvoicePosPart Part { get; set; }
 
-    /// <summary>
-    ///     Quantity of the article/part
-    /// </summary>
-    /// <value>Quantity of the article/part</value>
-    [DataMember(Name = "quantity", EmitDefaultValue = false)]
+	/// <summary>
+	///     Quantity of the article/part
+	/// </summary>
+	/// <value>Quantity of the article/part</value>
+	[DataMember(Name = "quantity", EmitDefaultValue = false)]
 	public decimal? Quantity { get; set; }
 
-    /// <summary>
-    ///     Price of the article/part. Is either gross or net, depending on the sevDesk account setting.
-    /// </summary>
-    /// <value>Price of the article/part. Is either gross or net, depending on the sevDesk account setting.</value>
-    [DataMember(Name = "price", EmitDefaultValue = false)]
+	/// <summary>
+	///     Price of the article/part. Is either gross or net, depending on the sevDesk account setting.
+	/// </summary>
+	/// <value>Price of the article/part. Is either gross or net, depending on the sevDesk account setting.</value>
+	[DataMember(Name = "price", EmitDefaultValue = false)]
 	public decimal? Price { get; set; }
 
-    /// <summary>
-    ///     Net price of the part
-    /// </summary>
-    /// <value>Net price of the part</value>
-    [DataMember(Name = "priceNet", EmitDefaultValue = false)]
+	/// <summary>
+	///     Net price of the part
+	/// </summary>
+	/// <value>Net price of the part</value>
+	[DataMember(Name = "priceNet", EmitDefaultValue = false)]
 	public decimal? PriceNet { get; private set; }
 
-    /// <summary>
-    ///     Tax on the price of the part
-    /// </summary>
-    /// <value>Tax on the price of the part</value>
-    [DataMember(Name = "priceTax", EmitDefaultValue = false)]
+	/// <summary>
+	///     Tax on the price of the part
+	/// </summary>
+	/// <value>Tax on the price of the part</value>
+	[DataMember(Name = "priceTax", EmitDefaultValue = false)]
 	public decimal? PriceTax { get; set; }
 
-    /// <summary>
-    ///     Gross price of the part
-    /// </summary>
-    /// <value>Gross price of the part</value>
-    [DataMember(Name = "priceGross", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gross price of the part
+	/// </summary>
+	/// <value>Gross price of the part</value>
+	[DataMember(Name = "priceGross", EmitDefaultValue = false)]
 	public decimal? PriceGross { get; set; }
 
-    /// <summary>
-    ///     Name of the article/part.
-    /// </summary>
-    /// <value>Name of the article/part.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+	/// <summary>
+	///     Name of the article/part.
+	/// </summary>
+	/// <value>Name of the article/part.</value>
+	[DataMember(Name = "name", EmitDefaultValue = false)]
 	public decimal? Name { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Unity
-    /// </summary>
-    [DataMember(Name = "unity", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Unity
+	/// </summary>
+	[DataMember(Name = "unity", EmitDefaultValue = false)]
 	public ModelCreditNotePosUnity Unity { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets SevClientReference
-    /// </summary>
-    [DataMember(Name = "sevClient", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets SevClientReference
+	/// </summary>
+	[DataMember(Name = "sevClient", EmitDefaultValue = false)]
 	public ModelOrderPosSevClient SevClient { get; set; }
 
-    /// <summary>
-    ///     Position number of your position. Can be used to order multiple positions.
-    /// </summary>
-    /// <value>Position number of your position. Can be used to order multiple positions.</value>
-    [DataMember(Name = "positionNumber", EmitDefaultValue = false)]
+	/// <summary>
+	///     Position number of your position. Can be used to order multiple positions.
+	/// </summary>
+	/// <value>Position number of your position. Can be used to order multiple positions.</value>
+	[DataMember(Name = "positionNumber", EmitDefaultValue = false)]
 	public int? PositionNumber { get; set; }
 
-    /// <summary>
-    ///     A text describing your position.
-    /// </summary>
-    /// <value>A text describing your position.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+	/// <summary>
+	///     A text describing your position.
+	/// </summary>
+	/// <value>A text describing your position.</value>
+	[DataMember(Name = "text", EmitDefaultValue = false)]
 	public string Text { get; set; }
 
-    /// <summary>
-    ///     An optional discount of the position.
-    /// </summary>
-    /// <value>An optional discount of the position.</value>
-    [DataMember(Name = "discount", EmitDefaultValue = false)]
+	/// <summary>
+	///     An optional discount of the position.
+	/// </summary>
+	/// <value>An optional discount of the position.</value>
+	[DataMember(Name = "discount", EmitDefaultValue = false)]
 	public decimal? Discount { get; set; }
 
-    /// <summary>
-    ///     Defines if the position is optional.
-    /// </summary>
-    /// <value>Defines if the position is optional.</value>
-    [DataMember(Name = "optional", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines if the position is optional.
+	/// </summary>
+	/// <value>Defines if the position is optional.</value>
+	[DataMember(Name = "optional", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? Optional { get; set; }
 
-    /// <summary>
-    ///     Tax rate of the position.
-    /// </summary>
-    /// <value>Tax rate of the position.</value>
-    [DataMember(Name = "taxRate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Tax rate of the position.
+	/// </summary>
+	/// <value>Tax rate of the position.</value>
+	[DataMember(Name = "taxRate", EmitDefaultValue = false)]
 	public decimal? TaxRate { get; set; }
 
-    /// <summary>
-    ///     Discount sum of the position
-    /// </summary>
-    /// <value>Discount sum of the position</value>
-    [DataMember(Name = "sumDiscount", EmitDefaultValue = false)]
+	/// <summary>
+	///     Discount sum of the position
+	/// </summary>
+	/// <value>Discount sum of the position</value>
+	[DataMember(Name = "sumDiscount", EmitDefaultValue = false)]
 	public decimal? SumDiscount { get; private set; }
 
-    /// <summary>
-    ///     Returns true if ModelOrderPosUpdate instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelOrderPosUpdate to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelOrderPosUpdate input)
+	/// <summary>
+	///     Returns true if ModelOrderPosUpdate instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelOrderPosUpdate to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelOrderPosUpdate input)
 	{
 		if (input == null)
 			return false;
@@ -310,21 +310,21 @@ public class ModelOrderPosUpdate : IEquatable<ModelOrderPosUpdate>, IValidatable
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelOrderPosUpdate {\n");
@@ -352,30 +352,30 @@ public class ModelOrderPosUpdate : IEquatable<ModelOrderPosUpdate>, IValidatable
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelOrderPosUpdate);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

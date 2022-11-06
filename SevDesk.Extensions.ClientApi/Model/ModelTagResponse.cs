@@ -21,55 +21,55 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelTagResponse : IEquatable<ModelTagResponse>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelTagResponse" /> class.
-    /// </summary>
-    /// <param name="sevClient">sevClient.</param>
-    public ModelTagResponse(ModelTagCreateResponseSevClient sevClient = default)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelTagResponse" /> class.
+	/// </summary>
+	/// <param name="sevClient">sevClient.</param>
+	public ModelTagResponse(ModelTagCreateResponseSevClient sevClient = default)
 	{
 		SevClient = sevClient;
 	}
 
-    /// <summary>
-    ///     Id of the tag
-    /// </summary>
-    /// <value>Id of the tag</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     Id of the tag
+	/// </summary>
+	/// <value>Id of the tag</value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public string Id { get; private set; }
 
-    /// <summary>
-    ///     Internal object name which is &#x27;Tag&#x27;.
-    /// </summary>
-    /// <value>Internal object name which is &#x27;Tag&#x27;.</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     Internal object name which is &#x27;Tag&#x27;.
+	/// </summary>
+	/// <value>Internal object name which is &#x27;Tag&#x27;.</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; private set; }
 
-    /// <summary>
-    ///     Date of tag creation
-    /// </summary>
-    /// <value>Date of tag creation</value>
-    [DataMember(Name = "create", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of tag creation
+	/// </summary>
+	/// <value>Date of tag creation</value>
+	[DataMember(Name = "create", EmitDefaultValue = false)]
 	public DateTime? Create { get; private set; }
 
-    /// <summary>
-    ///     name of the tag
-    /// </summary>
-    /// <value>name of the tag</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+	/// <summary>
+	///     name of the tag
+	/// </summary>
+	/// <value>name of the tag</value>
+	[DataMember(Name = "name", EmitDefaultValue = false)]
 	public string Name { get; private set; }
 
-    /// <summary>
-    ///     Gets or Sets SevClientReference
-    /// </summary>
-    [DataMember(Name = "sevClient", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets SevClientReference
+	/// </summary>
+	[DataMember(Name = "sevClient", EmitDefaultValue = false)]
 	public ModelTagCreateResponseSevClient SevClient { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelTagResponse instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelTagResponse to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelTagResponse input)
+	/// <summary>
+	///     Returns true if ModelTagResponse instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelTagResponse to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelTagResponse input)
 	{
 		if (input == null)
 			return false;
@@ -102,21 +102,21 @@ public class ModelTagResponse : IEquatable<ModelTagResponse>, IValidatableObject
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelTagResponse {\n");
@@ -129,30 +129,30 @@ public class ModelTagResponse : IEquatable<ModelTagResponse>, IValidatableObject
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelTagResponse);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

@@ -21,13 +21,13 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelContactCustomFieldSetting : IEquatable<ModelContactCustomFieldSetting>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelContactCustomFieldSetting" /> class.
-    /// </summary>
-    /// <param name="name">name of the contact fields (required).</param>
-    /// <param name="description">The description of the contact field.</param>
-    /// <param name="objectName">Internal object name which is &#x27;ContactCustomFieldSetting&#x27;..</param>
-    public ModelContactCustomFieldSetting(string name = default, string description = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelContactCustomFieldSetting" /> class.
+	/// </summary>
+	/// <param name="name">name of the contact fields (required).</param>
+	/// <param name="description">The description of the contact field.</param>
+	/// <param name="objectName">Internal object name which is &#x27;ContactCustomFieldSetting&#x27;..</param>
+	public ModelContactCustomFieldSetting(string name = default, string description = default,
 		string objectName = default)
 	{
 		// to ensure "name" is required (not null)
@@ -39,33 +39,33 @@ public class ModelContactCustomFieldSetting : IEquatable<ModelContactCustomField
 		ObjectName = objectName;
 	}
 
-    /// <summary>
-    ///     name of the contact fields
-    /// </summary>
-    /// <value>name of the contact fields</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+	/// <summary>
+	///     name of the contact fields
+	/// </summary>
+	/// <value>name of the contact fields</value>
+	[DataMember(Name = "name", EmitDefaultValue = false)]
 	public string Name { get; set; }
 
-    /// <summary>
-    ///     The description of the contact field
-    /// </summary>
-    /// <value>The description of the contact field</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+	/// <summary>
+	///     The description of the contact field
+	/// </summary>
+	/// <value>The description of the contact field</value>
+	[DataMember(Name = "description", EmitDefaultValue = false)]
 	public string Description { get; set; }
 
-    /// <summary>
-    ///     Internal object name which is &#x27;ContactCustomFieldSetting&#x27;.
-    /// </summary>
-    /// <value>Internal object name which is &#x27;ContactCustomFieldSetting&#x27;.</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     Internal object name which is &#x27;ContactCustomFieldSetting&#x27;.
+	/// </summary>
+	/// <value>Internal object name which is &#x27;ContactCustomFieldSetting&#x27;.</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelContactCustomFieldSetting instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelContactCustomFieldSetting to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelContactCustomFieldSetting input)
+	/// <summary>
+	///     Returns true if ModelContactCustomFieldSetting instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelContactCustomFieldSetting to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelContactCustomFieldSetting input)
 	{
 		if (input == null)
 			return false;
@@ -88,21 +88,21 @@ public class ModelContactCustomFieldSetting : IEquatable<ModelContactCustomField
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelContactCustomFieldSetting {\n");
@@ -113,30 +113,30 @@ public class ModelContactCustomFieldSetting : IEquatable<ModelContactCustomField
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelContactCustomFieldSetting);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

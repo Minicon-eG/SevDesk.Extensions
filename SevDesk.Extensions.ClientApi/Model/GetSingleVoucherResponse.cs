@@ -20,26 +20,26 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class GetSingleVoucherResponse
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="GetVoucherResponse" /> class.
-    /// </summary>
-    /// <param name="objects">objects.</param>
-    public GetSingleVoucherResponse(ModelVoucherResponse objects = default)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="GetVoucherResponse" /> class.
+	/// </summary>
+	/// <param name="objects">objects.</param>
+	public GetSingleVoucherResponse(ModelVoucherResponse objects = default)
 	{
 		Objects = objects;
 	}
 
-    /// <summary>
-    ///     Gets or Sets Objects
-    /// </summary>
-    [DataMember(Name = "objects", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Objects
+	/// </summary>
+	[DataMember(Name = "objects", EmitDefaultValue = false)]
 	public ModelVoucherResponse Objects { get; set; }
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class GetVoucherResponse {\n");
@@ -48,11 +48,11 @@ public class GetSingleVoucherResponse
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}

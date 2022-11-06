@@ -22,162 +22,162 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelInvoiceResponse : IEquatable<ModelInvoiceResponse>, IValidatableObject
 {
-    /// <summary>
-    ///     Type of the invoice. For more information on the different types, check       &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Types-and-status-of-invoices&#x27;&gt;this&lt;/a&gt; section
-    /// </summary>
-    /// <value>
-    ///     Type of the invoice. For more information on the different types, check       &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Types-and-status-of-invoices&#x27;&gt;this&lt;/a&gt; section
-    /// </value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Type of the invoice. For more information on the different types, check       &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Types-and-status-of-invoices&#x27;&gt;this&lt;/a&gt; section
+	/// </summary>
+	/// <value>
+	///     Type of the invoice. For more information on the different types, check       &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Types-and-status-of-invoices&#x27;&gt;this&lt;/a&gt; section
+	/// </value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum InvoiceTypeEnum
 	{
-        /// <summary>
-        ///     Enum RE for value: RE
-        /// </summary>
-        [EnumMember(Value = "RE")] RE = 1,
+		/// <summary>
+		///     Enum RE for value: RE
+		/// </summary>
+		[EnumMember(Value = "RE")] RE = 1,
 
-        /// <summary>
-        ///     Enum WKR for value: WKR
-        /// </summary>
-        [EnumMember(Value = "WKR")] WKR = 2,
+		/// <summary>
+		///     Enum WKR for value: WKR
+		/// </summary>
+		[EnumMember(Value = "WKR")] WKR = 2,
 
-        /// <summary>
-        ///     Enum SR for value: SR
-        /// </summary>
-        [EnumMember(Value = "SR")] SR = 3,
+		/// <summary>
+		///     Enum SR for value: SR
+		/// </summary>
+		[EnumMember(Value = "SR")] SR = 3,
 
-        /// <summary>
-        ///     Enum MA for value: MA
-        /// </summary>
-        [EnumMember(Value = "MA")] MA = 4,
+		/// <summary>
+		///     Enum MA for value: MA
+		/// </summary>
+		[EnumMember(Value = "MA")] MA = 4,
 
-        /// <summary>
-        ///     Enum TR for value: TR
-        /// </summary>
-        [EnumMember(Value = "TR")] TR = 5,
+		/// <summary>
+		///     Enum TR for value: TR
+		/// </summary>
+		[EnumMember(Value = "TR")] TR = 5,
 
-        /// <summary>
-        ///     Enum ER for value: ER
-        /// </summary>
-        [EnumMember(Value = "ER")] ER = 6
+		/// <summary>
+		///     Enum ER for value: ER
+		/// </summary>
+		[EnumMember(Value = "ER")] ER = 6
 	}
 
-    /// <summary>
-    ///     Type which was used to send the invoice. IMPORTANT: Please refer to the invoice section of the       *
-    ///     API-Overview to understand how this attribute can be used before using it!
-    /// </summary>
-    /// <value>
-    ///     Type which was used to send the invoice. IMPORTANT: Please refer to the invoice section of the       *
-    ///     API-Overview to understand how this attribute can be used before using it!
-    /// </value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Type which was used to send the invoice. IMPORTANT: Please refer to the invoice section of the       *
+	///     API-Overview to understand how this attribute can be used before using it!
+	/// </summary>
+	/// <value>
+	///     Type which was used to send the invoice. IMPORTANT: Please refer to the invoice section of the       *
+	///     API-Overview to understand how this attribute can be used before using it!
+	/// </value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum SendTypeEnum
 	{
-        /// <summary>
-        ///     Enum VPR for value: VPR
-        /// </summary>
-        [EnumMember(Value = "VPR")] VPR = 1,
+		/// <summary>
+		///     Enum VPR for value: VPR
+		/// </summary>
+		[EnumMember(Value = "VPR")] VPR = 1,
 
-        /// <summary>
-        ///     Enum VPDF for value: VPDF
-        /// </summary>
-        [EnumMember(Value = "VPDF")] VPDF = 2,
+		/// <summary>
+		///     Enum VPDF for value: VPDF
+		/// </summary>
+		[EnumMember(Value = "VPDF")] VPDF = 2,
 
-        /// <summary>
-        ///     Enum VM for value: VM
-        /// </summary>
-        [EnumMember(Value = "VM")] VM = 3,
+		/// <summary>
+		///     Enum VM for value: VM
+		/// </summary>
+		[EnumMember(Value = "VM")] VM = 3,
 
-        /// <summary>
-        ///     Enum VP for value: VP
-        /// </summary>
-        [EnumMember(Value = "VP")] VP = 4
+		/// <summary>
+		///     Enum VP for value: VP
+		/// </summary>
+		[EnumMember(Value = "VP")] VP = 4
 	}
 
-    /// <summary>
-    ///     Please have a look in our       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-invoices
-    ///     &#x27;&gt;Types and status of invoices&lt;/a&gt;       to see what the different status codes mean
-    /// </summary>
-    /// <value>
-    ///     Please have a look in our       &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Types-and-status-of-invoices&#x27;&gt;Types and status of invoices&lt;/a&gt;
-    ///     to see what the different status codes mean
-    /// </value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Please have a look in our       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-invoices
+	///     &#x27;&gt;Types and status of invoices&lt;/a&gt;       to see what the different status codes mean
+	/// </summary>
+	/// <value>
+	///     Please have a look in our       &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Types-and-status-of-invoices&#x27;&gt;Types and status of invoices&lt;/a&gt;
+	///     to see what the different status codes mean
+	/// </value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum StatusEnum
 	{
-        /// <summary>
-        ///     Enum _50 for value: 50
-        /// </summary>
-        [EnumMember(Value = "50")] _50 = 1,
+		/// <summary>
+		///     Enum _50 for value: 50
+		/// </summary>
+		[EnumMember(Value = "50")] _50 = 1,
 
-        /// <summary>
-        ///     Enum _100 for value: 100
-        /// </summary>
-        [EnumMember(Value = "100")] _100 = 2,
+		/// <summary>
+		///     Enum _100 for value: 100
+		/// </summary>
+		[EnumMember(Value = "100")] _100 = 2,
 
-        /// <summary>
-        ///     Enum _200 for value: 200
-        /// </summary>
-        [EnumMember(Value = "200")] _200 = 3,
+		/// <summary>
+		///     Enum _200 for value: 200
+		/// </summary>
+		[EnumMember(Value = "200")] _200 = 3,
 
-        /// <summary>
-        ///     Enum _1000 for value: 1000
-        /// </summary>
-        [EnumMember(Value = "1000")] _1000 = 4
+		/// <summary>
+		///     Enum _1000 for value: 1000
+		/// </summary>
+		[EnumMember(Value = "1000")] _1000 = 4
 	}
 
-    /// <summary>
-    ///     Tax type of the invoice. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie
-    ///     innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers
-    ///     (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG
-    ///     Tax rates are heavily connected to the tax type used.
-    /// </summary>
-    /// <value>
-    ///     Tax type of the invoice. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie
-    ///     innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers
-    ///     (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG
-    ///     Tax rates are heavily connected to the tax type used.
-    /// </value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Tax type of the invoice. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie
+	///     innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers
+	///     (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG
+	///     Tax rates are heavily connected to the tax type used.
+	/// </summary>
+	/// <value>
+	///     Tax type of the invoice. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie
+	///     innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers
+	///     (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG
+	///     Tax rates are heavily connected to the tax type used.
+	/// </value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum TaxTypeEnum
 	{
-        /// <summary>
-        ///     Enum Default for value: default
-        /// </summary>
-        [EnumMember(Value = "default")] Default = 1,
+		/// <summary>
+		///     Enum Default for value: default
+		/// </summary>
+		[EnumMember(Value = "default")] Default = 1,
 
-        /// <summary>
-        ///     Enum Eu for value: eu
-        /// </summary>
-        [EnumMember(Value = "eu")] Eu = 2,
+		/// <summary>
+		///     Enum Eu for value: eu
+		/// </summary>
+		[EnumMember(Value = "eu")] Eu = 2,
 
-        /// <summary>
-        ///     Enum Noteu for value: noteu
-        /// </summary>
-        [EnumMember(Value = "noteu")] Noteu = 3,
+		/// <summary>
+		///     Enum Noteu for value: noteu
+		/// </summary>
+		[EnumMember(Value = "noteu")] Noteu = 3,
 
-        /// <summary>
-        ///     Enum Custom for value: custom
-        /// </summary>
-        [EnumMember(Value = "custom")] Custom = 4
+		/// <summary>
+		///     Enum Custom for value: custom
+		/// </summary>
+		[EnumMember(Value = "custom")] Custom = 4
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelInvoiceResponse" /> class.
-    /// </summary>
-    /// <param name="contact">contact.</param>
-    /// <param name="sevClient">sevClient.</param>
-    /// <param name="addressCountry">addressCountry.</param>
-    /// <param name="createUser">createUser.</param>
-    /// <param name="contactPerson">contactPerson.</param>
-    /// <param name="paymentMethod">paymentMethod.</param>
-    /// <param name="costCentre">costCentre.</param>
-    /// <param name="origin">origin.</param>
-    /// <param name="taxSet">taxSet.</param>
-    public ModelInvoiceResponse(ModelInvoiceResponseContact contact = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelInvoiceResponse" /> class.
+	/// </summary>
+	/// <param name="contact">contact.</param>
+	/// <param name="sevClient">sevClient.</param>
+	/// <param name="addressCountry">addressCountry.</param>
+	/// <param name="createUser">createUser.</param>
+	/// <param name="contactPerson">contactPerson.</param>
+	/// <param name="paymentMethod">paymentMethod.</param>
+	/// <param name="costCentre">costCentre.</param>
+	/// <param name="origin">origin.</param>
+	/// <param name="taxSet">taxSet.</param>
+	public ModelInvoiceResponse(ModelInvoiceResponseContact contact = default,
 		ModelContactCustomFieldSettingResponseSevClient sevClient = default,
 		ModelInvoiceResponseAddressCountry addressCountry = default,
 		ModelInvoiceResponseCreateUser createUser = default, ModelInvoiceResponseContactPerson contactPerson = default,
@@ -195,456 +195,456 @@ public class ModelInvoiceResponse : IEquatable<ModelInvoiceResponse>, IValidatab
 		TaxSet = taxSet;
 	}
 
-    /// <summary>
-    ///     Please have a look in our       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-invoices
-    ///     &#x27;&gt;Types and status of invoices&lt;/a&gt;       to see what the different status codes mean
-    /// </summary>
-    /// <value>
-    ///     Please have a look in our       &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Types-and-status-of-invoices&#x27;&gt;Types and status of invoices&lt;/a&gt;
-    ///     to see what the different status codes mean
-    /// </value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+	/// <summary>
+	///     Please have a look in our       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-invoices
+	///     &#x27;&gt;Types and status of invoices&lt;/a&gt;       to see what the different status codes mean
+	/// </summary>
+	/// <value>
+	///     Please have a look in our       &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Types-and-status-of-invoices&#x27;&gt;Types and status of invoices&lt;/a&gt;
+	///     to see what the different status codes mean
+	/// </value>
+	[DataMember(Name = "status", EmitDefaultValue = false)]
 	public StatusEnum? Status { get; set; }
 
-    /// <summary>
-    ///     Tax type of the invoice. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie
-    ///     innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers
-    ///     (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG
-    ///     Tax rates are heavily connected to the tax type used.
-    /// </summary>
-    /// <value>
-    ///     Tax type of the invoice. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie
-    ///     innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers
-    ///     (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG
-    ///     Tax rates are heavily connected to the tax type used.
-    /// </value>
-    [DataMember(Name = "taxType", EmitDefaultValue = false)]
+	/// <summary>
+	///     Tax type of the invoice. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie
+	///     innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers
+	///     (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG
+	///     Tax rates are heavily connected to the tax type used.
+	/// </summary>
+	/// <value>
+	///     Tax type of the invoice. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie
+	///     innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers
+	///     (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG
+	///     Tax rates are heavily connected to the tax type used.
+	/// </value>
+	[DataMember(Name = "taxType", EmitDefaultValue = false)]
 	public TaxTypeEnum? TaxType { get; set; }
 
-    /// <summary>
-    ///     Type of the invoice. For more information on the different types, check       &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Types-and-status-of-invoices&#x27;&gt;this&lt;/a&gt; section
-    /// </summary>
-    /// <value>
-    ///     Type of the invoice. For more information on the different types, check       &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Types-and-status-of-invoices&#x27;&gt;this&lt;/a&gt; section
-    /// </value>
-    [DataMember(Name = "invoiceType", EmitDefaultValue = false)]
+	/// <summary>
+	///     Type of the invoice. For more information on the different types, check       &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Types-and-status-of-invoices&#x27;&gt;this&lt;/a&gt; section
+	/// </summary>
+	/// <value>
+	///     Type of the invoice. For more information on the different types, check       &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Types-and-status-of-invoices&#x27;&gt;this&lt;/a&gt; section
+	/// </value>
+	[DataMember(Name = "invoiceType", EmitDefaultValue = false)]
 	public InvoiceTypeEnum? InvoiceType { get; set; }
 
-    /// <summary>
-    ///     Type which was used to send the invoice. IMPORTANT: Please refer to the invoice section of the       *
-    ///     API-Overview to understand how this attribute can be used before using it!
-    /// </summary>
-    /// <value>
-    ///     Type which was used to send the invoice. IMPORTANT: Please refer to the invoice section of the       *
-    ///     API-Overview to understand how this attribute can be used before using it!
-    /// </value>
-    [DataMember(Name = "sendType", EmitDefaultValue = false)]
+	/// <summary>
+	///     Type which was used to send the invoice. IMPORTANT: Please refer to the invoice section of the       *
+	///     API-Overview to understand how this attribute can be used before using it!
+	/// </summary>
+	/// <value>
+	///     Type which was used to send the invoice. IMPORTANT: Please refer to the invoice section of the       *
+	///     API-Overview to understand how this attribute can be used before using it!
+	/// </value>
+	[DataMember(Name = "sendType", EmitDefaultValue = false)]
 	public SendTypeEnum? SendType { get; set; }
 
-    /// <summary>
-    ///     The invoice id
-    /// </summary>
-    /// <value>The invoice id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     The invoice id
+	/// </summary>
+	/// <value>The invoice id</value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public string Id { get; private set; }
 
-    /// <summary>
-    ///     The invoice object name
-    /// </summary>
-    /// <value>The invoice object name</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     The invoice object name
+	/// </summary>
+	/// <value>The invoice object name</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; private set; }
 
-    /// <summary>
-    ///     The invoice number
-    /// </summary>
-    /// <value>The invoice number</value>
-    [DataMember(Name = "invoiceNumber", EmitDefaultValue = false)]
+	/// <summary>
+	///     The invoice number
+	/// </summary>
+	/// <value>The invoice number</value>
+	[DataMember(Name = "invoiceNumber", EmitDefaultValue = false)]
 	public string InvoiceNumber { get; private set; }
 
-    /// <summary>
-    ///     Gets or Sets Contact
-    /// </summary>
-    [DataMember(Name = "contact", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Contact
+	/// </summary>
+	[DataMember(Name = "contact", EmitDefaultValue = false)]
 	public ModelInvoiceResponseContact Contact { get; set; }
 
-    /// <summary>
-    ///     Date of invoice creation
-    /// </summary>
-    /// <value>Date of invoice creation</value>
-    [DataMember(Name = "create", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of invoice creation
+	/// </summary>
+	/// <value>Date of invoice creation</value>
+	[DataMember(Name = "create", EmitDefaultValue = false)]
 	public DateTime? Create { get; private set; }
 
-    /// <summary>
-    ///     Date of last invoice update
-    /// </summary>
-    /// <value>Date of last invoice update</value>
-    [DataMember(Name = "update", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of last invoice update
+	/// </summary>
+	/// <value>Date of last invoice update</value>
+	[DataMember(Name = "update", EmitDefaultValue = false)]
 	public DateTime? Update { get; private set; }
 
-    /// <summary>
-    ///     Gets or Sets SevClientReference
-    /// </summary>
-    [DataMember(Name = "sevClient", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets SevClientReference
+	/// </summary>
+	[DataMember(Name = "sevClient", EmitDefaultValue = false)]
 	public ModelContactCustomFieldSettingResponseSevClient SevClient { get; set; }
 
-    /// <summary>
-    ///     Needs to be provided as timestamp or dd.mm.yyyy
-    /// </summary>
-    /// <value>Needs to be provided as timestamp or dd.mm.yyyy</value>
-    [DataMember(Name = "invoiceDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Needs to be provided as timestamp or dd.mm.yyyy
+	/// </summary>
+	/// <value>Needs to be provided as timestamp or dd.mm.yyyy</value>
+	[DataMember(Name = "invoiceDate", EmitDefaultValue = false)]
 	public string InvoiceDate { get; private set; }
 
-    /// <summary>
-    ///     Normally consist of prefix plus the invoice number
-    /// </summary>
-    /// <value>Normally consist of prefix plus the invoice number</value>
-    [DataMember(Name = "header", EmitDefaultValue = false)]
+	/// <summary>
+	///     Normally consist of prefix plus the invoice number
+	/// </summary>
+	/// <value>Normally consist of prefix plus the invoice number</value>
+	[DataMember(Name = "header", EmitDefaultValue = false)]
 	public string Header { get; private set; }
 
-    /// <summary>
-    ///     Certain html tags can be used here to format your text
-    /// </summary>
-    /// <value>Certain html tags can be used here to format your text</value>
-    [DataMember(Name = "headText", EmitDefaultValue = false)]
+	/// <summary>
+	///     Certain html tags can be used here to format your text
+	/// </summary>
+	/// <value>Certain html tags can be used here to format your text</value>
+	[DataMember(Name = "headText", EmitDefaultValue = false)]
 	public string HeadText { get; private set; }
 
-    /// <summary>
-    ///     Certain html tags can be used here to format your text
-    /// </summary>
-    /// <value>Certain html tags can be used here to format your text</value>
-    [DataMember(Name = "footText", EmitDefaultValue = false)]
+	/// <summary>
+	///     Certain html tags can be used here to format your text
+	/// </summary>
+	/// <value>Certain html tags can be used here to format your text</value>
+	[DataMember(Name = "footText", EmitDefaultValue = false)]
 	public string FootText { get; private set; }
 
-    /// <summary>
-    ///     The time the customer has to pay the invoice in days
-    /// </summary>
-    /// <value>The time the customer has to pay the invoice in days</value>
-    [DataMember(Name = "timeToPay", EmitDefaultValue = false)]
+	/// <summary>
+	///     The time the customer has to pay the invoice in days
+	/// </summary>
+	/// <value>The time the customer has to pay the invoice in days</value>
+	[DataMember(Name = "timeToPay", EmitDefaultValue = false)]
 	public string TimeToPay { get; private set; }
 
-    /// <summary>
-    ///     If a value other than zero is used for the discount attribute,      you need to specify the amount of days for
-    ///     which the discount is granted.
-    /// </summary>
-    /// <value>
-    ///     If a value other than zero is used for the discount attribute,      you need to specify the amount of days for
-    ///     which the discount is granted.
-    /// </value>
-    [DataMember(Name = "discountTime", EmitDefaultValue = false)]
+	/// <summary>
+	///     If a value other than zero is used for the discount attribute,      you need to specify the amount of days for
+	///     which the discount is granted.
+	/// </summary>
+	/// <value>
+	///     If a value other than zero is used for the discount attribute,      you need to specify the amount of days for
+	///     which the discount is granted.
+	/// </value>
+	[DataMember(Name = "discountTime", EmitDefaultValue = false)]
 	public string DiscountTime { get; private set; }
 
-    /// <summary>
-    ///     If you want to give a discount, define the percentage here. Otherwise provide zero as value
-    /// </summary>
-    /// <value>If you want to give a discount, define the percentage here. Otherwise provide zero as value</value>
-    [DataMember(Name = "discount", EmitDefaultValue = false)]
+	/// <summary>
+	///     If you want to give a discount, define the percentage here. Otherwise provide zero as value
+	/// </summary>
+	/// <value>If you want to give a discount, define the percentage here. Otherwise provide zero as value</value>
+	[DataMember(Name = "discount", EmitDefaultValue = false)]
 	public string Discount { get; private set; }
 
-    /// <summary>
-    ///     Gets or Sets AddressCountry
-    /// </summary>
-    [DataMember(Name = "addressCountry", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets AddressCountry
+	/// </summary>
+	[DataMember(Name = "addressCountry", EmitDefaultValue = false)]
 	public ModelInvoiceResponseAddressCountry AddressCountry { get; set; }
 
-    /// <summary>
-    ///     Needs to be timestamp or dd.mm.yyyy
-    /// </summary>
-    /// <value>Needs to be timestamp or dd.mm.yyyy</value>
-    [DataMember(Name = "payDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Needs to be timestamp or dd.mm.yyyy
+	/// </summary>
+	/// <value>Needs to be timestamp or dd.mm.yyyy</value>
+	[DataMember(Name = "payDate", EmitDefaultValue = false)]
 	public DateTime? PayDate { get; private set; }
 
-    /// <summary>
-    ///     Gets or Sets CreateUser
-    /// </summary>
-    [DataMember(Name = "createUser", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets CreateUser
+	/// </summary>
+	[DataMember(Name = "createUser", EmitDefaultValue = false)]
 	public ModelInvoiceResponseCreateUser CreateUser { get; set; }
 
-    /// <summary>
-    ///     Timestamp. This can also be a date range if you also use the attribute deliveryDateUntil
-    /// </summary>
-    /// <value>Timestamp. This can also be a date range if you also use the attribute deliveryDateUntil</value>
-    [DataMember(Name = "deliveryDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Timestamp. This can also be a date range if you also use the attribute deliveryDateUntil
+	/// </summary>
+	/// <value>Timestamp. This can also be a date range if you also use the attribute deliveryDateUntil</value>
+	[DataMember(Name = "deliveryDate", EmitDefaultValue = false)]
 	public DateTime? DeliveryDate { get; private set; }
 
 
-    /// <summary>
-    ///     Defines if the client uses the small settlement scheme.      If yes, the invoice must not contain any vat
-    /// </summary>
-    /// <value>Defines if the client uses the small settlement scheme.      If yes, the invoice must not contain any vat</value>
-    [DataMember(Name = "smallSettlement", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines if the client uses the small settlement scheme.      If yes, the invoice must not contain any vat
+	/// </summary>
+	/// <value>Defines if the client uses the small settlement scheme.      If yes, the invoice must not contain any vat</value>
+	[DataMember(Name = "smallSettlement", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? SmallSettlement { get; private set; }
 
-    /// <summary>
-    ///     Gets or Sets ContactPerson
-    /// </summary>
-    [DataMember(Name = "contactPerson", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets ContactPerson
+	/// </summary>
+	[DataMember(Name = "contactPerson", EmitDefaultValue = false)]
 	public ModelInvoiceResponseContactPerson ContactPerson { get; set; }
 
-    /// <summary>
-    ///     Is overwritten by invoice position tax rates
-    /// </summary>
-    /// <value>Is overwritten by invoice position tax rates</value>
-    [DataMember(Name = "taxRate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Is overwritten by invoice position tax rates
+	/// </summary>
+	/// <value>Is overwritten by invoice position tax rates</value>
+	[DataMember(Name = "taxRate", EmitDefaultValue = false)]
 	public string TaxRate { get; private set; }
 
-    /// <summary>
-    ///     A common tax text would be &#x27;Umsatzsteuer 19%&#x27;
-    /// </summary>
-    /// <value>A common tax text would be &#x27;Umsatzsteuer 19%&#x27;</value>
-    [DataMember(Name = "taxText", EmitDefaultValue = false)]
+	/// <summary>
+	///     A common tax text would be &#x27;Umsatzsteuer 19%&#x27;
+	/// </summary>
+	/// <value>A common tax text would be &#x27;Umsatzsteuer 19%&#x27;</value>
+	[DataMember(Name = "taxText", EmitDefaultValue = false)]
 	public string TaxText { get; private set; }
 
-    /// <summary>
-    ///     Defines how many reminders have already been sent for the invoice.      Starts with 1 (Payment reminder) and should
-    ///     be incremented by one every time another reminder is sent.
-    /// </summary>
-    /// <value>
-    ///     Defines how many reminders have already been sent for the invoice.      Starts with 1 (Payment reminder) and
-    ///     should be incremented by one every time another reminder is sent.
-    /// </value>
-    [DataMember(Name = "dunningLevel", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines how many reminders have already been sent for the invoice.      Starts with 1 (Payment reminder) and should
+	///     be incremented by one every time another reminder is sent.
+	/// </summary>
+	/// <value>
+	///     Defines how many reminders have already been sent for the invoice.      Starts with 1 (Payment reminder) and
+	///     should be incremented by one every time another reminder is sent.
+	/// </value>
+	[DataMember(Name = "dunningLevel", EmitDefaultValue = false)]
 	public string DunningLevel { get; private set; }
 
 
-    /// <summary>
-    ///     Gets or Sets PaymentMethod
-    /// </summary>
-    [DataMember(Name = "paymentMethod", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets PaymentMethod
+	/// </summary>
+	[DataMember(Name = "paymentMethod", EmitDefaultValue = false)]
 	public ModelInvoiceResponsePaymentMethod PaymentMethod { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets CostCentreResponse
-    /// </summary>
-    [DataMember(Name = "costCentre", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets CostCentreResponse
+	/// </summary>
+	[DataMember(Name = "costCentre", EmitDefaultValue = false)]
 	public ModelInvoiceResponseCostCentre CostCentre { get; set; }
 
-    /// <summary>
-    ///     The date the invoice was sent to the customer
-    /// </summary>
-    /// <value>The date the invoice was sent to the customer</value>
-    [DataMember(Name = "sendDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     The date the invoice was sent to the customer
+	/// </summary>
+	/// <value>The date the invoice was sent to the customer</value>
+	[DataMember(Name = "sendDate", EmitDefaultValue = false)]
 	public DateTime? SendDate { get; private set; }
 
-    /// <summary>
-    ///     Gets or Sets Origin
-    /// </summary>
-    [DataMember(Name = "origin", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Origin
+	/// </summary>
+	[DataMember(Name = "origin", EmitDefaultValue = false)]
 	public ModelInvoiceResponseOrigin Origin { get; set; }
 
 
-    /// <summary>
-    ///     The interval in which recurring invoices are due as ISO-8601 duration.&lt;br&gt;       Necessary attribute for all
-    ///     recurring invoices.
-    /// </summary>
-    /// <value>
-    ///     The interval in which recurring invoices are due as ISO-8601 duration.&lt;br&gt;       Necessary attribute for
-    ///     all recurring invoices.
-    /// </value>
-    [DataMember(Name = "accountIntervall", EmitDefaultValue = false)]
+	/// <summary>
+	///     The interval in which recurring invoices are due as ISO-8601 duration.&lt;br&gt;       Necessary attribute for all
+	///     recurring invoices.
+	/// </summary>
+	/// <value>
+	///     The interval in which recurring invoices are due as ISO-8601 duration.&lt;br&gt;       Necessary attribute for
+	///     all recurring invoices.
+	/// </value>
+	[DataMember(Name = "accountIntervall", EmitDefaultValue = false)]
 	public string AccountIntervall { get; private set; }
 
-    /// <summary>
-    ///     Timestamp when the next invoice will be generated by this recurring invoice.
-    /// </summary>
-    /// <value>Timestamp when the next invoice will be generated by this recurring invoice.</value>
-    [DataMember(Name = "accountNextInvoice", EmitDefaultValue = false)]
+	/// <summary>
+	///     Timestamp when the next invoice will be generated by this recurring invoice.
+	/// </summary>
+	/// <value>Timestamp when the next invoice will be generated by this recurring invoice.</value>
+	[DataMember(Name = "accountNextInvoice", EmitDefaultValue = false)]
 	public string AccountNextInvoice { get; private set; }
 
-    /// <summary>
-    ///     Total reminder amount
-    /// </summary>
-    /// <value>Total reminder amount</value>
-    [DataMember(Name = "reminderTotal", EmitDefaultValue = false)]
+	/// <summary>
+	///     Total reminder amount
+	/// </summary>
+	/// <value>Total reminder amount</value>
+	[DataMember(Name = "reminderTotal", EmitDefaultValue = false)]
 	public string ReminderTotal { get; private set; }
 
-    /// <summary>
-    ///     Debit of the reminder
-    /// </summary>
-    /// <value>Debit of the reminder</value>
-    [DataMember(Name = "reminderDebit", EmitDefaultValue = false)]
+	/// <summary>
+	///     Debit of the reminder
+	/// </summary>
+	/// <value>Debit of the reminder</value>
+	[DataMember(Name = "reminderDebit", EmitDefaultValue = false)]
 	public string ReminderDebit { get; private set; }
 
-    /// <summary>
-    ///     Deadline of the reminder as timestamp
-    /// </summary>
-    /// <value>Deadline of the reminder as timestamp</value>
-    [DataMember(Name = "reminderDeadline", EmitDefaultValue = false)]
+	/// <summary>
+	///     Deadline of the reminder as timestamp
+	/// </summary>
+	/// <value>Deadline of the reminder as timestamp</value>
+	[DataMember(Name = "reminderDeadline", EmitDefaultValue = false)]
 	public DateTime? ReminderDeadline { get; private set; }
 
-    /// <summary>
-    ///     The additional reminder charge
-    /// </summary>
-    /// <value>The additional reminder charge</value>
-    [DataMember(Name = "reminderCharge", EmitDefaultValue = false)]
+	/// <summary>
+	///     The additional reminder charge
+	/// </summary>
+	/// <value>The additional reminder charge</value>
+	[DataMember(Name = "reminderCharge", EmitDefaultValue = false)]
 	public string ReminderCharge { get; private set; }
 
-    /// <summary>
-    ///     Gets or Sets TaxSet
-    /// </summary>
-    [DataMember(Name = "taxSet", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets TaxSet
+	/// </summary>
+	[DataMember(Name = "taxSet", EmitDefaultValue = false)]
 	public ModelInvoiceResponseTaxSet TaxSet { get; set; }
 
-    /// <summary>
-    ///     Complete address of the recipient including name, street, city, zip and country.       * Line breaks can be used
-    ///     and will be displayed on the invoice pdf.
-    /// </summary>
-    /// <value>
-    ///     Complete address of the recipient including name, street, city, zip and country.       * Line breaks can be used
-    ///     and will be displayed on the invoice pdf.
-    /// </value>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+	/// <summary>
+	///     Complete address of the recipient including name, street, city, zip and country.       * Line breaks can be used
+	///     and will be displayed on the invoice pdf.
+	/// </summary>
+	/// <value>
+	///     Complete address of the recipient including name, street, city, zip and country.       * Line breaks can be used
+	///     and will be displayed on the invoice pdf.
+	/// </value>
+	[DataMember(Name = "address", EmitDefaultValue = false)]
 	public string Address { get; private set; }
 
-    /// <summary>
-    ///     Currency used in the invoice. Needs to be currency code according to ISO-4217
-    /// </summary>
-    /// <value>Currency used in the invoice. Needs to be currency code according to ISO-4217</value>
-    [DataMember(Name = "currency", EmitDefaultValue = false)]
+	/// <summary>
+	///     Currency used in the invoice. Needs to be currency code according to ISO-4217
+	/// </summary>
+	/// <value>Currency used in the invoice. Needs to be currency code according to ISO-4217</value>
+	[DataMember(Name = "currency", EmitDefaultValue = false)]
 	public string Currency { get; private set; }
 
-    /// <summary>
-    ///     Net sum of the invoice
-    /// </summary>
-    /// <value>Net sum of the invoice</value>
-    [DataMember(Name = "sumNet", EmitDefaultValue = false)]
+	/// <summary>
+	///     Net sum of the invoice
+	/// </summary>
+	/// <value>Net sum of the invoice</value>
+	[DataMember(Name = "sumNet", EmitDefaultValue = false)]
 	public string SumNet { get; private set; }
 
-    /// <summary>
-    ///     Tax sum of the invoice
-    /// </summary>
-    /// <value>Tax sum of the invoice</value>
-    [DataMember(Name = "sumTax", EmitDefaultValue = false)]
+	/// <summary>
+	///     Tax sum of the invoice
+	/// </summary>
+	/// <value>Tax sum of the invoice</value>
+	[DataMember(Name = "sumTax", EmitDefaultValue = false)]
 	public string SumTax { get; private set; }
 
-    /// <summary>
-    ///     Gross sum of the invoice
-    /// </summary>
-    /// <value>Gross sum of the invoice</value>
-    [DataMember(Name = "sumGross", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gross sum of the invoice
+	/// </summary>
+	/// <value>Gross sum of the invoice</value>
+	[DataMember(Name = "sumGross", EmitDefaultValue = false)]
 	public string SumGross { get; private set; }
 
-    /// <summary>
-    ///     Sum of all discounts in the invoice
-    /// </summary>
-    /// <value>Sum of all discounts in the invoice</value>
-    [DataMember(Name = "sumDiscounts", EmitDefaultValue = false)]
+	/// <summary>
+	///     Sum of all discounts in the invoice
+	/// </summary>
+	/// <value>Sum of all discounts in the invoice</value>
+	[DataMember(Name = "sumDiscounts", EmitDefaultValue = false)]
 	public string SumDiscounts { get; private set; }
 
-    /// <summary>
-    ///     Net sum of the invoice in the foreign currency
-    /// </summary>
-    /// <value>Net sum of the invoice in the foreign currency</value>
-    [DataMember(Name = "sumNetForeignCurrency", EmitDefaultValue = false)]
+	/// <summary>
+	///     Net sum of the invoice in the foreign currency
+	/// </summary>
+	/// <value>Net sum of the invoice in the foreign currency</value>
+	[DataMember(Name = "sumNetForeignCurrency", EmitDefaultValue = false)]
 	public string SumNetForeignCurrency { get; private set; }
 
-    /// <summary>
-    ///     Tax sum of the invoice in the foreign currency
-    /// </summary>
-    /// <value>Tax sum of the invoice in the foreign currency</value>
-    [DataMember(Name = "sumTaxForeignCurrency", EmitDefaultValue = false)]
+	/// <summary>
+	///     Tax sum of the invoice in the foreign currency
+	/// </summary>
+	/// <value>Tax sum of the invoice in the foreign currency</value>
+	[DataMember(Name = "sumTaxForeignCurrency", EmitDefaultValue = false)]
 	public string SumTaxForeignCurrency { get; private set; }
 
-    /// <summary>
-    ///     Gross sum of the invoice in the foreign currency
-    /// </summary>
-    /// <value>Gross sum of the invoice in the foreign currency</value>
-    [DataMember(Name = "sumGrossForeignCurrency", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gross sum of the invoice in the foreign currency
+	/// </summary>
+	/// <value>Gross sum of the invoice in the foreign currency</value>
+	[DataMember(Name = "sumGrossForeignCurrency", EmitDefaultValue = false)]
 	public string SumGrossForeignCurrency { get; private set; }
 
-    /// <summary>
-    ///     Discounts sum of the invoice in the foreign currency
-    /// </summary>
-    /// <value>Discounts sum of the invoice in the foreign currency</value>
-    [DataMember(Name = "sumDiscountsForeignCurrency", EmitDefaultValue = false)]
+	/// <summary>
+	///     Discounts sum of the invoice in the foreign currency
+	/// </summary>
+	/// <value>Discounts sum of the invoice in the foreign currency</value>
+	[DataMember(Name = "sumDiscountsForeignCurrency", EmitDefaultValue = false)]
 	public string SumDiscountsForeignCurrency { get; private set; }
 
-    /// <summary>
-    ///     Net accounting sum of the invoice. Is usually the same as sumNet
-    /// </summary>
-    /// <value>Net accounting sum of the invoice. Is usually the same as sumNet</value>
-    [DataMember(Name = "sumNetAccounting", EmitDefaultValue = false)]
+	/// <summary>
+	///     Net accounting sum of the invoice. Is usually the same as sumNet
+	/// </summary>
+	/// <value>Net accounting sum of the invoice. Is usually the same as sumNet</value>
+	[DataMember(Name = "sumNetAccounting", EmitDefaultValue = false)]
 	public string SumNetAccounting { get; private set; }
 
-    /// <summary>
-    ///     Tax accounting sum of the invoice. Is usually the same as sumTax
-    /// </summary>
-    /// <value>Tax accounting sum of the invoice. Is usually the same as sumTax</value>
-    [DataMember(Name = "sumTaxAccounting", EmitDefaultValue = false)]
+	/// <summary>
+	///     Tax accounting sum of the invoice. Is usually the same as sumTax
+	/// </summary>
+	/// <value>Tax accounting sum of the invoice. Is usually the same as sumTax</value>
+	[DataMember(Name = "sumTaxAccounting", EmitDefaultValue = false)]
 	public string SumTaxAccounting { get; private set; }
 
-    /// <summary>
-    ///     Gross accounting sum of the invoice. Is usually the same as sumGross
-    /// </summary>
-    /// <value>Gross accounting sum of the invoice. Is usually the same as sumGross</value>
-    [DataMember(Name = "sumGrossAccounting", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gross accounting sum of the invoice. Is usually the same as sumGross
+	/// </summary>
+	/// <value>Gross accounting sum of the invoice. Is usually the same as sumGross</value>
+	[DataMember(Name = "sumGrossAccounting", EmitDefaultValue = false)]
 	public string SumGrossAccounting { get; private set; }
 
-    /// <summary>
-    ///     Amount which has already been paid for this invoice by the customer
-    /// </summary>
-    /// <value>Amount which has already been paid for this invoice by the customer</value>
-    [DataMember(Name = "paidAmount", EmitDefaultValue = false)]
+	/// <summary>
+	///     Amount which has already been paid for this invoice by the customer
+	/// </summary>
+	/// <value>Amount which has already been paid for this invoice by the customer</value>
+	[DataMember(Name = "paidAmount", EmitDefaultValue = false)]
 	public float? PaidAmount { get; private set; }
 
-    /// <summary>
-    ///     Internal note of the customer. Contains data entered into field &#x27;Referenz/Bestellnummer&#x27;
-    /// </summary>
-    /// <value>Internal note of the customer. Contains data entered into field &#x27;Referenz/Bestellnummer&#x27;</value>
-    [DataMember(Name = "customerInternalNote", EmitDefaultValue = false)]
+	/// <summary>
+	///     Internal note of the customer. Contains data entered into field &#x27;Referenz/Bestellnummer&#x27;
+	/// </summary>
+	/// <value>Internal note of the customer. Contains data entered into field &#x27;Referenz/Bestellnummer&#x27;</value>
+	[DataMember(Name = "customerInternalNote", EmitDefaultValue = false)]
 	public string CustomerInternalNote { get; private set; }
 
-    /// <summary>
-    ///     If true, the net amount of each position will be shown on the invoice. Otherwise gross amount
-    /// </summary>
-    /// <value>If true, the net amount of each position will be shown on the invoice. Otherwise gross amount</value>
-    [DataMember(Name = "showNet", EmitDefaultValue = false)]
+	/// <summary>
+	///     If true, the net amount of each position will be shown on the invoice. Otherwise gross amount
+	/// </summary>
+	/// <value>If true, the net amount of each position will be shown on the invoice. Otherwise gross amount</value>
+	[DataMember(Name = "showNet", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? ShowNet { get; private set; }
 
-    /// <summary>
-    ///     Defines if and when invoice was enshrined. Enshrined invoices can not be manipulated.
-    /// </summary>
-    /// <value>Defines if and when invoice was enshrined. Enshrined invoices can not be manipulated.</value>
-    [DataMember(Name = "enshrined", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines if and when invoice was enshrined. Enshrined invoices can not be manipulated.
+	/// </summary>
+	/// <value>Defines if and when invoice was enshrined. Enshrined invoices can not be manipulated.</value>
+	[DataMember(Name = "enshrined", EmitDefaultValue = false)]
 	public DateTime? Enshrined { get; private set; }
 
 
-    /// <summary>
-    ///     If the delivery date should be a time range, another timestamp can be provided in this attribute       * to define
-    ///     a range from timestamp used in deliveryDate attribute to the timestamp used here.
-    /// </summary>
-    /// <value>
-    ///     If the delivery date should be a time range, another timestamp can be provided in this attribute       * to
-    ///     define a range from timestamp used in deliveryDate attribute to the timestamp used here.
-    /// </value>
-    [DataMember(Name = "deliveryDateUntil", EmitDefaultValue = false)]
+	/// <summary>
+	///     If the delivery date should be a time range, another timestamp can be provided in this attribute       * to define
+	///     a range from timestamp used in deliveryDate attribute to the timestamp used here.
+	/// </summary>
+	/// <value>
+	///     If the delivery date should be a time range, another timestamp can be provided in this attribute       * to
+	///     define a range from timestamp used in deliveryDate attribute to the timestamp used here.
+	/// </value>
+	[DataMember(Name = "deliveryDateUntil", EmitDefaultValue = false)]
 	public string DeliveryDateUntil { get; private set; }
 
-    /// <summary>
-    ///     Internal attribute
-    /// </summary>
-    /// <value>Internal attribute</value>
-    [DataMember(Name = "datevConnectOnline", EmitDefaultValue = false)]
+	/// <summary>
+	///     Internal attribute
+	/// </summary>
+	/// <value>Internal attribute</value>
+	[DataMember(Name = "datevConnectOnline", EmitDefaultValue = false)]
 	public object DatevConnectOnline { get; private set; }
 
-    /// <summary>
-    ///     Internal attribute
-    /// </summary>
-    /// <value>Internal attribute</value>
-    [DataMember(Name = "sendPaymentReceivedNotificationDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Internal attribute
+	/// </summary>
+	/// <value>Internal attribute</value>
+	[DataMember(Name = "sendPaymentReceivedNotificationDate", EmitDefaultValue = false)]
 	public string SendPaymentReceivedNotificationDate { get; private set; }
 
-    /// <summary>
-    ///     Returns true if ModelInvoiceResponse instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelInvoiceResponse to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelInvoiceResponse input)
+	/// <summary>
+	///     Returns true if ModelInvoiceResponse instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelInvoiceResponse to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelInvoiceResponse input)
 	{
 		if (input == null)
 			return false;
@@ -942,21 +942,21 @@ public class ModelInvoiceResponse : IEquatable<ModelInvoiceResponse>, IValidatab
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelInvoiceResponse {\n");
@@ -1022,30 +1022,30 @@ public class ModelInvoiceResponse : IEquatable<ModelInvoiceResponse>, IValidatab
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelInvoiceResponse);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

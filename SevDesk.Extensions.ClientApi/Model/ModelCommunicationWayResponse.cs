@@ -22,41 +22,41 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelCommunicationWayResponse : IEquatable<ModelCommunicationWayResponse>, IValidatableObject
 {
-    /// <summary>
-    ///     Type of the communication way
-    /// </summary>
-    /// <value>Type of the communication way</value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Type of the communication way
+	/// </summary>
+	/// <value>Type of the communication way</value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum TypeEnum
 	{
-        /// <summary>
-        ///     Enum EMAIL for value: EMAIL
-        /// </summary>
-        [EnumMember(Value = "EMAIL")] EMAIL = 1,
+		/// <summary>
+		///     Enum EMAIL for value: EMAIL
+		/// </summary>
+		[EnumMember(Value = "EMAIL")] EMAIL = 1,
 
-        /// <summary>
-        ///     Enum PHONE for value: PHONE
-        /// </summary>
-        [EnumMember(Value = "PHONE")] PHONE = 2,
+		/// <summary>
+		///     Enum PHONE for value: PHONE
+		/// </summary>
+		[EnumMember(Value = "PHONE")] PHONE = 2,
 
-        /// <summary>
-        ///     Enum WEB for value: WEB
-        /// </summary>
-        [EnumMember(Value = "WEB")] WEB = 3,
+		/// <summary>
+		///     Enum WEB for value: WEB
+		/// </summary>
+		[EnumMember(Value = "WEB")] WEB = 3,
 
-        /// <summary>
-        ///     Enum MOBILE for value: MOBILE
-        /// </summary>
-        [EnumMember(Value = "MOBILE")] MOBILE = 4
+		/// <summary>
+		///     Enum MOBILE for value: MOBILE
+		/// </summary>
+		[EnumMember(Value = "MOBILE")] MOBILE = 4
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelCommunicationWayResponse" /> class.
-    /// </summary>
-    /// <param name="contact">contact.</param>
-    /// <param name="key">key.</param>
-    /// <param name="sevClient">sevClient.</param>
-    public ModelCommunicationWayResponse(ModelCommunicationWayResponseContact contact = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelCommunicationWayResponse" /> class.
+	/// </summary>
+	/// <param name="contact">contact.</param>
+	/// <param name="key">key.</param>
+	/// <param name="sevClient">sevClient.</param>
+	public ModelCommunicationWayResponse(ModelCommunicationWayResponseContact contact = default,
 		ModelCommunicationWayResponseKey key = default, ModelCommunicationWayResponseSevClient sevClient = default)
 	{
 		Contact = contact;
@@ -64,80 +64,80 @@ public class ModelCommunicationWayResponse : IEquatable<ModelCommunicationWayRes
 		SevClient = sevClient;
 	}
 
-    /// <summary>
-    ///     Type of the communication way
-    /// </summary>
-    /// <value>Type of the communication way</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+	/// <summary>
+	///     Type of the communication way
+	/// </summary>
+	/// <value>Type of the communication way</value>
+	[DataMember(Name = "type", EmitDefaultValue = false)]
 	public TypeEnum? Type { get; set; }
 
-    /// <summary>
-    ///     The communication way id
-    /// </summary>
-    /// <value>The communication way id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     The communication way id
+	/// </summary>
+	/// <value>The communication way id</value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public string Id { get; private set; }
 
-    /// <summary>
-    ///     The communication way object name
-    /// </summary>
-    /// <value>The communication way object name</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     The communication way object name
+	/// </summary>
+	/// <value>The communication way object name</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; private set; }
 
-    /// <summary>
-    ///     Date of communication way creation
-    /// </summary>
-    /// <value>Date of communication way creation</value>
-    [DataMember(Name = "create", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of communication way creation
+	/// </summary>
+	/// <value>Date of communication way creation</value>
+	[DataMember(Name = "create", EmitDefaultValue = false)]
 	public DateTime? Create { get; private set; }
 
-    /// <summary>
-    ///     Date of last communication way update
-    /// </summary>
-    /// <value>Date of last communication way update</value>
-    [DataMember(Name = "update", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of last communication way update
+	/// </summary>
+	/// <value>Date of last communication way update</value>
+	[DataMember(Name = "update", EmitDefaultValue = false)]
 	public DateTime? Update { get; private set; }
 
-    /// <summary>
-    ///     Gets or Sets Contact
-    /// </summary>
-    [DataMember(Name = "contact", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Contact
+	/// </summary>
+	[DataMember(Name = "contact", EmitDefaultValue = false)]
 	public ModelCommunicationWayResponseContact Contact { get; set; }
 
 
-    /// <summary>
-    ///     The value of the communication way.&lt;br&gt;       For example the phone number, e-mail address or website.
-    /// </summary>
-    /// <value>The value of the communication way.&lt;br&gt;       For example the phone number, e-mail address or website.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+	/// <summary>
+	///     The value of the communication way.&lt;br&gt;       For example the phone number, e-mail address or website.
+	/// </summary>
+	/// <value>The value of the communication way.&lt;br&gt;       For example the phone number, e-mail address or website.</value>
+	[DataMember(Name = "value", EmitDefaultValue = false)]
 	public string Value { get; private set; }
 
-    /// <summary>
-    ///     Gets or Sets Key
-    /// </summary>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Key
+	/// </summary>
+	[DataMember(Name = "key", EmitDefaultValue = false)]
 	public ModelCommunicationWayResponseKey Key { get; set; }
 
-    /// <summary>
-    ///     Defines whether the communication way is the main communication way for the contact.
-    /// </summary>
-    /// <value>Defines whether the communication way is the main communication way for the contact.</value>
-    [DataMember(Name = "main", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines whether the communication way is the main communication way for the contact.
+	/// </summary>
+	/// <value>Defines whether the communication way is the main communication way for the contact.</value>
+	[DataMember(Name = "main", EmitDefaultValue = false)]
 	public string Main { get; private set; }
 
-    /// <summary>
-    ///     Gets or Sets SevClientReference
-    /// </summary>
-    [DataMember(Name = "sevClient", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets SevClientReference
+	/// </summary>
+	[DataMember(Name = "sevClient", EmitDefaultValue = false)]
 	public ModelCommunicationWayResponseSevClient SevClient { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelCommunicationWayResponse instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelCommunicationWayResponse to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelCommunicationWayResponse input)
+	/// <summary>
+	///     Returns true if ModelCommunicationWayResponse instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelCommunicationWayResponse to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelCommunicationWayResponse input)
 	{
 		if (input == null)
 			return false;
@@ -195,21 +195,21 @@ public class ModelCommunicationWayResponse : IEquatable<ModelCommunicationWayRes
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelCommunicationWayResponse {\n");
@@ -227,30 +227,30 @@ public class ModelCommunicationWayResponse : IEquatable<ModelCommunicationWayRes
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelCommunicationWayResponse);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

@@ -22,12 +22,12 @@ namespace SevDesk.Extensions.ClientApi.Model;
 public class ModelCommunicationWayResponseSevClient : IEquatable<ModelCommunicationWayResponseSevClient>,
 	IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelCommunicationWayResponseSevClient" /> class.
-    /// </summary>
-    /// <param name="id">Unique identifier of the client (required).</param>
-    /// <param name="objectName">Model name, which is &#x27;SevClientReference&#x27; (required).</param>
-    public ModelCommunicationWayResponseSevClient(string id = default, string objectName = default)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelCommunicationWayResponseSevClient" /> class.
+	/// </summary>
+	/// <param name="id">Unique identifier of the client (required).</param>
+	/// <param name="objectName">Model name, which is &#x27;SevClientReference&#x27; (required).</param>
+	public ModelCommunicationWayResponseSevClient(string id = default, string objectName = default)
 	{
 		// to ensure "id" is required (not null)
 		if (id == null)
@@ -41,26 +41,26 @@ public class ModelCommunicationWayResponseSevClient : IEquatable<ModelCommunicat
 		ObjectName = objectName;
 	}
 
-    /// <summary>
-    ///     Unique identifier of the client
-    /// </summary>
-    /// <value>Unique identifier of the client</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     Unique identifier of the client
+	/// </summary>
+	/// <value>Unique identifier of the client</value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public string Id { get; set; }
 
-    /// <summary>
-    ///     Model name, which is &#x27;SevClientReference&#x27;
-    /// </summary>
-    /// <value>Model name, which is &#x27;SevClientReference&#x27;</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     Model name, which is &#x27;SevClientReference&#x27;
+	/// </summary>
+	/// <value>Model name, which is &#x27;SevClientReference&#x27;</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelCommunicationWayResponseSevClient instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelCommunicationWayResponseSevClient to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelCommunicationWayResponseSevClient input)
+	/// <summary>
+	///     Returns true if ModelCommunicationWayResponseSevClient instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelCommunicationWayResponseSevClient to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelCommunicationWayResponseSevClient input)
 	{
 		if (input == null)
 			return false;
@@ -78,21 +78,21 @@ public class ModelCommunicationWayResponseSevClient : IEquatable<ModelCommunicat
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelCommunicationWayResponseSevClient {\n");
@@ -102,30 +102,30 @@ public class ModelCommunicationWayResponseSevClient : IEquatable<ModelCommunicat
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelCommunicationWayResponseSevClient);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

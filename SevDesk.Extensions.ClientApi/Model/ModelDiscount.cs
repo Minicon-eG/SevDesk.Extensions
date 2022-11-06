@@ -21,14 +21,14 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelDiscount : IEquatable<ModelDiscount>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelDiscount" /> class.
-    /// </summary>
-    /// <param name="_object">_object.</param>
-    /// <param name="percentage">Defines if this is a percentage or an absolute discount.</param>
-    /// <param name="value">Value of the discount.</param>
-    /// <param name="isNet">Defines is the Discount net or gross 0 - gross 1 - net.</param>
-    public ModelDiscount(ModelDiscountObject _object = default, string percentage = default, string value = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelDiscount" /> class.
+	/// </summary>
+	/// <param name="_object">_object.</param>
+	/// <param name="percentage">Defines if this is a percentage or an absolute discount.</param>
+	/// <param name="value">Value of the discount.</param>
+	/// <param name="isNet">Defines is the Discount net or gross 0 - gross 1 - net.</param>
+	public ModelDiscount(ModelDiscountObject _object = default, string percentage = default, string value = default,
 		string isNet = default)
 	{
 		_Object = _object;
@@ -37,81 +37,81 @@ public class ModelDiscount : IEquatable<ModelDiscount>, IValidatableObject
 		IsNet = isNet;
 	}
 
-    /// <summary>
-    ///     the id of the discount
-    /// </summary>
-    /// <value>the id of the discount</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     the id of the discount
+	/// </summary>
+	/// <value>the id of the discount</value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public string Id { get; private set; }
 
-    /// <summary>
-    ///     Model name, which is &#x27;Discounts&#x27;
-    /// </summary>
-    /// <value>Model name, which is &#x27;Discounts&#x27;</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     Model name, which is &#x27;Discounts&#x27;
+	/// </summary>
+	/// <value>Model name, which is &#x27;Discounts&#x27;</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; private set; }
 
-    /// <summary>
-    ///     Date of discount creation
-    /// </summary>
-    /// <value>Date of discount creation</value>
-    [DataMember(Name = "create", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of discount creation
+	/// </summary>
+	/// <value>Date of discount creation</value>
+	[DataMember(Name = "create", EmitDefaultValue = false)]
 	public DateTime? Create { get; private set; }
 
-    /// <summary>
-    ///     Date of last discount update
-    /// </summary>
-    /// <value>Date of last discount update</value>
-    [DataMember(Name = "update", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of last discount update
+	/// </summary>
+	/// <value>Date of last discount update</value>
+	[DataMember(Name = "update", EmitDefaultValue = false)]
 	public DateTime? Update { get; private set; }
 
-    /// <summary>
-    ///     Gets or Sets _Object
-    /// </summary>
-    [DataMember(Name = "object", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets _Object
+	/// </summary>
+	[DataMember(Name = "object", EmitDefaultValue = false)]
 	public ModelDiscountObject _Object { get; set; }
 
-    /// <summary>
-    ///     Client to which invoice belongs. Will be filled automatically
-    /// </summary>
-    /// <value>Client to which invoice belongs. Will be filled automatically</value>
-    [DataMember(Name = "sevClient", EmitDefaultValue = false)]
+	/// <summary>
+	///     Client to which invoice belongs. Will be filled automatically
+	/// </summary>
+	/// <value>Client to which invoice belongs. Will be filled automatically</value>
+	[DataMember(Name = "sevClient", EmitDefaultValue = false)]
 	public string SevClient { get; private set; }
 
-    /// <summary>
-    ///     A text describing your position.
-    /// </summary>
-    /// <value>A text describing your position.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+	/// <summary>
+	///     A text describing your position.
+	/// </summary>
+	/// <value>A text describing your position.</value>
+	[DataMember(Name = "text", EmitDefaultValue = false)]
 	public string Text { get; private set; }
 
-    /// <summary>
-    ///     Defines if this is a percentage or an absolute discount
-    /// </summary>
-    /// <value>Defines if this is a percentage or an absolute discount</value>
-    [DataMember(Name = "percentage", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines if this is a percentage or an absolute discount
+	/// </summary>
+	/// <value>Defines if this is a percentage or an absolute discount</value>
+	[DataMember(Name = "percentage", EmitDefaultValue = false)]
 	public string Percentage { get; set; }
 
-    /// <summary>
-    ///     Value of the discount
-    /// </summary>
-    /// <value>Value of the discount</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+	/// <summary>
+	///     Value of the discount
+	/// </summary>
+	/// <value>Value of the discount</value>
+	[DataMember(Name = "value", EmitDefaultValue = false)]
 	public string Value { get; set; }
 
-    /// <summary>
-    ///     Defines is the Discount net or gross 0 - gross 1 - net
-    /// </summary>
-    /// <value>Defines is the Discount net or gross 0 - gross 1 - net</value>
-    [DataMember(Name = "isNet", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines is the Discount net or gross 0 - gross 1 - net
+	/// </summary>
+	/// <value>Defines is the Discount net or gross 0 - gross 1 - net</value>
+	[DataMember(Name = "isNet", EmitDefaultValue = false)]
 	public string IsNet { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelDiscount instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelDiscount to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelDiscount input)
+	/// <summary>
+	///     Returns true if ModelDiscount instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelDiscount to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelDiscount input)
 	{
 		if (input == null)
 			return false;
@@ -169,21 +169,21 @@ public class ModelDiscount : IEquatable<ModelDiscount>, IValidatableObject
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelDiscount {\n");
@@ -201,30 +201,30 @@ public class ModelDiscount : IEquatable<ModelDiscount>, IValidatableObject
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelDiscount);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

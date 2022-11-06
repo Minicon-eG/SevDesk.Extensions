@@ -22,76 +22,76 @@ namespace SevDesk.Extensions.ClientApi.Model;
 public class ModelContactCustomFieldSettingResponse : IEquatable<ModelContactCustomFieldSettingResponse>,
 	IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelContactCustomFieldSettingResponse" /> class.
-    /// </summary>
-    /// <param name="sevClient">sevClient.</param>
-    public ModelContactCustomFieldSettingResponse(ModelContactCustomFieldSettingResponseSevClient sevClient = default)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelContactCustomFieldSettingResponse" /> class.
+	/// </summary>
+	/// <param name="sevClient">sevClient.</param>
+	public ModelContactCustomFieldSettingResponse(ModelContactCustomFieldSettingResponseSevClient sevClient = default)
 	{
 		SevClient = sevClient;
 	}
 
-    /// <summary>
-    ///     Id of the contact field
-    /// </summary>
-    /// <value>Id of the contact field</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     Id of the contact field
+	/// </summary>
+	/// <value>Id of the contact field</value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public string Id { get; private set; }
 
-    /// <summary>
-    ///     Internal object name which is &#x27;ContactCustomFieldSetting&#x27;.
-    /// </summary>
-    /// <value>Internal object name which is &#x27;ContactCustomFieldSetting&#x27;.</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     Internal object name which is &#x27;ContactCustomFieldSetting&#x27;.
+	/// </summary>
+	/// <value>Internal object name which is &#x27;ContactCustomFieldSetting&#x27;.</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; private set; }
 
-    /// <summary>
-    ///     Date of contact field creation
-    /// </summary>
-    /// <value>Date of contact field creation</value>
-    [DataMember(Name = "create", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of contact field creation
+	/// </summary>
+	/// <value>Date of contact field creation</value>
+	[DataMember(Name = "create", EmitDefaultValue = false)]
 	public DateTime? Create { get; private set; }
 
-    /// <summary>
-    ///     Date of contact field updated
-    /// </summary>
-    /// <value>Date of contact field updated</value>
-    [DataMember(Name = "update", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of contact field updated
+	/// </summary>
+	/// <value>Date of contact field updated</value>
+	[DataMember(Name = "update", EmitDefaultValue = false)]
 	public DateTime? Update { get; private set; }
 
-    /// <summary>
-    ///     Gets or Sets SevClientReference
-    /// </summary>
-    [DataMember(Name = "sevClient", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets SevClientReference
+	/// </summary>
+	[DataMember(Name = "sevClient", EmitDefaultValue = false)]
 	public ModelContactCustomFieldSettingResponseSevClient SevClient { get; set; }
 
-    /// <summary>
-    ///     name of the contact fields
-    /// </summary>
-    /// <value>name of the contact fields</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+	/// <summary>
+	///     name of the contact fields
+	/// </summary>
+	/// <value>name of the contact fields</value>
+	[DataMember(Name = "name", EmitDefaultValue = false)]
 	public string Name { get; private set; }
 
-    /// <summary>
-    ///     Unique identifier for the contact field
-    /// </summary>
-    /// <value>Unique identifier for the contact field</value>
-    [DataMember(Name = "identifier", EmitDefaultValue = false)]
+	/// <summary>
+	///     Unique identifier for the contact field
+	/// </summary>
+	/// <value>Unique identifier for the contact field</value>
+	[DataMember(Name = "identifier", EmitDefaultValue = false)]
 	public string Identifier { get; private set; }
 
-    /// <summary>
-    ///     The description of the contact field
-    /// </summary>
-    /// <value>The description of the contact field</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+	/// <summary>
+	///     The description of the contact field
+	/// </summary>
+	/// <value>The description of the contact field</value>
+	[DataMember(Name = "description", EmitDefaultValue = false)]
 	public string Description { get; private set; }
 
-    /// <summary>
-    ///     Returns true if ModelContactCustomFieldSettingResponse instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelContactCustomFieldSettingResponse to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelContactCustomFieldSettingResponse input)
+	/// <summary>
+	///     Returns true if ModelContactCustomFieldSettingResponse instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelContactCustomFieldSettingResponse to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelContactCustomFieldSettingResponse input)
 	{
 		if (input == null)
 			return false;
@@ -139,21 +139,21 @@ public class ModelContactCustomFieldSettingResponse : IEquatable<ModelContactCus
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelContactCustomFieldSettingResponse {\n");
@@ -169,30 +169,30 @@ public class ModelContactCustomFieldSettingResponse : IEquatable<ModelContactCus
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelContactCustomFieldSettingResponse);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

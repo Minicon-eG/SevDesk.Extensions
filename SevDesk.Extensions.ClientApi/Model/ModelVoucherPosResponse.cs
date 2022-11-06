@@ -21,29 +21,29 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelVoucherPosResponse : IEquatable<ModelVoucherPosResponse>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelVoucherPosResponse" /> class.
-    /// </summary>
-    /// <param name="sevClient">sevClient.</param>
-    /// <param name="voucher">voucher (required).</param>
-    /// <param name="accountingType">accountingType (required).</param>
-    /// <param name="estimatedAccountingType">estimatedAccountingType.</param>
-    /// <param name="taxRate">Tax rate of the voucher position. (required).</param>
-    /// <param name="net">
-    ///     Determines whether &#x27;sumNet&#x27; or &#x27;sumGross&#x27; is regarded.&lt;br&gt;       If both
-    ///     are not given, &#x27;sum&#x27; is regarded and treated as net or gross depending on &#x27;net&#x27;. (required).
-    /// </param>
-    /// <param name="isAsset">Determines whether position is regarded as an asset which can be depreciated..</param>
-    /// <param name="sumNet">
-    ///     Net sum of the voucher position.&lt;br&gt;      Only regarded if &#x27;net&#x27; is &#x27;true
-    ///     &#x27;, otherwise its readOnly. (required).
-    /// </param>
-    /// <param name="sumGross">
-    ///     Gross sum of the voucher position.&lt;br&gt;      Only regarded if &#x27;net&#x27; is &#x27;
-    ///     false&#x27;, otherwise its readOnly. (required).
-    /// </param>
-    /// <param name="comment">Comment for the voucher position..</param>
-    public ModelVoucherPosResponse(ModelVoucherPosResponseSevClient sevClient = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelVoucherPosResponse" /> class.
+	/// </summary>
+	/// <param name="sevClient">sevClient.</param>
+	/// <param name="voucher">voucher (required).</param>
+	/// <param name="accountingType">accountingType (required).</param>
+	/// <param name="estimatedAccountingType">estimatedAccountingType.</param>
+	/// <param name="taxRate">Tax rate of the voucher position. (required).</param>
+	/// <param name="net">
+	///     Determines whether &#x27;sumNet&#x27; or &#x27;sumGross&#x27; is regarded.&lt;br&gt;       If both
+	///     are not given, &#x27;sum&#x27; is regarded and treated as net or gross depending on &#x27;net&#x27;. (required).
+	/// </param>
+	/// <param name="isAsset">Determines whether position is regarded as an asset which can be depreciated..</param>
+	/// <param name="sumNet">
+	///     Net sum of the voucher position.&lt;br&gt;      Only regarded if &#x27;net&#x27; is &#x27;true
+	///     &#x27;, otherwise its readOnly. (required).
+	/// </param>
+	/// <param name="sumGross">
+	///     Gross sum of the voucher position.&lt;br&gt;      Only regarded if &#x27;net&#x27; is &#x27;
+	///     false&#x27;, otherwise its readOnly. (required).
+	/// </param>
+	/// <param name="comment">Comment for the voucher position..</param>
+	public ModelVoucherPosResponse(ModelVoucherPosResponseSevClient sevClient = default,
 		ModelVoucherPosResponseVoucher voucher = default,
 		ModelVoucherPosResponseAccountingType accountingType = default,
 		ModelVoucherPosResponseEstimatedAccountingType estimatedAccountingType = default, string taxRate = default,
@@ -85,148 +85,148 @@ public class ModelVoucherPosResponse : IEquatable<ModelVoucherPosResponse>, IVal
 		Comment = comment;
 	}
 
-    /// <summary>
-    ///     The voucher position id
-    /// </summary>
-    /// <value>The voucher position id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     The voucher position id
+	/// </summary>
+	/// <value>The voucher position id</value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public string Id { get; private set; }
 
-    /// <summary>
-    ///     The voucher position object name
-    /// </summary>
-    /// <value>The voucher position object name</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     The voucher position object name
+	/// </summary>
+	/// <value>The voucher position object name</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; private set; }
 
-    /// <summary>
-    ///     Date of voucher position creation
-    /// </summary>
-    /// <value>Date of voucher position creation</value>
-    [DataMember(Name = "create", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of voucher position creation
+	/// </summary>
+	/// <value>Date of voucher position creation</value>
+	[DataMember(Name = "create", EmitDefaultValue = false)]
 	public string Create { get; private set; }
 
-    /// <summary>
-    ///     Date of last voucher position update
-    /// </summary>
-    /// <value>Date of last voucher position update</value>
-    [DataMember(Name = "update", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of last voucher position update
+	/// </summary>
+	/// <value>Date of last voucher position update</value>
+	[DataMember(Name = "update", EmitDefaultValue = false)]
 	public string Update { get; private set; }
 
-    /// <summary>
-    ///     Gets or Sets SevClientReference
-    /// </summary>
-    [DataMember(Name = "sevClient", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets SevClientReference
+	/// </summary>
+	[DataMember(Name = "sevClient", EmitDefaultValue = false)]
 	public ModelVoucherPosResponseSevClient SevClient { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Voucher
-    /// </summary>
-    [DataMember(Name = "voucher", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Voucher
+	/// </summary>
+	[DataMember(Name = "voucher", EmitDefaultValue = false)]
 	public ModelVoucherPosResponseVoucher Voucher { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets AccountingTypeReference
-    /// </summary>
-    [DataMember(Name = "accountingType", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets AccountingTypeReference
+	/// </summary>
+	[DataMember(Name = "accountingType", EmitDefaultValue = false)]
 	public ModelVoucherPosResponseAccountingType AccountingType { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets EstimatedAccountingType
-    /// </summary>
-    [DataMember(Name = "estimatedAccountingType", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets EstimatedAccountingType
+	/// </summary>
+	[DataMember(Name = "estimatedAccountingType", EmitDefaultValue = false)]
 	public ModelVoucherPosResponseEstimatedAccountingType EstimatedAccountingType { get; set; }
 
-    /// <summary>
-    ///     Tax rate of the voucher position.
-    /// </summary>
-    /// <value>Tax rate of the voucher position.</value>
-    [DataMember(Name = "taxRate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Tax rate of the voucher position.
+	/// </summary>
+	/// <value>Tax rate of the voucher position.</value>
+	[DataMember(Name = "taxRate", EmitDefaultValue = false)]
 	public string TaxRate { get; set; }
 
-    /// <summary>
-    ///     Determines whether &#x27;sumNet&#x27; or &#x27;sumGross&#x27; is regarded.&lt;br&gt;       If both are not given,
-    ///     &#x27;sum&#x27; is regarded and treated as net or gross depending on &#x27;net&#x27;.
-    /// </summary>
-    /// <value>
-    ///     Determines whether &#x27;sumNet&#x27; or &#x27;sumGross&#x27; is regarded.&lt;br&gt;       If both are not
-    ///     given, &#x27;sum&#x27; is regarded and treated as net or gross depending on &#x27;net&#x27;.
-    /// </value>
-    [DataMember(Name = "net", EmitDefaultValue = false)]
+	/// <summary>
+	///     Determines whether &#x27;sumNet&#x27; or &#x27;sumGross&#x27; is regarded.&lt;br&gt;       If both are not given,
+	///     &#x27;sum&#x27; is regarded and treated as net or gross depending on &#x27;net&#x27;.
+	/// </summary>
+	/// <value>
+	///     Determines whether &#x27;sumNet&#x27; or &#x27;sumGross&#x27; is regarded.&lt;br&gt;       If both are not
+	///     given, &#x27;sum&#x27; is regarded and treated as net or gross depending on &#x27;net&#x27;.
+	/// </value>
+	[DataMember(Name = "net", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? Net { get; set; }
 
-    /// <summary>
-    ///     Determines whether position is regarded as an asset which can be depreciated.
-    /// </summary>
-    /// <value>Determines whether position is regarded as an asset which can be depreciated.</value>
-    [DataMember(Name = "isAsset", EmitDefaultValue = false)]
+	/// <summary>
+	///     Determines whether position is regarded as an asset which can be depreciated.
+	/// </summary>
+	/// <value>Determines whether position is regarded as an asset which can be depreciated.</value>
+	[DataMember(Name = "isAsset", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? IsAsset { get; set; }
 
-    /// <summary>
-    ///     Net sum of the voucher position.&lt;br&gt;      Only regarded if &#x27;net&#x27; is &#x27;true&#x27;, otherwise its
-    ///     readOnly.
-    /// </summary>
-    /// <value>
-    ///     Net sum of the voucher position.&lt;br&gt;      Only regarded if &#x27;net&#x27; is &#x27;true&#x27;, otherwise
-    ///     its readOnly.
-    /// </value>
-    [DataMember(Name = "sumNet", EmitDefaultValue = false)]
+	/// <summary>
+	///     Net sum of the voucher position.&lt;br&gt;      Only regarded if &#x27;net&#x27; is &#x27;true&#x27;, otherwise its
+	///     readOnly.
+	/// </summary>
+	/// <value>
+	///     Net sum of the voucher position.&lt;br&gt;      Only regarded if &#x27;net&#x27; is &#x27;true&#x27;, otherwise
+	///     its readOnly.
+	/// </value>
+	[DataMember(Name = "sumNet", EmitDefaultValue = false)]
 	public string SumNet { get; set; }
 
-    /// <summary>
-    ///     Tax sum of the voucher position.
-    /// </summary>
-    /// <value>Tax sum of the voucher position.</value>
-    [DataMember(Name = "sumTax", EmitDefaultValue = false)]
+	/// <summary>
+	///     Tax sum of the voucher position.
+	/// </summary>
+	/// <value>Tax sum of the voucher position.</value>
+	[DataMember(Name = "sumTax", EmitDefaultValue = false)]
 	public string SumTax { get; private set; }
 
-    /// <summary>
-    ///     Gross sum of the voucher position.&lt;br&gt;      Only regarded if &#x27;net&#x27; is &#x27;false&#x27;, otherwise
-    ///     its readOnly.
-    /// </summary>
-    /// <value>
-    ///     Gross sum of the voucher position.&lt;br&gt;      Only regarded if &#x27;net&#x27; is &#x27;false&#x27;,
-    ///     otherwise its readOnly.
-    /// </value>
-    [DataMember(Name = "sumGross", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gross sum of the voucher position.&lt;br&gt;      Only regarded if &#x27;net&#x27; is &#x27;false&#x27;, otherwise
+	///     its readOnly.
+	/// </summary>
+	/// <value>
+	///     Gross sum of the voucher position.&lt;br&gt;      Only regarded if &#x27;net&#x27; is &#x27;false&#x27;,
+	///     otherwise its readOnly.
+	/// </value>
+	[DataMember(Name = "sumGross", EmitDefaultValue = false)]
 	public string SumGross { get; set; }
 
-    /// <summary>
-    ///     Net accounting sum. Is equal to sumNet.
-    /// </summary>
-    /// <value>Net accounting sum. Is equal to sumNet.</value>
-    [DataMember(Name = "sumNetAccounting", EmitDefaultValue = false)]
+	/// <summary>
+	///     Net accounting sum. Is equal to sumNet.
+	/// </summary>
+	/// <value>Net accounting sum. Is equal to sumNet.</value>
+	[DataMember(Name = "sumNetAccounting", EmitDefaultValue = false)]
 	public string SumNetAccounting { get; private set; }
 
-    /// <summary>
-    ///     Tax accounting sum. Is equal to sumTax.
-    /// </summary>
-    /// <value>Tax accounting sum. Is equal to sumTax.</value>
-    [DataMember(Name = "sumTaxAccounting", EmitDefaultValue = false)]
+	/// <summary>
+	///     Tax accounting sum. Is equal to sumTax.
+	/// </summary>
+	/// <value>Tax accounting sum. Is equal to sumTax.</value>
+	[DataMember(Name = "sumTaxAccounting", EmitDefaultValue = false)]
 	public string SumTaxAccounting { get; private set; }
 
-    /// <summary>
-    ///     Gross accounting sum. Is equal to sumGross.
-    /// </summary>
-    /// <value>Gross accounting sum. Is equal to sumGross.</value>
-    [DataMember(Name = "sumGrossAccounting", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gross accounting sum. Is equal to sumGross.
+	/// </summary>
+	/// <value>Gross accounting sum. Is equal to sumGross.</value>
+	[DataMember(Name = "sumGrossAccounting", EmitDefaultValue = false)]
 	public string SumGrossAccounting { get; private set; }
 
-    /// <summary>
-    ///     Comment for the voucher position.
-    /// </summary>
-    /// <value>Comment for the voucher position.</value>
-    [DataMember(Name = "comment", EmitDefaultValue = false)]
+	/// <summary>
+	///     Comment for the voucher position.
+	/// </summary>
+	/// <value>Comment for the voucher position.</value>
+	[DataMember(Name = "comment", EmitDefaultValue = false)]
 	public string Comment { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelVoucherPosResponse instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelVoucherPosResponse to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelVoucherPosResponse input)
+	/// <summary>
+	///     Returns true if ModelVoucherPosResponse instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelVoucherPosResponse to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelVoucherPosResponse input)
 	{
 		if (input == null)
 			return false;
@@ -324,21 +324,21 @@ public class ModelVoucherPosResponse : IEquatable<ModelVoucherPosResponse>, IVal
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelVoucherPosResponse {\n");
@@ -364,30 +364,30 @@ public class ModelVoucherPosResponse : IEquatable<ModelVoucherPosResponse>, IVal
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelVoucherPosResponse);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

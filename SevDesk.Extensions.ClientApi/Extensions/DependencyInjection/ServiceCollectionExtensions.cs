@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using Refit;
 using SevDesk.Extensions.ClientApi.Api;
-using SevDesl.Extensions.Dtos.Options;
+using SevDesk.Extensions.Dtos.Options;
 
 namespace SevDesk.Extensions.ClientApi.Extensions.DependencyInjection;
 

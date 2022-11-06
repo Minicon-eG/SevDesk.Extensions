@@ -22,49 +22,49 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelPartUpdate : IEquatable<ModelPartUpdate>, IValidatableObject
 {
-    /// <summary>
-    ///     Status of the part. 50 &lt;-&gt; Inactive - 100 &lt;-&gt; Active
-    /// </summary>
-    /// <value>Status of the part. 50 &lt;-&gt; Inactive - 100 &lt;-&gt; Active</value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Status of the part. 50 &lt;-&gt; Inactive - 100 &lt;-&gt; Active
+	/// </summary>
+	/// <value>Status of the part. 50 &lt;-&gt; Inactive - 100 &lt;-&gt; Active</value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum StatusEnum
 	{
-        /// <summary>
-        ///     Enum NUMBER_50 for value: 50
-        /// </summary>
-        [EnumMember(Value = "50")] NUMBER_50 = 1,
+		/// <summary>
+		///     Enum NUMBER_50 for value: 50
+		/// </summary>
+		[EnumMember(Value = "50")] NUMBER_50 = 1,
 
-        /// <summary>
-        ///     Enum NUMBER_100 for value: 100
-        /// </summary>
-        [EnumMember(Value = "100")] NUMBER_100 = 2
+		/// <summary>
+		///     Enum NUMBER_100 for value: 100
+		/// </summary>
+		[EnumMember(Value = "100")] NUMBER_100 = 2
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelPartUpdate" /> class.
-    /// </summary>
-    /// <param name="name">Name of the part.</param>
-    /// <param name="partNumber">The part number.</param>
-    /// <param name="text">A text describing the part.</param>
-    /// <param name="category">category.</param>
-    /// <param name="stock">The stock of the part.</param>
-    /// <param name="stockEnabled">Defines if the stock should be enabled.</param>
-    /// <param name="unity">unity.</param>
-    /// <param name="price">
-    ///     Net price for which the part is sold. we will change this parameter so that the gross price is
-    ///     calculated automatically, until then the priceGross parameter must be used..
-    /// </param>
-    /// <param name="priceNet">Net price for which the part is sold.</param>
-    /// <param name="priceGross">Gross price for which the part is sold.</param>
-    /// <param name="sevClient">sevClient.</param>
-    /// <param name="pricePurchase">Purchase price of the part.</param>
-    /// <param name="taxRate">Tax rate of the part.</param>
-    /// <param name="status">Status of the part. 50 &lt;-&gt; Inactive - 100 &lt;-&gt; Active.</param>
-    /// <param name="internalComment">
-    ///     An internal comment for the part.&lt;br&gt;       Does not appear on invoices and
-    ///     orders..
-    /// </param>
-    public ModelPartUpdate(string name = default, string partNumber = default, string text = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelPartUpdate" /> class.
+	/// </summary>
+	/// <param name="name">Name of the part.</param>
+	/// <param name="partNumber">The part number.</param>
+	/// <param name="text">A text describing the part.</param>
+	/// <param name="category">category.</param>
+	/// <param name="stock">The stock of the part.</param>
+	/// <param name="stockEnabled">Defines if the stock should be enabled.</param>
+	/// <param name="unity">unity.</param>
+	/// <param name="price">
+	///     Net price for which the part is sold. we will change this parameter so that the gross price is
+	///     calculated automatically, until then the priceGross parameter must be used..
+	/// </param>
+	/// <param name="priceNet">Net price for which the part is sold.</param>
+	/// <param name="priceGross">Gross price for which the part is sold.</param>
+	/// <param name="sevClient">sevClient.</param>
+	/// <param name="pricePurchase">Purchase price of the part.</param>
+	/// <param name="taxRate">Tax rate of the part.</param>
+	/// <param name="status">Status of the part. 50 &lt;-&gt; Inactive - 100 &lt;-&gt; Active.</param>
+	/// <param name="internalComment">
+	///     An internal comment for the part.&lt;br&gt;       Does not appear on invoices and
+	///     orders..
+	/// </param>
+	public ModelPartUpdate(string name = default, string partNumber = default, string text = default,
 		ModelPartCategory category = default, float? stock = default, bool? stockEnabled = default,
 		ModelPartUnity unity = default, float? price = default, float? priceNet = default, float? priceGross = default,
 		ModelPartSevClient sevClient = default, float? pricePurchase = default, float? taxRate = default,
@@ -87,148 +87,148 @@ public class ModelPartUpdate : IEquatable<ModelPartUpdate>, IValidatableObject
 		InternalComment = internalComment;
 	}
 
-    /// <summary>
-    ///     Status of the part. 50 &lt;-&gt; Inactive - 100 &lt;-&gt; Active
-    /// </summary>
-    /// <value>Status of the part. 50 &lt;-&gt; Inactive - 100 &lt;-&gt; Active</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+	/// <summary>
+	///     Status of the part. 50 &lt;-&gt; Inactive - 100 &lt;-&gt; Active
+	/// </summary>
+	/// <value>Status of the part. 50 &lt;-&gt; Inactive - 100 &lt;-&gt; Active</value>
+	[DataMember(Name = "status", EmitDefaultValue = false)]
 	public StatusEnum? Status { get; set; }
 
-    /// <summary>
-    ///     The part id
-    /// </summary>
-    /// <value>The part id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     The part id
+	/// </summary>
+	/// <value>The part id</value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public int? Id { get; private set; }
 
-    /// <summary>
-    ///     The part object name
-    /// </summary>
-    /// <value>The part object name</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     The part object name
+	/// </summary>
+	/// <value>The part object name</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; private set; }
 
-    /// <summary>
-    ///     Date of part creation
-    /// </summary>
-    /// <value>Date of part creation</value>
-    [DataMember(Name = "create", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of part creation
+	/// </summary>
+	/// <value>Date of part creation</value>
+	[DataMember(Name = "create", EmitDefaultValue = false)]
 	public DateTime? Create { get; private set; }
 
-    /// <summary>
-    ///     Date of last part update
-    /// </summary>
-    /// <value>Date of last part update</value>
-    [DataMember(Name = "update", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of last part update
+	/// </summary>
+	/// <value>Date of last part update</value>
+	[DataMember(Name = "update", EmitDefaultValue = false)]
 	public DateTime? Update { get; private set; }
 
-    /// <summary>
-    ///     Name of the part
-    /// </summary>
-    /// <value>Name of the part</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+	/// <summary>
+	///     Name of the part
+	/// </summary>
+	/// <value>Name of the part</value>
+	[DataMember(Name = "name", EmitDefaultValue = false)]
 	public string Name { get; set; }
 
-    /// <summary>
-    ///     The part number
-    /// </summary>
-    /// <value>The part number</value>
-    [DataMember(Name = "partNumber", EmitDefaultValue = false)]
+	/// <summary>
+	///     The part number
+	/// </summary>
+	/// <value>The part number</value>
+	[DataMember(Name = "partNumber", EmitDefaultValue = false)]
 	public string PartNumber { get; set; }
 
-    /// <summary>
-    ///     A text describing the part
-    /// </summary>
-    /// <value>A text describing the part</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+	/// <summary>
+	///     A text describing the part
+	/// </summary>
+	/// <value>A text describing the part</value>
+	[DataMember(Name = "text", EmitDefaultValue = false)]
 	public string Text { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Category
-    /// </summary>
-    [DataMember(Name = "category", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Category
+	/// </summary>
+	[DataMember(Name = "category", EmitDefaultValue = false)]
 	public ModelPartCategory Category { get; set; }
 
-    /// <summary>
-    ///     The stock of the part
-    /// </summary>
-    /// <value>The stock of the part</value>
-    [DataMember(Name = "stock", EmitDefaultValue = false)]
+	/// <summary>
+	///     The stock of the part
+	/// </summary>
+	/// <value>The stock of the part</value>
+	[DataMember(Name = "stock", EmitDefaultValue = false)]
 	public float? Stock { get; set; }
 
-    /// <summary>
-    ///     Defines if the stock should be enabled
-    /// </summary>
-    /// <value>Defines if the stock should be enabled</value>
-    [DataMember(Name = "stockEnabled", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines if the stock should be enabled
+	/// </summary>
+	/// <value>Defines if the stock should be enabled</value>
+	[DataMember(Name = "stockEnabled", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? StockEnabled { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Unity
-    /// </summary>
-    [DataMember(Name = "unity", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Unity
+	/// </summary>
+	[DataMember(Name = "unity", EmitDefaultValue = false)]
 	public ModelPartUnity Unity { get; set; }
 
-    /// <summary>
-    ///     Net price for which the part is sold. we will change this parameter so that the gross price is calculated
-    ///     automatically, until then the priceGross parameter must be used.
-    /// </summary>
-    /// <value>
-    ///     Net price for which the part is sold. we will change this parameter so that the gross price is calculated
-    ///     automatically, until then the priceGross parameter must be used.
-    /// </value>
-    [DataMember(Name = "price", EmitDefaultValue = false)]
+	/// <summary>
+	///     Net price for which the part is sold. we will change this parameter so that the gross price is calculated
+	///     automatically, until then the priceGross parameter must be used.
+	/// </summary>
+	/// <value>
+	///     Net price for which the part is sold. we will change this parameter so that the gross price is calculated
+	///     automatically, until then the priceGross parameter must be used.
+	/// </value>
+	[DataMember(Name = "price", EmitDefaultValue = false)]
 	public float? Price { get; set; }
 
-    /// <summary>
-    ///     Net price for which the part is sold
-    /// </summary>
-    /// <value>Net price for which the part is sold</value>
-    [DataMember(Name = "priceNet", EmitDefaultValue = false)]
+	/// <summary>
+	///     Net price for which the part is sold
+	/// </summary>
+	/// <value>Net price for which the part is sold</value>
+	[DataMember(Name = "priceNet", EmitDefaultValue = false)]
 	public float? PriceNet { get; set; }
 
-    /// <summary>
-    ///     Gross price for which the part is sold
-    /// </summary>
-    /// <value>Gross price for which the part is sold</value>
-    [DataMember(Name = "priceGross", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gross price for which the part is sold
+	/// </summary>
+	/// <value>Gross price for which the part is sold</value>
+	[DataMember(Name = "priceGross", EmitDefaultValue = false)]
 	public float? PriceGross { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets SevClientReference
-    /// </summary>
-    [DataMember(Name = "sevClient", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets SevClientReference
+	/// </summary>
+	[DataMember(Name = "sevClient", EmitDefaultValue = false)]
 	public ModelPartSevClient SevClient { get; set; }
 
-    /// <summary>
-    ///     Purchase price of the part
-    /// </summary>
-    /// <value>Purchase price of the part</value>
-    [DataMember(Name = "pricePurchase", EmitDefaultValue = false)]
+	/// <summary>
+	///     Purchase price of the part
+	/// </summary>
+	/// <value>Purchase price of the part</value>
+	[DataMember(Name = "pricePurchase", EmitDefaultValue = false)]
 	public float? PricePurchase { get; set; }
 
-    /// <summary>
-    ///     Tax rate of the part
-    /// </summary>
-    /// <value>Tax rate of the part</value>
-    [DataMember(Name = "taxRate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Tax rate of the part
+	/// </summary>
+	/// <value>Tax rate of the part</value>
+	[DataMember(Name = "taxRate", EmitDefaultValue = false)]
 	public float? TaxRate { get; set; }
 
 
-    /// <summary>
-    ///     An internal comment for the part.&lt;br&gt;       Does not appear on invoices and orders.
-    /// </summary>
-    /// <value>An internal comment for the part.&lt;br&gt;       Does not appear on invoices and orders.</value>
-    [DataMember(Name = "internalComment", EmitDefaultValue = false)]
+	/// <summary>
+	///     An internal comment for the part.&lt;br&gt;       Does not appear on invoices and orders.
+	/// </summary>
+	/// <value>An internal comment for the part.&lt;br&gt;       Does not appear on invoices and orders.</value>
+	[DataMember(Name = "internalComment", EmitDefaultValue = false)]
 	public string InternalComment { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelPartUpdate instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelPartUpdate to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelPartUpdate input)
+	/// <summary>
+	///     Returns true if ModelPartUpdate instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelPartUpdate to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelPartUpdate input)
 	{
 		if (input == null)
 			return false;
@@ -331,21 +331,21 @@ public class ModelPartUpdate : IEquatable<ModelPartUpdate>, IValidatableObject
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelPartUpdate {\n");
@@ -372,30 +372,30 @@ public class ModelPartUpdate : IEquatable<ModelPartUpdate>, IValidatableObject
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelPartUpdate);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

@@ -22,73 +22,73 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class InvoiceIdBookAmountBody : IEquatable<InvoiceIdBookAmountBody>, IValidatableObject
 {
-    /// <summary>
-    ///     Define a type for the booking.&lt;br&gt;      The following type abbreviations are available (abbreviation &lt;-
-    ///     &gt; meaning).&lt;br&gt;      &lt;ul&gt;      &lt;li&gt;N &lt;-&gt; Normal booking / partial booking&lt;/li&gt;
-    ///     &lt;li&gt;CB &lt;-&gt; Reduced amount due to discount (skonto)&lt;/li&gt;      &lt;li&gt;CF &lt;-&gt;
-    ///     Reduced/Higher amount due to currency fluctuations&lt;/li&gt;      &lt;li&gt;O &lt;-&gt; Reduced/Higher amount due
-    ///     to other reasons&lt;/li&gt;      &lt;li&gt;OF &lt;-&gt; Higher amount due to reminder charges&lt;/li&gt;      &lt;
-    ///     li&gt;MTC &lt;-&gt; Reduced amount due to the monetary traffic costs&lt;/li&gt;      &lt;/ul&gt;
-    /// </summary>
-    /// <value>
-    ///     Define a type for the booking.&lt;br&gt;      The following type abbreviations are available (abbreviation &lt;-
-    ///     &gt; meaning).&lt;br&gt;      &lt;ul&gt;      &lt;li&gt;N &lt;-&gt; Normal booking / partial booking&lt;/li&gt;
-    ///     &lt;li&gt;CB &lt;-&gt; Reduced amount due to discount (skonto)&lt;/li&gt;      &lt;li&gt;CF &lt;-&gt;
-    ///     Reduced/Higher amount due to currency fluctuations&lt;/li&gt;      &lt;li&gt;O &lt;-&gt; Reduced/Higher amount due
-    ///     to other reasons&lt;/li&gt;      &lt;li&gt;OF &lt;-&gt; Higher amount due to reminder charges&lt;/li&gt;      &lt;
-    ///     li&gt;MTC &lt;-&gt; Reduced amount due to the monetary traffic costs&lt;/li&gt;      &lt;/ul&gt;
-    /// </value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Define a type for the booking.&lt;br&gt;      The following type abbreviations are available (abbreviation &lt;-
+	///     &gt; meaning).&lt;br&gt;      &lt;ul&gt;      &lt;li&gt;N &lt;-&gt; Normal booking / partial booking&lt;/li&gt;
+	///     &lt;li&gt;CB &lt;-&gt; Reduced amount due to discount (skonto)&lt;/li&gt;      &lt;li&gt;CF &lt;-&gt;
+	///     Reduced/Higher amount due to currency fluctuations&lt;/li&gt;      &lt;li&gt;O &lt;-&gt; Reduced/Higher amount due
+	///     to other reasons&lt;/li&gt;      &lt;li&gt;OF &lt;-&gt; Higher amount due to reminder charges&lt;/li&gt;      &lt;
+	///     li&gt;MTC &lt;-&gt; Reduced amount due to the monetary traffic costs&lt;/li&gt;      &lt;/ul&gt;
+	/// </summary>
+	/// <value>
+	///     Define a type for the booking.&lt;br&gt;      The following type abbreviations are available (abbreviation &lt;-
+	///     &gt; meaning).&lt;br&gt;      &lt;ul&gt;      &lt;li&gt;N &lt;-&gt; Normal booking / partial booking&lt;/li&gt;
+	///     &lt;li&gt;CB &lt;-&gt; Reduced amount due to discount (skonto)&lt;/li&gt;      &lt;li&gt;CF &lt;-&gt;
+	///     Reduced/Higher amount due to currency fluctuations&lt;/li&gt;      &lt;li&gt;O &lt;-&gt; Reduced/Higher amount due
+	///     to other reasons&lt;/li&gt;      &lt;li&gt;OF &lt;-&gt; Higher amount due to reminder charges&lt;/li&gt;      &lt;
+	///     li&gt;MTC &lt;-&gt; Reduced amount due to the monetary traffic costs&lt;/li&gt;      &lt;/ul&gt;
+	/// </value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum TypeEnum
 	{
-        /// <summary>
-        ///     Enum N for value: N
-        /// </summary>
-        [EnumMember(Value = "N")] N = 1,
+		/// <summary>
+		///     Enum N for value: N
+		/// </summary>
+		[EnumMember(Value = "N")] N = 1,
 
-        /// <summary>
-        ///     Enum CB for value: CB
-        /// </summary>
-        [EnumMember(Value = "CB")] CB = 2,
+		/// <summary>
+		///     Enum CB for value: CB
+		/// </summary>
+		[EnumMember(Value = "CB")] CB = 2,
 
-        /// <summary>
-        ///     Enum CF for value: CF
-        /// </summary>
-        [EnumMember(Value = "CF")] CF = 3,
+		/// <summary>
+		///     Enum CF for value: CF
+		/// </summary>
+		[EnumMember(Value = "CF")] CF = 3,
 
-        /// <summary>
-        ///     Enum O for value: O
-        /// </summary>
-        [EnumMember(Value = "O")] O = 4,
+		/// <summary>
+		///     Enum O for value: O
+		/// </summary>
+		[EnumMember(Value = "O")] O = 4,
 
-        /// <summary>
-        ///     Enum OF for value: OF
-        /// </summary>
-        [EnumMember(Value = "OF")] OF = 5,
+		/// <summary>
+		///     Enum OF for value: OF
+		/// </summary>
+		[EnumMember(Value = "OF")] OF = 5,
 
-        /// <summary>
-        ///     Enum MTC for value: MTC
-        /// </summary>
-        [EnumMember(Value = "MTC")] MTC = 6
+		/// <summary>
+		///     Enum MTC for value: MTC
+		/// </summary>
+		[EnumMember(Value = "MTC")] MTC = 6
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="InvoiceIdBookAmountBody" /> class.
-    /// </summary>
-    /// <param name="amount">Amount which should be booked. Can also be a partial amount. (required).</param>
-    /// <param name="date">The booking date. Most likely the current date. (required).</param>
-    /// <param name="type">
-    ///     Define a type for the booking.&lt;br&gt;      The following type abbreviations are available
-    ///     (abbreviation &lt;-&gt; meaning).&lt;br&gt;      &lt;ul&gt;      &lt;li&gt;N &lt;-&gt; Normal booking / partial
-    ///     booking&lt;/li&gt;      &lt;li&gt;CB &lt;-&gt; Reduced amount due to discount (skonto)&lt;/li&gt;      &lt;li&gt;CF
-    ///     &lt;-&gt; Reduced/Higher amount due to currency fluctuations&lt;/li&gt;      &lt;li&gt;O &lt;-&gt; Reduced/Higher
-    ///     amount due to other reasons&lt;/li&gt;      &lt;li&gt;OF &lt;-&gt; Higher amount due to reminder charges&lt;/li&gt;
-    ///     &lt;li&gt;MTC &lt;-&gt; Reduced amount due to the monetary traffic costs&lt;/li&gt;      &lt;/ul&gt; (required).
-    /// </param>
-    /// <param name="checkAccount">checkAccount (required).</param>
-    /// <param name="checkAccountTransaction">checkAccountTransaction.</param>
-    /// <param name="createFeed">Determines if a feed is created for the booking process..</param>
-    public InvoiceIdBookAmountBody(decimal? amount = default, int? date = default, TypeEnum type = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="InvoiceIdBookAmountBody" /> class.
+	/// </summary>
+	/// <param name="amount">Amount which should be booked. Can also be a partial amount. (required).</param>
+	/// <param name="date">The booking date. Most likely the current date. (required).</param>
+	/// <param name="type">
+	///     Define a type for the booking.&lt;br&gt;      The following type abbreviations are available
+	///     (abbreviation &lt;-&gt; meaning).&lt;br&gt;      &lt;ul&gt;      &lt;li&gt;N &lt;-&gt; Normal booking / partial
+	///     booking&lt;/li&gt;      &lt;li&gt;CB &lt;-&gt; Reduced amount due to discount (skonto)&lt;/li&gt;      &lt;li&gt;CF
+	///     &lt;-&gt; Reduced/Higher amount due to currency fluctuations&lt;/li&gt;      &lt;li&gt;O &lt;-&gt; Reduced/Higher
+	///     amount due to other reasons&lt;/li&gt;      &lt;li&gt;OF &lt;-&gt; Higher amount due to reminder charges&lt;/li&gt;
+	///     &lt;li&gt;MTC &lt;-&gt; Reduced amount due to the monetary traffic costs&lt;/li&gt;      &lt;/ul&gt; (required).
+	/// </param>
+	/// <param name="checkAccount">checkAccount (required).</param>
+	/// <param name="checkAccountTransaction">checkAccountTransaction.</param>
+	/// <param name="createFeed">Determines if a feed is created for the booking process..</param>
+	public InvoiceIdBookAmountBody(decimal? amount = default, int? date = default, TypeEnum type = default,
 		VouchervoucherIdbookAmountCheckAccount checkAccount = default,
 		InvoiceinvoiceIdbookAmountCheckAccountTransaction checkAccountTransaction = default, bool? createFeed = default)
 	{
@@ -116,66 +116,66 @@ public class InvoiceIdBookAmountBody : IEquatable<InvoiceIdBookAmountBody>, IVal
 		CreateFeed = createFeed;
 	}
 
-    /// <summary>
-    ///     Define a type for the booking.&lt;br&gt;      The following type abbreviations are available (abbreviation &lt;-
-    ///     &gt; meaning).&lt;br&gt;      &lt;ul&gt;      &lt;li&gt;N &lt;-&gt; Normal booking / partial booking&lt;/li&gt;
-    ///     &lt;li&gt;CB &lt;-&gt; Reduced amount due to discount (skonto)&lt;/li&gt;      &lt;li&gt;CF &lt;-&gt;
-    ///     Reduced/Higher amount due to currency fluctuations&lt;/li&gt;      &lt;li&gt;O &lt;-&gt; Reduced/Higher amount due
-    ///     to other reasons&lt;/li&gt;      &lt;li&gt;OF &lt;-&gt; Higher amount due to reminder charges&lt;/li&gt;      &lt;
-    ///     li&gt;MTC &lt;-&gt; Reduced amount due to the monetary traffic costs&lt;/li&gt;      &lt;/ul&gt;
-    /// </summary>
-    /// <value>
-    ///     Define a type for the booking.&lt;br&gt;      The following type abbreviations are available (abbreviation &lt;-
-    ///     &gt; meaning).&lt;br&gt;      &lt;ul&gt;      &lt;li&gt;N &lt;-&gt; Normal booking / partial booking&lt;/li&gt;
-    ///     &lt;li&gt;CB &lt;-&gt; Reduced amount due to discount (skonto)&lt;/li&gt;      &lt;li&gt;CF &lt;-&gt;
-    ///     Reduced/Higher amount due to currency fluctuations&lt;/li&gt;      &lt;li&gt;O &lt;-&gt; Reduced/Higher amount due
-    ///     to other reasons&lt;/li&gt;      &lt;li&gt;OF &lt;-&gt; Higher amount due to reminder charges&lt;/li&gt;      &lt;
-    ///     li&gt;MTC &lt;-&gt; Reduced amount due to the monetary traffic costs&lt;/li&gt;      &lt;/ul&gt;
-    /// </value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+	/// <summary>
+	///     Define a type for the booking.&lt;br&gt;      The following type abbreviations are available (abbreviation &lt;-
+	///     &gt; meaning).&lt;br&gt;      &lt;ul&gt;      &lt;li&gt;N &lt;-&gt; Normal booking / partial booking&lt;/li&gt;
+	///     &lt;li&gt;CB &lt;-&gt; Reduced amount due to discount (skonto)&lt;/li&gt;      &lt;li&gt;CF &lt;-&gt;
+	///     Reduced/Higher amount due to currency fluctuations&lt;/li&gt;      &lt;li&gt;O &lt;-&gt; Reduced/Higher amount due
+	///     to other reasons&lt;/li&gt;      &lt;li&gt;OF &lt;-&gt; Higher amount due to reminder charges&lt;/li&gt;      &lt;
+	///     li&gt;MTC &lt;-&gt; Reduced amount due to the monetary traffic costs&lt;/li&gt;      &lt;/ul&gt;
+	/// </summary>
+	/// <value>
+	///     Define a type for the booking.&lt;br&gt;      The following type abbreviations are available (abbreviation &lt;-
+	///     &gt; meaning).&lt;br&gt;      &lt;ul&gt;      &lt;li&gt;N &lt;-&gt; Normal booking / partial booking&lt;/li&gt;
+	///     &lt;li&gt;CB &lt;-&gt; Reduced amount due to discount (skonto)&lt;/li&gt;      &lt;li&gt;CF &lt;-&gt;
+	///     Reduced/Higher amount due to currency fluctuations&lt;/li&gt;      &lt;li&gt;O &lt;-&gt; Reduced/Higher amount due
+	///     to other reasons&lt;/li&gt;      &lt;li&gt;OF &lt;-&gt; Higher amount due to reminder charges&lt;/li&gt;      &lt;
+	///     li&gt;MTC &lt;-&gt; Reduced amount due to the monetary traffic costs&lt;/li&gt;      &lt;/ul&gt;
+	/// </value>
+	[DataMember(Name = "type", EmitDefaultValue = false)]
 	public TypeEnum Type { get; set; }
 
-    /// <summary>
-    ///     Amount which should be booked. Can also be a partial amount.
-    /// </summary>
-    /// <value>Amount which should be booked. Can also be a partial amount.</value>
-    [DataMember(Name = "amount", EmitDefaultValue = false)]
+	/// <summary>
+	///     Amount which should be booked. Can also be a partial amount.
+	/// </summary>
+	/// <value>Amount which should be booked. Can also be a partial amount.</value>
+	[DataMember(Name = "amount", EmitDefaultValue = false)]
 	public decimal? Amount { get; set; }
 
-    /// <summary>
-    ///     The booking date. Most likely the current date.
-    /// </summary>
-    /// <value>The booking date. Most likely the current date.</value>
-    [DataMember(Name = "date", EmitDefaultValue = false)]
+	/// <summary>
+	///     The booking date. Most likely the current date.
+	/// </summary>
+	/// <value>The booking date. Most likely the current date.</value>
+	[DataMember(Name = "date", EmitDefaultValue = false)]
 	public int? Date { get; set; }
 
 
-    /// <summary>
-    ///     Gets or Sets CheckAccount
-    /// </summary>
-    [DataMember(Name = "checkAccount", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets CheckAccount
+	/// </summary>
+	[DataMember(Name = "checkAccount", EmitDefaultValue = false)]
 	public VouchervoucherIdbookAmountCheckAccount CheckAccount { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets CheckAccountTransaction
-    /// </summary>
-    [DataMember(Name = "checkAccountTransaction", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets CheckAccountTransaction
+	/// </summary>
+	[DataMember(Name = "checkAccountTransaction", EmitDefaultValue = false)]
 	public InvoiceinvoiceIdbookAmountCheckAccountTransaction CheckAccountTransaction { get; set; }
 
-    /// <summary>
-    ///     Determines if a feed is created for the booking process.
-    /// </summary>
-    /// <value>Determines if a feed is created for the booking process.</value>
-    [DataMember(Name = "createFeed", EmitDefaultValue = false)]
+	/// <summary>
+	///     Determines if a feed is created for the booking process.
+	/// </summary>
+	/// <value>Determines if a feed is created for the booking process.</value>
+	[DataMember(Name = "createFeed", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? CreateFeed { get; set; }
 
-    /// <summary>
-    ///     Returns true if InvoiceIdBookAmountBody instances are equal
-    /// </summary>
-    /// <param name="input">Instance of InvoiceIdBookAmountBody to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(InvoiceIdBookAmountBody input)
+	/// <summary>
+	///     Returns true if InvoiceIdBookAmountBody instances are equal
+	/// </summary>
+	/// <param name="input">Instance of InvoiceIdBookAmountBody to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(InvoiceIdBookAmountBody input)
 	{
 		if (input == null)
 			return false;
@@ -213,21 +213,21 @@ public class InvoiceIdBookAmountBody : IEquatable<InvoiceIdBookAmountBody>, IVal
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class InvoiceIdBookAmountBody {\n");
@@ -241,30 +241,30 @@ public class InvoiceIdBookAmountBody : IEquatable<InvoiceIdBookAmountBody>, IVal
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as InvoiceIdBookAmountBody);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

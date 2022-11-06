@@ -22,35 +22,35 @@ public class OrderPosApi : IOrderPosApi
 {
 	private ExceptionFactory _exceptionFactory = (name, response) => null;
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="OrderPosApi" /> class.
-    /// </summary>
-    /// <returns></returns>
-    public OrderPosApi(string basePath)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="OrderPosApi" /> class.
+	/// </summary>
+	/// <returns></returns>
+	public OrderPosApi(string basePath)
 	{
 		Configuration = new Configuration { BasePath = basePath };
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="OrderPosApi" /> class
-    /// </summary>
-    /// <returns></returns>
-    public OrderPosApi()
+	/// <summary>
+	///     Initializes a new instance of the <see cref="OrderPosApi" /> class
+	/// </summary>
+	/// <returns></returns>
+	public OrderPosApi()
 	{
 		Configuration = Configuration.Default;
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="OrderPosApi" /> class
-    ///     using Configuration object
-    /// </summary>
-    /// <param name="configuration">An instance of Configuration</param>
-    /// <returns></returns>
-    public OrderPosApi(Configuration configuration = null)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="OrderPosApi" /> class
+	///     using Configuration object
+	/// </summary>
+	/// <param name="configuration">An instance of Configuration</param>
+	/// <returns></returns>
+	public OrderPosApi(Configuration configuration = null)
 	{
 		if (configuration == null) // use the default one in Configuration
 			Configuration = Configuration.Default;
@@ -60,25 +60,25 @@ public class OrderPosApi : IOrderPosApi
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Gets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    public string GetBasePath()
+	/// <summary>
+	///     Gets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	public string GetBasePath()
 	{
 		return Configuration.ApiClient.RestClient.BaseUrl.ToString();
 	}
 
-    /// <summary>
-    ///     Gets or sets the configuration object
-    /// </summary>
-    /// <value>An instance of the Configuration</value>
-    public Configuration Configuration { get; set; }
+	/// <summary>
+	///     Gets or sets the configuration object
+	/// </summary>
+	/// <value>An instance of the Configuration</value>
+	public Configuration Configuration { get; set; }
 
-    /// <summary>
-    ///     Provides a factory method hook for the creation of exceptions.
-    /// </summary>
-    public ExceptionFactory ExceptionFactory
+	/// <summary>
+	///     Provides a factory method hook for the creation of exceptions.
+	/// </summary>
+	public ExceptionFactory ExceptionFactory
 	{
 		get
 		{
@@ -89,25 +89,25 @@ public class OrderPosApi : IOrderPosApi
 		set => _exceptionFactory = value;
 	}
 
-    /// <summary>
-    ///     Deletes an order Position
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderPosId">Id of order position resource to delete</param>
-    /// <returns>InlineResponse2003</returns>
-    public InlineResponse2003 DeleteOrderPos(int? orderPosId)
+	/// <summary>
+	///     Deletes an order Position
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderPosId">Id of order position resource to delete</param>
+	/// <returns>InlineResponse2003</returns>
+	public InlineResponse2003 DeleteOrderPos(int? orderPosId)
 	{
 		var localVarResponse = DeleteOrderPosWithHttpInfo(orderPosId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Deletes an order Position
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderPosId">Id of order position resource to delete</param>
-    /// <returns>ApiResponse of InlineResponse2003</returns>
-    public ApiResponse<InlineResponse2003> DeleteOrderPosWithHttpInfo(int? orderPosId)
+	/// <summary>
+	///     Deletes an order Position
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderPosId">Id of order position resource to delete</param>
+	/// <returns>ApiResponse of InlineResponse2003</returns>
+	public ApiResponse<InlineResponse2003> DeleteOrderPosWithHttpInfo(int? orderPosId)
 	{
 		// verify the required parameter 'orderPosId' is set
 		if (orderPosId == null)
@@ -163,25 +163,25 @@ public class OrderPosApi : IOrderPosApi
 			(InlineResponse2003)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2003)));
 	}
 
-    /// <summary>
-    ///     Deletes an order Position
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderPosId">Id of order position resource to delete</param>
-    /// <returns>Task of InlineResponse2003</returns>
-    public async Task<InlineResponse2003> DeleteOrderPosAsync(int? orderPosId)
+	/// <summary>
+	///     Deletes an order Position
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderPosId">Id of order position resource to delete</param>
+	/// <returns>Task of InlineResponse2003</returns>
+	public async Task<InlineResponse2003> DeleteOrderPosAsync(int? orderPosId)
 	{
 		var localVarResponse = await DeleteOrderPosAsyncWithHttpInfo(orderPosId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Deletes an order Position
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderPosId">Id of order position resource to delete</param>
-    /// <returns>Task of ApiResponse (InlineResponse2003)</returns>
-    public async Task<ApiResponse<InlineResponse2003>> DeleteOrderPosAsyncWithHttpInfo(int? orderPosId)
+	/// <summary>
+	///     Deletes an order Position
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderPosId">Id of order position resource to delete</param>
+	/// <returns>Task of ApiResponse (InlineResponse2003)</returns>
+	public async Task<ApiResponse<InlineResponse2003>> DeleteOrderPosAsyncWithHttpInfo(int? orderPosId)
 	{
 		// verify the required parameter 'orderPosId' is set
 		if (orderPosId == null)
@@ -237,25 +237,25 @@ public class OrderPosApi : IOrderPosApi
 			(InlineResponse2003)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2003)));
 	}
 
-    /// <summary>
-    ///     Find order position by ID Returns a single order position
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderPosId">ID of order position to return</param>
-    /// <returns>InlineResponse2007</returns>
-    public InlineResponse2007 GetOrderPositionById(int? orderPosId)
+	/// <summary>
+	///     Find order position by ID Returns a single order position
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderPosId">ID of order position to return</param>
+	/// <returns>InlineResponse2007</returns>
+	public InlineResponse2007 GetOrderPositionById(int? orderPosId)
 	{
 		var localVarResponse = GetOrderPositionByIdWithHttpInfo(orderPosId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find order position by ID Returns a single order position
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderPosId">ID of order position to return</param>
-    /// <returns>ApiResponse of InlineResponse2007</returns>
-    public ApiResponse<InlineResponse2007> GetOrderPositionByIdWithHttpInfo(int? orderPosId)
+	/// <summary>
+	///     Find order position by ID Returns a single order position
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderPosId">ID of order position to return</param>
+	/// <returns>ApiResponse of InlineResponse2007</returns>
+	public ApiResponse<InlineResponse2007> GetOrderPositionByIdWithHttpInfo(int? orderPosId)
 	{
 		// verify the required parameter 'orderPosId' is set
 		if (orderPosId == null)
@@ -311,25 +311,25 @@ public class OrderPosApi : IOrderPosApi
 			(InlineResponse2007)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2007)));
 	}
 
-    /// <summary>
-    ///     Find order position by ID Returns a single order position
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderPosId">ID of order position to return</param>
-    /// <returns>Task of InlineResponse2007</returns>
-    public async Task<InlineResponse2007> GetOrderPositionByIdAsync(int? orderPosId)
+	/// <summary>
+	///     Find order position by ID Returns a single order position
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderPosId">ID of order position to return</param>
+	/// <returns>Task of InlineResponse2007</returns>
+	public async Task<InlineResponse2007> GetOrderPositionByIdAsync(int? orderPosId)
 	{
 		var localVarResponse = await GetOrderPositionByIdAsyncWithHttpInfo(orderPosId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find order position by ID Returns a single order position
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderPosId">ID of order position to return</param>
-    /// <returns>Task of ApiResponse (InlineResponse2007)</returns>
-    public async Task<ApiResponse<InlineResponse2007>> GetOrderPositionByIdAsyncWithHttpInfo(int? orderPosId)
+	/// <summary>
+	///     Find order position by ID Returns a single order position
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderPosId">ID of order position to return</param>
+	/// <returns>Task of ApiResponse (InlineResponse2007)</returns>
+	public async Task<ApiResponse<InlineResponse2007>> GetOrderPositionByIdAsyncWithHttpInfo(int? orderPosId)
 	{
 		// verify the required parameter 'orderPosId' is set
 		if (orderPosId == null)
@@ -385,39 +385,39 @@ public class OrderPosApi : IOrderPosApi
 			(InlineResponse2007)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2007)));
 	}
 
-    /// <summary>
-    ///     Retrieve order positions Retrieve all order positions depending on the filters defined in the query.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">
-    ///     Retrieve all order positions belonging to this order. Must be provided with voucher[objectName]
-    ///     (optional)
-    /// </param>
-    /// <param name="orderObjectName">
-    ///     Only required if order[id] was provided. &#x27;Order&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>InlineResponse2007</returns>
-    public InlineResponse2007 GetOrderPositions(int? orderId = null, string orderObjectName = null)
+	/// <summary>
+	///     Retrieve order positions Retrieve all order positions depending on the filters defined in the query.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">
+	///     Retrieve all order positions belonging to this order. Must be provided with voucher[objectName]
+	///     (optional)
+	/// </param>
+	/// <param name="orderObjectName">
+	///     Only required if order[id] was provided. &#x27;Order&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>InlineResponse2007</returns>
+	public InlineResponse2007 GetOrderPositions(int? orderId = null, string orderObjectName = null)
 	{
 		var localVarResponse = GetOrderPositionsWithHttpInfo(orderId, orderObjectName);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve order positions Retrieve all order positions depending on the filters defined in the query.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">
-    ///     Retrieve all order positions belonging to this order. Must be provided with voucher[objectName]
-    ///     (optional)
-    /// </param>
-    /// <param name="orderObjectName">
-    ///     Only required if order[id] was provided. &#x27;Order&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>ApiResponse of InlineResponse2007</returns>
-    public ApiResponse<InlineResponse2007> GetOrderPositionsWithHttpInfo(int? orderId = null,
+	/// <summary>
+	///     Retrieve order positions Retrieve all order positions depending on the filters defined in the query.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">
+	///     Retrieve all order positions belonging to this order. Must be provided with voucher[objectName]
+	///     (optional)
+	/// </param>
+	/// <param name="orderObjectName">
+	///     Only required if order[id] was provided. &#x27;Order&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>ApiResponse of InlineResponse2007</returns>
+	public ApiResponse<InlineResponse2007> GetOrderPositionsWithHttpInfo(int? orderId = null,
 		string orderObjectName = null)
 	{
 		var localVarPath = "/OrderPos";
@@ -473,39 +473,39 @@ public class OrderPosApi : IOrderPosApi
 			(InlineResponse2007)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2007)));
 	}
 
-    /// <summary>
-    ///     Retrieve order positions Retrieve all order positions depending on the filters defined in the query.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">
-    ///     Retrieve all order positions belonging to this order. Must be provided with voucher[objectName]
-    ///     (optional)
-    /// </param>
-    /// <param name="orderObjectName">
-    ///     Only required if order[id] was provided. &#x27;Order&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of InlineResponse2007</returns>
-    public async Task<InlineResponse2007> GetOrderPositionsAsync(int? orderId = null, string orderObjectName = null)
+	/// <summary>
+	///     Retrieve order positions Retrieve all order positions depending on the filters defined in the query.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">
+	///     Retrieve all order positions belonging to this order. Must be provided with voucher[objectName]
+	///     (optional)
+	/// </param>
+	/// <param name="orderObjectName">
+	///     Only required if order[id] was provided. &#x27;Order&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of InlineResponse2007</returns>
+	public async Task<InlineResponse2007> GetOrderPositionsAsync(int? orderId = null, string orderObjectName = null)
 	{
 		var localVarResponse = await GetOrderPositionsAsyncWithHttpInfo(orderId, orderObjectName);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve order positions Retrieve all order positions depending on the filters defined in the query.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">
-    ///     Retrieve all order positions belonging to this order. Must be provided with voucher[objectName]
-    ///     (optional)
-    /// </param>
-    /// <param name="orderObjectName">
-    ///     Only required if order[id] was provided. &#x27;Order&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of ApiResponse (InlineResponse2007)</returns>
-    public async Task<ApiResponse<InlineResponse2007>> GetOrderPositionsAsyncWithHttpInfo(int? orderId = null,
+	/// <summary>
+	///     Retrieve order positions Retrieve all order positions depending on the filters defined in the query.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">
+	///     Retrieve all order positions belonging to this order. Must be provided with voucher[objectName]
+	///     (optional)
+	/// </param>
+	/// <param name="orderObjectName">
+	///     Only required if order[id] was provided. &#x27;Order&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of ApiResponse (InlineResponse2007)</returns>
+	public async Task<ApiResponse<InlineResponse2007>> GetOrderPositionsAsyncWithHttpInfo(int? orderId = null,
 		string orderObjectName = null)
 	{
 		var localVarPath = "/OrderPos";
@@ -561,27 +561,27 @@ public class OrderPosApi : IOrderPosApi
 			(InlineResponse2007)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2007)));
 	}
 
-    /// <summary>
-    ///     Update an existing order position Update an order position
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderPosId">ID of order position to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>InlineResponse2007</returns>
-    public InlineResponse2007 UpdateOrderPosition(int? orderPosId, ModelOrderPosUpdate body = null)
+	/// <summary>
+	///     Update an existing order position Update an order position
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderPosId">ID of order position to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>InlineResponse2007</returns>
+	public InlineResponse2007 UpdateOrderPosition(int? orderPosId, ModelOrderPosUpdate body = null)
 	{
 		var localVarResponse = UpdateOrderPositionWithHttpInfo(orderPosId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update an existing order position Update an order position
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderPosId">ID of order position to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>ApiResponse of InlineResponse2007</returns>
-    public ApiResponse<InlineResponse2007> UpdateOrderPositionWithHttpInfo(int? orderPosId,
+	/// <summary>
+	///     Update an existing order position Update an order position
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderPosId">ID of order position to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>ApiResponse of InlineResponse2007</returns>
+	public ApiResponse<InlineResponse2007> UpdateOrderPositionWithHttpInfo(int? orderPosId,
 		ModelOrderPosUpdate body = null)
 	{
 		// verify the required parameter 'orderPosId' is set
@@ -643,27 +643,27 @@ public class OrderPosApi : IOrderPosApi
 			(InlineResponse2007)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2007)));
 	}
 
-    /// <summary>
-    ///     Update an existing order position Update an order position
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderPosId">ID of order position to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>Task of InlineResponse2007</returns>
-    public async Task<InlineResponse2007> UpdateOrderPositionAsync(int? orderPosId, ModelOrderPosUpdate body = null)
+	/// <summary>
+	///     Update an existing order position Update an order position
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderPosId">ID of order position to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>Task of InlineResponse2007</returns>
+	public async Task<InlineResponse2007> UpdateOrderPositionAsync(int? orderPosId, ModelOrderPosUpdate body = null)
 	{
 		var localVarResponse = await UpdateOrderPositionAsyncWithHttpInfo(orderPosId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update an existing order position Update an order position
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderPosId">ID of order position to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse2007)</returns>
-    public async Task<ApiResponse<InlineResponse2007>> UpdateOrderPositionAsyncWithHttpInfo(int? orderPosId,
+	/// <summary>
+	///     Update an existing order position Update an order position
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderPosId">ID of order position to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse2007)</returns>
+	public async Task<ApiResponse<InlineResponse2007>> UpdateOrderPositionAsyncWithHttpInfo(int? orderPosId,
 		ModelOrderPosUpdate body = null)
 	{
 		// verify the required parameter 'orderPosId' is set
@@ -725,34 +725,34 @@ public class OrderPosApi : IOrderPosApi
 			(InlineResponse2007)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2007)));
 	}
 
-    /// <summary>
-    ///     Sets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    [Obsolete(
+	/// <summary>
+	///     Sets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	[Obsolete(
 		"SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
 	public void SetBasePath(string basePath)
 	{
 		// do nothing
 	}
 
-    /// <summary>
-    ///     Gets the default header.
-    /// </summary>
-    /// <returns>Dictionary of HTTP header</returns>
-    [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
+	/// <summary>
+	///     Gets the default header.
+	/// </summary>
+	/// <returns>Dictionary of HTTP header</returns>
+	[Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
 	public IDictionary<string, string> DefaultHeader()
 	{
 		return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
 	}
 
-    /// <summary>
-    ///     Add default header.
-    /// </summary>
-    /// <param name="key">Header field name.</param>
-    /// <param name="value">Header field value.</param>
-    /// <returns></returns>
-    [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
+	/// <summary>
+	///     Add default header.
+	/// </summary>
+	/// <param name="key">Header field name.</param>
+	/// <param name="value">Header field value.</param>
+	/// <returns></returns>
+	[Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
 	public void AddDefaultHeader(string key, string value)
 	{
 		Configuration.AddDefaultHeader(key, value);

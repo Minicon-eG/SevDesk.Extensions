@@ -21,19 +21,19 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ExportinvoiceCsvFilter : IEquatable<ExportinvoiceCsvFilter>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ExportinvoiceCsvFilter" /> class.
-    /// </summary>
-    /// <param name="invoiceType">
-    ///     Type of invoices you want to export 1. RE - Rechnung 2. SR - Stornorechnung 3. TR -
-    ///     Teilrechnung 4. AR - Abschlagsrechnung 5. ER - Endrechnung 6. WKR - Wiederkehrende Rechnung 7. MA - Mahnung .
-    /// </param>
-    /// <param name="startDate">Start date of the invoice.</param>
-    /// <param name="endDate">End date of the invoice.</param>
-    /// <param name="contact">contact.</param>
-    /// <param name="startAmount">filters the invoices by amount.</param>
-    /// <param name="endAmount">filters the invoices by amount.</param>
-    public ExportinvoiceCsvFilter(List<string> invoiceType = default, DateTime? startDate = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ExportinvoiceCsvFilter" /> class.
+	/// </summary>
+	/// <param name="invoiceType">
+	///     Type of invoices you want to export 1. RE - Rechnung 2. SR - Stornorechnung 3. TR -
+	///     Teilrechnung 4. AR - Abschlagsrechnung 5. ER - Endrechnung 6. WKR - Wiederkehrende Rechnung 7. MA - Mahnung .
+	/// </param>
+	/// <param name="startDate">Start date of the invoice.</param>
+	/// <param name="endDate">End date of the invoice.</param>
+	/// <param name="contact">contact.</param>
+	/// <param name="startAmount">filters the invoices by amount.</param>
+	/// <param name="endAmount">filters the invoices by amount.</param>
+	public ExportinvoiceCsvFilter(List<string> invoiceType = default, DateTime? startDate = default,
 		DateTime? endDate = default, ExportinvoiceCsvFilterContact contact = default, int? startAmount = default,
 		int? endAmount = default)
 	{
@@ -45,57 +45,57 @@ public class ExportinvoiceCsvFilter : IEquatable<ExportinvoiceCsvFilter>, IValid
 		EndAmount = endAmount;
 	}
 
-    /// <summary>
-    ///     Type of invoices you want to export 1. RE - Rechnung 2. SR - Stornorechnung 3. TR - Teilrechnung 4. AR -
-    ///     Abschlagsrechnung 5. ER - Endrechnung 6. WKR - Wiederkehrende Rechnung 7. MA - Mahnung
-    /// </summary>
-    /// <value>
-    ///     Type of invoices you want to export 1. RE - Rechnung 2. SR - Stornorechnung 3. TR - Teilrechnung 4. AR -
-    ///     Abschlagsrechnung 5. ER - Endrechnung 6. WKR - Wiederkehrende Rechnung 7. MA - Mahnung
-    /// </value>
-    [DataMember(Name = "invoiceType", EmitDefaultValue = false)]
+	/// <summary>
+	///     Type of invoices you want to export 1. RE - Rechnung 2. SR - Stornorechnung 3. TR - Teilrechnung 4. AR -
+	///     Abschlagsrechnung 5. ER - Endrechnung 6. WKR - Wiederkehrende Rechnung 7. MA - Mahnung
+	/// </summary>
+	/// <value>
+	///     Type of invoices you want to export 1. RE - Rechnung 2. SR - Stornorechnung 3. TR - Teilrechnung 4. AR -
+	///     Abschlagsrechnung 5. ER - Endrechnung 6. WKR - Wiederkehrende Rechnung 7. MA - Mahnung
+	/// </value>
+	[DataMember(Name = "invoiceType", EmitDefaultValue = false)]
 	public List<string> InvoiceType { get; set; }
 
-    /// <summary>
-    ///     Start date of the invoice
-    /// </summary>
-    /// <value>Start date of the invoice</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Start date of the invoice
+	/// </summary>
+	/// <value>Start date of the invoice</value>
+	[DataMember(Name = "startDate", EmitDefaultValue = false)]
 	public DateTime? StartDate { get; set; }
 
-    /// <summary>
-    ///     End date of the invoice
-    /// </summary>
-    /// <value>End date of the invoice</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     End date of the invoice
+	/// </summary>
+	/// <value>End date of the invoice</value>
+	[DataMember(Name = "endDate", EmitDefaultValue = false)]
 	public DateTime? EndDate { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Contact
-    /// </summary>
-    [DataMember(Name = "contact", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Contact
+	/// </summary>
+	[DataMember(Name = "contact", EmitDefaultValue = false)]
 	public ExportinvoiceCsvFilterContact Contact { get; set; }
 
-    /// <summary>
-    ///     filters the invoices by amount
-    /// </summary>
-    /// <value>filters the invoices by amount</value>
-    [DataMember(Name = "startAmount", EmitDefaultValue = false)]
+	/// <summary>
+	///     filters the invoices by amount
+	/// </summary>
+	/// <value>filters the invoices by amount</value>
+	[DataMember(Name = "startAmount", EmitDefaultValue = false)]
 	public int? StartAmount { get; set; }
 
-    /// <summary>
-    ///     filters the invoices by amount
-    /// </summary>
-    /// <value>filters the invoices by amount</value>
-    [DataMember(Name = "endAmount", EmitDefaultValue = false)]
+	/// <summary>
+	///     filters the invoices by amount
+	/// </summary>
+	/// <value>filters the invoices by amount</value>
+	[DataMember(Name = "endAmount", EmitDefaultValue = false)]
 	public int? EndAmount { get; set; }
 
-    /// <summary>
-    ///     Returns true if ExportinvoiceCsvFilter instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ExportinvoiceCsvFilter to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ExportinvoiceCsvFilter input)
+	/// <summary>
+	///     Returns true if ExportinvoiceCsvFilter instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ExportinvoiceCsvFilter to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ExportinvoiceCsvFilter input)
 	{
 		if (input == null)
 			return false;
@@ -134,21 +134,21 @@ public class ExportinvoiceCsvFilter : IEquatable<ExportinvoiceCsvFilter>, IValid
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ExportinvoiceCsvFilter {\n");
@@ -162,30 +162,30 @@ public class ExportinvoiceCsvFilter : IEquatable<ExportinvoiceCsvFilter>, IValid
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ExportinvoiceCsvFilter);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

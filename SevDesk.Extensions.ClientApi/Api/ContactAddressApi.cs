@@ -22,35 +22,35 @@ public class ContactAddressApi : IContactAddressApi
 {
 	private ExceptionFactory _exceptionFactory = (name, response) => null;
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ContactAddressApi" /> class.
-    /// </summary>
-    /// <returns></returns>
-    public ContactAddressApi(string basePath)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ContactAddressApi" /> class.
+	/// </summary>
+	/// <returns></returns>
+	public ContactAddressApi(string basePath)
 	{
 		Configuration = new Configuration { BasePath = basePath };
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ContactAddressApi" /> class
-    /// </summary>
-    /// <returns></returns>
-    public ContactAddressApi()
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ContactAddressApi" /> class
+	/// </summary>
+	/// <returns></returns>
+	public ContactAddressApi()
 	{
 		Configuration = Configuration.Default;
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ContactAddressApi" /> class
-    ///     using Configuration object
-    /// </summary>
-    /// <param name="configuration">An instance of Configuration</param>
-    /// <returns></returns>
-    public ContactAddressApi(Configuration configuration = null)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ContactAddressApi" /> class
+	///     using Configuration object
+	/// </summary>
+	/// <param name="configuration">An instance of Configuration</param>
+	/// <returns></returns>
+	public ContactAddressApi(Configuration configuration = null)
 	{
 		if (configuration == null) // use the default one in Configuration
 			Configuration = Configuration.Default;
@@ -60,25 +60,25 @@ public class ContactAddressApi : IContactAddressApi
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Gets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    public string GetBasePath()
+	/// <summary>
+	///     Gets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	public string GetBasePath()
 	{
 		return Configuration.ApiClient.RestClient.BaseUrl.ToString();
 	}
 
-    /// <summary>
-    ///     Gets or sets the configuration object
-    /// </summary>
-    /// <value>An instance of the Configuration</value>
-    public Configuration Configuration { get; set; }
+	/// <summary>
+	///     Gets or sets the configuration object
+	/// </summary>
+	/// <value>An instance of the Configuration</value>
+	public Configuration Configuration { get; set; }
 
-    /// <summary>
-    ///     Provides a factory method hook for the creation of exceptions.
-    /// </summary>
-    public ExceptionFactory ExceptionFactory
+	/// <summary>
+	///     Provides a factory method hook for the creation of exceptions.
+	/// </summary>
+	public ExceptionFactory ExceptionFactory
 	{
 		get
 		{
@@ -89,25 +89,25 @@ public class ContactAddressApi : IContactAddressApi
 		set => _exceptionFactory = value;
 	}
 
-    /// <summary>
-    ///     Find contact address by ID Returns a single contact address
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactAddressId">ID of contact address to return</param>
-    /// <returns>InlineResponse20013</returns>
-    public InlineResponse20013 ContactAddressId(int? contactAddressId)
+	/// <summary>
+	///     Find contact address by ID Returns a single contact address
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactAddressId">ID of contact address to return</param>
+	/// <returns>InlineResponse20013</returns>
+	public InlineResponse20013 ContactAddressId(int? contactAddressId)
 	{
 		var localVarResponse = ContactAddressIdWithHttpInfo(contactAddressId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find contact address by ID Returns a single contact address
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactAddressId">ID of contact address to return</param>
-    /// <returns>ApiResponse of InlineResponse20013</returns>
-    public ApiResponse<InlineResponse20013> ContactAddressIdWithHttpInfo(int? contactAddressId)
+	/// <summary>
+	///     Find contact address by ID Returns a single contact address
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactAddressId">ID of contact address to return</param>
+	/// <returns>ApiResponse of InlineResponse20013</returns>
+	public ApiResponse<InlineResponse20013> ContactAddressIdWithHttpInfo(int? contactAddressId)
 	{
 		// verify the required parameter 'contactAddressId' is set
 		if (contactAddressId == null)
@@ -163,25 +163,25 @@ public class ContactAddressApi : IContactAddressApi
 			(InlineResponse20013)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20013)));
 	}
 
-    /// <summary>
-    ///     Find contact address by ID Returns a single contact address
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactAddressId">ID of contact address to return</param>
-    /// <returns>Task of InlineResponse20013</returns>
-    public async Task<InlineResponse20013> ContactAddressIdAsync(int? contactAddressId)
+	/// <summary>
+	///     Find contact address by ID Returns a single contact address
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactAddressId">ID of contact address to return</param>
+	/// <returns>Task of InlineResponse20013</returns>
+	public async Task<InlineResponse20013> ContactAddressIdAsync(int? contactAddressId)
 	{
 		var localVarResponse = await ContactAddressIdAsyncWithHttpInfo(contactAddressId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find contact address by ID Returns a single contact address
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactAddressId">ID of contact address to return</param>
-    /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
-    public async Task<ApiResponse<InlineResponse20013>> ContactAddressIdAsyncWithHttpInfo(int? contactAddressId)
+	/// <summary>
+	///     Find contact address by ID Returns a single contact address
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactAddressId">ID of contact address to return</param>
+	/// <returns>Task of ApiResponse (InlineResponse20013)</returns>
+	public async Task<ApiResponse<InlineResponse20013>> ContactAddressIdAsyncWithHttpInfo(int? contactAddressId)
 	{
 		// verify the required parameter 'contactAddressId' is set
 		if (contactAddressId == null)
@@ -237,25 +237,25 @@ public class ContactAddressApi : IContactAddressApi
 			(InlineResponse20013)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20013)));
 	}
 
-    /// <summary>
-    ///     Create a new contact address Creates a new contact address.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">Creation data (optional)</param>
-    /// <returns>InlineResponse20013</returns>
-    public InlineResponse20013 CreateContactAddress(ModelContactAddress body = null)
+	/// <summary>
+	///     Create a new contact address Creates a new contact address.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">Creation data (optional)</param>
+	/// <returns>InlineResponse20013</returns>
+	public InlineResponse20013 CreateContactAddress(ModelContactAddress body = null)
 	{
 		var localVarResponse = CreateContactAddressWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new contact address Creates a new contact address.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">Creation data (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20013</returns>
-    public ApiResponse<InlineResponse20013> CreateContactAddressWithHttpInfo(ModelContactAddress body = null)
+	/// <summary>
+	///     Create a new contact address Creates a new contact address.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">Creation data (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20013</returns>
+	public ApiResponse<InlineResponse20013> CreateContactAddressWithHttpInfo(ModelContactAddress body = null)
 	{
 		var localVarPath = "/ContactAddress";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -308,25 +308,25 @@ public class ContactAddressApi : IContactAddressApi
 			(InlineResponse20013)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20013)));
 	}
 
-    /// <summary>
-    ///     Create a new contact address Creates a new contact address.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">Creation data (optional)</param>
-    /// <returns>Task of InlineResponse20013</returns>
-    public async Task<InlineResponse20013> CreateContactAddressAsync(ModelContactAddress body = null)
+	/// <summary>
+	///     Create a new contact address Creates a new contact address.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">Creation data (optional)</param>
+	/// <returns>Task of InlineResponse20013</returns>
+	public async Task<InlineResponse20013> CreateContactAddressAsync(ModelContactAddress body = null)
 	{
 		var localVarResponse = await CreateContactAddressAsyncWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new contact address Creates a new contact address.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">Creation data (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
-    public async Task<ApiResponse<InlineResponse20013>> CreateContactAddressAsyncWithHttpInfo(
+	/// <summary>
+	///     Create a new contact address Creates a new contact address.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">Creation data (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20013)</returns>
+	public async Task<ApiResponse<InlineResponse20013>> CreateContactAddressAsyncWithHttpInfo(
 		ModelContactAddress body = null)
 	{
 		var localVarPath = "/ContactAddress";
@@ -380,25 +380,25 @@ public class ContactAddressApi : IContactAddressApi
 			(InlineResponse20013)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20013)));
 	}
 
-    /// <summary>
-    ///     Deletes a contact address
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactAddressId">Id of contact address resource to delete</param>
-    /// <returns>InlineResponse2003</returns>
-    public InlineResponse2003 DeleteContactAddress(int? contactAddressId)
+	/// <summary>
+	///     Deletes a contact address
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactAddressId">Id of contact address resource to delete</param>
+	/// <returns>InlineResponse2003</returns>
+	public InlineResponse2003 DeleteContactAddress(int? contactAddressId)
 	{
 		var localVarResponse = DeleteContactAddressWithHttpInfo(contactAddressId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Deletes a contact address
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactAddressId">Id of contact address resource to delete</param>
-    /// <returns>ApiResponse of InlineResponse2003</returns>
-    public ApiResponse<InlineResponse2003> DeleteContactAddressWithHttpInfo(int? contactAddressId)
+	/// <summary>
+	///     Deletes a contact address
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactAddressId">Id of contact address resource to delete</param>
+	/// <returns>ApiResponse of InlineResponse2003</returns>
+	public ApiResponse<InlineResponse2003> DeleteContactAddressWithHttpInfo(int? contactAddressId)
 	{
 		// verify the required parameter 'contactAddressId' is set
 		if (contactAddressId == null)
@@ -454,25 +454,25 @@ public class ContactAddressApi : IContactAddressApi
 			(InlineResponse2003)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2003)));
 	}
 
-    /// <summary>
-    ///     Deletes a contact address
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactAddressId">Id of contact address resource to delete</param>
-    /// <returns>Task of InlineResponse2003</returns>
-    public async Task<InlineResponse2003> DeleteContactAddressAsync(int? contactAddressId)
+	/// <summary>
+	///     Deletes a contact address
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactAddressId">Id of contact address resource to delete</param>
+	/// <returns>Task of InlineResponse2003</returns>
+	public async Task<InlineResponse2003> DeleteContactAddressAsync(int? contactAddressId)
 	{
 		var localVarResponse = await DeleteContactAddressAsyncWithHttpInfo(contactAddressId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Deletes a contact address
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactAddressId">Id of contact address resource to delete</param>
-    /// <returns>Task of ApiResponse (InlineResponse2003)</returns>
-    public async Task<ApiResponse<InlineResponse2003>> DeleteContactAddressAsyncWithHttpInfo(int? contactAddressId)
+	/// <summary>
+	///     Deletes a contact address
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactAddressId">Id of contact address resource to delete</param>
+	/// <returns>Task of ApiResponse (InlineResponse2003)</returns>
+	public async Task<ApiResponse<InlineResponse2003>> DeleteContactAddressAsyncWithHttpInfo(int? contactAddressId)
 	{
 		// verify the required parameter 'contactAddressId' is set
 		if (contactAddressId == null)
@@ -528,23 +528,23 @@ public class ContactAddressApi : IContactAddressApi
 			(InlineResponse2003)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2003)));
 	}
 
-    /// <summary>
-    ///     Retrieve contact addresses Retrieve all contact addresses
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>InlineResponse20013</returns>
-    public InlineResponse20013 GetContactAddresses()
+	/// <summary>
+	///     Retrieve contact addresses Retrieve all contact addresses
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>InlineResponse20013</returns>
+	public InlineResponse20013 GetContactAddresses()
 	{
 		var localVarResponse = GetContactAddressesWithHttpInfo();
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve contact addresses Retrieve all contact addresses
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>ApiResponse of InlineResponse20013</returns>
-    public ApiResponse<InlineResponse20013> GetContactAddressesWithHttpInfo()
+	/// <summary>
+	///     Retrieve contact addresses Retrieve all contact addresses
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>ApiResponse of InlineResponse20013</returns>
+	public ApiResponse<InlineResponse20013> GetContactAddressesWithHttpInfo()
 	{
 		var localVarPath = "/ContactAddress";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -592,23 +592,23 @@ public class ContactAddressApi : IContactAddressApi
 			(InlineResponse20013)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20013)));
 	}
 
-    /// <summary>
-    ///     Retrieve contact addresses Retrieve all contact addresses
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>Task of InlineResponse20013</returns>
-    public async Task<InlineResponse20013> GetContactAddressesAsync()
+	/// <summary>
+	///     Retrieve contact addresses Retrieve all contact addresses
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>Task of InlineResponse20013</returns>
+	public async Task<InlineResponse20013> GetContactAddressesAsync()
 	{
 		var localVarResponse = await GetContactAddressesAsyncWithHttpInfo();
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve contact addresses Retrieve all contact addresses
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
-    public async Task<ApiResponse<InlineResponse20013>> GetContactAddressesAsyncWithHttpInfo()
+	/// <summary>
+	///     Retrieve contact addresses Retrieve all contact addresses
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>Task of ApiResponse (InlineResponse20013)</returns>
+	public async Task<ApiResponse<InlineResponse20013>> GetContactAddressesAsyncWithHttpInfo()
 	{
 		var localVarPath = "/ContactAddress";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -656,27 +656,27 @@ public class ContactAddressApi : IContactAddressApi
 			(InlineResponse20013)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20013)));
 	}
 
-    /// <summary>
-    ///     update a existing contact address update a existing contact address.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactAddressId">ID of contact address to return</param>
-    /// <param name="body">Creation data (optional)</param>
-    /// <returns>InlineResponse20013</returns>
-    public InlineResponse20013 UpdateContactAddress(int? contactAddressId, ModelContactAddressUpdate body = null)
+	/// <summary>
+	///     update a existing contact address update a existing contact address.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactAddressId">ID of contact address to return</param>
+	/// <param name="body">Creation data (optional)</param>
+	/// <returns>InlineResponse20013</returns>
+	public InlineResponse20013 UpdateContactAddress(int? contactAddressId, ModelContactAddressUpdate body = null)
 	{
 		var localVarResponse = UpdateContactAddressWithHttpInfo(contactAddressId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     update a existing contact address update a existing contact address.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactAddressId">ID of contact address to return</param>
-    /// <param name="body">Creation data (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20013</returns>
-    public ApiResponse<InlineResponse20013> UpdateContactAddressWithHttpInfo(int? contactAddressId,
+	/// <summary>
+	///     update a existing contact address update a existing contact address.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactAddressId">ID of contact address to return</param>
+	/// <param name="body">Creation data (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20013</returns>
+	public ApiResponse<InlineResponse20013> UpdateContactAddressWithHttpInfo(int? contactAddressId,
 		ModelContactAddressUpdate body = null)
 	{
 		// verify the required parameter 'contactAddressId' is set
@@ -738,28 +738,28 @@ public class ContactAddressApi : IContactAddressApi
 			(InlineResponse20013)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20013)));
 	}
 
-    /// <summary>
-    ///     update a existing contact address update a existing contact address.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactAddressId">ID of contact address to return</param>
-    /// <param name="body">Creation data (optional)</param>
-    /// <returns>Task of InlineResponse20013</returns>
-    public async Task<InlineResponse20013> UpdateContactAddressAsync(int? contactAddressId,
+	/// <summary>
+	///     update a existing contact address update a existing contact address.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactAddressId">ID of contact address to return</param>
+	/// <param name="body">Creation data (optional)</param>
+	/// <returns>Task of InlineResponse20013</returns>
+	public async Task<InlineResponse20013> UpdateContactAddressAsync(int? contactAddressId,
 		ModelContactAddressUpdate body = null)
 	{
 		var localVarResponse = await UpdateContactAddressAsyncWithHttpInfo(contactAddressId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     update a existing contact address update a existing contact address.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactAddressId">ID of contact address to return</param>
-    /// <param name="body">Creation data (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
-    public async Task<ApiResponse<InlineResponse20013>> UpdateContactAddressAsyncWithHttpInfo(int? contactAddressId,
+	/// <summary>
+	///     update a existing contact address update a existing contact address.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactAddressId">ID of contact address to return</param>
+	/// <param name="body">Creation data (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20013)</returns>
+	public async Task<ApiResponse<InlineResponse20013>> UpdateContactAddressAsyncWithHttpInfo(int? contactAddressId,
 		ModelContactAddressUpdate body = null)
 	{
 		// verify the required parameter 'contactAddressId' is set
@@ -821,34 +821,34 @@ public class ContactAddressApi : IContactAddressApi
 			(InlineResponse20013)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20013)));
 	}
 
-    /// <summary>
-    ///     Sets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    [Obsolete(
+	/// <summary>
+	///     Sets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	[Obsolete(
 		"SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
 	public void SetBasePath(string basePath)
 	{
 		// do nothing
 	}
 
-    /// <summary>
-    ///     Gets the default header.
-    /// </summary>
-    /// <returns>Dictionary of HTTP header</returns>
-    [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
+	/// <summary>
+	///     Gets the default header.
+	/// </summary>
+	/// <returns>Dictionary of HTTP header</returns>
+	[Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
 	public IDictionary<string, string> DefaultHeader()
 	{
 		return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
 	}
 
-    /// <summary>
-    ///     Add default header.
-    /// </summary>
-    /// <param name="key">Header field name.</param>
-    /// <param name="value">Header field value.</param>
-    /// <returns></returns>
-    [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
+	/// <summary>
+	///     Add default header.
+	/// </summary>
+	/// <param name="key">Header field name.</param>
+	/// <param name="value">Header field value.</param>
+	/// <returns></returns>
+	[Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
 	public void AddDefaultHeader(string key, string value)
 	{
 		Configuration.AddDefaultHeader(key, value);

@@ -22,40 +22,40 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelCreateInvoiceFromOrder : IEquatable<ModelCreateInvoiceFromOrder>, IValidatableObject
 {
-    /// <summary>
-    ///     defines the type of amount
-    /// </summary>
-    /// <value>defines the type of amount</value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     defines the type of amount
+	/// </summary>
+	/// <value>defines the type of amount</value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum TypeEnum
 	{
-        /// <summary>
-        ///     Enum Percentage for value: percentage
-        /// </summary>
-        [EnumMember(Value = "percentage")] Percentage = 1,
+		/// <summary>
+		///     Enum Percentage for value: percentage
+		/// </summary>
+		[EnumMember(Value = "percentage")] Percentage = 1,
 
-        /// <summary>
-        ///     Enum Net for value: net
-        /// </summary>
-        [EnumMember(Value = "net")] Net = 2,
+		/// <summary>
+		///     Enum Net for value: net
+		/// </summary>
+		[EnumMember(Value = "net")] Net = 2,
 
-        /// <summary>
-        ///     Enum Gross for value: gross
-        /// </summary>
-        [EnumMember(Value = "gross")] Gross = 3
+		/// <summary>
+		///     Enum Gross for value: gross
+		/// </summary>
+		[EnumMember(Value = "gross")] Gross = 3
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelCreateInvoiceFromOrder" /> class.
-    /// </summary>
-    /// <param name="order">order (required).</param>
-    /// <param name="type">defines the type of amount.</param>
-    /// <param name="amount">Amount which has already been paid for this Invoice.</param>
-    /// <param name="partialType">
-    ///     defines the type of the invoice 1. RE - Schlussrechnung 2. TR - Teilrechnung 3. AR -
-    ///     Abschlagsrechnung.
-    /// </param>
-    public ModelCreateInvoiceFromOrder(ModelCreateInvoiceFromOrderOrder order = default, TypeEnum? type = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelCreateInvoiceFromOrder" /> class.
+	/// </summary>
+	/// <param name="order">order (required).</param>
+	/// <param name="type">defines the type of amount.</param>
+	/// <param name="amount">Amount which has already been paid for this Invoice.</param>
+	/// <param name="partialType">
+	///     defines the type of the invoice 1. RE - Schlussrechnung 2. TR - Teilrechnung 3. AR -
+	///     Abschlagsrechnung.
+	/// </param>
+	public ModelCreateInvoiceFromOrder(ModelCreateInvoiceFromOrderOrder order = default, TypeEnum? type = default,
 		decimal? amount = default, string partialType = default)
 	{
 		// to ensure "order" is required (not null)
@@ -68,40 +68,40 @@ public class ModelCreateInvoiceFromOrder : IEquatable<ModelCreateInvoiceFromOrde
 		PartialType = partialType;
 	}
 
-    /// <summary>
-    ///     defines the type of amount
-    /// </summary>
-    /// <value>defines the type of amount</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+	/// <summary>
+	///     defines the type of amount
+	/// </summary>
+	/// <value>defines the type of amount</value>
+	[DataMember(Name = "type", EmitDefaultValue = false)]
 	public TypeEnum? Type { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Order
-    /// </summary>
-    [DataMember(Name = "order", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Order
+	/// </summary>
+	[DataMember(Name = "order", EmitDefaultValue = false)]
 	public ModelCreateInvoiceFromOrderOrder Order { get; set; }
 
 
-    /// <summary>
-    ///     Amount which has already been paid for this Invoice
-    /// </summary>
-    /// <value>Amount which has already been paid for this Invoice</value>
-    [DataMember(Name = "amount", EmitDefaultValue = false)]
+	/// <summary>
+	///     Amount which has already been paid for this Invoice
+	/// </summary>
+	/// <value>Amount which has already been paid for this Invoice</value>
+	[DataMember(Name = "amount", EmitDefaultValue = false)]
 	public decimal? Amount { get; set; }
 
-    /// <summary>
-    ///     defines the type of the invoice 1. RE - Schlussrechnung 2. TR - Teilrechnung 3. AR - Abschlagsrechnung
-    /// </summary>
-    /// <value>defines the type of the invoice 1. RE - Schlussrechnung 2. TR - Teilrechnung 3. AR - Abschlagsrechnung</value>
-    [DataMember(Name = "partialType", EmitDefaultValue = false)]
+	/// <summary>
+	///     defines the type of the invoice 1. RE - Schlussrechnung 2. TR - Teilrechnung 3. AR - Abschlagsrechnung
+	/// </summary>
+	/// <value>defines the type of the invoice 1. RE - Schlussrechnung 2. TR - Teilrechnung 3. AR - Abschlagsrechnung</value>
+	[DataMember(Name = "partialType", EmitDefaultValue = false)]
 	public string PartialType { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelCreateInvoiceFromOrder instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelCreateInvoiceFromOrder to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelCreateInvoiceFromOrder input)
+	/// <summary>
+	///     Returns true if ModelCreateInvoiceFromOrder instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelCreateInvoiceFromOrder to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelCreateInvoiceFromOrder input)
 	{
 		if (input == null)
 			return false;
@@ -129,21 +129,21 @@ public class ModelCreateInvoiceFromOrder : IEquatable<ModelCreateInvoiceFromOrde
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelCreateInvoiceFromOrder {\n");
@@ -155,30 +155,30 @@ public class ModelCreateInvoiceFromOrder : IEquatable<ModelCreateInvoiceFromOrde
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelCreateInvoiceFromOrder);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

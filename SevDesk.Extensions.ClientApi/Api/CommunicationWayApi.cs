@@ -22,35 +22,35 @@ public class CommunicationWayApi : ICommunicationWayApi
 {
 	private ExceptionFactory _exceptionFactory = (name, response) => null;
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="CommunicationWayApi" /> class.
-    /// </summary>
-    /// <returns></returns>
-    public CommunicationWayApi(string basePath)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="CommunicationWayApi" /> class.
+	/// </summary>
+	/// <returns></returns>
+	public CommunicationWayApi(string basePath)
 	{
 		Configuration = new Configuration { BasePath = basePath };
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="CommunicationWayApi" /> class
-    /// </summary>
-    /// <returns></returns>
-    public CommunicationWayApi()
+	/// <summary>
+	///     Initializes a new instance of the <see cref="CommunicationWayApi" /> class
+	/// </summary>
+	/// <returns></returns>
+	public CommunicationWayApi()
 	{
 		Configuration = Configuration.Default;
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="CommunicationWayApi" /> class
-    ///     using Configuration object
-    /// </summary>
-    /// <param name="configuration">An instance of Configuration</param>
-    /// <returns></returns>
-    public CommunicationWayApi(Configuration configuration = null)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="CommunicationWayApi" /> class
+	///     using Configuration object
+	/// </summary>
+	/// <param name="configuration">An instance of Configuration</param>
+	/// <returns></returns>
+	public CommunicationWayApi(Configuration configuration = null)
 	{
 		if (configuration == null) // use the default one in Configuration
 			Configuration = Configuration.Default;
@@ -60,25 +60,25 @@ public class CommunicationWayApi : ICommunicationWayApi
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Gets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    public string GetBasePath()
+	/// <summary>
+	///     Gets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	public string GetBasePath()
 	{
 		return Configuration.ApiClient.RestClient.BaseUrl.ToString();
 	}
 
-    /// <summary>
-    ///     Gets or sets the configuration object
-    /// </summary>
-    /// <value>An instance of the Configuration</value>
-    public Configuration Configuration { get; set; }
+	/// <summary>
+	///     Gets or sets the configuration object
+	/// </summary>
+	/// <value>An instance of the Configuration</value>
+	public Configuration Configuration { get; set; }
 
-    /// <summary>
-    ///     Provides a factory method hook for the creation of exceptions.
-    /// </summary>
-    public ExceptionFactory ExceptionFactory
+	/// <summary>
+	///     Provides a factory method hook for the creation of exceptions.
+	/// </summary>
+	public ExceptionFactory ExceptionFactory
 	{
 		get
 		{
@@ -89,25 +89,25 @@ public class CommunicationWayApi : ICommunicationWayApi
 		set => _exceptionFactory = value;
 	}
 
-    /// <summary>
-    ///     Create a new contact communication way Creates a new contact communication way.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">Creation data (optional)</param>
-    /// <returns>InlineResponse20025</returns>
-    public InlineResponse20025 CreateCommunicationWay(ModelCommunicationWay body = null)
+	/// <summary>
+	///     Create a new contact communication way Creates a new contact communication way.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">Creation data (optional)</param>
+	/// <returns>InlineResponse20025</returns>
+	public InlineResponse20025 CreateCommunicationWay(ModelCommunicationWay body = null)
 	{
 		var localVarResponse = CreateCommunicationWayWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new contact communication way Creates a new contact communication way.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">Creation data (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20025</returns>
-    public ApiResponse<InlineResponse20025> CreateCommunicationWayWithHttpInfo(ModelCommunicationWay body = null)
+	/// <summary>
+	///     Create a new contact communication way Creates a new contact communication way.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">Creation data (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20025</returns>
+	public ApiResponse<InlineResponse20025> CreateCommunicationWayWithHttpInfo(ModelCommunicationWay body = null)
 	{
 		var localVarPath = "/CommunicationWay";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -160,25 +160,25 @@ public class CommunicationWayApi : ICommunicationWayApi
 			(InlineResponse20025)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20025)));
 	}
 
-    /// <summary>
-    ///     Create a new contact communication way Creates a new contact communication way.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">Creation data (optional)</param>
-    /// <returns>Task of InlineResponse20025</returns>
-    public async Task<InlineResponse20025> CreateCommunicationWayAsync(ModelCommunicationWay body = null)
+	/// <summary>
+	///     Create a new contact communication way Creates a new contact communication way.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">Creation data (optional)</param>
+	/// <returns>Task of InlineResponse20025</returns>
+	public async Task<InlineResponse20025> CreateCommunicationWayAsync(ModelCommunicationWay body = null)
 	{
 		var localVarResponse = await CreateCommunicationWayAsyncWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new contact communication way Creates a new contact communication way.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">Creation data (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20025)</returns>
-    public async Task<ApiResponse<InlineResponse20025>> CreateCommunicationWayAsyncWithHttpInfo(
+	/// <summary>
+	///     Create a new contact communication way Creates a new contact communication way.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">Creation data (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20025)</returns>
+	public async Task<ApiResponse<InlineResponse20025>> CreateCommunicationWayAsyncWithHttpInfo(
 		ModelCommunicationWay body = null)
 	{
 		var localVarPath = "/CommunicationWay";
@@ -232,25 +232,25 @@ public class CommunicationWayApi : ICommunicationWayApi
 			(InlineResponse20025)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20025)));
 	}
 
-    /// <summary>
-    ///     Deletes a communication way
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="communicationWayId">Id of communication way resource to delete</param>
-    /// <returns>InlineResponse2003</returns>
-    public InlineResponse2003 DeleteCommunicationWay(int? communicationWayId)
+	/// <summary>
+	///     Deletes a communication way
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="communicationWayId">Id of communication way resource to delete</param>
+	/// <returns>InlineResponse2003</returns>
+	public InlineResponse2003 DeleteCommunicationWay(int? communicationWayId)
 	{
 		var localVarResponse = DeleteCommunicationWayWithHttpInfo(communicationWayId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Deletes a communication way
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="communicationWayId">Id of communication way resource to delete</param>
-    /// <returns>ApiResponse of InlineResponse2003</returns>
-    public ApiResponse<InlineResponse2003> DeleteCommunicationWayWithHttpInfo(int? communicationWayId)
+	/// <summary>
+	///     Deletes a communication way
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="communicationWayId">Id of communication way resource to delete</param>
+	/// <returns>ApiResponse of InlineResponse2003</returns>
+	public ApiResponse<InlineResponse2003> DeleteCommunicationWayWithHttpInfo(int? communicationWayId)
 	{
 		// verify the required parameter 'communicationWayId' is set
 		if (communicationWayId == null)
@@ -306,25 +306,25 @@ public class CommunicationWayApi : ICommunicationWayApi
 			(InlineResponse2003)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2003)));
 	}
 
-    /// <summary>
-    ///     Deletes a communication way
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="communicationWayId">Id of communication way resource to delete</param>
-    /// <returns>Task of InlineResponse2003</returns>
-    public async Task<InlineResponse2003> DeleteCommunicationWayAsync(int? communicationWayId)
+	/// <summary>
+	///     Deletes a communication way
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="communicationWayId">Id of communication way resource to delete</param>
+	/// <returns>Task of InlineResponse2003</returns>
+	public async Task<InlineResponse2003> DeleteCommunicationWayAsync(int? communicationWayId)
 	{
 		var localVarResponse = await DeleteCommunicationWayAsyncWithHttpInfo(communicationWayId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Deletes a communication way
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="communicationWayId">Id of communication way resource to delete</param>
-    /// <returns>Task of ApiResponse (InlineResponse2003)</returns>
-    public async Task<ApiResponse<InlineResponse2003>> DeleteCommunicationWayAsyncWithHttpInfo(int? communicationWayId)
+	/// <summary>
+	///     Deletes a communication way
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="communicationWayId">Id of communication way resource to delete</param>
+	/// <returns>Task of ApiResponse (InlineResponse2003)</returns>
+	public async Task<ApiResponse<InlineResponse2003>> DeleteCommunicationWayAsyncWithHttpInfo(int? communicationWayId)
 	{
 		// verify the required parameter 'communicationWayId' is set
 		if (communicationWayId == null)
@@ -380,25 +380,25 @@ public class CommunicationWayApi : ICommunicationWayApi
 			(InlineResponse2003)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2003)));
 	}
 
-    /// <summary>
-    ///     Find communication way by ID Returns a single communication way
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="communicationWayId">ID of communication way to return</param>
-    /// <returns>InlineResponse20025</returns>
-    public InlineResponse20025 GetCommunicationWayById(int? communicationWayId)
+	/// <summary>
+	///     Find communication way by ID Returns a single communication way
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="communicationWayId">ID of communication way to return</param>
+	/// <returns>InlineResponse20025</returns>
+	public InlineResponse20025 GetCommunicationWayById(int? communicationWayId)
 	{
 		var localVarResponse = GetCommunicationWayByIdWithHttpInfo(communicationWayId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find communication way by ID Returns a single communication way
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="communicationWayId">ID of communication way to return</param>
-    /// <returns>ApiResponse of InlineResponse20025</returns>
-    public ApiResponse<InlineResponse20025> GetCommunicationWayByIdWithHttpInfo(int? communicationWayId)
+	/// <summary>
+	///     Find communication way by ID Returns a single communication way
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="communicationWayId">ID of communication way to return</param>
+	/// <returns>ApiResponse of InlineResponse20025</returns>
+	public ApiResponse<InlineResponse20025> GetCommunicationWayByIdWithHttpInfo(int? communicationWayId)
 	{
 		// verify the required parameter 'communicationWayId' is set
 		if (communicationWayId == null)
@@ -454,25 +454,25 @@ public class CommunicationWayApi : ICommunicationWayApi
 			(InlineResponse20025)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20025)));
 	}
 
-    /// <summary>
-    ///     Find communication way by ID Returns a single communication way
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="communicationWayId">ID of communication way to return</param>
-    /// <returns>Task of InlineResponse20025</returns>
-    public async Task<InlineResponse20025> GetCommunicationWayByIdAsync(int? communicationWayId)
+	/// <summary>
+	///     Find communication way by ID Returns a single communication way
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="communicationWayId">ID of communication way to return</param>
+	/// <returns>Task of InlineResponse20025</returns>
+	public async Task<InlineResponse20025> GetCommunicationWayByIdAsync(int? communicationWayId)
 	{
 		var localVarResponse = await GetCommunicationWayByIdAsyncWithHttpInfo(communicationWayId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find communication way by ID Returns a single communication way
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="communicationWayId">ID of communication way to return</param>
-    /// <returns>Task of ApiResponse (InlineResponse20025)</returns>
-    public async Task<ApiResponse<InlineResponse20025>> GetCommunicationWayByIdAsyncWithHttpInfo(
+	/// <summary>
+	///     Find communication way by ID Returns a single communication way
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="communicationWayId">ID of communication way to return</param>
+	/// <returns>Task of ApiResponse (InlineResponse20025)</returns>
+	public async Task<ApiResponse<InlineResponse20025>> GetCommunicationWayByIdAsyncWithHttpInfo(
 		int? communicationWayId)
 	{
 		// verify the required parameter 'communicationWayId' is set
@@ -529,23 +529,23 @@ public class CommunicationWayApi : ICommunicationWayApi
 			(InlineResponse20025)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20025)));
 	}
 
-    /// <summary>
-    ///     Retrieve communication way keys Returns all communication way keys.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>InlineResponse20016</returns>
-    public InlineResponse20016 GetCommunicationWayKeys()
+	/// <summary>
+	///     Retrieve communication way keys Returns all communication way keys.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>InlineResponse20016</returns>
+	public InlineResponse20016 GetCommunicationWayKeys()
 	{
 		var localVarResponse = GetCommunicationWayKeysWithHttpInfo();
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve communication way keys Returns all communication way keys.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>ApiResponse of InlineResponse20016</returns>
-    public ApiResponse<InlineResponse20016> GetCommunicationWayKeysWithHttpInfo()
+	/// <summary>
+	///     Retrieve communication way keys Returns all communication way keys.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>ApiResponse of InlineResponse20016</returns>
+	public ApiResponse<InlineResponse20016> GetCommunicationWayKeysWithHttpInfo()
 	{
 		var localVarPath = "/CommunicationWayKey";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -593,23 +593,23 @@ public class CommunicationWayApi : ICommunicationWayApi
 			(InlineResponse20016)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20016)));
 	}
 
-    /// <summary>
-    ///     Retrieve communication way keys Returns all communication way keys.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>Task of InlineResponse20016</returns>
-    public async Task<InlineResponse20016> GetCommunicationWayKeysAsync()
+	/// <summary>
+	///     Retrieve communication way keys Returns all communication way keys.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>Task of InlineResponse20016</returns>
+	public async Task<InlineResponse20016> GetCommunicationWayKeysAsync()
 	{
 		var localVarResponse = await GetCommunicationWayKeysAsyncWithHttpInfo();
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve communication way keys Returns all communication way keys.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
-    public async Task<ApiResponse<InlineResponse20016>> GetCommunicationWayKeysAsyncWithHttpInfo()
+	/// <summary>
+	///     Retrieve communication way keys Returns all communication way keys.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>Task of ApiResponse (InlineResponse20016)</returns>
+	public async Task<ApiResponse<InlineResponse20016>> GetCommunicationWayKeysAsyncWithHttpInfo()
 	{
 		var localVarPath = "/CommunicationWayKey";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -657,34 +657,34 @@ public class CommunicationWayApi : ICommunicationWayApi
 			(InlineResponse20016)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20016)));
 	}
 
-    /// <summary>
-    ///     Retrieve communication ways Returns all communication ways which have been added up until now. Filters can be
-    ///     added.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">ID of contact for which you want the communication ways. (optional)</param>
-    /// <param name="contactObjectName">Object name. Only needed if you also defined the ID of a contact. (optional)</param>
-    /// <param name="type">Type of the communication ways you want to get. (optional)</param>
-    /// <param name="main">Define if you only want the main communication way. (optional)</param>
-    /// <returns>InlineResponse20025</returns>
-    public InlineResponse20025 GetCommunicationWays(string contactId = null, string contactObjectName = null,
+	/// <summary>
+	///     Retrieve communication ways Returns all communication ways which have been added up until now. Filters can be
+	///     added.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">ID of contact for which you want the communication ways. (optional)</param>
+	/// <param name="contactObjectName">Object name. Only needed if you also defined the ID of a contact. (optional)</param>
+	/// <param name="type">Type of the communication ways you want to get. (optional)</param>
+	/// <param name="main">Define if you only want the main communication way. (optional)</param>
+	/// <returns>InlineResponse20025</returns>
+	public InlineResponse20025 GetCommunicationWays(string contactId = null, string contactObjectName = null,
 		string type = null, string main = null)
 	{
 		var localVarResponse = GetCommunicationWaysWithHttpInfo(contactId, contactObjectName, type, main);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve communication ways Returns all communication ways which have been added up until now. Filters can be
-    ///     added.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">ID of contact for which you want the communication ways. (optional)</param>
-    /// <param name="contactObjectName">Object name. Only needed if you also defined the ID of a contact. (optional)</param>
-    /// <param name="type">Type of the communication ways you want to get. (optional)</param>
-    /// <param name="main">Define if you only want the main communication way. (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20025</returns>
-    public ApiResponse<InlineResponse20025> GetCommunicationWaysWithHttpInfo(string contactId = null,
+	/// <summary>
+	///     Retrieve communication ways Returns all communication ways which have been added up until now. Filters can be
+	///     added.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">ID of contact for which you want the communication ways. (optional)</param>
+	/// <param name="contactObjectName">Object name. Only needed if you also defined the ID of a contact. (optional)</param>
+	/// <param name="type">Type of the communication ways you want to get. (optional)</param>
+	/// <param name="main">Define if you only want the main communication way. (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20025</returns>
+	public ApiResponse<InlineResponse20025> GetCommunicationWaysWithHttpInfo(string contactId = null,
 		string contactObjectName = null, string type = null, string main = null)
 	{
 		var localVarPath = "/CommunicationWay";
@@ -746,34 +746,34 @@ public class CommunicationWayApi : ICommunicationWayApi
 			(InlineResponse20025)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20025)));
 	}
 
-    /// <summary>
-    ///     Retrieve communication ways Returns all communication ways which have been added up until now. Filters can be
-    ///     added.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">ID of contact for which you want the communication ways. (optional)</param>
-    /// <param name="contactObjectName">Object name. Only needed if you also defined the ID of a contact. (optional)</param>
-    /// <param name="type">Type of the communication ways you want to get. (optional)</param>
-    /// <param name="main">Define if you only want the main communication way. (optional)</param>
-    /// <returns>Task of InlineResponse20025</returns>
-    public async Task<InlineResponse20025> GetCommunicationWaysAsync(string contactId = null,
+	/// <summary>
+	///     Retrieve communication ways Returns all communication ways which have been added up until now. Filters can be
+	///     added.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">ID of contact for which you want the communication ways. (optional)</param>
+	/// <param name="contactObjectName">Object name. Only needed if you also defined the ID of a contact. (optional)</param>
+	/// <param name="type">Type of the communication ways you want to get. (optional)</param>
+	/// <param name="main">Define if you only want the main communication way. (optional)</param>
+	/// <returns>Task of InlineResponse20025</returns>
+	public async Task<InlineResponse20025> GetCommunicationWaysAsync(string contactId = null,
 		string contactObjectName = null, string type = null, string main = null)
 	{
 		var localVarResponse = await GetCommunicationWaysAsyncWithHttpInfo(contactId, contactObjectName, type, main);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve communication ways Returns all communication ways which have been added up until now. Filters can be
-    ///     added.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">ID of contact for which you want the communication ways. (optional)</param>
-    /// <param name="contactObjectName">Object name. Only needed if you also defined the ID of a contact. (optional)</param>
-    /// <param name="type">Type of the communication ways you want to get. (optional)</param>
-    /// <param name="main">Define if you only want the main communication way. (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20025)</returns>
-    public async Task<ApiResponse<InlineResponse20025>> GetCommunicationWaysAsyncWithHttpInfo(string contactId = null,
+	/// <summary>
+	///     Retrieve communication ways Returns all communication ways which have been added up until now. Filters can be
+	///     added.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">ID of contact for which you want the communication ways. (optional)</param>
+	/// <param name="contactObjectName">Object name. Only needed if you also defined the ID of a contact. (optional)</param>
+	/// <param name="type">Type of the communication ways you want to get. (optional)</param>
+	/// <param name="main">Define if you only want the main communication way. (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20025)</returns>
+	public async Task<ApiResponse<InlineResponse20025>> GetCommunicationWaysAsyncWithHttpInfo(string contactId = null,
 		string contactObjectName = null, string type = null, string main = null)
 	{
 		var localVarPath = "/CommunicationWay";
@@ -835,27 +835,27 @@ public class CommunicationWayApi : ICommunicationWayApi
 			(InlineResponse20025)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20025)));
 	}
 
-    /// <summary>
-    ///     Update a existing communication way Update a communication way
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="communicationWayId">ID of CommunicationWay to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>InlineResponse20025</returns>
-    public InlineResponse20025 UpdateCommunicationWay(int? communicationWayId, ModelCommunicationWayUpdate body = null)
+	/// <summary>
+	///     Update a existing communication way Update a communication way
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="communicationWayId">ID of CommunicationWay to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>InlineResponse20025</returns>
+	public InlineResponse20025 UpdateCommunicationWay(int? communicationWayId, ModelCommunicationWayUpdate body = null)
 	{
 		var localVarResponse = UpdateCommunicationWayWithHttpInfo(communicationWayId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update a existing communication way Update a communication way
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="communicationWayId">ID of CommunicationWay to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20025</returns>
-    public ApiResponse<InlineResponse20025> UpdateCommunicationWayWithHttpInfo(int? communicationWayId,
+	/// <summary>
+	///     Update a existing communication way Update a communication way
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="communicationWayId">ID of CommunicationWay to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20025</returns>
+	public ApiResponse<InlineResponse20025> UpdateCommunicationWayWithHttpInfo(int? communicationWayId,
 		ModelCommunicationWayUpdate body = null)
 	{
 		// verify the required parameter 'communicationWayId' is set
@@ -917,28 +917,28 @@ public class CommunicationWayApi : ICommunicationWayApi
 			(InlineResponse20025)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20025)));
 	}
 
-    /// <summary>
-    ///     Update a existing communication way Update a communication way
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="communicationWayId">ID of CommunicationWay to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>Task of InlineResponse20025</returns>
-    public async Task<InlineResponse20025> UpdateCommunicationWayAsync(int? communicationWayId,
+	/// <summary>
+	///     Update a existing communication way Update a communication way
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="communicationWayId">ID of CommunicationWay to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>Task of InlineResponse20025</returns>
+	public async Task<InlineResponse20025> UpdateCommunicationWayAsync(int? communicationWayId,
 		ModelCommunicationWayUpdate body = null)
 	{
 		var localVarResponse = await UpdateCommunicationWayAsyncWithHttpInfo(communicationWayId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update a existing communication way Update a communication way
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="communicationWayId">ID of CommunicationWay to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20025)</returns>
-    public async Task<ApiResponse<InlineResponse20025>> UpdateCommunicationWayAsyncWithHttpInfo(int? communicationWayId,
+	/// <summary>
+	///     Update a existing communication way Update a communication way
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="communicationWayId">ID of CommunicationWay to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20025)</returns>
+	public async Task<ApiResponse<InlineResponse20025>> UpdateCommunicationWayAsyncWithHttpInfo(int? communicationWayId,
 		ModelCommunicationWayUpdate body = null)
 	{
 		// verify the required parameter 'communicationWayId' is set
@@ -1000,34 +1000,34 @@ public class CommunicationWayApi : ICommunicationWayApi
 			(InlineResponse20025)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20025)));
 	}
 
-    /// <summary>
-    ///     Sets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    [Obsolete(
+	/// <summary>
+	///     Sets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	[Obsolete(
 		"SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
 	public void SetBasePath(string basePath)
 	{
 		// do nothing
 	}
 
-    /// <summary>
-    ///     Gets the default header.
-    /// </summary>
-    /// <returns>Dictionary of HTTP header</returns>
-    [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
+	/// <summary>
+	///     Gets the default header.
+	/// </summary>
+	/// <returns>Dictionary of HTTP header</returns>
+	[Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
 	public IDictionary<string, string> DefaultHeader()
 	{
 		return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
 	}
 
-    /// <summary>
-    ///     Add default header.
-    /// </summary>
-    /// <param name="key">Header field name.</param>
-    /// <param name="value">Header field value.</param>
-    /// <returns></returns>
-    [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
+	/// <summary>
+	///     Add default header.
+	/// </summary>
+	/// <param name="key">Header field name.</param>
+	/// <param name="value">Header field value.</param>
+	/// <returns></returns>
+	[Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
 	public void AddDefaultHeader(string key, string value)
 	{
 		Configuration.AddDefaultHeader(key, value);

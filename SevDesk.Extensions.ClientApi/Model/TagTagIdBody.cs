@@ -21,28 +21,28 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class TagTagIdBody : IEquatable<TagTagIdBody>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="TagTagIdBody" /> class.
-    /// </summary>
-    /// <param name="name">The name of the tag u want to update.</param>
-    public TagTagIdBody(string name = default)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="TagTagIdBody" /> class.
+	/// </summary>
+	/// <param name="name">The name of the tag u want to update.</param>
+	public TagTagIdBody(string name = default)
 	{
 		Name = name;
 	}
 
-    /// <summary>
-    ///     The name of the tag u want to update
-    /// </summary>
-    /// <value>The name of the tag u want to update</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+	/// <summary>
+	///     The name of the tag u want to update
+	/// </summary>
+	/// <value>The name of the tag u want to update</value>
+	[DataMember(Name = "name", EmitDefaultValue = false)]
 	public string Name { get; set; }
 
-    /// <summary>
-    ///     Returns true if TagTagIdBody instances are equal
-    /// </summary>
-    /// <param name="input">Instance of TagTagIdBody to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(TagTagIdBody input)
+	/// <summary>
+	///     Returns true if TagTagIdBody instances are equal
+	/// </summary>
+	/// <param name="input">Instance of TagTagIdBody to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(TagTagIdBody input)
 	{
 		if (input == null)
 			return false;
@@ -53,21 +53,21 @@ public class TagTagIdBody : IEquatable<TagTagIdBody>, IValidatableObject
 			 Name.Equals(input.Name));
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class TagTagIdBody {\n");
@@ -76,30 +76,30 @@ public class TagTagIdBody : IEquatable<TagTagIdBody>, IValidatableObject
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as TagTagIdBody);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

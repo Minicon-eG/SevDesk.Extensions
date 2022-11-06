@@ -21,35 +21,35 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class InlineResponse2012Objects : IEquatable<InlineResponse2012Objects>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="InlineResponse2012Objects" /> class.
-    /// </summary>
-    /// <param name="filename">filename.</param>
-    /// <param name="mimeType">mimeType.</param>
-    public InlineResponse2012Objects(string filename = default, string mimeType = default)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="InlineResponse2012Objects" /> class.
+	/// </summary>
+	/// <param name="filename">filename.</param>
+	/// <param name="mimeType">mimeType.</param>
+	public InlineResponse2012Objects(string filename = default, string mimeType = default)
 	{
 		Filename = filename;
 		MimeType = mimeType;
 	}
 
-    /// <summary>
-    ///     Gets or Sets Filename
-    /// </summary>
-    [DataMember(Name = "filename", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Filename
+	/// </summary>
+	[DataMember(Name = "filename", EmitDefaultValue = false)]
 	public string Filename { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets MimeType
-    /// </summary>
-    [DataMember(Name = "mimeType", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets MimeType
+	/// </summary>
+	[DataMember(Name = "mimeType", EmitDefaultValue = false)]
 	public string MimeType { get; set; }
 
-    /// <summary>
-    ///     Returns true if InlineResponse2012Objects instances are equal
-    /// </summary>
-    /// <param name="input">Instance of InlineResponse2012Objects to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(InlineResponse2012Objects input)
+	/// <summary>
+	///     Returns true if InlineResponse2012Objects instances are equal
+	/// </summary>
+	/// <param name="input">Instance of InlineResponse2012Objects to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(InlineResponse2012Objects input)
 	{
 		if (input == null)
 			return false;
@@ -67,21 +67,21 @@ public class InlineResponse2012Objects : IEquatable<InlineResponse2012Objects>, 
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class InlineResponse2012Objects {\n");
@@ -91,30 +91,30 @@ public class InlineResponse2012Objects : IEquatable<InlineResponse2012Objects>, 
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as InlineResponse2012Objects);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

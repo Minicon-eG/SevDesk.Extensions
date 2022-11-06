@@ -26,19 +26,19 @@ public sealed class AssignSupplierOrganizationHandler
 	}
 
 	public async Task<AssignSupplierOrganizationResponse> Handle(
-		AssignSupplierOrganizationRequest organizationRequest,
+		AssignSupplierOrganizationRequest request,
 		CancellationToken cancellationToken
 	)
 	{
 		var contactsApi = _apiFactory.Api<ContactApi>();
 		var contactResponse = await contactsApi.GetContactsAsync(ContactDepth.OnlyOrganizations);
 
-		Dictionary<string, ModelVoucherUpdateSupplier> contacts = contactResponse
+		var contacts = contactResponse
 			.Objects
 			.GroupBy(item => item.Name)
 			.Select(
 				item => item.OrderBy(i => i.Id).First()
-			).ToDictionary(e => e.Name, e => 
+			).ToDictionary(e => e.Name, e =>
 				new ModelVoucherUpdateSupplier
 				(
 					objectName: e.ObjectName,
@@ -46,7 +46,7 @@ public sealed class AssignSupplierOrganizationHandler
 				)
 			);
 		IVoucherApi api = _apiFactory.Api<VoucherApi>();
-		var items = await api.GetAllDraftModelVoucherResponses(organizationRequest.DaysToLookBack);
+		var items = await api.GetAllDraftModelVoucherResponses(request.DaysToLookBack);
 
 		var filteredItems = items
 			.Where(IsSupplierNameNotEmpty)
@@ -55,26 +55,32 @@ public sealed class AssignSupplierOrganizationHandler
 
 		List<ModelVoucherResponse> updated = new();
 		foreach (var voucher in filteredItems)
-		{
 			try
 			{
+				string supplierName = request.SupplierMapping.ContainsKey(voucher.SupplierName!)
+					? request.SupplierMapping[voucher.SupplierName!] 
+					: voucher.SupplierName!;
+				
 				if (!contacts.ContainsKey(voucher.SupplierName!))
 				{
 					_logger.LogWarning(
-						"Supplier is not present: {Supplier}", 
+						"Supplier is not present: {Supplier}",
 						voucher.SupplierName
 					);
 					continue;
 				}
-				GetSingleVoucherResponse response = await api.UpdateVoucherAsync(
+
+				var supplier = contacts[supplierName];
+				
+				var response = await api.UpdateVoucherAsync(
 					int.Parse(voucher.Id),
 					new ModelVoucherUpdate
 					(
-						supplier: contacts[voucher.SupplierName!]
+						supplier: supplier
 					)
 				);
 				updated.Add(response.Objects);
-				
+
 				_logger.LogInformation("Updated: {Voucher}", response.Objects.Id);
 			}
 			catch (ApiException ex) when (
@@ -85,7 +91,6 @@ public sealed class AssignSupplierOrganizationHandler
 			{
 				_logger.LogDebug("{Exception}", ex);
 			}
-		}
 
 		return new AssignSupplierOrganizationResponse
 		{
@@ -97,7 +102,7 @@ public sealed class AssignSupplierOrganizationHandler
 	{
 		List<(int Id, string Name)> result = new();
 		var total = 0;
-		var take = 50;
+		const int take = 50;
 		var requestCount = 0;
 		do
 		{
@@ -124,7 +129,7 @@ public sealed class AssignSupplierOrganizationHandler
 
 	private static bool IsSupplierNameNotEmpty(ModelVoucherResponse origin)
 	{
-		return !String.IsNullOrWhiteSpace(origin.SupplierName);
+		return !string.IsNullOrWhiteSpace(origin.SupplierName);
 	}
 
 	private static bool HasNoSupplierAssigned(ModelVoucherResponse e)

@@ -19,17 +19,17 @@ public class Configuration : IReadableConfiguration
 {
 	#region Constants
 
-    /// <summary>
-    ///     Version of the package.
-    /// </summary>
-    /// <value>Version of the package.</value>
-    public const string Version = "1.0.0";
+	/// <summary>
+	///     Version of the package.
+	/// </summary>
+	/// <value>Version of the package.</value>
+	public const string Version = "1.0.0";
 
-    /// <summary>
-    ///     Identifier for ISO 8601 DateTime Format
-    /// </summary>
-    /// <remarks>See https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8 for more information.</remarks>
-    // ReSharper disable once InconsistentNaming
+	/// <summary>
+	///     Identifier for ISO 8601 DateTime Format
+	/// </summary>
+	/// <remarks>See https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8 for more information.</remarks>
+	// ReSharper disable once InconsistentNaming
 	public const string ISO8601_DATETIME_FORMAT = "o";
 
 	#endregion Constants
@@ -39,10 +39,10 @@ public class Configuration : IReadableConfiguration
 	private static readonly object GlobalConfigSync = new { };
 	private static Configuration _globalConfiguration;
 
-    /// <summary>
-    ///     Default creation of exceptions for a given method name and response object
-    /// </summary>
-    public static readonly ExceptionFactory DefaultExceptionFactory = (methodName, response) =>
+	/// <summary>
+	///     Default creation of exceptions for a given method name and response object
+	/// </summary>
+	public static readonly ExceptionFactory DefaultExceptionFactory = (methodName, response) =>
 	{
 		var status = (int)response.StatusCode;
 		if (status >= 400)
@@ -55,11 +55,11 @@ public class Configuration : IReadableConfiguration
 		return null;
 	};
 
-    /// <summary>
-    ///     Gets or sets the default Configuration.
-    /// </summary>
-    /// <value>Configuration.</value>
-    public static Configuration Default
+	/// <summary>
+	///     Gets or sets the default Configuration.
+	/// </summary>
+	/// <value>Configuration.</value>
+	public static Configuration Default
 	{
 		get => _globalConfiguration;
 		set
@@ -75,17 +75,17 @@ public class Configuration : IReadableConfiguration
 
 	#region Private Members
 
-    /// <summary>
-    ///     Gets or sets the API key based on the authentication name.
-    /// </summary>
-    /// <value>The API key.</value>
-    private IDictionary<string, string> _apiKey;
+	/// <summary>
+	///     Gets or sets the API key based on the authentication name.
+	/// </summary>
+	/// <value>The API key.</value>
+	private IDictionary<string, string> _apiKey;
 
-    /// <summary>
-    ///     Gets or sets the prefix (e.g. Token) of the API key based on the authentication name.
-    /// </summary>
-    /// <value>The prefix of the API key.</value>
-    private IDictionary<string, string> _apiKeyPrefix;
+	/// <summary>
+	///     Gets or sets the prefix (e.g. Token) of the API key based on the authentication name.
+	/// </summary>
+	/// <value>The prefix of the API key.</value>
+	private IDictionary<string, string> _apiKeyPrefix;
 
 	private string _dateTimeFormat = ISO8601_DATETIME_FORMAT;
 	private string _tempFolderPath = Path.GetTempPath();
@@ -99,10 +99,10 @@ public class Configuration : IReadableConfiguration
 		_globalConfiguration = new GlobalConfiguration();
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="Configuration" /> class
-    /// </summary>
-    public Configuration()
+	/// <summary>
+	///     Initializes a new instance of the <see cref="Configuration" /> class
+	/// </summary>
+	public Configuration()
 	{
 		UserAgent = "Swagger-Codegen/1.0.0/csharp";
 		BasePath = "https://my.sevdesk.de/api/v1";
@@ -113,10 +113,10 @@ public class Configuration : IReadableConfiguration
 		Timeout = 100000;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="Configuration" /> class
-    /// </summary>
-    public Configuration(
+	/// <summary>
+	///     Initializes a new instance of the <see cref="Configuration" /> class
+	/// </summary>
+	public Configuration(
 		IDictionary<string, string> defaultHeader,
 		IDictionary<string, string> apiKey,
 		IDictionary<string, string> apiKeyPrefix,
@@ -140,21 +140,21 @@ public class Configuration : IReadableConfiguration
 		foreach (var keyValuePair in apiKeyPrefix) ApiKeyPrefix.Add(keyValuePair);
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="Configuration" /> class with different settings
-    /// </summary>
-    /// <param name="apiClient">Api client</param>
-    /// <param name="defaultHeader">Dictionary of default HTTP header</param>
-    /// <param name="username">Username</param>
-    /// <param name="password">Password</param>
-    /// <param name="accessToken">accessToken</param>
-    /// <param name="apiKey">Dictionary of API key</param>
-    /// <param name="apiKeyPrefix">Dictionary of API key prefix</param>
-    /// <param name="tempFolderPath">Temp folder path</param>
-    /// <param name="dateTimeFormat">DateTime format string</param>
-    /// <param name="timeout">HTTP connection timeout (in milliseconds)</param>
-    /// <param name="userAgent">HTTP user agent</param>
-    [Obsolete("Use explicit object construction and setting of properties.", true)]
+	/// <summary>
+	///     Initializes a new instance of the <see cref="Configuration" /> class with different settings
+	/// </summary>
+	/// <param name="apiClient">Api client</param>
+	/// <param name="defaultHeader">Dictionary of default HTTP header</param>
+	/// <param name="username">Username</param>
+	/// <param name="password">Password</param>
+	/// <param name="accessToken">accessToken</param>
+	/// <param name="apiKey">Dictionary of API key</param>
+	/// <param name="apiKeyPrefix">Dictionary of API key prefix</param>
+	/// <param name="tempFolderPath">Temp folder path</param>
+	/// <param name="dateTimeFormat">DateTime format string</param>
+	/// <param name="timeout">HTTP connection timeout (in milliseconds)</param>
+	/// <param name="userAgent">HTTP user agent</param>
+	[Obsolete("Use explicit object construction and setting of properties.", true)]
 	public Configuration(
 		// ReSharper disable UnusedParameter.Local
 		ApiClient apiClient = null,
@@ -173,11 +173,11 @@ public class Configuration : IReadableConfiguration
 	{
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the Configuration class.
-    /// </summary>
-    /// <param name="apiClient">Api client.</param>
-    [Obsolete("This constructor caused unexpected sharing of static data. It is no longer supported.", true)]
+	/// <summary>
+	///     Initializes a new instance of the Configuration class.
+	/// </summary>
+	/// <param name="apiClient">Api client.</param>
+	[Obsolete("This constructor caused unexpected sharing of static data. It is no longer supported.", true)]
 	// ReSharper disable once UnusedParameter.Local
 	public Configuration(ApiClient apiClient)
 	{
@@ -190,10 +190,10 @@ public class Configuration : IReadableConfiguration
 
 	private ApiClient _apiClient;
 
-    /// <summary>
-    ///     Gets an instance of an ApiClient for this configuration
-    /// </summary>
-    public virtual ApiClient ApiClient
+	/// <summary>
+	///     Gets an instance of an ApiClient for this configuration
+	/// </summary>
+	public virtual ApiClient ApiClient
 	{
 		get
 		{
@@ -204,10 +204,10 @@ public class Configuration : IReadableConfiguration
 
 	private string _basePath;
 
-    /// <summary>
-    ///     Gets or sets the base path for API access.
-    /// </summary>
-    public virtual string BasePath
+	/// <summary>
+	///     Gets or sets the base path for API access.
+	/// </summary>
+	public virtual string BasePath
 	{
 		get => _basePath;
 		set
@@ -218,17 +218,17 @@ public class Configuration : IReadableConfiguration
 		}
 	}
 
-    /// <summary>
-    ///     Gets or sets the default header.
-    /// </summary>
-    public virtual IDictionary<string, string> DefaultHeader { get; set; }
+	/// <summary>
+	///     Gets or sets the default header.
+	/// </summary>
+	public virtual IDictionary<string, string> DefaultHeader { get; set; }
 
 	private int _timeout = 100000;
 
-    /// <summary>
-    ///     Gets or sets the HTTP timeout (milliseconds) of ApiClient. Default to 100000 milliseconds.
-    /// </summary>
-    public virtual int Timeout
+	/// <summary>
+	///     Gets or sets the HTTP timeout (milliseconds) of ApiClient. Default to 100000 milliseconds.
+	/// </summary>
+	public virtual int Timeout
 	{
 		get
 		{
@@ -243,30 +243,30 @@ public class Configuration : IReadableConfiguration
 		}
 	}
 
-    /// <summary>
-    ///     Gets or sets the HTTP user agent.
-    /// </summary>
-    /// <value>Http user agent.</value>
-    public virtual string UserAgent { get; set; }
+	/// <summary>
+	///     Gets or sets the HTTP user agent.
+	/// </summary>
+	/// <value>Http user agent.</value>
+	public virtual string UserAgent { get; set; }
 
-    /// <summary>
-    ///     Gets or sets the username (HTTP basic authentication).
-    /// </summary>
-    /// <value>The username.</value>
-    public virtual string Username { get; set; }
+	/// <summary>
+	///     Gets or sets the username (HTTP basic authentication).
+	/// </summary>
+	/// <value>The username.</value>
+	public virtual string Username { get; set; }
 
-    /// <summary>
-    ///     Gets or sets the password (HTTP basic authentication).
-    /// </summary>
-    /// <value>The password.</value>
-    public virtual string Password { get; set; }
+	/// <summary>
+	///     Gets or sets the password (HTTP basic authentication).
+	/// </summary>
+	/// <value>The password.</value>
+	public virtual string Password { get; set; }
 
-    /// <summary>
-    ///     Gets the API key with prefix.
-    /// </summary>
-    /// <param name="apiKeyIdentifier">API key identifier (authentication scheme).</param>
-    /// <returns>API key with prefix.</returns>
-    public string GetApiKeyWithPrefix(string apiKeyIdentifier)
+	/// <summary>
+	///     Gets the API key with prefix.
+	/// </summary>
+	/// <param name="apiKeyIdentifier">API key identifier (authentication scheme).</param>
+	/// <returns>API key with prefix.</returns>
+	public string GetApiKeyWithPrefix(string apiKeyIdentifier)
 	{
 		var apiKeyValue = "";
 		ApiKey.TryGetValue(apiKeyIdentifier, out apiKeyValue);
@@ -276,17 +276,17 @@ public class Configuration : IReadableConfiguration
 		return apiKeyValue;
 	}
 
-    /// <summary>
-    ///     Gets or sets the access token for OAuth2 authentication.
-    /// </summary>
-    /// <value>The access token.</value>
-    public virtual string AccessToken { get; set; }
+	/// <summary>
+	///     Gets or sets the access token for OAuth2 authentication.
+	/// </summary>
+	/// <value>The access token.</value>
+	public virtual string AccessToken { get; set; }
 
-    /// <summary>
-    ///     Gets or sets the temporary folder path to store the files downloaded from the server.
-    /// </summary>
-    /// <value>Folder path.</value>
-    public virtual string TempFolderPath
+	/// <summary>
+	///     Gets or sets the temporary folder path to store the files downloaded from the server.
+	/// </summary>
+	/// <value>Folder path.</value>
+	public virtual string TempFolderPath
 	{
 		get => _tempFolderPath;
 
@@ -310,15 +310,15 @@ public class Configuration : IReadableConfiguration
 		}
 	}
 
-    /// <summary>
-    ///     Gets or sets the the date time format used when serializing in the ApiClient
-    ///     By default, it's set to ISO 8601 - "o", for others see:
-    ///     https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx
-    ///     and https://msdn.microsoft.com/en-us/library/8kb3ddd4(v=vs.110).aspx
-    ///     No validation is done to ensure that the string you're providing is valid
-    /// </summary>
-    /// <value>The DateTimeFormat string</value>
-    public virtual string DateTimeFormat
+	/// <summary>
+	///     Gets or sets the the date time format used when serializing in the ApiClient
+	///     By default, it's set to ISO 8601 - "o", for others see:
+	///     https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx
+	///     and https://msdn.microsoft.com/en-us/library/8kb3ddd4(v=vs.110).aspx
+	///     No validation is done to ensure that the string you're providing is valid
+	/// </summary>
+	/// <value>The DateTimeFormat string</value>
+	public virtual string DateTimeFormat
 	{
 		get => _dateTimeFormat;
 		set
@@ -336,11 +336,11 @@ public class Configuration : IReadableConfiguration
 		}
 	}
 
-    /// <summary>
-    ///     Gets or sets the prefix (e.g. Token) of the API key based on the authentication name.
-    /// </summary>
-    /// <value>The prefix of the API key.</value>
-    public virtual IDictionary<string, string> ApiKeyPrefix
+	/// <summary>
+	///     Gets or sets the prefix (e.g. Token) of the API key based on the authentication name.
+	/// </summary>
+	/// <value>The prefix of the API key.</value>
+	public virtual IDictionary<string, string> ApiKeyPrefix
 	{
 		get => _apiKeyPrefix;
 		set
@@ -350,11 +350,11 @@ public class Configuration : IReadableConfiguration
 		}
 	}
 
-    /// <summary>
-    ///     Gets or sets the API key based on the authentication name.
-    /// </summary>
-    /// <value>The API key.</value>
-    public virtual IDictionary<string, string> ApiKey
+	/// <summary>
+	///     Gets or sets the API key based on the authentication name.
+	/// </summary>
+	/// <value>The API key.</value>
+	public virtual IDictionary<string, string> ApiKey
 	{
 		get => _apiKey;
 		set
@@ -368,31 +368,31 @@ public class Configuration : IReadableConfiguration
 
 	#region Methods
 
-    /// <summary>
-    ///     Add default header.
-    /// </summary>
-    /// <param name="key">Header field name.</param>
-    /// <param name="value">Header field value.</param>
-    /// <returns></returns>
-    public void AddDefaultHeader(string key, string value)
+	/// <summary>
+	///     Add default header.
+	/// </summary>
+	/// <param name="key">Header field name.</param>
+	/// <param name="value">Header field value.</param>
+	/// <returns></returns>
+	public void AddDefaultHeader(string key, string value)
 	{
 		DefaultHeader[key] = value;
 	}
 
-    /// <summary>
-    ///     Creates a new <see cref="ApiClient" /> based on this <see cref="Configuration" /> instance.
-    /// </summary>
-    /// <returns></returns>
-    public ApiClient CreateApiClient()
+	/// <summary>
+	///     Creates a new <see cref="ApiClient" /> based on this <see cref="Configuration" /> instance.
+	/// </summary>
+	/// <returns></returns>
+	public ApiClient CreateApiClient()
 	{
 		return new ApiClient(BasePath) { Configuration = this };
 	}
 
 
-    /// <summary>
-    ///     Returns a string with essential information for debugging.
-    /// </summary>
-    public static string ToDebugReport()
+	/// <summary>
+	///     Returns a string with essential information for debugging.
+	/// </summary>
+	public static string ToDebugReport()
 	{
 		var report = "C# SDK (SevDesk.Extension.ClientApi) Debug Report:\n";
 		report += "    OS: " + Environment.OSVersion + "\n";
@@ -403,23 +403,23 @@ public class Configuration : IReadableConfiguration
 		return report;
 	}
 
-    /// <summary>
-    ///     Add Api Key Header.
-    /// </summary>
-    /// <param name="key">Api Key name.</param>
-    /// <param name="value">Api Key value.</param>
-    /// <returns></returns>
-    public void AddApiKey(string key, string value)
+	/// <summary>
+	///     Add Api Key Header.
+	/// </summary>
+	/// <param name="key">Api Key name.</param>
+	/// <param name="value">Api Key value.</param>
+	/// <returns></returns>
+	public void AddApiKey(string key, string value)
 	{
 		ApiKey[key] = value;
 	}
 
-    /// <summary>
-    ///     Sets the API key prefix.
-    /// </summary>
-    /// <param name="key">Api Key name.</param>
-    /// <param name="value">Api Key value.</param>
-    public void AddApiKeyPrefix(string key, string value)
+	/// <summary>
+	///     Sets the API key prefix.
+	/// </summary>
+	/// <param name="key">Api Key name.</param>
+	/// <param name="value">Api Key value.</param>
+	public void AddApiKeyPrefix(string key, string value)
 	{
 		ApiKeyPrefix[key] = value;
 	}

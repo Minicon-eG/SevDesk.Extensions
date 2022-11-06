@@ -22,21 +22,21 @@ namespace SevDesk.Extensions.ClientApi.Model;
 public class AllOfModelContactCustomFieldResponseContactCustomFieldSetting : ModelContactCustomFieldSettingResponse,
 	IEquatable<AllOfModelContactCustomFieldResponseContactCustomFieldSetting>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="AllOfModelContactCustomFieldResponseContactCustomFieldSetting" />
-    ///     class.
-    /// </summary>
-    public AllOfModelContactCustomFieldResponseContactCustomFieldSetting(
+	/// <summary>
+	///     Initializes a new instance of the <see cref="AllOfModelContactCustomFieldResponseContactCustomFieldSetting" />
+	///     class.
+	/// </summary>
+	public AllOfModelContactCustomFieldResponseContactCustomFieldSetting(
 		ModelContactCustomFieldSettingResponseSevClient sevClient = default)
 	{
 	}
 
-    /// <summary>
-    ///     Returns true if AllOfModelContactCustomFieldResponseContactCustomFieldSetting instances are equal
-    /// </summary>
-    /// <param name="input">Instance of AllOfModelContactCustomFieldResponseContactCustomFieldSetting to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(AllOfModelContactCustomFieldResponseContactCustomFieldSetting input)
+	/// <summary>
+	///     Returns true if AllOfModelContactCustomFieldResponseContactCustomFieldSetting instances are equal
+	/// </summary>
+	/// <param name="input">Instance of AllOfModelContactCustomFieldResponseContactCustomFieldSetting to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(AllOfModelContactCustomFieldResponseContactCustomFieldSetting input)
 	{
 		if (input == null)
 			return false;
@@ -44,21 +44,21 @@ public class AllOfModelContactCustomFieldResponseContactCustomFieldSetting : Mod
 		return base.Equals(input);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class AllOfModelContactCustomFieldResponseContactCustomFieldSetting {\n");
@@ -67,30 +67,30 @@ public class AllOfModelContactCustomFieldResponseContactCustomFieldSetting : Mod
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public override string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public override string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as AllOfModelContactCustomFieldResponseContactCustomFieldSetting);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		var hashCode = base.GetHashCode();
 		return hashCode;

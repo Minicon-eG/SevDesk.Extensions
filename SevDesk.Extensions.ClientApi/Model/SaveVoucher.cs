@@ -21,14 +21,14 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class SaveVoucher : IEquatable<SaveVoucher>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="SaveVoucher" /> class.
-    /// </summary>
-    /// <param name="voucher">voucher (required).</param>
-    /// <param name="voucherPosSave">voucherPosSave.</param>
-    /// <param name="voucherPosDelete">voucherPosDelete.</param>
-    /// <param name="filename">Filename of a previously upload file which should be attached..</param>
-    public SaveVoucher(ModelVoucher voucher = default, ModelVoucherPos voucherPosSave = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="SaveVoucher" /> class.
+	/// </summary>
+	/// <param name="voucher">voucher (required).</param>
+	/// <param name="voucherPosSave">voucherPosSave.</param>
+	/// <param name="voucherPosDelete">voucherPosDelete.</param>
+	/// <param name="filename">Filename of a previously upload file which should be attached..</param>
+	public SaveVoucher(ModelVoucher voucher = default, ModelVoucherPos voucherPosSave = default,
 		SaveVoucherVoucherPosDelete voucherPosDelete = default, byte[] filename = default)
 	{
 		// to ensure "voucher" is required (not null)
@@ -40,37 +40,37 @@ public class SaveVoucher : IEquatable<SaveVoucher>, IValidatableObject
 		Filename = filename;
 	}
 
-    /// <summary>
-    ///     Gets or Sets Voucher
-    /// </summary>
-    [DataMember(Name = "voucher", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Voucher
+	/// </summary>
+	[DataMember(Name = "voucher", EmitDefaultValue = false)]
 	public ModelVoucher Voucher { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets VoucherPosSave
-    /// </summary>
-    [DataMember(Name = "voucherPosSave", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets VoucherPosSave
+	/// </summary>
+	[DataMember(Name = "voucherPosSave", EmitDefaultValue = false)]
 	public ModelVoucherPos VoucherPosSave { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets VoucherPosDelete
-    /// </summary>
-    [DataMember(Name = "voucherPosDelete", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets VoucherPosDelete
+	/// </summary>
+	[DataMember(Name = "voucherPosDelete", EmitDefaultValue = false)]
 	public SaveVoucherVoucherPosDelete VoucherPosDelete { get; set; }
 
-    /// <summary>
-    ///     Filename of a previously upload file which should be attached.
-    /// </summary>
-    /// <value>Filename of a previously upload file which should be attached.</value>
-    [DataMember(Name = "filename", EmitDefaultValue = false)]
+	/// <summary>
+	///     Filename of a previously upload file which should be attached.
+	/// </summary>
+	/// <value>Filename of a previously upload file which should be attached.</value>
+	[DataMember(Name = "filename", EmitDefaultValue = false)]
 	public byte[] Filename { get; set; }
 
-    /// <summary>
-    ///     Returns true if SaveVoucher instances are equal
-    /// </summary>
-    /// <param name="input">Instance of SaveVoucher to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(SaveVoucher input)
+	/// <summary>
+	///     Returns true if SaveVoucher instances are equal
+	/// </summary>
+	/// <param name="input">Instance of SaveVoucher to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(SaveVoucher input)
 	{
 		if (input == null)
 			return false;
@@ -98,21 +98,21 @@ public class SaveVoucher : IEquatable<SaveVoucher>, IValidatableObject
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class SaveVoucher {\n");
@@ -124,30 +124,30 @@ public class SaveVoucher : IEquatable<SaveVoucher>, IValidatableObject
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as SaveVoucher);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

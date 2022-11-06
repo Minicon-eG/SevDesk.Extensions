@@ -21,28 +21,28 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class InlineResponse20029 : IEquatable<InlineResponse20029>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="InlineResponse20029" /> class.
-    /// </summary>
-    /// <param name="objects">The invoice object which was marked as sent..</param>
-    public InlineResponse20029(List<ModelInvoiceResponse> objects = default)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="InlineResponse20029" /> class.
+	/// </summary>
+	/// <param name="objects">The invoice object which was marked as sent..</param>
+	public InlineResponse20029(List<ModelInvoiceResponse> objects = default)
 	{
 		Objects = objects;
 	}
 
-    /// <summary>
-    ///     The invoice object which was marked as sent.
-    /// </summary>
-    /// <value>The invoice object which was marked as sent.</value>
-    [DataMember(Name = "objects", EmitDefaultValue = false)]
+	/// <summary>
+	///     The invoice object which was marked as sent.
+	/// </summary>
+	/// <value>The invoice object which was marked as sent.</value>
+	[DataMember(Name = "objects", EmitDefaultValue = false)]
 	public List<ModelInvoiceResponse> Objects { get; set; }
 
-    /// <summary>
-    ///     Returns true if InlineResponse20029 instances are equal
-    /// </summary>
-    /// <param name="input">Instance of InlineResponse20029 to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(InlineResponse20029 input)
+	/// <summary>
+	///     Returns true if InlineResponse20029 instances are equal
+	/// </summary>
+	/// <param name="input">Instance of InlineResponse20029 to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(InlineResponse20029 input)
 	{
 		if (input == null)
 			return false;
@@ -54,21 +54,21 @@ public class InlineResponse20029 : IEquatable<InlineResponse20029>, IValidatable
 			 Objects.SequenceEqual(input.Objects));
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class InlineResponse20029 {\n");
@@ -77,30 +77,30 @@ public class InlineResponse20029 : IEquatable<InlineResponse20029>, IValidatable
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as InlineResponse20029);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

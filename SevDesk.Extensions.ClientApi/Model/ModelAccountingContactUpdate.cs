@@ -21,13 +21,13 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelAccountingContactUpdate : IEquatable<ModelAccountingContactUpdate>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelAccountingContactUpdate" /> class.
-    /// </summary>
-    /// <param name="contact">contact.</param>
-    /// <param name="debitorNumber">Debitor number of the accounting contact..</param>
-    /// <param name="creditorNumber">Creditor number of the accounting contact..</param>
-    public ModelAccountingContactUpdate(ModelAccountingContactUpdateContact contact = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelAccountingContactUpdate" /> class.
+	/// </summary>
+	/// <param name="contact">contact.</param>
+	/// <param name="debitorNumber">Debitor number of the accounting contact..</param>
+	/// <param name="creditorNumber">Creditor number of the accounting contact..</param>
+	public ModelAccountingContactUpdate(ModelAccountingContactUpdateContact contact = default,
 		int? debitorNumber = default, int? creditorNumber = default)
 	{
 		Contact = contact;
@@ -35,32 +35,32 @@ public class ModelAccountingContactUpdate : IEquatable<ModelAccountingContactUpd
 		CreditorNumber = creditorNumber;
 	}
 
-    /// <summary>
-    ///     Gets or Sets Contact
-    /// </summary>
-    [DataMember(Name = "contact", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Contact
+	/// </summary>
+	[DataMember(Name = "contact", EmitDefaultValue = false)]
 	public ModelAccountingContactUpdateContact Contact { get; set; }
 
-    /// <summary>
-    ///     Debitor number of the accounting contact.
-    /// </summary>
-    /// <value>Debitor number of the accounting contact.</value>
-    [DataMember(Name = "debitorNumber", EmitDefaultValue = false)]
+	/// <summary>
+	///     Debitor number of the accounting contact.
+	/// </summary>
+	/// <value>Debitor number of the accounting contact.</value>
+	[DataMember(Name = "debitorNumber", EmitDefaultValue = false)]
 	public int? DebitorNumber { get; set; }
 
-    /// <summary>
-    ///     Creditor number of the accounting contact.
-    /// </summary>
-    /// <value>Creditor number of the accounting contact.</value>
-    [DataMember(Name = "creditorNumber", EmitDefaultValue = false)]
+	/// <summary>
+	///     Creditor number of the accounting contact.
+	/// </summary>
+	/// <value>Creditor number of the accounting contact.</value>
+	[DataMember(Name = "creditorNumber", EmitDefaultValue = false)]
 	public int? CreditorNumber { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelAccountingContactUpdate instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelAccountingContactUpdate to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelAccountingContactUpdate input)
+	/// <summary>
+	///     Returns true if ModelAccountingContactUpdate instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelAccountingContactUpdate to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelAccountingContactUpdate input)
 	{
 		if (input == null)
 			return false;
@@ -83,21 +83,21 @@ public class ModelAccountingContactUpdate : IEquatable<ModelAccountingContactUpd
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelAccountingContactUpdate {\n");
@@ -108,30 +108,30 @@ public class ModelAccountingContactUpdate : IEquatable<ModelAccountingContactUpd
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelAccountingContactUpdate);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

@@ -21,15 +21,15 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ReportcontactlistFilter : IEquatable<ReportcontactlistFilter>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ReportcontactlistFilter" /> class.
-    /// </summary>
-    /// <param name="zip">filters the contacts by zip code.</param>
-    /// <param name="city">filters the contacts by city.</param>
-    /// <param name="country">country.</param>
-    /// <param name="depth">export only organisations.</param>
-    /// <param name="onlyPeople">export only people.</param>
-    public ReportcontactlistFilter(int? zip = default, string city = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ReportcontactlistFilter" /> class.
+	/// </summary>
+	/// <param name="zip">filters the contacts by zip code.</param>
+	/// <param name="city">filters the contacts by city.</param>
+	/// <param name="country">country.</param>
+	/// <param name="depth">export only organisations.</param>
+	/// <param name="onlyPeople">export only people.</param>
+	public ReportcontactlistFilter(int? zip = default, string city = default,
 		ReportcontactlistFilterCountry country = default, bool? depth = default, bool? onlyPeople = default)
 	{
 		Zip = zip;
@@ -39,48 +39,48 @@ public class ReportcontactlistFilter : IEquatable<ReportcontactlistFilter>, IVal
 		OnlyPeople = onlyPeople;
 	}
 
-    /// <summary>
-    ///     filters the contacts by zip code
-    /// </summary>
-    /// <value>filters the contacts by zip code</value>
-    [DataMember(Name = "zip", EmitDefaultValue = false)]
+	/// <summary>
+	///     filters the contacts by zip code
+	/// </summary>
+	/// <value>filters the contacts by zip code</value>
+	[DataMember(Name = "zip", EmitDefaultValue = false)]
 	public int? Zip { get; set; }
 
-    /// <summary>
-    ///     filters the contacts by city
-    /// </summary>
-    /// <value>filters the contacts by city</value>
-    [DataMember(Name = "city", EmitDefaultValue = false)]
+	/// <summary>
+	///     filters the contacts by city
+	/// </summary>
+	/// <value>filters the contacts by city</value>
+	[DataMember(Name = "city", EmitDefaultValue = false)]
 	public string City { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Country
-    /// </summary>
-    [DataMember(Name = "country", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Country
+	/// </summary>
+	[DataMember(Name = "country", EmitDefaultValue = false)]
 	public ReportcontactlistFilterCountry Country { get; set; }
 
-    /// <summary>
-    ///     export only organisations
-    /// </summary>
-    /// <value>export only organisations</value>
-    [DataMember(Name = "depth", EmitDefaultValue = false)]
+	/// <summary>
+	///     export only organisations
+	/// </summary>
+	/// <value>export only organisations</value>
+	[DataMember(Name = "depth", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? Depth { get; set; }
 
-    /// <summary>
-    ///     export only people
-    /// </summary>
-    /// <value>export only people</value>
-    [DataMember(Name = "onlyPeople", EmitDefaultValue = false)]
+	/// <summary>
+	///     export only people
+	/// </summary>
+	/// <value>export only people</value>
+	[DataMember(Name = "onlyPeople", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? OnlyPeople { get; set; }
 
-    /// <summary>
-    ///     Returns true if ReportcontactlistFilter instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ReportcontactlistFilter to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ReportcontactlistFilter input)
+	/// <summary>
+	///     Returns true if ReportcontactlistFilter instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ReportcontactlistFilter to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ReportcontactlistFilter input)
 	{
 		if (input == null)
 			return false;
@@ -113,21 +113,21 @@ public class ReportcontactlistFilter : IEquatable<ReportcontactlistFilter>, IVal
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ReportcontactlistFilter {\n");
@@ -140,30 +140,30 @@ public class ReportcontactlistFilter : IEquatable<ReportcontactlistFilter>, IVal
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ReportcontactlistFilter);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using SevDesk.Extensions.ClientApi.Client;
-using SevDesl.Extensions.Dtos.Options;
+using SevDesk.Extensions.Dtos.Options;
 
 namespace SevDesk.Extensions.ClientApi;
 

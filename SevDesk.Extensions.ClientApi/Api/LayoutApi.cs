@@ -22,35 +22,35 @@ public class LayoutApi : ILayoutApi
 {
 	private ExceptionFactory _exceptionFactory = (name, response) => null;
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="LayoutApi" /> class.
-    /// </summary>
-    /// <returns></returns>
-    public LayoutApi(string basePath)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="LayoutApi" /> class.
+	/// </summary>
+	/// <returns></returns>
+	public LayoutApi(string basePath)
 	{
 		Configuration = new Configuration { BasePath = basePath };
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="LayoutApi" /> class
-    /// </summary>
-    /// <returns></returns>
-    public LayoutApi()
+	/// <summary>
+	///     Initializes a new instance of the <see cref="LayoutApi" /> class
+	/// </summary>
+	/// <returns></returns>
+	public LayoutApi()
 	{
 		Configuration = Configuration.Default;
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="LayoutApi" /> class
-    ///     using Configuration object
-    /// </summary>
-    /// <param name="configuration">An instance of Configuration</param>
-    /// <returns></returns>
-    public LayoutApi(Configuration configuration = null)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="LayoutApi" /> class
+	///     using Configuration object
+	/// </summary>
+	/// <param name="configuration">An instance of Configuration</param>
+	/// <returns></returns>
+	public LayoutApi(Configuration configuration = null)
 	{
 		if (configuration == null) // use the default one in Configuration
 			Configuration = Configuration.Default;
@@ -60,25 +60,25 @@ public class LayoutApi : ILayoutApi
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Gets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    public string GetBasePath()
+	/// <summary>
+	///     Gets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	public string GetBasePath()
 	{
 		return Configuration.ApiClient.RestClient.BaseUrl.ToString();
 	}
 
-    /// <summary>
-    ///     Gets or sets the configuration object
-    /// </summary>
-    /// <value>An instance of the Configuration</value>
-    public Configuration Configuration { get; set; }
+	/// <summary>
+	///     Gets or sets the configuration object
+	/// </summary>
+	/// <value>An instance of the Configuration</value>
+	public Configuration Configuration { get; set; }
 
-    /// <summary>
-    ///     Provides a factory method hook for the creation of exceptions.
-    /// </summary>
-    public ExceptionFactory ExceptionFactory
+	/// <summary>
+	///     Provides a factory method hook for the creation of exceptions.
+	/// </summary>
+	public ExceptionFactory ExceptionFactory
 	{
 		get
 		{
@@ -89,23 +89,23 @@ public class LayoutApi : ILayoutApi
 		set => _exceptionFactory = value;
 	}
 
-    /// <summary>
-    ///     Retrieve letterpapers Retrieve all letterpapers with Thumb
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>InlineResponse20015</returns>
-    public InlineResponse20015 GetLetterpapersWithThumb()
+	/// <summary>
+	///     Retrieve letterpapers Retrieve all letterpapers with Thumb
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>InlineResponse20015</returns>
+	public InlineResponse20015 GetLetterpapersWithThumb()
 	{
 		var localVarResponse = GetLetterpapersWithThumbWithHttpInfo();
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve letterpapers Retrieve all letterpapers with Thumb
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>ApiResponse of InlineResponse20015</returns>
-    public ApiResponse<InlineResponse20015> GetLetterpapersWithThumbWithHttpInfo()
+	/// <summary>
+	///     Retrieve letterpapers Retrieve all letterpapers with Thumb
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>ApiResponse of InlineResponse20015</returns>
+	public ApiResponse<InlineResponse20015> GetLetterpapersWithThumbWithHttpInfo()
 	{
 		var localVarPath = "/DocServer/getLetterpapersWithThumb";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -153,23 +153,23 @@ public class LayoutApi : ILayoutApi
 			(InlineResponse20015)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20015)));
 	}
 
-    /// <summary>
-    ///     Retrieve letterpapers Retrieve all letterpapers with Thumb
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>Task of InlineResponse20015</returns>
-    public async Task<InlineResponse20015> GetLetterpapersWithThumbAsync()
+	/// <summary>
+	///     Retrieve letterpapers Retrieve all letterpapers with Thumb
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>Task of InlineResponse20015</returns>
+	public async Task<InlineResponse20015> GetLetterpapersWithThumbAsync()
 	{
 		var localVarResponse = await GetLetterpapersWithThumbAsyncWithHttpInfo();
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve letterpapers Retrieve all letterpapers with Thumb
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>Task of ApiResponse (InlineResponse20015)</returns>
-    public async Task<ApiResponse<InlineResponse20015>> GetLetterpapersWithThumbAsyncWithHttpInfo()
+	/// <summary>
+	///     Retrieve letterpapers Retrieve all letterpapers with Thumb
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>Task of ApiResponse (InlineResponse20015)</returns>
+	public async Task<ApiResponse<InlineResponse20015>> GetLetterpapersWithThumbAsyncWithHttpInfo()
 	{
 		var localVarPath = "/DocServer/getLetterpapersWithThumb";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -217,25 +217,25 @@ public class LayoutApi : ILayoutApi
 			(InlineResponse20015)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20015)));
 	}
 
-    /// <summary>
-    ///     Retrieve templates Retrieve all templates
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="type">Type of the templates you want to get. (optional)</param>
-    /// <returns>InlineResponse20037</returns>
-    public InlineResponse20037 GetTemplates(string type = null)
+	/// <summary>
+	///     Retrieve templates Retrieve all templates
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="type">Type of the templates you want to get. (optional)</param>
+	/// <returns>InlineResponse20037</returns>
+	public InlineResponse20037 GetTemplates(string type = null)
 	{
 		var localVarResponse = GetTemplatesWithHttpInfo(type);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve templates Retrieve all templates
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="type">Type of the templates you want to get. (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20037</returns>
-    public ApiResponse<InlineResponse20037> GetTemplatesWithHttpInfo(string type = null)
+	/// <summary>
+	///     Retrieve templates Retrieve all templates
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="type">Type of the templates you want to get. (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20037</returns>
+	public ApiResponse<InlineResponse20037> GetTemplatesWithHttpInfo(string type = null)
 	{
 		var localVarPath = "/DocServer/getTemplatesWithThumb";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -286,25 +286,25 @@ public class LayoutApi : ILayoutApi
 			(InlineResponse20037)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20037)));
 	}
 
-    /// <summary>
-    ///     Retrieve templates Retrieve all templates
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="type">Type of the templates you want to get. (optional)</param>
-    /// <returns>Task of InlineResponse20037</returns>
-    public async Task<InlineResponse20037> GetTemplatesAsync(string type = null)
+	/// <summary>
+	///     Retrieve templates Retrieve all templates
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="type">Type of the templates you want to get. (optional)</param>
+	/// <returns>Task of InlineResponse20037</returns>
+	public async Task<InlineResponse20037> GetTemplatesAsync(string type = null)
 	{
 		var localVarResponse = await GetTemplatesAsyncWithHttpInfo(type);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve templates Retrieve all templates
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="type">Type of the templates you want to get. (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20037)</returns>
-    public async Task<ApiResponse<InlineResponse20037>> GetTemplatesAsyncWithHttpInfo(string type = null)
+	/// <summary>
+	///     Retrieve templates Retrieve all templates
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="type">Type of the templates you want to get. (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20037)</returns>
+	public async Task<ApiResponse<InlineResponse20037>> GetTemplatesAsyncWithHttpInfo(string type = null)
 	{
 		var localVarPath = "/DocServer/getTemplatesWithThumb";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -355,27 +355,27 @@ public class LayoutApi : ILayoutApi
 			(InlineResponse20037)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20037)));
 	}
 
-    /// <summary>
-    ///     Update an of credit note template Update an existing of credit note template
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of credit note to update</param>
-    /// <param name="body">Change Layout (optional)</param>
-    /// <returns>InlineResponse20017</returns>
-    public InlineResponse20017 UpdateCreditNoteTemplate(int? creditNoteId, ModelChangeLayout body = null)
+	/// <summary>
+	///     Update an of credit note template Update an existing of credit note template
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of credit note to update</param>
+	/// <param name="body">Change Layout (optional)</param>
+	/// <returns>InlineResponse20017</returns>
+	public InlineResponse20017 UpdateCreditNoteTemplate(int? creditNoteId, ModelChangeLayout body = null)
 	{
 		var localVarResponse = UpdateCreditNoteTemplateWithHttpInfo(creditNoteId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update an of credit note template Update an existing of credit note template
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of credit note to update</param>
-    /// <param name="body">Change Layout (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20017</returns>
-    public ApiResponse<InlineResponse20017> UpdateCreditNoteTemplateWithHttpInfo(int? creditNoteId,
+	/// <summary>
+	///     Update an of credit note template Update an existing of credit note template
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of credit note to update</param>
+	/// <param name="body">Change Layout (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20017</returns>
+	public ApiResponse<InlineResponse20017> UpdateCreditNoteTemplateWithHttpInfo(int? creditNoteId,
 		ModelChangeLayout body = null)
 	{
 		// verify the required parameter 'creditNoteId' is set
@@ -437,28 +437,28 @@ public class LayoutApi : ILayoutApi
 			(InlineResponse20017)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20017)));
 	}
 
-    /// <summary>
-    ///     Update an of credit note template Update an existing of credit note template
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of credit note to update</param>
-    /// <param name="body">Change Layout (optional)</param>
-    /// <returns>Task of InlineResponse20017</returns>
-    public async Task<InlineResponse20017> UpdateCreditNoteTemplateAsync(int? creditNoteId,
+	/// <summary>
+	///     Update an of credit note template Update an existing of credit note template
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of credit note to update</param>
+	/// <param name="body">Change Layout (optional)</param>
+	/// <returns>Task of InlineResponse20017</returns>
+	public async Task<InlineResponse20017> UpdateCreditNoteTemplateAsync(int? creditNoteId,
 		ModelChangeLayout body = null)
 	{
 		var localVarResponse = await UpdateCreditNoteTemplateAsyncWithHttpInfo(creditNoteId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update an of credit note template Update an existing of credit note template
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of credit note to update</param>
-    /// <param name="body">Change Layout (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20017)</returns>
-    public async Task<ApiResponse<InlineResponse20017>> UpdateCreditNoteTemplateAsyncWithHttpInfo(int? creditNoteId,
+	/// <summary>
+	///     Update an of credit note template Update an existing of credit note template
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of credit note to update</param>
+	/// <param name="body">Change Layout (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20017)</returns>
+	public async Task<ApiResponse<InlineResponse20017>> UpdateCreditNoteTemplateAsyncWithHttpInfo(int? creditNoteId,
 		ModelChangeLayout body = null)
 	{
 		// verify the required parameter 'creditNoteId' is set
@@ -520,27 +520,27 @@ public class LayoutApi : ILayoutApi
 			(InlineResponse20017)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20017)));
 	}
 
-    /// <summary>
-    ///     Update an invoice template Update an existing invoice template
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to update</param>
-    /// <param name="body">Change Layout (optional)</param>
-    /// <returns>InlineResponse20017</returns>
-    public InlineResponse20017 UpdateInvoiceTemplate(int? invoiceId, ModelChangeLayout body = null)
+	/// <summary>
+	///     Update an invoice template Update an existing invoice template
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to update</param>
+	/// <param name="body">Change Layout (optional)</param>
+	/// <returns>InlineResponse20017</returns>
+	public InlineResponse20017 UpdateInvoiceTemplate(int? invoiceId, ModelChangeLayout body = null)
 	{
 		var localVarResponse = UpdateInvoiceTemplateWithHttpInfo(invoiceId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update an invoice template Update an existing invoice template
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to update</param>
-    /// <param name="body">Change Layout (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20017</returns>
-    public ApiResponse<InlineResponse20017> UpdateInvoiceTemplateWithHttpInfo(int? invoiceId,
+	/// <summary>
+	///     Update an invoice template Update an existing invoice template
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to update</param>
+	/// <param name="body">Change Layout (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20017</returns>
+	public ApiResponse<InlineResponse20017> UpdateInvoiceTemplateWithHttpInfo(int? invoiceId,
 		ModelChangeLayout body = null)
 	{
 		// verify the required parameter 'invoiceId' is set
@@ -601,27 +601,27 @@ public class LayoutApi : ILayoutApi
 			(InlineResponse20017)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20017)));
 	}
 
-    /// <summary>
-    ///     Update an invoice template Update an existing invoice template
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to update</param>
-    /// <param name="body">Change Layout (optional)</param>
-    /// <returns>Task of InlineResponse20017</returns>
-    public async Task<InlineResponse20017> UpdateInvoiceTemplateAsync(int? invoiceId, ModelChangeLayout body = null)
+	/// <summary>
+	///     Update an invoice template Update an existing invoice template
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to update</param>
+	/// <param name="body">Change Layout (optional)</param>
+	/// <returns>Task of InlineResponse20017</returns>
+	public async Task<InlineResponse20017> UpdateInvoiceTemplateAsync(int? invoiceId, ModelChangeLayout body = null)
 	{
 		var localVarResponse = await UpdateInvoiceTemplateAsyncWithHttpInfo(invoiceId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update an invoice template Update an existing invoice template
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to update</param>
-    /// <param name="body">Change Layout (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20017)</returns>
-    public async Task<ApiResponse<InlineResponse20017>> UpdateInvoiceTemplateAsyncWithHttpInfo(int? invoiceId,
+	/// <summary>
+	///     Update an invoice template Update an existing invoice template
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to update</param>
+	/// <param name="body">Change Layout (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20017)</returns>
+	public async Task<ApiResponse<InlineResponse20017>> UpdateInvoiceTemplateAsyncWithHttpInfo(int? invoiceId,
 		ModelChangeLayout body = null)
 	{
 		// verify the required parameter 'invoiceId' is set
@@ -682,27 +682,27 @@ public class LayoutApi : ILayoutApi
 			(InlineResponse20017)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20017)));
 	}
 
-    /// <summary>
-    ///     Update an order template Update an existing order template
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to update</param>
-    /// <param name="body">Change Layout (optional)</param>
-    /// <returns>InlineResponse20017</returns>
-    public InlineResponse20017 UpdateOrderTemplate(int? orderId, ModelChangeLayout body = null)
+	/// <summary>
+	///     Update an order template Update an existing order template
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to update</param>
+	/// <param name="body">Change Layout (optional)</param>
+	/// <returns>InlineResponse20017</returns>
+	public InlineResponse20017 UpdateOrderTemplate(int? orderId, ModelChangeLayout body = null)
 	{
 		var localVarResponse = UpdateOrderTemplateWithHttpInfo(orderId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update an order template Update an existing order template
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to update</param>
-    /// <param name="body">Change Layout (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20017</returns>
-    public ApiResponse<InlineResponse20017> UpdateOrderTemplateWithHttpInfo(int? orderId, ModelChangeLayout body = null)
+	/// <summary>
+	///     Update an order template Update an existing order template
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to update</param>
+	/// <param name="body">Change Layout (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20017</returns>
+	public ApiResponse<InlineResponse20017> UpdateOrderTemplateWithHttpInfo(int? orderId, ModelChangeLayout body = null)
 	{
 		// verify the required parameter 'orderId' is set
 		if (orderId == null)
@@ -762,27 +762,27 @@ public class LayoutApi : ILayoutApi
 			(InlineResponse20017)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20017)));
 	}
 
-    /// <summary>
-    ///     Update an order template Update an existing order template
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to update</param>
-    /// <param name="body">Change Layout (optional)</param>
-    /// <returns>Task of InlineResponse20017</returns>
-    public async Task<InlineResponse20017> UpdateOrderTemplateAsync(int? orderId, ModelChangeLayout body = null)
+	/// <summary>
+	///     Update an order template Update an existing order template
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to update</param>
+	/// <param name="body">Change Layout (optional)</param>
+	/// <returns>Task of InlineResponse20017</returns>
+	public async Task<InlineResponse20017> UpdateOrderTemplateAsync(int? orderId, ModelChangeLayout body = null)
 	{
 		var localVarResponse = await UpdateOrderTemplateAsyncWithHttpInfo(orderId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update an order template Update an existing order template
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to update</param>
-    /// <param name="body">Change Layout (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20017)</returns>
-    public async Task<ApiResponse<InlineResponse20017>> UpdateOrderTemplateAsyncWithHttpInfo(int? orderId,
+	/// <summary>
+	///     Update an order template Update an existing order template
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to update</param>
+	/// <param name="body">Change Layout (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20017)</returns>
+	public async Task<ApiResponse<InlineResponse20017>> UpdateOrderTemplateAsyncWithHttpInfo(int? orderId,
 		ModelChangeLayout body = null)
 	{
 		// verify the required parameter 'orderId' is set
@@ -843,34 +843,34 @@ public class LayoutApi : ILayoutApi
 			(InlineResponse20017)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20017)));
 	}
 
-    /// <summary>
-    ///     Sets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    [Obsolete(
+	/// <summary>
+	///     Sets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	[Obsolete(
 		"SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
 	public void SetBasePath(string basePath)
 	{
 		// do nothing
 	}
 
-    /// <summary>
-    ///     Gets the default header.
-    /// </summary>
-    /// <returns>Dictionary of HTTP header</returns>
-    [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
+	/// <summary>
+	///     Gets the default header.
+	/// </summary>
+	/// <returns>Dictionary of HTTP header</returns>
+	[Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
 	public IDictionary<string, string> DefaultHeader()
 	{
 		return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
 	}
 
-    /// <summary>
-    ///     Add default header.
-    /// </summary>
-    /// <param name="key">Header field name.</param>
-    /// <param name="value">Header field value.</param>
-    /// <returns></returns>
-    [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
+	/// <summary>
+	///     Add default header.
+	/// </summary>
+	/// <param name="key">Header field name.</param>
+	/// <param name="value">Header field value.</param>
+	/// <returns></returns>
+	[Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
 	public void AddDefaultHeader(string key, string value)
 	{
 		Configuration.AddDefaultHeader(key, value);

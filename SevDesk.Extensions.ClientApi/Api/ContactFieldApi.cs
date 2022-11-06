@@ -22,35 +22,35 @@ public class ContactFieldApi : IContactFieldApi
 {
 	private ExceptionFactory _exceptionFactory = (name, response) => null;
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ContactFieldApi" /> class.
-    /// </summary>
-    /// <returns></returns>
-    public ContactFieldApi(string basePath)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ContactFieldApi" /> class.
+	/// </summary>
+	/// <returns></returns>
+	public ContactFieldApi(string basePath)
 	{
 		Configuration = new Configuration { BasePath = basePath };
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ContactFieldApi" /> class
-    /// </summary>
-    /// <returns></returns>
-    public ContactFieldApi()
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ContactFieldApi" /> class
+	/// </summary>
+	/// <returns></returns>
+	public ContactFieldApi()
 	{
 		Configuration = Configuration.Default;
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ContactFieldApi" /> class
-    ///     using Configuration object
-    /// </summary>
-    /// <param name="configuration">An instance of Configuration</param>
-    /// <returns></returns>
-    public ContactFieldApi(Configuration configuration = null)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ContactFieldApi" /> class
+	///     using Configuration object
+	/// </summary>
+	/// <param name="configuration">An instance of Configuration</param>
+	/// <returns></returns>
+	public ContactFieldApi(Configuration configuration = null)
 	{
 		if (configuration == null) // use the default one in Configuration
 			Configuration = Configuration.Default;
@@ -60,25 +60,25 @@ public class ContactFieldApi : IContactFieldApi
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Gets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    public string GetBasePath()
+	/// <summary>
+	///     Gets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	public string GetBasePath()
 	{
 		return Configuration.ApiClient.RestClient.BaseUrl.ToString();
 	}
 
-    /// <summary>
-    ///     Gets or sets the configuration object
-    /// </summary>
-    /// <value>An instance of the Configuration</value>
-    public Configuration Configuration { get; set; }
+	/// <summary>
+	///     Gets or sets the configuration object
+	/// </summary>
+	/// <value>An instance of the Configuration</value>
+	public Configuration Configuration { get; set; }
 
-    /// <summary>
-    ///     Provides a factory method hook for the creation of exceptions.
-    /// </summary>
-    public ExceptionFactory ExceptionFactory
+	/// <summary>
+	///     Provides a factory method hook for the creation of exceptions.
+	/// </summary>
+	public ExceptionFactory ExceptionFactory
 	{
 		get
 		{
@@ -89,25 +89,25 @@ public class ContactFieldApi : IContactFieldApi
 		set => _exceptionFactory = value;
 	}
 
-    /// <summary>
-    ///     Create contact field Create contact field
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body"> (optional)</param>
-    /// <returns>InlineResponse20014</returns>
-    public InlineResponse20014 CreateContactField(ModelContactCustomField body = null)
+	/// <summary>
+	///     Create contact field Create contact field
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body"> (optional)</param>
+	/// <returns>InlineResponse20014</returns>
+	public InlineResponse20014 CreateContactField(ModelContactCustomField body = null)
 	{
 		var localVarResponse = CreateContactFieldWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create contact field Create contact field
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body"> (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20014</returns>
-    public ApiResponse<InlineResponse20014> CreateContactFieldWithHttpInfo(ModelContactCustomField body = null)
+	/// <summary>
+	///     Create contact field Create contact field
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body"> (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20014</returns>
+	public ApiResponse<InlineResponse20014> CreateContactFieldWithHttpInfo(ModelContactCustomField body = null)
 	{
 		var localVarPath = "/ContactCustomField";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -160,25 +160,25 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse20014)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20014)));
 	}
 
-    /// <summary>
-    ///     Create contact field Create contact field
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body"> (optional)</param>
-    /// <returns>Task of InlineResponse20014</returns>
-    public async Task<InlineResponse20014> CreateContactFieldAsync(ModelContactCustomField body = null)
+	/// <summary>
+	///     Create contact field Create contact field
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body"> (optional)</param>
+	/// <returns>Task of InlineResponse20014</returns>
+	public async Task<InlineResponse20014> CreateContactFieldAsync(ModelContactCustomField body = null)
 	{
 		var localVarResponse = await CreateContactFieldAsyncWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create contact field Create contact field
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body"> (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20014)</returns>
-    public async Task<ApiResponse<InlineResponse20014>> CreateContactFieldAsyncWithHttpInfo(
+	/// <summary>
+	///     Create contact field Create contact field
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body"> (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20014)</returns>
+	public async Task<ApiResponse<InlineResponse20014>> CreateContactFieldAsyncWithHttpInfo(
 		ModelContactCustomField body = null)
 	{
 		var localVarPath = "/ContactCustomField";
@@ -232,25 +232,25 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse20014)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20014)));
 	}
 
-    /// <summary>
-    ///     Create contact field setting Create contact field setting
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body"> (optional)</param>
-    /// <returns>InlineResponse2006</returns>
-    public InlineResponse2006 CreateContactFieldSetting(ModelContactCustomFieldSetting body = null)
+	/// <summary>
+	///     Create contact field setting Create contact field setting
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body"> (optional)</param>
+	/// <returns>InlineResponse2006</returns>
+	public InlineResponse2006 CreateContactFieldSetting(ModelContactCustomFieldSetting body = null)
 	{
 		var localVarResponse = CreateContactFieldSettingWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create contact field setting Create contact field setting
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body"> (optional)</param>
-    /// <returns>ApiResponse of InlineResponse2006</returns>
-    public ApiResponse<InlineResponse2006> CreateContactFieldSettingWithHttpInfo(
+	/// <summary>
+	///     Create contact field setting Create contact field setting
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body"> (optional)</param>
+	/// <returns>ApiResponse of InlineResponse2006</returns>
+	public ApiResponse<InlineResponse2006> CreateContactFieldSettingWithHttpInfo(
 		ModelContactCustomFieldSetting body = null)
 	{
 		var localVarPath = "/ContactCustomFieldSetting";
@@ -304,25 +304,25 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse2006)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2006)));
 	}
 
-    /// <summary>
-    ///     Create contact field setting Create contact field setting
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body"> (optional)</param>
-    /// <returns>Task of InlineResponse2006</returns>
-    public async Task<InlineResponse2006> CreateContactFieldSettingAsync(ModelContactCustomFieldSetting body = null)
+	/// <summary>
+	///     Create contact field setting Create contact field setting
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body"> (optional)</param>
+	/// <returns>Task of InlineResponse2006</returns>
+	public async Task<InlineResponse2006> CreateContactFieldSettingAsync(ModelContactCustomFieldSetting body = null)
 	{
 		var localVarResponse = await CreateContactFieldSettingAsyncWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create contact field setting Create contact field setting
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body"> (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse2006)</returns>
-    public async Task<ApiResponse<InlineResponse2006>> CreateContactFieldSettingAsyncWithHttpInfo(
+	/// <summary>
+	///     Create contact field setting Create contact field setting
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body"> (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse2006)</returns>
+	public async Task<ApiResponse<InlineResponse2006>> CreateContactFieldSettingAsyncWithHttpInfo(
 		ModelContactCustomFieldSetting body = null)
 	{
 		var localVarPath = "/ContactCustomFieldSetting";
@@ -376,25 +376,25 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse2006)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2006)));
 	}
 
-    /// <summary>
-    ///     delete a contact field
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldId">Id of contact field</param>
-    /// <returns>InlineResponse2003</returns>
-    public InlineResponse2003 DeleteContactCustomFieldId(int? contactCustomFieldId)
+	/// <summary>
+	///     delete a contact field
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldId">Id of contact field</param>
+	/// <returns>InlineResponse2003</returns>
+	public InlineResponse2003 DeleteContactCustomFieldId(int? contactCustomFieldId)
 	{
 		var localVarResponse = DeleteContactCustomFieldIdWithHttpInfo(contactCustomFieldId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     delete a contact field
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldId">Id of contact field</param>
-    /// <returns>ApiResponse of InlineResponse2003</returns>
-    public ApiResponse<InlineResponse2003> DeleteContactCustomFieldIdWithHttpInfo(int? contactCustomFieldId)
+	/// <summary>
+	///     delete a contact field
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldId">Id of contact field</param>
+	/// <returns>ApiResponse of InlineResponse2003</returns>
+	public ApiResponse<InlineResponse2003> DeleteContactCustomFieldIdWithHttpInfo(int? contactCustomFieldId)
 	{
 		// verify the required parameter 'contactCustomFieldId' is set
 		if (contactCustomFieldId == null)
@@ -450,25 +450,25 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse2003)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2003)));
 	}
 
-    /// <summary>
-    ///     delete a contact field
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldId">Id of contact field</param>
-    /// <returns>Task of InlineResponse2003</returns>
-    public async Task<InlineResponse2003> DeleteContactCustomFieldIdAsync(int? contactCustomFieldId)
+	/// <summary>
+	///     delete a contact field
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldId">Id of contact field</param>
+	/// <returns>Task of InlineResponse2003</returns>
+	public async Task<InlineResponse2003> DeleteContactCustomFieldIdAsync(int? contactCustomFieldId)
 	{
 		var localVarResponse = await DeleteContactCustomFieldIdAsyncWithHttpInfo(contactCustomFieldId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     delete a contact field
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldId">Id of contact field</param>
-    /// <returns>Task of ApiResponse (InlineResponse2003)</returns>
-    public async Task<ApiResponse<InlineResponse2003>> DeleteContactCustomFieldIdAsyncWithHttpInfo(
+	/// <summary>
+	///     delete a contact field
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldId">Id of contact field</param>
+	/// <returns>Task of ApiResponse (InlineResponse2003)</returns>
+	public async Task<ApiResponse<InlineResponse2003>> DeleteContactCustomFieldIdAsyncWithHttpInfo(
 		int? contactCustomFieldId)
 	{
 		// verify the required parameter 'contactCustomFieldId' is set
@@ -525,25 +525,25 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse2003)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2003)));
 	}
 
-    /// <summary>
-    ///     Deletes a contact field setting
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldSettingId">Id of contact field to delete</param>
-    /// <returns>InlineResponse2003</returns>
-    public InlineResponse2003 DeleteContactFieldSetting(int? contactCustomFieldSettingId)
+	/// <summary>
+	///     Deletes a contact field setting
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldSettingId">Id of contact field to delete</param>
+	/// <returns>InlineResponse2003</returns>
+	public InlineResponse2003 DeleteContactFieldSetting(int? contactCustomFieldSettingId)
 	{
 		var localVarResponse = DeleteContactFieldSettingWithHttpInfo(contactCustomFieldSettingId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Deletes a contact field setting
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldSettingId">Id of contact field to delete</param>
-    /// <returns>ApiResponse of InlineResponse2003</returns>
-    public ApiResponse<InlineResponse2003> DeleteContactFieldSettingWithHttpInfo(int? contactCustomFieldSettingId)
+	/// <summary>
+	///     Deletes a contact field setting
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldSettingId">Id of contact field to delete</param>
+	/// <returns>ApiResponse of InlineResponse2003</returns>
+	public ApiResponse<InlineResponse2003> DeleteContactFieldSettingWithHttpInfo(int? contactCustomFieldSettingId)
 	{
 		// verify the required parameter 'contactCustomFieldSettingId' is set
 		if (contactCustomFieldSettingId == null)
@@ -599,25 +599,25 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse2003)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2003)));
 	}
 
-    /// <summary>
-    ///     Deletes a contact field setting
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldSettingId">Id of contact field to delete</param>
-    /// <returns>Task of InlineResponse2003</returns>
-    public async Task<InlineResponse2003> DeleteContactFieldSettingAsync(int? contactCustomFieldSettingId)
+	/// <summary>
+	///     Deletes a contact field setting
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldSettingId">Id of contact field to delete</param>
+	/// <returns>Task of InlineResponse2003</returns>
+	public async Task<InlineResponse2003> DeleteContactFieldSettingAsync(int? contactCustomFieldSettingId)
 	{
 		var localVarResponse = await DeleteContactFieldSettingAsyncWithHttpInfo(contactCustomFieldSettingId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Deletes a contact field setting
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldSettingId">Id of contact field to delete</param>
-    /// <returns>Task of ApiResponse (InlineResponse2003)</returns>
-    public async Task<ApiResponse<InlineResponse2003>> DeleteContactFieldSettingAsyncWithHttpInfo(
+	/// <summary>
+	///     Deletes a contact field setting
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldSettingId">Id of contact field to delete</param>
+	/// <returns>Task of ApiResponse (InlineResponse2003)</returns>
+	public async Task<ApiResponse<InlineResponse2003>> DeleteContactFieldSettingAsyncWithHttpInfo(
 		int? contactCustomFieldSettingId)
 	{
 		// verify the required parameter 'contactCustomFieldSettingId' is set
@@ -674,25 +674,25 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse2003)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2003)));
 	}
 
-    /// <summary>
-    ///     Find contact field setting by ID Returns a single contact field setting
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldSettingId">ID of contact field to return</param>
-    /// <returns>InlineResponse2006</returns>
-    public InlineResponse2006 GetContactFieldSettingById(int? contactCustomFieldSettingId)
+	/// <summary>
+	///     Find contact field setting by ID Returns a single contact field setting
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldSettingId">ID of contact field to return</param>
+	/// <returns>InlineResponse2006</returns>
+	public InlineResponse2006 GetContactFieldSettingById(int? contactCustomFieldSettingId)
 	{
 		var localVarResponse = GetContactFieldSettingByIdWithHttpInfo(contactCustomFieldSettingId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find contact field setting by ID Returns a single contact field setting
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldSettingId">ID of contact field to return</param>
-    /// <returns>ApiResponse of InlineResponse2006</returns>
-    public ApiResponse<InlineResponse2006> GetContactFieldSettingByIdWithHttpInfo(int? contactCustomFieldSettingId)
+	/// <summary>
+	///     Find contact field setting by ID Returns a single contact field setting
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldSettingId">ID of contact field to return</param>
+	/// <returns>ApiResponse of InlineResponse2006</returns>
+	public ApiResponse<InlineResponse2006> GetContactFieldSettingByIdWithHttpInfo(int? contactCustomFieldSettingId)
 	{
 		// verify the required parameter 'contactCustomFieldSettingId' is set
 		if (contactCustomFieldSettingId == null)
@@ -748,25 +748,25 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse2006)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2006)));
 	}
 
-    /// <summary>
-    ///     Find contact field setting by ID Returns a single contact field setting
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldSettingId">ID of contact field to return</param>
-    /// <returns>Task of InlineResponse2006</returns>
-    public async Task<InlineResponse2006> GetContactFieldSettingByIdAsync(int? contactCustomFieldSettingId)
+	/// <summary>
+	///     Find contact field setting by ID Returns a single contact field setting
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldSettingId">ID of contact field to return</param>
+	/// <returns>Task of InlineResponse2006</returns>
+	public async Task<InlineResponse2006> GetContactFieldSettingByIdAsync(int? contactCustomFieldSettingId)
 	{
 		var localVarResponse = await GetContactFieldSettingByIdAsyncWithHttpInfo(contactCustomFieldSettingId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find contact field setting by ID Returns a single contact field setting
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldSettingId">ID of contact field to return</param>
-    /// <returns>Task of ApiResponse (InlineResponse2006)</returns>
-    public async Task<ApiResponse<InlineResponse2006>> GetContactFieldSettingByIdAsyncWithHttpInfo(
+	/// <summary>
+	///     Find contact field setting by ID Returns a single contact field setting
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldSettingId">ID of contact field to return</param>
+	/// <returns>Task of ApiResponse (InlineResponse2006)</returns>
+	public async Task<ApiResponse<InlineResponse2006>> GetContactFieldSettingByIdAsyncWithHttpInfo(
 		int? contactCustomFieldSettingId)
 	{
 		// verify the required parameter 'contactCustomFieldSettingId' is set
@@ -823,23 +823,23 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse2006)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2006)));
 	}
 
-    /// <summary>
-    ///     Retrieve contact field settings Retrieve all contact field settings
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>InlineResponse2006</returns>
-    public InlineResponse2006 GetContactFieldSettings()
+	/// <summary>
+	///     Retrieve contact field settings Retrieve all contact field settings
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>InlineResponse2006</returns>
+	public InlineResponse2006 GetContactFieldSettings()
 	{
 		var localVarResponse = GetContactFieldSettingsWithHttpInfo();
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve contact field settings Retrieve all contact field settings
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>ApiResponse of InlineResponse2006</returns>
-    public ApiResponse<InlineResponse2006> GetContactFieldSettingsWithHttpInfo()
+	/// <summary>
+	///     Retrieve contact field settings Retrieve all contact field settings
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>ApiResponse of InlineResponse2006</returns>
+	public ApiResponse<InlineResponse2006> GetContactFieldSettingsWithHttpInfo()
 	{
 		var localVarPath = "/ContactCustomFieldSetting";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -887,23 +887,23 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse2006)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2006)));
 	}
 
-    /// <summary>
-    ///     Retrieve contact field settings Retrieve all contact field settings
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>Task of InlineResponse2006</returns>
-    public async Task<InlineResponse2006> GetContactFieldSettingsAsync()
+	/// <summary>
+	///     Retrieve contact field settings Retrieve all contact field settings
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>Task of InlineResponse2006</returns>
+	public async Task<InlineResponse2006> GetContactFieldSettingsAsync()
 	{
 		var localVarResponse = await GetContactFieldSettingsAsyncWithHttpInfo();
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve contact field settings Retrieve all contact field settings
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>Task of ApiResponse (InlineResponse2006)</returns>
-    public async Task<ApiResponse<InlineResponse2006>> GetContactFieldSettingsAsyncWithHttpInfo()
+	/// <summary>
+	///     Retrieve contact field settings Retrieve all contact field settings
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>Task of ApiResponse (InlineResponse2006)</returns>
+	public async Task<ApiResponse<InlineResponse2006>> GetContactFieldSettingsAsyncWithHttpInfo()
 	{
 		var localVarPath = "/ContactCustomFieldSetting";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -951,23 +951,23 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse2006)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2006)));
 	}
 
-    /// <summary>
-    ///     Retrieve contact fields Retrieve all contact fields
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>InlineResponse20014</returns>
-    public InlineResponse20014 GetContactFields()
+	/// <summary>
+	///     Retrieve contact fields Retrieve all contact fields
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>InlineResponse20014</returns>
+	public InlineResponse20014 GetContactFields()
 	{
 		var localVarResponse = GetContactFieldsWithHttpInfo();
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve contact fields Retrieve all contact fields
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>ApiResponse of InlineResponse20014</returns>
-    public ApiResponse<InlineResponse20014> GetContactFieldsWithHttpInfo()
+	/// <summary>
+	///     Retrieve contact fields Retrieve all contact fields
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>ApiResponse of InlineResponse20014</returns>
+	public ApiResponse<InlineResponse20014> GetContactFieldsWithHttpInfo()
 	{
 		var localVarPath = "/ContactCustomField";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -1015,23 +1015,23 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse20014)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20014)));
 	}
 
-    /// <summary>
-    ///     Retrieve contact fields Retrieve all contact fields
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>Task of InlineResponse20014</returns>
-    public async Task<InlineResponse20014> GetContactFieldsAsync()
+	/// <summary>
+	///     Retrieve contact fields Retrieve all contact fields
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>Task of InlineResponse20014</returns>
+	public async Task<InlineResponse20014> GetContactFieldsAsync()
 	{
 		var localVarResponse = await GetContactFieldsAsyncWithHttpInfo();
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve contact fields Retrieve all contact fields
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>Task of ApiResponse (InlineResponse20014)</returns>
-    public async Task<ApiResponse<InlineResponse20014>> GetContactFieldsAsyncWithHttpInfo()
+	/// <summary>
+	///     Retrieve contact fields Retrieve all contact fields
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>Task of ApiResponse (InlineResponse20014)</returns>
+	public async Task<ApiResponse<InlineResponse20014>> GetContactFieldsAsyncWithHttpInfo()
 	{
 		var localVarPath = "/ContactCustomField";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -1079,25 +1079,25 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse20014)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20014)));
 	}
 
-    /// <summary>
-    ///     Retrieve contact fields Retrieve all contact fields
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldId">id of the contact field</param>
-    /// <returns>InlineResponse20014</returns>
-    public InlineResponse20014 GetContactFieldsById(decimal? contactCustomFieldId)
+	/// <summary>
+	///     Retrieve contact fields Retrieve all contact fields
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldId">id of the contact field</param>
+	/// <returns>InlineResponse20014</returns>
+	public InlineResponse20014 GetContactFieldsById(decimal? contactCustomFieldId)
 	{
 		var localVarResponse = GetContactFieldsByIdWithHttpInfo(contactCustomFieldId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve contact fields Retrieve all contact fields
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldId">id of the contact field</param>
-    /// <returns>ApiResponse of InlineResponse20014</returns>
-    public ApiResponse<InlineResponse20014> GetContactFieldsByIdWithHttpInfo(decimal? contactCustomFieldId)
+	/// <summary>
+	///     Retrieve contact fields Retrieve all contact fields
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldId">id of the contact field</param>
+	/// <returns>ApiResponse of InlineResponse20014</returns>
+	public ApiResponse<InlineResponse20014> GetContactFieldsByIdWithHttpInfo(decimal? contactCustomFieldId)
 	{
 		// verify the required parameter 'contactCustomFieldId' is set
 		if (contactCustomFieldId == null)
@@ -1153,25 +1153,25 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse20014)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20014)));
 	}
 
-    /// <summary>
-    ///     Retrieve contact fields Retrieve all contact fields
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldId">id of the contact field</param>
-    /// <returns>Task of InlineResponse20014</returns>
-    public async Task<InlineResponse20014> GetContactFieldsByIdAsync(decimal? contactCustomFieldId)
+	/// <summary>
+	///     Retrieve contact fields Retrieve all contact fields
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldId">id of the contact field</param>
+	/// <returns>Task of InlineResponse20014</returns>
+	public async Task<InlineResponse20014> GetContactFieldsByIdAsync(decimal? contactCustomFieldId)
 	{
 		var localVarResponse = await GetContactFieldsByIdAsyncWithHttpInfo(contactCustomFieldId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve contact fields Retrieve all contact fields
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldId">id of the contact field</param>
-    /// <returns>Task of ApiResponse (InlineResponse20014)</returns>
-    public async Task<ApiResponse<InlineResponse20014>> GetContactFieldsByIdAsyncWithHttpInfo(
+	/// <summary>
+	///     Retrieve contact fields Retrieve all contact fields
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldId">id of the contact field</param>
+	/// <returns>Task of ApiResponse (InlineResponse20014)</returns>
+	public async Task<ApiResponse<InlineResponse20014>> GetContactFieldsByIdAsyncWithHttpInfo(
 		decimal? contactCustomFieldId)
 	{
 		// verify the required parameter 'contactCustomFieldId' is set
@@ -1228,27 +1228,27 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse20014)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20014)));
 	}
 
-    /// <summary>
-    ///     Retrieve Placeholders Retrieve all Placeholders
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="objectName">Model name</param>
-    /// <param name="subObjectName">Sub model name, required if you have \&quot;Email\&quot; at objectName (optional)</param>
-    /// <returns>InlineResponse20028</returns>
-    public InlineResponse20028 GetPlaceholder(string objectName, string subObjectName = null)
+	/// <summary>
+	///     Retrieve Placeholders Retrieve all Placeholders
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="objectName">Model name</param>
+	/// <param name="subObjectName">Sub model name, required if you have \&quot;Email\&quot; at objectName (optional)</param>
+	/// <returns>InlineResponse20028</returns>
+	public InlineResponse20028 GetPlaceholder(string objectName, string subObjectName = null)
 	{
 		var localVarResponse = GetPlaceholderWithHttpInfo(objectName, subObjectName);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve Placeholders Retrieve all Placeholders
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="objectName">Model name</param>
-    /// <param name="subObjectName">Sub model name, required if you have \&quot;Email\&quot; at objectName (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20028</returns>
-    public ApiResponse<InlineResponse20028> GetPlaceholderWithHttpInfo(string objectName, string subObjectName = null)
+	/// <summary>
+	///     Retrieve Placeholders Retrieve all Placeholders
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="objectName">Model name</param>
+	/// <param name="subObjectName">Sub model name, required if you have \&quot;Email\&quot; at objectName (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20028</returns>
+	public ApiResponse<InlineResponse20028> GetPlaceholderWithHttpInfo(string objectName, string subObjectName = null)
 	{
 		// verify the required parameter 'objectName' is set
 		if (objectName == null)
@@ -1308,27 +1308,27 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse20028)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20028)));
 	}
 
-    /// <summary>
-    ///     Retrieve Placeholders Retrieve all Placeholders
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="objectName">Model name</param>
-    /// <param name="subObjectName">Sub model name, required if you have \&quot;Email\&quot; at objectName (optional)</param>
-    /// <returns>Task of InlineResponse20028</returns>
-    public async Task<InlineResponse20028> GetPlaceholderAsync(string objectName, string subObjectName = null)
+	/// <summary>
+	///     Retrieve Placeholders Retrieve all Placeholders
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="objectName">Model name</param>
+	/// <param name="subObjectName">Sub model name, required if you have \&quot;Email\&quot; at objectName (optional)</param>
+	/// <returns>Task of InlineResponse20028</returns>
+	public async Task<InlineResponse20028> GetPlaceholderAsync(string objectName, string subObjectName = null)
 	{
 		var localVarResponse = await GetPlaceholderAsyncWithHttpInfo(objectName, subObjectName);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve Placeholders Retrieve all Placeholders
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="objectName">Model name</param>
-    /// <param name="subObjectName">Sub model name, required if you have \&quot;Email\&quot; at objectName (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20028)</returns>
-    public async Task<ApiResponse<InlineResponse20028>> GetPlaceholderAsyncWithHttpInfo(string objectName,
+	/// <summary>
+	///     Retrieve Placeholders Retrieve all Placeholders
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="objectName">Model name</param>
+	/// <param name="subObjectName">Sub model name, required if you have \&quot;Email\&quot; at objectName (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20028)</returns>
+	public async Task<ApiResponse<InlineResponse20028>> GetPlaceholderAsyncWithHttpInfo(string objectName,
 		string subObjectName = null)
 	{
 		// verify the required parameter 'objectName' is set
@@ -1389,25 +1389,25 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse20028)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20028)));
 	}
 
-    /// <summary>
-    ///     Receive count reference Receive count reference
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldSettingId">ID of contact field you want to get the reference count</param>
-    /// <returns>InlineResponse20034</returns>
-    public InlineResponse20034 GetReferenceCount(int? contactCustomFieldSettingId)
+	/// <summary>
+	///     Receive count reference Receive count reference
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldSettingId">ID of contact field you want to get the reference count</param>
+	/// <returns>InlineResponse20034</returns>
+	public InlineResponse20034 GetReferenceCount(int? contactCustomFieldSettingId)
 	{
 		var localVarResponse = GetReferenceCountWithHttpInfo(contactCustomFieldSettingId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Receive count reference Receive count reference
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldSettingId">ID of contact field you want to get the reference count</param>
-    /// <returns>ApiResponse of InlineResponse20034</returns>
-    public ApiResponse<InlineResponse20034> GetReferenceCountWithHttpInfo(int? contactCustomFieldSettingId)
+	/// <summary>
+	///     Receive count reference Receive count reference
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldSettingId">ID of contact field you want to get the reference count</param>
+	/// <returns>ApiResponse of InlineResponse20034</returns>
+	public ApiResponse<InlineResponse20034> GetReferenceCountWithHttpInfo(int? contactCustomFieldSettingId)
 	{
 		// verify the required parameter 'contactCustomFieldSettingId' is set
 		if (contactCustomFieldSettingId == null)
@@ -1463,25 +1463,25 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse20034)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20034)));
 	}
 
-    /// <summary>
-    ///     Receive count reference Receive count reference
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldSettingId">ID of contact field you want to get the reference count</param>
-    /// <returns>Task of InlineResponse20034</returns>
-    public async Task<InlineResponse20034> GetReferenceCountAsync(int? contactCustomFieldSettingId)
+	/// <summary>
+	///     Receive count reference Receive count reference
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldSettingId">ID of contact field you want to get the reference count</param>
+	/// <returns>Task of InlineResponse20034</returns>
+	public async Task<InlineResponse20034> GetReferenceCountAsync(int? contactCustomFieldSettingId)
 	{
 		var localVarResponse = await GetReferenceCountAsyncWithHttpInfo(contactCustomFieldSettingId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Receive count reference Receive count reference
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldSettingId">ID of contact field you want to get the reference count</param>
-    /// <returns>Task of ApiResponse (InlineResponse20034)</returns>
-    public async Task<ApiResponse<InlineResponse20034>> GetReferenceCountAsyncWithHttpInfo(
+	/// <summary>
+	///     Receive count reference Receive count reference
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldSettingId">ID of contact field you want to get the reference count</param>
+	/// <returns>Task of ApiResponse (InlineResponse20034)</returns>
+	public async Task<ApiResponse<InlineResponse20034>> GetReferenceCountAsyncWithHttpInfo(
 		int? contactCustomFieldSettingId)
 	{
 		// verify the required parameter 'contactCustomFieldSettingId' is set
@@ -1538,28 +1538,28 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse20034)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20034)));
 	}
 
-    /// <summary>
-    ///     Update contact field setting Update an existing contact field  setting
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldSettingId">ID of contact field setting you want to update</param>
-    /// <param name="body"> (optional)</param>
-    /// <returns>InlineResponse2006</returns>
-    public InlineResponse2006 UpdateContactFieldSetting(int? contactCustomFieldSettingId,
+	/// <summary>
+	///     Update contact field setting Update an existing contact field  setting
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldSettingId">ID of contact field setting you want to update</param>
+	/// <param name="body"> (optional)</param>
+	/// <returns>InlineResponse2006</returns>
+	public InlineResponse2006 UpdateContactFieldSetting(int? contactCustomFieldSettingId,
 		ModelContactCustomFieldSettingUpdate body = null)
 	{
 		var localVarResponse = UpdateContactFieldSettingWithHttpInfo(contactCustomFieldSettingId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update contact field setting Update an existing contact field  setting
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldSettingId">ID of contact field setting you want to update</param>
-    /// <param name="body"> (optional)</param>
-    /// <returns>ApiResponse of InlineResponse2006</returns>
-    public ApiResponse<InlineResponse2006> UpdateContactFieldSettingWithHttpInfo(int? contactCustomFieldSettingId,
+	/// <summary>
+	///     Update contact field setting Update an existing contact field  setting
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldSettingId">ID of contact field setting you want to update</param>
+	/// <param name="body"> (optional)</param>
+	/// <returns>ApiResponse of InlineResponse2006</returns>
+	public ApiResponse<InlineResponse2006> UpdateContactFieldSettingWithHttpInfo(int? contactCustomFieldSettingId,
 		ModelContactCustomFieldSettingUpdate body = null)
 	{
 		// verify the required parameter 'contactCustomFieldSettingId' is set
@@ -1621,28 +1621,28 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse2006)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2006)));
 	}
 
-    /// <summary>
-    ///     Update contact field setting Update an existing contact field  setting
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldSettingId">ID of contact field setting you want to update</param>
-    /// <param name="body"> (optional)</param>
-    /// <returns>Task of InlineResponse2006</returns>
-    public async Task<InlineResponse2006> UpdateContactFieldSettingAsync(int? contactCustomFieldSettingId,
+	/// <summary>
+	///     Update contact field setting Update an existing contact field  setting
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldSettingId">ID of contact field setting you want to update</param>
+	/// <param name="body"> (optional)</param>
+	/// <returns>Task of InlineResponse2006</returns>
+	public async Task<InlineResponse2006> UpdateContactFieldSettingAsync(int? contactCustomFieldSettingId,
 		ModelContactCustomFieldSettingUpdate body = null)
 	{
 		var localVarResponse = await UpdateContactFieldSettingAsyncWithHttpInfo(contactCustomFieldSettingId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update contact field setting Update an existing contact field  setting
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldSettingId">ID of contact field setting you want to update</param>
-    /// <param name="body"> (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse2006)</returns>
-    public async Task<ApiResponse<InlineResponse2006>> UpdateContactFieldSettingAsyncWithHttpInfo(
+	/// <summary>
+	///     Update contact field setting Update an existing contact field  setting
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldSettingId">ID of contact field setting you want to update</param>
+	/// <param name="body"> (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse2006)</returns>
+	public async Task<ApiResponse<InlineResponse2006>> UpdateContactFieldSettingAsyncWithHttpInfo(
 		int? contactCustomFieldSettingId, ModelContactCustomFieldSettingUpdate body = null)
 	{
 		// verify the required parameter 'contactCustomFieldSettingId' is set
@@ -1704,28 +1704,28 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse2006)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2006)));
 	}
 
-    /// <summary>
-    ///     Update a contact field Update a contact field
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldId">id of the contact field</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>InlineResponse20014</returns>
-    public InlineResponse20014 UpdateContactfield(decimal? contactCustomFieldId,
+	/// <summary>
+	///     Update a contact field Update a contact field
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldId">id of the contact field</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>InlineResponse20014</returns>
+	public InlineResponse20014 UpdateContactfield(decimal? contactCustomFieldId,
 		ModelContactCustomFieldUpdate body = null)
 	{
 		var localVarResponse = UpdateContactfieldWithHttpInfo(contactCustomFieldId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update a contact field Update a contact field
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldId">id of the contact field</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20014</returns>
-    public ApiResponse<InlineResponse20014> UpdateContactfieldWithHttpInfo(decimal? contactCustomFieldId,
+	/// <summary>
+	///     Update a contact field Update a contact field
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldId">id of the contact field</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20014</returns>
+	public ApiResponse<InlineResponse20014> UpdateContactfieldWithHttpInfo(decimal? contactCustomFieldId,
 		ModelContactCustomFieldUpdate body = null)
 	{
 		// verify the required parameter 'contactCustomFieldId' is set
@@ -1787,28 +1787,28 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse20014)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20014)));
 	}
 
-    /// <summary>
-    ///     Update a contact field Update a contact field
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldId">id of the contact field</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>Task of InlineResponse20014</returns>
-    public async Task<InlineResponse20014> UpdateContactfieldAsync(decimal? contactCustomFieldId,
+	/// <summary>
+	///     Update a contact field Update a contact field
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldId">id of the contact field</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>Task of InlineResponse20014</returns>
+	public async Task<InlineResponse20014> UpdateContactfieldAsync(decimal? contactCustomFieldId,
 		ModelContactCustomFieldUpdate body = null)
 	{
 		var localVarResponse = await UpdateContactfieldAsyncWithHttpInfo(contactCustomFieldId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update a contact field Update a contact field
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactCustomFieldId">id of the contact field</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20014)</returns>
-    public async Task<ApiResponse<InlineResponse20014>> UpdateContactfieldAsyncWithHttpInfo(
+	/// <summary>
+	///     Update a contact field Update a contact field
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactCustomFieldId">id of the contact field</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20014)</returns>
+	public async Task<ApiResponse<InlineResponse20014>> UpdateContactfieldAsyncWithHttpInfo(
 		decimal? contactCustomFieldId, ModelContactCustomFieldUpdate body = null)
 	{
 		// verify the required parameter 'contactCustomFieldId' is set
@@ -1870,34 +1870,34 @@ public class ContactFieldApi : IContactFieldApi
 			(InlineResponse20014)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20014)));
 	}
 
-    /// <summary>
-    ///     Sets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    [Obsolete(
+	/// <summary>
+	///     Sets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	[Obsolete(
 		"SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
 	public void SetBasePath(string basePath)
 	{
 		// do nothing
 	}
 
-    /// <summary>
-    ///     Gets the default header.
-    /// </summary>
-    /// <returns>Dictionary of HTTP header</returns>
-    [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
+	/// <summary>
+	///     Gets the default header.
+	/// </summary>
+	/// <returns>Dictionary of HTTP header</returns>
+	[Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
 	public IDictionary<string, string> DefaultHeader()
 	{
 		return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
 	}
 
-    /// <summary>
-    ///     Add default header.
-    /// </summary>
-    /// <param name="key">Header field name.</param>
-    /// <param name="value">Header field value.</param>
-    /// <returns></returns>
-    [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
+	/// <summary>
+	///     Add default header.
+	/// </summary>
+	/// <param name="key">Header field name.</param>
+	/// <param name="value">Header field value.</param>
+	/// <returns></returns>
+	[Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
 	public void AddDefaultHeader(string key, string value)
 	{
 		Configuration.AddDefaultHeader(key, value);

@@ -21,44 +21,44 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelChangeLayoutResponseMetadaten : IEquatable<ModelChangeLayoutResponseMetadaten>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelChangeLayoutResponseMetadaten" /> class.
-    /// </summary>
-    /// <param name="thumbs">the pdf file.</param>
-    /// <param name="pages">the number of pages in the document.</param>
-    public ModelChangeLayoutResponseMetadaten(object thumbs = default, int? pages = default)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelChangeLayoutResponseMetadaten" /> class.
+	/// </summary>
+	/// <param name="thumbs">the pdf file.</param>
+	/// <param name="pages">the number of pages in the document.</param>
+	public ModelChangeLayoutResponseMetadaten(object thumbs = default, int? pages = default)
 	{
 		Thumbs = thumbs;
 		Pages = pages;
 	}
 
-    /// <summary>
-    ///     the pdf file
-    /// </summary>
-    /// <value>the pdf file</value>
-    [DataMember(Name = "thumbs", EmitDefaultValue = false)]
+	/// <summary>
+	///     the pdf file
+	/// </summary>
+	/// <value>the pdf file</value>
+	[DataMember(Name = "thumbs", EmitDefaultValue = false)]
 	public object Thumbs { get; set; }
 
-    /// <summary>
-    ///     the number of pages in the document
-    /// </summary>
-    /// <value>the number of pages in the document</value>
-    [DataMember(Name = "pages", EmitDefaultValue = false)]
+	/// <summary>
+	///     the number of pages in the document
+	/// </summary>
+	/// <value>the number of pages in the document</value>
+	[DataMember(Name = "pages", EmitDefaultValue = false)]
 	public int? Pages { get; set; }
 
-    /// <summary>
-    ///     the id of the document
-    /// </summary>
-    /// <value>the id of the document</value>
-    [DataMember(Name = "docId", EmitDefaultValue = false)]
+	/// <summary>
+	///     the id of the document
+	/// </summary>
+	/// <value>the id of the document</value>
+	[DataMember(Name = "docId", EmitDefaultValue = false)]
 	public string DocId { get; private set; }
 
-    /// <summary>
-    ///     Returns true if ModelChangeLayoutResponseMetadaten instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelChangeLayoutResponseMetadaten to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelChangeLayoutResponseMetadaten input)
+	/// <summary>
+	///     Returns true if ModelChangeLayoutResponseMetadaten instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelChangeLayoutResponseMetadaten to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelChangeLayoutResponseMetadaten input)
 	{
 		if (input == null)
 			return false;
@@ -81,21 +81,21 @@ public class ModelChangeLayoutResponseMetadaten : IEquatable<ModelChangeLayoutRe
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelChangeLayoutResponseMetadaten {\n");
@@ -106,30 +106,30 @@ public class ModelChangeLayoutResponseMetadaten : IEquatable<ModelChangeLayoutRe
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelChangeLayoutResponseMetadaten);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

@@ -22,35 +22,35 @@ public class ExportApi : IExportApi
 {
 	private ExceptionFactory _exceptionFactory = (name, response) => null;
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ExportApi" /> class.
-    /// </summary>
-    /// <returns></returns>
-    public ExportApi(string basePath)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ExportApi" /> class.
+	/// </summary>
+	/// <returns></returns>
+	public ExportApi(string basePath)
 	{
 		Configuration = new Configuration { BasePath = basePath };
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ExportApi" /> class
-    /// </summary>
-    /// <returns></returns>
-    public ExportApi()
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ExportApi" /> class
+	/// </summary>
+	/// <returns></returns>
+	public ExportApi()
 	{
 		Configuration = Configuration.Default;
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ExportApi" /> class
-    ///     using Configuration object
-    /// </summary>
-    /// <param name="configuration">An instance of Configuration</param>
-    /// <returns></returns>
-    public ExportApi(Configuration configuration = null)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ExportApi" /> class
+	///     using Configuration object
+	/// </summary>
+	/// <param name="configuration">An instance of Configuration</param>
+	/// <returns></returns>
+	public ExportApi(Configuration configuration = null)
 	{
 		if (configuration == null) // use the default one in Configuration
 			Configuration = Configuration.Default;
@@ -60,25 +60,25 @@ public class ExportApi : IExportApi
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Gets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    public string GetBasePath()
+	/// <summary>
+	///     Gets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	public string GetBasePath()
 	{
 		return Configuration.ApiClient.RestClient.BaseUrl.ToString();
 	}
 
-    /// <summary>
-    ///     Gets or sets the configuration object
-    /// </summary>
-    /// <value>An instance of the Configuration</value>
-    public Configuration Configuration { get; set; }
+	/// <summary>
+	///     Gets or sets the configuration object
+	/// </summary>
+	/// <value>An instance of the Configuration</value>
+	public Configuration Configuration { get; set; }
 
-    /// <summary>
-    ///     Provides a factory method hook for the creation of exceptions.
-    /// </summary>
-    public ExceptionFactory ExceptionFactory
+	/// <summary>
+	///     Provides a factory method hook for the creation of exceptions.
+	/// </summary>
+	public ExceptionFactory ExceptionFactory
 	{
 		get
 		{
@@ -89,27 +89,27 @@ public class ExportApi : IExportApi
 		set => _exceptionFactory = value;
 	}
 
-    /// <summary>
-    ///     Export contact Contact export as csv
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Object</returns>
-    public object ExportContact(SevQuery9 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export contact Contact export as csv
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Object</returns>
+	public object ExportContact(SevQuery9 sevQuery, bool? download = null)
 	{
 		var localVarResponse = ExportContactWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export contact Contact export as csv
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>ApiResponse of Object</returns>
-    public ApiResponse<object> ExportContactWithHttpInfo(SevQuery9 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export contact Contact export as csv
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>ApiResponse of Object</returns>
+	public ApiResponse<object> ExportContactWithHttpInfo(SevQuery9 sevQuery, bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
 		if (sevQuery == null)
@@ -167,27 +167,27 @@ public class ExportApi : IExportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export contact Contact export as csv
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of Object</returns>
-    public async Task<object> ExportContactAsync(SevQuery9 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export contact Contact export as csv
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of Object</returns>
+	public async Task<object> ExportContactAsync(SevQuery9 sevQuery, bool? download = null)
 	{
 		var localVarResponse = await ExportContactAsyncWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export contact Contact export as csv
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of ApiResponse (Object)</returns>
-    public async Task<ApiResponse<object>> ExportContactAsyncWithHttpInfo(SevQuery9 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export contact Contact export as csv
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of ApiResponse (Object)</returns>
+	public async Task<ApiResponse<object>> ExportContactAsyncWithHttpInfo(SevQuery9 sevQuery, bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
 		if (sevQuery == null)
@@ -245,27 +245,27 @@ public class ExportApi : IExportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export creditNote Export all credit notes as csv
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Object</returns>
-    public object ExportCreditNote(SevQuery6 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export creditNote Export all credit notes as csv
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Object</returns>
+	public object ExportCreditNote(SevQuery6 sevQuery, bool? download = null)
 	{
 		var localVarResponse = ExportCreditNoteWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export creditNote Export all credit notes as csv
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>ApiResponse of Object</returns>
-    public ApiResponse<object> ExportCreditNoteWithHttpInfo(SevQuery6 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export creditNote Export all credit notes as csv
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>ApiResponse of Object</returns>
+	public ApiResponse<object> ExportCreditNoteWithHttpInfo(SevQuery6 sevQuery, bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
 		if (sevQuery == null)
@@ -324,27 +324,27 @@ public class ExportApi : IExportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export creditNote Export all credit notes as csv
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of Object</returns>
-    public async Task<object> ExportCreditNoteAsync(SevQuery6 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export creditNote Export all credit notes as csv
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of Object</returns>
+	public async Task<object> ExportCreditNoteAsync(SevQuery6 sevQuery, bool? download = null)
 	{
 		var localVarResponse = await ExportCreditNoteAsyncWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export creditNote Export all credit notes as csv
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of ApiResponse (Object)</returns>
-    public async Task<ApiResponse<object>> ExportCreditNoteAsyncWithHttpInfo(SevQuery6 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export creditNote Export all credit notes as csv
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of ApiResponse (Object)</returns>
+	public async Task<ApiResponse<object>> ExportCreditNoteAsyncWithHttpInfo(SevQuery6 sevQuery, bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
 		if (sevQuery == null)
@@ -403,24 +403,24 @@ public class ExportApi : IExportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export datev Datev export as zip with csv´s
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="startDate">the start date of the export as timestamp</param>
-    /// <param name="endDate">the end date of the export as timestamp</param>
-    /// <param name="scope">
-    ///     Define what you want to include in the datev export. This parameter takes a string of 5 letters.
-    ///     Each stands for a model that should be included. Possible letters are: ‘E’ (Earnings), ‘X’ (Expenditure), ‘T’
-    ///     (Transactions), ‘C’ (Cashregister), ‘D’ (Assets). By providing one of those letter you specify that it should be
-    ///     included in the datev export. Some combinations are: ‘EXTCD’, ‘EXTD’ …
-    /// </param>
-    /// <param name="download">Specifies if the document is downloaded (optional)</param>
-    /// <param name="withUnpaidDocuments">include unpaid documents (optional)</param>
-    /// <param name="withEnshrinedDocuments">include enshrined documents (optional)</param>
-    /// <param name="enshrine">Specify if you want to enshrine all models which were included in the export (optional)</param>
-    /// <returns>Object</returns>
-    public object ExportDatev(int? startDate, int? endDate, string scope, bool? download = null,
+	/// <summary>
+	///     Export datev Datev export as zip with csv´s
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="startDate">the start date of the export as timestamp</param>
+	/// <param name="endDate">the end date of the export as timestamp</param>
+	/// <param name="scope">
+	///     Define what you want to include in the datev export. This parameter takes a string of 5 letters.
+	///     Each stands for a model that should be included. Possible letters are: ‘E’ (Earnings), ‘X’ (Expenditure), ‘T’
+	///     (Transactions), ‘C’ (Cashregister), ‘D’ (Assets). By providing one of those letter you specify that it should be
+	///     included in the datev export. Some combinations are: ‘EXTCD’, ‘EXTD’ …
+	/// </param>
+	/// <param name="download">Specifies if the document is downloaded (optional)</param>
+	/// <param name="withUnpaidDocuments">include unpaid documents (optional)</param>
+	/// <param name="withEnshrinedDocuments">include enshrined documents (optional)</param>
+	/// <param name="enshrine">Specify if you want to enshrine all models which were included in the export (optional)</param>
+	/// <returns>Object</returns>
+	public object ExportDatev(int? startDate, int? endDate, string scope, bool? download = null,
 		bool? withUnpaidDocuments = null, bool? withEnshrinedDocuments = null, bool? enshrine = null)
 	{
 		var localVarResponse = ExportDatevWithHttpInfo(startDate, endDate, scope, download, withUnpaidDocuments,
@@ -428,24 +428,24 @@ public class ExportApi : IExportApi
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export datev Datev export as zip with csv´s
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="startDate">the start date of the export as timestamp</param>
-    /// <param name="endDate">the end date of the export as timestamp</param>
-    /// <param name="scope">
-    ///     Define what you want to include in the datev export. This parameter takes a string of 5 letters.
-    ///     Each stands for a model that should be included. Possible letters are: ‘E’ (Earnings), ‘X’ (Expenditure), ‘T’
-    ///     (Transactions), ‘C’ (Cashregister), ‘D’ (Assets). By providing one of those letter you specify that it should be
-    ///     included in the datev export. Some combinations are: ‘EXTCD’, ‘EXTD’ …
-    /// </param>
-    /// <param name="download">Specifies if the document is downloaded (optional)</param>
-    /// <param name="withUnpaidDocuments">include unpaid documents (optional)</param>
-    /// <param name="withEnshrinedDocuments">include enshrined documents (optional)</param>
-    /// <param name="enshrine">Specify if you want to enshrine all models which were included in the export (optional)</param>
-    /// <returns>ApiResponse of Object</returns>
-    public ApiResponse<object> ExportDatevWithHttpInfo(int? startDate, int? endDate, string scope,
+	/// <summary>
+	///     Export datev Datev export as zip with csv´s
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="startDate">the start date of the export as timestamp</param>
+	/// <param name="endDate">the end date of the export as timestamp</param>
+	/// <param name="scope">
+	///     Define what you want to include in the datev export. This parameter takes a string of 5 letters.
+	///     Each stands for a model that should be included. Possible letters are: ‘E’ (Earnings), ‘X’ (Expenditure), ‘T’
+	///     (Transactions), ‘C’ (Cashregister), ‘D’ (Assets). By providing one of those letter you specify that it should be
+	///     included in the datev export. Some combinations are: ‘EXTCD’, ‘EXTD’ …
+	/// </param>
+	/// <param name="download">Specifies if the document is downloaded (optional)</param>
+	/// <param name="withUnpaidDocuments">include unpaid documents (optional)</param>
+	/// <param name="withEnshrinedDocuments">include enshrined documents (optional)</param>
+	/// <param name="enshrine">Specify if you want to enshrine all models which were included in the export (optional)</param>
+	/// <returns>ApiResponse of Object</returns>
+	public ApiResponse<object> ExportDatevWithHttpInfo(int? startDate, int? endDate, string scope,
 		bool? download = null, bool? withUnpaidDocuments = null, bool? withEnshrinedDocuments = null,
 		bool? enshrine = null)
 	{
@@ -528,24 +528,24 @@ public class ExportApi : IExportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export datev Datev export as zip with csv´s
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="startDate">the start date of the export as timestamp</param>
-    /// <param name="endDate">the end date of the export as timestamp</param>
-    /// <param name="scope">
-    ///     Define what you want to include in the datev export. This parameter takes a string of 5 letters.
-    ///     Each stands for a model that should be included. Possible letters are: ‘E’ (Earnings), ‘X’ (Expenditure), ‘T’
-    ///     (Transactions), ‘C’ (Cashregister), ‘D’ (Assets). By providing one of those letter you specify that it should be
-    ///     included in the datev export. Some combinations are: ‘EXTCD’, ‘EXTD’ …
-    /// </param>
-    /// <param name="download">Specifies if the document is downloaded (optional)</param>
-    /// <param name="withUnpaidDocuments">include unpaid documents (optional)</param>
-    /// <param name="withEnshrinedDocuments">include enshrined documents (optional)</param>
-    /// <param name="enshrine">Specify if you want to enshrine all models which were included in the export (optional)</param>
-    /// <returns>Task of Object</returns>
-    public async Task<object> ExportDatevAsync(int? startDate, int? endDate, string scope, bool? download = null,
+	/// <summary>
+	///     Export datev Datev export as zip with csv´s
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="startDate">the start date of the export as timestamp</param>
+	/// <param name="endDate">the end date of the export as timestamp</param>
+	/// <param name="scope">
+	///     Define what you want to include in the datev export. This parameter takes a string of 5 letters.
+	///     Each stands for a model that should be included. Possible letters are: ‘E’ (Earnings), ‘X’ (Expenditure), ‘T’
+	///     (Transactions), ‘C’ (Cashregister), ‘D’ (Assets). By providing one of those letter you specify that it should be
+	///     included in the datev export. Some combinations are: ‘EXTCD’, ‘EXTD’ …
+	/// </param>
+	/// <param name="download">Specifies if the document is downloaded (optional)</param>
+	/// <param name="withUnpaidDocuments">include unpaid documents (optional)</param>
+	/// <param name="withEnshrinedDocuments">include enshrined documents (optional)</param>
+	/// <param name="enshrine">Specify if you want to enshrine all models which were included in the export (optional)</param>
+	/// <returns>Task of Object</returns>
+	public async Task<object> ExportDatevAsync(int? startDate, int? endDate, string scope, bool? download = null,
 		bool? withUnpaidDocuments = null, bool? withEnshrinedDocuments = null, bool? enshrine = null)
 	{
 		var localVarResponse = await ExportDatevAsyncWithHttpInfo(startDate, endDate, scope, download,
@@ -553,24 +553,24 @@ public class ExportApi : IExportApi
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export datev Datev export as zip with csv´s
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="startDate">the start date of the export as timestamp</param>
-    /// <param name="endDate">the end date of the export as timestamp</param>
-    /// <param name="scope">
-    ///     Define what you want to include in the datev export. This parameter takes a string of 5 letters.
-    ///     Each stands for a model that should be included. Possible letters are: ‘E’ (Earnings), ‘X’ (Expenditure), ‘T’
-    ///     (Transactions), ‘C’ (Cashregister), ‘D’ (Assets). By providing one of those letter you specify that it should be
-    ///     included in the datev export. Some combinations are: ‘EXTCD’, ‘EXTD’ …
-    /// </param>
-    /// <param name="download">Specifies if the document is downloaded (optional)</param>
-    /// <param name="withUnpaidDocuments">include unpaid documents (optional)</param>
-    /// <param name="withEnshrinedDocuments">include enshrined documents (optional)</param>
-    /// <param name="enshrine">Specify if you want to enshrine all models which were included in the export (optional)</param>
-    /// <returns>Task of ApiResponse (Object)</returns>
-    public async Task<ApiResponse<object>> ExportDatevAsyncWithHttpInfo(int? startDate, int? endDate, string scope,
+	/// <summary>
+	///     Export datev Datev export as zip with csv´s
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="startDate">the start date of the export as timestamp</param>
+	/// <param name="endDate">the end date of the export as timestamp</param>
+	/// <param name="scope">
+	///     Define what you want to include in the datev export. This parameter takes a string of 5 letters.
+	///     Each stands for a model that should be included. Possible letters are: ‘E’ (Earnings), ‘X’ (Expenditure), ‘T’
+	///     (Transactions), ‘C’ (Cashregister), ‘D’ (Assets). By providing one of those letter you specify that it should be
+	///     included in the datev export. Some combinations are: ‘EXTCD’, ‘EXTD’ …
+	/// </param>
+	/// <param name="download">Specifies if the document is downloaded (optional)</param>
+	/// <param name="withUnpaidDocuments">include unpaid documents (optional)</param>
+	/// <param name="withEnshrinedDocuments">include enshrined documents (optional)</param>
+	/// <param name="enshrine">Specify if you want to enshrine all models which were included in the export (optional)</param>
+	/// <returns>Task of ApiResponse (Object)</returns>
+	public async Task<ApiResponse<object>> ExportDatevAsyncWithHttpInfo(int? startDate, int? endDate, string scope,
 		bool? download = null, bool? withUnpaidDocuments = null, bool? withEnshrinedDocuments = null,
 		bool? enshrine = null)
 	{
@@ -653,27 +653,27 @@ public class ExportApi : IExportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export invoice Export all invoices as csv
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Object</returns>
-    public object ExportInvoice(SevQuery sevQuery, bool? download = null)
+	/// <summary>
+	///     Export invoice Export all invoices as csv
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Object</returns>
+	public object ExportInvoice(SevQuery sevQuery, bool? download = null)
 	{
 		var localVarResponse = ExportInvoiceWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export invoice Export all invoices as csv
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>ApiResponse of Object</returns>
-    public ApiResponse<object> ExportInvoiceWithHttpInfo(SevQuery sevQuery, bool? download = null)
+	/// <summary>
+	///     Export invoice Export all invoices as csv
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>ApiResponse of Object</returns>
+	public ApiResponse<object> ExportInvoiceWithHttpInfo(SevQuery sevQuery, bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
 		if (sevQuery == null)
@@ -731,27 +731,27 @@ public class ExportApi : IExportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export invoice Export all invoices as csv
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of Object</returns>
-    public async Task<object> ExportInvoiceAsync(SevQuery sevQuery, bool? download = null)
+	/// <summary>
+	///     Export invoice Export all invoices as csv
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of Object</returns>
+	public async Task<object> ExportInvoiceAsync(SevQuery sevQuery, bool? download = null)
 	{
 		var localVarResponse = await ExportInvoiceAsyncWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export invoice Export all invoices as csv
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of ApiResponse (Object)</returns>
-    public async Task<ApiResponse<object>> ExportInvoiceAsyncWithHttpInfo(SevQuery sevQuery, bool? download = null)
+	/// <summary>
+	///     Export invoice Export all invoices as csv
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of ApiResponse (Object)</returns>
+	public async Task<ApiResponse<object>> ExportInvoiceAsyncWithHttpInfo(SevQuery sevQuery, bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
 		if (sevQuery == null)
@@ -809,27 +809,27 @@ public class ExportApi : IExportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export Invoice as zip Export all invoices as zip
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Object</returns>
-    public object ExportInvoiceZip(SevQuery8 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export Invoice as zip Export all invoices as zip
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Object</returns>
+	public object ExportInvoiceZip(SevQuery8 sevQuery, bool? download = null)
 	{
 		var localVarResponse = ExportInvoiceZipWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export Invoice as zip Export all invoices as zip
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>ApiResponse of Object</returns>
-    public ApiResponse<object> ExportInvoiceZipWithHttpInfo(SevQuery8 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export Invoice as zip Export all invoices as zip
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>ApiResponse of Object</returns>
+	public ApiResponse<object> ExportInvoiceZipWithHttpInfo(SevQuery8 sevQuery, bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
 		if (sevQuery == null)
@@ -888,27 +888,27 @@ public class ExportApi : IExportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export Invoice as zip Export all invoices as zip
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of Object</returns>
-    public async Task<object> ExportInvoiceZipAsync(SevQuery8 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export Invoice as zip Export all invoices as zip
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of Object</returns>
+	public async Task<object> ExportInvoiceZipAsync(SevQuery8 sevQuery, bool? download = null)
 	{
 		var localVarResponse = await ExportInvoiceZipAsyncWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export Invoice as zip Export all invoices as zip
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of ApiResponse (Object)</returns>
-    public async Task<ApiResponse<object>> ExportInvoiceZipAsyncWithHttpInfo(SevQuery8 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export Invoice as zip Export all invoices as zip
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of ApiResponse (Object)</returns>
+	public async Task<ApiResponse<object>> ExportInvoiceZipAsyncWithHttpInfo(SevQuery8 sevQuery, bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
 		if (sevQuery == null)
@@ -967,27 +967,27 @@ public class ExportApi : IExportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export transaction Export all transactions as csv
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Object</returns>
-    public object ExportTransactions(SevQuery4 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export transaction Export all transactions as csv
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Object</returns>
+	public object ExportTransactions(SevQuery4 sevQuery, bool? download = null)
 	{
 		var localVarResponse = ExportTransactionsWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export transaction Export all transactions as csv
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>ApiResponse of Object</returns>
-    public ApiResponse<object> ExportTransactionsWithHttpInfo(SevQuery4 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export transaction Export all transactions as csv
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>ApiResponse of Object</returns>
+	public ApiResponse<object> ExportTransactionsWithHttpInfo(SevQuery4 sevQuery, bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
 		if (sevQuery == null)
@@ -1046,27 +1046,27 @@ public class ExportApi : IExportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export transaction Export all transactions as csv
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of Object</returns>
-    public async Task<object> ExportTransactionsAsync(SevQuery4 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export transaction Export all transactions as csv
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of Object</returns>
+	public async Task<object> ExportTransactionsAsync(SevQuery4 sevQuery, bool? download = null)
 	{
 		var localVarResponse = await ExportTransactionsAsyncWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export transaction Export all transactions as csv
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of ApiResponse (Object)</returns>
-    public async Task<ApiResponse<object>> ExportTransactionsAsyncWithHttpInfo(SevQuery4 sevQuery,
+	/// <summary>
+	///     Export transaction Export all transactions as csv
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of ApiResponse (Object)</returns>
+	public async Task<ApiResponse<object>> ExportTransactionsAsyncWithHttpInfo(SevQuery4 sevQuery,
 		bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
@@ -1126,27 +1126,27 @@ public class ExportApi : IExportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export voucher as zip Export all vouchers as zip
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Object</returns>
-    public object ExportVoucher(SevQuery1 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export voucher as zip Export all vouchers as zip
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Object</returns>
+	public object ExportVoucher(SevQuery1 sevQuery, bool? download = null)
 	{
 		var localVarResponse = ExportVoucherWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export voucher as zip Export all vouchers as zip
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>ApiResponse of Object</returns>
-    public ApiResponse<object> ExportVoucherWithHttpInfo(SevQuery1 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export voucher as zip Export all vouchers as zip
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>ApiResponse of Object</returns>
+	public ApiResponse<object> ExportVoucherWithHttpInfo(SevQuery1 sevQuery, bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
 		if (sevQuery == null)
@@ -1204,27 +1204,27 @@ public class ExportApi : IExportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export voucher as zip Export all vouchers as zip
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of Object</returns>
-    public async Task<object> ExportVoucherAsync(SevQuery1 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export voucher as zip Export all vouchers as zip
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of Object</returns>
+	public async Task<object> ExportVoucherAsync(SevQuery1 sevQuery, bool? download = null)
 	{
 		var localVarResponse = await ExportVoucherAsyncWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export voucher as zip Export all vouchers as zip
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of ApiResponse (Object)</returns>
-    public async Task<ApiResponse<object>> ExportVoucherAsyncWithHttpInfo(SevQuery1 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export voucher as zip Export all vouchers as zip
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of ApiResponse (Object)</returns>
+	public async Task<ApiResponse<object>> ExportVoucherAsyncWithHttpInfo(SevQuery1 sevQuery, bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
 		if (sevQuery == null)
@@ -1282,27 +1282,27 @@ public class ExportApi : IExportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export voucher zip export all vouchers as zip
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Object</returns>
-    public object ExportVoucherZip(SevQuery10 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export voucher zip export all vouchers as zip
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Object</returns>
+	public object ExportVoucherZip(SevQuery10 sevQuery, bool? download = null)
 	{
 		var localVarResponse = ExportVoucherZipWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export voucher zip export all vouchers as zip
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>ApiResponse of Object</returns>
-    public ApiResponse<object> ExportVoucherZipWithHttpInfo(SevQuery10 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export voucher zip export all vouchers as zip
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>ApiResponse of Object</returns>
+	public ApiResponse<object> ExportVoucherZipWithHttpInfo(SevQuery10 sevQuery, bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
 		if (sevQuery == null)
@@ -1361,27 +1361,27 @@ public class ExportApi : IExportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export voucher zip export all vouchers as zip
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of Object</returns>
-    public async Task<object> ExportVoucherZipAsync(SevQuery10 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export voucher zip export all vouchers as zip
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of Object</returns>
+	public async Task<object> ExportVoucherZipAsync(SevQuery10 sevQuery, bool? download = null)
 	{
 		var localVarResponse = await ExportVoucherZipAsyncWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export voucher zip export all vouchers as zip
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of ApiResponse (Object)</returns>
-    public async Task<ApiResponse<object>> ExportVoucherZipAsyncWithHttpInfo(SevQuery10 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export voucher zip export all vouchers as zip
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of ApiResponse (Object)</returns>
+	public async Task<ApiResponse<object>> ExportVoucherZipAsyncWithHttpInfo(SevQuery10 sevQuery, bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
 		if (sevQuery == null)
@@ -1440,34 +1440,34 @@ public class ExportApi : IExportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Sets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    [Obsolete(
+	/// <summary>
+	///     Sets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	[Obsolete(
 		"SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
 	public void SetBasePath(string basePath)
 	{
 		// do nothing
 	}
 
-    /// <summary>
-    ///     Gets the default header.
-    /// </summary>
-    /// <returns>Dictionary of HTTP header</returns>
-    [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
+	/// <summary>
+	///     Gets the default header.
+	/// </summary>
+	/// <returns>Dictionary of HTTP header</returns>
+	[Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
 	public IDictionary<string, string> DefaultHeader()
 	{
 		return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
 	}
 
-    /// <summary>
-    ///     Add default header.
-    /// </summary>
-    /// <param name="key">Header field name.</param>
-    /// <param name="value">Header field value.</param>
-    /// <returns></returns>
-    [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
+	/// <summary>
+	///     Add default header.
+	/// </summary>
+	/// <param name="key">Header field name.</param>
+	/// <param name="value">Header field value.</param>
+	/// <returns></returns>
+	[Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
 	public void AddDefaultHeader(string key, string value)
 	{
 		Configuration.AddDefaultHeader(key, value);

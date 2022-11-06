@@ -21,28 +21,28 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class InlineResponse20035 : IEquatable<InlineResponse20035>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="InlineResponse20035" /> class.
-    /// </summary>
-    /// <param name="objects">Next available customer number.</param>
-    public InlineResponse20035(string objects = default)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="InlineResponse20035" /> class.
+	/// </summary>
+	/// <param name="objects">Next available customer number.</param>
+	public InlineResponse20035(string objects = default)
 	{
 		Objects = objects;
 	}
 
-    /// <summary>
-    ///     Next available customer number
-    /// </summary>
-    /// <value>Next available customer number</value>
-    [DataMember(Name = "objects", EmitDefaultValue = false)]
+	/// <summary>
+	///     Next available customer number
+	/// </summary>
+	/// <value>Next available customer number</value>
+	[DataMember(Name = "objects", EmitDefaultValue = false)]
 	public string Objects { get; set; }
 
-    /// <summary>
-    ///     Returns true if InlineResponse20035 instances are equal
-    /// </summary>
-    /// <param name="input">Instance of InlineResponse20035 to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(InlineResponse20035 input)
+	/// <summary>
+	///     Returns true if InlineResponse20035 instances are equal
+	/// </summary>
+	/// <param name="input">Instance of InlineResponse20035 to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(InlineResponse20035 input)
 	{
 		if (input == null)
 			return false;
@@ -53,21 +53,21 @@ public class InlineResponse20035 : IEquatable<InlineResponse20035>, IValidatable
 			 Objects.Equals(input.Objects));
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class InlineResponse20035 {\n");
@@ -76,30 +76,30 @@ public class InlineResponse20035 : IEquatable<InlineResponse20035>, IValidatable
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as InlineResponse20035);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

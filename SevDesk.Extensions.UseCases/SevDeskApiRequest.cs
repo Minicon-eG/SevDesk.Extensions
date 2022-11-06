@@ -1,10 +1,15 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace SevDesl.Extensions.Dtos.Options;
+namespace SevDesk.Extensions.UseCases;
 
-public sealed class SevDeskOptions
+public record SevDeskApiRequest(string ApiKey, string ApiUrl)
 {
 	public const string SectionName = "SevDesk";
+
+	public SevDeskApiRequest()
+		: this(default, default)
+	{
+	}
 
 	[Url] [Required] public string ApiKey { get; init; } = "";
 

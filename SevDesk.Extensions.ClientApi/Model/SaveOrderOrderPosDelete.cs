@@ -21,12 +21,12 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class SaveOrderOrderPosDelete : IEquatable<SaveOrderOrderPosDelete>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="SaveOrderOrderPosDelete" /> class.
-    /// </summary>
-    /// <param name="id">Id of order position (required).</param>
-    /// <param name="objectName">Object name of order position (required).</param>
-    public SaveOrderOrderPosDelete(int? id = default, string objectName = default)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="SaveOrderOrderPosDelete" /> class.
+	/// </summary>
+	/// <param name="id">Id of order position (required).</param>
+	/// <param name="objectName">Object name of order position (required).</param>
+	public SaveOrderOrderPosDelete(int? id = default, string objectName = default)
 	{
 		// to ensure "id" is required (not null)
 		if (id == null)
@@ -39,26 +39,26 @@ public class SaveOrderOrderPosDelete : IEquatable<SaveOrderOrderPosDelete>, IVal
 		ObjectName = objectName;
 	}
 
-    /// <summary>
-    ///     Id of order position
-    /// </summary>
-    /// <value>Id of order position</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     Id of order position
+	/// </summary>
+	/// <value>Id of order position</value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public int? Id { get; set; }
 
-    /// <summary>
-    ///     Object name of order position
-    /// </summary>
-    /// <value>Object name of order position</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     Object name of order position
+	/// </summary>
+	/// <value>Object name of order position</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; set; }
 
-    /// <summary>
-    ///     Returns true if SaveOrderOrderPosDelete instances are equal
-    /// </summary>
-    /// <param name="input">Instance of SaveOrderOrderPosDelete to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(SaveOrderOrderPosDelete input)
+	/// <summary>
+	///     Returns true if SaveOrderOrderPosDelete instances are equal
+	/// </summary>
+	/// <param name="input">Instance of SaveOrderOrderPosDelete to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(SaveOrderOrderPosDelete input)
 	{
 		if (input == null)
 			return false;
@@ -76,21 +76,21 @@ public class SaveOrderOrderPosDelete : IEquatable<SaveOrderOrderPosDelete>, IVal
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class SaveOrderOrderPosDelete {\n");
@@ -100,30 +100,30 @@ public class SaveOrderOrderPosDelete : IEquatable<SaveOrderOrderPosDelete>, IVal
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as SaveOrderOrderPosDelete);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

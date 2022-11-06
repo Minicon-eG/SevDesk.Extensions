@@ -22,35 +22,35 @@ public class CreditNoteApi : ICreditNoteApi
 {
 	private ExceptionFactory _exceptionFactory = (name, response) => null;
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="CreditNoteApi" /> class.
-    /// </summary>
-    /// <returns></returns>
-    public CreditNoteApi(string basePath)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="CreditNoteApi" /> class.
+	/// </summary>
+	/// <returns></returns>
+	public CreditNoteApi(string basePath)
 	{
 		Configuration = new Configuration { BasePath = basePath };
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="CreditNoteApi" /> class
-    /// </summary>
-    /// <returns></returns>
-    public CreditNoteApi()
+	/// <summary>
+	///     Initializes a new instance of the <see cref="CreditNoteApi" /> class
+	/// </summary>
+	/// <returns></returns>
+	public CreditNoteApi()
 	{
 		Configuration = Configuration.Default;
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="CreditNoteApi" /> class
-    ///     using Configuration object
-    /// </summary>
-    /// <param name="configuration">An instance of Configuration</param>
-    /// <returns></returns>
-    public CreditNoteApi(Configuration configuration = null)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="CreditNoteApi" /> class
+	///     using Configuration object
+	/// </summary>
+	/// <param name="configuration">An instance of Configuration</param>
+	/// <returns></returns>
+	public CreditNoteApi(Configuration configuration = null)
 	{
 		if (configuration == null) // use the default one in Configuration
 			Configuration = Configuration.Default;
@@ -60,25 +60,25 @@ public class CreditNoteApi : ICreditNoteApi
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Gets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    public string GetBasePath()
+	/// <summary>
+	///     Gets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	public string GetBasePath()
 	{
 		return Configuration.ApiClient.RestClient.BaseUrl.ToString();
 	}
 
-    /// <summary>
-    ///     Gets or sets the configuration object
-    /// </summary>
-    /// <value>An instance of the Configuration</value>
-    public Configuration Configuration { get; set; }
+	/// <summary>
+	///     Gets or sets the configuration object
+	/// </summary>
+	/// <value>An instance of the Configuration</value>
+	public Configuration Configuration { get; set; }
 
-    /// <summary>
-    ///     Provides a factory method hook for the creation of exceptions.
-    /// </summary>
-    public ExceptionFactory ExceptionFactory
+	/// <summary>
+	///     Provides a factory method hook for the creation of exceptions.
+	/// </summary>
+	public ExceptionFactory ExceptionFactory
 	{
 		get
 		{
@@ -89,37 +89,37 @@ public class CreditNoteApi : ICreditNoteApi
 		set => _exceptionFactory = value;
 	}
 
-    /// <summary>
-    ///     Book a credit note Booking the credit note with a transaction is probably the most important part in the
-    ///     bookkeeping process.&lt;br&gt; There are several ways on correctly booking a credit note, all by using the same
-    ///     endpoint.&lt;br&gt; Conveniently, the booking process is exactly the same as the process for invoices and vouchers.
-    ///     &lt;br&gt; For this reason, you can have a look at it in the &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;&gt;invoice chapter&lt;/a&gt; and all you need to do is
-    ///     to change \&quot;Invoice\&quot; into \&quot;CreditNote\&quot; in the URL.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of credit note to book</param>
-    /// <param name="body">Booking data (optional)</param>
-    /// <returns>InlineResponse2008</returns>
-    public InlineResponse2008 BookCreditNote(int? creditNoteId, CreditNoteIdBookAmountBody body = null)
+	/// <summary>
+	///     Book a credit note Booking the credit note with a transaction is probably the most important part in the
+	///     bookkeeping process.&lt;br&gt; There are several ways on correctly booking a credit note, all by using the same
+	///     endpoint.&lt;br&gt; Conveniently, the booking process is exactly the same as the process for invoices and vouchers.
+	///     &lt;br&gt; For this reason, you can have a look at it in the &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;&gt;invoice chapter&lt;/a&gt; and all you need to do is
+	///     to change \&quot;Invoice\&quot; into \&quot;CreditNote\&quot; in the URL.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of credit note to book</param>
+	/// <param name="body">Booking data (optional)</param>
+	/// <returns>InlineResponse2008</returns>
+	public InlineResponse2008 BookCreditNote(int? creditNoteId, CreditNoteIdBookAmountBody body = null)
 	{
 		var localVarResponse = BookCreditNoteWithHttpInfo(creditNoteId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Book a credit note Booking the credit note with a transaction is probably the most important part in the
-    ///     bookkeeping process.&lt;br&gt; There are several ways on correctly booking a credit note, all by using the same
-    ///     endpoint.&lt;br&gt; Conveniently, the booking process is exactly the same as the process for invoices and vouchers.
-    ///     &lt;br&gt; For this reason, you can have a look at it in the &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;&gt;invoice chapter&lt;/a&gt; and all you need to do is
-    ///     to change \&quot;Invoice\&quot; into \&quot;CreditNote\&quot; in the URL.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of credit note to book</param>
-    /// <param name="body">Booking data (optional)</param>
-    /// <returns>ApiResponse of InlineResponse2008</returns>
-    public ApiResponse<InlineResponse2008> BookCreditNoteWithHttpInfo(int? creditNoteId,
+	/// <summary>
+	///     Book a credit note Booking the credit note with a transaction is probably the most important part in the
+	///     bookkeeping process.&lt;br&gt; There are several ways on correctly booking a credit note, all by using the same
+	///     endpoint.&lt;br&gt; Conveniently, the booking process is exactly the same as the process for invoices and vouchers.
+	///     &lt;br&gt; For this reason, you can have a look at it in the &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;&gt;invoice chapter&lt;/a&gt; and all you need to do is
+	///     to change \&quot;Invoice\&quot; into \&quot;CreditNote\&quot; in the URL.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of credit note to book</param>
+	/// <param name="body">Booking data (optional)</param>
+	/// <returns>ApiResponse of InlineResponse2008</returns>
+	public ApiResponse<InlineResponse2008> BookCreditNoteWithHttpInfo(int? creditNoteId,
 		CreditNoteIdBookAmountBody body = null)
 	{
 		// verify the required parameter 'creditNoteId' is set
@@ -181,37 +181,37 @@ public class CreditNoteApi : ICreditNoteApi
 			(InlineResponse2008)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2008)));
 	}
 
-    /// <summary>
-    ///     Book a credit note Booking the credit note with a transaction is probably the most important part in the
-    ///     bookkeeping process.&lt;br&gt; There are several ways on correctly booking a credit note, all by using the same
-    ///     endpoint.&lt;br&gt; Conveniently, the booking process is exactly the same as the process for invoices and vouchers.
-    ///     &lt;br&gt; For this reason, you can have a look at it in the &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;&gt;invoice chapter&lt;/a&gt; and all you need to do is
-    ///     to change \&quot;Invoice\&quot; into \&quot;CreditNote\&quot; in the URL.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of credit note to book</param>
-    /// <param name="body">Booking data (optional)</param>
-    /// <returns>Task of InlineResponse2008</returns>
-    public async Task<InlineResponse2008> BookCreditNoteAsync(int? creditNoteId, CreditNoteIdBookAmountBody body = null)
+	/// <summary>
+	///     Book a credit note Booking the credit note with a transaction is probably the most important part in the
+	///     bookkeeping process.&lt;br&gt; There are several ways on correctly booking a credit note, all by using the same
+	///     endpoint.&lt;br&gt; Conveniently, the booking process is exactly the same as the process for invoices and vouchers.
+	///     &lt;br&gt; For this reason, you can have a look at it in the &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;&gt;invoice chapter&lt;/a&gt; and all you need to do is
+	///     to change \&quot;Invoice\&quot; into \&quot;CreditNote\&quot; in the URL.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of credit note to book</param>
+	/// <param name="body">Booking data (optional)</param>
+	/// <returns>Task of InlineResponse2008</returns>
+	public async Task<InlineResponse2008> BookCreditNoteAsync(int? creditNoteId, CreditNoteIdBookAmountBody body = null)
 	{
 		var localVarResponse = await BookCreditNoteAsyncWithHttpInfo(creditNoteId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Book a credit note Booking the credit note with a transaction is probably the most important part in the
-    ///     bookkeeping process.&lt;br&gt; There are several ways on correctly booking a credit note, all by using the same
-    ///     endpoint.&lt;br&gt; Conveniently, the booking process is exactly the same as the process for invoices and vouchers.
-    ///     &lt;br&gt; For this reason, you can have a look at it in the &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;&gt;invoice chapter&lt;/a&gt; and all you need to do is
-    ///     to change \&quot;Invoice\&quot; into \&quot;CreditNote\&quot; in the URL.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of credit note to book</param>
-    /// <param name="body">Booking data (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse2008)</returns>
-    public async Task<ApiResponse<InlineResponse2008>> BookCreditNoteAsyncWithHttpInfo(int? creditNoteId,
+	/// <summary>
+	///     Book a credit note Booking the credit note with a transaction is probably the most important part in the
+	///     bookkeeping process.&lt;br&gt; There are several ways on correctly booking a credit note, all by using the same
+	///     endpoint.&lt;br&gt; Conveniently, the booking process is exactly the same as the process for invoices and vouchers.
+	///     &lt;br&gt; For this reason, you can have a look at it in the &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;&gt;invoice chapter&lt;/a&gt; and all you need to do is
+	///     to change \&quot;Invoice\&quot; into \&quot;CreditNote\&quot; in the URL.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of credit note to book</param>
+	/// <param name="body">Booking data (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse2008)</returns>
+	public async Task<ApiResponse<InlineResponse2008>> BookCreditNoteAsyncWithHttpInfo(int? creditNoteId,
 		CreditNoteIdBookAmountBody body = null)
 	{
 		// verify the required parameter 'creditNoteId' is set
@@ -273,73 +273,73 @@ public class CreditNoteApi : ICreditNoteApi
 			(InlineResponse2008)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2008)));
 	}
 
-    /// <summary>
-    ///     Create a new creditNote The list of parameters starts with the credit note array.&lt;br&gt; This array contains all
-    ///     required attributes for a complete credit note.&lt;br&gt; Most of the attributes are covered in the credit note
-    ///     attribute list, there are only two parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;
-    ///     objectName&lt;/b&gt;.&lt;br&gt; These are just needed for our system and you always need to provide them.&lt;br&gt;
-    ///     The list of parameters then continues with the credit note position array.&lt;br&gt; With this array you have the
-    ///     possibility to add multiple positions at once.&lt;br&gt; In the example it only contains one position, again
-    ///     together with the parameters &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;, however, you can add more
-    ///     credit note positions by extending the array.&lt;br&gt; So if you wanted to add another position, you would add the
-    ///     same list of parameters with an incremented array index of \&quot;1\&quot; instead of \&quot;0\&quot;.&lt;br&gt;
-    ///     &lt;br&gt; The list ends with the five parameters creditNotePosDelete, discountSave, discountDelete,
-    ///     takeDefaultAddress and forCashRegister.&lt;br&gt; They only play a minor role if you only want to create a credit
-    ///     note but we will shortly explain what they can do.&lt;br&gt; With creditNotePosDelete you have to option to delete
-    ///     credit note positions as this request can also be used to update credit notes.&lt;br&gt; Both discount parameters
-    ///     are deprecated and have no use for credit notes, however they need to be provided in case you want to use the
-    ///     following two parameters.&lt;br&gt; With takeDefaultAddress you can specify that the first address of the contact
-    ///     you are using for the credit note is taken for the credit note address attribute automatically, so you don&#x27;t
-    ///     need to provide the address yourself.&lt;br&gt; Finally, the forCashRegister parameter needs to be set to &lt;b&gt;
-    ///     true&lt;/b&gt; if your credit note is to be booked on the cash register.&lt;br&gt; If you want to know more about
-    ///     these parameters, for example if you want to use this request to update credit notes, feel free to contact our
-    ///     support.&lt;br&gt; Finally, after covering all parameters, they only important information left, is that the order
-    ///     of the last five attributes always needs to be kept.&lt;br&gt; You will also always need to provide all of them, as
-    ///     otherwise the request won&#x27;t work properly.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the credit note model! (optional)
-    /// </param>
-    /// <returns>SaveCreditNoteResponse</returns>
-    public SaveCreditNoteResponse CreatecreditNote(SaveCreditNote body = null)
+	/// <summary>
+	///     Create a new creditNote The list of parameters starts with the credit note array.&lt;br&gt; This array contains all
+	///     required attributes for a complete credit note.&lt;br&gt; Most of the attributes are covered in the credit note
+	///     attribute list, there are only two parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;
+	///     objectName&lt;/b&gt;.&lt;br&gt; These are just needed for our system and you always need to provide them.&lt;br&gt;
+	///     The list of parameters then continues with the credit note position array.&lt;br&gt; With this array you have the
+	///     possibility to add multiple positions at once.&lt;br&gt; In the example it only contains one position, again
+	///     together with the parameters &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;, however, you can add more
+	///     credit note positions by extending the array.&lt;br&gt; So if you wanted to add another position, you would add the
+	///     same list of parameters with an incremented array index of \&quot;1\&quot; instead of \&quot;0\&quot;.&lt;br&gt;
+	///     &lt;br&gt; The list ends with the five parameters creditNotePosDelete, discountSave, discountDelete,
+	///     takeDefaultAddress and forCashRegister.&lt;br&gt; They only play a minor role if you only want to create a credit
+	///     note but we will shortly explain what they can do.&lt;br&gt; With creditNotePosDelete you have to option to delete
+	///     credit note positions as this request can also be used to update credit notes.&lt;br&gt; Both discount parameters
+	///     are deprecated and have no use for credit notes, however they need to be provided in case you want to use the
+	///     following two parameters.&lt;br&gt; With takeDefaultAddress you can specify that the first address of the contact
+	///     you are using for the credit note is taken for the credit note address attribute automatically, so you don&#x27;t
+	///     need to provide the address yourself.&lt;br&gt; Finally, the forCashRegister parameter needs to be set to &lt;b&gt;
+	///     true&lt;/b&gt; if your credit note is to be booked on the cash register.&lt;br&gt; If you want to know more about
+	///     these parameters, for example if you want to use this request to update credit notes, feel free to contact our
+	///     support.&lt;br&gt; Finally, after covering all parameters, they only important information left, is that the order
+	///     of the last five attributes always needs to be kept.&lt;br&gt; You will also always need to provide all of them, as
+	///     otherwise the request won&#x27;t work properly.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the credit note model! (optional)
+	/// </param>
+	/// <returns>SaveCreditNoteResponse</returns>
+	public SaveCreditNoteResponse CreatecreditNote(SaveCreditNote body = null)
 	{
 		var localVarResponse = CreatecreditNoteWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new creditNote The list of parameters starts with the credit note array.&lt;br&gt; This array contains all
-    ///     required attributes for a complete credit note.&lt;br&gt; Most of the attributes are covered in the credit note
-    ///     attribute list, there are only two parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;
-    ///     objectName&lt;/b&gt;.&lt;br&gt; These are just needed for our system and you always need to provide them.&lt;br&gt;
-    ///     The list of parameters then continues with the credit note position array.&lt;br&gt; With this array you have the
-    ///     possibility to add multiple positions at once.&lt;br&gt; In the example it only contains one position, again
-    ///     together with the parameters &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;, however, you can add more
-    ///     credit note positions by extending the array.&lt;br&gt; So if you wanted to add another position, you would add the
-    ///     same list of parameters with an incremented array index of \&quot;1\&quot; instead of \&quot;0\&quot;.&lt;br&gt;
-    ///     &lt;br&gt; The list ends with the five parameters creditNotePosDelete, discountSave, discountDelete,
-    ///     takeDefaultAddress and forCashRegister.&lt;br&gt; They only play a minor role if you only want to create a credit
-    ///     note but we will shortly explain what they can do.&lt;br&gt; With creditNotePosDelete you have to option to delete
-    ///     credit note positions as this request can also be used to update credit notes.&lt;br&gt; Both discount parameters
-    ///     are deprecated and have no use for credit notes, however they need to be provided in case you want to use the
-    ///     following two parameters.&lt;br&gt; With takeDefaultAddress you can specify that the first address of the contact
-    ///     you are using for the credit note is taken for the credit note address attribute automatically, so you don&#x27;t
-    ///     need to provide the address yourself.&lt;br&gt; Finally, the forCashRegister parameter needs to be set to &lt;b&gt;
-    ///     true&lt;/b&gt; if your credit note is to be booked on the cash register.&lt;br&gt; If you want to know more about
-    ///     these parameters, for example if you want to use this request to update credit notes, feel free to contact our
-    ///     support.&lt;br&gt; Finally, after covering all parameters, they only important information left, is that the order
-    ///     of the last five attributes always needs to be kept.&lt;br&gt; You will also always need to provide all of them, as
-    ///     otherwise the request won&#x27;t work properly.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the credit note model! (optional)
-    /// </param>
-    /// <returns>ApiResponse of SaveCreditNoteResponse</returns>
-    public ApiResponse<SaveCreditNoteResponse> CreatecreditNoteWithHttpInfo(SaveCreditNote body = null)
+	/// <summary>
+	///     Create a new creditNote The list of parameters starts with the credit note array.&lt;br&gt; This array contains all
+	///     required attributes for a complete credit note.&lt;br&gt; Most of the attributes are covered in the credit note
+	///     attribute list, there are only two parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;
+	///     objectName&lt;/b&gt;.&lt;br&gt; These are just needed for our system and you always need to provide them.&lt;br&gt;
+	///     The list of parameters then continues with the credit note position array.&lt;br&gt; With this array you have the
+	///     possibility to add multiple positions at once.&lt;br&gt; In the example it only contains one position, again
+	///     together with the parameters &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;, however, you can add more
+	///     credit note positions by extending the array.&lt;br&gt; So if you wanted to add another position, you would add the
+	///     same list of parameters with an incremented array index of \&quot;1\&quot; instead of \&quot;0\&quot;.&lt;br&gt;
+	///     &lt;br&gt; The list ends with the five parameters creditNotePosDelete, discountSave, discountDelete,
+	///     takeDefaultAddress and forCashRegister.&lt;br&gt; They only play a minor role if you only want to create a credit
+	///     note but we will shortly explain what they can do.&lt;br&gt; With creditNotePosDelete you have to option to delete
+	///     credit note positions as this request can also be used to update credit notes.&lt;br&gt; Both discount parameters
+	///     are deprecated and have no use for credit notes, however they need to be provided in case you want to use the
+	///     following two parameters.&lt;br&gt; With takeDefaultAddress you can specify that the first address of the contact
+	///     you are using for the credit note is taken for the credit note address attribute automatically, so you don&#x27;t
+	///     need to provide the address yourself.&lt;br&gt; Finally, the forCashRegister parameter needs to be set to &lt;b&gt;
+	///     true&lt;/b&gt; if your credit note is to be booked on the cash register.&lt;br&gt; If you want to know more about
+	///     these parameters, for example if you want to use this request to update credit notes, feel free to contact our
+	///     support.&lt;br&gt; Finally, after covering all parameters, they only important information left, is that the order
+	///     of the last five attributes always needs to be kept.&lt;br&gt; You will also always need to provide all of them, as
+	///     otherwise the request won&#x27;t work properly.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the credit note model! (optional)
+	/// </param>
+	/// <returns>ApiResponse of SaveCreditNoteResponse</returns>
+	public ApiResponse<SaveCreditNoteResponse> CreatecreditNoteWithHttpInfo(SaveCreditNote body = null)
 	{
 		var localVarPath = "/CreditNote/Factory/saveCreditNote";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -393,73 +393,73 @@ public class CreditNoteApi : ICreditNoteApi
 				typeof(SaveCreditNoteResponse)));
 	}
 
-    /// <summary>
-    ///     Create a new creditNote The list of parameters starts with the credit note array.&lt;br&gt; This array contains all
-    ///     required attributes for a complete credit note.&lt;br&gt; Most of the attributes are covered in the credit note
-    ///     attribute list, there are only two parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;
-    ///     objectName&lt;/b&gt;.&lt;br&gt; These are just needed for our system and you always need to provide them.&lt;br&gt;
-    ///     The list of parameters then continues with the credit note position array.&lt;br&gt; With this array you have the
-    ///     possibility to add multiple positions at once.&lt;br&gt; In the example it only contains one position, again
-    ///     together with the parameters &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;, however, you can add more
-    ///     credit note positions by extending the array.&lt;br&gt; So if you wanted to add another position, you would add the
-    ///     same list of parameters with an incremented array index of \&quot;1\&quot; instead of \&quot;0\&quot;.&lt;br&gt;
-    ///     &lt;br&gt; The list ends with the five parameters creditNotePosDelete, discountSave, discountDelete,
-    ///     takeDefaultAddress and forCashRegister.&lt;br&gt; They only play a minor role if you only want to create a credit
-    ///     note but we will shortly explain what they can do.&lt;br&gt; With creditNotePosDelete you have to option to delete
-    ///     credit note positions as this request can also be used to update credit notes.&lt;br&gt; Both discount parameters
-    ///     are deprecated and have no use for credit notes, however they need to be provided in case you want to use the
-    ///     following two parameters.&lt;br&gt; With takeDefaultAddress you can specify that the first address of the contact
-    ///     you are using for the credit note is taken for the credit note address attribute automatically, so you don&#x27;t
-    ///     need to provide the address yourself.&lt;br&gt; Finally, the forCashRegister parameter needs to be set to &lt;b&gt;
-    ///     true&lt;/b&gt; if your credit note is to be booked on the cash register.&lt;br&gt; If you want to know more about
-    ///     these parameters, for example if you want to use this request to update credit notes, feel free to contact our
-    ///     support.&lt;br&gt; Finally, after covering all parameters, they only important information left, is that the order
-    ///     of the last five attributes always needs to be kept.&lt;br&gt; You will also always need to provide all of them, as
-    ///     otherwise the request won&#x27;t work properly.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the credit note model! (optional)
-    /// </param>
-    /// <returns>Task of SaveCreditNoteResponse</returns>
-    public async Task<SaveCreditNoteResponse> CreatecreditNoteAsync(SaveCreditNote body = null)
+	/// <summary>
+	///     Create a new creditNote The list of parameters starts with the credit note array.&lt;br&gt; This array contains all
+	///     required attributes for a complete credit note.&lt;br&gt; Most of the attributes are covered in the credit note
+	///     attribute list, there are only two parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;
+	///     objectName&lt;/b&gt;.&lt;br&gt; These are just needed for our system and you always need to provide them.&lt;br&gt;
+	///     The list of parameters then continues with the credit note position array.&lt;br&gt; With this array you have the
+	///     possibility to add multiple positions at once.&lt;br&gt; In the example it only contains one position, again
+	///     together with the parameters &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;, however, you can add more
+	///     credit note positions by extending the array.&lt;br&gt; So if you wanted to add another position, you would add the
+	///     same list of parameters with an incremented array index of \&quot;1\&quot; instead of \&quot;0\&quot;.&lt;br&gt;
+	///     &lt;br&gt; The list ends with the five parameters creditNotePosDelete, discountSave, discountDelete,
+	///     takeDefaultAddress and forCashRegister.&lt;br&gt; They only play a minor role if you only want to create a credit
+	///     note but we will shortly explain what they can do.&lt;br&gt; With creditNotePosDelete you have to option to delete
+	///     credit note positions as this request can also be used to update credit notes.&lt;br&gt; Both discount parameters
+	///     are deprecated and have no use for credit notes, however they need to be provided in case you want to use the
+	///     following two parameters.&lt;br&gt; With takeDefaultAddress you can specify that the first address of the contact
+	///     you are using for the credit note is taken for the credit note address attribute automatically, so you don&#x27;t
+	///     need to provide the address yourself.&lt;br&gt; Finally, the forCashRegister parameter needs to be set to &lt;b&gt;
+	///     true&lt;/b&gt; if your credit note is to be booked on the cash register.&lt;br&gt; If you want to know more about
+	///     these parameters, for example if you want to use this request to update credit notes, feel free to contact our
+	///     support.&lt;br&gt; Finally, after covering all parameters, they only important information left, is that the order
+	///     of the last five attributes always needs to be kept.&lt;br&gt; You will also always need to provide all of them, as
+	///     otherwise the request won&#x27;t work properly.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the credit note model! (optional)
+	/// </param>
+	/// <returns>Task of SaveCreditNoteResponse</returns>
+	public async Task<SaveCreditNoteResponse> CreatecreditNoteAsync(SaveCreditNote body = null)
 	{
 		var localVarResponse = await CreatecreditNoteAsyncWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new creditNote The list of parameters starts with the credit note array.&lt;br&gt; This array contains all
-    ///     required attributes for a complete credit note.&lt;br&gt; Most of the attributes are covered in the credit note
-    ///     attribute list, there are only two parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;
-    ///     objectName&lt;/b&gt;.&lt;br&gt; These are just needed for our system and you always need to provide them.&lt;br&gt;
-    ///     The list of parameters then continues with the credit note position array.&lt;br&gt; With this array you have the
-    ///     possibility to add multiple positions at once.&lt;br&gt; In the example it only contains one position, again
-    ///     together with the parameters &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;, however, you can add more
-    ///     credit note positions by extending the array.&lt;br&gt; So if you wanted to add another position, you would add the
-    ///     same list of parameters with an incremented array index of \&quot;1\&quot; instead of \&quot;0\&quot;.&lt;br&gt;
-    ///     &lt;br&gt; The list ends with the five parameters creditNotePosDelete, discountSave, discountDelete,
-    ///     takeDefaultAddress and forCashRegister.&lt;br&gt; They only play a minor role if you only want to create a credit
-    ///     note but we will shortly explain what they can do.&lt;br&gt; With creditNotePosDelete you have to option to delete
-    ///     credit note positions as this request can also be used to update credit notes.&lt;br&gt; Both discount parameters
-    ///     are deprecated and have no use for credit notes, however they need to be provided in case you want to use the
-    ///     following two parameters.&lt;br&gt; With takeDefaultAddress you can specify that the first address of the contact
-    ///     you are using for the credit note is taken for the credit note address attribute automatically, so you don&#x27;t
-    ///     need to provide the address yourself.&lt;br&gt; Finally, the forCashRegister parameter needs to be set to &lt;b&gt;
-    ///     true&lt;/b&gt; if your credit note is to be booked on the cash register.&lt;br&gt; If you want to know more about
-    ///     these parameters, for example if you want to use this request to update credit notes, feel free to contact our
-    ///     support.&lt;br&gt; Finally, after covering all parameters, they only important information left, is that the order
-    ///     of the last five attributes always needs to be kept.&lt;br&gt; You will also always need to provide all of them, as
-    ///     otherwise the request won&#x27;t work properly.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the credit note model! (optional)
-    /// </param>
-    /// <returns>Task of ApiResponse (SaveCreditNoteResponse)</returns>
-    public async Task<ApiResponse<SaveCreditNoteResponse>> CreatecreditNoteAsyncWithHttpInfo(SaveCreditNote body = null)
+	/// <summary>
+	///     Create a new creditNote The list of parameters starts with the credit note array.&lt;br&gt; This array contains all
+	///     required attributes for a complete credit note.&lt;br&gt; Most of the attributes are covered in the credit note
+	///     attribute list, there are only two parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;
+	///     objectName&lt;/b&gt;.&lt;br&gt; These are just needed for our system and you always need to provide them.&lt;br&gt;
+	///     The list of parameters then continues with the credit note position array.&lt;br&gt; With this array you have the
+	///     possibility to add multiple positions at once.&lt;br&gt; In the example it only contains one position, again
+	///     together with the parameters &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;, however, you can add more
+	///     credit note positions by extending the array.&lt;br&gt; So if you wanted to add another position, you would add the
+	///     same list of parameters with an incremented array index of \&quot;1\&quot; instead of \&quot;0\&quot;.&lt;br&gt;
+	///     &lt;br&gt; The list ends with the five parameters creditNotePosDelete, discountSave, discountDelete,
+	///     takeDefaultAddress and forCashRegister.&lt;br&gt; They only play a minor role if you only want to create a credit
+	///     note but we will shortly explain what they can do.&lt;br&gt; With creditNotePosDelete you have to option to delete
+	///     credit note positions as this request can also be used to update credit notes.&lt;br&gt; Both discount parameters
+	///     are deprecated and have no use for credit notes, however they need to be provided in case you want to use the
+	///     following two parameters.&lt;br&gt; With takeDefaultAddress you can specify that the first address of the contact
+	///     you are using for the credit note is taken for the credit note address attribute automatically, so you don&#x27;t
+	///     need to provide the address yourself.&lt;br&gt; Finally, the forCashRegister parameter needs to be set to &lt;b&gt;
+	///     true&lt;/b&gt; if your credit note is to be booked on the cash register.&lt;br&gt; If you want to know more about
+	///     these parameters, for example if you want to use this request to update credit notes, feel free to contact our
+	///     support.&lt;br&gt; Finally, after covering all parameters, they only important information left, is that the order
+	///     of the last five attributes always needs to be kept.&lt;br&gt; You will also always need to provide all of them, as
+	///     otherwise the request won&#x27;t work properly.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the credit note model! (optional)
+	/// </param>
+	/// <returns>Task of ApiResponse (SaveCreditNoteResponse)</returns>
+	public async Task<ApiResponse<SaveCreditNoteResponse>> CreatecreditNoteAsyncWithHttpInfo(SaveCreditNote body = null)
 	{
 		var localVarPath = "/CreditNote/Factory/saveCreditNote";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -513,30 +513,30 @@ public class CreditNoteApi : ICreditNoteApi
 				typeof(SaveCreditNoteResponse)));
 	}
 
-    /// <summary>
-    ///     Retrieve pdf document of a credit note Retrieves the pdf document of a credit note with additional metadata.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of credit note from which you want the pdf</param>
-    /// <param name="download">If u want to download the pdf of the credit note. (optional)</param>
-    /// <param name="preventSendBy">Defines if u want to send the credit note. (optional)</param>
-    /// <returns>CreditNoteGetPdfResponse</returns>
-    public CreditNoteGetPdfResponse CreditNoteGetPdf(int? creditNoteId, bool? download = null,
+	/// <summary>
+	///     Retrieve pdf document of a credit note Retrieves the pdf document of a credit note with additional metadata.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of credit note from which you want the pdf</param>
+	/// <param name="download">If u want to download the pdf of the credit note. (optional)</param>
+	/// <param name="preventSendBy">Defines if u want to send the credit note. (optional)</param>
+	/// <returns>CreditNoteGetPdfResponse</returns>
+	public CreditNoteGetPdfResponse CreditNoteGetPdf(int? creditNoteId, bool? download = null,
 		bool? preventSendBy = null)
 	{
 		var localVarResponse = CreditNoteGetPdfWithHttpInfo(creditNoteId, download, preventSendBy);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve pdf document of a credit note Retrieves the pdf document of a credit note with additional metadata.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of credit note from which you want the pdf</param>
-    /// <param name="download">If u want to download the pdf of the credit note. (optional)</param>
-    /// <param name="preventSendBy">Defines if u want to send the credit note. (optional)</param>
-    /// <returns>ApiResponse of CreditNoteGetPdfResponse</returns>
-    public ApiResponse<CreditNoteGetPdfResponse> CreditNoteGetPdfWithHttpInfo(int? creditNoteId, bool? download = null,
+	/// <summary>
+	///     Retrieve pdf document of a credit note Retrieves the pdf document of a credit note with additional metadata.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of credit note from which you want the pdf</param>
+	/// <param name="download">If u want to download the pdf of the credit note. (optional)</param>
+	/// <param name="preventSendBy">Defines if u want to send the credit note. (optional)</param>
+	/// <returns>ApiResponse of CreditNoteGetPdfResponse</returns>
+	public ApiResponse<CreditNoteGetPdfResponse> CreditNoteGetPdfWithHttpInfo(int? creditNoteId, bool? download = null,
 		bool? preventSendBy = null)
 	{
 		// verify the required parameter 'creditNoteId' is set
@@ -601,30 +601,30 @@ public class CreditNoteApi : ICreditNoteApi
 				typeof(CreditNoteGetPdfResponse)));
 	}
 
-    /// <summary>
-    ///     Retrieve pdf document of a credit note Retrieves the pdf document of a credit note with additional metadata.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of credit note from which you want the pdf</param>
-    /// <param name="download">If u want to download the pdf of the credit note. (optional)</param>
-    /// <param name="preventSendBy">Defines if u want to send the credit note. (optional)</param>
-    /// <returns>Task of CreditNoteGetPdfResponse</returns>
-    public async Task<CreditNoteGetPdfResponse> CreditNoteGetPdfAsync(int? creditNoteId, bool? download = null,
+	/// <summary>
+	///     Retrieve pdf document of a credit note Retrieves the pdf document of a credit note with additional metadata.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of credit note from which you want the pdf</param>
+	/// <param name="download">If u want to download the pdf of the credit note. (optional)</param>
+	/// <param name="preventSendBy">Defines if u want to send the credit note. (optional)</param>
+	/// <returns>Task of CreditNoteGetPdfResponse</returns>
+	public async Task<CreditNoteGetPdfResponse> CreditNoteGetPdfAsync(int? creditNoteId, bool? download = null,
 		bool? preventSendBy = null)
 	{
 		var localVarResponse = await CreditNoteGetPdfAsyncWithHttpInfo(creditNoteId, download, preventSendBy);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve pdf document of a credit note Retrieves the pdf document of a credit note with additional metadata.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of credit note from which you want the pdf</param>
-    /// <param name="download">If u want to download the pdf of the credit note. (optional)</param>
-    /// <param name="preventSendBy">Defines if u want to send the credit note. (optional)</param>
-    /// <returns>Task of ApiResponse (CreditNoteGetPdfResponse)</returns>
-    public async Task<ApiResponse<CreditNoteGetPdfResponse>> CreditNoteGetPdfAsyncWithHttpInfo(int? creditNoteId,
+	/// <summary>
+	///     Retrieve pdf document of a credit note Retrieves the pdf document of a credit note with additional metadata.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of credit note from which you want the pdf</param>
+	/// <param name="download">If u want to download the pdf of the credit note. (optional)</param>
+	/// <param name="preventSendBy">Defines if u want to send the credit note. (optional)</param>
+	/// <returns>Task of ApiResponse (CreditNoteGetPdfResponse)</returns>
+	public async Task<ApiResponse<CreditNoteGetPdfResponse>> CreditNoteGetPdfAsyncWithHttpInfo(int? creditNoteId,
 		bool? download = null, bool? preventSendBy = null)
 	{
 		// verify the required parameter 'creditNoteId' is set
@@ -689,27 +689,27 @@ public class CreditNoteApi : ICreditNoteApi
 				typeof(CreditNoteGetPdfResponse)));
 	}
 
-    /// <summary>
-    ///     Mark credit note as sent Marks an credit note as sent by a chosen send type.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of credit note to mark as sent</param>
-    /// <param name="body">Specify the send type (optional)</param>
-    /// <returns>InlineResponse20032</returns>
-    public InlineResponse20032 CreditNoteSendBy(int? creditNoteId, CreditNoteIdSendByBody body = null)
+	/// <summary>
+	///     Mark credit note as sent Marks an credit note as sent by a chosen send type.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of credit note to mark as sent</param>
+	/// <param name="body">Specify the send type (optional)</param>
+	/// <returns>InlineResponse20032</returns>
+	public InlineResponse20032 CreditNoteSendBy(int? creditNoteId, CreditNoteIdSendByBody body = null)
 	{
 		var localVarResponse = CreditNoteSendByWithHttpInfo(creditNoteId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Mark credit note as sent Marks an credit note as sent by a chosen send type.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of credit note to mark as sent</param>
-    /// <param name="body">Specify the send type (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20032</returns>
-    public ApiResponse<InlineResponse20032> CreditNoteSendByWithHttpInfo(int? creditNoteId,
+	/// <summary>
+	///     Mark credit note as sent Marks an credit note as sent by a chosen send type.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of credit note to mark as sent</param>
+	/// <param name="body">Specify the send type (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20032</returns>
+	public ApiResponse<InlineResponse20032> CreditNoteSendByWithHttpInfo(int? creditNoteId,
 		CreditNoteIdSendByBody body = null)
 	{
 		// verify the required parameter 'creditNoteId' is set
@@ -771,27 +771,27 @@ public class CreditNoteApi : ICreditNoteApi
 			(InlineResponse20032)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20032)));
 	}
 
-    /// <summary>
-    ///     Mark credit note as sent Marks an credit note as sent by a chosen send type.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of credit note to mark as sent</param>
-    /// <param name="body">Specify the send type (optional)</param>
-    /// <returns>Task of InlineResponse20032</returns>
-    public async Task<InlineResponse20032> CreditNoteSendByAsync(int? creditNoteId, CreditNoteIdSendByBody body = null)
+	/// <summary>
+	///     Mark credit note as sent Marks an credit note as sent by a chosen send type.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of credit note to mark as sent</param>
+	/// <param name="body">Specify the send type (optional)</param>
+	/// <returns>Task of InlineResponse20032</returns>
+	public async Task<InlineResponse20032> CreditNoteSendByAsync(int? creditNoteId, CreditNoteIdSendByBody body = null)
 	{
 		var localVarResponse = await CreditNoteSendByAsyncWithHttpInfo(creditNoteId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Mark credit note as sent Marks an credit note as sent by a chosen send type.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of credit note to mark as sent</param>
-    /// <param name="body">Specify the send type (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20032)</returns>
-    public async Task<ApiResponse<InlineResponse20032>> CreditNoteSendByAsyncWithHttpInfo(int? creditNoteId,
+	/// <summary>
+	///     Mark credit note as sent Marks an credit note as sent by a chosen send type.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of credit note to mark as sent</param>
+	/// <param name="body">Specify the send type (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20032)</returns>
+	public async Task<ApiResponse<InlineResponse20032>> CreditNoteSendByAsyncWithHttpInfo(int? creditNoteId,
 		CreditNoteIdSendByBody body = null)
 	{
 		// verify the required parameter 'creditNoteId' is set
@@ -853,25 +853,25 @@ public class CreditNoteApi : ICreditNoteApi
 			(InlineResponse20032)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20032)));
 	}
 
-    /// <summary>
-    ///     Deletes an creditNote
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">Id of creditNote resource to delete</param>
-    /// <returns>InlineResponse2005</returns>
-    public InlineResponse2005 DeletecreditNote(int? creditNoteId)
+	/// <summary>
+	///     Deletes an creditNote
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">Id of creditNote resource to delete</param>
+	/// <returns>InlineResponse2005</returns>
+	public InlineResponse2005 DeletecreditNote(int? creditNoteId)
 	{
 		var localVarResponse = DeletecreditNoteWithHttpInfo(creditNoteId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Deletes an creditNote
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">Id of creditNote resource to delete</param>
-    /// <returns>ApiResponse of InlineResponse2005</returns>
-    public ApiResponse<InlineResponse2005> DeletecreditNoteWithHttpInfo(int? creditNoteId)
+	/// <summary>
+	///     Deletes an creditNote
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">Id of creditNote resource to delete</param>
+	/// <returns>ApiResponse of InlineResponse2005</returns>
+	public ApiResponse<InlineResponse2005> DeletecreditNoteWithHttpInfo(int? creditNoteId)
 	{
 		// verify the required parameter 'creditNoteId' is set
 		if (creditNoteId == null)
@@ -927,25 +927,25 @@ public class CreditNoteApi : ICreditNoteApi
 			(InlineResponse2005)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2005)));
 	}
 
-    /// <summary>
-    ///     Deletes an creditNote
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">Id of creditNote resource to delete</param>
-    /// <returns>Task of InlineResponse2005</returns>
-    public async Task<InlineResponse2005> DeletecreditNoteAsync(int? creditNoteId)
+	/// <summary>
+	///     Deletes an creditNote
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">Id of creditNote resource to delete</param>
+	/// <returns>Task of InlineResponse2005</returns>
+	public async Task<InlineResponse2005> DeletecreditNoteAsync(int? creditNoteId)
 	{
 		var localVarResponse = await DeletecreditNoteAsyncWithHttpInfo(creditNoteId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Deletes an creditNote
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">Id of creditNote resource to delete</param>
-    /// <returns>Task of ApiResponse (InlineResponse2005)</returns>
-    public async Task<ApiResponse<InlineResponse2005>> DeletecreditNoteAsyncWithHttpInfo(int? creditNoteId)
+	/// <summary>
+	///     Deletes an creditNote
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">Id of creditNote resource to delete</param>
+	/// <returns>Task of ApiResponse (InlineResponse2005)</returns>
+	public async Task<ApiResponse<InlineResponse2005>> DeletecreditNoteAsyncWithHttpInfo(int? creditNoteId)
 	{
 		// verify the required parameter 'creditNoteId' is set
 		if (creditNoteId == null)
@@ -1001,24 +1001,24 @@ public class CreditNoteApi : ICreditNoteApi
 			(InlineResponse2005)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2005)));
 	}
 
-    /// <summary>
-    ///     Retrieve CreditNote There are a multitude of parameter which can be used to filter.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="status">Status of the CreditNote (optional)</param>
-    /// <param name="creditNoteNumber">Retrieve all CreditNotes with this creditNote number (optional)</param>
-    /// <param name="startDate">Retrieve all CreditNotes with a date equal or higher (optional)</param>
-    /// <param name="endDate">Retrieve all CreditNotes with a date equal or lower (optional)</param>
-    /// <param name="contactId">
-    ///     Retrieve all CreditNotes with this contact. Must be provided with contact[objectName]
-    ///     (optional)
-    /// </param>
-    /// <param name="contactObjectName">
-    ///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>InlineResponse2005</returns>
-    public InlineResponse2005 GetCreditNotes(string status = null, string creditNoteNumber = null,
+	/// <summary>
+	///     Retrieve CreditNote There are a multitude of parameter which can be used to filter.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="status">Status of the CreditNote (optional)</param>
+	/// <param name="creditNoteNumber">Retrieve all CreditNotes with this creditNote number (optional)</param>
+	/// <param name="startDate">Retrieve all CreditNotes with a date equal or higher (optional)</param>
+	/// <param name="endDate">Retrieve all CreditNotes with a date equal or lower (optional)</param>
+	/// <param name="contactId">
+	///     Retrieve all CreditNotes with this contact. Must be provided with contact[objectName]
+	///     (optional)
+	/// </param>
+	/// <param name="contactObjectName">
+	///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>InlineResponse2005</returns>
+	public InlineResponse2005 GetCreditNotes(string status = null, string creditNoteNumber = null,
 		int? startDate = null, int? endDate = null, int? contactId = null, string contactObjectName = null)
 	{
 		var localVarResponse =
@@ -1026,24 +1026,24 @@ public class CreditNoteApi : ICreditNoteApi
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve CreditNote There are a multitude of parameter which can be used to filter.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="status">Status of the CreditNote (optional)</param>
-    /// <param name="creditNoteNumber">Retrieve all CreditNotes with this creditNote number (optional)</param>
-    /// <param name="startDate">Retrieve all CreditNotes with a date equal or higher (optional)</param>
-    /// <param name="endDate">Retrieve all CreditNotes with a date equal or lower (optional)</param>
-    /// <param name="contactId">
-    ///     Retrieve all CreditNotes with this contact. Must be provided with contact[objectName]
-    ///     (optional)
-    /// </param>
-    /// <param name="contactObjectName">
-    ///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>ApiResponse of InlineResponse2005</returns>
-    public ApiResponse<InlineResponse2005> GetCreditNotesWithHttpInfo(string status = null,
+	/// <summary>
+	///     Retrieve CreditNote There are a multitude of parameter which can be used to filter.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="status">Status of the CreditNote (optional)</param>
+	/// <param name="creditNoteNumber">Retrieve all CreditNotes with this creditNote number (optional)</param>
+	/// <param name="startDate">Retrieve all CreditNotes with a date equal or higher (optional)</param>
+	/// <param name="endDate">Retrieve all CreditNotes with a date equal or lower (optional)</param>
+	/// <param name="contactId">
+	///     Retrieve all CreditNotes with this contact. Must be provided with contact[objectName]
+	///     (optional)
+	/// </param>
+	/// <param name="contactObjectName">
+	///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>ApiResponse of InlineResponse2005</returns>
+	public ApiResponse<InlineResponse2005> GetCreditNotesWithHttpInfo(string status = null,
 		string creditNoteNumber = null, int? startDate = null, int? endDate = null, int? contactId = null,
 		string contactObjectName = null)
 	{
@@ -1113,24 +1113,24 @@ public class CreditNoteApi : ICreditNoteApi
 			(InlineResponse2005)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2005)));
 	}
 
-    /// <summary>
-    ///     Retrieve CreditNote There are a multitude of parameter which can be used to filter.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="status">Status of the CreditNote (optional)</param>
-    /// <param name="creditNoteNumber">Retrieve all CreditNotes with this creditNote number (optional)</param>
-    /// <param name="startDate">Retrieve all CreditNotes with a date equal or higher (optional)</param>
-    /// <param name="endDate">Retrieve all CreditNotes with a date equal or lower (optional)</param>
-    /// <param name="contactId">
-    ///     Retrieve all CreditNotes with this contact. Must be provided with contact[objectName]
-    ///     (optional)
-    /// </param>
-    /// <param name="contactObjectName">
-    ///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of InlineResponse2005</returns>
-    public async Task<InlineResponse2005> GetCreditNotesAsync(string status = null, string creditNoteNumber = null,
+	/// <summary>
+	///     Retrieve CreditNote There are a multitude of parameter which can be used to filter.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="status">Status of the CreditNote (optional)</param>
+	/// <param name="creditNoteNumber">Retrieve all CreditNotes with this creditNote number (optional)</param>
+	/// <param name="startDate">Retrieve all CreditNotes with a date equal or higher (optional)</param>
+	/// <param name="endDate">Retrieve all CreditNotes with a date equal or lower (optional)</param>
+	/// <param name="contactId">
+	///     Retrieve all CreditNotes with this contact. Must be provided with contact[objectName]
+	///     (optional)
+	/// </param>
+	/// <param name="contactObjectName">
+	///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of InlineResponse2005</returns>
+	public async Task<InlineResponse2005> GetCreditNotesAsync(string status = null, string creditNoteNumber = null,
 		int? startDate = null, int? endDate = null, int? contactId = null, string contactObjectName = null)
 	{
 		var localVarResponse = await GetCreditNotesAsyncWithHttpInfo(status, creditNoteNumber, startDate, endDate,
@@ -1138,24 +1138,24 @@ public class CreditNoteApi : ICreditNoteApi
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve CreditNote There are a multitude of parameter which can be used to filter.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="status">Status of the CreditNote (optional)</param>
-    /// <param name="creditNoteNumber">Retrieve all CreditNotes with this creditNote number (optional)</param>
-    /// <param name="startDate">Retrieve all CreditNotes with a date equal or higher (optional)</param>
-    /// <param name="endDate">Retrieve all CreditNotes with a date equal or lower (optional)</param>
-    /// <param name="contactId">
-    ///     Retrieve all CreditNotes with this contact. Must be provided with contact[objectName]
-    ///     (optional)
-    /// </param>
-    /// <param name="contactObjectName">
-    ///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of ApiResponse (InlineResponse2005)</returns>
-    public async Task<ApiResponse<InlineResponse2005>> GetCreditNotesAsyncWithHttpInfo(string status = null,
+	/// <summary>
+	///     Retrieve CreditNote There are a multitude of parameter which can be used to filter.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="status">Status of the CreditNote (optional)</param>
+	/// <param name="creditNoteNumber">Retrieve all CreditNotes with this creditNote number (optional)</param>
+	/// <param name="startDate">Retrieve all CreditNotes with a date equal or higher (optional)</param>
+	/// <param name="endDate">Retrieve all CreditNotes with a date equal or lower (optional)</param>
+	/// <param name="contactId">
+	///     Retrieve all CreditNotes with this contact. Must be provided with contact[objectName]
+	///     (optional)
+	/// </param>
+	/// <param name="contactObjectName">
+	///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of ApiResponse (InlineResponse2005)</returns>
+	public async Task<ApiResponse<InlineResponse2005>> GetCreditNotesAsyncWithHttpInfo(string status = null,
 		string creditNoteNumber = null, int? startDate = null, int? endDate = null, int? contactId = null,
 		string contactObjectName = null)
 	{
@@ -1225,25 +1225,25 @@ public class CreditNoteApi : ICreditNoteApi
 			(InlineResponse2005)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2005)));
 	}
 
-    /// <summary>
-    ///     Find creditNote by ID Returns a single creditNote
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of creditNote to return</param>
-    /// <returns>InlineResponse2005</returns>
-    public InlineResponse2005 GetcreditNoteById(int? creditNoteId)
+	/// <summary>
+	///     Find creditNote by ID Returns a single creditNote
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of creditNote to return</param>
+	/// <returns>InlineResponse2005</returns>
+	public InlineResponse2005 GetcreditNoteById(int? creditNoteId)
 	{
 		var localVarResponse = GetcreditNoteByIdWithHttpInfo(creditNoteId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find creditNote by ID Returns a single creditNote
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of creditNote to return</param>
-    /// <returns>ApiResponse of InlineResponse2005</returns>
-    public ApiResponse<InlineResponse2005> GetcreditNoteByIdWithHttpInfo(int? creditNoteId)
+	/// <summary>
+	///     Find creditNote by ID Returns a single creditNote
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of creditNote to return</param>
+	/// <returns>ApiResponse of InlineResponse2005</returns>
+	public ApiResponse<InlineResponse2005> GetcreditNoteByIdWithHttpInfo(int? creditNoteId)
 	{
 		// verify the required parameter 'creditNoteId' is set
 		if (creditNoteId == null)
@@ -1299,25 +1299,25 @@ public class CreditNoteApi : ICreditNoteApi
 			(InlineResponse2005)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2005)));
 	}
 
-    /// <summary>
-    ///     Find creditNote by ID Returns a single creditNote
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of creditNote to return</param>
-    /// <returns>Task of InlineResponse2005</returns>
-    public async Task<InlineResponse2005> GetcreditNoteByIdAsync(int? creditNoteId)
+	/// <summary>
+	///     Find creditNote by ID Returns a single creditNote
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of creditNote to return</param>
+	/// <returns>Task of InlineResponse2005</returns>
+	public async Task<InlineResponse2005> GetcreditNoteByIdAsync(int? creditNoteId)
 	{
 		var localVarResponse = await GetcreditNoteByIdAsyncWithHttpInfo(creditNoteId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find creditNote by ID Returns a single creditNote
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of creditNote to return</param>
-    /// <returns>Task of ApiResponse (InlineResponse2005)</returns>
-    public async Task<ApiResponse<InlineResponse2005>> GetcreditNoteByIdAsyncWithHttpInfo(int? creditNoteId)
+	/// <summary>
+	///     Find creditNote by ID Returns a single creditNote
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of creditNote to return</param>
+	/// <returns>Task of ApiResponse (InlineResponse2005)</returns>
+	public async Task<ApiResponse<InlineResponse2005>> GetcreditNoteByIdAsyncWithHttpInfo(int? creditNoteId)
 	{
 		// verify the required parameter 'creditNoteId' is set
 		if (creditNoteId == null)
@@ -1373,31 +1373,31 @@ public class CreditNoteApi : ICreditNoteApi
 			(InlineResponse2005)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2005)));
 	}
 
-    /// <summary>
-    ///     Send credit note by printing Sending a credit note to end-customers is an important part of the bookkeeping
-    ///     process.&lt;br&gt; Depending on the way you want to send the credit note, you need to use different endpoints.&lt;
-    ///     br&gt; Let&#x27;s start with just printing out the credit note, meaning we only need to render the pdf.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of creditNote to return</param>
-    /// <param name="sendType">the type you want to print.</param>
-    /// <returns>InlineResponse2005</returns>
-    public InlineResponse2005 SendCreditNoteByPrinting(int? creditNoteId, string sendType)
+	/// <summary>
+	///     Send credit note by printing Sending a credit note to end-customers is an important part of the bookkeeping
+	///     process.&lt;br&gt; Depending on the way you want to send the credit note, you need to use different endpoints.&lt;
+	///     br&gt; Let&#x27;s start with just printing out the credit note, meaning we only need to render the pdf.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of creditNote to return</param>
+	/// <param name="sendType">the type you want to print.</param>
+	/// <returns>InlineResponse2005</returns>
+	public InlineResponse2005 SendCreditNoteByPrinting(int? creditNoteId, string sendType)
 	{
 		var localVarResponse = SendCreditNoteByPrintingWithHttpInfo(creditNoteId, sendType);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Send credit note by printing Sending a credit note to end-customers is an important part of the bookkeeping
-    ///     process.&lt;br&gt; Depending on the way you want to send the credit note, you need to use different endpoints.&lt;
-    ///     br&gt; Let&#x27;s start with just printing out the credit note, meaning we only need to render the pdf.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of creditNote to return</param>
-    /// <param name="sendType">the type you want to print.</param>
-    /// <returns>ApiResponse of InlineResponse2005</returns>
-    public ApiResponse<InlineResponse2005> SendCreditNoteByPrintingWithHttpInfo(int? creditNoteId, string sendType)
+	/// <summary>
+	///     Send credit note by printing Sending a credit note to end-customers is an important part of the bookkeeping
+	///     process.&lt;br&gt; Depending on the way you want to send the credit note, you need to use different endpoints.&lt;
+	///     br&gt; Let&#x27;s start with just printing out the credit note, meaning we only need to render the pdf.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of creditNote to return</param>
+	/// <param name="sendType">the type you want to print.</param>
+	/// <returns>ApiResponse of InlineResponse2005</returns>
+	public ApiResponse<InlineResponse2005> SendCreditNoteByPrintingWithHttpInfo(int? creditNoteId, string sendType)
 	{
 		// verify the required parameter 'creditNoteId' is set
 		if (creditNoteId == null)
@@ -1460,31 +1460,31 @@ public class CreditNoteApi : ICreditNoteApi
 			(InlineResponse2005)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2005)));
 	}
 
-    /// <summary>
-    ///     Send credit note by printing Sending a credit note to end-customers is an important part of the bookkeeping
-    ///     process.&lt;br&gt; Depending on the way you want to send the credit note, you need to use different endpoints.&lt;
-    ///     br&gt; Let&#x27;s start with just printing out the credit note, meaning we only need to render the pdf.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of creditNote to return</param>
-    /// <param name="sendType">the type you want to print.</param>
-    /// <returns>Task of InlineResponse2005</returns>
-    public async Task<InlineResponse2005> SendCreditNoteByPrintingAsync(int? creditNoteId, string sendType)
+	/// <summary>
+	///     Send credit note by printing Sending a credit note to end-customers is an important part of the bookkeeping
+	///     process.&lt;br&gt; Depending on the way you want to send the credit note, you need to use different endpoints.&lt;
+	///     br&gt; Let&#x27;s start with just printing out the credit note, meaning we only need to render the pdf.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of creditNote to return</param>
+	/// <param name="sendType">the type you want to print.</param>
+	/// <returns>Task of InlineResponse2005</returns>
+	public async Task<InlineResponse2005> SendCreditNoteByPrintingAsync(int? creditNoteId, string sendType)
 	{
 		var localVarResponse = await SendCreditNoteByPrintingAsyncWithHttpInfo(creditNoteId, sendType);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Send credit note by printing Sending a credit note to end-customers is an important part of the bookkeeping
-    ///     process.&lt;br&gt; Depending on the way you want to send the credit note, you need to use different endpoints.&lt;
-    ///     br&gt; Let&#x27;s start with just printing out the credit note, meaning we only need to render the pdf.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of creditNote to return</param>
-    /// <param name="sendType">the type you want to print.</param>
-    /// <returns>Task of ApiResponse (InlineResponse2005)</returns>
-    public async Task<ApiResponse<InlineResponse2005>> SendCreditNoteByPrintingAsyncWithHttpInfo(int? creditNoteId,
+	/// <summary>
+	///     Send credit note by printing Sending a credit note to end-customers is an important part of the bookkeeping
+	///     process.&lt;br&gt; Depending on the way you want to send the credit note, you need to use different endpoints.&lt;
+	///     br&gt; Let&#x27;s start with just printing out the credit note, meaning we only need to render the pdf.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of creditNote to return</param>
+	/// <param name="sendType">the type you want to print.</param>
+	/// <returns>Task of ApiResponse (InlineResponse2005)</returns>
+	public async Task<ApiResponse<InlineResponse2005>> SendCreditNoteByPrintingAsyncWithHttpInfo(int? creditNoteId,
 		string sendType)
 	{
 		// verify the required parameter 'creditNoteId' is set
@@ -1548,31 +1548,31 @@ public class CreditNoteApi : ICreditNoteApi
 			(InlineResponse2005)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2005)));
 	}
 
-    /// <summary>
-    ///     Send credit note via email This endpoint sends the specified credit note to a customer via email.&lt;br&gt;
-    ///     This will automatically mark the credit note as sent.&lt;br&gt;      Please note, that in production an credit note
-    ///     is not allowed to be changed after this happened!
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of credit note to be sent via email</param>
-    /// <param name="body">Mail data (optional)</param>
-    /// <returns>InlineResponse2005</returns>
-    public InlineResponse2005 SendCreditNoteViaEMail(int? creditNoteId, CreditNoteIdSendViaEmailBody body = null)
+	/// <summary>
+	///     Send credit note via email This endpoint sends the specified credit note to a customer via email.&lt;br&gt;
+	///     This will automatically mark the credit note as sent.&lt;br&gt;      Please note, that in production an credit note
+	///     is not allowed to be changed after this happened!
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of credit note to be sent via email</param>
+	/// <param name="body">Mail data (optional)</param>
+	/// <returns>InlineResponse2005</returns>
+	public InlineResponse2005 SendCreditNoteViaEMail(int? creditNoteId, CreditNoteIdSendViaEmailBody body = null)
 	{
 		var localVarResponse = SendCreditNoteViaEMailWithHttpInfo(creditNoteId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Send credit note via email This endpoint sends the specified credit note to a customer via email.&lt;br&gt;
-    ///     This will automatically mark the credit note as sent.&lt;br&gt;      Please note, that in production an credit note
-    ///     is not allowed to be changed after this happened!
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of credit note to be sent via email</param>
-    /// <param name="body">Mail data (optional)</param>
-    /// <returns>ApiResponse of InlineResponse2005</returns>
-    public ApiResponse<InlineResponse2005> SendCreditNoteViaEMailWithHttpInfo(int? creditNoteId,
+	/// <summary>
+	///     Send credit note via email This endpoint sends the specified credit note to a customer via email.&lt;br&gt;
+	///     This will automatically mark the credit note as sent.&lt;br&gt;      Please note, that in production an credit note
+	///     is not allowed to be changed after this happened!
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of credit note to be sent via email</param>
+	/// <param name="body">Mail data (optional)</param>
+	/// <returns>ApiResponse of InlineResponse2005</returns>
+	public ApiResponse<InlineResponse2005> SendCreditNoteViaEMailWithHttpInfo(int? creditNoteId,
 		CreditNoteIdSendViaEmailBody body = null)
 	{
 		// verify the required parameter 'creditNoteId' is set
@@ -1634,32 +1634,32 @@ public class CreditNoteApi : ICreditNoteApi
 			(InlineResponse2005)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2005)));
 	}
 
-    /// <summary>
-    ///     Send credit note via email This endpoint sends the specified credit note to a customer via email.&lt;br&gt;
-    ///     This will automatically mark the credit note as sent.&lt;br&gt;      Please note, that in production an credit note
-    ///     is not allowed to be changed after this happened!
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of credit note to be sent via email</param>
-    /// <param name="body">Mail data (optional)</param>
-    /// <returns>Task of InlineResponse2005</returns>
-    public async Task<InlineResponse2005> SendCreditNoteViaEMailAsync(int? creditNoteId,
+	/// <summary>
+	///     Send credit note via email This endpoint sends the specified credit note to a customer via email.&lt;br&gt;
+	///     This will automatically mark the credit note as sent.&lt;br&gt;      Please note, that in production an credit note
+	///     is not allowed to be changed after this happened!
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of credit note to be sent via email</param>
+	/// <param name="body">Mail data (optional)</param>
+	/// <returns>Task of InlineResponse2005</returns>
+	public async Task<InlineResponse2005> SendCreditNoteViaEMailAsync(int? creditNoteId,
 		CreditNoteIdSendViaEmailBody body = null)
 	{
 		var localVarResponse = await SendCreditNoteViaEMailAsyncWithHttpInfo(creditNoteId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Send credit note via email This endpoint sends the specified credit note to a customer via email.&lt;br&gt;
-    ///     This will automatically mark the credit note as sent.&lt;br&gt;      Please note, that in production an credit note
-    ///     is not allowed to be changed after this happened!
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of credit note to be sent via email</param>
-    /// <param name="body">Mail data (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse2005)</returns>
-    public async Task<ApiResponse<InlineResponse2005>> SendCreditNoteViaEMailAsyncWithHttpInfo(int? creditNoteId,
+	/// <summary>
+	///     Send credit note via email This endpoint sends the specified credit note to a customer via email.&lt;br&gt;
+	///     This will automatically mark the credit note as sent.&lt;br&gt;      Please note, that in production an credit note
+	///     is not allowed to be changed after this happened!
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of credit note to be sent via email</param>
+	/// <param name="body">Mail data (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse2005)</returns>
+	public async Task<ApiResponse<InlineResponse2005>> SendCreditNoteViaEMailAsyncWithHttpInfo(int? creditNoteId,
 		CreditNoteIdSendViaEmailBody body = null)
 	{
 		// verify the required parameter 'creditNoteId' is set
@@ -1721,27 +1721,27 @@ public class CreditNoteApi : ICreditNoteApi
 			(InlineResponse2005)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2005)));
 	}
 
-    /// <summary>
-    ///     Update an existing creditNote Update a creditNote
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of creditNote to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>InlineResponse2005</returns>
-    public InlineResponse2005 UpdatecreditNote(int? creditNoteId, ModelCreditNoteUpdate body = null)
+	/// <summary>
+	///     Update an existing creditNote Update a creditNote
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of creditNote to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>InlineResponse2005</returns>
+	public InlineResponse2005 UpdatecreditNote(int? creditNoteId, ModelCreditNoteUpdate body = null)
 	{
 		var localVarResponse = UpdatecreditNoteWithHttpInfo(creditNoteId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update an existing creditNote Update a creditNote
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of creditNote to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>ApiResponse of InlineResponse2005</returns>
-    public ApiResponse<InlineResponse2005> UpdatecreditNoteWithHttpInfo(int? creditNoteId,
+	/// <summary>
+	///     Update an existing creditNote Update a creditNote
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of creditNote to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>ApiResponse of InlineResponse2005</returns>
+	public ApiResponse<InlineResponse2005> UpdatecreditNoteWithHttpInfo(int? creditNoteId,
 		ModelCreditNoteUpdate body = null)
 	{
 		// verify the required parameter 'creditNoteId' is set
@@ -1803,27 +1803,27 @@ public class CreditNoteApi : ICreditNoteApi
 			(InlineResponse2005)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2005)));
 	}
 
-    /// <summary>
-    ///     Update an existing creditNote Update a creditNote
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of creditNote to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>Task of InlineResponse2005</returns>
-    public async Task<InlineResponse2005> UpdatecreditNoteAsync(int? creditNoteId, ModelCreditNoteUpdate body = null)
+	/// <summary>
+	///     Update an existing creditNote Update a creditNote
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of creditNote to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>Task of InlineResponse2005</returns>
+	public async Task<InlineResponse2005> UpdatecreditNoteAsync(int? creditNoteId, ModelCreditNoteUpdate body = null)
 	{
 		var localVarResponse = await UpdatecreditNoteAsyncWithHttpInfo(creditNoteId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update an existing creditNote Update a creditNote
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">ID of creditNote to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse2005)</returns>
-    public async Task<ApiResponse<InlineResponse2005>> UpdatecreditNoteAsyncWithHttpInfo(int? creditNoteId,
+	/// <summary>
+	///     Update an existing creditNote Update a creditNote
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">ID of creditNote to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse2005)</returns>
+	public async Task<ApiResponse<InlineResponse2005>> UpdatecreditNoteAsyncWithHttpInfo(int? creditNoteId,
 		ModelCreditNoteUpdate body = null)
 	{
 		// verify the required parameter 'creditNoteId' is set
@@ -1885,34 +1885,34 @@ public class CreditNoteApi : ICreditNoteApi
 			(InlineResponse2005)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2005)));
 	}
 
-    /// <summary>
-    ///     Sets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    [Obsolete(
+	/// <summary>
+	///     Sets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	[Obsolete(
 		"SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
 	public void SetBasePath(string basePath)
 	{
 		// do nothing
 	}
 
-    /// <summary>
-    ///     Gets the default header.
-    /// </summary>
-    /// <returns>Dictionary of HTTP header</returns>
-    [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
+	/// <summary>
+	///     Gets the default header.
+	/// </summary>
+	/// <returns>Dictionary of HTTP header</returns>
+	[Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
 	public IDictionary<string, string> DefaultHeader()
 	{
 		return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
 	}
 
-    /// <summary>
-    ///     Add default header.
-    /// </summary>
-    /// <param name="key">Header field name.</param>
-    /// <param name="value">Header field value.</param>
-    /// <returns></returns>
-    [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
+	/// <summary>
+	///     Add default header.
+	/// </summary>
+	/// <param name="key">Header field name.</param>
+	/// <param name="value">Header field value.</param>
+	/// <returns></returns>
+	[Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
 	public void AddDefaultHeader(string key, string value)
 	{
 		Configuration.AddDefaultHeader(key, value);

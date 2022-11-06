@@ -22,35 +22,35 @@ public class ReportApi : IReportApi
 {
 	private ExceptionFactory _exceptionFactory = (name, response) => null;
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ReportApi" /> class.
-    /// </summary>
-    /// <returns></returns>
-    public ReportApi(string basePath)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ReportApi" /> class.
+	/// </summary>
+	/// <returns></returns>
+	public ReportApi(string basePath)
 	{
 		Configuration = new Configuration { BasePath = basePath };
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ReportApi" /> class
-    /// </summary>
-    /// <returns></returns>
-    public ReportApi()
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ReportApi" /> class
+	/// </summary>
+	/// <returns></returns>
+	public ReportApi()
 	{
 		Configuration = Configuration.Default;
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ReportApi" /> class
-    ///     using Configuration object
-    /// </summary>
-    /// <param name="configuration">An instance of Configuration</param>
-    /// <returns></returns>
-    public ReportApi(Configuration configuration = null)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ReportApi" /> class
+	///     using Configuration object
+	/// </summary>
+	/// <param name="configuration">An instance of Configuration</param>
+	/// <returns></returns>
+	public ReportApi(Configuration configuration = null)
 	{
 		if (configuration == null) // use the default one in Configuration
 			Configuration = Configuration.Default;
@@ -60,25 +60,25 @@ public class ReportApi : IReportApi
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Gets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    public string GetBasePath()
+	/// <summary>
+	///     Gets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	public string GetBasePath()
 	{
 		return Configuration.ApiClient.RestClient.BaseUrl.ToString();
 	}
 
-    /// <summary>
-    ///     Gets or sets the configuration object
-    /// </summary>
-    /// <value>An instance of the Configuration</value>
-    public Configuration Configuration { get; set; }
+	/// <summary>
+	///     Gets or sets the configuration object
+	/// </summary>
+	/// <value>An instance of the Configuration</value>
+	public Configuration Configuration { get; set; }
 
-    /// <summary>
-    ///     Provides a factory method hook for the creation of exceptions.
-    /// </summary>
-    public ExceptionFactory ExceptionFactory
+	/// <summary>
+	///     Provides a factory method hook for the creation of exceptions.
+	/// </summary>
+	public ExceptionFactory ExceptionFactory
 	{
 		get
 		{
@@ -89,27 +89,27 @@ public class ReportApi : IReportApi
 		set => _exceptionFactory = value;
 	}
 
-    /// <summary>
-    ///     Export contact list Export contact list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Object</returns>
-    public object ReportContact(SevQuery7 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export contact list Export contact list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Object</returns>
+	public object ReportContact(SevQuery7 sevQuery, bool? download = null)
 	{
 		var localVarResponse = ReportContactWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export contact list Export contact list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>ApiResponse of Object</returns>
-    public ApiResponse<object> ReportContactWithHttpInfo(SevQuery7 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export contact list Export contact list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>ApiResponse of Object</returns>
+	public ApiResponse<object> ReportContactWithHttpInfo(SevQuery7 sevQuery, bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
 		if (sevQuery == null)
@@ -167,27 +167,27 @@ public class ReportApi : IReportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export contact list Export contact list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of Object</returns>
-    public async Task<object> ReportContactAsync(SevQuery7 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export contact list Export contact list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of Object</returns>
+	public async Task<object> ReportContactAsync(SevQuery7 sevQuery, bool? download = null)
 	{
 		var localVarResponse = await ReportContactAsyncWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export contact list Export contact list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of ApiResponse (Object)</returns>
-    public async Task<ApiResponse<object>> ReportContactAsyncWithHttpInfo(SevQuery7 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export contact list Export contact list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of ApiResponse (Object)</returns>
+	public async Task<ApiResponse<object>> ReportContactAsyncWithHttpInfo(SevQuery7 sevQuery, bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
 		if (sevQuery == null)
@@ -245,27 +245,27 @@ public class ReportApi : IReportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export invoice list Export invoice list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Object</returns>
-    public object ReportInvoice(SevQuery2 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export invoice list Export invoice list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Object</returns>
+	public object ReportInvoice(SevQuery2 sevQuery, bool? download = null)
 	{
 		var localVarResponse = ReportInvoiceWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export invoice list Export invoice list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>ApiResponse of Object</returns>
-    public ApiResponse<object> ReportInvoiceWithHttpInfo(SevQuery2 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export invoice list Export invoice list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>ApiResponse of Object</returns>
+	public ApiResponse<object> ReportInvoiceWithHttpInfo(SevQuery2 sevQuery, bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
 		if (sevQuery == null)
@@ -323,27 +323,27 @@ public class ReportApi : IReportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export invoice list Export invoice list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of Object</returns>
-    public async Task<object> ReportInvoiceAsync(SevQuery2 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export invoice list Export invoice list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of Object</returns>
+	public async Task<object> ReportInvoiceAsync(SevQuery2 sevQuery, bool? download = null)
 	{
 		var localVarResponse = await ReportInvoiceAsyncWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export invoice list Export invoice list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of ApiResponse (Object)</returns>
-    public async Task<ApiResponse<object>> ReportInvoiceAsyncWithHttpInfo(SevQuery2 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export invoice list Export invoice list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of ApiResponse (Object)</returns>
+	public async Task<ApiResponse<object>> ReportInvoiceAsyncWithHttpInfo(SevQuery2 sevQuery, bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
 		if (sevQuery == null)
@@ -401,27 +401,27 @@ public class ReportApi : IReportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export order list Export order list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Object</returns>
-    public object ReportOrder(SevQuery3 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export order list Export order list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Object</returns>
+	public object ReportOrder(SevQuery3 sevQuery, bool? download = null)
 	{
 		var localVarResponse = ReportOrderWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export order list Export order list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>ApiResponse of Object</returns>
-    public ApiResponse<object> ReportOrderWithHttpInfo(SevQuery3 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export order list Export order list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>ApiResponse of Object</returns>
+	public ApiResponse<object> ReportOrderWithHttpInfo(SevQuery3 sevQuery, bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
 		if (sevQuery == null)
@@ -479,27 +479,27 @@ public class ReportApi : IReportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export order list Export order list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of Object</returns>
-    public async Task<object> ReportOrderAsync(SevQuery3 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export order list Export order list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of Object</returns>
+	public async Task<object> ReportOrderAsync(SevQuery3 sevQuery, bool? download = null)
 	{
 		var localVarResponse = await ReportOrderAsyncWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export order list Export order list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of ApiResponse (Object)</returns>
-    public async Task<ApiResponse<object>> ReportOrderAsyncWithHttpInfo(SevQuery3 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export order list Export order list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of ApiResponse (Object)</returns>
+	public async Task<ApiResponse<object>> ReportOrderAsyncWithHttpInfo(SevQuery3 sevQuery, bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
 		if (sevQuery == null)
@@ -557,27 +557,27 @@ public class ReportApi : IReportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export voucher list Export voucher list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Object</returns>
-    public object ReportVoucher(SevQuery5 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export voucher list Export voucher list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Object</returns>
+	public object ReportVoucher(SevQuery5 sevQuery, bool? download = null)
 	{
 		var localVarResponse = ReportVoucherWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export voucher list Export voucher list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>ApiResponse of Object</returns>
-    public ApiResponse<object> ReportVoucherWithHttpInfo(SevQuery5 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export voucher list Export voucher list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>ApiResponse of Object</returns>
+	public ApiResponse<object> ReportVoucherWithHttpInfo(SevQuery5 sevQuery, bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
 		if (sevQuery == null)
@@ -635,27 +635,27 @@ public class ReportApi : IReportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Export voucher list Export voucher list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of Object</returns>
-    public async Task<object> ReportVoucherAsync(SevQuery5 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export voucher list Export voucher list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of Object</returns>
+	public async Task<object> ReportVoucherAsync(SevQuery5 sevQuery, bool? download = null)
 	{
 		var localVarResponse = await ReportVoucherAsyncWithHttpInfo(sevQuery, download);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Export voucher list Export voucher list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="sevQuery"></param>
-    /// <param name="download"> (optional)</param>
-    /// <returns>Task of ApiResponse (Object)</returns>
-    public async Task<ApiResponse<object>> ReportVoucherAsyncWithHttpInfo(SevQuery5 sevQuery, bool? download = null)
+	/// <summary>
+	///     Export voucher list Export voucher list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="sevQuery"></param>
+	/// <param name="download"> (optional)</param>
+	/// <returns>Task of ApiResponse (Object)</returns>
+	public async Task<ApiResponse<object>> ReportVoucherAsyncWithHttpInfo(SevQuery5 sevQuery, bool? download = null)
 	{
 		// verify the required parameter 'sevQuery' is set
 		if (sevQuery == null)
@@ -713,34 +713,34 @@ public class ReportApi : IReportApi
 			Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)));
 	}
 
-    /// <summary>
-    ///     Sets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    [Obsolete(
+	/// <summary>
+	///     Sets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	[Obsolete(
 		"SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
 	public void SetBasePath(string basePath)
 	{
 		// do nothing
 	}
 
-    /// <summary>
-    ///     Gets the default header.
-    /// </summary>
-    /// <returns>Dictionary of HTTP header</returns>
-    [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
+	/// <summary>
+	///     Gets the default header.
+	/// </summary>
+	/// <returns>Dictionary of HTTP header</returns>
+	[Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
 	public IDictionary<string, string> DefaultHeader()
 	{
 		return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
 	}
 
-    /// <summary>
-    ///     Add default header.
-    /// </summary>
-    /// <param name="key">Header field name.</param>
-    /// <param name="value">Header field value.</param>
-    /// <returns></returns>
-    [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
+	/// <summary>
+	///     Add default header.
+	/// </summary>
+	/// <param name="key">Header field name.</param>
+	/// <param name="value">Header field value.</param>
+	/// <returns></returns>
+	[Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
 	public void AddDefaultHeader(string key, string value)
 	{
 		Configuration.AddDefaultHeader(key, value);

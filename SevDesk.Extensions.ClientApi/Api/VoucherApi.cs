@@ -22,35 +22,35 @@ public class VoucherApi : IVoucherApi
 {
 	private ExceptionFactory _exceptionFactory = (name, response) => null;
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="VoucherApi" /> class.
-    /// </summary>
-    /// <returns></returns>
-    public VoucherApi(string basePath)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="VoucherApi" /> class.
+	/// </summary>
+	/// <returns></returns>
+	public VoucherApi(string basePath)
 	{
 		Configuration = new Configuration { BasePath = basePath };
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="VoucherApi" /> class
-    /// </summary>
-    /// <returns></returns>
-    public VoucherApi()
+	/// <summary>
+	///     Initializes a new instance of the <see cref="VoucherApi" /> class
+	/// </summary>
+	/// <returns></returns>
+	public VoucherApi()
 	{
 		Configuration = Configuration.Default;
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="VoucherApi" /> class
-    ///     using Configuration object
-    /// </summary>
-    /// <param name="configuration">An instance of Configuration</param>
-    /// <returns></returns>
-    public VoucherApi(Configuration configuration = null)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="VoucherApi" /> class
+	///     using Configuration object
+	/// </summary>
+	/// <param name="configuration">An instance of Configuration</param>
+	/// <returns></returns>
+	public VoucherApi(Configuration configuration = null)
 	{
 		if (configuration == null) // use the default one in Configuration
 			Configuration = Configuration.Default;
@@ -60,25 +60,25 @@ public class VoucherApi : IVoucherApi
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Gets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    public string GetBasePath()
+	/// <summary>
+	///     Gets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	public string GetBasePath()
 	{
 		return Configuration.ApiClient.RestClient.BaseUrl.ToString();
 	}
 
-    /// <summary>
-    ///     Gets or sets the configuration object
-    /// </summary>
-    /// <value>An instance of the Configuration</value>
-    public Configuration Configuration { get; set; }
+	/// <summary>
+	///     Gets or sets the configuration object
+	/// </summary>
+	/// <value>An instance of the Configuration</value>
+	public Configuration Configuration { get; set; }
 
-    /// <summary>
-    ///     Provides a factory method hook for the creation of exceptions.
-    /// </summary>
-    public ExceptionFactory ExceptionFactory
+	/// <summary>
+	///     Provides a factory method hook for the creation of exceptions.
+	/// </summary>
+	public ExceptionFactory ExceptionFactory
 	{
 		get
 		{
@@ -89,35 +89,35 @@ public class VoucherApi : IVoucherApi
 		set => _exceptionFactory = value;
 	}
 
-    /// <summary>
-    ///     Book a voucher Booking the voucher with a transaction is probably the most important part in the bookkeeping
-    ///     process.&lt;br&gt; There are several ways on correctly booking a voucher, all by using the same endpoint.&lt;br&gt;
-    ///     Conveniently, the booking process is exactly the same as the process for invoices.&lt;br&gt; For this reason, you
-    ///     can have a look at it &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;&gt;here
-    ///     &lt;/a&gt; and all you need to to is to change \&quot;Invoice\&quot; into \&quot;Voucher\&quot; in the URL.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="voucherId">ID of voucher to book</param>
-    /// <param name="body">Booking data (optional)</param>
-    /// <returns>InlineResponse200</returns>
-    public InlineResponse200 BookVoucher(int? voucherId, VoucherIdBookAmountBody body = null)
+	/// <summary>
+	///     Book a voucher Booking the voucher with a transaction is probably the most important part in the bookkeeping
+	///     process.&lt;br&gt; There are several ways on correctly booking a voucher, all by using the same endpoint.&lt;br&gt;
+	///     Conveniently, the booking process is exactly the same as the process for invoices.&lt;br&gt; For this reason, you
+	///     can have a look at it &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;&gt;here
+	///     &lt;/a&gt; and all you need to to is to change \&quot;Invoice\&quot; into \&quot;Voucher\&quot; in the URL.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="voucherId">ID of voucher to book</param>
+	/// <param name="body">Booking data (optional)</param>
+	/// <returns>InlineResponse200</returns>
+	public InlineResponse200 BookVoucher(int? voucherId, VoucherIdBookAmountBody body = null)
 	{
 		var localVarResponse = BookVoucherWithHttpInfo(voucherId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Book a voucher Booking the voucher with a transaction is probably the most important part in the bookkeeping
-    ///     process.&lt;br&gt; There are several ways on correctly booking a voucher, all by using the same endpoint.&lt;br&gt;
-    ///     Conveniently, the booking process is exactly the same as the process for invoices.&lt;br&gt; For this reason, you
-    ///     can have a look at it &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;&gt;here
-    ///     &lt;/a&gt; and all you need to to is to change \&quot;Invoice\&quot; into \&quot;Voucher\&quot; in the URL.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="voucherId">ID of voucher to book</param>
-    /// <param name="body">Booking data (optional)</param>
-    /// <returns>ApiResponse of InlineResponse200</returns>
-    public ApiResponse<InlineResponse200> BookVoucherWithHttpInfo(int? voucherId, VoucherIdBookAmountBody body = null)
+	/// <summary>
+	///     Book a voucher Booking the voucher with a transaction is probably the most important part in the bookkeeping
+	///     process.&lt;br&gt; There are several ways on correctly booking a voucher, all by using the same endpoint.&lt;br&gt;
+	///     Conveniently, the booking process is exactly the same as the process for invoices.&lt;br&gt; For this reason, you
+	///     can have a look at it &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;&gt;here
+	///     &lt;/a&gt; and all you need to to is to change \&quot;Invoice\&quot; into \&quot;Voucher\&quot; in the URL.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="voucherId">ID of voucher to book</param>
+	/// <param name="body">Booking data (optional)</param>
+	/// <returns>ApiResponse of InlineResponse200</returns>
+	public ApiResponse<InlineResponse200> BookVoucherWithHttpInfo(int? voucherId, VoucherIdBookAmountBody body = null)
 	{
 		// verify the required parameter 'voucherId' is set
 		if (voucherId == null)
@@ -176,35 +176,35 @@ public class VoucherApi : IVoucherApi
 			(InlineResponse200)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse200)));
 	}
 
-    /// <summary>
-    ///     Book a voucher Booking the voucher with a transaction is probably the most important part in the bookkeeping
-    ///     process.&lt;br&gt; There are several ways on correctly booking a voucher, all by using the same endpoint.&lt;br&gt;
-    ///     Conveniently, the booking process is exactly the same as the process for invoices.&lt;br&gt; For this reason, you
-    ///     can have a look at it &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;&gt;here
-    ///     &lt;/a&gt; and all you need to to is to change \&quot;Invoice\&quot; into \&quot;Voucher\&quot; in the URL.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="voucherId">ID of voucher to book</param>
-    /// <param name="body">Booking data (optional)</param>
-    /// <returns>Task of InlineResponse200</returns>
-    public async Task<InlineResponse200> BookVoucherAsync(int? voucherId, VoucherIdBookAmountBody body = null)
+	/// <summary>
+	///     Book a voucher Booking the voucher with a transaction is probably the most important part in the bookkeeping
+	///     process.&lt;br&gt; There are several ways on correctly booking a voucher, all by using the same endpoint.&lt;br&gt;
+	///     Conveniently, the booking process is exactly the same as the process for invoices.&lt;br&gt; For this reason, you
+	///     can have a look at it &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;&gt;here
+	///     &lt;/a&gt; and all you need to to is to change \&quot;Invoice\&quot; into \&quot;Voucher\&quot; in the URL.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="voucherId">ID of voucher to book</param>
+	/// <param name="body">Booking data (optional)</param>
+	/// <returns>Task of InlineResponse200</returns>
+	public async Task<InlineResponse200> BookVoucherAsync(int? voucherId, VoucherIdBookAmountBody body = null)
 	{
 		var localVarResponse = await BookVoucherAsyncWithHttpInfo(voucherId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Book a voucher Booking the voucher with a transaction is probably the most important part in the bookkeeping
-    ///     process.&lt;br&gt; There are several ways on correctly booking a voucher, all by using the same endpoint.&lt;br&gt;
-    ///     Conveniently, the booking process is exactly the same as the process for invoices.&lt;br&gt; For this reason, you
-    ///     can have a look at it &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;&gt;here
-    ///     &lt;/a&gt; and all you need to to is to change \&quot;Invoice\&quot; into \&quot;Voucher\&quot; in the URL.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="voucherId">ID of voucher to book</param>
-    /// <param name="body">Booking data (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse200)</returns>
-    public async Task<ApiResponse<InlineResponse200>> BookVoucherAsyncWithHttpInfo(int? voucherId,
+	/// <summary>
+	///     Book a voucher Booking the voucher with a transaction is probably the most important part in the bookkeeping
+	///     process.&lt;br&gt; There are several ways on correctly booking a voucher, all by using the same endpoint.&lt;br&gt;
+	///     Conveniently, the booking process is exactly the same as the process for invoices.&lt;br&gt; For this reason, you
+	///     can have a look at it &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;&gt;here
+	///     &lt;/a&gt; and all you need to to is to change \&quot;Invoice\&quot; into \&quot;Voucher\&quot; in the URL.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="voucherId">ID of voucher to book</param>
+	/// <param name="body">Booking data (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse200)</returns>
+	public async Task<ApiResponse<InlineResponse200>> BookVoucherAsyncWithHttpInfo(int? voucherId,
 		VoucherIdBookAmountBody body = null)
 	{
 		// verify the required parameter 'voucherId' is set
@@ -264,65 +264,65 @@ public class VoucherApi : IVoucherApi
 			(InlineResponse200)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse200)));
 	}
 
-    /// <summary>
-    ///     Create a new voucher Generally there are two ways to create vouchers.&lt;br&gt; You can create vouchers by either
-    ///     POSTing to the &lt;b&gt;Voucher&lt;/b&gt; and &lt;b&gt;VoucherPos&lt;/b&gt; endpoints with the necessary parameters
-    ///     (see attribute lists) or you can use a special endpoint which bundles the requests in one.&lt;br&gt; &lt;br&gt; The
-    ///     list of parameters starts with the voucher array.&lt;br&gt; This array contains all required attributes for a
-    ///     complete voucher.&lt;br&gt; Most of the attributes are covered in the voucher attribute list, there are only two
-    ///     parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;.&lt;br&gt; These are
-    ///     just needed for our system and you always need to provide them.&lt;br&gt;&lt;br&gt; The list of parameters then
-    ///     continues with the voucher position array.&lt;br&gt; With this array you have the possibility to add multiple
-    ///     positions at once.&lt;br&gt; In the example it only contains one position, again together with the parameters &lt;b
-    ///     &gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;, however, you can add more voucher positions by extending
-    ///     the array.&lt;br&gt; So if you wanted to add another position, you would add the same list of parameters with an
-    ///     incrementedcomponents/schemas/saveVoucher\&quot; array index of \\\&quot;1\\\&quot; instead of \\\&quot;0\\\&quot;.
-    ///     &lt;br&gt;&lt;br&gt; The list ends with the two parameters voucherPosDelete and filename.&lt;br&gt; We will shortly
-    ///     explain what they can do.&lt;br&gt; With voucherPosDelete you have to option to delete voucher positions as this
-    ///     request can also be used to update vouchers.&lt;br&gt; With filename you can attach a file to the voucher.&lt;br
-    ///     &gt; For most of our customers this is a really important step, as they need to digitize their receipts.&lt;br&gt;
-    ///     Finally, after covering all parameters, they only important information left, is that the order of the last two
-    ///     attributes always needs to be kept.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the voucher and voucher position model! (optional)
-    /// </param>
-    /// <returns>SaveVoucherResponse</returns>
-    public SaveVoucherResponse CreateVoucherByFactory(SaveVoucher body = null)
+	/// <summary>
+	///     Create a new voucher Generally there are two ways to create vouchers.&lt;br&gt; You can create vouchers by either
+	///     POSTing to the &lt;b&gt;Voucher&lt;/b&gt; and &lt;b&gt;VoucherPos&lt;/b&gt; endpoints with the necessary parameters
+	///     (see attribute lists) or you can use a special endpoint which bundles the requests in one.&lt;br&gt; &lt;br&gt; The
+	///     list of parameters starts with the voucher array.&lt;br&gt; This array contains all required attributes for a
+	///     complete voucher.&lt;br&gt; Most of the attributes are covered in the voucher attribute list, there are only two
+	///     parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;.&lt;br&gt; These are
+	///     just needed for our system and you always need to provide them.&lt;br&gt;&lt;br&gt; The list of parameters then
+	///     continues with the voucher position array.&lt;br&gt; With this array you have the possibility to add multiple
+	///     positions at once.&lt;br&gt; In the example it only contains one position, again together with the parameters &lt;b
+	///     &gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;, however, you can add more voucher positions by extending
+	///     the array.&lt;br&gt; So if you wanted to add another position, you would add the same list of parameters with an
+	///     incrementedcomponents/schemas/saveVoucher\&quot; array index of \\\&quot;1\\\&quot; instead of \\\&quot;0\\\&quot;.
+	///     &lt;br&gt;&lt;br&gt; The list ends with the two parameters voucherPosDelete and filename.&lt;br&gt; We will shortly
+	///     explain what they can do.&lt;br&gt; With voucherPosDelete you have to option to delete voucher positions as this
+	///     request can also be used to update vouchers.&lt;br&gt; With filename you can attach a file to the voucher.&lt;br
+	///     &gt; For most of our customers this is a really important step, as they need to digitize their receipts.&lt;br&gt;
+	///     Finally, after covering all parameters, they only important information left, is that the order of the last two
+	///     attributes always needs to be kept.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the voucher and voucher position model! (optional)
+	/// </param>
+	/// <returns>SaveVoucherResponse</returns>
+	public SaveVoucherResponse CreateVoucherByFactory(SaveVoucher body = null)
 	{
 		var localVarResponse = CreateVoucherByFactoryWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new voucher Generally there are two ways to create vouchers.&lt;br&gt; You can create vouchers by either
-    ///     POSTing to the &lt;b&gt;Voucher&lt;/b&gt; and &lt;b&gt;VoucherPos&lt;/b&gt; endpoints with the necessary parameters
-    ///     (see attribute lists) or you can use a special endpoint which bundles the requests in one.&lt;br&gt; &lt;br&gt; The
-    ///     list of parameters starts with the voucher array.&lt;br&gt; This array contains all required attributes for a
-    ///     complete voucher.&lt;br&gt; Most of the attributes are covered in the voucher attribute list, there are only two
-    ///     parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;.&lt;br&gt; These are
-    ///     just needed for our system and you always need to provide them.&lt;br&gt;&lt;br&gt; The list of parameters then
-    ///     continues with the voucher position array.&lt;br&gt; With this array you have the possibility to add multiple
-    ///     positions at once.&lt;br&gt; In the example it only contains one position, again together with the parameters &lt;b
-    ///     &gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;, however, you can add more voucher positions by extending
-    ///     the array.&lt;br&gt; So if you wanted to add another position, you would add the same list of parameters with an
-    ///     incrementedcomponents/schemas/saveVoucher\&quot; array index of \\\&quot;1\\\&quot; instead of \\\&quot;0\\\&quot;.
-    ///     &lt;br&gt;&lt;br&gt; The list ends with the two parameters voucherPosDelete and filename.&lt;br&gt; We will shortly
-    ///     explain what they can do.&lt;br&gt; With voucherPosDelete you have to option to delete voucher positions as this
-    ///     request can also be used to update vouchers.&lt;br&gt; With filename you can attach a file to the voucher.&lt;br
-    ///     &gt; For most of our customers this is a really important step, as they need to digitize their receipts.&lt;br&gt;
-    ///     Finally, after covering all parameters, they only important information left, is that the order of the last two
-    ///     attributes always needs to be kept.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the voucher and voucher position model! (optional)
-    /// </param>
-    /// <returns>ApiResponse of SaveVoucherResponse</returns>
-    public ApiResponse<SaveVoucherResponse> CreateVoucherByFactoryWithHttpInfo(SaveVoucher body = null)
+	/// <summary>
+	///     Create a new voucher Generally there are two ways to create vouchers.&lt;br&gt; You can create vouchers by either
+	///     POSTing to the &lt;b&gt;Voucher&lt;/b&gt; and &lt;b&gt;VoucherPos&lt;/b&gt; endpoints with the necessary parameters
+	///     (see attribute lists) or you can use a special endpoint which bundles the requests in one.&lt;br&gt; &lt;br&gt; The
+	///     list of parameters starts with the voucher array.&lt;br&gt; This array contains all required attributes for a
+	///     complete voucher.&lt;br&gt; Most of the attributes are covered in the voucher attribute list, there are only two
+	///     parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;.&lt;br&gt; These are
+	///     just needed for our system and you always need to provide them.&lt;br&gt;&lt;br&gt; The list of parameters then
+	///     continues with the voucher position array.&lt;br&gt; With this array you have the possibility to add multiple
+	///     positions at once.&lt;br&gt; In the example it only contains one position, again together with the parameters &lt;b
+	///     &gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;, however, you can add more voucher positions by extending
+	///     the array.&lt;br&gt; So if you wanted to add another position, you would add the same list of parameters with an
+	///     incrementedcomponents/schemas/saveVoucher\&quot; array index of \\\&quot;1\\\&quot; instead of \\\&quot;0\\\&quot;.
+	///     &lt;br&gt;&lt;br&gt; The list ends with the two parameters voucherPosDelete and filename.&lt;br&gt; We will shortly
+	///     explain what they can do.&lt;br&gt; With voucherPosDelete you have to option to delete voucher positions as this
+	///     request can also be used to update vouchers.&lt;br&gt; With filename you can attach a file to the voucher.&lt;br
+	///     &gt; For most of our customers this is a really important step, as they need to digitize their receipts.&lt;br&gt;
+	///     Finally, after covering all parameters, they only important information left, is that the order of the last two
+	///     attributes always needs to be kept.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the voucher and voucher position model! (optional)
+	/// </param>
+	/// <returns>ApiResponse of SaveVoucherResponse</returns>
+	public ApiResponse<SaveVoucherResponse> CreateVoucherByFactoryWithHttpInfo(SaveVoucher body = null)
 	{
 		var localVarPath = "/Voucher/Factory/saveVoucher";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -375,65 +375,65 @@ public class VoucherApi : IVoucherApi
 			(SaveVoucherResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SaveVoucherResponse)));
 	}
 
-    /// <summary>
-    ///     Create a new voucher Generally there are two ways to create vouchers.&lt;br&gt; You can create vouchers by either
-    ///     POSTing to the &lt;b&gt;Voucher&lt;/b&gt; and &lt;b&gt;VoucherPos&lt;/b&gt; endpoints with the necessary parameters
-    ///     (see attribute lists) or you can use a special endpoint which bundles the requests in one.&lt;br&gt; &lt;br&gt; The
-    ///     list of parameters starts with the voucher array.&lt;br&gt; This array contains all required attributes for a
-    ///     complete voucher.&lt;br&gt; Most of the attributes are covered in the voucher attribute list, there are only two
-    ///     parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;.&lt;br&gt; These are
-    ///     just needed for our system and you always need to provide them.&lt;br&gt;&lt;br&gt; The list of parameters then
-    ///     continues with the voucher position array.&lt;br&gt; With this array you have the possibility to add multiple
-    ///     positions at once.&lt;br&gt; In the example it only contains one position, again together with the parameters &lt;b
-    ///     &gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;, however, you can add more voucher positions by extending
-    ///     the array.&lt;br&gt; So if you wanted to add another position, you would add the same list of parameters with an
-    ///     incrementedcomponents/schemas/saveVoucher\&quot; array index of \\\&quot;1\\\&quot; instead of \\\&quot;0\\\&quot;.
-    ///     &lt;br&gt;&lt;br&gt; The list ends with the two parameters voucherPosDelete and filename.&lt;br&gt; We will shortly
-    ///     explain what they can do.&lt;br&gt; With voucherPosDelete you have to option to delete voucher positions as this
-    ///     request can also be used to update vouchers.&lt;br&gt; With filename you can attach a file to the voucher.&lt;br
-    ///     &gt; For most of our customers this is a really important step, as they need to digitize their receipts.&lt;br&gt;
-    ///     Finally, after covering all parameters, they only important information left, is that the order of the last two
-    ///     attributes always needs to be kept.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the voucher and voucher position model! (optional)
-    /// </param>
-    /// <returns>Task of SaveVoucherResponse</returns>
-    public async Task<SaveVoucherResponse> CreateVoucherByFactoryAsync(SaveVoucher body = null)
+	/// <summary>
+	///     Create a new voucher Generally there are two ways to create vouchers.&lt;br&gt; You can create vouchers by either
+	///     POSTing to the &lt;b&gt;Voucher&lt;/b&gt; and &lt;b&gt;VoucherPos&lt;/b&gt; endpoints with the necessary parameters
+	///     (see attribute lists) or you can use a special endpoint which bundles the requests in one.&lt;br&gt; &lt;br&gt; The
+	///     list of parameters starts with the voucher array.&lt;br&gt; This array contains all required attributes for a
+	///     complete voucher.&lt;br&gt; Most of the attributes are covered in the voucher attribute list, there are only two
+	///     parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;.&lt;br&gt; These are
+	///     just needed for our system and you always need to provide them.&lt;br&gt;&lt;br&gt; The list of parameters then
+	///     continues with the voucher position array.&lt;br&gt; With this array you have the possibility to add multiple
+	///     positions at once.&lt;br&gt; In the example it only contains one position, again together with the parameters &lt;b
+	///     &gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;, however, you can add more voucher positions by extending
+	///     the array.&lt;br&gt; So if you wanted to add another position, you would add the same list of parameters with an
+	///     incrementedcomponents/schemas/saveVoucher\&quot; array index of \\\&quot;1\\\&quot; instead of \\\&quot;0\\\&quot;.
+	///     &lt;br&gt;&lt;br&gt; The list ends with the two parameters voucherPosDelete and filename.&lt;br&gt; We will shortly
+	///     explain what they can do.&lt;br&gt; With voucherPosDelete you have to option to delete voucher positions as this
+	///     request can also be used to update vouchers.&lt;br&gt; With filename you can attach a file to the voucher.&lt;br
+	///     &gt; For most of our customers this is a really important step, as they need to digitize their receipts.&lt;br&gt;
+	///     Finally, after covering all parameters, they only important information left, is that the order of the last two
+	///     attributes always needs to be kept.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the voucher and voucher position model! (optional)
+	/// </param>
+	/// <returns>Task of SaveVoucherResponse</returns>
+	public async Task<SaveVoucherResponse> CreateVoucherByFactoryAsync(SaveVoucher body = null)
 	{
 		var localVarResponse = await CreateVoucherByFactoryAsyncWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new voucher Generally there are two ways to create vouchers.&lt;br&gt; You can create vouchers by either
-    ///     POSTing to the &lt;b&gt;Voucher&lt;/b&gt; and &lt;b&gt;VoucherPos&lt;/b&gt; endpoints with the necessary parameters
-    ///     (see attribute lists) or you can use a special endpoint which bundles the requests in one.&lt;br&gt; &lt;br&gt; The
-    ///     list of parameters starts with the voucher array.&lt;br&gt; This array contains all required attributes for a
-    ///     complete voucher.&lt;br&gt; Most of the attributes are covered in the voucher attribute list, there are only two
-    ///     parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;.&lt;br&gt; These are
-    ///     just needed for our system and you always need to provide them.&lt;br&gt;&lt;br&gt; The list of parameters then
-    ///     continues with the voucher position array.&lt;br&gt; With this array you have the possibility to add multiple
-    ///     positions at once.&lt;br&gt; In the example it only contains one position, again together with the parameters &lt;b
-    ///     &gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;, however, you can add more voucher positions by extending
-    ///     the array.&lt;br&gt; So if you wanted to add another position, you would add the same list of parameters with an
-    ///     incrementedcomponents/schemas/saveVoucher\&quot; array index of \\\&quot;1\\\&quot; instead of \\\&quot;0\\\&quot;.
-    ///     &lt;br&gt;&lt;br&gt; The list ends with the two parameters voucherPosDelete and filename.&lt;br&gt; We will shortly
-    ///     explain what they can do.&lt;br&gt; With voucherPosDelete you have to option to delete voucher positions as this
-    ///     request can also be used to update vouchers.&lt;br&gt; With filename you can attach a file to the voucher.&lt;br
-    ///     &gt; For most of our customers this is a really important step, as they need to digitize their receipts.&lt;br&gt;
-    ///     Finally, after covering all parameters, they only important information left, is that the order of the last two
-    ///     attributes always needs to be kept.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the voucher and voucher position model! (optional)
-    /// </param>
-    /// <returns>Task of ApiResponse (SaveVoucherResponse)</returns>
-    public async Task<ApiResponse<SaveVoucherResponse>> CreateVoucherByFactoryAsyncWithHttpInfo(SaveVoucher body = null)
+	/// <summary>
+	///     Create a new voucher Generally there are two ways to create vouchers.&lt;br&gt; You can create vouchers by either
+	///     POSTing to the &lt;b&gt;Voucher&lt;/b&gt; and &lt;b&gt;VoucherPos&lt;/b&gt; endpoints with the necessary parameters
+	///     (see attribute lists) or you can use a special endpoint which bundles the requests in one.&lt;br&gt; &lt;br&gt; The
+	///     list of parameters starts with the voucher array.&lt;br&gt; This array contains all required attributes for a
+	///     complete voucher.&lt;br&gt; Most of the attributes are covered in the voucher attribute list, there are only two
+	///     parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;.&lt;br&gt; These are
+	///     just needed for our system and you always need to provide them.&lt;br&gt;&lt;br&gt; The list of parameters then
+	///     continues with the voucher position array.&lt;br&gt; With this array you have the possibility to add multiple
+	///     positions at once.&lt;br&gt; In the example it only contains one position, again together with the parameters &lt;b
+	///     &gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;, however, you can add more voucher positions by extending
+	///     the array.&lt;br&gt; So if you wanted to add another position, you would add the same list of parameters with an
+	///     incrementedcomponents/schemas/saveVoucher\&quot; array index of \\\&quot;1\\\&quot; instead of \\\&quot;0\\\&quot;.
+	///     &lt;br&gt;&lt;br&gt; The list ends with the two parameters voucherPosDelete and filename.&lt;br&gt; We will shortly
+	///     explain what they can do.&lt;br&gt; With voucherPosDelete you have to option to delete voucher positions as this
+	///     request can also be used to update vouchers.&lt;br&gt; With filename you can attach a file to the voucher.&lt;br
+	///     &gt; For most of our customers this is a really important step, as they need to digitize their receipts.&lt;br&gt;
+	///     Finally, after covering all parameters, they only important information left, is that the order of the last two
+	///     attributes always needs to be kept.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the voucher and voucher position model! (optional)
+	/// </param>
+	/// <returns>Task of ApiResponse (SaveVoucherResponse)</returns>
+	public async Task<ApiResponse<SaveVoucherResponse>> CreateVoucherByFactoryAsyncWithHttpInfo(SaveVoucher body = null)
 	{
 		var localVarPath = "/Voucher/Factory/saveVoucher";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -486,25 +486,25 @@ public class VoucherApi : IVoucherApi
 			(SaveVoucherResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SaveVoucherResponse)));
 	}
 
-    /// <summary>
-    ///     Find voucher by ID Returns a single voucher
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="voucherId">ID of voucher to return</param>
-    /// <returns>GetVoucherResponse</returns>
-    public GetVoucherResponse GetVoucherById(int? voucherId)
+	/// <summary>
+	///     Find voucher by ID Returns a single voucher
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="voucherId">ID of voucher to return</param>
+	/// <returns>GetVoucherResponse</returns>
+	public GetVoucherResponse GetVoucherById(int? voucherId)
 	{
 		var localVarResponse = GetVoucherByIdWithHttpInfo(voucherId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find voucher by ID Returns a single voucher
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="voucherId">ID of voucher to return</param>
-    /// <returns>ApiResponse of GetVoucherResponse</returns>
-    public ApiResponse<GetVoucherResponse> GetVoucherByIdWithHttpInfo(int? voucherId)
+	/// <summary>
+	///     Find voucher by ID Returns a single voucher
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="voucherId">ID of voucher to return</param>
+	/// <returns>ApiResponse of GetVoucherResponse</returns>
+	public ApiResponse<GetVoucherResponse> GetVoucherByIdWithHttpInfo(int? voucherId)
 	{
 		// verify the required parameter 'voucherId' is set
 		if (voucherId == null)
@@ -559,25 +559,25 @@ public class VoucherApi : IVoucherApi
 			(GetVoucherResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetVoucherResponse)));
 	}
 
-    /// <summary>
-    ///     Find voucher by ID Returns a single voucher
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="voucherId">ID of voucher to return</param>
-    /// <returns>Task of GetVoucherResponse</returns>
-    public async Task<GetVoucherResponse> GetVoucherByIdAsync(int? voucherId)
+	/// <summary>
+	///     Find voucher by ID Returns a single voucher
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="voucherId">ID of voucher to return</param>
+	/// <returns>Task of GetVoucherResponse</returns>
+	public async Task<GetVoucherResponse> GetVoucherByIdAsync(int? voucherId)
 	{
 		var localVarResponse = await GetVoucherByIdAsyncWithHttpInfo(voucherId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find voucher by ID Returns a single voucher
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="voucherId">ID of voucher to return</param>
-    /// <returns>Task of ApiResponse (GetVoucherResponse)</returns>
-    public async Task<ApiResponse<GetVoucherResponse>> GetVoucherByIdAsyncWithHttpInfo(int? voucherId)
+	/// <summary>
+	///     Find voucher by ID Returns a single voucher
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="voucherId">ID of voucher to return</param>
+	/// <returns>Task of ApiResponse (GetVoucherResponse)</returns>
+	public async Task<ApiResponse<GetVoucherResponse>> GetVoucherByIdAsyncWithHttpInfo(int? voucherId)
 	{
 		// verify the required parameter 'voucherId' is set
 		if (voucherId == null)
@@ -632,24 +632,24 @@ public class VoucherApi : IVoucherApi
 			(GetVoucherResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetVoucherResponse)));
 	}
 
-    /// <summary>
-    ///     Retrieve vouchers There are a multitude of parameter which can be used to filter. A few of them are attached but
-    ///     for a complete list please check out &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/How-to-filter-for-certain-vouchers&#x27;&gt;this&lt;/a&gt; list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="status">Status of the vouchers to retrieve. (optional)</param>
-    /// <param name="creditDebit">Define if you only want credit or debit vouchers. (optional)</param>
-    /// <param name="descriptionLike">Retrieve all vouchers with a description like this. (optional)</param>
-    /// <param name="startDate">Retrieve all vouchers with a date equal or higher (optional)</param>
-    /// <param name="endDate">Retrieve all vouchers with a date equal or lower (optional)</param>
-    /// <param name="contactId">Retrieve all vouchers with this contact. Must be provided with contact[objectName] (optional)</param>
-    /// <param name="contactObjectName">
-    ///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>GetVoucherResponse</returns>
-    public GetVoucherResponse GetVouchers(decimal? status = null, string creditDebit = null,
+	/// <summary>
+	///     Retrieve vouchers There are a multitude of parameter which can be used to filter. A few of them are attached but
+	///     for a complete list please check out &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/How-to-filter-for-certain-vouchers&#x27;&gt;this&lt;/a&gt; list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="status">Status of the vouchers to retrieve. (optional)</param>
+	/// <param name="creditDebit">Define if you only want credit or debit vouchers. (optional)</param>
+	/// <param name="descriptionLike">Retrieve all vouchers with a description like this. (optional)</param>
+	/// <param name="startDate">Retrieve all vouchers with a date equal or higher (optional)</param>
+	/// <param name="endDate">Retrieve all vouchers with a date equal or lower (optional)</param>
+	/// <param name="contactId">Retrieve all vouchers with this contact. Must be provided with contact[objectName] (optional)</param>
+	/// <param name="contactObjectName">
+	///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>GetVoucherResponse</returns>
+	public GetVoucherResponse GetVouchers(decimal? status = null, string creditDebit = null,
 		string descriptionLike = null, int? startDate = null, int? endDate = null, int? contactId = null,
 		string contactObjectName = null)
 	{
@@ -658,24 +658,24 @@ public class VoucherApi : IVoucherApi
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve vouchers There are a multitude of parameter which can be used to filter. A few of them are attached but
-    ///     for a complete list please check out &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/How-to-filter-for-certain-vouchers&#x27;&gt;this&lt;/a&gt; list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="status">Status of the vouchers to retrieve. (optional)</param>
-    /// <param name="creditDebit">Define if you only want credit or debit vouchers. (optional)</param>
-    /// <param name="descriptionLike">Retrieve all vouchers with a description like this. (optional)</param>
-    /// <param name="startDate">Retrieve all vouchers with a date equal or higher (optional)</param>
-    /// <param name="endDate">Retrieve all vouchers with a date equal or lower (optional)</param>
-    /// <param name="contactId">Retrieve all vouchers with this contact. Must be provided with contact[objectName] (optional)</param>
-    /// <param name="contactObjectName">
-    ///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>ApiResponse of GetVoucherResponse</returns>
-    public ApiResponse<GetVoucherResponse> GetVouchersWithHttpInfo(decimal? status = null, string creditDebit = null,
+	/// <summary>
+	///     Retrieve vouchers There are a multitude of parameter which can be used to filter. A few of them are attached but
+	///     for a complete list please check out &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/How-to-filter-for-certain-vouchers&#x27;&gt;this&lt;/a&gt; list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="status">Status of the vouchers to retrieve. (optional)</param>
+	/// <param name="creditDebit">Define if you only want credit or debit vouchers. (optional)</param>
+	/// <param name="descriptionLike">Retrieve all vouchers with a description like this. (optional)</param>
+	/// <param name="startDate">Retrieve all vouchers with a date equal or higher (optional)</param>
+	/// <param name="endDate">Retrieve all vouchers with a date equal or lower (optional)</param>
+	/// <param name="contactId">Retrieve all vouchers with this contact. Must be provided with contact[objectName] (optional)</param>
+	/// <param name="contactObjectName">
+	///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>ApiResponse of GetVoucherResponse</returns>
+	public ApiResponse<GetVoucherResponse> GetVouchersWithHttpInfo(decimal? status = null, string creditDebit = null,
 		string descriptionLike = null, int? startDate = null, int? endDate = null, int? contactId = null,
 		string contactObjectName = null)
 	{
@@ -748,24 +748,24 @@ public class VoucherApi : IVoucherApi
 			(GetVoucherResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetVoucherResponse)));
 	}
 
-    /// <summary>
-    ///     Retrieve vouchers There are a multitude of parameter which can be used to filter. A few of them are attached but
-    ///     for a complete list please check out &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/How-to-filter-for-certain-vouchers&#x27;&gt;this&lt;/a&gt; list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="status">Status of the vouchers to retrieve. (optional)</param>
-    /// <param name="creditDebit">Define if you only want credit or debit vouchers. (optional)</param>
-    /// <param name="descriptionLike">Retrieve all vouchers with a description like this. (optional)</param>
-    /// <param name="startDate">Retrieve all vouchers with a date equal or higher (optional)</param>
-    /// <param name="endDate">Retrieve all vouchers with a date equal or lower (optional)</param>
-    /// <param name="contactId">Retrieve all vouchers with this contact. Must be provided with contact[objectName] (optional)</param>
-    /// <param name="contactObjectName">
-    ///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of GetVoucherResponse</returns>
-    public async Task<GetVoucherResponse> GetVouchersAsync(decimal? status = null, string creditDebit = null,
+	/// <summary>
+	///     Retrieve vouchers There are a multitude of parameter which can be used to filter. A few of them are attached but
+	///     for a complete list please check out &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/How-to-filter-for-certain-vouchers&#x27;&gt;this&lt;/a&gt; list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="status">Status of the vouchers to retrieve. (optional)</param>
+	/// <param name="creditDebit">Define if you only want credit or debit vouchers. (optional)</param>
+	/// <param name="descriptionLike">Retrieve all vouchers with a description like this. (optional)</param>
+	/// <param name="startDate">Retrieve all vouchers with a date equal or higher (optional)</param>
+	/// <param name="endDate">Retrieve all vouchers with a date equal or lower (optional)</param>
+	/// <param name="contactId">Retrieve all vouchers with this contact. Must be provided with contact[objectName] (optional)</param>
+	/// <param name="contactObjectName">
+	///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of GetVoucherResponse</returns>
+	public async Task<GetVoucherResponse> GetVouchersAsync(decimal? status = null, string creditDebit = null,
 		string descriptionLike = null, int? startDate = null, int? endDate = null, int? contactId = null,
 		string contactObjectName = null)
 	{
@@ -774,24 +774,24 @@ public class VoucherApi : IVoucherApi
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve vouchers There are a multitude of parameter which can be used to filter. A few of them are attached but
-    ///     for a complete list please check out &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/How-to-filter-for-certain-vouchers&#x27;&gt;this&lt;/a&gt; list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="status">Status of the vouchers to retrieve. (optional)</param>
-    /// <param name="creditDebit">Define if you only want credit or debit vouchers. (optional)</param>
-    /// <param name="descriptionLike">Retrieve all vouchers with a description like this. (optional)</param>
-    /// <param name="startDate">Retrieve all vouchers with a date equal or higher (optional)</param>
-    /// <param name="endDate">Retrieve all vouchers with a date equal or lower (optional)</param>
-    /// <param name="contactId">Retrieve all vouchers with this contact. Must be provided with contact[objectName] (optional)</param>
-    /// <param name="contactObjectName">
-    ///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of ApiResponse (GetVoucherResponse)</returns>
-    public async Task<ApiResponse<GetVoucherResponse>> GetVouchersAsyncWithHttpInfo(decimal? status = null,
+	/// <summary>
+	///     Retrieve vouchers There are a multitude of parameter which can be used to filter. A few of them are attached but
+	///     for a complete list please check out &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/How-to-filter-for-certain-vouchers&#x27;&gt;this&lt;/a&gt; list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="status">Status of the vouchers to retrieve. (optional)</param>
+	/// <param name="creditDebit">Define if you only want credit or debit vouchers. (optional)</param>
+	/// <param name="descriptionLike">Retrieve all vouchers with a description like this. (optional)</param>
+	/// <param name="startDate">Retrieve all vouchers with a date equal or higher (optional)</param>
+	/// <param name="endDate">Retrieve all vouchers with a date equal or lower (optional)</param>
+	/// <param name="contactId">Retrieve all vouchers with this contact. Must be provided with contact[objectName] (optional)</param>
+	/// <param name="contactObjectName">
+	///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of ApiResponse (GetVoucherResponse)</returns>
+	public async Task<ApiResponse<GetVoucherResponse>> GetVouchersAsyncWithHttpInfo(decimal? status = null,
 		string creditDebit = null, string descriptionLike = null, int? startDate = null, int? endDate = null,
 		int? contactId = null, string contactObjectName = null)
 	{
@@ -864,27 +864,27 @@ public class VoucherApi : IVoucherApi
 			(GetVoucherResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetVoucherResponse)));
 	}
 
-    /// <summary>
-    ///     Update an existing voucher Update a voucher
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="voucherId">ID of voucher to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>GetVoucherResponse</returns>
-    public GetVoucherResponse UpdateVoucher(int? voucherId, ModelVoucherUpdate body = null)
+	/// <summary>
+	///     Update an existing voucher Update a voucher
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="voucherId">ID of voucher to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>GetVoucherResponse</returns>
+	public GetVoucherResponse UpdateVoucher(int? voucherId, ModelVoucherUpdate body = null)
 	{
 		var localVarResponse = UpdateVoucherWithHttpInfo(voucherId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update an existing voucher Update a voucher
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="voucherId">ID of voucher to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>ApiResponse of GetVoucherResponse</returns>
-    public ApiResponse<GetVoucherResponse> UpdateVoucherWithHttpInfo(int? voucherId, ModelVoucherUpdate body = null)
+	/// <summary>
+	///     Update an existing voucher Update a voucher
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="voucherId">ID of voucher to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>ApiResponse of GetVoucherResponse</returns>
+	public ApiResponse<GetVoucherResponse> UpdateVoucherWithHttpInfo(int? voucherId, ModelVoucherUpdate body = null)
 	{
 		// verify the required parameter 'voucherId' is set
 		if (voucherId == null)
@@ -944,27 +944,27 @@ public class VoucherApi : IVoucherApi
 			(GetVoucherResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetVoucherResponse)));
 	}
 
-    /// <summary>
-    ///     Update an existing voucher Update a voucher
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="voucherId">ID of voucher to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>Task of GetVoucherResponse</returns>
-    public async Task<GetSingleVoucherResponse> UpdateVoucherAsync(int? voucherId, ModelVoucherUpdate body = null)
+	/// <summary>
+	///     Update an existing voucher Update a voucher
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="voucherId">ID of voucher to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>Task of GetVoucherResponse</returns>
+	public async Task<GetSingleVoucherResponse> UpdateVoucherAsync(int? voucherId, ModelVoucherUpdate body = null)
 	{
 		var localVarResponse = await UpdateVoucherAsyncWithHttpInfo(voucherId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update an existing voucher Update a voucher
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="voucherId">ID of voucher to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>Task of ApiResponse (GetVoucherResponse)</returns>
-    public async Task<ApiResponse<GetSingleVoucherResponse>> UpdateVoucherAsyncWithHttpInfo(int? voucherId,
+	/// <summary>
+	///     Update an existing voucher Update a voucher
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="voucherId">ID of voucher to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>Task of ApiResponse (GetVoucherResponse)</returns>
+	public async Task<ApiResponse<GetSingleVoucherResponse>> UpdateVoucherAsyncWithHttpInfo(int? voucherId,
 		ModelVoucherUpdate body = null)
 	{
 		// verify the required parameter 'voucherId' is set
@@ -1026,35 +1026,35 @@ public class VoucherApi : IVoucherApi
 				typeof(GetSingleVoucherResponse)));
 	}
 
-    /// <summary>
-    ///     Upload voucher file To attach a document to a voucher, you will need to upload it first for later use.&lt;br&gt; To
-    ///     do this, you can use this request.&lt;br&gt; When you successfully uploaded the file, you will get a sevDesk
-    ///     internal filename in the response.&lt;br&gt; The filename will be a hash generated from your uploaded file. You
-    ///     will need it in the next request!&lt;br&gt; After you got the just mentioned filename, you can enter it as a value
-    ///     for the filename parameter of the saveVoucher request.&lt;br&gt; If you provided all necessary parameters and kept
-    ///     all of them in the right order, the file will be attached to your voucher.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">File to upload (optional)</param>
-    /// <returns>InlineResponse2012</returns>
-    public InlineResponse2012 VoucherUploadFile(FactoryUploadTempFileBody body = null)
+	/// <summary>
+	///     Upload voucher file To attach a document to a voucher, you will need to upload it first for later use.&lt;br&gt; To
+	///     do this, you can use this request.&lt;br&gt; When you successfully uploaded the file, you will get a sevDesk
+	///     internal filename in the response.&lt;br&gt; The filename will be a hash generated from your uploaded file. You
+	///     will need it in the next request!&lt;br&gt; After you got the just mentioned filename, you can enter it as a value
+	///     for the filename parameter of the saveVoucher request.&lt;br&gt; If you provided all necessary parameters and kept
+	///     all of them in the right order, the file will be attached to your voucher.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">File to upload (optional)</param>
+	/// <returns>InlineResponse2012</returns>
+	public InlineResponse2012 VoucherUploadFile(FactoryUploadTempFileBody body = null)
 	{
 		var localVarResponse = VoucherUploadFileWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Upload voucher file To attach a document to a voucher, you will need to upload it first for later use.&lt;br&gt; To
-    ///     do this, you can use this request.&lt;br&gt; When you successfully uploaded the file, you will get a sevDesk
-    ///     internal filename in the response.&lt;br&gt; The filename will be a hash generated from your uploaded file. You
-    ///     will need it in the next request!&lt;br&gt; After you got the just mentioned filename, you can enter it as a value
-    ///     for the filename parameter of the saveVoucher request.&lt;br&gt; If you provided all necessary parameters and kept
-    ///     all of them in the right order, the file will be attached to your voucher.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">File to upload (optional)</param>
-    /// <returns>ApiResponse of InlineResponse2012</returns>
-    public ApiResponse<InlineResponse2012> VoucherUploadFileWithHttpInfo(FactoryUploadTempFileBody body = null)
+	/// <summary>
+	///     Upload voucher file To attach a document to a voucher, you will need to upload it first for later use.&lt;br&gt; To
+	///     do this, you can use this request.&lt;br&gt; When you successfully uploaded the file, you will get a sevDesk
+	///     internal filename in the response.&lt;br&gt; The filename will be a hash generated from your uploaded file. You
+	///     will need it in the next request!&lt;br&gt; After you got the just mentioned filename, you can enter it as a value
+	///     for the filename parameter of the saveVoucher request.&lt;br&gt; If you provided all necessary parameters and kept
+	///     all of them in the right order, the file will be attached to your voucher.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">File to upload (optional)</param>
+	/// <returns>ApiResponse of InlineResponse2012</returns>
+	public ApiResponse<InlineResponse2012> VoucherUploadFileWithHttpInfo(FactoryUploadTempFileBody body = null)
 	{
 		var localVarPath = "/Voucher/Factory/uploadTempFile";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -1107,35 +1107,35 @@ public class VoucherApi : IVoucherApi
 			(InlineResponse2012)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2012)));
 	}
 
-    /// <summary>
-    ///     Upload voucher file To attach a document to a voucher, you will need to upload it first for later use.&lt;br&gt; To
-    ///     do this, you can use this request.&lt;br&gt; When you successfully uploaded the file, you will get a sevDesk
-    ///     internal filename in the response.&lt;br&gt; The filename will be a hash generated from your uploaded file. You
-    ///     will need it in the next request!&lt;br&gt; After you got the just mentioned filename, you can enter it as a value
-    ///     for the filename parameter of the saveVoucher request.&lt;br&gt; If you provided all necessary parameters and kept
-    ///     all of them in the right order, the file will be attached to your voucher.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">File to upload (optional)</param>
-    /// <returns>Task of InlineResponse2012</returns>
-    public async Task<InlineResponse2012> VoucherUploadFileAsync(FactoryUploadTempFileBody body = null)
+	/// <summary>
+	///     Upload voucher file To attach a document to a voucher, you will need to upload it first for later use.&lt;br&gt; To
+	///     do this, you can use this request.&lt;br&gt; When you successfully uploaded the file, you will get a sevDesk
+	///     internal filename in the response.&lt;br&gt; The filename will be a hash generated from your uploaded file. You
+	///     will need it in the next request!&lt;br&gt; After you got the just mentioned filename, you can enter it as a value
+	///     for the filename parameter of the saveVoucher request.&lt;br&gt; If you provided all necessary parameters and kept
+	///     all of them in the right order, the file will be attached to your voucher.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">File to upload (optional)</param>
+	/// <returns>Task of InlineResponse2012</returns>
+	public async Task<InlineResponse2012> VoucherUploadFileAsync(FactoryUploadTempFileBody body = null)
 	{
 		var localVarResponse = await VoucherUploadFileAsyncWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Upload voucher file To attach a document to a voucher, you will need to upload it first for later use.&lt;br&gt; To
-    ///     do this, you can use this request.&lt;br&gt; When you successfully uploaded the file, you will get a sevDesk
-    ///     internal filename in the response.&lt;br&gt; The filename will be a hash generated from your uploaded file. You
-    ///     will need it in the next request!&lt;br&gt; After you got the just mentioned filename, you can enter it as a value
-    ///     for the filename parameter of the saveVoucher request.&lt;br&gt; If you provided all necessary parameters and kept
-    ///     all of them in the right order, the file will be attached to your voucher.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">File to upload (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse2012)</returns>
-    public async Task<ApiResponse<InlineResponse2012>> VoucherUploadFileAsyncWithHttpInfo(
+	/// <summary>
+	///     Upload voucher file To attach a document to a voucher, you will need to upload it first for later use.&lt;br&gt; To
+	///     do this, you can use this request.&lt;br&gt; When you successfully uploaded the file, you will get a sevDesk
+	///     internal filename in the response.&lt;br&gt; The filename will be a hash generated from your uploaded file. You
+	///     will need it in the next request!&lt;br&gt; After you got the just mentioned filename, you can enter it as a value
+	///     for the filename parameter of the saveVoucher request.&lt;br&gt; If you provided all necessary parameters and kept
+	///     all of them in the right order, the file will be attached to your voucher.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">File to upload (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse2012)</returns>
+	public async Task<ApiResponse<InlineResponse2012>> VoucherUploadFileAsyncWithHttpInfo(
 		FactoryUploadTempFileBody body = null)
 	{
 		var localVarPath = "/Voucher/Factory/uploadTempFile";
@@ -1189,34 +1189,34 @@ public class VoucherApi : IVoucherApi
 			(InlineResponse2012)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2012)));
 	}
 
-    /// <summary>
-    ///     Sets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    [Obsolete(
+	/// <summary>
+	///     Sets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	[Obsolete(
 		"SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
 	public void SetBasePath(string basePath)
 	{
 		// do nothing
 	}
 
-    /// <summary>
-    ///     Gets the default header.
-    /// </summary>
-    /// <returns>Dictionary of HTTP header</returns>
-    [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
+	/// <summary>
+	///     Gets the default header.
+	/// </summary>
+	/// <returns>Dictionary of HTTP header</returns>
+	[Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
 	public IDictionary<string, string> DefaultHeader()
 	{
 		return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
 	}
 
-    /// <summary>
-    ///     Add default header.
-    /// </summary>
-    /// <param name="key">Header field name.</param>
-    /// <param name="value">Header field value.</param>
-    /// <returns></returns>
-    [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
+	/// <summary>
+	///     Add default header.
+	/// </summary>
+	/// <param name="key">Header field name.</param>
+	/// <param name="value">Header field value.</param>
+	/// <returns></returns>
+	[Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
 	public void AddDefaultHeader(string key, string value)
 	{
 		Configuration.AddDefaultHeader(key, value);

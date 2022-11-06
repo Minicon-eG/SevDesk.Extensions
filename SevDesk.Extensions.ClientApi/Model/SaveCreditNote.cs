@@ -21,16 +21,16 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class SaveCreditNote : IEquatable<SaveCreditNote>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="SaveCreditNote" /> class.
-    /// </summary>
-    /// <param name="creditNote">creditNote (required).</param>
-    /// <param name="creditNotePosSave">creditNotePosSave.</param>
-    /// <param name="creditNotePosDelete">creditNotePosDelete.</param>
-    /// <param name="filename">Filename of a previously upload file which should be attached..</param>
-    /// <param name="discountSave">discountSave.</param>
-    /// <param name="discountDelete">discountDelete.</param>
-    public SaveCreditNote(ModelCreditNote creditNote = default, ModelCreditNotePos creditNotePosSave = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="SaveCreditNote" /> class.
+	/// </summary>
+	/// <param name="creditNote">creditNote (required).</param>
+	/// <param name="creditNotePosSave">creditNotePosSave.</param>
+	/// <param name="creditNotePosDelete">creditNotePosDelete.</param>
+	/// <param name="filename">Filename of a previously upload file which should be attached..</param>
+	/// <param name="discountSave">discountSave.</param>
+	/// <param name="discountDelete">discountDelete.</param>
+	public SaveCreditNote(ModelCreditNote creditNote = default, ModelCreditNotePos creditNotePosSave = default,
 		SaveCreditNoteCreditNotePosDelete creditNotePosDelete = default, byte[] filename = default,
 		SaveInvoiceDiscountSave discountSave = default, SaveCreditNoteDiscountDelete discountDelete = default)
 	{
@@ -45,49 +45,49 @@ public class SaveCreditNote : IEquatable<SaveCreditNote>, IValidatableObject
 		DiscountDelete = discountDelete;
 	}
 
-    /// <summary>
-    ///     Gets or Sets CreditNote
-    /// </summary>
-    [DataMember(Name = "creditNote", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets CreditNote
+	/// </summary>
+	[DataMember(Name = "creditNote", EmitDefaultValue = false)]
 	public ModelCreditNote CreditNote { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets CreditNotePosSave
-    /// </summary>
-    [DataMember(Name = "creditNotePosSave", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets CreditNotePosSave
+	/// </summary>
+	[DataMember(Name = "creditNotePosSave", EmitDefaultValue = false)]
 	public ModelCreditNotePos CreditNotePosSave { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets CreditNotePosDelete
-    /// </summary>
-    [DataMember(Name = "creditNotePosDelete", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets CreditNotePosDelete
+	/// </summary>
+	[DataMember(Name = "creditNotePosDelete", EmitDefaultValue = false)]
 	public SaveCreditNoteCreditNotePosDelete CreditNotePosDelete { get; set; }
 
-    /// <summary>
-    ///     Filename of a previously upload file which should be attached.
-    /// </summary>
-    /// <value>Filename of a previously upload file which should be attached.</value>
-    [DataMember(Name = "filename", EmitDefaultValue = false)]
+	/// <summary>
+	///     Filename of a previously upload file which should be attached.
+	/// </summary>
+	/// <value>Filename of a previously upload file which should be attached.</value>
+	[DataMember(Name = "filename", EmitDefaultValue = false)]
 	public byte[] Filename { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets DiscountSave
-    /// </summary>
-    [DataMember(Name = "discountSave", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets DiscountSave
+	/// </summary>
+	[DataMember(Name = "discountSave", EmitDefaultValue = false)]
 	public SaveInvoiceDiscountSave DiscountSave { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets DiscountDelete
-    /// </summary>
-    [DataMember(Name = "discountDelete", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets DiscountDelete
+	/// </summary>
+	[DataMember(Name = "discountDelete", EmitDefaultValue = false)]
 	public SaveCreditNoteDiscountDelete DiscountDelete { get; set; }
 
-    /// <summary>
-    ///     Returns true if SaveCreditNote instances are equal
-    /// </summary>
-    /// <param name="input">Instance of SaveCreditNote to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(SaveCreditNote input)
+	/// <summary>
+	///     Returns true if SaveCreditNote instances are equal
+	/// </summary>
+	/// <param name="input">Instance of SaveCreditNote to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(SaveCreditNote input)
 	{
 		if (input == null)
 			return false;
@@ -125,21 +125,21 @@ public class SaveCreditNote : IEquatable<SaveCreditNote>, IValidatableObject
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class SaveCreditNote {\n");
@@ -153,30 +153,30 @@ public class SaveCreditNote : IEquatable<SaveCreditNote>, IValidatableObject
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as SaveCreditNote);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

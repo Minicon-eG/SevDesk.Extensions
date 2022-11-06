@@ -21,17 +21,17 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ExporttransactionsCsvFilter : IEquatable<ExporttransactionsCsvFilter>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ExporttransactionsCsvFilter" /> class.
-    /// </summary>
-    /// <param name="paymtPurpose">the payment purpose.</param>
-    /// <param name="name">the name of the payee/payer.</param>
-    /// <param name="startDate">Start date of the transactions.</param>
-    /// <param name="endDate">End date of the transactions.</param>
-    /// <param name="startAmount">filters the transactions by amount.</param>
-    /// <param name="endAmount">filters the transactions by amount.</param>
-    /// <param name="checkAccount">checkAccount.</param>
-    public ExporttransactionsCsvFilter(string paymtPurpose = default, string name = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ExporttransactionsCsvFilter" /> class.
+	/// </summary>
+	/// <param name="paymtPurpose">the payment purpose.</param>
+	/// <param name="name">the name of the payee/payer.</param>
+	/// <param name="startDate">Start date of the transactions.</param>
+	/// <param name="endDate">End date of the transactions.</param>
+	/// <param name="startAmount">filters the transactions by amount.</param>
+	/// <param name="endAmount">filters the transactions by amount.</param>
+	/// <param name="checkAccount">checkAccount.</param>
+	public ExporttransactionsCsvFilter(string paymtPurpose = default, string name = default,
 		DateTime? startDate = default, DateTime? endDate = default, int? startAmount = default,
 		int? endAmount = default, ExporttransactionsCsvFilterCheckAccount checkAccount = default)
 	{
@@ -44,60 +44,60 @@ public class ExporttransactionsCsvFilter : IEquatable<ExporttransactionsCsvFilte
 		CheckAccount = checkAccount;
 	}
 
-    /// <summary>
-    ///     the payment purpose
-    /// </summary>
-    /// <value>the payment purpose</value>
-    [DataMember(Name = "paymtPurpose", EmitDefaultValue = false)]
+	/// <summary>
+	///     the payment purpose
+	/// </summary>
+	/// <value>the payment purpose</value>
+	[DataMember(Name = "paymtPurpose", EmitDefaultValue = false)]
 	public string PaymtPurpose { get; set; }
 
-    /// <summary>
-    ///     the name of the payee/payer
-    /// </summary>
-    /// <value>the name of the payee/payer</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+	/// <summary>
+	///     the name of the payee/payer
+	/// </summary>
+	/// <value>the name of the payee/payer</value>
+	[DataMember(Name = "name", EmitDefaultValue = false)]
 	public string Name { get; set; }
 
-    /// <summary>
-    ///     Start date of the transactions
-    /// </summary>
-    /// <value>Start date of the transactions</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Start date of the transactions
+	/// </summary>
+	/// <value>Start date of the transactions</value>
+	[DataMember(Name = "startDate", EmitDefaultValue = false)]
 	public DateTime? StartDate { get; set; }
 
-    /// <summary>
-    ///     End date of the transactions
-    /// </summary>
-    /// <value>End date of the transactions</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     End date of the transactions
+	/// </summary>
+	/// <value>End date of the transactions</value>
+	[DataMember(Name = "endDate", EmitDefaultValue = false)]
 	public DateTime? EndDate { get; set; }
 
-    /// <summary>
-    ///     filters the transactions by amount
-    /// </summary>
-    /// <value>filters the transactions by amount</value>
-    [DataMember(Name = "startAmount", EmitDefaultValue = false)]
+	/// <summary>
+	///     filters the transactions by amount
+	/// </summary>
+	/// <value>filters the transactions by amount</value>
+	[DataMember(Name = "startAmount", EmitDefaultValue = false)]
 	public int? StartAmount { get; set; }
 
-    /// <summary>
-    ///     filters the transactions by amount
-    /// </summary>
-    /// <value>filters the transactions by amount</value>
-    [DataMember(Name = "endAmount", EmitDefaultValue = false)]
+	/// <summary>
+	///     filters the transactions by amount
+	/// </summary>
+	/// <value>filters the transactions by amount</value>
+	[DataMember(Name = "endAmount", EmitDefaultValue = false)]
 	public int? EndAmount { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets CheckAccount
-    /// </summary>
-    [DataMember(Name = "checkAccount", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets CheckAccount
+	/// </summary>
+	[DataMember(Name = "checkAccount", EmitDefaultValue = false)]
 	public ExporttransactionsCsvFilterCheckAccount CheckAccount { get; set; }
 
-    /// <summary>
-    ///     Returns true if ExporttransactionsCsvFilter instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ExporttransactionsCsvFilter to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ExporttransactionsCsvFilter input)
+	/// <summary>
+	///     Returns true if ExporttransactionsCsvFilter instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ExporttransactionsCsvFilter to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ExporttransactionsCsvFilter input)
 	{
 		if (input == null)
 			return false;
@@ -140,21 +140,21 @@ public class ExporttransactionsCsvFilter : IEquatable<ExporttransactionsCsvFilte
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ExporttransactionsCsvFilter {\n");
@@ -169,30 +169,30 @@ public class ExporttransactionsCsvFilter : IEquatable<ExporttransactionsCsvFilte
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ExporttransactionsCsvFilter);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

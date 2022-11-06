@@ -22,40 +22,40 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelChangeLayout : IEquatable<ModelChangeLayout>, IValidatableObject
 {
-    /// <summary>
-    ///     the type to be changed
-    /// </summary>
-    /// <value>the type to be changed</value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     the type to be changed
+	/// </summary>
+	/// <value>the type to be changed</value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum KeyEnum
 	{
-        /// <summary>
-        ///     Enum Language for value: language
-        /// </summary>
-        [EnumMember(Value = "language")] Language = 1,
+		/// <summary>
+		///     Enum Language for value: language
+		/// </summary>
+		[EnumMember(Value = "language")] Language = 1,
 
-        /// <summary>
-        ///     Enum Template for value: template
-        /// </summary>
-        [EnumMember(Value = "template")] Template = 2,
+		/// <summary>
+		///     Enum Template for value: template
+		/// </summary>
+		[EnumMember(Value = "template")] Template = 2,
 
-        /// <summary>
-        ///     Enum Letterpaper for value: letterpaper
-        /// </summary>
-        [EnumMember(Value = "letterpaper")] Letterpaper = 3,
+		/// <summary>
+		///     Enum Letterpaper for value: letterpaper
+		/// </summary>
+		[EnumMember(Value = "letterpaper")] Letterpaper = 3,
 
-        /// <summary>
-        ///     Enum PayPal for value: payPal
-        /// </summary>
-        [EnumMember(Value = "payPal")] PayPal = 4
+		/// <summary>
+		///     Enum PayPal for value: payPal
+		/// </summary>
+		[EnumMember(Value = "payPal")] PayPal = 4
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelChangeLayout" /> class.
-    /// </summary>
-    /// <param name="key">the type to be changed (required).</param>
-    /// <param name="value">the id/value of the template/letterpaper/language/payPal. (required).</param>
-    public ModelChangeLayout(KeyEnum key = default, string value = default)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelChangeLayout" /> class.
+	/// </summary>
+	/// <param name="key">the type to be changed (required).</param>
+	/// <param name="value">the id/value of the template/letterpaper/language/payPal. (required).</param>
+	public ModelChangeLayout(KeyEnum key = default, string value = default)
 	{
 		// to ensure "key" is required (not null)
 		if (key == null)
@@ -67,27 +67,27 @@ public class ModelChangeLayout : IEquatable<ModelChangeLayout>, IValidatableObje
 		Value = value;
 	}
 
-    /// <summary>
-    ///     the type to be changed
-    /// </summary>
-    /// <value>the type to be changed</value>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+	/// <summary>
+	///     the type to be changed
+	/// </summary>
+	/// <value>the type to be changed</value>
+	[DataMember(Name = "key", EmitDefaultValue = false)]
 	public KeyEnum Key { get; set; }
 
 
-    /// <summary>
-    ///     the id/value of the template/letterpaper/language/payPal.
-    /// </summary>
-    /// <value>the id/value of the template/letterpaper/language/payPal.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+	/// <summary>
+	///     the id/value of the template/letterpaper/language/payPal.
+	/// </summary>
+	/// <value>the id/value of the template/letterpaper/language/payPal.</value>
+	[DataMember(Name = "value", EmitDefaultValue = false)]
 	public string Value { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelChangeLayout instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelChangeLayout to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelChangeLayout input)
+	/// <summary>
+	///     Returns true if ModelChangeLayout instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelChangeLayout to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelChangeLayout input)
 	{
 		if (input == null)
 			return false;
@@ -105,21 +105,21 @@ public class ModelChangeLayout : IEquatable<ModelChangeLayout>, IValidatableObje
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelChangeLayout {\n");
@@ -129,30 +129,30 @@ public class ModelChangeLayout : IEquatable<ModelChangeLayout>, IValidatableObje
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelChangeLayout);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

@@ -22,35 +22,35 @@ public class PartApi : IPartApi
 {
 	private ExceptionFactory _exceptionFactory = (name, response) => null;
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="PartApi" /> class.
-    /// </summary>
-    /// <returns></returns>
-    public PartApi(string basePath)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="PartApi" /> class.
+	/// </summary>
+	/// <returns></returns>
+	public PartApi(string basePath)
 	{
 		Configuration = new Configuration { BasePath = basePath };
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="PartApi" /> class
-    /// </summary>
-    /// <returns></returns>
-    public PartApi()
+	/// <summary>
+	///     Initializes a new instance of the <see cref="PartApi" /> class
+	/// </summary>
+	/// <returns></returns>
+	public PartApi()
 	{
 		Configuration = Configuration.Default;
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="PartApi" /> class
-    ///     using Configuration object
-    /// </summary>
-    /// <param name="configuration">An instance of Configuration</param>
-    /// <returns></returns>
-    public PartApi(Configuration configuration = null)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="PartApi" /> class
+	///     using Configuration object
+	/// </summary>
+	/// <param name="configuration">An instance of Configuration</param>
+	/// <returns></returns>
+	public PartApi(Configuration configuration = null)
 	{
 		if (configuration == null) // use the default one in Configuration
 			Configuration = Configuration.Default;
@@ -60,25 +60,25 @@ public class PartApi : IPartApi
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Gets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    public string GetBasePath()
+	/// <summary>
+	///     Gets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	public string GetBasePath()
 	{
 		return Configuration.ApiClient.RestClient.BaseUrl.ToString();
 	}
 
-    /// <summary>
-    ///     Gets or sets the configuration object
-    /// </summary>
-    /// <value>An instance of the Configuration</value>
-    public Configuration Configuration { get; set; }
+	/// <summary>
+	///     Gets or sets the configuration object
+	/// </summary>
+	/// <value>An instance of the Configuration</value>
+	public Configuration Configuration { get; set; }
 
-    /// <summary>
-    ///     Provides a factory method hook for the creation of exceptions.
-    /// </summary>
-    public ExceptionFactory ExceptionFactory
+	/// <summary>
+	///     Provides a factory method hook for the creation of exceptions.
+	/// </summary>
+	public ExceptionFactory ExceptionFactory
 	{
 		get
 		{
@@ -89,31 +89,31 @@ public class PartApi : IPartApi
 		set => _exceptionFactory = value;
 	}
 
-    /// <summary>
-    ///     Create a new part Creates a part in your sevDesk inventory.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the part model! (optional)
-    /// </param>
-    /// <returns>InlineResponse20021</returns>
-    public InlineResponse20021 CreatePart(ModelPart body = null)
+	/// <summary>
+	///     Create a new part Creates a part in your sevDesk inventory.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the part model! (optional)
+	/// </param>
+	/// <returns>InlineResponse20021</returns>
+	public InlineResponse20021 CreatePart(ModelPart body = null)
 	{
 		var localVarResponse = CreatePartWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new part Creates a part in your sevDesk inventory.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the part model! (optional)
-    /// </param>
-    /// <returns>ApiResponse of InlineResponse20021</returns>
-    public ApiResponse<InlineResponse20021> CreatePartWithHttpInfo(ModelPart body = null)
+	/// <summary>
+	///     Create a new part Creates a part in your sevDesk inventory.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the part model! (optional)
+	/// </param>
+	/// <returns>ApiResponse of InlineResponse20021</returns>
+	public ApiResponse<InlineResponse20021> CreatePartWithHttpInfo(ModelPart body = null)
 	{
 		var localVarPath = "/Part";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -166,31 +166,31 @@ public class PartApi : IPartApi
 			(InlineResponse20021)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20021)));
 	}
 
-    /// <summary>
-    ///     Create a new part Creates a part in your sevDesk inventory.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the part model! (optional)
-    /// </param>
-    /// <returns>Task of InlineResponse20021</returns>
-    public async Task<InlineResponse20021> CreatePartAsync(ModelPart body = null)
+	/// <summary>
+	///     Create a new part Creates a part in your sevDesk inventory.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the part model! (optional)
+	/// </param>
+	/// <returns>Task of InlineResponse20021</returns>
+	public async Task<InlineResponse20021> CreatePartAsync(ModelPart body = null)
 	{
 		var localVarResponse = await CreatePartAsyncWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new part Creates a part in your sevDesk inventory.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the part model! (optional)
-    /// </param>
-    /// <returns>Task of ApiResponse (InlineResponse20021)</returns>
-    public async Task<ApiResponse<InlineResponse20021>> CreatePartAsyncWithHttpInfo(ModelPart body = null)
+	/// <summary>
+	///     Create a new part Creates a part in your sevDesk inventory.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the part model! (optional)
+	/// </param>
+	/// <returns>Task of ApiResponse (InlineResponse20021)</returns>
+	public async Task<ApiResponse<InlineResponse20021>> CreatePartAsyncWithHttpInfo(ModelPart body = null)
 	{
 		var localVarPath = "/Part";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -243,25 +243,25 @@ public class PartApi : IPartApi
 			(InlineResponse20021)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20021)));
 	}
 
-    /// <summary>
-    ///     Find part by ID Returns a single part
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="partId">ID of part to return</param>
-    /// <returns>InlineResponse20021</returns>
-    public InlineResponse20021 GetPartById(int? partId)
+	/// <summary>
+	///     Find part by ID Returns a single part
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="partId">ID of part to return</param>
+	/// <returns>InlineResponse20021</returns>
+	public InlineResponse20021 GetPartById(int? partId)
 	{
 		var localVarResponse = GetPartByIdWithHttpInfo(partId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find part by ID Returns a single part
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="partId">ID of part to return</param>
-    /// <returns>ApiResponse of InlineResponse20021</returns>
-    public ApiResponse<InlineResponse20021> GetPartByIdWithHttpInfo(int? partId)
+	/// <summary>
+	///     Find part by ID Returns a single part
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="partId">ID of part to return</param>
+	/// <returns>ApiResponse of InlineResponse20021</returns>
+	public ApiResponse<InlineResponse20021> GetPartByIdWithHttpInfo(int? partId)
 	{
 		// verify the required parameter 'partId' is set
 		if (partId == null)
@@ -315,25 +315,25 @@ public class PartApi : IPartApi
 			(InlineResponse20021)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20021)));
 	}
 
-    /// <summary>
-    ///     Find part by ID Returns a single part
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="partId">ID of part to return</param>
-    /// <returns>Task of InlineResponse20021</returns>
-    public async Task<InlineResponse20021> GetPartByIdAsync(int? partId)
+	/// <summary>
+	///     Find part by ID Returns a single part
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="partId">ID of part to return</param>
+	/// <returns>Task of InlineResponse20021</returns>
+	public async Task<InlineResponse20021> GetPartByIdAsync(int? partId)
 	{
 		var localVarResponse = await GetPartByIdAsyncWithHttpInfo(partId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find part by ID Returns a single part
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="partId">ID of part to return</param>
-    /// <returns>Task of ApiResponse (InlineResponse20021)</returns>
-    public async Task<ApiResponse<InlineResponse20021>> GetPartByIdAsyncWithHttpInfo(int? partId)
+	/// <summary>
+	///     Find part by ID Returns a single part
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="partId">ID of part to return</param>
+	/// <returns>Task of ApiResponse (InlineResponse20021)</returns>
+	public async Task<ApiResponse<InlineResponse20021>> GetPartByIdAsyncWithHttpInfo(int? partId)
 	{
 		// verify the required parameter 'partId' is set
 		if (partId == null)
@@ -387,27 +387,27 @@ public class PartApi : IPartApi
 			(InlineResponse20021)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20021)));
 	}
 
-    /// <summary>
-    ///     Retrieve parts Retrieve all parts in your sevDesk inventory according to the applied filters.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="partNumber">Retrieve all parts with this part number (optional)</param>
-    /// <param name="name">Retrieve all parts with this name (optional)</param>
-    /// <returns>InlineResponse20021</returns>
-    public InlineResponse20021 GetParts(string partNumber = null, string name = null)
+	/// <summary>
+	///     Retrieve parts Retrieve all parts in your sevDesk inventory according to the applied filters.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="partNumber">Retrieve all parts with this part number (optional)</param>
+	/// <param name="name">Retrieve all parts with this name (optional)</param>
+	/// <returns>InlineResponse20021</returns>
+	public InlineResponse20021 GetParts(string partNumber = null, string name = null)
 	{
 		var localVarResponse = GetPartsWithHttpInfo(partNumber, name);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve parts Retrieve all parts in your sevDesk inventory according to the applied filters.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="partNumber">Retrieve all parts with this part number (optional)</param>
-    /// <param name="name">Retrieve all parts with this name (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20021</returns>
-    public ApiResponse<InlineResponse20021> GetPartsWithHttpInfo(string partNumber = null, string name = null)
+	/// <summary>
+	///     Retrieve parts Retrieve all parts in your sevDesk inventory according to the applied filters.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="partNumber">Retrieve all parts with this part number (optional)</param>
+	/// <param name="name">Retrieve all parts with this name (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20021</returns>
+	public ApiResponse<InlineResponse20021> GetPartsWithHttpInfo(string partNumber = null, string name = null)
 	{
 		var localVarPath = "/Part";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -461,27 +461,27 @@ public class PartApi : IPartApi
 			(InlineResponse20021)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20021)));
 	}
 
-    /// <summary>
-    ///     Retrieve parts Retrieve all parts in your sevDesk inventory according to the applied filters.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="partNumber">Retrieve all parts with this part number (optional)</param>
-    /// <param name="name">Retrieve all parts with this name (optional)</param>
-    /// <returns>Task of InlineResponse20021</returns>
-    public async Task<InlineResponse20021> GetPartsAsync(string partNumber = null, string name = null)
+	/// <summary>
+	///     Retrieve parts Retrieve all parts in your sevDesk inventory according to the applied filters.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="partNumber">Retrieve all parts with this part number (optional)</param>
+	/// <param name="name">Retrieve all parts with this name (optional)</param>
+	/// <returns>Task of InlineResponse20021</returns>
+	public async Task<InlineResponse20021> GetPartsAsync(string partNumber = null, string name = null)
 	{
 		var localVarResponse = await GetPartsAsyncWithHttpInfo(partNumber, name);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve parts Retrieve all parts in your sevDesk inventory according to the applied filters.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="partNumber">Retrieve all parts with this part number (optional)</param>
-    /// <param name="name">Retrieve all parts with this name (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20021)</returns>
-    public async Task<ApiResponse<InlineResponse20021>> GetPartsAsyncWithHttpInfo(string partNumber = null,
+	/// <summary>
+	///     Retrieve parts Retrieve all parts in your sevDesk inventory according to the applied filters.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="partNumber">Retrieve all parts with this part number (optional)</param>
+	/// <param name="name">Retrieve all parts with this name (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20021)</returns>
+	public async Task<ApiResponse<InlineResponse20021>> GetPartsAsyncWithHttpInfo(string partNumber = null,
 		string name = null)
 	{
 		var localVarPath = "/Part";
@@ -536,25 +536,25 @@ public class PartApi : IPartApi
 			(InlineResponse20021)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20021)));
 	}
 
-    /// <summary>
-    ///     Get stock of a part Returns the current stock amount of the given part.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="partId">ID of part for which you want the current stock.</param>
-    /// <returns>InlineResponse20026</returns>
-    public InlineResponse20026 PartGetStock(int? partId)
+	/// <summary>
+	///     Get stock of a part Returns the current stock amount of the given part.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="partId">ID of part for which you want the current stock.</param>
+	/// <returns>InlineResponse20026</returns>
+	public InlineResponse20026 PartGetStock(int? partId)
 	{
 		var localVarResponse = PartGetStockWithHttpInfo(partId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Get stock of a part Returns the current stock amount of the given part.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="partId">ID of part for which you want the current stock.</param>
-    /// <returns>ApiResponse of InlineResponse20026</returns>
-    public ApiResponse<InlineResponse20026> PartGetStockWithHttpInfo(int? partId)
+	/// <summary>
+	///     Get stock of a part Returns the current stock amount of the given part.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="partId">ID of part for which you want the current stock.</param>
+	/// <returns>ApiResponse of InlineResponse20026</returns>
+	public ApiResponse<InlineResponse20026> PartGetStockWithHttpInfo(int? partId)
 	{
 		// verify the required parameter 'partId' is set
 		if (partId == null)
@@ -608,25 +608,25 @@ public class PartApi : IPartApi
 			(InlineResponse20026)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20026)));
 	}
 
-    /// <summary>
-    ///     Get stock of a part Returns the current stock amount of the given part.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="partId">ID of part for which you want the current stock.</param>
-    /// <returns>Task of InlineResponse20026</returns>
-    public async Task<InlineResponse20026> PartGetStockAsync(int? partId)
+	/// <summary>
+	///     Get stock of a part Returns the current stock amount of the given part.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="partId">ID of part for which you want the current stock.</param>
+	/// <returns>Task of InlineResponse20026</returns>
+	public async Task<InlineResponse20026> PartGetStockAsync(int? partId)
 	{
 		var localVarResponse = await PartGetStockAsyncWithHttpInfo(partId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Get stock of a part Returns the current stock amount of the given part.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="partId">ID of part for which you want the current stock.</param>
-    /// <returns>Task of ApiResponse (InlineResponse20026)</returns>
-    public async Task<ApiResponse<InlineResponse20026>> PartGetStockAsyncWithHttpInfo(int? partId)
+	/// <summary>
+	///     Get stock of a part Returns the current stock amount of the given part.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="partId">ID of part for which you want the current stock.</param>
+	/// <returns>Task of ApiResponse (InlineResponse20026)</returns>
+	public async Task<ApiResponse<InlineResponse20026>> PartGetStockAsyncWithHttpInfo(int? partId)
 	{
 		// verify the required parameter 'partId' is set
 		if (partId == null)
@@ -680,27 +680,27 @@ public class PartApi : IPartApi
 			(InlineResponse20026)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20026)));
 	}
 
-    /// <summary>
-    ///     Update an existing part Update a part
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="partId">ID of part to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>InlineResponse20021</returns>
-    public InlineResponse20021 UpdatePart(int? partId, ModelPartUpdate body = null)
+	/// <summary>
+	///     Update an existing part Update a part
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="partId">ID of part to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>InlineResponse20021</returns>
+	public InlineResponse20021 UpdatePart(int? partId, ModelPartUpdate body = null)
 	{
 		var localVarResponse = UpdatePartWithHttpInfo(partId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update an existing part Update a part
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="partId">ID of part to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20021</returns>
-    public ApiResponse<InlineResponse20021> UpdatePartWithHttpInfo(int? partId, ModelPartUpdate body = null)
+	/// <summary>
+	///     Update an existing part Update a part
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="partId">ID of part to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20021</returns>
+	public ApiResponse<InlineResponse20021> UpdatePartWithHttpInfo(int? partId, ModelPartUpdate body = null)
 	{
 		// verify the required parameter 'partId' is set
 		if (partId == null)
@@ -759,27 +759,27 @@ public class PartApi : IPartApi
 			(InlineResponse20021)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20021)));
 	}
 
-    /// <summary>
-    ///     Update an existing part Update a part
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="partId">ID of part to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>Task of InlineResponse20021</returns>
-    public async Task<InlineResponse20021> UpdatePartAsync(int? partId, ModelPartUpdate body = null)
+	/// <summary>
+	///     Update an existing part Update a part
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="partId">ID of part to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>Task of InlineResponse20021</returns>
+	public async Task<InlineResponse20021> UpdatePartAsync(int? partId, ModelPartUpdate body = null)
 	{
 		var localVarResponse = await UpdatePartAsyncWithHttpInfo(partId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update an existing part Update a part
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="partId">ID of part to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20021)</returns>
-    public async Task<ApiResponse<InlineResponse20021>> UpdatePartAsyncWithHttpInfo(int? partId,
+	/// <summary>
+	///     Update an existing part Update a part
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="partId">ID of part to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20021)</returns>
+	public async Task<ApiResponse<InlineResponse20021>> UpdatePartAsyncWithHttpInfo(int? partId,
 		ModelPartUpdate body = null)
 	{
 		// verify the required parameter 'partId' is set
@@ -839,34 +839,34 @@ public class PartApi : IPartApi
 			(InlineResponse20021)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20021)));
 	}
 
-    /// <summary>
-    ///     Sets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    [Obsolete(
+	/// <summary>
+	///     Sets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	[Obsolete(
 		"SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
 	public void SetBasePath(string basePath)
 	{
 		// do nothing
 	}
 
-    /// <summary>
-    ///     Gets the default header.
-    /// </summary>
-    /// <returns>Dictionary of HTTP header</returns>
-    [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
+	/// <summary>
+	///     Gets the default header.
+	/// </summary>
+	/// <returns>Dictionary of HTTP header</returns>
+	[Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
 	public IDictionary<string, string> DefaultHeader()
 	{
 		return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
 	}
 
-    /// <summary>
-    ///     Add default header.
-    /// </summary>
-    /// <param name="key">Header field name.</param>
-    /// <param name="value">Header field value.</param>
-    /// <returns></returns>
-    [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
+	/// <summary>
+	///     Add default header.
+	/// </summary>
+	/// <param name="key">Header field name.</param>
+	/// <param name="value">Header field value.</param>
+	/// <returns></returns>
+	[Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
 	public void AddDefaultHeader(string key, string value)
 	{
 		Configuration.AddDefaultHeader(key, value);

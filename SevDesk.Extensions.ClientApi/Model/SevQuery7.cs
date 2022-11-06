@@ -21,14 +21,14 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class SevQuery7 : IEquatable<SevQuery7>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="SevQuery7" /> class.
-    /// </summary>
-    /// <param name="limit">Limit export.</param>
-    /// <param name="modelName">Model name which is exported (required).</param>
-    /// <param name="objectName">SevQuery object name (required).</param>
-    /// <param name="filter">filter.</param>
-    public SevQuery7(int? limit = default, object modelName = default, object objectName = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="SevQuery7" /> class.
+	/// </summary>
+	/// <param name="limit">Limit export.</param>
+	/// <param name="modelName">Model name which is exported (required).</param>
+	/// <param name="objectName">SevQuery object name (required).</param>
+	/// <param name="filter">filter.</param>
+	public SevQuery7(int? limit = default, object modelName = default, object objectName = default,
 		ReportcontactlistFilter filter = default)
 	{
 		// to ensure "modelName" is required (not null)
@@ -43,39 +43,39 @@ public class SevQuery7 : IEquatable<SevQuery7>, IValidatableObject
 		Filter = filter;
 	}
 
-    /// <summary>
-    ///     Limit export
-    /// </summary>
-    /// <value>Limit export</value>
-    [DataMember(Name = "limit", EmitDefaultValue = false)]
+	/// <summary>
+	///     Limit export
+	/// </summary>
+	/// <value>Limit export</value>
+	[DataMember(Name = "limit", EmitDefaultValue = false)]
 	public int? Limit { get; set; }
 
-    /// <summary>
-    ///     Model name which is exported
-    /// </summary>
-    /// <value>Model name which is exported</value>
-    [DataMember(Name = "modelName", EmitDefaultValue = false)]
+	/// <summary>
+	///     Model name which is exported
+	/// </summary>
+	/// <value>Model name which is exported</value>
+	[DataMember(Name = "modelName", EmitDefaultValue = false)]
 	public object ModelName { get; set; }
 
-    /// <summary>
-    ///     SevQuery object name
-    /// </summary>
-    /// <value>SevQuery object name</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     SevQuery object name
+	/// </summary>
+	/// <value>SevQuery object name</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public object ObjectName { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Filter
-    /// </summary>
-    [DataMember(Name = "filter", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Filter
+	/// </summary>
+	[DataMember(Name = "filter", EmitDefaultValue = false)]
 	public ReportcontactlistFilter Filter { get; set; }
 
-    /// <summary>
-    ///     Returns true if SevQuery7 instances are equal
-    /// </summary>
-    /// <param name="input">Instance of SevQuery7 to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(SevQuery7 input)
+	/// <summary>
+	///     Returns true if SevQuery7 instances are equal
+	/// </summary>
+	/// <param name="input">Instance of SevQuery7 to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(SevQuery7 input)
 	{
 		if (input == null)
 			return false;
@@ -103,21 +103,21 @@ public class SevQuery7 : IEquatable<SevQuery7>, IValidatableObject
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class SevQuery7 {\n");
@@ -129,30 +129,30 @@ public class SevQuery7 : IEquatable<SevQuery7>, IValidatableObject
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as SevQuery7);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

@@ -22,35 +22,35 @@ public class ContactApi : IContactApi
 {
 	private ExceptionFactory _exceptionFactory = (name, response) => null;
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ContactApi" /> class.
-    /// </summary>
-    /// <returns></returns>
-    public ContactApi(string basePath)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ContactApi" /> class.
+	/// </summary>
+	/// <returns></returns>
+	public ContactApi(string basePath)
 	{
 		Configuration = new Configuration { BasePath = basePath };
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ContactApi" /> class
-    /// </summary>
-    /// <returns></returns>
-    public ContactApi()
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ContactApi" /> class
+	/// </summary>
+	/// <returns></returns>
+	public ContactApi()
 	{
 		Configuration = Configuration.Default;
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ContactApi" /> class
-    ///     using Configuration object
-    /// </summary>
-    /// <param name="configuration">An instance of Configuration</param>
-    /// <returns></returns>
-    public ContactApi(Configuration configuration = null)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ContactApi" /> class
+	///     using Configuration object
+	/// </summary>
+	/// <param name="configuration">An instance of Configuration</param>
+	/// <returns></returns>
+	public ContactApi(Configuration configuration = null)
 	{
 		if (configuration == null) // use the default one in Configuration
 			Configuration = Configuration.Default;
@@ -60,25 +60,25 @@ public class ContactApi : IContactApi
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Gets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    public string GetBasePath()
+	/// <summary>
+	///     Gets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	public string GetBasePath()
 	{
 		return Configuration.ApiClient.RestClient.BaseUrl.ToString();
 	}
 
-    /// <summary>
-    ///     Gets or sets the configuration object
-    /// </summary>
-    /// <value>An instance of the Configuration</value>
-    public Configuration Configuration { get; set; }
+	/// <summary>
+	///     Gets or sets the configuration object
+	/// </summary>
+	/// <value>An instance of the Configuration</value>
+	public Configuration Configuration { get; set; }
 
-    /// <summary>
-    ///     Provides a factory method hook for the creation of exceptions.
-    /// </summary>
-    public ExceptionFactory ExceptionFactory
+	/// <summary>
+	///     Provides a factory method hook for the creation of exceptions.
+	/// </summary>
+	public ExceptionFactory ExceptionFactory
 	{
 		get
 		{
@@ -89,25 +89,25 @@ public class ContactApi : IContactApi
 		set => _exceptionFactory = value;
 	}
 
-    /// <summary>
-    ///     Check if a customer number is available Checks if a given customer number is available or already used.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="customerNumber">The customer number to be checked. (optional)</param>
-    /// <returns>InlineResponse20011</returns>
-    public InlineResponse20011 ContactCustomerNumberAvailabilityCheck(string customerNumber = null)
+	/// <summary>
+	///     Check if a customer number is available Checks if a given customer number is available or already used.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="customerNumber">The customer number to be checked. (optional)</param>
+	/// <returns>InlineResponse20011</returns>
+	public InlineResponse20011 ContactCustomerNumberAvailabilityCheck(string customerNumber = null)
 	{
 		var localVarResponse = ContactCustomerNumberAvailabilityCheckWithHttpInfo(customerNumber);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Check if a customer number is available Checks if a given customer number is available or already used.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="customerNumber">The customer number to be checked. (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20011</returns>
-    public ApiResponse<InlineResponse20011> ContactCustomerNumberAvailabilityCheckWithHttpInfo(
+	/// <summary>
+	///     Check if a customer number is available Checks if a given customer number is available or already used.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="customerNumber">The customer number to be checked. (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20011</returns>
+	public ApiResponse<InlineResponse20011> ContactCustomerNumberAvailabilityCheckWithHttpInfo(
 		string customerNumber = null)
 	{
 		var localVarPath = "/Contact/Mapper/checkCustomerNumberAvailability";
@@ -160,25 +160,25 @@ public class ContactApi : IContactApi
 			(InlineResponse20011)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20011)));
 	}
 
-    /// <summary>
-    ///     Check if a customer number is available Checks if a given customer number is available or already used.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="customerNumber">The customer number to be checked. (optional)</param>
-    /// <returns>Task of InlineResponse20011</returns>
-    public async Task<InlineResponse20011> ContactCustomerNumberAvailabilityCheckAsync(string customerNumber = null)
+	/// <summary>
+	///     Check if a customer number is available Checks if a given customer number is available or already used.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="customerNumber">The customer number to be checked. (optional)</param>
+	/// <returns>Task of InlineResponse20011</returns>
+	public async Task<InlineResponse20011> ContactCustomerNumberAvailabilityCheckAsync(string customerNumber = null)
 	{
 		var localVarResponse = await ContactCustomerNumberAvailabilityCheckAsyncWithHttpInfo(customerNumber);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Check if a customer number is available Checks if a given customer number is available or already used.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="customerNumber">The customer number to be checked. (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20011)</returns>
-    public async Task<ApiResponse<InlineResponse20011>> ContactCustomerNumberAvailabilityCheckAsyncWithHttpInfo(
+	/// <summary>
+	///     Check if a customer number is available Checks if a given customer number is available or already used.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="customerNumber">The customer number to be checked. (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20011)</returns>
+	public async Task<ApiResponse<InlineResponse20011>> ContactCustomerNumberAvailabilityCheckAsyncWithHttpInfo(
 		string customerNumber = null)
 	{
 		var localVarPath = "/Contact/Mapper/checkCustomerNumberAvailability";
@@ -231,27 +231,27 @@ public class ContactApi : IContactApi
 			(InlineResponse20011)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20011)));
 	}
 
-    /// <summary>
-    ///     Create a new contact Creates a new contact.&lt;br&gt;       For adding addresses and communication ways, you will
-    ///     need to use the ContactAddress and CommunicationWay endpoints.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">Creation data (optional)</param>
-    /// <returns>GetContactResponse</returns>
-    public GetContactResponse CreateContact(ModelContact body = null)
+	/// <summary>
+	///     Create a new contact Creates a new contact.&lt;br&gt;       For adding addresses and communication ways, you will
+	///     need to use the ContactAddress and CommunicationWay endpoints.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">Creation data (optional)</param>
+	/// <returns>GetContactResponse</returns>
+	public GetContactResponse CreateContact(ModelContact body = null)
 	{
 		var localVarResponse = CreateContactWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new contact Creates a new contact.&lt;br&gt;       For adding addresses and communication ways, you will
-    ///     need to use the ContactAddress and CommunicationWay endpoints.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">Creation data (optional)</param>
-    /// <returns>ApiResponse of GetContactResponse</returns>
-    public ApiResponse<GetContactResponse> CreateContactWithHttpInfo(ModelContact body = null)
+	/// <summary>
+	///     Create a new contact Creates a new contact.&lt;br&gt;       For adding addresses and communication ways, you will
+	///     need to use the ContactAddress and CommunicationWay endpoints.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">Creation data (optional)</param>
+	/// <returns>ApiResponse of GetContactResponse</returns>
+	public ApiResponse<GetContactResponse> CreateContactWithHttpInfo(ModelContact body = null)
 	{
 		var localVarPath = "/Contact";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -304,27 +304,27 @@ public class ContactApi : IContactApi
 			(GetContactResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetContactResponse)));
 	}
 
-    /// <summary>
-    ///     Create a new contact Creates a new contact.&lt;br&gt;       For adding addresses and communication ways, you will
-    ///     need to use the ContactAddress and CommunicationWay endpoints.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">Creation data (optional)</param>
-    /// <returns>Task of GetContactResponse</returns>
-    public async Task<GetContactResponse> CreateContactAsync(ModelContact body = null)
+	/// <summary>
+	///     Create a new contact Creates a new contact.&lt;br&gt;       For adding addresses and communication ways, you will
+	///     need to use the ContactAddress and CommunicationWay endpoints.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">Creation data (optional)</param>
+	/// <returns>Task of GetContactResponse</returns>
+	public async Task<GetContactResponse> CreateContactAsync(ModelContact body = null)
 	{
 		var localVarResponse = await CreateContactAsyncWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new contact Creates a new contact.&lt;br&gt;       For adding addresses and communication ways, you will
-    ///     need to use the ContactAddress and CommunicationWay endpoints.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">Creation data (optional)</param>
-    /// <returns>Task of ApiResponse (GetContactResponse)</returns>
-    public async Task<ApiResponse<GetContactResponse>> CreateContactAsyncWithHttpInfo(ModelContact body = null)
+	/// <summary>
+	///     Create a new contact Creates a new contact.&lt;br&gt;       For adding addresses and communication ways, you will
+	///     need to use the ContactAddress and CommunicationWay endpoints.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">Creation data (optional)</param>
+	/// <returns>Task of ApiResponse (GetContactResponse)</returns>
+	public async Task<ApiResponse<GetContactResponse>> CreateContactAsyncWithHttpInfo(ModelContact body = null)
 	{
 		var localVarPath = "/Contact";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -377,25 +377,25 @@ public class ContactApi : IContactApi
 			(GetContactResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetContactResponse)));
 	}
 
-    /// <summary>
-    ///     Deletes a contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">Id of contact resource to delete</param>
-    /// <returns>InlineResponse2003</returns>
-    public InlineResponse2003 DeleteContact(int? contactId)
+	/// <summary>
+	///     Deletes a contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">Id of contact resource to delete</param>
+	/// <returns>InlineResponse2003</returns>
+	public InlineResponse2003 DeleteContact(int? contactId)
 	{
 		var localVarResponse = DeleteContactWithHttpInfo(contactId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Deletes a contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">Id of contact resource to delete</param>
-    /// <returns>ApiResponse of InlineResponse2003</returns>
-    public ApiResponse<InlineResponse2003> DeleteContactWithHttpInfo(int? contactId)
+	/// <summary>
+	///     Deletes a contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">Id of contact resource to delete</param>
+	/// <returns>ApiResponse of InlineResponse2003</returns>
+	public ApiResponse<InlineResponse2003> DeleteContactWithHttpInfo(int? contactId)
 	{
 		// verify the required parameter 'contactId' is set
 		if (contactId == null)
@@ -450,25 +450,25 @@ public class ContactApi : IContactApi
 			(InlineResponse2003)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2003)));
 	}
 
-    /// <summary>
-    ///     Deletes a contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">Id of contact resource to delete</param>
-    /// <returns>Task of InlineResponse2003</returns>
-    public async Task<InlineResponse2003> DeleteContactAsync(int? contactId)
+	/// <summary>
+	///     Deletes a contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">Id of contact resource to delete</param>
+	/// <returns>Task of InlineResponse2003</returns>
+	public async Task<InlineResponse2003> DeleteContactAsync(int? contactId)
 	{
 		var localVarResponse = await DeleteContactAsyncWithHttpInfo(contactId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Deletes a contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">Id of contact resource to delete</param>
-    /// <returns>Task of ApiResponse (InlineResponse2003)</returns>
-    public async Task<ApiResponse<InlineResponse2003>> DeleteContactAsyncWithHttpInfo(int? contactId)
+	/// <summary>
+	///     Deletes a contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">Id of contact resource to delete</param>
+	/// <returns>Task of ApiResponse (InlineResponse2003)</returns>
+	public async Task<ApiResponse<InlineResponse2003>> DeleteContactAsyncWithHttpInfo(int? contactId)
 	{
 		// verify the required parameter 'contactId' is set
 		if (contactId == null)
@@ -523,25 +523,25 @@ public class ContactApi : IContactApi
 			(InlineResponse2003)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2003)));
 	}
 
-    /// <summary>
-    ///     Find contact by ID Returns a single contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">ID of contact to return</param>
-    /// <returns>GetContactResponse</returns>
-    public GetContactResponse GetContactById(int? contactId)
+	/// <summary>
+	///     Find contact by ID Returns a single contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">ID of contact to return</param>
+	/// <returns>GetContactResponse</returns>
+	public GetContactResponse GetContactById(int? contactId)
 	{
 		var localVarResponse = GetContactByIdWithHttpInfo(contactId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find contact by ID Returns a single contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">ID of contact to return</param>
-    /// <returns>ApiResponse of GetContactResponse</returns>
-    public ApiResponse<GetContactResponse> GetContactByIdWithHttpInfo(int? contactId)
+	/// <summary>
+	///     Find contact by ID Returns a single contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">ID of contact to return</param>
+	/// <returns>ApiResponse of GetContactResponse</returns>
+	public ApiResponse<GetContactResponse> GetContactByIdWithHttpInfo(int? contactId)
 	{
 		// verify the required parameter 'contactId' is set
 		if (contactId == null)
@@ -596,25 +596,25 @@ public class ContactApi : IContactApi
 			(GetContactResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetContactResponse)));
 	}
 
-    /// <summary>
-    ///     Find contact by ID Returns a single contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">ID of contact to return</param>
-    /// <returns>Task of GetContactResponse</returns>
-    public async Task<GetContactResponse> GetContactByIdAsync(int? contactId)
+	/// <summary>
+	///     Find contact by ID Returns a single contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">ID of contact to return</param>
+	/// <returns>Task of GetContactResponse</returns>
+	public async Task<GetContactResponse> GetContactByIdAsync(int? contactId)
 	{
 		var localVarResponse = await GetContactByIdAsyncWithHttpInfo(contactId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find contact by ID Returns a single contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">ID of contact to return</param>
-    /// <returns>Task of ApiResponse (GetContactResponse)</returns>
-    public async Task<ApiResponse<GetContactResponse>> GetContactByIdAsyncWithHttpInfo(int? contactId)
+	/// <summary>
+	///     Find contact by ID Returns a single contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">ID of contact to return</param>
+	/// <returns>Task of ApiResponse (GetContactResponse)</returns>
+	public async Task<ApiResponse<GetContactResponse>> GetContactByIdAsyncWithHttpInfo(int? contactId)
 	{
 		// verify the required parameter 'contactId' is set
 		if (contactId == null)
@@ -669,25 +669,25 @@ public class ContactApi : IContactApi
 			(GetContactResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetContactResponse)));
 	}
 
-    /// <summary>
-    ///     Get number of all items Get number of all invoices, orders, etc. of a specified contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">ID of contact to return</param>
-    /// <returns>InlineResponse20018</returns>
-    public InlineResponse20018 GetContactTabsItemCountById(int? contactId)
+	/// <summary>
+	///     Get number of all items Get number of all invoices, orders, etc. of a specified contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">ID of contact to return</param>
+	/// <returns>InlineResponse20018</returns>
+	public InlineResponse20018 GetContactTabsItemCountById(int? contactId)
 	{
 		var localVarResponse = GetContactTabsItemCountByIdWithHttpInfo(contactId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Get number of all items Get number of all invoices, orders, etc. of a specified contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">ID of contact to return</param>
-    /// <returns>ApiResponse of InlineResponse20018</returns>
-    public ApiResponse<InlineResponse20018> GetContactTabsItemCountByIdWithHttpInfo(int? contactId)
+	/// <summary>
+	///     Get number of all items Get number of all invoices, orders, etc. of a specified contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">ID of contact to return</param>
+	/// <returns>ApiResponse of InlineResponse20018</returns>
+	public ApiResponse<InlineResponse20018> GetContactTabsItemCountByIdWithHttpInfo(int? contactId)
 	{
 		// verify the required parameter 'contactId' is set
 		if (contactId == null)
@@ -742,25 +742,25 @@ public class ContactApi : IContactApi
 			(InlineResponse20018)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20018)));
 	}
 
-    /// <summary>
-    ///     Get number of all items Get number of all invoices, orders, etc. of a specified contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">ID of contact to return</param>
-    /// <returns>Task of InlineResponse20018</returns>
-    public async Task<InlineResponse20018> GetContactTabsItemCountByIdAsync(int? contactId)
+	/// <summary>
+	///     Get number of all items Get number of all invoices, orders, etc. of a specified contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">ID of contact to return</param>
+	/// <returns>Task of InlineResponse20018</returns>
+	public async Task<InlineResponse20018> GetContactTabsItemCountByIdAsync(int? contactId)
 	{
 		var localVarResponse = await GetContactTabsItemCountByIdAsyncWithHttpInfo(contactId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Get number of all items Get number of all invoices, orders, etc. of a specified contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">ID of contact to return</param>
-    /// <returns>Task of ApiResponse (InlineResponse20018)</returns>
-    public async Task<ApiResponse<InlineResponse20018>> GetContactTabsItemCountByIdAsyncWithHttpInfo(int? contactId)
+	/// <summary>
+	///     Get number of all items Get number of all invoices, orders, etc. of a specified contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">ID of contact to return</param>
+	/// <returns>Task of ApiResponse (InlineResponse20018)</returns>
+	public async Task<ApiResponse<InlineResponse20018>> GetContactTabsItemCountByIdAsyncWithHttpInfo(int? contactId)
 	{
 		// verify the required parameter 'contactId' is set
 		if (contactId == null)
@@ -815,37 +815,37 @@ public class ContactApi : IContactApi
 			(InlineResponse20018)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20018)));
 	}
 
-    /// <summary>
-    ///     Retrieve contacts There are a multitude of parameter which can be used to filter.&lt;br&gt;       A few of them are
-    ///     attached but       for a complete list please check out &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/How-to-filter-for-certain-contacts&#x27;&gt;this&lt;/a&gt; list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="depth">
-    ///     Defines if both organizations &lt;b&gt;and&lt;/b&gt; persons should be returned.&lt;br&gt;
-    ///     &#x27;0&#x27; -&gt; only organizations, &#x27;1&#x27; -&gt; organizations and persons (optional)
-    /// </param>
-    /// <param name="customerNumber">Retrieve all contacts with this customer number (optional)</param>
-    /// <returns>GetContactResponse</returns>
-    public GetContactResponse GetContacts(string depth = null, string customerNumber = null)
+	/// <summary>
+	///     Retrieve contacts There are a multitude of parameter which can be used to filter.&lt;br&gt;       A few of them are
+	///     attached but       for a complete list please check out &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/How-to-filter-for-certain-contacts&#x27;&gt;this&lt;/a&gt; list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="depth">
+	///     Defines if both organizations &lt;b&gt;and&lt;/b&gt; persons should be returned.&lt;br&gt;
+	///     &#x27;0&#x27; -&gt; only organizations, &#x27;1&#x27; -&gt; organizations and persons (optional)
+	/// </param>
+	/// <param name="customerNumber">Retrieve all contacts with this customer number (optional)</param>
+	/// <returns>GetContactResponse</returns>
+	public GetContactResponse GetContacts(string depth = null, string customerNumber = null)
 	{
 		var localVarResponse = GetContactsWithHttpInfo(depth, customerNumber);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve contacts There are a multitude of parameter which can be used to filter.&lt;br&gt;       A few of them are
-    ///     attached but       for a complete list please check out &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/How-to-filter-for-certain-contacts&#x27;&gt;this&lt;/a&gt; list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="depth">
-    ///     Defines if both organizations &lt;b&gt;and&lt;/b&gt; persons should be returned.&lt;br&gt;
-    ///     &#x27;0&#x27; -&gt; only organizations, &#x27;1&#x27; -&gt; organizations and persons (optional)
-    /// </param>
-    /// <param name="customerNumber">Retrieve all contacts with this customer number (optional)</param>
-    /// <returns>ApiResponse of GetContactResponse</returns>
-    public ApiResponse<GetContactResponse> GetContactsWithHttpInfo(string depth = null, string customerNumber = null)
+	/// <summary>
+	///     Retrieve contacts There are a multitude of parameter which can be used to filter.&lt;br&gt;       A few of them are
+	///     attached but       for a complete list please check out &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/How-to-filter-for-certain-contacts&#x27;&gt;this&lt;/a&gt; list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="depth">
+	///     Defines if both organizations &lt;b&gt;and&lt;/b&gt; persons should be returned.&lt;br&gt;
+	///     &#x27;0&#x27; -&gt; only organizations, &#x27;1&#x27; -&gt; organizations and persons (optional)
+	/// </param>
+	/// <param name="customerNumber">Retrieve all contacts with this customer number (optional)</param>
+	/// <returns>ApiResponse of GetContactResponse</returns>
+	public ApiResponse<GetContactResponse> GetContactsWithHttpInfo(string depth = null, string customerNumber = null)
 	{
 		var localVarPath = "/Contact";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -900,37 +900,37 @@ public class ContactApi : IContactApi
 			(GetContactResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetContactResponse)));
 	}
 
-    /// <summary>
-    ///     Retrieve contacts There are a multitude of parameter which can be used to filter.&lt;br&gt;       A few of them are
-    ///     attached but       for a complete list please check out &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/How-to-filter-for-certain-contacts&#x27;&gt;this&lt;/a&gt; list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="depth">
-    ///     Defines if both organizations &lt;b&gt;and&lt;/b&gt; persons should be returned.&lt;br&gt;
-    ///     &#x27;0&#x27; -&gt; only organizations, &#x27;1&#x27; -&gt; organizations and persons (optional)
-    /// </param>
-    /// <param name="customerNumber">Retrieve all contacts with this customer number (optional)</param>
-    /// <returns>Task of GetContactResponse</returns>
-    public async Task<GetContactResponse> GetContactsAsync(string depth = null, string customerNumber = null)
+	/// <summary>
+	///     Retrieve contacts There are a multitude of parameter which can be used to filter.&lt;br&gt;       A few of them are
+	///     attached but       for a complete list please check out &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/How-to-filter-for-certain-contacts&#x27;&gt;this&lt;/a&gt; list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="depth">
+	///     Defines if both organizations &lt;b&gt;and&lt;/b&gt; persons should be returned.&lt;br&gt;
+	///     &#x27;0&#x27; -&gt; only organizations, &#x27;1&#x27; -&gt; organizations and persons (optional)
+	/// </param>
+	/// <param name="customerNumber">Retrieve all contacts with this customer number (optional)</param>
+	/// <returns>Task of GetContactResponse</returns>
+	public async Task<GetContactResponse> GetContactsAsync(string depth = null, string customerNumber = null)
 	{
 		var localVarResponse = await GetContactsAsyncWithHttpInfo(depth, customerNumber);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve contacts There are a multitude of parameter which can be used to filter.&lt;br&gt;       A few of them are
-    ///     attached but       for a complete list please check out &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/How-to-filter-for-certain-contacts&#x27;&gt;this&lt;/a&gt; list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="depth">
-    ///     Defines if both organizations &lt;b&gt;and&lt;/b&gt; persons should be returned.&lt;br&gt;
-    ///     &#x27;0&#x27; -&gt; only organizations, &#x27;1&#x27; -&gt; organizations and persons (optional)
-    /// </param>
-    /// <param name="customerNumber">Retrieve all contacts with this customer number (optional)</param>
-    /// <returns>Task of ApiResponse (GetContactResponse)</returns>
-    public async Task<ApiResponse<GetContactResponse>> GetContactsAsyncWithHttpInfo(string depth = null,
+	/// <summary>
+	///     Retrieve contacts There are a multitude of parameter which can be used to filter.&lt;br&gt;       A few of them are
+	///     attached but       for a complete list please check out &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/How-to-filter-for-certain-contacts&#x27;&gt;this&lt;/a&gt; list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="depth">
+	///     Defines if both organizations &lt;b&gt;and&lt;/b&gt; persons should be returned.&lt;br&gt;
+	///     &#x27;0&#x27; -&gt; only organizations, &#x27;1&#x27; -&gt; organizations and persons (optional)
+	/// </param>
+	/// <param name="customerNumber">Retrieve all contacts with this customer number (optional)</param>
+	/// <returns>Task of ApiResponse (GetContactResponse)</returns>
+	public async Task<ApiResponse<GetContactResponse>> GetContactsAsyncWithHttpInfo(string depth = null,
 		string customerNumber = null)
 	{
 		var localVarPath = "/Contact";
@@ -986,23 +986,23 @@ public class ContactApi : IContactApi
 			(GetContactResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetContactResponse)));
 	}
 
-    /// <summary>
-    ///     Get next free customer number Retrieves the next available customer number. Avoids duplicates.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>InlineResponse20035</returns>
-    public InlineResponse20035 GetNextCustomerNumber()
+	/// <summary>
+	///     Get next free customer number Retrieves the next available customer number. Avoids duplicates.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>InlineResponse20035</returns>
+	public InlineResponse20035 GetNextCustomerNumber()
 	{
 		var localVarResponse = GetNextCustomerNumberWithHttpInfo();
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Get next free customer number Retrieves the next available customer number. Avoids duplicates.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>ApiResponse of InlineResponse20035</returns>
-    public ApiResponse<InlineResponse20035> GetNextCustomerNumberWithHttpInfo()
+	/// <summary>
+	///     Get next free customer number Retrieves the next available customer number. Avoids duplicates.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>ApiResponse of InlineResponse20035</returns>
+	public ApiResponse<InlineResponse20035> GetNextCustomerNumberWithHttpInfo()
 	{
 		var localVarPath = "/Contact/Factory/getNextCustomerNumber";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -1050,23 +1050,23 @@ public class ContactApi : IContactApi
 			(InlineResponse20035)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20035)));
 	}
 
-    /// <summary>
-    ///     Get next free customer number Retrieves the next available customer number. Avoids duplicates.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>Task of InlineResponse20035</returns>
-    public async Task<InlineResponse20035> GetNextCustomerNumberAsync()
+	/// <summary>
+	///     Get next free customer number Retrieves the next available customer number. Avoids duplicates.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>Task of InlineResponse20035</returns>
+	public async Task<InlineResponse20035> GetNextCustomerNumberAsync()
 	{
 		var localVarResponse = await GetNextCustomerNumberAsyncWithHttpInfo();
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Get next free customer number Retrieves the next available customer number. Avoids duplicates.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>Task of ApiResponse (InlineResponse20035)</returns>
-    public async Task<ApiResponse<InlineResponse20035>> GetNextCustomerNumberAsyncWithHttpInfo()
+	/// <summary>
+	///     Get next free customer number Retrieves the next available customer number. Avoids duplicates.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>Task of ApiResponse (InlineResponse20035)</returns>
+	public async Task<ApiResponse<InlineResponse20035>> GetNextCustomerNumberAsyncWithHttpInfo()
 	{
 		var localVarPath = "/Contact/Factory/getNextCustomerNumber";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -1114,27 +1114,27 @@ public class ContactApi : IContactApi
 			(InlineResponse20035)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20035)));
 	}
 
-    /// <summary>
-    ///     Update a existing contact Update a contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">ID of contact to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>GetContactResponse</returns>
-    public GetContactResponse UpdateContact(int? contactId, ModelContactUpdate body = null)
+	/// <summary>
+	///     Update a existing contact Update a contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">ID of contact to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>GetContactResponse</returns>
+	public GetContactResponse UpdateContact(int? contactId, ModelContactUpdate body = null)
 	{
 		var localVarResponse = UpdateContactWithHttpInfo(contactId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update a existing contact Update a contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">ID of contact to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>ApiResponse of GetContactResponse</returns>
-    public ApiResponse<GetContactResponse> UpdateContactWithHttpInfo(int? contactId, ModelContactUpdate body = null)
+	/// <summary>
+	///     Update a existing contact Update a contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">ID of contact to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>ApiResponse of GetContactResponse</returns>
+	public ApiResponse<GetContactResponse> UpdateContactWithHttpInfo(int? contactId, ModelContactUpdate body = null)
 	{
 		// verify the required parameter 'contactId' is set
 		if (contactId == null)
@@ -1194,27 +1194,27 @@ public class ContactApi : IContactApi
 			(GetContactResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetContactResponse)));
 	}
 
-    /// <summary>
-    ///     Update a existing contact Update a contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">ID of contact to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>Task of GetContactResponse</returns>
-    public async Task<GetContactResponse> UpdateContactAsync(int? contactId, ModelContactUpdate body = null)
+	/// <summary>
+	///     Update a existing contact Update a contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">ID of contact to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>Task of GetContactResponse</returns>
+	public async Task<GetContactResponse> UpdateContactAsync(int? contactId, ModelContactUpdate body = null)
 	{
 		var localVarResponse = await UpdateContactAsyncWithHttpInfo(contactId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update a existing contact Update a contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">ID of contact to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>Task of ApiResponse (GetContactResponse)</returns>
-    public async Task<ApiResponse<GetContactResponse>> UpdateContactAsyncWithHttpInfo(int? contactId,
+	/// <summary>
+	///     Update a existing contact Update a contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">ID of contact to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>Task of ApiResponse (GetContactResponse)</returns>
+	public async Task<ApiResponse<GetContactResponse>> UpdateContactAsyncWithHttpInfo(int? contactId,
 		ModelContactUpdate body = null)
 	{
 		// verify the required parameter 'contactId' is set
@@ -1275,34 +1275,34 @@ public class ContactApi : IContactApi
 			(GetContactResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetContactResponse)));
 	}
 
-    /// <summary>
-    ///     Sets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    [Obsolete(
+	/// <summary>
+	///     Sets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	[Obsolete(
 		"SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
 	public void SetBasePath(string basePath)
 	{
 		// do nothing
 	}
 
-    /// <summary>
-    ///     Gets the default header.
-    /// </summary>
-    /// <returns>Dictionary of HTTP header</returns>
-    [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
+	/// <summary>
+	///     Gets the default header.
+	/// </summary>
+	/// <returns>Dictionary of HTTP header</returns>
+	[Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
 	public IDictionary<string, string> DefaultHeader()
 	{
 		return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
 	}
 
-    /// <summary>
-    ///     Add default header.
-    /// </summary>
-    /// <param name="key">Header field name.</param>
-    /// <param name="value">Header field value.</param>
-    /// <returns></returns>
-    [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
+	/// <summary>
+	///     Add default header.
+	/// </summary>
+	/// <param name="key">Header field name.</param>
+	/// <param name="value">Header field value.</param>
+	/// <returns></returns>
+	[Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
 	public void AddDefaultHeader(string key, string value)
 	{
 		Configuration.AddDefaultHeader(key, value);

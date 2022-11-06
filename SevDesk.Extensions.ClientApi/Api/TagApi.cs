@@ -22,35 +22,35 @@ public class TagApi : ITagApi
 {
 	private ExceptionFactory _exceptionFactory = (name, response) => null;
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="TagApi" /> class.
-    /// </summary>
-    /// <returns></returns>
-    public TagApi(string basePath)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="TagApi" /> class.
+	/// </summary>
+	/// <returns></returns>
+	public TagApi(string basePath)
 	{
 		Configuration = new Configuration { BasePath = basePath };
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="TagApi" /> class
-    /// </summary>
-    /// <returns></returns>
-    public TagApi()
+	/// <summary>
+	///     Initializes a new instance of the <see cref="TagApi" /> class
+	/// </summary>
+	/// <returns></returns>
+	public TagApi()
 	{
 		Configuration = Configuration.Default;
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="TagApi" /> class
-    ///     using Configuration object
-    /// </summary>
-    /// <param name="configuration">An instance of Configuration</param>
-    /// <returns></returns>
-    public TagApi(Configuration configuration = null)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="TagApi" /> class
+	///     using Configuration object
+	/// </summary>
+	/// <param name="configuration">An instance of Configuration</param>
+	/// <returns></returns>
+	public TagApi(Configuration configuration = null)
 	{
 		if (configuration == null) // use the default one in Configuration
 			Configuration = Configuration.Default;
@@ -60,25 +60,25 @@ public class TagApi : ITagApi
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Gets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    public string GetBasePath()
+	/// <summary>
+	///     Gets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	public string GetBasePath()
 	{
 		return Configuration.ApiClient.RestClient.BaseUrl.ToString();
 	}
 
-    /// <summary>
-    ///     Gets or sets the configuration object
-    /// </summary>
-    /// <value>An instance of the Configuration</value>
-    public Configuration Configuration { get; set; }
+	/// <summary>
+	///     Gets or sets the configuration object
+	/// </summary>
+	/// <value>An instance of the Configuration</value>
+	public Configuration Configuration { get; set; }
 
-    /// <summary>
-    ///     Provides a factory method hook for the creation of exceptions.
-    /// </summary>
-    public ExceptionFactory ExceptionFactory
+	/// <summary>
+	///     Provides a factory method hook for the creation of exceptions.
+	/// </summary>
+	public ExceptionFactory ExceptionFactory
 	{
 		get
 		{
@@ -89,25 +89,25 @@ public class TagApi : ITagApi
 		set => _exceptionFactory = value;
 	}
 
-    /// <summary>
-    ///     Create a new tag Create a new tag
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body"> (optional)</param>
-    /// <returns>InlineResponse20030</returns>
-    public InlineResponse20030 CreateTag(FactoryCreateBody body = null)
+	/// <summary>
+	///     Create a new tag Create a new tag
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body"> (optional)</param>
+	/// <returns>InlineResponse20030</returns>
+	public InlineResponse20030 CreateTag(FactoryCreateBody body = null)
 	{
 		var localVarResponse = CreateTagWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new tag Create a new tag
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body"> (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20030</returns>
-    public ApiResponse<InlineResponse20030> CreateTagWithHttpInfo(FactoryCreateBody body = null)
+	/// <summary>
+	///     Create a new tag Create a new tag
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body"> (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20030</returns>
+	public ApiResponse<InlineResponse20030> CreateTagWithHttpInfo(FactoryCreateBody body = null)
 	{
 		var localVarPath = "/Tag/Factory/create";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -160,25 +160,25 @@ public class TagApi : ITagApi
 			(InlineResponse20030)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20030)));
 	}
 
-    /// <summary>
-    ///     Create a new tag Create a new tag
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body"> (optional)</param>
-    /// <returns>Task of InlineResponse20030</returns>
-    public async Task<InlineResponse20030> CreateTagAsync(FactoryCreateBody body = null)
+	/// <summary>
+	///     Create a new tag Create a new tag
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body"> (optional)</param>
+	/// <returns>Task of InlineResponse20030</returns>
+	public async Task<InlineResponse20030> CreateTagAsync(FactoryCreateBody body = null)
 	{
 		var localVarResponse = await CreateTagAsyncWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new tag Create a new tag
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body"> (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20030)</returns>
-    public async Task<ApiResponse<InlineResponse20030>> CreateTagAsyncWithHttpInfo(FactoryCreateBody body = null)
+	/// <summary>
+	///     Create a new tag Create a new tag
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body"> (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20030)</returns>
+	public async Task<ApiResponse<InlineResponse20030>> CreateTagAsyncWithHttpInfo(FactoryCreateBody body = null)
 	{
 		var localVarPath = "/Tag/Factory/create";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -231,25 +231,25 @@ public class TagApi : ITagApi
 			(InlineResponse20030)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20030)));
 	}
 
-    /// <summary>
-    ///     Deletes a tag
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tagId">Id of tag to delete</param>
-    /// <returns>InlineResponse2003</returns>
-    public InlineResponse2003 DeleteTag(int? tagId)
+	/// <summary>
+	///     Deletes a tag
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="tagId">Id of tag to delete</param>
+	/// <returns>InlineResponse2003</returns>
+	public InlineResponse2003 DeleteTag(int? tagId)
 	{
 		var localVarResponse = DeleteTagWithHttpInfo(tagId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Deletes a tag
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tagId">Id of tag to delete</param>
-    /// <returns>ApiResponse of InlineResponse2003</returns>
-    public ApiResponse<InlineResponse2003> DeleteTagWithHttpInfo(int? tagId)
+	/// <summary>
+	///     Deletes a tag
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="tagId">Id of tag to delete</param>
+	/// <returns>ApiResponse of InlineResponse2003</returns>
+	public ApiResponse<InlineResponse2003> DeleteTagWithHttpInfo(int? tagId)
 	{
 		// verify the required parameter 'tagId' is set
 		if (tagId == null)
@@ -303,25 +303,25 @@ public class TagApi : ITagApi
 			(InlineResponse2003)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2003)));
 	}
 
-    /// <summary>
-    ///     Deletes a tag
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tagId">Id of tag to delete</param>
-    /// <returns>Task of InlineResponse2003</returns>
-    public async Task<InlineResponse2003> DeleteTagAsync(int? tagId)
+	/// <summary>
+	///     Deletes a tag
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="tagId">Id of tag to delete</param>
+	/// <returns>Task of InlineResponse2003</returns>
+	public async Task<InlineResponse2003> DeleteTagAsync(int? tagId)
 	{
 		var localVarResponse = await DeleteTagAsyncWithHttpInfo(tagId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Deletes a tag
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tagId">Id of tag to delete</param>
-    /// <returns>Task of ApiResponse (InlineResponse2003)</returns>
-    public async Task<ApiResponse<InlineResponse2003>> DeleteTagAsyncWithHttpInfo(int? tagId)
+	/// <summary>
+	///     Deletes a tag
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="tagId">Id of tag to delete</param>
+	/// <returns>Task of ApiResponse (InlineResponse2003)</returns>
+	public async Task<ApiResponse<InlineResponse2003>> DeleteTagAsyncWithHttpInfo(int? tagId)
 	{
 		// verify the required parameter 'tagId' is set
 		if (tagId == null)
@@ -375,25 +375,25 @@ public class TagApi : ITagApi
 			(InlineResponse2003)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2003)));
 	}
 
-    /// <summary>
-    ///     Find tag by ID Returns a single tag
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tagId">ID of tag to return</param>
-    /// <returns>InlineResponse20019</returns>
-    public InlineResponse20019 GetTagById(int? tagId)
+	/// <summary>
+	///     Find tag by ID Returns a single tag
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="tagId">ID of tag to return</param>
+	/// <returns>InlineResponse20019</returns>
+	public InlineResponse20019 GetTagById(int? tagId)
 	{
 		var localVarResponse = GetTagByIdWithHttpInfo(tagId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find tag by ID Returns a single tag
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tagId">ID of tag to return</param>
-    /// <returns>ApiResponse of InlineResponse20019</returns>
-    public ApiResponse<InlineResponse20019> GetTagByIdWithHttpInfo(int? tagId)
+	/// <summary>
+	///     Find tag by ID Returns a single tag
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="tagId">ID of tag to return</param>
+	/// <returns>ApiResponse of InlineResponse20019</returns>
+	public ApiResponse<InlineResponse20019> GetTagByIdWithHttpInfo(int? tagId)
 	{
 		// verify the required parameter 'tagId' is set
 		if (tagId == null)
@@ -447,25 +447,25 @@ public class TagApi : ITagApi
 			(InlineResponse20019)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20019)));
 	}
 
-    /// <summary>
-    ///     Find tag by ID Returns a single tag
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tagId">ID of tag to return</param>
-    /// <returns>Task of InlineResponse20019</returns>
-    public async Task<InlineResponse20019> GetTagByIdAsync(int? tagId)
+	/// <summary>
+	///     Find tag by ID Returns a single tag
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="tagId">ID of tag to return</param>
+	/// <returns>Task of InlineResponse20019</returns>
+	public async Task<InlineResponse20019> GetTagByIdAsync(int? tagId)
 	{
 		var localVarResponse = await GetTagByIdAsyncWithHttpInfo(tagId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find tag by ID Returns a single tag
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tagId">ID of tag to return</param>
-    /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
-    public async Task<ApiResponse<InlineResponse20019>> GetTagByIdAsyncWithHttpInfo(int? tagId)
+	/// <summary>
+	///     Find tag by ID Returns a single tag
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="tagId">ID of tag to return</param>
+	/// <returns>Task of ApiResponse (InlineResponse20019)</returns>
+	public async Task<ApiResponse<InlineResponse20019>> GetTagByIdAsyncWithHttpInfo(int? tagId)
 	{
 		// verify the required parameter 'tagId' is set
 		if (tagId == null)
@@ -519,23 +519,23 @@ public class TagApi : ITagApi
 			(InlineResponse20019)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20019)));
 	}
 
-    /// <summary>
-    ///     Retrieve tag relations Retrieve all tag relations
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>InlineResponse20030</returns>
-    public InlineResponse20030 GetTagRelations()
+	/// <summary>
+	///     Retrieve tag relations Retrieve all tag relations
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>InlineResponse20030</returns>
+	public InlineResponse20030 GetTagRelations()
 	{
 		var localVarResponse = GetTagRelationsWithHttpInfo();
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve tag relations Retrieve all tag relations
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>ApiResponse of InlineResponse20030</returns>
-    public ApiResponse<InlineResponse20030> GetTagRelationsWithHttpInfo()
+	/// <summary>
+	///     Retrieve tag relations Retrieve all tag relations
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>ApiResponse of InlineResponse20030</returns>
+	public ApiResponse<InlineResponse20030> GetTagRelationsWithHttpInfo()
 	{
 		var localVarPath = "/TagRelation";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -583,23 +583,23 @@ public class TagApi : ITagApi
 			(InlineResponse20030)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20030)));
 	}
 
-    /// <summary>
-    ///     Retrieve tag relations Retrieve all tag relations
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>Task of InlineResponse20030</returns>
-    public async Task<InlineResponse20030> GetTagRelationsAsync()
+	/// <summary>
+	///     Retrieve tag relations Retrieve all tag relations
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>Task of InlineResponse20030</returns>
+	public async Task<InlineResponse20030> GetTagRelationsAsync()
 	{
 		var localVarResponse = await GetTagRelationsAsyncWithHttpInfo();
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve tag relations Retrieve all tag relations
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>Task of ApiResponse (InlineResponse20030)</returns>
-    public async Task<ApiResponse<InlineResponse20030>> GetTagRelationsAsyncWithHttpInfo()
+	/// <summary>
+	///     Retrieve tag relations Retrieve all tag relations
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>Task of ApiResponse (InlineResponse20030)</returns>
+	public async Task<ApiResponse<InlineResponse20030>> GetTagRelationsAsyncWithHttpInfo()
 	{
 		var localVarPath = "/TagRelation";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -647,27 +647,27 @@ public class TagApi : ITagApi
 			(InlineResponse20030)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20030)));
 	}
 
-    /// <summary>
-    ///     Retrieve tags Retrieve all tags
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id">ID of the Tag (optional)</param>
-    /// <param name="name">Name of the Tag (optional)</param>
-    /// <returns>InlineResponse20019</returns>
-    public InlineResponse20019 GetTags(decimal? id = null, string name = null)
+	/// <summary>
+	///     Retrieve tags Retrieve all tags
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="id">ID of the Tag (optional)</param>
+	/// <param name="name">Name of the Tag (optional)</param>
+	/// <returns>InlineResponse20019</returns>
+	public InlineResponse20019 GetTags(decimal? id = null, string name = null)
 	{
 		var localVarResponse = GetTagsWithHttpInfo(id, name);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve tags Retrieve all tags
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id">ID of the Tag (optional)</param>
-    /// <param name="name">Name of the Tag (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20019</returns>
-    public ApiResponse<InlineResponse20019> GetTagsWithHttpInfo(decimal? id = null, string name = null)
+	/// <summary>
+	///     Retrieve tags Retrieve all tags
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="id">ID of the Tag (optional)</param>
+	/// <param name="name">Name of the Tag (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20019</returns>
+	public ApiResponse<InlineResponse20019> GetTagsWithHttpInfo(decimal? id = null, string name = null)
 	{
 		var localVarPath = "/Tag";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -721,27 +721,27 @@ public class TagApi : ITagApi
 			(InlineResponse20019)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20019)));
 	}
 
-    /// <summary>
-    ///     Retrieve tags Retrieve all tags
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id">ID of the Tag (optional)</param>
-    /// <param name="name">Name of the Tag (optional)</param>
-    /// <returns>Task of InlineResponse20019</returns>
-    public async Task<InlineResponse20019> GetTagsAsync(decimal? id = null, string name = null)
+	/// <summary>
+	///     Retrieve tags Retrieve all tags
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="id">ID of the Tag (optional)</param>
+	/// <param name="name">Name of the Tag (optional)</param>
+	/// <returns>Task of InlineResponse20019</returns>
+	public async Task<InlineResponse20019> GetTagsAsync(decimal? id = null, string name = null)
 	{
 		var localVarResponse = await GetTagsAsyncWithHttpInfo(id, name);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve tags Retrieve all tags
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id">ID of the Tag (optional)</param>
-    /// <param name="name">Name of the Tag (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
-    public async Task<ApiResponse<InlineResponse20019>> GetTagsAsyncWithHttpInfo(decimal? id = null, string name = null)
+	/// <summary>
+	///     Retrieve tags Retrieve all tags
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="id">ID of the Tag (optional)</param>
+	/// <param name="name">Name of the Tag (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20019)</returns>
+	public async Task<ApiResponse<InlineResponse20019>> GetTagsAsyncWithHttpInfo(decimal? id = null, string name = null)
 	{
 		var localVarPath = "/Tag";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -795,27 +795,27 @@ public class TagApi : ITagApi
 			(InlineResponse20019)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20019)));
 	}
 
-    /// <summary>
-    ///     Update tag Update an existing tag
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tagId">ID of tag you want to update</param>
-    /// <param name="body"> (optional)</param>
-    /// <returns>InlineResponse20019</returns>
-    public InlineResponse20019 UpdateTag(int? tagId, TagTagIdBody body = null)
+	/// <summary>
+	///     Update tag Update an existing tag
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="tagId">ID of tag you want to update</param>
+	/// <param name="body"> (optional)</param>
+	/// <returns>InlineResponse20019</returns>
+	public InlineResponse20019 UpdateTag(int? tagId, TagTagIdBody body = null)
 	{
 		var localVarResponse = UpdateTagWithHttpInfo(tagId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update tag Update an existing tag
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tagId">ID of tag you want to update</param>
-    /// <param name="body"> (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20019</returns>
-    public ApiResponse<InlineResponse20019> UpdateTagWithHttpInfo(int? tagId, TagTagIdBody body = null)
+	/// <summary>
+	///     Update tag Update an existing tag
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="tagId">ID of tag you want to update</param>
+	/// <param name="body"> (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20019</returns>
+	public ApiResponse<InlineResponse20019> UpdateTagWithHttpInfo(int? tagId, TagTagIdBody body = null)
 	{
 		// verify the required parameter 'tagId' is set
 		if (tagId == null)
@@ -874,27 +874,27 @@ public class TagApi : ITagApi
 			(InlineResponse20019)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20019)));
 	}
 
-    /// <summary>
-    ///     Update tag Update an existing tag
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tagId">ID of tag you want to update</param>
-    /// <param name="body"> (optional)</param>
-    /// <returns>Task of InlineResponse20019</returns>
-    public async Task<InlineResponse20019> UpdateTagAsync(int? tagId, TagTagIdBody body = null)
+	/// <summary>
+	///     Update tag Update an existing tag
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="tagId">ID of tag you want to update</param>
+	/// <param name="body"> (optional)</param>
+	/// <returns>Task of InlineResponse20019</returns>
+	public async Task<InlineResponse20019> UpdateTagAsync(int? tagId, TagTagIdBody body = null)
 	{
 		var localVarResponse = await UpdateTagAsyncWithHttpInfo(tagId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update tag Update an existing tag
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="tagId">ID of tag you want to update</param>
-    /// <param name="body"> (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
-    public async Task<ApiResponse<InlineResponse20019>> UpdateTagAsyncWithHttpInfo(int? tagId, TagTagIdBody body = null)
+	/// <summary>
+	///     Update tag Update an existing tag
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="tagId">ID of tag you want to update</param>
+	/// <param name="body"> (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20019)</returns>
+	public async Task<ApiResponse<InlineResponse20019>> UpdateTagAsyncWithHttpInfo(int? tagId, TagTagIdBody body = null)
 	{
 		// verify the required parameter 'tagId' is set
 		if (tagId == null)
@@ -953,34 +953,34 @@ public class TagApi : ITagApi
 			(InlineResponse20019)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20019)));
 	}
 
-    /// <summary>
-    ///     Sets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    [Obsolete(
+	/// <summary>
+	///     Sets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	[Obsolete(
 		"SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
 	public void SetBasePath(string basePath)
 	{
 		// do nothing
 	}
 
-    /// <summary>
-    ///     Gets the default header.
-    /// </summary>
-    /// <returns>Dictionary of HTTP header</returns>
-    [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
+	/// <summary>
+	///     Gets the default header.
+	/// </summary>
+	/// <returns>Dictionary of HTTP header</returns>
+	[Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
 	public IDictionary<string, string> DefaultHeader()
 	{
 		return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
 	}
 
-    /// <summary>
-    ///     Add default header.
-    /// </summary>
-    /// <param name="key">Header field name.</param>
-    /// <param name="value">Header field value.</param>
-    /// <returns></returns>
-    [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
+	/// <summary>
+	///     Add default header.
+	/// </summary>
+	/// <param name="key">Header field name.</param>
+	/// <param name="value">Header field value.</param>
+	/// <returns></returns>
+	[Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
 	public void AddDefaultHeader(string key, string value)
 	{
 		Configuration.AddDefaultHeader(key, value);

@@ -22,39 +22,39 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ReportorderlistFilter : IEquatable<ReportorderlistFilter>, IValidatableObject
 {
-    /// <summary>
-    ///     Type of orders you want to export 1. AN - Angebote 2. AB - Aufträge 3. LI - Lieferscheine
-    /// </summary>
-    /// <value>Type of orders you want to export 1. AN - Angebote 2. AB - Aufträge 3. LI - Lieferscheine</value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Type of orders you want to export 1. AN - Angebote 2. AB - Aufträge 3. LI - Lieferscheine
+	/// </summary>
+	/// <value>Type of orders you want to export 1. AN - Angebote 2. AB - Aufträge 3. LI - Lieferscheine</value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum OrderTypeEnum
 	{
-        /// <summary>
-        ///     Enum AN for value: AN
-        /// </summary>
-        [EnumMember(Value = "AN")] AN = 1,
+		/// <summary>
+		///     Enum AN for value: AN
+		/// </summary>
+		[EnumMember(Value = "AN")] AN = 1,
 
-        /// <summary>
-        ///     Enum AB for value: AB
-        /// </summary>
-        [EnumMember(Value = "AB")] AB = 2,
+		/// <summary>
+		///     Enum AB for value: AB
+		/// </summary>
+		[EnumMember(Value = "AB")] AB = 2,
 
-        /// <summary>
-        ///     Enum LI for value: LI
-        /// </summary>
-        [EnumMember(Value = "LI")] LI = 3
+		/// <summary>
+		///     Enum LI for value: LI
+		/// </summary>
+		[EnumMember(Value = "LI")] LI = 3
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ReportorderlistFilter" /> class.
-    /// </summary>
-    /// <param name="orderType">Type of orders you want to export 1. AN - Angebote 2. AB - Aufträge 3. LI - Lieferscheine.</param>
-    /// <param name="startDate">Start date of the order.</param>
-    /// <param name="endDate">End date of the order.</param>
-    /// <param name="contact">contact.</param>
-    /// <param name="startAmount">filters the orders by amount.</param>
-    /// <param name="endAmount">filters the orders by amount.</param>
-    public ReportorderlistFilter(OrderTypeEnum? orderType = default, DateTime? startDate = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ReportorderlistFilter" /> class.
+	/// </summary>
+	/// <param name="orderType">Type of orders you want to export 1. AN - Angebote 2. AB - Aufträge 3. LI - Lieferscheine.</param>
+	/// <param name="startDate">Start date of the order.</param>
+	/// <param name="endDate">End date of the order.</param>
+	/// <param name="contact">contact.</param>
+	/// <param name="startAmount">filters the orders by amount.</param>
+	/// <param name="endAmount">filters the orders by amount.</param>
+	public ReportorderlistFilter(OrderTypeEnum? orderType = default, DateTime? startDate = default,
 		DateTime? endDate = default, ReportorderlistFilterContact contact = default, int? startAmount = default,
 		int? endAmount = default)
 	{
@@ -66,54 +66,54 @@ public class ReportorderlistFilter : IEquatable<ReportorderlistFilter>, IValidat
 		EndAmount = endAmount;
 	}
 
-    /// <summary>
-    ///     Type of orders you want to export 1. AN - Angebote 2. AB - Aufträge 3. LI - Lieferscheine
-    /// </summary>
-    /// <value>Type of orders you want to export 1. AN - Angebote 2. AB - Aufträge 3. LI - Lieferscheine</value>
-    [DataMember(Name = "orderType", EmitDefaultValue = false)]
+	/// <summary>
+	///     Type of orders you want to export 1. AN - Angebote 2. AB - Aufträge 3. LI - Lieferscheine
+	/// </summary>
+	/// <value>Type of orders you want to export 1. AN - Angebote 2. AB - Aufträge 3. LI - Lieferscheine</value>
+	[DataMember(Name = "orderType", EmitDefaultValue = false)]
 	public OrderTypeEnum? OrderType { get; set; }
 
 
-    /// <summary>
-    ///     Start date of the order
-    /// </summary>
-    /// <value>Start date of the order</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Start date of the order
+	/// </summary>
+	/// <value>Start date of the order</value>
+	[DataMember(Name = "startDate", EmitDefaultValue = false)]
 	public DateTime? StartDate { get; set; }
 
-    /// <summary>
-    ///     End date of the order
-    /// </summary>
-    /// <value>End date of the order</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     End date of the order
+	/// </summary>
+	/// <value>End date of the order</value>
+	[DataMember(Name = "endDate", EmitDefaultValue = false)]
 	public DateTime? EndDate { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Contact
-    /// </summary>
-    [DataMember(Name = "contact", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Contact
+	/// </summary>
+	[DataMember(Name = "contact", EmitDefaultValue = false)]
 	public ReportorderlistFilterContact Contact { get; set; }
 
-    /// <summary>
-    ///     filters the orders by amount
-    /// </summary>
-    /// <value>filters the orders by amount</value>
-    [DataMember(Name = "startAmount", EmitDefaultValue = false)]
+	/// <summary>
+	///     filters the orders by amount
+	/// </summary>
+	/// <value>filters the orders by amount</value>
+	[DataMember(Name = "startAmount", EmitDefaultValue = false)]
 	public int? StartAmount { get; set; }
 
-    /// <summary>
-    ///     filters the orders by amount
-    /// </summary>
-    /// <value>filters the orders by amount</value>
-    [DataMember(Name = "endAmount", EmitDefaultValue = false)]
+	/// <summary>
+	///     filters the orders by amount
+	/// </summary>
+	/// <value>filters the orders by amount</value>
+	[DataMember(Name = "endAmount", EmitDefaultValue = false)]
 	public int? EndAmount { get; set; }
 
-    /// <summary>
-    ///     Returns true if ReportorderlistFilter instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ReportorderlistFilter to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ReportorderlistFilter input)
+	/// <summary>
+	///     Returns true if ReportorderlistFilter instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ReportorderlistFilter to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ReportorderlistFilter input)
 	{
 		if (input == null)
 			return false;
@@ -151,21 +151,21 @@ public class ReportorderlistFilter : IEquatable<ReportorderlistFilter>, IValidat
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ReportorderlistFilter {\n");
@@ -179,30 +179,30 @@ public class ReportorderlistFilter : IEquatable<ReportorderlistFilter>, IValidat
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ReportorderlistFilter);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

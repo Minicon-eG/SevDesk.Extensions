@@ -21,15 +21,15 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ExportcreditNoteCsvFilter : IEquatable<ExportcreditNoteCsvFilter>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ExportcreditNoteCsvFilter" /> class.
-    /// </summary>
-    /// <param name="startDate">Start date of the credit note.</param>
-    /// <param name="endDate">End date of the credit note.</param>
-    /// <param name="contact">contact.</param>
-    /// <param name="startAmount">filters the credit notes by amount.</param>
-    /// <param name="endAmount">filters the credit notes by amount.</param>
-    public ExportcreditNoteCsvFilter(DateTime? startDate = default, DateTime? endDate = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ExportcreditNoteCsvFilter" /> class.
+	/// </summary>
+	/// <param name="startDate">Start date of the credit note.</param>
+	/// <param name="endDate">End date of the credit note.</param>
+	/// <param name="contact">contact.</param>
+	/// <param name="startAmount">filters the credit notes by amount.</param>
+	/// <param name="endAmount">filters the credit notes by amount.</param>
+	public ExportcreditNoteCsvFilter(DateTime? startDate = default, DateTime? endDate = default,
 		ExportcreditNoteCsvFilterContact contact = default, int? startAmount = default, int? endAmount = default)
 	{
 		StartDate = startDate;
@@ -39,46 +39,46 @@ public class ExportcreditNoteCsvFilter : IEquatable<ExportcreditNoteCsvFilter>, 
 		EndAmount = endAmount;
 	}
 
-    /// <summary>
-    ///     Start date of the credit note
-    /// </summary>
-    /// <value>Start date of the credit note</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Start date of the credit note
+	/// </summary>
+	/// <value>Start date of the credit note</value>
+	[DataMember(Name = "startDate", EmitDefaultValue = false)]
 	public DateTime? StartDate { get; set; }
 
-    /// <summary>
-    ///     End date of the credit note
-    /// </summary>
-    /// <value>End date of the credit note</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     End date of the credit note
+	/// </summary>
+	/// <value>End date of the credit note</value>
+	[DataMember(Name = "endDate", EmitDefaultValue = false)]
 	public DateTime? EndDate { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Contact
-    /// </summary>
-    [DataMember(Name = "contact", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Contact
+	/// </summary>
+	[DataMember(Name = "contact", EmitDefaultValue = false)]
 	public ExportcreditNoteCsvFilterContact Contact { get; set; }
 
-    /// <summary>
-    ///     filters the credit notes by amount
-    /// </summary>
-    /// <value>filters the credit notes by amount</value>
-    [DataMember(Name = "startAmount", EmitDefaultValue = false)]
+	/// <summary>
+	///     filters the credit notes by amount
+	/// </summary>
+	/// <value>filters the credit notes by amount</value>
+	[DataMember(Name = "startAmount", EmitDefaultValue = false)]
 	public int? StartAmount { get; set; }
 
-    /// <summary>
-    ///     filters the credit notes by amount
-    /// </summary>
-    /// <value>filters the credit notes by amount</value>
-    [DataMember(Name = "endAmount", EmitDefaultValue = false)]
+	/// <summary>
+	///     filters the credit notes by amount
+	/// </summary>
+	/// <value>filters the credit notes by amount</value>
+	[DataMember(Name = "endAmount", EmitDefaultValue = false)]
 	public int? EndAmount { get; set; }
 
-    /// <summary>
-    ///     Returns true if ExportcreditNoteCsvFilter instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ExportcreditNoteCsvFilter to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ExportcreditNoteCsvFilter input)
+	/// <summary>
+	///     Returns true if ExportcreditNoteCsvFilter instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ExportcreditNoteCsvFilter to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ExportcreditNoteCsvFilter input)
 	{
 		if (input == null)
 			return false;
@@ -111,21 +111,21 @@ public class ExportcreditNoteCsvFilter : IEquatable<ExportcreditNoteCsvFilter>, 
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ExportcreditNoteCsvFilter {\n");
@@ -138,30 +138,30 @@ public class ExportcreditNoteCsvFilter : IEquatable<ExportcreditNoteCsvFilter>, 
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ExportcreditNoteCsvFilter);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

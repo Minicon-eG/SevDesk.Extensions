@@ -21,12 +21,12 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelVoucherResponseTaxSet : IEquatable<ModelVoucherResponseTaxSet>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelVoucherResponseTaxSet" /> class.
-    /// </summary>
-    /// <param name="id">Unique identifier of the object (required).</param>
-    /// <param name="objectName">Model name, which is &#x27;TaxSet&#x27; (required).</param>
-    public ModelVoucherResponseTaxSet(string id = default, string objectName = default)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelVoucherResponseTaxSet" /> class.
+	/// </summary>
+	/// <param name="id">Unique identifier of the object (required).</param>
+	/// <param name="objectName">Model name, which is &#x27;TaxSet&#x27; (required).</param>
+	public ModelVoucherResponseTaxSet(string id = default, string objectName = default)
 	{
 		// to ensure "id" is required (not null)
 		if (id == null)
@@ -40,26 +40,26 @@ public class ModelVoucherResponseTaxSet : IEquatable<ModelVoucherResponseTaxSet>
 		ObjectName = objectName;
 	}
 
-    /// <summary>
-    ///     Unique identifier of the object
-    /// </summary>
-    /// <value>Unique identifier of the object</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     Unique identifier of the object
+	/// </summary>
+	/// <value>Unique identifier of the object</value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public string Id { get; set; }
 
-    /// <summary>
-    ///     Model name, which is &#x27;TaxSet&#x27;
-    /// </summary>
-    /// <value>Model name, which is &#x27;TaxSet&#x27;</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     Model name, which is &#x27;TaxSet&#x27;
+	/// </summary>
+	/// <value>Model name, which is &#x27;TaxSet&#x27;</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelVoucherResponseTaxSet instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelVoucherResponseTaxSet to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelVoucherResponseTaxSet input)
+	/// <summary>
+	///     Returns true if ModelVoucherResponseTaxSet instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelVoucherResponseTaxSet to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelVoucherResponseTaxSet input)
 	{
 		if (input == null)
 			return false;
@@ -77,21 +77,21 @@ public class ModelVoucherResponseTaxSet : IEquatable<ModelVoucherResponseTaxSet>
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelVoucherResponseTaxSet {\n");
@@ -101,30 +101,30 @@ public class ModelVoucherResponseTaxSet : IEquatable<ModelVoucherResponseTaxSet>
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelVoucherResponseTaxSet);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

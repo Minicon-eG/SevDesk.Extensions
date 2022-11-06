@@ -21,18 +21,18 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelContactCustomFieldResponse : IEquatable<ModelContactCustomFieldResponse>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelContactCustomFieldResponse" /> class.
-    /// </summary>
-    /// <param name="id">id of the contact field.</param>
-    /// <param name="objectName">Internal object name which is &#x27;ContactCustomField&#x27;..</param>
-    /// <param name="create">Date of contact field creation.</param>
-    /// <param name="update">Date of contact field update.</param>
-    /// <param name="sevClient">sevClient.</param>
-    /// <param name="contact">contact.</param>
-    /// <param name="contactCustomFieldSetting">the contact custom field setting.</param>
-    /// <param name="value">The value of the contact field.</param>
-    public ModelContactCustomFieldResponse(string id = default, string objectName = default, DateTime? create = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelContactCustomFieldResponse" /> class.
+	/// </summary>
+	/// <param name="id">id of the contact field.</param>
+	/// <param name="objectName">Internal object name which is &#x27;ContactCustomField&#x27;..</param>
+	/// <param name="create">Date of contact field creation.</param>
+	/// <param name="update">Date of contact field update.</param>
+	/// <param name="sevClient">sevClient.</param>
+	/// <param name="contact">contact.</param>
+	/// <param name="contactCustomFieldSetting">the contact custom field setting.</param>
+	/// <param name="value">The value of the contact field.</param>
+	public ModelContactCustomFieldResponse(string id = default, string objectName = default, DateTime? create = default,
 		DateTime? update = default, ModelContactCustomFieldResponseSevClient sevClient = default,
 		ModelContactCustomFieldResponseContact contact = default,
 		AllOfModelContactCustomFieldResponseContactCustomFieldSetting contactCustomFieldSetting = default,
@@ -48,66 +48,66 @@ public class ModelContactCustomFieldResponse : IEquatable<ModelContactCustomFiel
 		Value = value;
 	}
 
-    /// <summary>
-    ///     id of the contact field
-    /// </summary>
-    /// <value>id of the contact field</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     id of the contact field
+	/// </summary>
+	/// <value>id of the contact field</value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public string Id { get; set; }
 
-    /// <summary>
-    ///     Internal object name which is &#x27;ContactCustomField&#x27;.
-    /// </summary>
-    /// <value>Internal object name which is &#x27;ContactCustomField&#x27;.</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     Internal object name which is &#x27;ContactCustomField&#x27;.
+	/// </summary>
+	/// <value>Internal object name which is &#x27;ContactCustomField&#x27;.</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; set; }
 
-    /// <summary>
-    ///     Date of contact field creation
-    /// </summary>
-    /// <value>Date of contact field creation</value>
-    [DataMember(Name = "create", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of contact field creation
+	/// </summary>
+	/// <value>Date of contact field creation</value>
+	[DataMember(Name = "create", EmitDefaultValue = false)]
 	public DateTime? Create { get; set; }
 
-    /// <summary>
-    ///     Date of contact field update
-    /// </summary>
-    /// <value>Date of contact field update</value>
-    [DataMember(Name = "update", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of contact field update
+	/// </summary>
+	/// <value>Date of contact field update</value>
+	[DataMember(Name = "update", EmitDefaultValue = false)]
 	public DateTime? Update { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets SevClientReference
-    /// </summary>
-    [DataMember(Name = "sevClient", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets SevClientReference
+	/// </summary>
+	[DataMember(Name = "sevClient", EmitDefaultValue = false)]
 	public ModelContactCustomFieldResponseSevClient SevClient { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Contact
-    /// </summary>
-    [DataMember(Name = "contact", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Contact
+	/// </summary>
+	[DataMember(Name = "contact", EmitDefaultValue = false)]
 	public ModelContactCustomFieldResponseContact Contact { get; set; }
 
-    /// <summary>
-    ///     the contact custom field setting
-    /// </summary>
-    /// <value>the contact custom field setting</value>
-    [DataMember(Name = "contactCustomFieldSetting", EmitDefaultValue = false)]
+	/// <summary>
+	///     the contact custom field setting
+	/// </summary>
+	/// <value>the contact custom field setting</value>
+	[DataMember(Name = "contactCustomFieldSetting", EmitDefaultValue = false)]
 	public AllOfModelContactCustomFieldResponseContactCustomFieldSetting ContactCustomFieldSetting { get; set; }
 
-    /// <summary>
-    ///     The value of the contact field
-    /// </summary>
-    /// <value>The value of the contact field</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+	/// <summary>
+	///     The value of the contact field
+	/// </summary>
+	/// <value>The value of the contact field</value>
+	[DataMember(Name = "value", EmitDefaultValue = false)]
 	public string Value { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelContactCustomFieldResponse instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelContactCustomFieldResponse to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelContactCustomFieldResponse input)
+	/// <summary>
+	///     Returns true if ModelContactCustomFieldResponse instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelContactCustomFieldResponse to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelContactCustomFieldResponse input)
 	{
 		if (input == null)
 			return false;
@@ -155,21 +155,21 @@ public class ModelContactCustomFieldResponse : IEquatable<ModelContactCustomFiel
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelContactCustomFieldResponse {\n");
@@ -185,30 +185,30 @@ public class ModelContactCustomFieldResponse : IEquatable<ModelContactCustomFiel
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelContactCustomFieldResponse);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

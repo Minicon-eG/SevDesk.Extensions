@@ -21,29 +21,29 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class InvoiceIdRenderBody : IEquatable<InvoiceIdRenderBody>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="InvoiceIdRenderBody" /> class.
-    /// </summary>
-    /// <param name="forceReload">Define if a forceful re-render should occur..</param>
-    public InvoiceIdRenderBody(bool? forceReload = default)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="InvoiceIdRenderBody" /> class.
+	/// </summary>
+	/// <param name="forceReload">Define if a forceful re-render should occur..</param>
+	public InvoiceIdRenderBody(bool? forceReload = default)
 	{
 		ForceReload = forceReload;
 	}
 
-    /// <summary>
-    ///     Define if a forceful re-render should occur.
-    /// </summary>
-    /// <value>Define if a forceful re-render should occur.</value>
-    [DataMember(Name = "forceReload", EmitDefaultValue = false)]
+	/// <summary>
+	///     Define if a forceful re-render should occur.
+	/// </summary>
+	/// <value>Define if a forceful re-render should occur.</value>
+	[DataMember(Name = "forceReload", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? ForceReload { get; set; }
 
-    /// <summary>
-    ///     Returns true if InvoiceIdRenderBody instances are equal
-    /// </summary>
-    /// <param name="input">Instance of InvoiceIdRenderBody to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(InvoiceIdRenderBody input)
+	/// <summary>
+	///     Returns true if InvoiceIdRenderBody instances are equal
+	/// </summary>
+	/// <param name="input">Instance of InvoiceIdRenderBody to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(InvoiceIdRenderBody input)
 	{
 		if (input == null)
 			return false;
@@ -54,21 +54,21 @@ public class InvoiceIdRenderBody : IEquatable<InvoiceIdRenderBody>, IValidatable
 			 ForceReload.Equals(input.ForceReload));
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class InvoiceIdRenderBody {\n");
@@ -77,30 +77,30 @@ public class InvoiceIdRenderBody : IEquatable<InvoiceIdRenderBody>, IValidatable
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as InvoiceIdRenderBody);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

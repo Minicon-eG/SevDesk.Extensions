@@ -22,47 +22,47 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class OrderIdSendByBody : IEquatable<OrderIdSendByBody>, IValidatableObject
 {
-    /// <summary>
-    ///     Specifies the way in which the order was sent to the customer.&lt;br&gt;       Accepts &#x27;VPR&#x27; (print),
-    ///     &#x27;VP&#x27; (postal), &#x27;VM&#x27; (mail) and &#x27;VPDF&#x27; (downloaded pfd).
-    /// </summary>
-    /// <value>
-    ///     Specifies the way in which the order was sent to the customer.&lt;br&gt;       Accepts &#x27;VPR&#x27; (print),
-    ///     &#x27;VP&#x27; (postal), &#x27;VM&#x27; (mail) and &#x27;VPDF&#x27; (downloaded pfd).
-    /// </value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Specifies the way in which the order was sent to the customer.&lt;br&gt;       Accepts &#x27;VPR&#x27; (print),
+	///     &#x27;VP&#x27; (postal), &#x27;VM&#x27; (mail) and &#x27;VPDF&#x27; (downloaded pfd).
+	/// </summary>
+	/// <value>
+	///     Specifies the way in which the order was sent to the customer.&lt;br&gt;       Accepts &#x27;VPR&#x27; (print),
+	///     &#x27;VP&#x27; (postal), &#x27;VM&#x27; (mail) and &#x27;VPDF&#x27; (downloaded pfd).
+	/// </value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum SendTypeEnum
 	{
-        /// <summary>
-        ///     Enum VPR for value: VPR
-        /// </summary>
-        [EnumMember(Value = "VPR")] VPR = 1,
+		/// <summary>
+		///     Enum VPR for value: VPR
+		/// </summary>
+		[EnumMember(Value = "VPR")] VPR = 1,
 
-        /// <summary>
-        ///     Enum VP for value: VP
-        /// </summary>
-        [EnumMember(Value = "VP")] VP = 2,
+		/// <summary>
+		///     Enum VP for value: VP
+		/// </summary>
+		[EnumMember(Value = "VP")] VP = 2,
 
-        /// <summary>
-        ///     Enum VM for value: VM
-        /// </summary>
-        [EnumMember(Value = "VM")] VM = 3,
+		/// <summary>
+		///     Enum VM for value: VM
+		/// </summary>
+		[EnumMember(Value = "VM")] VM = 3,
 
-        /// <summary>
-        ///     Enum VPDF for value: VPDF
-        /// </summary>
-        [EnumMember(Value = "VPDF")] VPDF = 4
+		/// <summary>
+		///     Enum VPDF for value: VPDF
+		/// </summary>
+		[EnumMember(Value = "VPDF")] VPDF = 4
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="OrderIdSendByBody" /> class.
-    /// </summary>
-    /// <param name="sendType">
-    ///     Specifies the way in which the order was sent to the customer.&lt;br&gt;       Accepts &#x27;VPR
-    ///     &#x27; (print), &#x27;VP&#x27; (postal), &#x27;VM&#x27; (mail) and &#x27;VPDF&#x27; (downloaded pfd). (required).
-    /// </param>
-    /// <param name="sendDraft">Specify if the should be enshrined after marking it as sent. (required).</param>
-    public OrderIdSendByBody(SendTypeEnum sendType = default, bool? sendDraft = default)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="OrderIdSendByBody" /> class.
+	/// </summary>
+	/// <param name="sendType">
+	///     Specifies the way in which the order was sent to the customer.&lt;br&gt;       Accepts &#x27;VPR
+	///     &#x27; (print), &#x27;VP&#x27; (postal), &#x27;VM&#x27; (mail) and &#x27;VPDF&#x27; (downloaded pfd). (required).
+	/// </param>
+	/// <param name="sendDraft">Specify if the should be enshrined after marking it as sent. (required).</param>
+	public OrderIdSendByBody(SendTypeEnum sendType = default, bool? sendDraft = default)
 	{
 		// to ensure "sendType" is required (not null)
 		if (sendType == null)
@@ -74,32 +74,32 @@ public class OrderIdSendByBody : IEquatable<OrderIdSendByBody>, IValidatableObje
 		SendDraft = sendDraft;
 	}
 
-    /// <summary>
-    ///     Specifies the way in which the order was sent to the customer.&lt;br&gt;       Accepts &#x27;VPR&#x27; (print),
-    ///     &#x27;VP&#x27; (postal), &#x27;VM&#x27; (mail) and &#x27;VPDF&#x27; (downloaded pfd).
-    /// </summary>
-    /// <value>
-    ///     Specifies the way in which the order was sent to the customer.&lt;br&gt;       Accepts &#x27;VPR&#x27; (print),
-    ///     &#x27;VP&#x27; (postal), &#x27;VM&#x27; (mail) and &#x27;VPDF&#x27; (downloaded pfd).
-    /// </value>
-    [DataMember(Name = "sendType", EmitDefaultValue = false)]
+	/// <summary>
+	///     Specifies the way in which the order was sent to the customer.&lt;br&gt;       Accepts &#x27;VPR&#x27; (print),
+	///     &#x27;VP&#x27; (postal), &#x27;VM&#x27; (mail) and &#x27;VPDF&#x27; (downloaded pfd).
+	/// </summary>
+	/// <value>
+	///     Specifies the way in which the order was sent to the customer.&lt;br&gt;       Accepts &#x27;VPR&#x27; (print),
+	///     &#x27;VP&#x27; (postal), &#x27;VM&#x27; (mail) and &#x27;VPDF&#x27; (downloaded pfd).
+	/// </value>
+	[DataMember(Name = "sendType", EmitDefaultValue = false)]
 	public SendTypeEnum SendType { get; set; }
 
 
-    /// <summary>
-    ///     Specify if the should be enshrined after marking it as sent.
-    /// </summary>
-    /// <value>Specify if the should be enshrined after marking it as sent.</value>
-    [DataMember(Name = "sendDraft", EmitDefaultValue = false)]
+	/// <summary>
+	///     Specify if the should be enshrined after marking it as sent.
+	/// </summary>
+	/// <value>Specify if the should be enshrined after marking it as sent.</value>
+	[DataMember(Name = "sendDraft", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? SendDraft { get; set; }
 
-    /// <summary>
-    ///     Returns true if OrderIdSendByBody instances are equal
-    /// </summary>
-    /// <param name="input">Instance of OrderIdSendByBody to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(OrderIdSendByBody input)
+	/// <summary>
+	///     Returns true if OrderIdSendByBody instances are equal
+	/// </summary>
+	/// <param name="input">Instance of OrderIdSendByBody to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(OrderIdSendByBody input)
 	{
 		if (input == null)
 			return false;
@@ -117,21 +117,21 @@ public class OrderIdSendByBody : IEquatable<OrderIdSendByBody>, IValidatableObje
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class OrderIdSendByBody {\n");
@@ -141,30 +141,30 @@ public class OrderIdSendByBody : IEquatable<OrderIdSendByBody>, IValidatableObje
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as OrderIdSendByBody);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

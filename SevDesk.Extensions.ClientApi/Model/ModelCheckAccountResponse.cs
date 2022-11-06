@@ -22,93 +22,93 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelCheckAccountResponse : IEquatable<ModelCheckAccountResponse>, IValidatableObject
 {
-    /// <summary>
-    ///     Import type. Transactions can be imported by this method on the check account.
-    /// </summary>
-    /// <value>Import type. Transactions can be imported by this method on the check account.</value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Import type. Transactions can be imported by this method on the check account.
+	/// </summary>
+	/// <value>Import type. Transactions can be imported by this method on the check account.</value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum ImportTypeEnum
 	{
-        /// <summary>
-        ///     Enum CSV for value: CSV
-        /// </summary>
-        [EnumMember(Value = "CSV")] CSV = 1,
+		/// <summary>
+		///     Enum CSV for value: CSV
+		/// </summary>
+		[EnumMember(Value = "CSV")] CSV = 1,
 
-        /// <summary>
-        ///     Enum MT940 for value: MT940
-        /// </summary>
-        [EnumMember(Value = "MT940")] MT940 = 2,
+		/// <summary>
+		///     Enum MT940 for value: MT940
+		/// </summary>
+		[EnumMember(Value = "MT940")] MT940 = 2,
 
-        /// <summary>
-        ///     Enum Null for value: null
-        /// </summary>
-        [EnumMember(Value = null)] Null = 3
+		/// <summary>
+		///     Enum Null for value: null
+		/// </summary>
+		[EnumMember(Value = null)] Null = 3
 	}
 
-    /// <summary>
-    ///     Status of the check account. 0 &lt;-&gt; Archived - 100 &lt;-&gt; Active
-    /// </summary>
-    /// <value>Status of the check account. 0 &lt;-&gt; Archived - 100 &lt;-&gt; Active</value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Status of the check account. 0 &lt;-&gt; Archived - 100 &lt;-&gt; Active
+	/// </summary>
+	/// <value>Status of the check account. 0 &lt;-&gt; Archived - 100 &lt;-&gt; Active</value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum StatusEnum
 	{
-        /// <summary>
-        ///     Enum _0 for value: 0
-        /// </summary>
-        [EnumMember(Value = "0")] _0 = 1,
+		/// <summary>
+		///     Enum _0 for value: 0
+		/// </summary>
+		[EnumMember(Value = "0")] _0 = 1,
 
-        /// <summary>
-        ///     Enum _100 for value: 100
-        /// </summary>
-        [EnumMember(Value = "100")] _100 = 2
+		/// <summary>
+		///     Enum _100 for value: 100
+		/// </summary>
+		[EnumMember(Value = "100")] _100 = 2
 	}
 
-    /// <summary>
-    ///     The type of the check account. Account with a CSV or MT940 import are regarded as online.&lt;br&gt;       Apart
-    ///     from that, created check accounts over the API need to be offline, as online accounts with an active connection
-    ///     to a bank application can not be managed over the API.
-    /// </summary>
-    /// <value>
-    ///     The type of the check account. Account with a CSV or MT940 import are regarded as online.&lt;br&gt;       Apart
-    ///     from that, created check accounts over the API need to be offline, as online accounts with an active connection
-    ///     to a bank application can not be managed over the API.
-    /// </value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     The type of the check account. Account with a CSV or MT940 import are regarded as online.&lt;br&gt;       Apart
+	///     from that, created check accounts over the API need to be offline, as online accounts with an active connection
+	///     to a bank application can not be managed over the API.
+	/// </summary>
+	/// <value>
+	///     The type of the check account. Account with a CSV or MT940 import are regarded as online.&lt;br&gt;       Apart
+	///     from that, created check accounts over the API need to be offline, as online accounts with an active connection
+	///     to a bank application can not be managed over the API.
+	/// </value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum TypeEnum
 	{
-        /// <summary>
-        ///     Enum Online for value: online
-        /// </summary>
-        [EnumMember(Value = "online")] Online = 1,
+		/// <summary>
+		///     Enum Online for value: online
+		/// </summary>
+		[EnumMember(Value = "online")] Online = 1,
 
-        /// <summary>
-        ///     Enum Offline for value: offline
-        /// </summary>
-        [EnumMember(Value = "offline")] Offline = 2
+		/// <summary>
+		///     Enum Offline for value: offline
+		/// </summary>
+		[EnumMember(Value = "offline")] Offline = 2
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelCheckAccountResponse" /> class.
-    /// </summary>
-    /// <param name="sevClient">sevClient.</param>
-    /// <param name="name">Name of the check account.</param>
-    /// <param name="type">
-    ///     The type of the check account. Account with a CSV or MT940 import are regarded as online.&lt;br&gt;
-    ///     Apart from that, created check accounts over the API need to be offline, as online accounts with an active
-    ///     connection       to a bank application can not be managed over the API..
-    /// </param>
-    /// <param name="importType">Import type. Transactions can be imported by this method on the check account..</param>
-    /// <param name="currency">The currency of the check account..</param>
-    /// <param name="defaultAccount">Defines if this check account is the default account. (default to &quot;0&quot;).</param>
-    /// <param name="status">
-    ///     Status of the check account. 0 &lt;-&gt; Archived - 100 &lt;-&gt; Active (default to
-    ///     StatusEnum._100).
-    /// </param>
-    /// <param name="autoMapTransactions">
-    ///     Defines if transactions on this account are automatically mapped to invoice and
-    ///     vouchers when imported if possible. (default to &quot;1&quot;).
-    /// </param>
-    public ModelCheckAccountResponse(ModelCheckAccountResponseSevClient sevClient = default, string name = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelCheckAccountResponse" /> class.
+	/// </summary>
+	/// <param name="sevClient">sevClient.</param>
+	/// <param name="name">Name of the check account.</param>
+	/// <param name="type">
+	///     The type of the check account. Account with a CSV or MT940 import are regarded as online.&lt;br&gt;
+	///     Apart from that, created check accounts over the API need to be offline, as online accounts with an active
+	///     connection       to a bank application can not be managed over the API..
+	/// </param>
+	/// <param name="importType">Import type. Transactions can be imported by this method on the check account..</param>
+	/// <param name="currency">The currency of the check account..</param>
+	/// <param name="defaultAccount">Defines if this check account is the default account. (default to &quot;0&quot;).</param>
+	/// <param name="status">
+	///     Status of the check account. 0 &lt;-&gt; Archived - 100 &lt;-&gt; Active (default to
+	///     StatusEnum._100).
+	/// </param>
+	/// <param name="autoMapTransactions">
+	///     Defines if transactions on this account are automatically mapped to invoice and
+	///     vouchers when imported if possible. (default to &quot;1&quot;).
+	/// </param>
+	public ModelCheckAccountResponse(ModelCheckAccountResponseSevClient sevClient = default, string name = default,
 		TypeEnum? type = default, ImportTypeEnum? importType = default, string currency = default,
 		string defaultAccount = "0", StatusEnum? status = StatusEnum._100, string autoMapTransactions = "1")
 	{
@@ -134,113 +134,113 @@ public class ModelCheckAccountResponse : IEquatable<ModelCheckAccountResponse>, 
 			AutoMapTransactions = autoMapTransactions;
 	}
 
-    /// <summary>
-    ///     The type of the check account. Account with a CSV or MT940 import are regarded as online.&lt;br&gt;       Apart
-    ///     from that, created check accounts over the API need to be offline, as online accounts with an active connection
-    ///     to a bank application can not be managed over the API.
-    /// </summary>
-    /// <value>
-    ///     The type of the check account. Account with a CSV or MT940 import are regarded as online.&lt;br&gt;       Apart
-    ///     from that, created check accounts over the API need to be offline, as online accounts with an active connection
-    ///     to a bank application can not be managed over the API.
-    /// </value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+	/// <summary>
+	///     The type of the check account. Account with a CSV or MT940 import are regarded as online.&lt;br&gt;       Apart
+	///     from that, created check accounts over the API need to be offline, as online accounts with an active connection
+	///     to a bank application can not be managed over the API.
+	/// </summary>
+	/// <value>
+	///     The type of the check account. Account with a CSV or MT940 import are regarded as online.&lt;br&gt;       Apart
+	///     from that, created check accounts over the API need to be offline, as online accounts with an active connection
+	///     to a bank application can not be managed over the API.
+	/// </value>
+	[DataMember(Name = "type", EmitDefaultValue = false)]
 	public TypeEnum? Type { get; set; }
 
-    /// <summary>
-    ///     Import type. Transactions can be imported by this method on the check account.
-    /// </summary>
-    /// <value>Import type. Transactions can be imported by this method on the check account.</value>
-    [DataMember(Name = "importType", EmitDefaultValue = false)]
+	/// <summary>
+	///     Import type. Transactions can be imported by this method on the check account.
+	/// </summary>
+	/// <value>Import type. Transactions can be imported by this method on the check account.</value>
+	[DataMember(Name = "importType", EmitDefaultValue = false)]
 	public ImportTypeEnum? ImportType { get; set; }
 
-    /// <summary>
-    ///     Status of the check account. 0 &lt;-&gt; Archived - 100 &lt;-&gt; Active
-    /// </summary>
-    /// <value>Status of the check account. 0 &lt;-&gt; Archived - 100 &lt;-&gt; Active</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+	/// <summary>
+	///     Status of the check account. 0 &lt;-&gt; Archived - 100 &lt;-&gt; Active
+	/// </summary>
+	/// <value>Status of the check account. 0 &lt;-&gt; Archived - 100 &lt;-&gt; Active</value>
+	[DataMember(Name = "status", EmitDefaultValue = false)]
 	public StatusEnum? Status { get; set; }
 
-    /// <summary>
-    ///     The check account id
-    /// </summary>
-    /// <value>The check account id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     The check account id
+	/// </summary>
+	/// <value>The check account id</value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public string Id { get; private set; }
 
-    /// <summary>
-    ///     The check account object name
-    /// </summary>
-    /// <value>The check account object name</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     The check account object name
+	/// </summary>
+	/// <value>The check account object name</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; private set; }
 
-    /// <summary>
-    ///     Date of check account creation
-    /// </summary>
-    /// <value>Date of check account creation</value>
-    [DataMember(Name = "create", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of check account creation
+	/// </summary>
+	/// <value>Date of check account creation</value>
+	[DataMember(Name = "create", EmitDefaultValue = false)]
 	public DateTime? Create { get; private set; }
 
-    /// <summary>
-    ///     Date of last check account update
-    /// </summary>
-    /// <value>Date of last check account update</value>
-    [DataMember(Name = "update", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of last check account update
+	/// </summary>
+	/// <value>Date of last check account update</value>
+	[DataMember(Name = "update", EmitDefaultValue = false)]
 	public DateTime? Update { get; private set; }
 
-    /// <summary>
-    ///     Gets or Sets SevClientReference
-    /// </summary>
-    [DataMember(Name = "sevClient", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets SevClientReference
+	/// </summary>
+	[DataMember(Name = "sevClient", EmitDefaultValue = false)]
 	public ModelCheckAccountResponseSevClient SevClient { get; set; }
 
-    /// <summary>
-    ///     Name of the check account
-    /// </summary>
-    /// <value>Name of the check account</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+	/// <summary>
+	///     Name of the check account
+	/// </summary>
+	/// <value>Name of the check account</value>
+	[DataMember(Name = "name", EmitDefaultValue = false)]
 	public string Name { get; set; }
 
 
-    /// <summary>
-    ///     The currency of the check account.
-    /// </summary>
-    /// <value>The currency of the check account.</value>
-    [DataMember(Name = "currency", EmitDefaultValue = false)]
+	/// <summary>
+	///     The currency of the check account.
+	/// </summary>
+	/// <value>The currency of the check account.</value>
+	[DataMember(Name = "currency", EmitDefaultValue = false)]
 	public string Currency { get; set; }
 
-    /// <summary>
-    ///     Defines if this check account is the default account.
-    /// </summary>
-    /// <value>Defines if this check account is the default account.</value>
-    [DataMember(Name = "defaultAccount", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines if this check account is the default account.
+	/// </summary>
+	/// <value>Defines if this check account is the default account.</value>
+	[DataMember(Name = "defaultAccount", EmitDefaultValue = false)]
 	public string DefaultAccount { get; set; }
 
 
-    /// <summary>
-    ///     Bank server of check account
-    /// </summary>
-    /// <value>Bank server of check account</value>
-    [DataMember(Name = "bankServer", EmitDefaultValue = false)]
+	/// <summary>
+	///     Bank server of check account
+	/// </summary>
+	/// <value>Bank server of check account</value>
+	[DataMember(Name = "bankServer", EmitDefaultValue = false)]
 	public string BankServer { get; private set; }
 
-    /// <summary>
-    ///     Defines if transactions on this account are automatically mapped to invoice and vouchers when imported if possible.
-    /// </summary>
-    /// <value>
-    ///     Defines if transactions on this account are automatically mapped to invoice and vouchers when imported if
-    ///     possible.
-    /// </value>
-    [DataMember(Name = "autoMapTransactions", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines if transactions on this account are automatically mapped to invoice and vouchers when imported if possible.
+	/// </summary>
+	/// <value>
+	///     Defines if transactions on this account are automatically mapped to invoice and vouchers when imported if
+	///     possible.
+	/// </value>
+	[DataMember(Name = "autoMapTransactions", EmitDefaultValue = false)]
 	public string AutoMapTransactions { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelCheckAccountResponse instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelCheckAccountResponse to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelCheckAccountResponse input)
+	/// <summary>
+	///     Returns true if ModelCheckAccountResponse instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelCheckAccountResponse to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelCheckAccountResponse input)
 	{
 		if (input == null)
 			return false;
@@ -313,21 +313,21 @@ public class ModelCheckAccountResponse : IEquatable<ModelCheckAccountResponse>, 
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelCheckAccountResponse {\n");
@@ -348,30 +348,30 @@ public class ModelCheckAccountResponse : IEquatable<ModelCheckAccountResponse>, 
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelCheckAccountResponse);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

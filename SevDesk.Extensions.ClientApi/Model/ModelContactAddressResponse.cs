@@ -21,21 +21,21 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelContactAddressResponse : IEquatable<ModelContactAddressResponse>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelContactAddressResponse" /> class.
-    /// </summary>
-    /// <param name="contact">contact (required).</param>
-    /// <param name="street">Street name.</param>
-    /// <param name="zip">Zib code.</param>
-    /// <param name="city">City name.</param>
-    /// <param name="country">country (required).</param>
-    /// <param name="category">category.</param>
-    /// <param name="name">Name in address.</param>
-    /// <param name="sevClient">sevClient.</param>
-    /// <param name="name2">Second name in address.</param>
-    /// <param name="name3">Third name in address.</param>
-    /// <param name="name4">Fourth name in address.</param>
-    public ModelContactAddressResponse(ModelContactAddressContact contact = default, string street = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelContactAddressResponse" /> class.
+	/// </summary>
+	/// <param name="contact">contact (required).</param>
+	/// <param name="street">Street name.</param>
+	/// <param name="zip">Zib code.</param>
+	/// <param name="city">City name.</param>
+	/// <param name="country">country (required).</param>
+	/// <param name="category">category.</param>
+	/// <param name="name">Name in address.</param>
+	/// <param name="sevClient">sevClient.</param>
+	/// <param name="name2">Second name in address.</param>
+	/// <param name="name3">Third name in address.</param>
+	/// <param name="name4">Fourth name in address.</param>
+	public ModelContactAddressResponse(ModelContactAddressContact contact = default, string street = default,
 		string zip = default, string city = default, ModelContactAddressCountry country = default,
 		ModelContactAddressCategory category = default, string name = default,
 		ModelContactAddressSevClient sevClient = default, string name2 = default, string name3 = default,
@@ -62,113 +62,113 @@ public class ModelContactAddressResponse : IEquatable<ModelContactAddressRespons
 		Name4 = name4;
 	}
 
-    /// <summary>
-    ///     The contact address id
-    /// </summary>
-    /// <value>The contact address id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     The contact address id
+	/// </summary>
+	/// <value>The contact address id</value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public int? Id { get; private set; }
 
-    /// <summary>
-    ///     The contact address object name
-    /// </summary>
-    /// <value>The contact address object name</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     The contact address object name
+	/// </summary>
+	/// <value>The contact address object name</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; private set; }
 
-    /// <summary>
-    ///     Date of contact address creation
-    /// </summary>
-    /// <value>Date of contact address creation</value>
-    [DataMember(Name = "create", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of contact address creation
+	/// </summary>
+	/// <value>Date of contact address creation</value>
+	[DataMember(Name = "create", EmitDefaultValue = false)]
 	public DateTime? Create { get; private set; }
 
-    /// <summary>
-    ///     Date of last contact address update
-    /// </summary>
-    /// <value>Date of last contact address update</value>
-    [DataMember(Name = "update", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of last contact address update
+	/// </summary>
+	/// <value>Date of last contact address update</value>
+	[DataMember(Name = "update", EmitDefaultValue = false)]
 	public DateTime? Update { get; private set; }
 
-    /// <summary>
-    ///     Gets or Sets Contact
-    /// </summary>
-    [DataMember(Name = "contact", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Contact
+	/// </summary>
+	[DataMember(Name = "contact", EmitDefaultValue = false)]
 	public ModelContactAddressContact Contact { get; set; }
 
-    /// <summary>
-    ///     Street name
-    /// </summary>
-    /// <value>Street name</value>
-    [DataMember(Name = "street", EmitDefaultValue = false)]
+	/// <summary>
+	///     Street name
+	/// </summary>
+	/// <value>Street name</value>
+	[DataMember(Name = "street", EmitDefaultValue = false)]
 	public string Street { get; set; }
 
-    /// <summary>
-    ///     Zib code
-    /// </summary>
-    /// <value>Zib code</value>
-    [DataMember(Name = "zip", EmitDefaultValue = false)]
+	/// <summary>
+	///     Zib code
+	/// </summary>
+	/// <value>Zib code</value>
+	[DataMember(Name = "zip", EmitDefaultValue = false)]
 	public string Zip { get; set; }
 
-    /// <summary>
-    ///     City name
-    /// </summary>
-    /// <value>City name</value>
-    [DataMember(Name = "city", EmitDefaultValue = false)]
+	/// <summary>
+	///     City name
+	/// </summary>
+	/// <value>City name</value>
+	[DataMember(Name = "city", EmitDefaultValue = false)]
 	public string City { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Country
-    /// </summary>
-    [DataMember(Name = "country", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Country
+	/// </summary>
+	[DataMember(Name = "country", EmitDefaultValue = false)]
 	public ModelContactAddressCountry Country { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Category
-    /// </summary>
-    [DataMember(Name = "category", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Category
+	/// </summary>
+	[DataMember(Name = "category", EmitDefaultValue = false)]
 	public ModelContactAddressCategory Category { get; set; }
 
-    /// <summary>
-    ///     Name in address
-    /// </summary>
-    /// <value>Name in address</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+	/// <summary>
+	///     Name in address
+	/// </summary>
+	/// <value>Name in address</value>
+	[DataMember(Name = "name", EmitDefaultValue = false)]
 	public string Name { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets SevClientReference
-    /// </summary>
-    [DataMember(Name = "sevClient", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets SevClientReference
+	/// </summary>
+	[DataMember(Name = "sevClient", EmitDefaultValue = false)]
 	public ModelContactAddressSevClient SevClient { get; set; }
 
-    /// <summary>
-    ///     Second name in address
-    /// </summary>
-    /// <value>Second name in address</value>
-    [DataMember(Name = "name2", EmitDefaultValue = false)]
+	/// <summary>
+	///     Second name in address
+	/// </summary>
+	/// <value>Second name in address</value>
+	[DataMember(Name = "name2", EmitDefaultValue = false)]
 	public string Name2 { get; set; }
 
-    /// <summary>
-    ///     Third name in address
-    /// </summary>
-    /// <value>Third name in address</value>
-    [DataMember(Name = "name3", EmitDefaultValue = false)]
+	/// <summary>
+	///     Third name in address
+	/// </summary>
+	/// <value>Third name in address</value>
+	[DataMember(Name = "name3", EmitDefaultValue = false)]
 	public string Name3 { get; set; }
 
-    /// <summary>
-    ///     Fourth name in address
-    /// </summary>
-    /// <value>Fourth name in address</value>
-    [DataMember(Name = "name4", EmitDefaultValue = false)]
+	/// <summary>
+	///     Fourth name in address
+	/// </summary>
+	/// <value>Fourth name in address</value>
+	[DataMember(Name = "name4", EmitDefaultValue = false)]
 	public string Name4 { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelContactAddressResponse instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelContactAddressResponse to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelContactAddressResponse input)
+	/// <summary>
+	///     Returns true if ModelContactAddressResponse instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelContactAddressResponse to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelContactAddressResponse input)
 	{
 		if (input == null)
 			return false;
@@ -251,21 +251,21 @@ public class ModelContactAddressResponse : IEquatable<ModelContactAddressRespons
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelContactAddressResponse {\n");
@@ -288,30 +288,30 @@ public class ModelContactAddressResponse : IEquatable<ModelContactAddressRespons
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelContactAddressResponse);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

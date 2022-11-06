@@ -1,13 +1,12 @@
+using Extensions.Dictionary;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using SevDesk.Extensions.ClientApi;
 using SevDesk.Extensions.ClientApi.Api;
 using SevDesk.Extensions.ClientApi.Client;
 using SevDesk.Extensions.ClientApi.Model;
 using SevDesk.Extensions.UseCases.Extensions.ClientApi;
 using SevDesk.Extensions.UseCases.Extensions.Linq;
-using SevDesl.Extensions.Dtos.Options;
 
 namespace SevDesk.Extensions.UseCases.Vouchers.AssignCostCenter;
 
@@ -16,17 +15,14 @@ public sealed class AssignCostCenterHandler
 {
 	private readonly IApiFactory _apiFactory;
 	private readonly ILogger<AssignCostCenterHandler> _logger;
-	private readonly IOptions<SevDeskOptions> _sevDeskOptions;
 
 	public AssignCostCenterHandler(
 		IApiFactory apiFactory,
-		ILogger<AssignCostCenterHandler> logger,
-		IOptions<SevDeskOptions> sevDeskOptions
+		ILogger<AssignCostCenterHandler> logger
 	)
 	{
 		_apiFactory = apiFactory;
 		_logger = logger;
-		_sevDeskOptions = sevDeskOptions;
 	}
 
 	public async Task<AssignCostCenterResponse> Handle(
@@ -42,7 +38,7 @@ public sealed class AssignCostCenterHandler
 
 		var filteredItems = items
 			.Where(e => e.CostCentre is null)
-			.And(e => IsFilterMatch(request, e))
+			.And(e => ContainsSupplier(request, e))
 			.ToList();
 
 		List<ModelVoucherResponse> updated = new();
@@ -66,7 +62,11 @@ public sealed class AssignCostCenterHandler
 				_logger.LogDebug("{Exception}", ex);
 			}
 
-			_logger.LogInformation("Updated: {Voucher}", voucher.Id);
+			_logger.LogInformation(
+				"Updated V:{Voucher} Request:{Request}",
+				voucher.Id,
+				request.ToDictionary()
+			);
 		}
 
 		return new AssignCostCenterResponse
@@ -75,21 +75,20 @@ public sealed class AssignCostCenterHandler
 		};
 	}
 
-	private static bool IsFilterMatch(AssignCostCenterRequest request, ModelVoucherResponse e)
+	private static bool ContainsSupplier(AssignCostCenterRequest request, ModelVoucherResponse e)
 	{
-		return (request.SupplierName is not null && e.SupplierName is not null &&
-		        e.SupplierName.Equals(request.SupplierName))
-		       || (request.SupplierId is not null && e.Supplier is not null &&
-		           e.Supplier.Id.Equals(request.SupplierId));
+		return request
+			.SupplierNames
+			.Contains(e.SupplierName, StringComparer.InvariantCultureIgnoreCase);
 	}
 
-	public ModelVoucherUpdateCostCentre ModelVoucherUpdateCostCentre(
+	private ModelVoucherUpdateCostCentre ModelVoucherUpdateCostCentre(
 		string costCentre, List<CostCentreResponse> costCentres
 	)
 	{
 		return new ModelVoucherUpdateCostCentre(
 			int.Parse(costCentres.Single(item => item.Name == costCentre).Id),
-			"CostCentreResponse"
+			"CostCentre"
 		);
 	}
 }

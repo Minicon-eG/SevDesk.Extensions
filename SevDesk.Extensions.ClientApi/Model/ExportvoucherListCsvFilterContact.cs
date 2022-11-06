@@ -21,12 +21,12 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ExportvoucherListCsvFilterContact : IEquatable<ExportvoucherListCsvFilterContact>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ExportvoucherListCsvFilterContact" /> class.
-    /// </summary>
-    /// <param name="id">ID of the contact (required).</param>
-    /// <param name="objectName">Model name, which is &#x27;Contact&#x27; (required).</param>
-    public ExportvoucherListCsvFilterContact(int? id = default, string objectName = default)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ExportvoucherListCsvFilterContact" /> class.
+	/// </summary>
+	/// <param name="id">ID of the contact (required).</param>
+	/// <param name="objectName">Model name, which is &#x27;Contact&#x27; (required).</param>
+	public ExportvoucherListCsvFilterContact(int? id = default, string objectName = default)
 	{
 		// to ensure "id" is required (not null)
 		if (id == null)
@@ -40,26 +40,26 @@ public class ExportvoucherListCsvFilterContact : IEquatable<ExportvoucherListCsv
 		ObjectName = objectName;
 	}
 
-    /// <summary>
-    ///     ID of the contact
-    /// </summary>
-    /// <value>ID of the contact</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     ID of the contact
+	/// </summary>
+	/// <value>ID of the contact</value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public int? Id { get; set; }
 
-    /// <summary>
-    ///     Model name, which is &#x27;Contact&#x27;
-    /// </summary>
-    /// <value>Model name, which is &#x27;Contact&#x27;</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     Model name, which is &#x27;Contact&#x27;
+	/// </summary>
+	/// <value>Model name, which is &#x27;Contact&#x27;</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; set; }
 
-    /// <summary>
-    ///     Returns true if ExportvoucherListCsvFilterContact instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ExportvoucherListCsvFilterContact to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ExportvoucherListCsvFilterContact input)
+	/// <summary>
+	///     Returns true if ExportvoucherListCsvFilterContact instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ExportvoucherListCsvFilterContact to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ExportvoucherListCsvFilterContact input)
 	{
 		if (input == null)
 			return false;
@@ -77,21 +77,21 @@ public class ExportvoucherListCsvFilterContact : IEquatable<ExportvoucherListCsv
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ExportvoucherListCsvFilterContact {\n");
@@ -101,30 +101,30 @@ public class ExportvoucherListCsvFilterContact : IEquatable<ExportvoucherListCsv
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ExportvoucherListCsvFilterContact);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

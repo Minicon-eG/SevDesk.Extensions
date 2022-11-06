@@ -1,7 +1,5 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevDesl.Extensions.Dtos", "SevDesl.Extensions.Dtos\SevDesl.Extensions.Dtos.csproj", "{37AC3A56-1E85-4321-B9AB-D94EB3B6032C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevDesk.Extensions.UseCases", "SevDesk.Extensions.UseCases\SevDesk.Extensions.UseCases.csproj", "{C3FB4AF5-F490-49BD-BDB7-FE3AE78E76DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevDesk.Extensions.Core", "SevDesk.Extensions.Core\SevDesk.Extensions.Core.csproj", "{AA25C3B8-2E59-4484-A524-F5FEF01B1875}"
@@ -12,16 +10,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevDesk.Extensions.ClientAp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{2CB747EF-726A-4A7E-8E7F-BE1063317685}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevDesk.Extensions.Dtos", "SevDesk.Extensions.Dtos\SevDesk.Extensions.Dtos.csproj", "{69576CED-4A15-419B-9030-F545CC137EE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{37AC3A56-1E85-4321-B9AB-D94EB3B6032C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{37AC3A56-1E85-4321-B9AB-D94EB3B6032C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{37AC3A56-1E85-4321-B9AB-D94EB3B6032C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{37AC3A56-1E85-4321-B9AB-D94EB3B6032C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C3FB4AF5-F490-49BD-BDB7-FE3AE78E76DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C3FB4AF5-F490-49BD-BDB7-FE3AE78E76DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3FB4AF5-F490-49BD-BDB7-FE3AE78E76DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -38,6 +34,10 @@ Global
 		{206FE813-1D17-4DFF-9B40-15C26227BDF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{206FE813-1D17-4DFF-9B40-15C26227BDF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{206FE813-1D17-4DFF-9B40-15C26227BDF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69576CED-4A15-419B-9030-F545CC137EE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69576CED-4A15-419B-9030-F545CC137EE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69576CED-4A15-419B-9030-F545CC137EE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69576CED-4A15-419B-9030-F545CC137EE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{206FE813-1D17-4DFF-9B40-15C26227BDF5} = {2CB747EF-726A-4A7E-8E7F-BE1063317685}

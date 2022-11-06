@@ -22,35 +22,35 @@ public class InvoiceApi : IInvoiceApi
 {
 	private ExceptionFactory _exceptionFactory = (name, response) => null;
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="InvoiceApi" /> class.
-    /// </summary>
-    /// <returns></returns>
-    public InvoiceApi(string basePath)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="InvoiceApi" /> class.
+	/// </summary>
+	/// <returns></returns>
+	public InvoiceApi(string basePath)
 	{
 		Configuration = new Configuration { BasePath = basePath };
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="InvoiceApi" /> class
-    /// </summary>
-    /// <returns></returns>
-    public InvoiceApi()
+	/// <summary>
+	///     Initializes a new instance of the <see cref="InvoiceApi" /> class
+	/// </summary>
+	/// <returns></returns>
+	public InvoiceApi()
 	{
 		Configuration = Configuration.Default;
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="InvoiceApi" /> class
-    ///     using Configuration object
-    /// </summary>
-    /// <param name="configuration">An instance of Configuration</param>
-    /// <returns></returns>
-    public InvoiceApi(Configuration configuration = null)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="InvoiceApi" /> class
+	///     using Configuration object
+	/// </summary>
+	/// <param name="configuration">An instance of Configuration</param>
+	/// <returns></returns>
+	public InvoiceApi(Configuration configuration = null)
 	{
 		if (configuration == null) // use the default one in Configuration
 			Configuration = Configuration.Default;
@@ -60,25 +60,25 @@ public class InvoiceApi : IInvoiceApi
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Gets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    public string GetBasePath()
+	/// <summary>
+	///     Gets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	public string GetBasePath()
 	{
 		return Configuration.ApiClient.RestClient.BaseUrl.ToString();
 	}
 
-    /// <summary>
-    ///     Gets or sets the configuration object
-    /// </summary>
-    /// <value>An instance of the Configuration</value>
-    public Configuration Configuration { get; set; }
+	/// <summary>
+	///     Gets or sets the configuration object
+	/// </summary>
+	/// <value>An instance of the Configuration</value>
+	public Configuration Configuration { get; set; }
 
-    /// <summary>
-    ///     Provides a factory method hook for the creation of exceptions.
-    /// </summary>
-    public ExceptionFactory ExceptionFactory
+	/// <summary>
+	///     Provides a factory method hook for the creation of exceptions.
+	/// </summary>
+	public ExceptionFactory ExceptionFactory
 	{
 		get
 		{
@@ -89,33 +89,33 @@ public class InvoiceApi : IInvoiceApi
 		set => _exceptionFactory = value;
 	}
 
-    /// <summary>
-    ///     Book an invoice Booking the invoice with a transaction is probably the most important part in the bookkeeping
-    ///     process.&lt;br&gt; There are several ways on correctly booking an invoice, all by using the same endpoint.&lt;br
-    ///     &gt; for more information look &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;
-    ///     &gt;here&lt;/a&gt;.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to book</param>
-    /// <param name="body">Booking data (optional)</param>
-    /// <returns>InlineResponse2008</returns>
-    public InlineResponse2008 BookInvoice(int? invoiceId, InvoiceIdBookAmountBody body = null)
+	/// <summary>
+	///     Book an invoice Booking the invoice with a transaction is probably the most important part in the bookkeeping
+	///     process.&lt;br&gt; There are several ways on correctly booking an invoice, all by using the same endpoint.&lt;br
+	///     &gt; for more information look &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;
+	///     &gt;here&lt;/a&gt;.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to book</param>
+	/// <param name="body">Booking data (optional)</param>
+	/// <returns>InlineResponse2008</returns>
+	public InlineResponse2008 BookInvoice(int? invoiceId, InvoiceIdBookAmountBody body = null)
 	{
 		var localVarResponse = BookInvoiceWithHttpInfo(invoiceId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Book an invoice Booking the invoice with a transaction is probably the most important part in the bookkeeping
-    ///     process.&lt;br&gt; There are several ways on correctly booking an invoice, all by using the same endpoint.&lt;br
-    ///     &gt; for more information look &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;
-    ///     &gt;here&lt;/a&gt;.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to book</param>
-    /// <param name="body">Booking data (optional)</param>
-    /// <returns>ApiResponse of InlineResponse2008</returns>
-    public ApiResponse<InlineResponse2008> BookInvoiceWithHttpInfo(int? invoiceId, InvoiceIdBookAmountBody body = null)
+	/// <summary>
+	///     Book an invoice Booking the invoice with a transaction is probably the most important part in the bookkeeping
+	///     process.&lt;br&gt; There are several ways on correctly booking an invoice, all by using the same endpoint.&lt;br
+	///     &gt; for more information look &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;
+	///     &gt;here&lt;/a&gt;.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to book</param>
+	/// <param name="body">Booking data (optional)</param>
+	/// <returns>ApiResponse of InlineResponse2008</returns>
+	public ApiResponse<InlineResponse2008> BookInvoiceWithHttpInfo(int? invoiceId, InvoiceIdBookAmountBody body = null)
 	{
 		// verify the required parameter 'invoiceId' is set
 		if (invoiceId == null)
@@ -174,33 +174,33 @@ public class InvoiceApi : IInvoiceApi
 			(InlineResponse2008)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2008)));
 	}
 
-    /// <summary>
-    ///     Book an invoice Booking the invoice with a transaction is probably the most important part in the bookkeeping
-    ///     process.&lt;br&gt; There are several ways on correctly booking an invoice, all by using the same endpoint.&lt;br
-    ///     &gt; for more information look &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;
-    ///     &gt;here&lt;/a&gt;.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to book</param>
-    /// <param name="body">Booking data (optional)</param>
-    /// <returns>Task of InlineResponse2008</returns>
-    public async Task<InlineResponse2008> BookInvoiceAsync(int? invoiceId, InvoiceIdBookAmountBody body = null)
+	/// <summary>
+	///     Book an invoice Booking the invoice with a transaction is probably the most important part in the bookkeeping
+	///     process.&lt;br&gt; There are several ways on correctly booking an invoice, all by using the same endpoint.&lt;br
+	///     &gt; for more information look &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;
+	///     &gt;here&lt;/a&gt;.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to book</param>
+	/// <param name="body">Booking data (optional)</param>
+	/// <returns>Task of InlineResponse2008</returns>
+	public async Task<InlineResponse2008> BookInvoiceAsync(int? invoiceId, InvoiceIdBookAmountBody body = null)
 	{
 		var localVarResponse = await BookInvoiceAsyncWithHttpInfo(invoiceId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Book an invoice Booking the invoice with a transaction is probably the most important part in the bookkeeping
-    ///     process.&lt;br&gt; There are several ways on correctly booking an invoice, all by using the same endpoint.&lt;br
-    ///     &gt; for more information look &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;
-    ///     &gt;here&lt;/a&gt;.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to book</param>
-    /// <param name="body">Booking data (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse2008)</returns>
-    public async Task<ApiResponse<InlineResponse2008>> BookInvoiceAsyncWithHttpInfo(int? invoiceId,
+	/// <summary>
+	///     Book an invoice Booking the invoice with a transaction is probably the most important part in the bookkeeping
+	///     process.&lt;br&gt; There are several ways on correctly booking an invoice, all by using the same endpoint.&lt;br
+	///     &gt; for more information look &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/How-to-book-an-invoice&#x27;
+	///     &gt;here&lt;/a&gt;.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to book</param>
+	/// <param name="body">Booking data (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse2008)</returns>
+	public async Task<ApiResponse<InlineResponse2008>> BookInvoiceAsyncWithHttpInfo(int? invoiceId,
 		InvoiceIdBookAmountBody body = null)
 	{
 		// verify the required parameter 'invoiceId' is set
@@ -260,29 +260,29 @@ public class InvoiceApi : IInvoiceApi
 			(InlineResponse2008)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2008)));
 	}
 
-    /// <summary>
-    ///     Cancel an invoice / Create cancellation invoice This endpoint will cancel the specified invoice therefor creating a
-    ///     cancellation invoice.&lt;br&gt;       The cancellation invoice will be automatically paid and the source invoices
-    ///     status will change to &#x27;cancelled&#x27;.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to be cancelled</param>
-    /// <returns>GetInvoicesResponse</returns>
-    public GetInvoicesResponse CancelInvoice(int? invoiceId)
+	/// <summary>
+	///     Cancel an invoice / Create cancellation invoice This endpoint will cancel the specified invoice therefor creating a
+	///     cancellation invoice.&lt;br&gt;       The cancellation invoice will be automatically paid and the source invoices
+	///     status will change to &#x27;cancelled&#x27;.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to be cancelled</param>
+	/// <returns>GetInvoicesResponse</returns>
+	public GetInvoicesResponse CancelInvoice(int? invoiceId)
 	{
 		var localVarResponse = CancelInvoiceWithHttpInfo(invoiceId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Cancel an invoice / Create cancellation invoice This endpoint will cancel the specified invoice therefor creating a
-    ///     cancellation invoice.&lt;br&gt;       The cancellation invoice will be automatically paid and the source invoices
-    ///     status will change to &#x27;cancelled&#x27;.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to be cancelled</param>
-    /// <returns>ApiResponse of GetInvoicesResponse</returns>
-    public ApiResponse<GetInvoicesResponse> CancelInvoiceWithHttpInfo(int? invoiceId)
+	/// <summary>
+	///     Cancel an invoice / Create cancellation invoice This endpoint will cancel the specified invoice therefor creating a
+	///     cancellation invoice.&lt;br&gt;       The cancellation invoice will be automatically paid and the source invoices
+	///     status will change to &#x27;cancelled&#x27;.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to be cancelled</param>
+	/// <returns>ApiResponse of GetInvoicesResponse</returns>
+	public ApiResponse<GetInvoicesResponse> CancelInvoiceWithHttpInfo(int? invoiceId)
 	{
 		// verify the required parameter 'invoiceId' is set
 		if (invoiceId == null)
@@ -337,29 +337,29 @@ public class InvoiceApi : IInvoiceApi
 			(GetInvoicesResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesResponse)));
 	}
 
-    /// <summary>
-    ///     Cancel an invoice / Create cancellation invoice This endpoint will cancel the specified invoice therefor creating a
-    ///     cancellation invoice.&lt;br&gt;       The cancellation invoice will be automatically paid and the source invoices
-    ///     status will change to &#x27;cancelled&#x27;.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to be cancelled</param>
-    /// <returns>Task of GetInvoicesResponse</returns>
-    public async Task<GetInvoicesResponse> CancelInvoiceAsync(int? invoiceId)
+	/// <summary>
+	///     Cancel an invoice / Create cancellation invoice This endpoint will cancel the specified invoice therefor creating a
+	///     cancellation invoice.&lt;br&gt;       The cancellation invoice will be automatically paid and the source invoices
+	///     status will change to &#x27;cancelled&#x27;.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to be cancelled</param>
+	/// <returns>Task of GetInvoicesResponse</returns>
+	public async Task<GetInvoicesResponse> CancelInvoiceAsync(int? invoiceId)
 	{
 		var localVarResponse = await CancelInvoiceAsyncWithHttpInfo(invoiceId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Cancel an invoice / Create cancellation invoice This endpoint will cancel the specified invoice therefor creating a
-    ///     cancellation invoice.&lt;br&gt;       The cancellation invoice will be automatically paid and the source invoices
-    ///     status will change to &#x27;cancelled&#x27;.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to be cancelled</param>
-    /// <returns>Task of ApiResponse (GetInvoicesResponse)</returns>
-    public async Task<ApiResponse<GetInvoicesResponse>> CancelInvoiceAsyncWithHttpInfo(int? invoiceId)
+	/// <summary>
+	///     Cancel an invoice / Create cancellation invoice This endpoint will cancel the specified invoice therefor creating a
+	///     cancellation invoice.&lt;br&gt;       The cancellation invoice will be automatically paid and the source invoices
+	///     status will change to &#x27;cancelled&#x27;.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to be cancelled</param>
+	/// <returns>Task of ApiResponse (GetInvoicesResponse)</returns>
+	public async Task<ApiResponse<GetInvoicesResponse>> CancelInvoiceAsyncWithHttpInfo(int? invoiceId)
 	{
 		// verify the required parameter 'invoiceId' is set
 		if (invoiceId == null)
@@ -414,87 +414,87 @@ public class InvoiceApi : IInvoiceApi
 			(GetInvoicesResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesResponse)));
 	}
 
-    /// <summary>
-    ///     Create a new invoice This endpoint offers you the following functionality.       &lt;ul&gt;          &lt;li&gt;
-    ///     Create invoices together with positions and discounts&lt;/li&gt;          &lt;li&gt;Delete positions while adding
-    ///     new ones&lt;/li&gt;          &lt;li&gt;Delete or add discounts, or both at the same time&lt;/li&gt;          &lt;li
-    ///     &gt;Automatically fill the address of the supplied contact into the invoice address&lt;/li&gt;       &lt;/ul&gt;
-    ///     To make your own request sample slimmer, you can omit all parameters which are not required and nullable.
-    ///     However, for a valid and logical bookkeeping document, you will also need some of them to ensure that all the
-    ///     necessary data is in the invoice.&lt;br&gt;&lt;br&gt; The list of parameters starts with the invoice array.&lt;br
-    ///     &gt; This array contains all required attributes for a complete invoice.&lt;br&gt; Most of the attributes are
-    ///     covered in the invoice attribute list, there are only two parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt;
-    ///     and &lt;b&gt;objectName&lt;/b&gt;.&lt;br&gt; These are just needed for our system and you always need to provide
-    ///     them.&lt;br&gt;&lt;br&gt; The list of parameters then continues with the invoice position array.&lt;br&gt; With
-    ///     this array you have the possibility to add multiple positions at once.&lt;br&gt; In the example it only contains
-    ///     one position, again together with the parameters &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;,
-    ///     however, you can add more invoice positions by extending the array.&lt;br&gt; So if you wanted to add another
-    ///     position, you would add the same list of parameters with an incremented array index of \&quot;1\&quot; instead of \
-    ///     &quot;0\&quot;.&lt;br&gt;&lt;br&gt; The list ends with the four parameters invoicePosDelete, discountSave,
-    ///     discountDelete and takeDefaultAddress.&lt;br&gt; They only play a minor role if you only want to create an invoice
-    ///     but we will shortly explain what they can do.&lt;br&gt; With invoicePosDelete you have to option to delete invoice
-    ///     positions as this request can also be used to update invoices.&lt;br&gt; With discountSave you can add discounts to
-    ///     your invoice.&lt;br&gt; With discountDelete you can delete discounts from your invoice.&lt;br&gt; With
-    ///     takeDefaultAddress you can specify that the first address of the contact you are using for the invoice is taken for
-    ///     the invoice address attribute automatically, so you don&#x27;t need to provide the address yourself.&lt;br&gt; If
-    ///     you want to know more about these parameters, for example if you want to use this request to update invoices, feel
-    ///     free to contact our support.&lt;br&gt;&lt;br&gt; Finally, after covering all parameters, they only important
-    ///     information left, is that the order of the last four attributes always needs to be kept.&lt;br&gt; You will also
-    ///     always need to provide all of them, as otherwise the request won&#x27;t work properly.&lt;br&gt;&lt;br&gt; &lt;b
-    ///     &gt;Warning\&quot;:\&quot;&lt;/b&gt; You can not create a regular invoice with the &lt;b&gt;deliveryDate&lt;/b&gt;
-    ///     being later than the &lt;b&gt;invoiceDate&lt;/b&gt;.&lt;br&gt; To do that you will need to create a so called &lt;b
-    ///     &gt;Abschlagsrechnung&lt;/b&gt; by setting the &lt;b&gt;invoiceType&lt;/b&gt; parameter to &lt;b&gt;AR&lt;/b&gt;.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter of the
-    ///     invoice model! (optional)
-    /// </param>
-    /// <returns>SaveInvoiceResponse</returns>
-    public SaveInvoiceResponse CreateInvoiceByFactory(SaveInvoice body = null)
+	/// <summary>
+	///     Create a new invoice This endpoint offers you the following functionality.       &lt;ul&gt;          &lt;li&gt;
+	///     Create invoices together with positions and discounts&lt;/li&gt;          &lt;li&gt;Delete positions while adding
+	///     new ones&lt;/li&gt;          &lt;li&gt;Delete or add discounts, or both at the same time&lt;/li&gt;          &lt;li
+	///     &gt;Automatically fill the address of the supplied contact into the invoice address&lt;/li&gt;       &lt;/ul&gt;
+	///     To make your own request sample slimmer, you can omit all parameters which are not required and nullable.
+	///     However, for a valid and logical bookkeeping document, you will also need some of them to ensure that all the
+	///     necessary data is in the invoice.&lt;br&gt;&lt;br&gt; The list of parameters starts with the invoice array.&lt;br
+	///     &gt; This array contains all required attributes for a complete invoice.&lt;br&gt; Most of the attributes are
+	///     covered in the invoice attribute list, there are only two parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt;
+	///     and &lt;b&gt;objectName&lt;/b&gt;.&lt;br&gt; These are just needed for our system and you always need to provide
+	///     them.&lt;br&gt;&lt;br&gt; The list of parameters then continues with the invoice position array.&lt;br&gt; With
+	///     this array you have the possibility to add multiple positions at once.&lt;br&gt; In the example it only contains
+	///     one position, again together with the parameters &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;,
+	///     however, you can add more invoice positions by extending the array.&lt;br&gt; So if you wanted to add another
+	///     position, you would add the same list of parameters with an incremented array index of \&quot;1\&quot; instead of \
+	///     &quot;0\&quot;.&lt;br&gt;&lt;br&gt; The list ends with the four parameters invoicePosDelete, discountSave,
+	///     discountDelete and takeDefaultAddress.&lt;br&gt; They only play a minor role if you only want to create an invoice
+	///     but we will shortly explain what they can do.&lt;br&gt; With invoicePosDelete you have to option to delete invoice
+	///     positions as this request can also be used to update invoices.&lt;br&gt; With discountSave you can add discounts to
+	///     your invoice.&lt;br&gt; With discountDelete you can delete discounts from your invoice.&lt;br&gt; With
+	///     takeDefaultAddress you can specify that the first address of the contact you are using for the invoice is taken for
+	///     the invoice address attribute automatically, so you don&#x27;t need to provide the address yourself.&lt;br&gt; If
+	///     you want to know more about these parameters, for example if you want to use this request to update invoices, feel
+	///     free to contact our support.&lt;br&gt;&lt;br&gt; Finally, after covering all parameters, they only important
+	///     information left, is that the order of the last four attributes always needs to be kept.&lt;br&gt; You will also
+	///     always need to provide all of them, as otherwise the request won&#x27;t work properly.&lt;br&gt;&lt;br&gt; &lt;b
+	///     &gt;Warning\&quot;:\&quot;&lt;/b&gt; You can not create a regular invoice with the &lt;b&gt;deliveryDate&lt;/b&gt;
+	///     being later than the &lt;b&gt;invoiceDate&lt;/b&gt;.&lt;br&gt; To do that you will need to create a so called &lt;b
+	///     &gt;Abschlagsrechnung&lt;/b&gt; by setting the &lt;b&gt;invoiceType&lt;/b&gt; parameter to &lt;b&gt;AR&lt;/b&gt;.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter of the
+	///     invoice model! (optional)
+	/// </param>
+	/// <returns>SaveInvoiceResponse</returns>
+	public SaveInvoiceResponse CreateInvoiceByFactory(SaveInvoice body = null)
 	{
 		var localVarResponse = CreateInvoiceByFactoryWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new invoice This endpoint offers you the following functionality.       &lt;ul&gt;          &lt;li&gt;
-    ///     Create invoices together with positions and discounts&lt;/li&gt;          &lt;li&gt;Delete positions while adding
-    ///     new ones&lt;/li&gt;          &lt;li&gt;Delete or add discounts, or both at the same time&lt;/li&gt;          &lt;li
-    ///     &gt;Automatically fill the address of the supplied contact into the invoice address&lt;/li&gt;       &lt;/ul&gt;
-    ///     To make your own request sample slimmer, you can omit all parameters which are not required and nullable.
-    ///     However, for a valid and logical bookkeeping document, you will also need some of them to ensure that all the
-    ///     necessary data is in the invoice.&lt;br&gt;&lt;br&gt; The list of parameters starts with the invoice array.&lt;br
-    ///     &gt; This array contains all required attributes for a complete invoice.&lt;br&gt; Most of the attributes are
-    ///     covered in the invoice attribute list, there are only two parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt;
-    ///     and &lt;b&gt;objectName&lt;/b&gt;.&lt;br&gt; These are just needed for our system and you always need to provide
-    ///     them.&lt;br&gt;&lt;br&gt; The list of parameters then continues with the invoice position array.&lt;br&gt; With
-    ///     this array you have the possibility to add multiple positions at once.&lt;br&gt; In the example it only contains
-    ///     one position, again together with the parameters &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;,
-    ///     however, you can add more invoice positions by extending the array.&lt;br&gt; So if you wanted to add another
-    ///     position, you would add the same list of parameters with an incremented array index of \&quot;1\&quot; instead of \
-    ///     &quot;0\&quot;.&lt;br&gt;&lt;br&gt; The list ends with the four parameters invoicePosDelete, discountSave,
-    ///     discountDelete and takeDefaultAddress.&lt;br&gt; They only play a minor role if you only want to create an invoice
-    ///     but we will shortly explain what they can do.&lt;br&gt; With invoicePosDelete you have to option to delete invoice
-    ///     positions as this request can also be used to update invoices.&lt;br&gt; With discountSave you can add discounts to
-    ///     your invoice.&lt;br&gt; With discountDelete you can delete discounts from your invoice.&lt;br&gt; With
-    ///     takeDefaultAddress you can specify that the first address of the contact you are using for the invoice is taken for
-    ///     the invoice address attribute automatically, so you don&#x27;t need to provide the address yourself.&lt;br&gt; If
-    ///     you want to know more about these parameters, for example if you want to use this request to update invoices, feel
-    ///     free to contact our support.&lt;br&gt;&lt;br&gt; Finally, after covering all parameters, they only important
-    ///     information left, is that the order of the last four attributes always needs to be kept.&lt;br&gt; You will also
-    ///     always need to provide all of them, as otherwise the request won&#x27;t work properly.&lt;br&gt;&lt;br&gt; &lt;b
-    ///     &gt;Warning\&quot;:\&quot;&lt;/b&gt; You can not create a regular invoice with the &lt;b&gt;deliveryDate&lt;/b&gt;
-    ///     being later than the &lt;b&gt;invoiceDate&lt;/b&gt;.&lt;br&gt; To do that you will need to create a so called &lt;b
-    ///     &gt;Abschlagsrechnung&lt;/b&gt; by setting the &lt;b&gt;invoiceType&lt;/b&gt; parameter to &lt;b&gt;AR&lt;/b&gt;.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameterof the
-    ///     invoice model! (optional)
-    /// </param>
-    /// <returns>ApiResponse of SaveInvoiceResponse</returns>
-    public ApiResponse<SaveInvoiceResponse> CreateInvoiceByFactoryWithHttpInfo(SaveInvoice body = null)
+	/// <summary>
+	///     Create a new invoice This endpoint offers you the following functionality.       &lt;ul&gt;          &lt;li&gt;
+	///     Create invoices together with positions and discounts&lt;/li&gt;          &lt;li&gt;Delete positions while adding
+	///     new ones&lt;/li&gt;          &lt;li&gt;Delete or add discounts, or both at the same time&lt;/li&gt;          &lt;li
+	///     &gt;Automatically fill the address of the supplied contact into the invoice address&lt;/li&gt;       &lt;/ul&gt;
+	///     To make your own request sample slimmer, you can omit all parameters which are not required and nullable.
+	///     However, for a valid and logical bookkeeping document, you will also need some of them to ensure that all the
+	///     necessary data is in the invoice.&lt;br&gt;&lt;br&gt; The list of parameters starts with the invoice array.&lt;br
+	///     &gt; This array contains all required attributes for a complete invoice.&lt;br&gt; Most of the attributes are
+	///     covered in the invoice attribute list, there are only two parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt;
+	///     and &lt;b&gt;objectName&lt;/b&gt;.&lt;br&gt; These are just needed for our system and you always need to provide
+	///     them.&lt;br&gt;&lt;br&gt; The list of parameters then continues with the invoice position array.&lt;br&gt; With
+	///     this array you have the possibility to add multiple positions at once.&lt;br&gt; In the example it only contains
+	///     one position, again together with the parameters &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;,
+	///     however, you can add more invoice positions by extending the array.&lt;br&gt; So if you wanted to add another
+	///     position, you would add the same list of parameters with an incremented array index of \&quot;1\&quot; instead of \
+	///     &quot;0\&quot;.&lt;br&gt;&lt;br&gt; The list ends with the four parameters invoicePosDelete, discountSave,
+	///     discountDelete and takeDefaultAddress.&lt;br&gt; They only play a minor role if you only want to create an invoice
+	///     but we will shortly explain what they can do.&lt;br&gt; With invoicePosDelete you have to option to delete invoice
+	///     positions as this request can also be used to update invoices.&lt;br&gt; With discountSave you can add discounts to
+	///     your invoice.&lt;br&gt; With discountDelete you can delete discounts from your invoice.&lt;br&gt; With
+	///     takeDefaultAddress you can specify that the first address of the contact you are using for the invoice is taken for
+	///     the invoice address attribute automatically, so you don&#x27;t need to provide the address yourself.&lt;br&gt; If
+	///     you want to know more about these parameters, for example if you want to use this request to update invoices, feel
+	///     free to contact our support.&lt;br&gt;&lt;br&gt; Finally, after covering all parameters, they only important
+	///     information left, is that the order of the last four attributes always needs to be kept.&lt;br&gt; You will also
+	///     always need to provide all of them, as otherwise the request won&#x27;t work properly.&lt;br&gt;&lt;br&gt; &lt;b
+	///     &gt;Warning\&quot;:\&quot;&lt;/b&gt; You can not create a regular invoice with the &lt;b&gt;deliveryDate&lt;/b&gt;
+	///     being later than the &lt;b&gt;invoiceDate&lt;/b&gt;.&lt;br&gt; To do that you will need to create a so called &lt;b
+	///     &gt;Abschlagsrechnung&lt;/b&gt; by setting the &lt;b&gt;invoiceType&lt;/b&gt; parameter to &lt;b&gt;AR&lt;/b&gt;.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameterof the
+	///     invoice model! (optional)
+	/// </param>
+	/// <returns>ApiResponse of SaveInvoiceResponse</returns>
+	public ApiResponse<SaveInvoiceResponse> CreateInvoiceByFactoryWithHttpInfo(SaveInvoice body = null)
 	{
 		var localVarPath = "/Invoice/Factory/saveInvoice";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -547,87 +547,87 @@ public class InvoiceApi : IInvoiceApi
 			(SaveInvoiceResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SaveInvoiceResponse)));
 	}
 
-    /// <summary>
-    ///     Create a new invoice This endpoint offers you the following functionality.       &lt;ul&gt;          &lt;li&gt;
-    ///     Create invoices together with positions and discounts&lt;/li&gt;          &lt;li&gt;Delete positions while adding
-    ///     new ones&lt;/li&gt;          &lt;li&gt;Delete or add discounts, or both at the same time&lt;/li&gt;          &lt;li
-    ///     &gt;Automatically fill the address of the supplied contact into the invoice address&lt;/li&gt;       &lt;/ul&gt;
-    ///     To make your own request sample slimmer, you can omit all parameters which are not required and nullable.
-    ///     However, for a valid and logical bookkeeping document, you will also need some of them to ensure that all the
-    ///     necessary data is in the invoice.&lt;br&gt;&lt;br&gt; The list of parameters starts with the invoice array.&lt;br
-    ///     &gt; This array contains all required attributes for a complete invoice.&lt;br&gt; Most of the attributes are
-    ///     covered in the invoice attribute list, there are only two parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt;
-    ///     and &lt;b&gt;objectName&lt;/b&gt;.&lt;br&gt; These are just needed for our system and you always need to provide
-    ///     them.&lt;br&gt;&lt;br&gt; The list of parameters then continues with the invoice position array.&lt;br&gt; With
-    ///     this array you have the possibility to add multiple positions at once.&lt;br&gt; In the example it only contains
-    ///     one position, again together with the parameters &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;,
-    ///     however, you can add more invoice positions by extending the array.&lt;br&gt; So if you wanted to add another
-    ///     position, you would add the same list of parameters with an incremented array index of \&quot;1\&quot; instead of \
-    ///     &quot;0\&quot;.&lt;br&gt;&lt;br&gt; The list ends with the four parameters invoicePosDelete, discountSave,
-    ///     discountDelete and takeDefaultAddress.&lt;br&gt; They only play a minor role if you only want to create an invoice
-    ///     but we will shortly explain what they can do.&lt;br&gt; With invoicePosDelete you have to option to delete invoice
-    ///     positions as this request can also be used to update invoices.&lt;br&gt; With discountSave you can add discounts to
-    ///     your invoice.&lt;br&gt; With discountDelete you can delete discounts from your invoice.&lt;br&gt; With
-    ///     takeDefaultAddress you can specify that the first address of the contact you are using for the invoice is taken for
-    ///     the invoice address attribute automatically, so you don&#x27;t need to provide the address yourself.&lt;br&gt; If
-    ///     you want to know more about these parameters, for example if you want to use this request to update invoices, feel
-    ///     free to contact our support.&lt;br&gt;&lt;br&gt; Finally, after covering all parameters, they only important
-    ///     information left, is that the order of the last four attributes always needs to be kept.&lt;br&gt; You will also
-    ///     always need to provide all of them, as otherwise the request won&#x27;t work properly.&lt;br&gt;&lt;br&gt; &lt;b
-    ///     &gt;Warning\&quot;:\&quot;&lt;/b&gt; You can not create a regular invoice with the &lt;b&gt;deliveryDate&lt;/b&gt;
-    ///     being later than the &lt;b&gt;invoiceDate&lt;/b&gt;.&lt;br&gt; To do that you will need to create a so called &lt;b
-    ///     &gt;Abschlagsrechnung&lt;/b&gt; by setting the &lt;b&gt;invoiceType&lt;/b&gt; parameter to &lt;b&gt;AR&lt;/b&gt;.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the invoice model! (optional)
-    /// </param>
-    /// <returns>Task of SaveInvoiceResponse</returns>
-    public async Task<SaveInvoiceResponse> CreateInvoiceByFactoryAsync(SaveInvoice body = null)
+	/// <summary>
+	///     Create a new invoice This endpoint offers you the following functionality.       &lt;ul&gt;          &lt;li&gt;
+	///     Create invoices together with positions and discounts&lt;/li&gt;          &lt;li&gt;Delete positions while adding
+	///     new ones&lt;/li&gt;          &lt;li&gt;Delete or add discounts, or both at the same time&lt;/li&gt;          &lt;li
+	///     &gt;Automatically fill the address of the supplied contact into the invoice address&lt;/li&gt;       &lt;/ul&gt;
+	///     To make your own request sample slimmer, you can omit all parameters which are not required and nullable.
+	///     However, for a valid and logical bookkeeping document, you will also need some of them to ensure that all the
+	///     necessary data is in the invoice.&lt;br&gt;&lt;br&gt; The list of parameters starts with the invoice array.&lt;br
+	///     &gt; This array contains all required attributes for a complete invoice.&lt;br&gt; Most of the attributes are
+	///     covered in the invoice attribute list, there are only two parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt;
+	///     and &lt;b&gt;objectName&lt;/b&gt;.&lt;br&gt; These are just needed for our system and you always need to provide
+	///     them.&lt;br&gt;&lt;br&gt; The list of parameters then continues with the invoice position array.&lt;br&gt; With
+	///     this array you have the possibility to add multiple positions at once.&lt;br&gt; In the example it only contains
+	///     one position, again together with the parameters &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;,
+	///     however, you can add more invoice positions by extending the array.&lt;br&gt; So if you wanted to add another
+	///     position, you would add the same list of parameters with an incremented array index of \&quot;1\&quot; instead of \
+	///     &quot;0\&quot;.&lt;br&gt;&lt;br&gt; The list ends with the four parameters invoicePosDelete, discountSave,
+	///     discountDelete and takeDefaultAddress.&lt;br&gt; They only play a minor role if you only want to create an invoice
+	///     but we will shortly explain what they can do.&lt;br&gt; With invoicePosDelete you have to option to delete invoice
+	///     positions as this request can also be used to update invoices.&lt;br&gt; With discountSave you can add discounts to
+	///     your invoice.&lt;br&gt; With discountDelete you can delete discounts from your invoice.&lt;br&gt; With
+	///     takeDefaultAddress you can specify that the first address of the contact you are using for the invoice is taken for
+	///     the invoice address attribute automatically, so you don&#x27;t need to provide the address yourself.&lt;br&gt; If
+	///     you want to know more about these parameters, for example if you want to use this request to update invoices, feel
+	///     free to contact our support.&lt;br&gt;&lt;br&gt; Finally, after covering all parameters, they only important
+	///     information left, is that the order of the last four attributes always needs to be kept.&lt;br&gt; You will also
+	///     always need to provide all of them, as otherwise the request won&#x27;t work properly.&lt;br&gt;&lt;br&gt; &lt;b
+	///     &gt;Warning\&quot;:\&quot;&lt;/b&gt; You can not create a regular invoice with the &lt;b&gt;deliveryDate&lt;/b&gt;
+	///     being later than the &lt;b&gt;invoiceDate&lt;/b&gt;.&lt;br&gt; To do that you will need to create a so called &lt;b
+	///     &gt;Abschlagsrechnung&lt;/b&gt; by setting the &lt;b&gt;invoiceType&lt;/b&gt; parameter to &lt;b&gt;AR&lt;/b&gt;.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the invoice model! (optional)
+	/// </param>
+	/// <returns>Task of SaveInvoiceResponse</returns>
+	public async Task<SaveInvoiceResponse> CreateInvoiceByFactoryAsync(SaveInvoice body = null)
 	{
 		var localVarResponse = await CreateInvoiceByFactoryAsyncWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new invoice This endpoint offers you the following functionality.       &lt;ul&gt;          &lt;li&gt;
-    ///     Create invoices together with positions and discounts&lt;/li&gt;          &lt;li&gt;Delete positions while adding
-    ///     new ones&lt;/li&gt;          &lt;li&gt;Delete or add discounts, or both at the same time&lt;/li&gt;          &lt;li
-    ///     &gt;Automatically fill the address of the supplied contact into the invoice address&lt;/li&gt;       &lt;/ul&gt;
-    ///     To make your own request sample slimmer, you can omit all parameters which are not required and nullable.
-    ///     However, for a valid and logical bookkeeping document, you will also need some of them to ensure that all the
-    ///     necessary data is in the invoice.&lt;br&gt;&lt;br&gt; The list of parameters starts with the invoice array.&lt;br
-    ///     &gt; This array contains all required attributes for a complete invoice.&lt;br&gt; Most of the attributes are
-    ///     covered in the invoice attribute list, there are only two parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt;
-    ///     and &lt;b&gt;objectName&lt;/b&gt;.&lt;br&gt; These are just needed for our system and you always need to provide
-    ///     them.&lt;br&gt;&lt;br&gt; The list of parameters then continues with the invoice position array.&lt;br&gt; With
-    ///     this array you have the possibility to add multiple positions at once.&lt;br&gt; In the example it only contains
-    ///     one position, again together with the parameters &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;,
-    ///     however, you can add more invoice positions by extending the array.&lt;br&gt; So if you wanted to add another
-    ///     position, you would add the same list of parameters with an incremented array index of \&quot;1\&quot; instead of \
-    ///     &quot;0\&quot;.&lt;br&gt;&lt;br&gt; The list ends with the four parameters invoicePosDelete, discountSave,
-    ///     discountDelete and takeDefaultAddress.&lt;br&gt; They only play a minor role if you only want to create an invoice
-    ///     but we will shortly explain what they can do.&lt;br&gt; With invoicePosDelete you have to option to delete invoice
-    ///     positions as this request can also be used to update invoices.&lt;br&gt; With discountSave you can add discounts to
-    ///     your invoice.&lt;br&gt; With discountDelete you can delete discounts from your invoice.&lt;br&gt; With
-    ///     takeDefaultAddress you can specify that the first address of the contact you are using for the invoice is taken for
-    ///     the invoice address attribute automatically, so you don&#x27;t need to provide the address yourself.&lt;br&gt; If
-    ///     you want to know more about these parameters, for example if you want to use this request to update invoices, feel
-    ///     free to contact our support.&lt;br&gt;&lt;br&gt; Finally, after covering all parameters, they only important
-    ///     information left, is that the order of the last four attributes always needs to be kept.&lt;br&gt; You will also
-    ///     always need to provide all of them, as otherwise the request won&#x27;t work properly.&lt;br&gt;&lt;br&gt; &lt;b
-    ///     &gt;Warning\&quot;:\&quot;&lt;/b&gt; You can not create a regular invoice with the &lt;b&gt;deliveryDate&lt;/b&gt;
-    ///     being later than the &lt;b&gt;invoiceDate&lt;/b&gt;.&lt;br&gt; To do that you will need to create a so called &lt;b
-    ///     &gt;Abschlagsrechnung&lt;/b&gt; by setting the &lt;b&gt;invoiceType&lt;/b&gt; parameter to &lt;b&gt;AR&lt;/b&gt;.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the invoice model! (optional)
-    /// </param>
-    /// <returns>Task of ApiResponse (SaveInvoiceResponse)</returns>
-    public async Task<ApiResponse<SaveInvoiceResponse>> CreateInvoiceByFactoryAsyncWithHttpInfo(SaveInvoice body = null)
+	/// <summary>
+	///     Create a new invoice This endpoint offers you the following functionality.       &lt;ul&gt;          &lt;li&gt;
+	///     Create invoices together with positions and discounts&lt;/li&gt;          &lt;li&gt;Delete positions while adding
+	///     new ones&lt;/li&gt;          &lt;li&gt;Delete or add discounts, or both at the same time&lt;/li&gt;          &lt;li
+	///     &gt;Automatically fill the address of the supplied contact into the invoice address&lt;/li&gt;       &lt;/ul&gt;
+	///     To make your own request sample slimmer, you can omit all parameters which are not required and nullable.
+	///     However, for a valid and logical bookkeeping document, you will also need some of them to ensure that all the
+	///     necessary data is in the invoice.&lt;br&gt;&lt;br&gt; The list of parameters starts with the invoice array.&lt;br
+	///     &gt; This array contains all required attributes for a complete invoice.&lt;br&gt; Most of the attributes are
+	///     covered in the invoice attribute list, there are only two parameters standing out, namely &lt;b&gt;mapAll&lt;/b&gt;
+	///     and &lt;b&gt;objectName&lt;/b&gt;.&lt;br&gt; These are just needed for our system and you always need to provide
+	///     them.&lt;br&gt;&lt;br&gt; The list of parameters then continues with the invoice position array.&lt;br&gt; With
+	///     this array you have the possibility to add multiple positions at once.&lt;br&gt; In the example it only contains
+	///     one position, again together with the parameters &lt;b&gt;mapAll&lt;/b&gt; and &lt;b&gt;objectName&lt;/b&gt;,
+	///     however, you can add more invoice positions by extending the array.&lt;br&gt; So if you wanted to add another
+	///     position, you would add the same list of parameters with an incremented array index of \&quot;1\&quot; instead of \
+	///     &quot;0\&quot;.&lt;br&gt;&lt;br&gt; The list ends with the four parameters invoicePosDelete, discountSave,
+	///     discountDelete and takeDefaultAddress.&lt;br&gt; They only play a minor role if you only want to create an invoice
+	///     but we will shortly explain what they can do.&lt;br&gt; With invoicePosDelete you have to option to delete invoice
+	///     positions as this request can also be used to update invoices.&lt;br&gt; With discountSave you can add discounts to
+	///     your invoice.&lt;br&gt; With discountDelete you can delete discounts from your invoice.&lt;br&gt; With
+	///     takeDefaultAddress you can specify that the first address of the contact you are using for the invoice is taken for
+	///     the invoice address attribute automatically, so you don&#x27;t need to provide the address yourself.&lt;br&gt; If
+	///     you want to know more about these parameters, for example if you want to use this request to update invoices, feel
+	///     free to contact our support.&lt;br&gt;&lt;br&gt; Finally, after covering all parameters, they only important
+	///     information left, is that the order of the last four attributes always needs to be kept.&lt;br&gt; You will also
+	///     always need to provide all of them, as otherwise the request won&#x27;t work properly.&lt;br&gt;&lt;br&gt; &lt;b
+	///     &gt;Warning\&quot;:\&quot;&lt;/b&gt; You can not create a regular invoice with the &lt;b&gt;deliveryDate&lt;/b&gt;
+	///     being later than the &lt;b&gt;invoiceDate&lt;/b&gt;.&lt;br&gt; To do that you will need to create a so called &lt;b
+	///     &gt;Abschlagsrechnung&lt;/b&gt; by setting the &lt;b&gt;invoiceType&lt;/b&gt; parameter to &lt;b&gt;AR&lt;/b&gt;.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the invoice model! (optional)
+	/// </param>
+	/// <returns>Task of ApiResponse (SaveInvoiceResponse)</returns>
+	public async Task<ApiResponse<SaveInvoiceResponse>> CreateInvoiceByFactoryAsyncWithHttpInfo(SaveInvoice body = null)
 	{
 		var localVarPath = "/Invoice/Factory/saveInvoice";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -680,30 +680,30 @@ public class InvoiceApi : IInvoiceApi
 			(SaveInvoiceResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SaveInvoiceResponse)));
 	}
 
-    /// <summary>
-    ///     Create invoice from order Create an invoice from an order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">the id of the invoice</param>
-    /// <param name="invoiceObjectName">Model name, which is &#x27;Invoice&#x27;</param>
-    /// <param name="body">Create invoice (optional)</param>
-    /// <returns>GetInvoicesResponse</returns>
-    public GetInvoicesResponse CreateInvoiceFromOrder(int? invoiceId, string invoiceObjectName,
+	/// <summary>
+	///     Create invoice from order Create an invoice from an order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">the id of the invoice</param>
+	/// <param name="invoiceObjectName">Model name, which is &#x27;Invoice&#x27;</param>
+	/// <param name="body">Create invoice (optional)</param>
+	/// <returns>GetInvoicesResponse</returns>
+	public GetInvoicesResponse CreateInvoiceFromOrder(int? invoiceId, string invoiceObjectName,
 		ModelCreateInvoiceFromOrder body = null)
 	{
 		var localVarResponse = CreateInvoiceFromOrderWithHttpInfo(invoiceId, invoiceObjectName, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create invoice from order Create an invoice from an order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">the id of the invoice</param>
-    /// <param name="invoiceObjectName">Model name, which is &#x27;Invoice&#x27;</param>
-    /// <param name="body">Create invoice (optional)</param>
-    /// <returns>ApiResponse of GetInvoicesResponse</returns>
-    public ApiResponse<GetInvoicesResponse> CreateInvoiceFromOrderWithHttpInfo(int? invoiceId, string invoiceObjectName,
+	/// <summary>
+	///     Create invoice from order Create an invoice from an order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">the id of the invoice</param>
+	/// <param name="invoiceObjectName">Model name, which is &#x27;Invoice&#x27;</param>
+	/// <param name="body">Create invoice (optional)</param>
+	/// <returns>ApiResponse of GetInvoicesResponse</returns>
+	public ApiResponse<GetInvoicesResponse> CreateInvoiceFromOrderWithHttpInfo(int? invoiceId, string invoiceObjectName,
 		ModelCreateInvoiceFromOrder body = null)
 	{
 		// verify the required parameter 'invoiceId' is set
@@ -773,30 +773,30 @@ public class InvoiceApi : IInvoiceApi
 			(GetInvoicesResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesResponse)));
 	}
 
-    /// <summary>
-    ///     Create invoice from order Create an invoice from an order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">the id of the invoice</param>
-    /// <param name="invoiceObjectName">Model name, which is &#x27;Invoice&#x27;</param>
-    /// <param name="body">Create invoice (optional)</param>
-    /// <returns>Task of GetInvoicesResponse</returns>
-    public async Task<GetInvoicesResponse> CreateInvoiceFromOrderAsync(int? invoiceId, string invoiceObjectName,
+	/// <summary>
+	///     Create invoice from order Create an invoice from an order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">the id of the invoice</param>
+	/// <param name="invoiceObjectName">Model name, which is &#x27;Invoice&#x27;</param>
+	/// <param name="body">Create invoice (optional)</param>
+	/// <returns>Task of GetInvoicesResponse</returns>
+	public async Task<GetInvoicesResponse> CreateInvoiceFromOrderAsync(int? invoiceId, string invoiceObjectName,
 		ModelCreateInvoiceFromOrder body = null)
 	{
 		var localVarResponse = await CreateInvoiceFromOrderAsyncWithHttpInfo(invoiceId, invoiceObjectName, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create invoice from order Create an invoice from an order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">the id of the invoice</param>
-    /// <param name="invoiceObjectName">Model name, which is &#x27;Invoice&#x27;</param>
-    /// <param name="body">Create invoice (optional)</param>
-    /// <returns>Task of ApiResponse (GetInvoicesResponse)</returns>
-    public async Task<ApiResponse<GetInvoicesResponse>> CreateInvoiceFromOrderAsyncWithHttpInfo(int? invoiceId,
+	/// <summary>
+	///     Create invoice from order Create an invoice from an order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">the id of the invoice</param>
+	/// <param name="invoiceObjectName">Model name, which is &#x27;Invoice&#x27;</param>
+	/// <param name="body">Create invoice (optional)</param>
+	/// <returns>Task of ApiResponse (GetInvoicesResponse)</returns>
+	public async Task<ApiResponse<GetInvoicesResponse>> CreateInvoiceFromOrderAsyncWithHttpInfo(int? invoiceId,
 		string invoiceObjectName, ModelCreateInvoiceFromOrder body = null)
 	{
 		// verify the required parameter 'invoiceId' is set
@@ -866,30 +866,30 @@ public class InvoiceApi : IInvoiceApi
 			(GetInvoicesResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesResponse)));
 	}
 
-    /// <summary>
-    ///     Create invoice reminder Create an reminder from an invoice
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">the id of the invoice</param>
-    /// <param name="invoiceObjectName">Model name, which is &#x27;Invoice&#x27;</param>
-    /// <param name="body">Create invoice (optional)</param>
-    /// <returns>GetInvoicesResponse</returns>
-    public GetInvoicesResponse CreateInvoiceReminder(int? invoiceId, string invoiceObjectName,
+	/// <summary>
+	///     Create invoice reminder Create an reminder from an invoice
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">the id of the invoice</param>
+	/// <param name="invoiceObjectName">Model name, which is &#x27;Invoice&#x27;</param>
+	/// <param name="body">Create invoice (optional)</param>
+	/// <returns>GetInvoicesResponse</returns>
+	public GetInvoicesResponse CreateInvoiceReminder(int? invoiceId, string invoiceObjectName,
 		FactoryCreateInvoiceReminderBody body = null)
 	{
 		var localVarResponse = CreateInvoiceReminderWithHttpInfo(invoiceId, invoiceObjectName, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create invoice reminder Create an reminder from an invoice
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">the id of the invoice</param>
-    /// <param name="invoiceObjectName">Model name, which is &#x27;Invoice&#x27;</param>
-    /// <param name="body">Create invoice (optional)</param>
-    /// <returns>ApiResponse of GetInvoicesResponse</returns>
-    public ApiResponse<GetInvoicesResponse> CreateInvoiceReminderWithHttpInfo(int? invoiceId, string invoiceObjectName,
+	/// <summary>
+	///     Create invoice reminder Create an reminder from an invoice
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">the id of the invoice</param>
+	/// <param name="invoiceObjectName">Model name, which is &#x27;Invoice&#x27;</param>
+	/// <param name="body">Create invoice (optional)</param>
+	/// <returns>ApiResponse of GetInvoicesResponse</returns>
+	public ApiResponse<GetInvoicesResponse> CreateInvoiceReminderWithHttpInfo(int? invoiceId, string invoiceObjectName,
 		FactoryCreateInvoiceReminderBody body = null)
 	{
 		// verify the required parameter 'invoiceId' is set
@@ -959,30 +959,30 @@ public class InvoiceApi : IInvoiceApi
 			(GetInvoicesResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesResponse)));
 	}
 
-    /// <summary>
-    ///     Create invoice reminder Create an reminder from an invoice
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">the id of the invoice</param>
-    /// <param name="invoiceObjectName">Model name, which is &#x27;Invoice&#x27;</param>
-    /// <param name="body">Create invoice (optional)</param>
-    /// <returns>Task of GetInvoicesResponse</returns>
-    public async Task<GetInvoicesResponse> CreateInvoiceReminderAsync(int? invoiceId, string invoiceObjectName,
+	/// <summary>
+	///     Create invoice reminder Create an reminder from an invoice
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">the id of the invoice</param>
+	/// <param name="invoiceObjectName">Model name, which is &#x27;Invoice&#x27;</param>
+	/// <param name="body">Create invoice (optional)</param>
+	/// <returns>Task of GetInvoicesResponse</returns>
+	public async Task<GetInvoicesResponse> CreateInvoiceReminderAsync(int? invoiceId, string invoiceObjectName,
 		FactoryCreateInvoiceReminderBody body = null)
 	{
 		var localVarResponse = await CreateInvoiceReminderAsyncWithHttpInfo(invoiceId, invoiceObjectName, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create invoice reminder Create an reminder from an invoice
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">the id of the invoice</param>
-    /// <param name="invoiceObjectName">Model name, which is &#x27;Invoice&#x27;</param>
-    /// <param name="body">Create invoice (optional)</param>
-    /// <returns>Task of ApiResponse (GetInvoicesResponse)</returns>
-    public async Task<ApiResponse<GetInvoicesResponse>> CreateInvoiceReminderAsyncWithHttpInfo(int? invoiceId,
+	/// <summary>
+	///     Create invoice reminder Create an reminder from an invoice
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">the id of the invoice</param>
+	/// <param name="invoiceObjectName">Model name, which is &#x27;Invoice&#x27;</param>
+	/// <param name="body">Create invoice (optional)</param>
+	/// <returns>Task of ApiResponse (GetInvoicesResponse)</returns>
+	public async Task<ApiResponse<GetInvoicesResponse>> CreateInvoiceReminderAsyncWithHttpInfo(int? invoiceId,
 		string invoiceObjectName, FactoryCreateInvoiceReminderBody body = null)
 	{
 		// verify the required parameter 'invoiceId' is set
@@ -1052,25 +1052,25 @@ public class InvoiceApi : IInvoiceApi
 			(GetInvoicesResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesResponse)));
 	}
 
-    /// <summary>
-    ///     Find invoice by ID Returns a single invoice
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to return</param>
-    /// <returns>GetInvoicesResponse</returns>
-    public GetInvoicesResponse GetInvoiceById(int? invoiceId)
+	/// <summary>
+	///     Find invoice by ID Returns a single invoice
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to return</param>
+	/// <returns>GetInvoicesResponse</returns>
+	public GetInvoicesResponse GetInvoiceById(int? invoiceId)
 	{
 		var localVarResponse = GetInvoiceByIdWithHttpInfo(invoiceId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find invoice by ID Returns a single invoice
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to return</param>
-    /// <returns>ApiResponse of GetInvoicesResponse</returns>
-    public ApiResponse<GetInvoicesResponse> GetInvoiceByIdWithHttpInfo(int? invoiceId)
+	/// <summary>
+	///     Find invoice by ID Returns a single invoice
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to return</param>
+	/// <returns>ApiResponse of GetInvoicesResponse</returns>
+	public ApiResponse<GetInvoicesResponse> GetInvoiceByIdWithHttpInfo(int? invoiceId)
 	{
 		// verify the required parameter 'invoiceId' is set
 		if (invoiceId == null)
@@ -1125,25 +1125,25 @@ public class InvoiceApi : IInvoiceApi
 			(GetInvoicesResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesResponse)));
 	}
 
-    /// <summary>
-    ///     Find invoice by ID Returns a single invoice
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to return</param>
-    /// <returns>Task of GetInvoicesResponse</returns>
-    public async Task<GetInvoicesResponse> GetInvoiceByIdAsync(int? invoiceId)
+	/// <summary>
+	///     Find invoice by ID Returns a single invoice
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to return</param>
+	/// <returns>Task of GetInvoicesResponse</returns>
+	public async Task<GetInvoicesResponse> GetInvoiceByIdAsync(int? invoiceId)
 	{
 		var localVarResponse = await GetInvoiceByIdAsyncWithHttpInfo(invoiceId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find invoice by ID Returns a single invoice
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to return</param>
-    /// <returns>Task of ApiResponse (GetInvoicesResponse)</returns>
-    public async Task<ApiResponse<GetInvoicesResponse>> GetInvoiceByIdAsyncWithHttpInfo(int? invoiceId)
+	/// <summary>
+	///     Find invoice by ID Returns a single invoice
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to return</param>
+	/// <returns>Task of ApiResponse (GetInvoicesResponse)</returns>
+	public async Task<ApiResponse<GetInvoicesResponse>> GetInvoiceByIdAsyncWithHttpInfo(int? invoiceId)
 	{
 		// verify the required parameter 'invoiceId' is set
 		if (invoiceId == null)
@@ -1198,38 +1198,38 @@ public class InvoiceApi : IInvoiceApi
 			(GetInvoicesResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesResponse)));
 	}
 
-    /// <summary>
-    ///     Find invoice positions Returns all positions of an invoice
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to return the positions</param>
-    /// <param name="limit">limits the number of entries returned (optional)</param>
-    /// <param name="offset">set the index where the returned entries start (optional)</param>
-    /// <param name="embed">
-    ///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
-    ///     (optional)
-    /// </param>
-    /// <returns>InlineResponse20022</returns>
-    public InlineResponse20022 GetInvoicePositionsById(int? invoiceId, int? limit = null, int? offset = null,
+	/// <summary>
+	///     Find invoice positions Returns all positions of an invoice
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to return the positions</param>
+	/// <param name="limit">limits the number of entries returned (optional)</param>
+	/// <param name="offset">set the index where the returned entries start (optional)</param>
+	/// <param name="embed">
+	///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
+	///     (optional)
+	/// </param>
+	/// <returns>InlineResponse20022</returns>
+	public InlineResponse20022 GetInvoicePositionsById(int? invoiceId, int? limit = null, int? offset = null,
 		List<string> embed = null)
 	{
 		var localVarResponse = GetInvoicePositionsByIdWithHttpInfo(invoiceId, limit, offset, embed);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find invoice positions Returns all positions of an invoice
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to return the positions</param>
-    /// <param name="limit">limits the number of entries returned (optional)</param>
-    /// <param name="offset">set the index where the returned entries start (optional)</param>
-    /// <param name="embed">
-    ///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
-    ///     (optional)
-    /// </param>
-    /// <returns>ApiResponse of InlineResponse20022</returns>
-    public ApiResponse<InlineResponse20022> GetInvoicePositionsByIdWithHttpInfo(int? invoiceId, int? limit = null,
+	/// <summary>
+	///     Find invoice positions Returns all positions of an invoice
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to return the positions</param>
+	/// <param name="limit">limits the number of entries returned (optional)</param>
+	/// <param name="offset">set the index where the returned entries start (optional)</param>
+	/// <param name="embed">
+	///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
+	///     (optional)
+	/// </param>
+	/// <returns>ApiResponse of InlineResponse20022</returns>
+	public ApiResponse<InlineResponse20022> GetInvoicePositionsByIdWithHttpInfo(int? invoiceId, int? limit = null,
 		int? offset = null, List<string> embed = null)
 	{
 		// verify the required parameter 'invoiceId' is set
@@ -1294,38 +1294,38 @@ public class InvoiceApi : IInvoiceApi
 			(InlineResponse20022)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20022)));
 	}
 
-    /// <summary>
-    ///     Find invoice positions Returns all positions of an invoice
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to return the positions</param>
-    /// <param name="limit">limits the number of entries returned (optional)</param>
-    /// <param name="offset">set the index where the returned entries start (optional)</param>
-    /// <param name="embed">
-    ///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of InlineResponse20022</returns>
-    public async Task<InlineResponse20022> GetInvoicePositionsByIdAsync(int? invoiceId, int? limit = null,
+	/// <summary>
+	///     Find invoice positions Returns all positions of an invoice
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to return the positions</param>
+	/// <param name="limit">limits the number of entries returned (optional)</param>
+	/// <param name="offset">set the index where the returned entries start (optional)</param>
+	/// <param name="embed">
+	///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of InlineResponse20022</returns>
+	public async Task<InlineResponse20022> GetInvoicePositionsByIdAsync(int? invoiceId, int? limit = null,
 		int? offset = null, List<string> embed = null)
 	{
 		var localVarResponse = await GetInvoicePositionsByIdAsyncWithHttpInfo(invoiceId, limit, offset, embed);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find invoice positions Returns all positions of an invoice
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to return the positions</param>
-    /// <param name="limit">limits the number of entries returned (optional)</param>
-    /// <param name="offset">set the index where the returned entries start (optional)</param>
-    /// <param name="embed">
-    ///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of ApiResponse (InlineResponse20022)</returns>
-    public async Task<ApiResponse<InlineResponse20022>> GetInvoicePositionsByIdAsyncWithHttpInfo(int? invoiceId,
+	/// <summary>
+	///     Find invoice positions Returns all positions of an invoice
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to return the positions</param>
+	/// <param name="limit">limits the number of entries returned (optional)</param>
+	/// <param name="offset">set the index where the returned entries start (optional)</param>
+	/// <param name="embed">
+	///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of ApiResponse (InlineResponse20022)</returns>
+	public async Task<ApiResponse<InlineResponse20022>> GetInvoicePositionsByIdAsyncWithHttpInfo(int? invoiceId,
 		int? limit = null, int? offset = null, List<string> embed = null)
 	{
 		// verify the required parameter 'invoiceId' is set
@@ -1390,23 +1390,23 @@ public class InvoiceApi : IInvoiceApi
 			(InlineResponse20022)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20022)));
 	}
 
-    /// <summary>
-    ///     Retrieve invoices There are a multitude of parameter which can be used to filter. A few of them are attached but
-    ///     for a complete list please check out &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/How-to-filter-for-certain-invoices&#x27;&gt;this&lt;/a&gt; list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="status">Status of the invoices (optional)</param>
-    /// <param name="invoiceNumber">Retrieve all invoices with this invoice number (optional)</param>
-    /// <param name="startDate">Retrieve all invoices with a date equal or higher (optional)</param>
-    /// <param name="endDate">Retrieve all invoices with a date equal or lower (optional)</param>
-    /// <param name="contactId">Retrieve all invoices with this contact. Must be provided with contact[objectName] (optional)</param>
-    /// <param name="contactObjectName">
-    ///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>GetInvoicesResponse</returns>
-    public GetInvoicesResponse GetInvoices(decimal? status = null, string invoiceNumber = null, int? startDate = null,
+	/// <summary>
+	///     Retrieve invoices There are a multitude of parameter which can be used to filter. A few of them are attached but
+	///     for a complete list please check out &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/How-to-filter-for-certain-invoices&#x27;&gt;this&lt;/a&gt; list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="status">Status of the invoices (optional)</param>
+	/// <param name="invoiceNumber">Retrieve all invoices with this invoice number (optional)</param>
+	/// <param name="startDate">Retrieve all invoices with a date equal or higher (optional)</param>
+	/// <param name="endDate">Retrieve all invoices with a date equal or lower (optional)</param>
+	/// <param name="contactId">Retrieve all invoices with this contact. Must be provided with contact[objectName] (optional)</param>
+	/// <param name="contactObjectName">
+	///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>GetInvoicesResponse</returns>
+	public GetInvoicesResponse GetInvoices(decimal? status = null, string invoiceNumber = null, int? startDate = null,
 		int? endDate = null, int? contactId = null, string contactObjectName = null)
 	{
 		var localVarResponse =
@@ -1414,23 +1414,23 @@ public class InvoiceApi : IInvoiceApi
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve invoices There are a multitude of parameter which can be used to filter. A few of them are attached but
-    ///     for a complete list please check out &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/How-to-filter-for-certain-invoices&#x27;&gt;this&lt;/a&gt; list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="status">Status of the invoices (optional)</param>
-    /// <param name="invoiceNumber">Retrieve all invoices with this invoice number (optional)</param>
-    /// <param name="startDate">Retrieve all invoices with a date equal or higher (optional)</param>
-    /// <param name="endDate">Retrieve all invoices with a date equal or lower (optional)</param>
-    /// <param name="contactId">Retrieve all invoices with this contact. Must be provided with contact[objectName] (optional)</param>
-    /// <param name="contactObjectName">
-    ///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>ApiResponse of GetInvoicesResponse</returns>
-    public ApiResponse<GetInvoicesResponse> GetInvoicesWithHttpInfo(decimal? status = null, string invoiceNumber = null,
+	/// <summary>
+	///     Retrieve invoices There are a multitude of parameter which can be used to filter. A few of them are attached but
+	///     for a complete list please check out &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/How-to-filter-for-certain-invoices&#x27;&gt;this&lt;/a&gt; list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="status">Status of the invoices (optional)</param>
+	/// <param name="invoiceNumber">Retrieve all invoices with this invoice number (optional)</param>
+	/// <param name="startDate">Retrieve all invoices with a date equal or higher (optional)</param>
+	/// <param name="endDate">Retrieve all invoices with a date equal or lower (optional)</param>
+	/// <param name="contactId">Retrieve all invoices with this contact. Must be provided with contact[objectName] (optional)</param>
+	/// <param name="contactObjectName">
+	///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>ApiResponse of GetInvoicesResponse</returns>
+	public ApiResponse<GetInvoicesResponse> GetInvoicesWithHttpInfo(decimal? status = null, string invoiceNumber = null,
 		int? startDate = null, int? endDate = null, int? contactId = null, string contactObjectName = null)
 	{
 		var localVarPath = "/Invoice";
@@ -1499,23 +1499,23 @@ public class InvoiceApi : IInvoiceApi
 			(GetInvoicesResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesResponse)));
 	}
 
-    /// <summary>
-    ///     Retrieve invoices There are a multitude of parameter which can be used to filter. A few of them are attached but
-    ///     for a complete list please check out &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/How-to-filter-for-certain-invoices&#x27;&gt;this&lt;/a&gt; list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="status">Status of the invoices (optional)</param>
-    /// <param name="invoiceNumber">Retrieve all invoices with this invoice number (optional)</param>
-    /// <param name="startDate">Retrieve all invoices with a date equal or higher (optional)</param>
-    /// <param name="endDate">Retrieve all invoices with a date equal or lower (optional)</param>
-    /// <param name="contactId">Retrieve all invoices with this contact. Must be provided with contact[objectName] (optional)</param>
-    /// <param name="contactObjectName">
-    ///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of GetInvoicesResponse</returns>
-    public async Task<GetInvoicesResponse> GetInvoicesAsync(decimal? status = null, string invoiceNumber = null,
+	/// <summary>
+	///     Retrieve invoices There are a multitude of parameter which can be used to filter. A few of them are attached but
+	///     for a complete list please check out &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/How-to-filter-for-certain-invoices&#x27;&gt;this&lt;/a&gt; list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="status">Status of the invoices (optional)</param>
+	/// <param name="invoiceNumber">Retrieve all invoices with this invoice number (optional)</param>
+	/// <param name="startDate">Retrieve all invoices with a date equal or higher (optional)</param>
+	/// <param name="endDate">Retrieve all invoices with a date equal or lower (optional)</param>
+	/// <param name="contactId">Retrieve all invoices with this contact. Must be provided with contact[objectName] (optional)</param>
+	/// <param name="contactObjectName">
+	///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of GetInvoicesResponse</returns>
+	public async Task<GetInvoicesResponse> GetInvoicesAsync(decimal? status = null, string invoiceNumber = null,
 		int? startDate = null, int? endDate = null, int? contactId = null, string contactObjectName = null)
 	{
 		var localVarResponse =
@@ -1523,23 +1523,23 @@ public class InvoiceApi : IInvoiceApi
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve invoices There are a multitude of parameter which can be used to filter. A few of them are attached but
-    ///     for a complete list please check out &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/How-to-filter-for-certain-invoices&#x27;&gt;this&lt;/a&gt; list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="status">Status of the invoices (optional)</param>
-    /// <param name="invoiceNumber">Retrieve all invoices with this invoice number (optional)</param>
-    /// <param name="startDate">Retrieve all invoices with a date equal or higher (optional)</param>
-    /// <param name="endDate">Retrieve all invoices with a date equal or lower (optional)</param>
-    /// <param name="contactId">Retrieve all invoices with this contact. Must be provided with contact[objectName] (optional)</param>
-    /// <param name="contactObjectName">
-    ///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of ApiResponse (GetInvoicesResponse)</returns>
-    public async Task<ApiResponse<GetInvoicesResponse>> GetInvoicesAsyncWithHttpInfo(decimal? status = null,
+	/// <summary>
+	///     Retrieve invoices There are a multitude of parameter which can be used to filter. A few of them are attached but
+	///     for a complete list please check out &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/How-to-filter-for-certain-invoices&#x27;&gt;this&lt;/a&gt; list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="status">Status of the invoices (optional)</param>
+	/// <param name="invoiceNumber">Retrieve all invoices with this invoice number (optional)</param>
+	/// <param name="startDate">Retrieve all invoices with a date equal or higher (optional)</param>
+	/// <param name="endDate">Retrieve all invoices with a date equal or lower (optional)</param>
+	/// <param name="contactId">Retrieve all invoices with this contact. Must be provided with contact[objectName] (optional)</param>
+	/// <param name="contactObjectName">
+	///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of ApiResponse (GetInvoicesResponse)</returns>
+	public async Task<ApiResponse<GetInvoicesResponse>> GetInvoicesAsyncWithHttpInfo(decimal? status = null,
 		string invoiceNumber = null, int? startDate = null, int? endDate = null, int? contactId = null,
 		string contactObjectName = null)
 	{
@@ -1609,27 +1609,27 @@ public class InvoiceApi : IInvoiceApi
 			(GetInvoicesResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetInvoicesResponse)));
 	}
 
-    /// <summary>
-    ///     Check if an invoice is already partially paid Returns &#x27;true&#x27; if the given invoice is partially paid -
-    ///     &#x27;false&#x27; if it is not.      Invoices which are completely paid are regarded as not partially paid.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to return</param>
-    /// <returns>InlineResponse20011</returns>
-    public InlineResponse20011 GetIsInvoicePartiallyPaid(int? invoiceId)
+	/// <summary>
+	///     Check if an invoice is already partially paid Returns &#x27;true&#x27; if the given invoice is partially paid -
+	///     &#x27;false&#x27; if it is not.      Invoices which are completely paid are regarded as not partially paid.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to return</param>
+	/// <returns>InlineResponse20011</returns>
+	public InlineResponse20011 GetIsInvoicePartiallyPaid(int? invoiceId)
 	{
 		var localVarResponse = GetIsInvoicePartiallyPaidWithHttpInfo(invoiceId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Check if an invoice is already partially paid Returns &#x27;true&#x27; if the given invoice is partially paid -
-    ///     &#x27;false&#x27; if it is not.      Invoices which are completely paid are regarded as not partially paid.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to return</param>
-    /// <returns>ApiResponse of InlineResponse20011</returns>
-    public ApiResponse<InlineResponse20011> GetIsInvoicePartiallyPaidWithHttpInfo(int? invoiceId)
+	/// <summary>
+	///     Check if an invoice is already partially paid Returns &#x27;true&#x27; if the given invoice is partially paid -
+	///     &#x27;false&#x27; if it is not.      Invoices which are completely paid are regarded as not partially paid.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to return</param>
+	/// <returns>ApiResponse of InlineResponse20011</returns>
+	public ApiResponse<InlineResponse20011> GetIsInvoicePartiallyPaidWithHttpInfo(int? invoiceId)
 	{
 		// verify the required parameter 'invoiceId' is set
 		if (invoiceId == null)
@@ -1684,27 +1684,27 @@ public class InvoiceApi : IInvoiceApi
 			(InlineResponse20011)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20011)));
 	}
 
-    /// <summary>
-    ///     Check if an invoice is already partially paid Returns &#x27;true&#x27; if the given invoice is partially paid -
-    ///     &#x27;false&#x27; if it is not.      Invoices which are completely paid are regarded as not partially paid.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to return</param>
-    /// <returns>Task of InlineResponse20011</returns>
-    public async Task<InlineResponse20011> GetIsInvoicePartiallyPaidAsync(int? invoiceId)
+	/// <summary>
+	///     Check if an invoice is already partially paid Returns &#x27;true&#x27; if the given invoice is partially paid -
+	///     &#x27;false&#x27; if it is not.      Invoices which are completely paid are regarded as not partially paid.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to return</param>
+	/// <returns>Task of InlineResponse20011</returns>
+	public async Task<InlineResponse20011> GetIsInvoicePartiallyPaidAsync(int? invoiceId)
 	{
 		var localVarResponse = await GetIsInvoicePartiallyPaidAsyncWithHttpInfo(invoiceId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Check if an invoice is already partially paid Returns &#x27;true&#x27; if the given invoice is partially paid -
-    ///     &#x27;false&#x27; if it is not.      Invoices which are completely paid are regarded as not partially paid.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to return</param>
-    /// <returns>Task of ApiResponse (InlineResponse20011)</returns>
-    public async Task<ApiResponse<InlineResponse20011>> GetIsInvoicePartiallyPaidAsyncWithHttpInfo(int? invoiceId)
+	/// <summary>
+	///     Check if an invoice is already partially paid Returns &#x27;true&#x27; if the given invoice is partially paid -
+	///     &#x27;false&#x27; if it is not.      Invoices which are completely paid are regarded as not partially paid.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to return</param>
+	/// <returns>Task of ApiResponse (InlineResponse20011)</returns>
+	public async Task<ApiResponse<InlineResponse20011>> GetIsInvoicePartiallyPaidAsyncWithHttpInfo(int? invoiceId)
 	{
 		// verify the required parameter 'invoiceId' is set
 		if (invoiceId == null)
@@ -1759,29 +1759,29 @@ public class InvoiceApi : IInvoiceApi
 			(InlineResponse20011)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20011)));
 	}
 
-    /// <summary>
-    ///     Retrieve pdf document of an invoice Retrieves the pdf document of an invoice with additional metadata.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice from which you want the pdf</param>
-    /// <param name="download">If u want to download the pdf of the invoice. (optional)</param>
-    /// <param name="preventSendBy">Defines if u want to send the invoice. (optional)</param>
-    /// <returns>CreditNoteGetPdfResponse</returns>
-    public CreditNoteGetPdfResponse InvoiceGetPdf(int? invoiceId, bool? download = null, bool? preventSendBy = null)
+	/// <summary>
+	///     Retrieve pdf document of an invoice Retrieves the pdf document of an invoice with additional metadata.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice from which you want the pdf</param>
+	/// <param name="download">If u want to download the pdf of the invoice. (optional)</param>
+	/// <param name="preventSendBy">Defines if u want to send the invoice. (optional)</param>
+	/// <returns>CreditNoteGetPdfResponse</returns>
+	public CreditNoteGetPdfResponse InvoiceGetPdf(int? invoiceId, bool? download = null, bool? preventSendBy = null)
 	{
 		var localVarResponse = InvoiceGetPdfWithHttpInfo(invoiceId, download, preventSendBy);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve pdf document of an invoice Retrieves the pdf document of an invoice with additional metadata.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice from which you want the pdf</param>
-    /// <param name="download">If u want to download the pdf of the invoice. (optional)</param>
-    /// <param name="preventSendBy">Defines if u want to send the invoice. (optional)</param>
-    /// <returns>ApiResponse of CreditNoteGetPdfResponse</returns>
-    public ApiResponse<CreditNoteGetPdfResponse> InvoiceGetPdfWithHttpInfo(int? invoiceId, bool? download = null,
+	/// <summary>
+	///     Retrieve pdf document of an invoice Retrieves the pdf document of an invoice with additional metadata.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice from which you want the pdf</param>
+	/// <param name="download">If u want to download the pdf of the invoice. (optional)</param>
+	/// <param name="preventSendBy">Defines if u want to send the invoice. (optional)</param>
+	/// <returns>ApiResponse of CreditNoteGetPdfResponse</returns>
+	public ApiResponse<CreditNoteGetPdfResponse> InvoiceGetPdfWithHttpInfo(int? invoiceId, bool? download = null,
 		bool? preventSendBy = null)
 	{
 		// verify the required parameter 'invoiceId' is set
@@ -1845,30 +1845,30 @@ public class InvoiceApi : IInvoiceApi
 				typeof(CreditNoteGetPdfResponse)));
 	}
 
-    /// <summary>
-    ///     Retrieve pdf document of an invoice Retrieves the pdf document of an invoice with additional metadata.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice from which you want the pdf</param>
-    /// <param name="download">If u want to download the pdf of the invoice. (optional)</param>
-    /// <param name="preventSendBy">Defines if u want to send the invoice. (optional)</param>
-    /// <returns>Task of CreditNoteGetPdfResponse</returns>
-    public async Task<CreditNoteGetPdfResponse> InvoiceGetPdfAsync(int? invoiceId, bool? download = null,
+	/// <summary>
+	///     Retrieve pdf document of an invoice Retrieves the pdf document of an invoice with additional metadata.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice from which you want the pdf</param>
+	/// <param name="download">If u want to download the pdf of the invoice. (optional)</param>
+	/// <param name="preventSendBy">Defines if u want to send the invoice. (optional)</param>
+	/// <returns>Task of CreditNoteGetPdfResponse</returns>
+	public async Task<CreditNoteGetPdfResponse> InvoiceGetPdfAsync(int? invoiceId, bool? download = null,
 		bool? preventSendBy = null)
 	{
 		var localVarResponse = await InvoiceGetPdfAsyncWithHttpInfo(invoiceId, download, preventSendBy);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve pdf document of an invoice Retrieves the pdf document of an invoice with additional metadata.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice from which you want the pdf</param>
-    /// <param name="download">If u want to download the pdf of the invoice. (optional)</param>
-    /// <param name="preventSendBy">Defines if u want to send the invoice. (optional)</param>
-    /// <returns>Task of ApiResponse (CreditNoteGetPdfResponse)</returns>
-    public async Task<ApiResponse<CreditNoteGetPdfResponse>> InvoiceGetPdfAsyncWithHttpInfo(int? invoiceId,
+	/// <summary>
+	///     Retrieve pdf document of an invoice Retrieves the pdf document of an invoice with additional metadata.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice from which you want the pdf</param>
+	/// <param name="download">If u want to download the pdf of the invoice. (optional)</param>
+	/// <param name="preventSendBy">Defines if u want to send the invoice. (optional)</param>
+	/// <returns>Task of ApiResponse (CreditNoteGetPdfResponse)</returns>
+	public async Task<ApiResponse<CreditNoteGetPdfResponse>> InvoiceGetPdfAsyncWithHttpInfo(int? invoiceId,
 		bool? download = null, bool? preventSendBy = null)
 	{
 		// verify the required parameter 'invoiceId' is set
@@ -1932,33 +1932,33 @@ public class InvoiceApi : IInvoiceApi
 				typeof(CreditNoteGetPdfResponse)));
 	}
 
-    /// <summary>
-    ///     Render the pdf document of an invoice Using this endpoint you can render the pdf document of an invoice.&lt;br&gt;
-    ///     Use cases for this are the retrieval of the pdf location or the forceful re-render of a already sent invoice.&lt;br
-    ///     &gt;       Please be aware that changing an invoice after it has been sent to a customer is not an allowed
-    ///     bookkeeping process.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to render</param>
-    /// <param name="body">Define if the document should be forcefully re-rendered. (optional)</param>
-    /// <returns>InlineResponse2011</returns>
-    public InlineResponse2011 InvoiceRender(int? invoiceId, InvoiceIdRenderBody body = null)
+	/// <summary>
+	///     Render the pdf document of an invoice Using this endpoint you can render the pdf document of an invoice.&lt;br&gt;
+	///     Use cases for this are the retrieval of the pdf location or the forceful re-render of a already sent invoice.&lt;br
+	///     &gt;       Please be aware that changing an invoice after it has been sent to a customer is not an allowed
+	///     bookkeeping process.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to render</param>
+	/// <param name="body">Define if the document should be forcefully re-rendered. (optional)</param>
+	/// <returns>InlineResponse2011</returns>
+	public InlineResponse2011 InvoiceRender(int? invoiceId, InvoiceIdRenderBody body = null)
 	{
 		var localVarResponse = InvoiceRenderWithHttpInfo(invoiceId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Render the pdf document of an invoice Using this endpoint you can render the pdf document of an invoice.&lt;br&gt;
-    ///     Use cases for this are the retrieval of the pdf location or the forceful re-render of a already sent invoice.&lt;br
-    ///     &gt;       Please be aware that changing an invoice after it has been sent to a customer is not an allowed
-    ///     bookkeeping process.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to render</param>
-    /// <param name="body">Define if the document should be forcefully re-rendered. (optional)</param>
-    /// <returns>ApiResponse of InlineResponse2011</returns>
-    public ApiResponse<InlineResponse2011> InvoiceRenderWithHttpInfo(int? invoiceId, InvoiceIdRenderBody body = null)
+	/// <summary>
+	///     Render the pdf document of an invoice Using this endpoint you can render the pdf document of an invoice.&lt;br&gt;
+	///     Use cases for this are the retrieval of the pdf location or the forceful re-render of a already sent invoice.&lt;br
+	///     &gt;       Please be aware that changing an invoice after it has been sent to a customer is not an allowed
+	///     bookkeeping process.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to render</param>
+	/// <param name="body">Define if the document should be forcefully re-rendered. (optional)</param>
+	/// <returns>ApiResponse of InlineResponse2011</returns>
+	public ApiResponse<InlineResponse2011> InvoiceRenderWithHttpInfo(int? invoiceId, InvoiceIdRenderBody body = null)
 	{
 		// verify the required parameter 'invoiceId' is set
 		if (invoiceId == null)
@@ -2018,33 +2018,33 @@ public class InvoiceApi : IInvoiceApi
 			(InlineResponse2011)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2011)));
 	}
 
-    /// <summary>
-    ///     Render the pdf document of an invoice Using this endpoint you can render the pdf document of an invoice.&lt;br&gt;
-    ///     Use cases for this are the retrieval of the pdf location or the forceful re-render of a already sent invoice.&lt;br
-    ///     &gt;       Please be aware that changing an invoice after it has been sent to a customer is not an allowed
-    ///     bookkeeping process.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to render</param>
-    /// <param name="body">Define if the document should be forcefully re-rendered. (optional)</param>
-    /// <returns>Task of InlineResponse2011</returns>
-    public async Task<InlineResponse2011> InvoiceRenderAsync(int? invoiceId, InvoiceIdRenderBody body = null)
+	/// <summary>
+	///     Render the pdf document of an invoice Using this endpoint you can render the pdf document of an invoice.&lt;br&gt;
+	///     Use cases for this are the retrieval of the pdf location or the forceful re-render of a already sent invoice.&lt;br
+	///     &gt;       Please be aware that changing an invoice after it has been sent to a customer is not an allowed
+	///     bookkeeping process.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to render</param>
+	/// <param name="body">Define if the document should be forcefully re-rendered. (optional)</param>
+	/// <returns>Task of InlineResponse2011</returns>
+	public async Task<InlineResponse2011> InvoiceRenderAsync(int? invoiceId, InvoiceIdRenderBody body = null)
 	{
 		var localVarResponse = await InvoiceRenderAsyncWithHttpInfo(invoiceId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Render the pdf document of an invoice Using this endpoint you can render the pdf document of an invoice.&lt;br&gt;
-    ///     Use cases for this are the retrieval of the pdf location or the forceful re-render of a already sent invoice.&lt;br
-    ///     &gt;       Please be aware that changing an invoice after it has been sent to a customer is not an allowed
-    ///     bookkeeping process.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to render</param>
-    /// <param name="body">Define if the document should be forcefully re-rendered. (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse2011)</returns>
-    public async Task<ApiResponse<InlineResponse2011>> InvoiceRenderAsyncWithHttpInfo(int? invoiceId,
+	/// <summary>
+	///     Render the pdf document of an invoice Using this endpoint you can render the pdf document of an invoice.&lt;br&gt;
+	///     Use cases for this are the retrieval of the pdf location or the forceful re-render of a already sent invoice.&lt;br
+	///     &gt;       Please be aware that changing an invoice after it has been sent to a customer is not an allowed
+	///     bookkeeping process.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to render</param>
+	/// <param name="body">Define if the document should be forcefully re-rendered. (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse2011)</returns>
+	public async Task<ApiResponse<InlineResponse2011>> InvoiceRenderAsyncWithHttpInfo(int? invoiceId,
 		InvoiceIdRenderBody body = null)
 	{
 		// verify the required parameter 'invoiceId' is set
@@ -2105,27 +2105,27 @@ public class InvoiceApi : IInvoiceApi
 			(InlineResponse2011)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2011)));
 	}
 
-    /// <summary>
-    ///     Mark invoice as sent Marks an invoice as sent by a chosen send type.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to mark as sent</param>
-    /// <param name="body">Specify the send type (optional)</param>
-    /// <returns>InlineResponse20029</returns>
-    public InlineResponse20029 InvoiceSendBy(int? invoiceId, InvoiceIdSendByBody body = null)
+	/// <summary>
+	///     Mark invoice as sent Marks an invoice as sent by a chosen send type.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to mark as sent</param>
+	/// <param name="body">Specify the send type (optional)</param>
+	/// <returns>InlineResponse20029</returns>
+	public InlineResponse20029 InvoiceSendBy(int? invoiceId, InvoiceIdSendByBody body = null)
 	{
 		var localVarResponse = InvoiceSendByWithHttpInfo(invoiceId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Mark invoice as sent Marks an invoice as sent by a chosen send type.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to mark as sent</param>
-    /// <param name="body">Specify the send type (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20029</returns>
-    public ApiResponse<InlineResponse20029> InvoiceSendByWithHttpInfo(int? invoiceId, InvoiceIdSendByBody body = null)
+	/// <summary>
+	///     Mark invoice as sent Marks an invoice as sent by a chosen send type.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to mark as sent</param>
+	/// <param name="body">Specify the send type (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20029</returns>
+	public ApiResponse<InlineResponse20029> InvoiceSendByWithHttpInfo(int? invoiceId, InvoiceIdSendByBody body = null)
 	{
 		// verify the required parameter 'invoiceId' is set
 		if (invoiceId == null)
@@ -2185,27 +2185,27 @@ public class InvoiceApi : IInvoiceApi
 			(InlineResponse20029)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20029)));
 	}
 
-    /// <summary>
-    ///     Mark invoice as sent Marks an invoice as sent by a chosen send type.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to mark as sent</param>
-    /// <param name="body">Specify the send type (optional)</param>
-    /// <returns>Task of InlineResponse20029</returns>
-    public async Task<InlineResponse20029> InvoiceSendByAsync(int? invoiceId, InvoiceIdSendByBody body = null)
+	/// <summary>
+	///     Mark invoice as sent Marks an invoice as sent by a chosen send type.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to mark as sent</param>
+	/// <param name="body">Specify the send type (optional)</param>
+	/// <returns>Task of InlineResponse20029</returns>
+	public async Task<InlineResponse20029> InvoiceSendByAsync(int? invoiceId, InvoiceIdSendByBody body = null)
 	{
 		var localVarResponse = await InvoiceSendByAsyncWithHttpInfo(invoiceId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Mark invoice as sent Marks an invoice as sent by a chosen send type.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to mark as sent</param>
-    /// <param name="body">Specify the send type (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20029)</returns>
-    public async Task<ApiResponse<InlineResponse20029>> InvoiceSendByAsyncWithHttpInfo(int? invoiceId,
+	/// <summary>
+	///     Mark invoice as sent Marks an invoice as sent by a chosen send type.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to mark as sent</param>
+	/// <param name="body">Specify the send type (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20029)</returns>
+	public async Task<ApiResponse<InlineResponse20029>> InvoiceSendByAsyncWithHttpInfo(int? invoiceId,
 		InvoiceIdSendByBody body = null)
 	{
 		// verify the required parameter 'invoiceId' is set
@@ -2266,31 +2266,31 @@ public class InvoiceApi : IInvoiceApi
 			(InlineResponse20029)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20029)));
 	}
 
-    /// <summary>
-    ///     Send invoice via email This endpoint sends the specified invoice to a customer via email.&lt;br&gt;      This will
-    ///     automatically mark the invoice as sent.&lt;br&gt;      Please note, that in production an invoice is not allowed to
-    ///     be changed after this happened!
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to be sent via email</param>
-    /// <param name="body">Mail data (optional)</param>
-    /// <returns>InlineResponse201</returns>
-    public InlineResponse201 SendInvoiceViaEMail(int? invoiceId, InvoiceIdSendViaEmailBody body = null)
+	/// <summary>
+	///     Send invoice via email This endpoint sends the specified invoice to a customer via email.&lt;br&gt;      This will
+	///     automatically mark the invoice as sent.&lt;br&gt;      Please note, that in production an invoice is not allowed to
+	///     be changed after this happened!
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to be sent via email</param>
+	/// <param name="body">Mail data (optional)</param>
+	/// <returns>InlineResponse201</returns>
+	public InlineResponse201 SendInvoiceViaEMail(int? invoiceId, InvoiceIdSendViaEmailBody body = null)
 	{
 		var localVarResponse = SendInvoiceViaEMailWithHttpInfo(invoiceId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Send invoice via email This endpoint sends the specified invoice to a customer via email.&lt;br&gt;      This will
-    ///     automatically mark the invoice as sent.&lt;br&gt;      Please note, that in production an invoice is not allowed to
-    ///     be changed after this happened!
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to be sent via email</param>
-    /// <param name="body">Mail data (optional)</param>
-    /// <returns>ApiResponse of InlineResponse201</returns>
-    public ApiResponse<InlineResponse201> SendInvoiceViaEMailWithHttpInfo(int? invoiceId,
+	/// <summary>
+	///     Send invoice via email This endpoint sends the specified invoice to a customer via email.&lt;br&gt;      This will
+	///     automatically mark the invoice as sent.&lt;br&gt;      Please note, that in production an invoice is not allowed to
+	///     be changed after this happened!
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to be sent via email</param>
+	/// <param name="body">Mail data (optional)</param>
+	/// <returns>ApiResponse of InlineResponse201</returns>
+	public ApiResponse<InlineResponse201> SendInvoiceViaEMailWithHttpInfo(int? invoiceId,
 		InvoiceIdSendViaEmailBody body = null)
 	{
 		// verify the required parameter 'invoiceId' is set
@@ -2351,31 +2351,31 @@ public class InvoiceApi : IInvoiceApi
 			(InlineResponse201)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse201)));
 	}
 
-    /// <summary>
-    ///     Send invoice via email This endpoint sends the specified invoice to a customer via email.&lt;br&gt;      This will
-    ///     automatically mark the invoice as sent.&lt;br&gt;      Please note, that in production an invoice is not allowed to
-    ///     be changed after this happened!
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to be sent via email</param>
-    /// <param name="body">Mail data (optional)</param>
-    /// <returns>Task of InlineResponse201</returns>
-    public async Task<InlineResponse201> SendInvoiceViaEMailAsync(int? invoiceId, InvoiceIdSendViaEmailBody body = null)
+	/// <summary>
+	///     Send invoice via email This endpoint sends the specified invoice to a customer via email.&lt;br&gt;      This will
+	///     automatically mark the invoice as sent.&lt;br&gt;      Please note, that in production an invoice is not allowed to
+	///     be changed after this happened!
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to be sent via email</param>
+	/// <param name="body">Mail data (optional)</param>
+	/// <returns>Task of InlineResponse201</returns>
+	public async Task<InlineResponse201> SendInvoiceViaEMailAsync(int? invoiceId, InvoiceIdSendViaEmailBody body = null)
 	{
 		var localVarResponse = await SendInvoiceViaEMailAsyncWithHttpInfo(invoiceId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Send invoice via email This endpoint sends the specified invoice to a customer via email.&lt;br&gt;      This will
-    ///     automatically mark the invoice as sent.&lt;br&gt;      Please note, that in production an invoice is not allowed to
-    ///     be changed after this happened!
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="invoiceId">ID of invoice to be sent via email</param>
-    /// <param name="body">Mail data (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse201)</returns>
-    public async Task<ApiResponse<InlineResponse201>> SendInvoiceViaEMailAsyncWithHttpInfo(int? invoiceId,
+	/// <summary>
+	///     Send invoice via email This endpoint sends the specified invoice to a customer via email.&lt;br&gt;      This will
+	///     automatically mark the invoice as sent.&lt;br&gt;      Please note, that in production an invoice is not allowed to
+	///     be changed after this happened!
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="invoiceId">ID of invoice to be sent via email</param>
+	/// <param name="body">Mail data (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse201)</returns>
+	public async Task<ApiResponse<InlineResponse201>> SendInvoiceViaEMailAsyncWithHttpInfo(int? invoiceId,
 		InvoiceIdSendViaEmailBody body = null)
 	{
 		// verify the required parameter 'invoiceId' is set
@@ -2436,34 +2436,34 @@ public class InvoiceApi : IInvoiceApi
 			(InlineResponse201)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse201)));
 	}
 
-    /// <summary>
-    ///     Sets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    [Obsolete(
+	/// <summary>
+	///     Sets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	[Obsolete(
 		"SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
 	public void SetBasePath(string basePath)
 	{
 		// do nothing
 	}
 
-    /// <summary>
-    ///     Gets the default header.
-    /// </summary>
-    /// <returns>Dictionary of HTTP header</returns>
-    [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
+	/// <summary>
+	///     Gets the default header.
+	/// </summary>
+	/// <returns>Dictionary of HTTP header</returns>
+	[Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
 	public IDictionary<string, string> DefaultHeader()
 	{
 		return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
 	}
 
-    /// <summary>
-    ///     Add default header.
-    /// </summary>
-    /// <param name="key">Header field name.</param>
-    /// <param name="value">Header field value.</param>
-    /// <returns></returns>
-    [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
+	/// <summary>
+	///     Add default header.
+	/// </summary>
+	/// <param name="key">Header field name.</param>
+	/// <param name="value">Header field value.</param>
+	/// <returns></returns>
+	[Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
 	public void AddDefaultHeader(string key, string value)
 	{
 		Configuration.AddDefaultHeader(key, value);

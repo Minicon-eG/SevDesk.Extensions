@@ -22,467 +22,467 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelVoucherResponse : IEquatable<ModelVoucherResponse>, IValidatableObject
 {
-    /// <summary>
-    ///     Defines if your voucher is a credit (C) or debit (D)
-    /// </summary>
-    /// <value>Defines if your voucher is a credit (C) or debit (D)</value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Defines if your voucher is a credit (C) or debit (D)
+	/// </summary>
+	/// <value>Defines if your voucher is a credit (C) or debit (D)</value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum CreditDebitEnum
 	{
-        /// <summary>
-        ///     Enum C for value: C
-        /// </summary>
-        [EnumMember(Value = "C")] C = 1,
+		/// <summary>
+		///     Enum C for value: C
+		/// </summary>
+		[EnumMember(Value = "C")] C = 1,
 
-        /// <summary>
-        ///     Enum D for value: D
-        /// </summary>
-        [EnumMember(Value = "D")] D = 2
+		/// <summary>
+		///     Enum D for value: D
+		/// </summary>
+		[EnumMember(Value = "D")] D = 2
 	}
 
-    /// <summary>
-    ///     The DateInterval in which recurring vouchers are generated.&lt;br&gt;       Necessary attribute for all recurring
-    ///     vouchers.
-    /// </summary>
-    /// <value>
-    ///     The DateInterval in which recurring vouchers are generated.&lt;br&gt;       Necessary attribute for all
-    ///     recurring vouchers.
-    /// </value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     The DateInterval in which recurring vouchers are generated.&lt;br&gt;       Necessary attribute for all recurring
+	///     vouchers.
+	/// </summary>
+	/// <value>
+	///     The DateInterval in which recurring vouchers are generated.&lt;br&gt;       Necessary attribute for all
+	///     recurring vouchers.
+	/// </value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum RecurringIntervalEnum
 	{
-        /// <summary>
-        ///     Enum P0Y0M1W for value: P0Y0M1W
-        /// </summary>
-        [EnumMember(Value = "P0Y0M1W")] P0Y0M1W = 1,
+		/// <summary>
+		///     Enum P0Y0M1W for value: P0Y0M1W
+		/// </summary>
+		[EnumMember(Value = "P0Y0M1W")] P0Y0M1W = 1,
 
-        /// <summary>
-        ///     Enum P0Y0M2W for value: P0Y0M2W
-        /// </summary>
-        [EnumMember(Value = "P0Y0M2W")] P0Y0M2W = 2,
+		/// <summary>
+		///     Enum P0Y0M2W for value: P0Y0M2W
+		/// </summary>
+		[EnumMember(Value = "P0Y0M2W")] P0Y0M2W = 2,
 
-        /// <summary>
-        ///     Enum P0Y1M0W for value: P0Y1M0W
-        /// </summary>
-        [EnumMember(Value = "P0Y1M0W")] P0Y1M0W = 3,
+		/// <summary>
+		///     Enum P0Y1M0W for value: P0Y1M0W
+		/// </summary>
+		[EnumMember(Value = "P0Y1M0W")] P0Y1M0W = 3,
 
-        /// <summary>
-        ///     Enum P0Y3M0W for value: P0Y3M0W
-        /// </summary>
-        [EnumMember(Value = "P0Y3M0W")] P0Y3M0W = 4,
+		/// <summary>
+		///     Enum P0Y3M0W for value: P0Y3M0W
+		/// </summary>
+		[EnumMember(Value = "P0Y3M0W")] P0Y3M0W = 4,
 
-        /// <summary>
-        ///     Enum P0Y6M0W for value: P0Y6M0W
-        /// </summary>
-        [EnumMember(Value = "P0Y6M0W")] P0Y6M0W = 5,
+		/// <summary>
+		///     Enum P0Y6M0W for value: P0Y6M0W
+		/// </summary>
+		[EnumMember(Value = "P0Y6M0W")] P0Y6M0W = 5,
 
-        /// <summary>
-        ///     Enum P1Y0M0W for value: P1Y0M0W
-        /// </summary>
-        [EnumMember(Value = "P1Y0M0W")] P1Y0M0W = 6,
+		/// <summary>
+		///     Enum P1Y0M0W for value: P1Y0M0W
+		/// </summary>
+		[EnumMember(Value = "P1Y0M0W")] P1Y0M0W = 6,
 
-        /// <summary>
-        ///     Enum P2Y0M0W for value: P2Y0M0W
-        /// </summary>
-        [EnumMember(Value = "P2Y0M0W")] P2Y0M0W = 7,
+		/// <summary>
+		///     Enum P2Y0M0W for value: P2Y0M0W
+		/// </summary>
+		[EnumMember(Value = "P2Y0M0W")] P2Y0M0W = 7,
 
-        /// <summary>
-        ///     Enum P3Y0M0W for value: P3Y0M0W
-        /// </summary>
-        [EnumMember(Value = "P3Y0M0W")] P3Y0M0W = 8,
+		/// <summary>
+		///     Enum P3Y0M0W for value: P3Y0M0W
+		/// </summary>
+		[EnumMember(Value = "P3Y0M0W")] P3Y0M0W = 8,
 
-        /// <summary>
-        ///     Enum P4Y0M0W for value: P4Y0M0W
-        /// </summary>
-        [EnumMember(Value = "P4Y0M0W")] P4Y0M0W = 9,
+		/// <summary>
+		///     Enum P4Y0M0W for value: P4Y0M0W
+		/// </summary>
+		[EnumMember(Value = "P4Y0M0W")] P4Y0M0W = 9,
 
-        /// <summary>
-        ///     Enum P5Y0M0W for value: P5Y0M0W
-        /// </summary>
-        [EnumMember(Value = "P5Y0M0W")] P5Y0M0W = 10
+		/// <summary>
+		///     Enum P5Y0M0W for value: P5Y0M0W
+		/// </summary>
+		[EnumMember(Value = "P5Y0M0W")] P5Y0M0W = 10
 	}
 
-    /// <summary>
-    ///     Please have a look in       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-vouchers
-    ///     &#x27;&gt;status of vouchers&lt;/a&gt;      to see what the different status codes mean
-    /// </summary>
-    /// <value>
-    ///     Please have a look in       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-vouchers
-    ///     &#x27;&gt;status of vouchers&lt;/a&gt;      to see what the different status codes mean
-    /// </value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Please have a look in       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-vouchers
+	///     &#x27;&gt;status of vouchers&lt;/a&gt;      to see what the different status codes mean
+	/// </summary>
+	/// <value>
+	///     Please have a look in       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-vouchers
+	///     &#x27;&gt;status of vouchers&lt;/a&gt;      to see what the different status codes mean
+	/// </value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum StatusEnum
 	{
-        /// <summary>
-        ///     Enum _50 for value: 50
-        /// </summary>
-        [EnumMember(Value = "50")] _50 = 1,
+		/// <summary>
+		///     Enum _50 for value: 50
+		/// </summary>
+		[EnumMember(Value = "50")] _50 = 1,
 
-        /// <summary>
-        ///     Enum _100 for value: 100
-        /// </summary>
-        [EnumMember(Value = "100")] _100 = 2,
+		/// <summary>
+		///     Enum _100 for value: 100
+		/// </summary>
+		[EnumMember(Value = "100")] _100 = 2,
 
-        /// <summary>
-        ///     Enum _1000 for value: 1000
-        /// </summary>
-        [EnumMember(Value = "1000")] _1000 = 3
+		/// <summary>
+		///     Enum _1000 for value: 1000
+		/// </summary>
+		[EnumMember(Value = "1000")] _1000 = 3
 	}
 
-    /// <summary>
-    ///     Type of the voucher. For more information on the different types, check       &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Types-and-status-of-vouchers&#x27;&gt;this&lt;/a&gt;
-    /// </summary>
-    /// <value>
-    ///     Type of the voucher. For more information on the different types, check       &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Types-and-status-of-vouchers&#x27;&gt;this&lt;/a&gt;
-    /// </value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Type of the voucher. For more information on the different types, check       &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Types-and-status-of-vouchers&#x27;&gt;this&lt;/a&gt;
+	/// </summary>
+	/// <value>
+	///     Type of the voucher. For more information on the different types, check       &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Types-and-status-of-vouchers&#x27;&gt;this&lt;/a&gt;
+	/// </value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum VoucherTypeEnum
 	{
-        /// <summary>
-        ///     Enum VOU for value: VOU
-        /// </summary>
-        [EnumMember(Value = "VOU")] VOU = 1,
+		/// <summary>
+		///     Enum VOU for value: VOU
+		/// </summary>
+		[EnumMember(Value = "VOU")] VOU = 1,
 
-        /// <summary>
-        ///     Enum RV for value: RV
-        /// </summary>
-        [EnumMember(Value = "RV")] RV = 2
+		/// <summary>
+		///     Enum RV for value: RV
+		/// </summary>
+		[EnumMember(Value = "RV")] RV = 2
 	}
 
-    /// <summary>
-    ///     Please have a look in       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-vouchers
-    ///     &#x27;&gt;status of vouchers&lt;/a&gt;      to see what the different status codes mean
-    /// </summary>
-    /// <value>
-    ///     Please have a look in       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-vouchers
-    ///     &#x27;&gt;status of vouchers&lt;/a&gt;      to see what the different status codes mean
-    /// </value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+	/// <summary>
+	///     Please have a look in       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-vouchers
+	///     &#x27;&gt;status of vouchers&lt;/a&gt;      to see what the different status codes mean
+	/// </summary>
+	/// <value>
+	///     Please have a look in       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-vouchers
+	///     &#x27;&gt;status of vouchers&lt;/a&gt;      to see what the different status codes mean
+	/// </value>
+	[DataMember(Name = "status", EmitDefaultValue = false)]
 	public StatusEnum? Status { get; set; }
 
-    /// <summary>
-    ///     Defines if your voucher is a credit (C) or debit (D)
-    /// </summary>
-    /// <value>Defines if your voucher is a credit (C) or debit (D)</value>
-    [DataMember(Name = "creditDebit", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines if your voucher is a credit (C) or debit (D)
+	/// </summary>
+	/// <value>Defines if your voucher is a credit (C) or debit (D)</value>
+	[DataMember(Name = "creditDebit", EmitDefaultValue = false)]
 	public CreditDebitEnum? CreditDebit { get; set; }
 
-    /// <summary>
-    ///     Type of the voucher. For more information on the different types, check       &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Types-and-status-of-vouchers&#x27;&gt;this&lt;/a&gt;
-    /// </summary>
-    /// <value>
-    ///     Type of the voucher. For more information on the different types, check       &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Types-and-status-of-vouchers&#x27;&gt;this&lt;/a&gt;
-    /// </value>
-    [DataMember(Name = "voucherType", EmitDefaultValue = false)]
+	/// <summary>
+	///     Type of the voucher. For more information on the different types, check       &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Types-and-status-of-vouchers&#x27;&gt;this&lt;/a&gt;
+	/// </summary>
+	/// <value>
+	///     Type of the voucher. For more information on the different types, check       &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Types-and-status-of-vouchers&#x27;&gt;this&lt;/a&gt;
+	/// </value>
+	[DataMember(Name = "voucherType", EmitDefaultValue = false)]
 	public VoucherTypeEnum? VoucherType { get; set; }
 
-    /// <summary>
-    ///     The DateInterval in which recurring vouchers are generated.&lt;br&gt;       Necessary attribute for all recurring
-    ///     vouchers.
-    /// </summary>
-    /// <value>
-    ///     The DateInterval in which recurring vouchers are generated.&lt;br&gt;       Necessary attribute for all
-    ///     recurring vouchers.
-    /// </value>
-    [DataMember(Name = "recurringInterval", EmitDefaultValue = false)]
+	/// <summary>
+	///     The DateInterval in which recurring vouchers are generated.&lt;br&gt;       Necessary attribute for all recurring
+	///     vouchers.
+	/// </summary>
+	/// <value>
+	///     The DateInterval in which recurring vouchers are generated.&lt;br&gt;       Necessary attribute for all
+	///     recurring vouchers.
+	/// </value>
+	[DataMember(Name = "recurringInterval", EmitDefaultValue = false)]
 	public RecurringIntervalEnum? RecurringInterval { get; set; }
 
 
-    /// <summary>
-    ///     The voucher id
-    /// </summary>
-    /// <value>The voucher id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     The voucher id
+	/// </summary>
+	/// <value>The voucher id</value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public string Id { get; set; }
 
-    /// <summary>
-    ///     The voucher object name
-    /// </summary>
-    /// <value>The voucher object name</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     The voucher object name
+	/// </summary>
+	/// <value>The voucher object name</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets MapAll
-    /// </summary>
-    [DataMember(Name = "mapAll", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets MapAll
+	/// </summary>
+	[DataMember(Name = "mapAll", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? MapAll { get; set; }
 
-    /// <summary>
-    ///     Date of voucher creation
-    /// </summary>
-    /// <value>Date of voucher creation</value>
-    [DataMember(Name = "create", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of voucher creation
+	/// </summary>
+	/// <value>Date of voucher creation</value>
+	[DataMember(Name = "create", EmitDefaultValue = false)]
 	public DateTime? Create { get; set; }
 
-    /// <summary>
-    ///     Date of last voucher update
-    /// </summary>
-    /// <value>Date of last voucher update</value>
-    [DataMember(Name = "update", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of last voucher update
+	/// </summary>
+	/// <value>Date of last voucher update</value>
+	[DataMember(Name = "update", EmitDefaultValue = false)]
 	public DateTime? Update { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets SevClientReference
-    /// </summary>
-    [DataMember(Name = "sevClient", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets SevClientReference
+	/// </summary>
+	[DataMember(Name = "sevClient", EmitDefaultValue = false)]
 	public ModelVoucherResponseSevClient SevClient { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets CreateUser
-    /// </summary>
-    [DataMember(Name = "createUser", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets CreateUser
+	/// </summary>
+	[DataMember(Name = "createUser", EmitDefaultValue = false)]
 	public ModelVoucherResponseCreateUser CreateUser { get; set; }
 
-    /// <summary>
-    ///     Needs to be provided as timestamp or dd.mm.yyyy
-    /// </summary>
-    /// <value>Needs to be provided as timestamp or dd.mm.yyyy</value>
-    [DataMember(Name = "voucherDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Needs to be provided as timestamp or dd.mm.yyyy
+	/// </summary>
+	/// <value>Needs to be provided as timestamp or dd.mm.yyyy</value>
+	[DataMember(Name = "voucherDate", EmitDefaultValue = false)]
 	public DateTime? VoucherDate { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Supplier
-    /// </summary>
-    [DataMember(Name = "supplier", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Supplier
+	/// </summary>
+	[DataMember(Name = "supplier", EmitDefaultValue = false)]
 	public ModelVoucherResponseSupplier? Supplier { get; set; }
 
-    /// <summary>
-    ///     The supplier name.&lt;br&gt;       The value you provide here will determine what supplier name is shown for the
-    ///     voucher in case you did not provide a supplier.
-    /// </summary>
-    /// <value>
-    ///     The supplier name.&lt;br&gt;       The value you provide here will determine what supplier name is shown for the
-    ///     voucher in case you did not provide a supplier.
-    /// </value>
-    [DataMember(Name = "supplierName", EmitDefaultValue = false)]
+	/// <summary>
+	///     The supplier name.&lt;br&gt;       The value you provide here will determine what supplier name is shown for the
+	///     voucher in case you did not provide a supplier.
+	/// </summary>
+	/// <value>
+	///     The supplier name.&lt;br&gt;       The value you provide here will determine what supplier name is shown for the
+	///     voucher in case you did not provide a supplier.
+	/// </value>
+	[DataMember(Name = "supplierName", EmitDefaultValue = false)]
 	public string? SupplierName { get; set; }
 
-    /// <summary>
-    ///     The description of the voucher. Essentially the voucher number.
-    /// </summary>
-    /// <value>The description of the voucher. Essentially the voucher number.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+	/// <summary>
+	///     The description of the voucher. Essentially the voucher number.
+	/// </summary>
+	/// <value>The description of the voucher. Essentially the voucher number.</value>
+	[DataMember(Name = "description", EmitDefaultValue = false)]
 	public string Description { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Document
-    /// </summary>
-    [DataMember(Name = "document", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Document
+	/// </summary>
+	[DataMember(Name = "document", EmitDefaultValue = false)]
 	public ModelVoucherResponseDocument Document { get; set; }
 
-    /// <summary>
-    ///     Needs to be timestamp or dd.mm.yyyy
-    /// </summary>
-    /// <value>Needs to be timestamp or dd.mm.yyyy</value>
-    [DataMember(Name = "payDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Needs to be timestamp or dd.mm.yyyy
+	/// </summary>
+	/// <value>Needs to be timestamp or dd.mm.yyyy</value>
+	[DataMember(Name = "payDate", EmitDefaultValue = false)]
 	public DateTime? PayDate { get; set; }
 
 
-    /// <summary>
-    ///     Net sum of the voucher
-    /// </summary>
-    /// <value>Net sum of the voucher</value>
-    [DataMember(Name = "sumNet", EmitDefaultValue = false)]
+	/// <summary>
+	///     Net sum of the voucher
+	/// </summary>
+	/// <value>Net sum of the voucher</value>
+	[DataMember(Name = "sumNet", EmitDefaultValue = false)]
 	public string SumNet { get; private set; }
 
-    /// <summary>
-    ///     Tax sum of the voucher
-    /// </summary>
-    /// <value>Tax sum of the voucher</value>
-    [DataMember(Name = "sumTax", EmitDefaultValue = false)]
+	/// <summary>
+	///     Tax sum of the voucher
+	/// </summary>
+	/// <value>Tax sum of the voucher</value>
+	[DataMember(Name = "sumTax", EmitDefaultValue = false)]
 	public string SumTax { get; private set; }
 
-    /// <summary>
-    ///     Gross sum of the voucher
-    /// </summary>
-    /// <value>Gross sum of the voucher</value>
-    [DataMember(Name = "sumGross", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gross sum of the voucher
+	/// </summary>
+	/// <value>Gross sum of the voucher</value>
+	[DataMember(Name = "sumGross", EmitDefaultValue = false)]
 	public string SumGross { get; private set; }
 
-    /// <summary>
-    ///     Net accounting sum of the voucher. Is usually the same as sumNet
-    /// </summary>
-    /// <value>Net accounting sum of the voucher. Is usually the same as sumNet</value>
-    [DataMember(Name = "sumNetAccounting", EmitDefaultValue = false)]
+	/// <summary>
+	///     Net accounting sum of the voucher. Is usually the same as sumNet
+	/// </summary>
+	/// <value>Net accounting sum of the voucher. Is usually the same as sumNet</value>
+	[DataMember(Name = "sumNetAccounting", EmitDefaultValue = false)]
 	public string SumNetAccounting { get; private set; }
 
-    /// <summary>
-    ///     Tax accounting sum of the voucher. Is usually the same as sumTax
-    /// </summary>
-    /// <value>Tax accounting sum of the voucher. Is usually the same as sumTax</value>
-    [DataMember(Name = "sumTaxAccounting", EmitDefaultValue = false)]
+	/// <summary>
+	///     Tax accounting sum of the voucher. Is usually the same as sumTax
+	/// </summary>
+	/// <value>Tax accounting sum of the voucher. Is usually the same as sumTax</value>
+	[DataMember(Name = "sumTaxAccounting", EmitDefaultValue = false)]
 	public string SumTaxAccounting { get; private set; }
 
-    /// <summary>
-    ///     Gross accounting sum of the voucher. Is usually the same as sumGross
-    /// </summary>
-    /// <value>Gross accounting sum of the voucher. Is usually the same as sumGross</value>
-    [DataMember(Name = "sumGrossAccounting", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gross accounting sum of the voucher. Is usually the same as sumGross
+	/// </summary>
+	/// <value>Gross accounting sum of the voucher. Is usually the same as sumGross</value>
+	[DataMember(Name = "sumGrossAccounting", EmitDefaultValue = false)]
 	public string SumGrossAccounting { get; private set; }
 
-    /// <summary>
-    ///     Sum of all discounts in the voucher
-    /// </summary>
-    /// <value>Sum of all discounts in the voucher</value>
-    [DataMember(Name = "sumDiscounts", EmitDefaultValue = false)]
+	/// <summary>
+	///     Sum of all discounts in the voucher
+	/// </summary>
+	/// <value>Sum of all discounts in the voucher</value>
+	[DataMember(Name = "sumDiscounts", EmitDefaultValue = false)]
 	public string SumDiscounts { get; private set; }
 
-    /// <summary>
-    ///     Discounts sum of the voucher in the foreign currency
-    /// </summary>
-    /// <value>Discounts sum of the voucher in the foreign currency</value>
-    [DataMember(Name = "sumDiscountsForeignCurrency", EmitDefaultValue = false)]
+	/// <summary>
+	///     Discounts sum of the voucher in the foreign currency
+	/// </summary>
+	/// <value>Discounts sum of the voucher in the foreign currency</value>
+	[DataMember(Name = "sumDiscountsForeignCurrency", EmitDefaultValue = false)]
 	public string SumDiscountsForeignCurrency { get; private set; }
 
-    /// <summary>
-    ///     Amount which has already been paid for this voucher by the customer
-    /// </summary>
-    /// <value>Amount which has already been paid for this voucher by the customer</value>
-    [DataMember(Name = "paidAmount", EmitDefaultValue = false)]
+	/// <summary>
+	///     Amount which has already been paid for this voucher by the customer
+	/// </summary>
+	/// <value>Amount which has already been paid for this voucher by the customer</value>
+	[DataMember(Name = "paidAmount", EmitDefaultValue = false)]
 	public decimal? PaidAmount { get; private set; }
 
-    /// <summary>
-    ///     Tax type of the voucher. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie
-    ///     innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers
-    ///     (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG
-    ///     Tax rates are heavily connected to the tax type used.
-    /// </summary>
-    /// <value>
-    ///     Tax type of the voucher. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie
-    ///     innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers
-    ///     (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG
-    ///     Tax rates are heavily connected to the tax type used.
-    /// </value>
-    [DataMember(Name = "taxType", EmitDefaultValue = false)]
+	/// <summary>
+	///     Tax type of the voucher. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie
+	///     innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers
+	///     (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG
+	///     Tax rates are heavily connected to the tax type used.
+	/// </summary>
+	/// <value>
+	///     Tax type of the voucher. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie
+	///     innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers
+	///     (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG
+	///     Tax rates are heavily connected to the tax type used.
+	/// </value>
+	[DataMember(Name = "taxType", EmitDefaultValue = false)]
 	public string TaxType { get; set; }
 
 
-    /// <summary>
-    ///     Gets or Sets CostCentreResponse
-    /// </summary>
-    [DataMember(Name = "costCentre", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets CostCentreResponse
+	/// </summary>
+	[DataMember(Name = "costCentre", EmitDefaultValue = false)]
 	public ModelVoucherResponseCostCentre? CostCentre { get; set; }
 
 
-    /// <summary>
-    ///     specifies which currency the voucher should have. Attention: If the currency differs from the default currency
-    ///     stored in the account, then either the \&quot;propertyForeignCurrencyDeadline\&quot; or \&quot;
-    ///     propertyExchangeRate\&quot; parameter must be specified. If both parameters are specified, then the \&quot;
-    ///     propertyForeignCurrencyDeadline\&quot; parameter is preferred
-    /// </summary>
-    /// <value>
-    ///     specifies which currency the voucher should have. Attention: If the currency differs from the default currency
-    ///     stored in the account, then either the \&quot;propertyForeignCurrencyDeadline\&quot; or \&quot;
-    ///     propertyExchangeRate\&quot; parameter must be specified. If both parameters are specified, then the \&quot;
-    ///     propertyForeignCurrencyDeadline\&quot; parameter is preferred
-    /// </value>
-    [DataMember(Name = "currency", EmitDefaultValue = false)]
+	/// <summary>
+	///     specifies which currency the voucher should have. Attention: If the currency differs from the default currency
+	///     stored in the account, then either the \&quot;propertyForeignCurrencyDeadline\&quot; or \&quot;
+	///     propertyExchangeRate\&quot; parameter must be specified. If both parameters are specified, then the \&quot;
+	///     propertyForeignCurrencyDeadline\&quot; parameter is preferred
+	/// </summary>
+	/// <value>
+	///     specifies which currency the voucher should have. Attention: If the currency differs from the default currency
+	///     stored in the account, then either the \&quot;propertyForeignCurrencyDeadline\&quot; or \&quot;
+	///     propertyExchangeRate\&quot; parameter must be specified. If both parameters are specified, then the \&quot;
+	///     propertyForeignCurrencyDeadline\&quot; parameter is preferred
+	/// </value>
+	[DataMember(Name = "currency", EmitDefaultValue = false)]
 	public string Currency { get; set; }
 
-    /// <summary>
-    ///     Defines the exchange rate day and and then the exchange rate is set from sevDesk. Needs to be provided as timestamp
-    ///     or dd.mm.yyyy
-    /// </summary>
-    /// <value>
-    ///     Defines the exchange rate day and and then the exchange rate is set from sevDesk. Needs to be provided as
-    ///     timestamp or dd.mm.yyyy
-    /// </value>
-    [DataMember(Name = "propertyForeignCurrencyDeadline", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines the exchange rate day and and then the exchange rate is set from sevDesk. Needs to be provided as timestamp
+	///     or dd.mm.yyyy
+	/// </summary>
+	/// <value>
+	///     Defines the exchange rate day and and then the exchange rate is set from sevDesk. Needs to be provided as
+	///     timestamp or dd.mm.yyyy
+	/// </value>
+	[DataMember(Name = "propertyForeignCurrencyDeadline", EmitDefaultValue = false)]
 	public DateTime? PropertyForeignCurrencyDeadline { get; set; }
 
-    /// <summary>
-    ///     Defines the exchange rate
-    /// </summary>
-    /// <value>Defines the exchange rate</value>
-    [DataMember(Name = "propertyExchangeRate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines the exchange rate
+	/// </summary>
+	/// <value>Defines the exchange rate</value>
+	[DataMember(Name = "propertyExchangeRate", EmitDefaultValue = false)]
 	public string PropertyExchangeRate { get; set; }
 
 
-    /// <summary>
-    ///     The date when the recurring vouchers start being generated.&lt;br&gt;       Necessary attribute for all recurring
-    ///     vouchers.
-    /// </summary>
-    /// <value>
-    ///     The date when the recurring vouchers start being generated.&lt;br&gt;       Necessary attribute for all
-    ///     recurring vouchers.
-    /// </value>
-    [DataMember(Name = "recurringStartDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     The date when the recurring vouchers start being generated.&lt;br&gt;       Necessary attribute for all recurring
+	///     vouchers.
+	/// </summary>
+	/// <value>
+	///     The date when the recurring vouchers start being generated.&lt;br&gt;       Necessary attribute for all
+	///     recurring vouchers.
+	/// </value>
+	[DataMember(Name = "recurringStartDate", EmitDefaultValue = false)]
 	public DateTime? RecurringStartDate { get; set; }
 
-    /// <summary>
-    ///     The date when the next voucher should be generated.&lt;br&gt;       Necessary attribute for all recurring vouchers.
-    /// </summary>
-    /// <value>
-    ///     The date when the next voucher should be generated.&lt;br&gt;       Necessary attribute for all recurring
-    ///     vouchers.
-    /// </value>
-    [DataMember(Name = "recurringNextVoucher", EmitDefaultValue = false)]
+	/// <summary>
+	///     The date when the next voucher should be generated.&lt;br&gt;       Necessary attribute for all recurring vouchers.
+	/// </summary>
+	/// <value>
+	///     The date when the next voucher should be generated.&lt;br&gt;       Necessary attribute for all recurring
+	///     vouchers.
+	/// </value>
+	[DataMember(Name = "recurringNextVoucher", EmitDefaultValue = false)]
 	public DateTime? RecurringNextVoucher { get; set; }
 
-    /// <summary>
-    ///     The date when the last voucher was generated.
-    /// </summary>
-    /// <value>The date when the last voucher was generated.</value>
-    [DataMember(Name = "recurringLastVoucher", EmitDefaultValue = false)]
+	/// <summary>
+	///     The date when the last voucher was generated.
+	/// </summary>
+	/// <value>The date when the last voucher was generated.</value>
+	[DataMember(Name = "recurringLastVoucher", EmitDefaultValue = false)]
 	public DateTime? RecurringLastVoucher { get; set; }
 
-    /// <summary>
-    ///     The date when the recurring vouchers end being generated.&lt;br&gt;      Necessary attribute for all recurring
-    ///     vouchers.
-    /// </summary>
-    /// <value>
-    ///     The date when the recurring vouchers end being generated.&lt;br&gt;      Necessary attribute for all recurring
-    ///     vouchers.
-    /// </value>
-    [DataMember(Name = "recurringEndDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     The date when the recurring vouchers end being generated.&lt;br&gt;      Necessary attribute for all recurring
+	///     vouchers.
+	/// </summary>
+	/// <value>
+	///     The date when the recurring vouchers end being generated.&lt;br&gt;      Necessary attribute for all recurring
+	///     vouchers.
+	/// </value>
+	[DataMember(Name = "recurringEndDate", EmitDefaultValue = false)]
 	public DateTime? RecurringEndDate { get; set; }
 
-    /// <summary>
-    ///     Defines if and when voucher was enshrined. Enshrined vouchers can not be manipulated.
-    /// </summary>
-    /// <value>Defines if and when voucher was enshrined. Enshrined vouchers can not be manipulated.</value>
-    [DataMember(Name = "enshrined", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines if and when voucher was enshrined. Enshrined vouchers can not be manipulated.
+	/// </summary>
+	/// <value>Defines if and when voucher was enshrined. Enshrined vouchers can not be manipulated.</value>
+	[DataMember(Name = "enshrined", EmitDefaultValue = false)]
 	public DateTime? Enshrined { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets TaxSet
-    /// </summary>
-    [DataMember(Name = "taxSet", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets TaxSet
+	/// </summary>
+	[DataMember(Name = "taxSet", EmitDefaultValue = false)]
 	public ModelVoucherResponseTaxSet TaxSet { get; set; }
 
-    /// <summary>
-    ///     Payment deadline of the voucher.
-    /// </summary>
-    /// <value>Payment deadline of the voucher.</value>
-    [DataMember(Name = "paymentDeadline", EmitDefaultValue = false)]
+	/// <summary>
+	///     Payment deadline of the voucher.
+	/// </summary>
+	/// <value>Payment deadline of the voucher.</value>
+	[DataMember(Name = "paymentDeadline", EmitDefaultValue = false)]
 	public DateTime? PaymentDeadline { get; set; }
 
-    /// <summary>
-    ///     Needs to be provided as timestamp or dd.mm.yyyy
-    /// </summary>
-    /// <value>Needs to be provided as timestamp or dd.mm.yyyy</value>
-    [DataMember(Name = "deliveryDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Needs to be provided as timestamp or dd.mm.yyyy
+	/// </summary>
+	/// <value>Needs to be provided as timestamp or dd.mm.yyyy</value>
+	[DataMember(Name = "deliveryDate", EmitDefaultValue = false)]
 	public DateTime? DeliveryDate { get; set; }
 
-    /// <summary>
-    ///     Needs to be provided as timestamp or dd.mm.yyyy
-    /// </summary>
-    /// <value>Needs to be provided as timestamp or dd.mm.yyyy</value>
-    [DataMember(Name = "deliveryDateUntil", EmitDefaultValue = false)]
+	/// <summary>
+	///     Needs to be provided as timestamp or dd.mm.yyyy
+	/// </summary>
+	/// <value>Needs to be provided as timestamp or dd.mm.yyyy</value>
+	[DataMember(Name = "deliveryDateUntil", EmitDefaultValue = false)]
 	public DateTime? DeliveryDateUntil { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelVoucherResponse instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelVoucherResponse to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelVoucherResponse input)
+	/// <summary>
+	///     Returns true if ModelVoucherResponse instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelVoucherResponse to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelVoucherResponse input)
 	{
 		if (input == null)
 			return false;
@@ -690,21 +690,21 @@ public class ModelVoucherResponse : IEquatable<ModelVoucherResponse>, IValidatab
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelVoucherResponse {\n");
@@ -752,30 +752,30 @@ public class ModelVoucherResponse : IEquatable<ModelVoucherResponse>, IValidatab
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelVoucherResponse);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

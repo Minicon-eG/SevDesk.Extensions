@@ -21,19 +21,19 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class InlineResponse20018 : IEquatable<InlineResponse20018>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="InlineResponse20018" /> class.
-    /// </summary>
-    /// <param name="orders">orders.</param>
-    /// <param name="invoices">invoices.</param>
-    /// <param name="creditNotes">creditNotes.</param>
-    /// <param name="documents">documents.</param>
-    /// <param name="persons">persons.</param>
-    /// <param name="vouchers">vouchers.</param>
-    /// <param name="letters">letters.</param>
-    /// <param name="parts">parts.</param>
-    /// <param name="invoicePos">invoicePos.</param>
-    public InlineResponse20018(decimal? orders = default, decimal? invoices = default, decimal? creditNotes = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="InlineResponse20018" /> class.
+	/// </summary>
+	/// <param name="orders">orders.</param>
+	/// <param name="invoices">invoices.</param>
+	/// <param name="creditNotes">creditNotes.</param>
+	/// <param name="documents">documents.</param>
+	/// <param name="persons">persons.</param>
+	/// <param name="vouchers">vouchers.</param>
+	/// <param name="letters">letters.</param>
+	/// <param name="parts">parts.</param>
+	/// <param name="invoicePos">invoicePos.</param>
+	public InlineResponse20018(decimal? orders = default, decimal? invoices = default, decimal? creditNotes = default,
 		decimal? documents = default, decimal? persons = default, decimal? vouchers = default,
 		decimal? letters = default, string parts = default, decimal? invoicePos = default)
 	{
@@ -48,66 +48,66 @@ public class InlineResponse20018 : IEquatable<InlineResponse20018>, IValidatable
 		InvoicePos = invoicePos;
 	}
 
-    /// <summary>
-    ///     Gets or Sets Orders
-    /// </summary>
-    [DataMember(Name = "orders", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Orders
+	/// </summary>
+	[DataMember(Name = "orders", EmitDefaultValue = false)]
 	public decimal? Orders { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Invoices
-    /// </summary>
-    [DataMember(Name = "invoices", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Invoices
+	/// </summary>
+	[DataMember(Name = "invoices", EmitDefaultValue = false)]
 	public decimal? Invoices { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets CreditNotes
-    /// </summary>
-    [DataMember(Name = "creditNotes", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets CreditNotes
+	/// </summary>
+	[DataMember(Name = "creditNotes", EmitDefaultValue = false)]
 	public decimal? CreditNotes { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Documents
-    /// </summary>
-    [DataMember(Name = "documents", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Documents
+	/// </summary>
+	[DataMember(Name = "documents", EmitDefaultValue = false)]
 	public decimal? Documents { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Persons
-    /// </summary>
-    [DataMember(Name = "persons", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Persons
+	/// </summary>
+	[DataMember(Name = "persons", EmitDefaultValue = false)]
 	public decimal? Persons { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Vouchers
-    /// </summary>
-    [DataMember(Name = "vouchers", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Vouchers
+	/// </summary>
+	[DataMember(Name = "vouchers", EmitDefaultValue = false)]
 	public decimal? Vouchers { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Letters
-    /// </summary>
-    [DataMember(Name = "letters", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Letters
+	/// </summary>
+	[DataMember(Name = "letters", EmitDefaultValue = false)]
 	public decimal? Letters { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Parts
-    /// </summary>
-    [DataMember(Name = "parts", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Parts
+	/// </summary>
+	[DataMember(Name = "parts", EmitDefaultValue = false)]
 	public string Parts { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets InvoicePos
-    /// </summary>
-    [DataMember(Name = "invoicePos", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets InvoicePos
+	/// </summary>
+	[DataMember(Name = "invoicePos", EmitDefaultValue = false)]
 	public decimal? InvoicePos { get; set; }
 
-    /// <summary>
-    ///     Returns true if InlineResponse20018 instances are equal
-    /// </summary>
-    /// <param name="input">Instance of InlineResponse20018 to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(InlineResponse20018 input)
+	/// <summary>
+	///     Returns true if InlineResponse20018 instances are equal
+	/// </summary>
+	/// <param name="input">Instance of InlineResponse20018 to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(InlineResponse20018 input)
 	{
 		if (input == null)
 			return false;
@@ -160,21 +160,21 @@ public class InlineResponse20018 : IEquatable<InlineResponse20018>, IValidatable
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class InlineResponse20018 {\n");
@@ -191,30 +191,30 @@ public class InlineResponse20018 : IEquatable<InlineResponse20018>, IValidatable
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as InlineResponse20018);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

@@ -21,18 +21,18 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class InlineResponse20037Templates : IEquatable<InlineResponse20037Templates>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="InlineResponse20037Templates" /> class.
-    /// </summary>
-    /// <param name="id">id.</param>
-    /// <param name="name">name.</param>
-    /// <param name="translationCode">translationCode.</param>
-    /// <param name="sevClient">sevClient.</param>
-    /// <param name="type">type.</param>
-    /// <param name="html">html.</param>
-    /// <param name="_default">_default.</param>
-    /// <param name="premium">premium.</param>
-    public InlineResponse20037Templates(string id = default, string name = default, string translationCode = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="InlineResponse20037Templates" /> class.
+	/// </summary>
+	/// <param name="id">id.</param>
+	/// <param name="name">name.</param>
+	/// <param name="translationCode">translationCode.</param>
+	/// <param name="sevClient">sevClient.</param>
+	/// <param name="type">type.</param>
+	/// <param name="html">html.</param>
+	/// <param name="_default">_default.</param>
+	/// <param name="premium">premium.</param>
+	public InlineResponse20037Templates(string id = default, string name = default, string translationCode = default,
 		string sevClient = default, string type = default, string html = default, int? _default = default,
 		bool? premium = default)
 	{
@@ -46,61 +46,61 @@ public class InlineResponse20037Templates : IEquatable<InlineResponse20037Templa
 		Premium = premium;
 	}
 
-    /// <summary>
-    ///     Gets or Sets Id
-    /// </summary>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Id
+	/// </summary>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public string Id { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Name
-    /// </summary>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Name
+	/// </summary>
+	[DataMember(Name = "name", EmitDefaultValue = false)]
 	public string Name { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets TranslationCode
-    /// </summary>
-    [DataMember(Name = "translationCode", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets TranslationCode
+	/// </summary>
+	[DataMember(Name = "translationCode", EmitDefaultValue = false)]
 	public string TranslationCode { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets SevClientReference
-    /// </summary>
-    [DataMember(Name = "sevClient", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets SevClientReference
+	/// </summary>
+	[DataMember(Name = "sevClient", EmitDefaultValue = false)]
 	public string SevClient { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Type
-    /// </summary>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Type
+	/// </summary>
+	[DataMember(Name = "type", EmitDefaultValue = false)]
 	public string Type { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Html
-    /// </summary>
-    [DataMember(Name = "html", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Html
+	/// </summary>
+	[DataMember(Name = "html", EmitDefaultValue = false)]
 	public string Html { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets _Default
-    /// </summary>
-    [DataMember(Name = "default", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets _Default
+	/// </summary>
+	[DataMember(Name = "default", EmitDefaultValue = false)]
 	public int? _Default { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Premium
-    /// </summary>
-    [DataMember(Name = "premium", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Premium
+	/// </summary>
+	[DataMember(Name = "premium", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? Premium { get; set; }
 
-    /// <summary>
-    ///     Returns true if InlineResponse20037Templates instances are equal
-    /// </summary>
-    /// <param name="input">Instance of InlineResponse20037Templates to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(InlineResponse20037Templates input)
+	/// <summary>
+	///     Returns true if InlineResponse20037Templates instances are equal
+	/// </summary>
+	/// <param name="input">Instance of InlineResponse20037Templates to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(InlineResponse20037Templates input)
 	{
 		if (input == null)
 			return false;
@@ -148,21 +148,21 @@ public class InlineResponse20037Templates : IEquatable<InlineResponse20037Templa
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class InlineResponse20037Templates {\n");
@@ -178,30 +178,30 @@ public class InlineResponse20037Templates : IEquatable<InlineResponse20037Templa
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as InlineResponse20037Templates);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

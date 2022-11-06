@@ -22,46 +22,46 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelCommunicationWayUpdate : IEquatable<ModelCommunicationWayUpdate>, IValidatableObject
 {
-    /// <summary>
-    ///     Type of the communication way
-    /// </summary>
-    /// <value>Type of the communication way</value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Type of the communication way
+	/// </summary>
+	/// <value>Type of the communication way</value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum TypeEnum
 	{
-        /// <summary>
-        ///     Enum EMAIL for value: EMAIL
-        /// </summary>
-        [EnumMember(Value = "EMAIL")] EMAIL = 1,
+		/// <summary>
+		///     Enum EMAIL for value: EMAIL
+		/// </summary>
+		[EnumMember(Value = "EMAIL")] EMAIL = 1,
 
-        /// <summary>
-        ///     Enum PHONE for value: PHONE
-        /// </summary>
-        [EnumMember(Value = "PHONE")] PHONE = 2,
+		/// <summary>
+		///     Enum PHONE for value: PHONE
+		/// </summary>
+		[EnumMember(Value = "PHONE")] PHONE = 2,
 
-        /// <summary>
-        ///     Enum WEB for value: WEB
-        /// </summary>
-        [EnumMember(Value = "WEB")] WEB = 3,
+		/// <summary>
+		///     Enum WEB for value: WEB
+		/// </summary>
+		[EnumMember(Value = "WEB")] WEB = 3,
 
-        /// <summary>
-        ///     Enum MOBILE for value: MOBILE
-        /// </summary>
-        [EnumMember(Value = "MOBILE")] MOBILE = 4
+		/// <summary>
+		///     Enum MOBILE for value: MOBILE
+		/// </summary>
+		[EnumMember(Value = "MOBILE")] MOBILE = 4
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelCommunicationWayUpdate" /> class.
-    /// </summary>
-    /// <param name="contact">contact.</param>
-    /// <param name="type">Type of the communication way.</param>
-    /// <param name="value">
-    ///     The value of the communication way.&lt;br&gt;       For example the phone number, e-mail address or
-    ///     website..
-    /// </param>
-    /// <param name="key">key.</param>
-    /// <param name="main">Defines whether the communication way is the main communication way for the contact..</param>
-    public ModelCommunicationWayUpdate(ModelCommunicationWayUpdateContact contact = default, TypeEnum? type = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelCommunicationWayUpdate" /> class.
+	/// </summary>
+	/// <param name="contact">contact.</param>
+	/// <param name="type">Type of the communication way.</param>
+	/// <param name="value">
+	///     The value of the communication way.&lt;br&gt;       For example the phone number, e-mail address or
+	///     website..
+	/// </param>
+	/// <param name="key">key.</param>
+	/// <param name="main">Defines whether the communication way is the main communication way for the contact..</param>
+	public ModelCommunicationWayUpdate(ModelCommunicationWayUpdateContact contact = default, TypeEnum? type = default,
 		string value = default, ModelCommunicationWayUpdateKey key = default, bool? main = default)
 	{
 		Contact = contact;
@@ -71,47 +71,47 @@ public class ModelCommunicationWayUpdate : IEquatable<ModelCommunicationWayUpdat
 		Main = main;
 	}
 
-    /// <summary>
-    ///     Type of the communication way
-    /// </summary>
-    /// <value>Type of the communication way</value>
-    [DataMember(Name = "type", EmitDefaultValue = false)]
+	/// <summary>
+	///     Type of the communication way
+	/// </summary>
+	/// <value>Type of the communication way</value>
+	[DataMember(Name = "type", EmitDefaultValue = false)]
 	public TypeEnum? Type { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Contact
-    /// </summary>
-    [DataMember(Name = "contact", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Contact
+	/// </summary>
+	[DataMember(Name = "contact", EmitDefaultValue = false)]
 	public ModelCommunicationWayUpdateContact Contact { get; set; }
 
 
-    /// <summary>
-    ///     The value of the communication way.&lt;br&gt;       For example the phone number, e-mail address or website.
-    /// </summary>
-    /// <value>The value of the communication way.&lt;br&gt;       For example the phone number, e-mail address or website.</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+	/// <summary>
+	///     The value of the communication way.&lt;br&gt;       For example the phone number, e-mail address or website.
+	/// </summary>
+	/// <value>The value of the communication way.&lt;br&gt;       For example the phone number, e-mail address or website.</value>
+	[DataMember(Name = "value", EmitDefaultValue = false)]
 	public string Value { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Key
-    /// </summary>
-    [DataMember(Name = "key", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Key
+	/// </summary>
+	[DataMember(Name = "key", EmitDefaultValue = false)]
 	public ModelCommunicationWayUpdateKey Key { get; set; }
 
-    /// <summary>
-    ///     Defines whether the communication way is the main communication way for the contact.
-    /// </summary>
-    /// <value>Defines whether the communication way is the main communication way for the contact.</value>
-    [DataMember(Name = "main", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines whether the communication way is the main communication way for the contact.
+	/// </summary>
+	/// <value>Defines whether the communication way is the main communication way for the contact.</value>
+	[DataMember(Name = "main", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? Main { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelCommunicationWayUpdate instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelCommunicationWayUpdate to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelCommunicationWayUpdate input)
+	/// <summary>
+	///     Returns true if ModelCommunicationWayUpdate instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelCommunicationWayUpdate to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelCommunicationWayUpdate input)
 	{
 		if (input == null)
 			return false;
@@ -144,21 +144,21 @@ public class ModelCommunicationWayUpdate : IEquatable<ModelCommunicationWayUpdat
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelCommunicationWayUpdate {\n");
@@ -171,30 +171,30 @@ public class ModelCommunicationWayUpdate : IEquatable<ModelCommunicationWayUpdat
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelCommunicationWayUpdate);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

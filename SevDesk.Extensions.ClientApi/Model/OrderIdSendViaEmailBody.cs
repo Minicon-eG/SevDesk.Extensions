@@ -21,20 +21,20 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class OrderIdSendViaEmailBody : IEquatable<OrderIdSendViaEmailBody>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="OrderIdSendViaEmailBody" /> class.
-    /// </summary>
-    /// <param name="toEmail">The recipient of the email. (required).</param>
-    /// <param name="subject">The subject of the email. (required).</param>
-    /// <param name="text">The text of the email. Can contain html. (required).</param>
-    /// <param name="copy">Should a copy of this email be sent to you?.</param>
-    /// <param name="additionalAttachments">
-    ///     Additional attachments to the mail. String of IDs of existing documents in your
-    ///     *                      sevdesk account separated by &#x27;,&#x27;.
-    /// </param>
-    /// <param name="ccEmail">String of mail addresses to be put as cc separated by &#x27;,&#x27;.</param>
-    /// <param name="bccEmail">String of mail addresses to be put as bcc separated by &#x27;,&#x27;.</param>
-    public OrderIdSendViaEmailBody(string toEmail = default, string subject = default, string text = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="OrderIdSendViaEmailBody" /> class.
+	/// </summary>
+	/// <param name="toEmail">The recipient of the email. (required).</param>
+	/// <param name="subject">The subject of the email. (required).</param>
+	/// <param name="text">The text of the email. Can contain html. (required).</param>
+	/// <param name="copy">Should a copy of this email be sent to you?.</param>
+	/// <param name="additionalAttachments">
+	///     Additional attachments to the mail. String of IDs of existing documents in your
+	///     *                      sevdesk account separated by &#x27;,&#x27;.
+	/// </param>
+	/// <param name="ccEmail">String of mail addresses to be put as cc separated by &#x27;,&#x27;.</param>
+	/// <param name="bccEmail">String of mail addresses to be put as bcc separated by &#x27;,&#x27;.</param>
+	public OrderIdSendViaEmailBody(string toEmail = default, string subject = default, string text = default,
 		bool? copy = default, string additionalAttachments = default, string ccEmail = default,
 		string bccEmail = default)
 	{
@@ -59,66 +59,66 @@ public class OrderIdSendViaEmailBody : IEquatable<OrderIdSendViaEmailBody>, IVal
 		BccEmail = bccEmail;
 	}
 
-    /// <summary>
-    ///     The recipient of the email.
-    /// </summary>
-    /// <value>The recipient of the email.</value>
-    [DataMember(Name = "toEmail", EmitDefaultValue = false)]
+	/// <summary>
+	///     The recipient of the email.
+	/// </summary>
+	/// <value>The recipient of the email.</value>
+	[DataMember(Name = "toEmail", EmitDefaultValue = false)]
 	public string ToEmail { get; set; }
 
-    /// <summary>
-    ///     The subject of the email.
-    /// </summary>
-    /// <value>The subject of the email.</value>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+	/// <summary>
+	///     The subject of the email.
+	/// </summary>
+	/// <value>The subject of the email.</value>
+	[DataMember(Name = "subject", EmitDefaultValue = false)]
 	public string Subject { get; set; }
 
-    /// <summary>
-    ///     The text of the email. Can contain html.
-    /// </summary>
-    /// <value>The text of the email. Can contain html.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+	/// <summary>
+	///     The text of the email. Can contain html.
+	/// </summary>
+	/// <value>The text of the email. Can contain html.</value>
+	[DataMember(Name = "text", EmitDefaultValue = false)]
 	public string Text { get; set; }
 
-    /// <summary>
-    ///     Should a copy of this email be sent to you?
-    /// </summary>
-    /// <value>Should a copy of this email be sent to you?</value>
-    [DataMember(Name = "copy", EmitDefaultValue = false)]
+	/// <summary>
+	///     Should a copy of this email be sent to you?
+	/// </summary>
+	/// <value>Should a copy of this email be sent to you?</value>
+	[DataMember(Name = "copy", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? Copy { get; set; }
 
-    /// <summary>
-    ///     Additional attachments to the mail. String of IDs of existing documents in your       *
-    ///     sevdesk account separated by &#x27;,&#x27;
-    /// </summary>
-    /// <value>
-    ///     Additional attachments to the mail. String of IDs of existing documents in your       *
-    ///     sevdesk account separated by &#x27;,&#x27;
-    /// </value>
-    [DataMember(Name = "additionalAttachments", EmitDefaultValue = false)]
+	/// <summary>
+	///     Additional attachments to the mail. String of IDs of existing documents in your       *
+	///     sevdesk account separated by &#x27;,&#x27;
+	/// </summary>
+	/// <value>
+	///     Additional attachments to the mail. String of IDs of existing documents in your       *
+	///     sevdesk account separated by &#x27;,&#x27;
+	/// </value>
+	[DataMember(Name = "additionalAttachments", EmitDefaultValue = false)]
 	public string AdditionalAttachments { get; set; }
 
-    /// <summary>
-    ///     String of mail addresses to be put as cc separated by &#x27;,&#x27;
-    /// </summary>
-    /// <value>String of mail addresses to be put as cc separated by &#x27;,&#x27;</value>
-    [DataMember(Name = "ccEmail", EmitDefaultValue = false)]
+	/// <summary>
+	///     String of mail addresses to be put as cc separated by &#x27;,&#x27;
+	/// </summary>
+	/// <value>String of mail addresses to be put as cc separated by &#x27;,&#x27;</value>
+	[DataMember(Name = "ccEmail", EmitDefaultValue = false)]
 	public string CcEmail { get; set; }
 
-    /// <summary>
-    ///     String of mail addresses to be put as bcc separated by &#x27;,&#x27;
-    /// </summary>
-    /// <value>String of mail addresses to be put as bcc separated by &#x27;,&#x27;</value>
-    [DataMember(Name = "bccEmail", EmitDefaultValue = false)]
+	/// <summary>
+	///     String of mail addresses to be put as bcc separated by &#x27;,&#x27;
+	/// </summary>
+	/// <value>String of mail addresses to be put as bcc separated by &#x27;,&#x27;</value>
+	[DataMember(Name = "bccEmail", EmitDefaultValue = false)]
 	public string BccEmail { get; set; }
 
-    /// <summary>
-    ///     Returns true if OrderIdSendViaEmailBody instances are equal
-    /// </summary>
-    /// <param name="input">Instance of OrderIdSendViaEmailBody to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(OrderIdSendViaEmailBody input)
+	/// <summary>
+	///     Returns true if OrderIdSendViaEmailBody instances are equal
+	/// </summary>
+	/// <param name="input">Instance of OrderIdSendViaEmailBody to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(OrderIdSendViaEmailBody input)
 	{
 		if (input == null)
 			return false;
@@ -161,21 +161,21 @@ public class OrderIdSendViaEmailBody : IEquatable<OrderIdSendViaEmailBody>, IVal
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class OrderIdSendViaEmailBody {\n");
@@ -190,30 +190,30 @@ public class OrderIdSendViaEmailBody : IEquatable<OrderIdSendViaEmailBody>, IVal
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as OrderIdSendViaEmailBody);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

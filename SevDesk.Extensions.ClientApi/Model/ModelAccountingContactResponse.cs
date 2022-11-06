@@ -21,78 +21,78 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelAccountingContactResponse : IEquatable<ModelAccountingContactResponse>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelAccountingContactResponse" /> class.
-    /// </summary>
-    /// <param name="contact">contact.</param>
-    /// <param name="sevClient">sevClient.</param>
-    public ModelAccountingContactResponse(ModelAccountingContactResponseContact contact = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelAccountingContactResponse" /> class.
+	/// </summary>
+	/// <param name="contact">contact.</param>
+	/// <param name="sevClient">sevClient.</param>
+	public ModelAccountingContactResponse(ModelAccountingContactResponseContact contact = default,
 		ModelAccountingContactResponseSevClient sevClient = default)
 	{
 		Contact = contact;
 		SevClient = sevClient;
 	}
 
-    /// <summary>
-    ///     The accounting contact id
-    /// </summary>
-    /// <value>The accounting contact id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     The accounting contact id
+	/// </summary>
+	/// <value>The accounting contact id</value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public string Id { get; private set; }
 
-    /// <summary>
-    ///     The accounting contact object name
-    /// </summary>
-    /// <value>The accounting contact object name</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     The accounting contact object name
+	/// </summary>
+	/// <value>The accounting contact object name</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; private set; }
 
-    /// <summary>
-    ///     Date of accounting contact creation
-    /// </summary>
-    /// <value>Date of accounting contact creation</value>
-    [DataMember(Name = "create", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of accounting contact creation
+	/// </summary>
+	/// <value>Date of accounting contact creation</value>
+	[DataMember(Name = "create", EmitDefaultValue = false)]
 	public DateTime? Create { get; private set; }
 
-    /// <summary>
-    ///     Date of last accounting contact update
-    /// </summary>
-    /// <value>Date of last accounting contact update</value>
-    [DataMember(Name = "update", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of last accounting contact update
+	/// </summary>
+	/// <value>Date of last accounting contact update</value>
+	[DataMember(Name = "update", EmitDefaultValue = false)]
 	public DateTime? Update { get; private set; }
 
-    /// <summary>
-    ///     Gets or Sets Contact
-    /// </summary>
-    [DataMember(Name = "contact", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Contact
+	/// </summary>
+	[DataMember(Name = "contact", EmitDefaultValue = false)]
 	public ModelAccountingContactResponseContact Contact { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets SevClientReference
-    /// </summary>
-    [DataMember(Name = "sevClient", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets SevClientReference
+	/// </summary>
+	[DataMember(Name = "sevClient", EmitDefaultValue = false)]
 	public ModelAccountingContactResponseSevClient SevClient { get; set; }
 
-    /// <summary>
-    ///     Debitor number of the accounting contact.
-    /// </summary>
-    /// <value>Debitor number of the accounting contact.</value>
-    [DataMember(Name = "debitorNumber", EmitDefaultValue = false)]
+	/// <summary>
+	///     Debitor number of the accounting contact.
+	/// </summary>
+	/// <value>Debitor number of the accounting contact.</value>
+	[DataMember(Name = "debitorNumber", EmitDefaultValue = false)]
 	public string DebitorNumber { get; private set; }
 
-    /// <summary>
-    ///     Creditor number of the accounting contact.
-    /// </summary>
-    /// <value>Creditor number of the accounting contact.</value>
-    [DataMember(Name = "creditorNumber", EmitDefaultValue = false)]
+	/// <summary>
+	///     Creditor number of the accounting contact.
+	/// </summary>
+	/// <value>Creditor number of the accounting contact.</value>
+	[DataMember(Name = "creditorNumber", EmitDefaultValue = false)]
 	public string CreditorNumber { get; private set; }
 
-    /// <summary>
-    ///     Returns true if ModelAccountingContactResponse instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelAccountingContactResponse to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelAccountingContactResponse input)
+	/// <summary>
+	///     Returns true if ModelAccountingContactResponse instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelAccountingContactResponse to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelAccountingContactResponse input)
 	{
 		if (input == null)
 			return false;
@@ -140,21 +140,21 @@ public class ModelAccountingContactResponse : IEquatable<ModelAccountingContactR
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelAccountingContactResponse {\n");
@@ -170,30 +170,30 @@ public class ModelAccountingContactResponse : IEquatable<ModelAccountingContactR
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelAccountingContactResponse);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

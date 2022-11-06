@@ -21,11 +21,11 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class FactoryCreateInvoiceReminderBody : IEquatable<FactoryCreateInvoiceReminderBody>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="FactoryCreateInvoiceReminderBody" /> class.
-    /// </summary>
-    /// <param name="invoice">invoice (required).</param>
-    public FactoryCreateInvoiceReminderBody(InvoiceFactorycreateInvoiceReminderInvoice invoice = default)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="FactoryCreateInvoiceReminderBody" /> class.
+	/// </summary>
+	/// <param name="invoice">invoice (required).</param>
+	public FactoryCreateInvoiceReminderBody(InvoiceFactorycreateInvoiceReminderInvoice invoice = default)
 	{
 		// to ensure "invoice" is required (not null)
 		if (invoice == null)
@@ -34,18 +34,18 @@ public class FactoryCreateInvoiceReminderBody : IEquatable<FactoryCreateInvoiceR
 		Invoice = invoice;
 	}
 
-    /// <summary>
-    ///     Gets or Sets Invoice
-    /// </summary>
-    [DataMember(Name = "invoice", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Invoice
+	/// </summary>
+	[DataMember(Name = "invoice", EmitDefaultValue = false)]
 	public InvoiceFactorycreateInvoiceReminderInvoice Invoice { get; set; }
 
-    /// <summary>
-    ///     Returns true if FactoryCreateInvoiceReminderBody instances are equal
-    /// </summary>
-    /// <param name="input">Instance of FactoryCreateInvoiceReminderBody to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(FactoryCreateInvoiceReminderBody input)
+	/// <summary>
+	///     Returns true if FactoryCreateInvoiceReminderBody instances are equal
+	/// </summary>
+	/// <param name="input">Instance of FactoryCreateInvoiceReminderBody to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(FactoryCreateInvoiceReminderBody input)
 	{
 		if (input == null)
 			return false;
@@ -56,21 +56,21 @@ public class FactoryCreateInvoiceReminderBody : IEquatable<FactoryCreateInvoiceR
 			 Invoice.Equals(input.Invoice));
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class FactoryCreateInvoiceReminderBody {\n");
@@ -79,30 +79,30 @@ public class FactoryCreateInvoiceReminderBody : IEquatable<FactoryCreateInvoiceR
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as FactoryCreateInvoiceReminderBody);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

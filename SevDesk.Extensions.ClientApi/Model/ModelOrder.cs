@@ -22,165 +22,165 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelOrder : IEquatable<ModelOrder>, IValidatableObject
 {
-    /// <summary>
-    ///     Type of the order. For more information on the different types, check      &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Types-and-status-of-orders&#x27;&gt;this&lt;/a&gt;
-    /// </summary>
-    /// <value>
-    ///     Type of the order. For more information on the different types, check      &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Types-and-status-of-orders&#x27;&gt;this&lt;/a&gt;
-    /// </value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Type of the order. For more information on the different types, check      &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Types-and-status-of-orders&#x27;&gt;this&lt;/a&gt;
+	/// </summary>
+	/// <value>
+	///     Type of the order. For more information on the different types, check      &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Types-and-status-of-orders&#x27;&gt;this&lt;/a&gt;
+	/// </value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum OrderTypeEnum
 	{
-        /// <summary>
-        ///     Enum AN for value: AN
-        /// </summary>
-        [EnumMember(Value = "AN")] AN = 1,
+		/// <summary>
+		///     Enum AN for value: AN
+		/// </summary>
+		[EnumMember(Value = "AN")] AN = 1,
 
-        /// <summary>
-        ///     Enum AB for value: AB
-        /// </summary>
-        [EnumMember(Value = "AB")] AB = 2,
+		/// <summary>
+		///     Enum AB for value: AB
+		/// </summary>
+		[EnumMember(Value = "AB")] AB = 2,
 
-        /// <summary>
-        ///     Enum LI for value: LI
-        /// </summary>
-        [EnumMember(Value = "LI")] LI = 3
+		/// <summary>
+		///     Enum LI for value: LI
+		/// </summary>
+		[EnumMember(Value = "LI")] LI = 3
 	}
 
-    /// <summary>
-    ///     Type which was used to send the order. IMPORTANT: Please refer to the order section of the       *     API-Overview
-    ///     to understand how this attribute can be used before using it!
-    /// </summary>
-    /// <value>
-    ///     Type which was used to send the order. IMPORTANT: Please refer to the order section of the       *
-    ///     API-Overview to understand how this attribute can be used before using it!
-    /// </value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Type which was used to send the order. IMPORTANT: Please refer to the order section of the       *     API-Overview
+	///     to understand how this attribute can be used before using it!
+	/// </summary>
+	/// <value>
+	///     Type which was used to send the order. IMPORTANT: Please refer to the order section of the       *
+	///     API-Overview to understand how this attribute can be used before using it!
+	/// </value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum SendTypeEnum
 	{
-        /// <summary>
-        ///     Enum VPR for value: VPR
-        /// </summary>
-        [EnumMember(Value = "VPR")] VPR = 1,
+		/// <summary>
+		///     Enum VPR for value: VPR
+		/// </summary>
+		[EnumMember(Value = "VPR")] VPR = 1,
 
-        /// <summary>
-        ///     Enum VPDF for value: VPDF
-        /// </summary>
-        [EnumMember(Value = "VPDF")] VPDF = 2,
+		/// <summary>
+		///     Enum VPDF for value: VPDF
+		/// </summary>
+		[EnumMember(Value = "VPDF")] VPDF = 2,
 
-        /// <summary>
-        ///     Enum VM for value: VM
-        /// </summary>
-        [EnumMember(Value = "VM")] VM = 3,
+		/// <summary>
+		///     Enum VM for value: VM
+		/// </summary>
+		[EnumMember(Value = "VM")] VM = 3,
 
-        /// <summary>
-        ///     Enum VP for value: VP
-        /// </summary>
-        [EnumMember(Value = "VP")] VP = 4
+		/// <summary>
+		///     Enum VP for value: VP
+		/// </summary>
+		[EnumMember(Value = "VP")] VP = 4
 	}
 
-    /// <summary>
-    ///     Please have a look in       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-orders&#x27;
-    ///     &gt;status of orders&lt;/a&gt;      to see what the different status codes mean
-    /// </summary>
-    /// <value>
-    ///     Please have a look in       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-orders
-    ///     &#x27;&gt;status of orders&lt;/a&gt;      to see what the different status codes mean
-    /// </value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Please have a look in       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-orders&#x27;
+	///     &gt;status of orders&lt;/a&gt;      to see what the different status codes mean
+	/// </summary>
+	/// <value>
+	///     Please have a look in       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-orders
+	///     &#x27;&gt;status of orders&lt;/a&gt;      to see what the different status codes mean
+	/// </value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum StatusEnum
 	{
-        /// <summary>
-        ///     Enum NUMBER_100 for value: 100
-        /// </summary>
-        [EnumMember(Value = "100")] NUMBER_100 = 1,
+		/// <summary>
+		///     Enum NUMBER_100 for value: 100
+		/// </summary>
+		[EnumMember(Value = "100")] NUMBER_100 = 1,
 
-        /// <summary>
-        ///     Enum NUMBER_200 for value: 200
-        /// </summary>
-        [EnumMember(Value = "200")] NUMBER_200 = 2,
+		/// <summary>
+		///     Enum NUMBER_200 for value: 200
+		/// </summary>
+		[EnumMember(Value = "200")] NUMBER_200 = 2,
 
-        /// <summary>
-        ///     Enum NUMBER_300 for value: 300
-        /// </summary>
-        [EnumMember(Value = "300")] NUMBER_300 = 3,
+		/// <summary>
+		///     Enum NUMBER_300 for value: 300
+		/// </summary>
+		[EnumMember(Value = "300")] NUMBER_300 = 3,
 
-        /// <summary>
-        ///     Enum NUMBER_500 for value: 500
-        /// </summary>
-        [EnumMember(Value = "500")] NUMBER_500 = 4,
+		/// <summary>
+		///     Enum NUMBER_500 for value: 500
+		/// </summary>
+		[EnumMember(Value = "500")] NUMBER_500 = 4,
 
-        /// <summary>
-        ///     Enum NUMBER_750 for value: 750
-        /// </summary>
-        [EnumMember(Value = "750")] NUMBER_750 = 5,
+		/// <summary>
+		///     Enum NUMBER_750 for value: 750
+		/// </summary>
+		[EnumMember(Value = "750")] NUMBER_750 = 5,
 
-        /// <summary>
-        ///     Enum NUMBER_1000 for value: 1000
-        /// </summary>
-        [EnumMember(Value = "1000")] NUMBER_1000 = 6
+		/// <summary>
+		///     Enum NUMBER_1000 for value: 1000
+		/// </summary>
+		[EnumMember(Value = "1000")] NUMBER_1000 = 6
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelOrder" /> class.
-    /// </summary>
-    /// <param name="objectName">The order object name.</param>
-    /// <param name="mapAll">mapAll (required).</param>
-    /// <param name="orderNumber">The order number (required).</param>
-    /// <param name="contact">contact (required).</param>
-    /// <param name="orderDate">Needs to be provided as timestamp or dd.mm.yyyy (required).</param>
-    /// <param name="status">
-    ///     Please have a look in       &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Types-and-status-of-orders&#x27;&gt;status of orders&lt;/a&gt;      to see what the
-    ///     different status codes mean (required).
-    /// </param>
-    /// <param name="header">Normally consist of prefix plus the order number (required).</param>
-    /// <param name="headText">Certain html tags can be used here to format your text.</param>
-    /// <param name="footText">Certain html tags can be used here to format your text.</param>
-    /// <param name="addressCountry">addressCountry (required).</param>
-    /// <param name="deliveryTerms">Delivery terms of the order.</param>
-    /// <param name="paymentTerms">Payment terms of the order.</param>
-    /// <param name="version">
-    ///     Version of the order.&lt;br&gt;      Can be used if you have multiple drafts for the same order.
-    ///     &lt;br&gt;      Should start with 0 (required).
-    /// </param>
-    /// <param name="smallSettlement">
-    ///     Defines if the client uses the small settlement scheme.      If yes, the order must not
-    ///     contain any vat.
-    /// </param>
-    /// <param name="contactPerson">contactPerson (required).</param>
-    /// <param name="taxRate">Is overwritten by order position tax rates (required).</param>
-    /// <param name="taxSet">taxSet.</param>
-    /// <param name="taxText">A common tax text would be &#x27;Umsatzsteuer 19%&#x27; (required).</param>
-    /// <param name="taxType">
-    ///     Tax type of the order. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu -
-    ///     Steuerfreie innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des
-    ///     Leistungsempfängers (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT
-    ///     according to §19 1 UStG Tax rates are heavily connected to the tax type used. (required).
-    /// </param>
-    /// <param name="orderType">
-    ///     Type of the order. For more information on the different types, check      &lt;a href&#x3D;
-    ///     &#x27;https://api.sevdesk.de/#section/Types-and-status-of-orders&#x27;&gt;this&lt;/a&gt;   .
-    /// </param>
-    /// <param name="sendDate">The date the order was sent to the customer.</param>
-    /// <param name="address">
-    ///     Complete address of the recipient including name, street, city, zip and country.&lt;br&gt;
-    ///     Line breaks can be used and will be displayed on the invoice pdf..
-    /// </param>
-    /// <param name="currency">Currency used in the order. Needs to be currency code according to ISO-4217 (required).</param>
-    /// <param name="customerInternalNote">
-    ///     Internal note of the customer. Contains data entered into field &#x27;
-    ///     Referenz/Bestellnummer&#x27;.
-    /// </param>
-    /// <param name="showNet">If true, the net amount of each position will be shown on the order. Otherwise gross amount.</param>
-    /// <param name="sendType">
-    ///     Type which was used to send the order. IMPORTANT: Please refer to the order section of the
-    ///     *     API-Overview to understand how this attribute can be used before using it!.
-    /// </param>
-    /// <param name="origin">origin.</param>
-    public ModelOrder(string objectName = default, bool? mapAll = default, string orderNumber = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelOrder" /> class.
+	/// </summary>
+	/// <param name="objectName">The order object name.</param>
+	/// <param name="mapAll">mapAll (required).</param>
+	/// <param name="orderNumber">The order number (required).</param>
+	/// <param name="contact">contact (required).</param>
+	/// <param name="orderDate">Needs to be provided as timestamp or dd.mm.yyyy (required).</param>
+	/// <param name="status">
+	///     Please have a look in       &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Types-and-status-of-orders&#x27;&gt;status of orders&lt;/a&gt;      to see what the
+	///     different status codes mean (required).
+	/// </param>
+	/// <param name="header">Normally consist of prefix plus the order number (required).</param>
+	/// <param name="headText">Certain html tags can be used here to format your text.</param>
+	/// <param name="footText">Certain html tags can be used here to format your text.</param>
+	/// <param name="addressCountry">addressCountry (required).</param>
+	/// <param name="deliveryTerms">Delivery terms of the order.</param>
+	/// <param name="paymentTerms">Payment terms of the order.</param>
+	/// <param name="version">
+	///     Version of the order.&lt;br&gt;      Can be used if you have multiple drafts for the same order.
+	///     &lt;br&gt;      Should start with 0 (required).
+	/// </param>
+	/// <param name="smallSettlement">
+	///     Defines if the client uses the small settlement scheme.      If yes, the order must not
+	///     contain any vat.
+	/// </param>
+	/// <param name="contactPerson">contactPerson (required).</param>
+	/// <param name="taxRate">Is overwritten by order position tax rates (required).</param>
+	/// <param name="taxSet">taxSet.</param>
+	/// <param name="taxText">A common tax text would be &#x27;Umsatzsteuer 19%&#x27; (required).</param>
+	/// <param name="taxType">
+	///     Tax type of the order. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu -
+	///     Steuerfreie innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des
+	///     Leistungsempfängers (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT
+	///     according to §19 1 UStG Tax rates are heavily connected to the tax type used. (required).
+	/// </param>
+	/// <param name="orderType">
+	///     Type of the order. For more information on the different types, check      &lt;a href&#x3D;
+	///     &#x27;https://api.sevdesk.de/#section/Types-and-status-of-orders&#x27;&gt;this&lt;/a&gt;   .
+	/// </param>
+	/// <param name="sendDate">The date the order was sent to the customer.</param>
+	/// <param name="address">
+	///     Complete address of the recipient including name, street, city, zip and country.&lt;br&gt;
+	///     Line breaks can be used and will be displayed on the invoice pdf..
+	/// </param>
+	/// <param name="currency">Currency used in the order. Needs to be currency code according to ISO-4217 (required).</param>
+	/// <param name="customerInternalNote">
+	///     Internal note of the customer. Contains data entered into field &#x27;
+	///     Referenz/Bestellnummer&#x27;.
+	/// </param>
+	/// <param name="showNet">If true, the net amount of each position will be shown on the order. Otherwise gross amount.</param>
+	/// <param name="sendType">
+	///     Type which was used to send the order. IMPORTANT: Please refer to the order section of the
+	///     *     API-Overview to understand how this attribute can be used before using it!.
+	/// </param>
+	/// <param name="origin">origin.</param>
+	public ModelOrder(string objectName = default, bool? mapAll = default, string orderNumber = default,
 		ModelOrderContact contact = default, DateTime? orderDate = default, StatusEnum status = default,
 		string header = default, string headText = default, string footText = default,
 		ModelOrderAddressCountry addressCountry = default, string deliveryTerms = default,
@@ -259,250 +259,250 @@ public class ModelOrder : IEquatable<ModelOrder>, IValidatableObject
 		Origin = origin;
 	}
 
-    /// <summary>
-    ///     Please have a look in       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-orders&#x27;
-    ///     &gt;status of orders&lt;/a&gt;      to see what the different status codes mean
-    /// </summary>
-    /// <value>
-    ///     Please have a look in       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-orders
-    ///     &#x27;&gt;status of orders&lt;/a&gt;      to see what the different status codes mean
-    /// </value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+	/// <summary>
+	///     Please have a look in       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-orders&#x27;
+	///     &gt;status of orders&lt;/a&gt;      to see what the different status codes mean
+	/// </summary>
+	/// <value>
+	///     Please have a look in       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-orders
+	///     &#x27;&gt;status of orders&lt;/a&gt;      to see what the different status codes mean
+	/// </value>
+	[DataMember(Name = "status", EmitDefaultValue = false)]
 	public StatusEnum Status { get; set; }
 
-    /// <summary>
-    ///     Type of the order. For more information on the different types, check      &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Types-and-status-of-orders&#x27;&gt;this&lt;/a&gt;
-    /// </summary>
-    /// <value>
-    ///     Type of the order. For more information on the different types, check      &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Types-and-status-of-orders&#x27;&gt;this&lt;/a&gt;
-    /// </value>
-    [DataMember(Name = "orderType", EmitDefaultValue = false)]
+	/// <summary>
+	///     Type of the order. For more information on the different types, check      &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Types-and-status-of-orders&#x27;&gt;this&lt;/a&gt;
+	/// </summary>
+	/// <value>
+	///     Type of the order. For more information on the different types, check      &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Types-and-status-of-orders&#x27;&gt;this&lt;/a&gt;
+	/// </value>
+	[DataMember(Name = "orderType", EmitDefaultValue = false)]
 	public OrderTypeEnum? OrderType { get; set; }
 
-    /// <summary>
-    ///     Type which was used to send the order. IMPORTANT: Please refer to the order section of the       *     API-Overview
-    ///     to understand how this attribute can be used before using it!
-    /// </summary>
-    /// <value>
-    ///     Type which was used to send the order. IMPORTANT: Please refer to the order section of the       *
-    ///     API-Overview to understand how this attribute can be used before using it!
-    /// </value>
-    [DataMember(Name = "sendType", EmitDefaultValue = false)]
+	/// <summary>
+	///     Type which was used to send the order. IMPORTANT: Please refer to the order section of the       *     API-Overview
+	///     to understand how this attribute can be used before using it!
+	/// </summary>
+	/// <value>
+	///     Type which was used to send the order. IMPORTANT: Please refer to the order section of the       *
+	///     API-Overview to understand how this attribute can be used before using it!
+	/// </value>
+	[DataMember(Name = "sendType", EmitDefaultValue = false)]
 	public SendTypeEnum? SendType { get; set; }
 
-    /// <summary>
-    ///     The order id
-    /// </summary>
-    /// <value>The order id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     The order id
+	/// </summary>
+	/// <value>The order id</value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public int? Id { get; private set; }
 
-    /// <summary>
-    ///     The order object name
-    /// </summary>
-    /// <value>The order object name</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     The order object name
+	/// </summary>
+	/// <value>The order object name</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets MapAll
-    /// </summary>
-    [DataMember(Name = "mapAll", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets MapAll
+	/// </summary>
+	[DataMember(Name = "mapAll", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? MapAll { get; set; }
 
-    /// <summary>
-    ///     Date of order creation
-    /// </summary>
-    /// <value>Date of order creation</value>
-    [DataMember(Name = "create", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of order creation
+	/// </summary>
+	/// <value>Date of order creation</value>
+	[DataMember(Name = "create", EmitDefaultValue = false)]
 	public DateTime? Create { get; private set; }
 
-    /// <summary>
-    ///     Date of last order update
-    /// </summary>
-    /// <value>Date of last order update</value>
-    [DataMember(Name = "update", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of last order update
+	/// </summary>
+	/// <value>Date of last order update</value>
+	[DataMember(Name = "update", EmitDefaultValue = false)]
 	public DateTime? Update { get; private set; }
 
-    /// <summary>
-    ///     The order number
-    /// </summary>
-    /// <value>The order number</value>
-    [DataMember(Name = "orderNumber", EmitDefaultValue = false)]
+	/// <summary>
+	///     The order number
+	/// </summary>
+	/// <value>The order number</value>
+	[DataMember(Name = "orderNumber", EmitDefaultValue = false)]
 	public string OrderNumber { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Contact
-    /// </summary>
-    [DataMember(Name = "contact", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Contact
+	/// </summary>
+	[DataMember(Name = "contact", EmitDefaultValue = false)]
 	public ModelOrderContact Contact { get; set; }
 
-    /// <summary>
-    ///     Needs to be provided as timestamp or dd.mm.yyyy
-    /// </summary>
-    /// <value>Needs to be provided as timestamp or dd.mm.yyyy</value>
-    [DataMember(Name = "orderDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Needs to be provided as timestamp or dd.mm.yyyy
+	/// </summary>
+	/// <value>Needs to be provided as timestamp or dd.mm.yyyy</value>
+	[DataMember(Name = "orderDate", EmitDefaultValue = false)]
 	public DateTime? OrderDate { get; set; }
 
 
-    /// <summary>
-    ///     Normally consist of prefix plus the order number
-    /// </summary>
-    /// <value>Normally consist of prefix plus the order number</value>
-    [DataMember(Name = "header", EmitDefaultValue = false)]
+	/// <summary>
+	///     Normally consist of prefix plus the order number
+	/// </summary>
+	/// <value>Normally consist of prefix plus the order number</value>
+	[DataMember(Name = "header", EmitDefaultValue = false)]
 	public string Header { get; set; }
 
-    /// <summary>
-    ///     Certain html tags can be used here to format your text
-    /// </summary>
-    /// <value>Certain html tags can be used here to format your text</value>
-    [DataMember(Name = "headText", EmitDefaultValue = false)]
+	/// <summary>
+	///     Certain html tags can be used here to format your text
+	/// </summary>
+	/// <value>Certain html tags can be used here to format your text</value>
+	[DataMember(Name = "headText", EmitDefaultValue = false)]
 	public string HeadText { get; set; }
 
-    /// <summary>
-    ///     Certain html tags can be used here to format your text
-    /// </summary>
-    /// <value>Certain html tags can be used here to format your text</value>
-    [DataMember(Name = "footText", EmitDefaultValue = false)]
+	/// <summary>
+	///     Certain html tags can be used here to format your text
+	/// </summary>
+	/// <value>Certain html tags can be used here to format your text</value>
+	[DataMember(Name = "footText", EmitDefaultValue = false)]
 	public string FootText { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets AddressCountry
-    /// </summary>
-    [DataMember(Name = "addressCountry", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets AddressCountry
+	/// </summary>
+	[DataMember(Name = "addressCountry", EmitDefaultValue = false)]
 	public ModelOrderAddressCountry AddressCountry { get; set; }
 
-    /// <summary>
-    ///     Delivery terms of the order
-    /// </summary>
-    /// <value>Delivery terms of the order</value>
-    [DataMember(Name = "deliveryTerms", EmitDefaultValue = false)]
+	/// <summary>
+	///     Delivery terms of the order
+	/// </summary>
+	/// <value>Delivery terms of the order</value>
+	[DataMember(Name = "deliveryTerms", EmitDefaultValue = false)]
 	public string DeliveryTerms { get; set; }
 
-    /// <summary>
-    ///     Payment terms of the order
-    /// </summary>
-    /// <value>Payment terms of the order</value>
-    [DataMember(Name = "paymentTerms", EmitDefaultValue = false)]
+	/// <summary>
+	///     Payment terms of the order
+	/// </summary>
+	/// <value>Payment terms of the order</value>
+	[DataMember(Name = "paymentTerms", EmitDefaultValue = false)]
 	public string PaymentTerms { get; set; }
 
-    /// <summary>
-    ///     Version of the order.&lt;br&gt;      Can be used if you have multiple drafts for the same order.&lt;br&gt;
-    ///     Should start with 0
-    /// </summary>
-    /// <value>
-    ///     Version of the order.&lt;br&gt;      Can be used if you have multiple drafts for the same order.&lt;br&gt;
-    ///     Should start with 0
-    /// </value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+	/// <summary>
+	///     Version of the order.&lt;br&gt;      Can be used if you have multiple drafts for the same order.&lt;br&gt;
+	///     Should start with 0
+	/// </summary>
+	/// <value>
+	///     Version of the order.&lt;br&gt;      Can be used if you have multiple drafts for the same order.&lt;br&gt;
+	///     Should start with 0
+	/// </value>
+	[DataMember(Name = "version", EmitDefaultValue = false)]
 	public int? Version { get; set; }
 
-    /// <summary>
-    ///     Defines if the client uses the small settlement scheme.      If yes, the order must not contain any vat
-    /// </summary>
-    /// <value>Defines if the client uses the small settlement scheme.      If yes, the order must not contain any vat</value>
-    [DataMember(Name = "smallSettlement", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines if the client uses the small settlement scheme.      If yes, the order must not contain any vat
+	/// </summary>
+	/// <value>Defines if the client uses the small settlement scheme.      If yes, the order must not contain any vat</value>
+	[DataMember(Name = "smallSettlement", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? SmallSettlement { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets ContactPerson
-    /// </summary>
-    [DataMember(Name = "contactPerson", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets ContactPerson
+	/// </summary>
+	[DataMember(Name = "contactPerson", EmitDefaultValue = false)]
 	public ModelOrderContactPerson ContactPerson { get; set; }
 
-    /// <summary>
-    ///     Is overwritten by order position tax rates
-    /// </summary>
-    /// <value>Is overwritten by order position tax rates</value>
-    [DataMember(Name = "taxRate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Is overwritten by order position tax rates
+	/// </summary>
+	/// <value>Is overwritten by order position tax rates</value>
+	[DataMember(Name = "taxRate", EmitDefaultValue = false)]
 	public decimal? TaxRate { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets TaxSet
-    /// </summary>
-    [DataMember(Name = "taxSet", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets TaxSet
+	/// </summary>
+	[DataMember(Name = "taxSet", EmitDefaultValue = false)]
 	public ModelOrderTaxSet TaxSet { get; set; }
 
-    /// <summary>
-    ///     A common tax text would be &#x27;Umsatzsteuer 19%&#x27;
-    /// </summary>
-    /// <value>A common tax text would be &#x27;Umsatzsteuer 19%&#x27;</value>
-    [DataMember(Name = "taxText", EmitDefaultValue = false)]
+	/// <summary>
+	///     A common tax text would be &#x27;Umsatzsteuer 19%&#x27;
+	/// </summary>
+	/// <value>A common tax text would be &#x27;Umsatzsteuer 19%&#x27;</value>
+	[DataMember(Name = "taxText", EmitDefaultValue = false)]
 	public string TaxText { get; set; }
 
-    /// <summary>
-    ///     Tax type of the order. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie
-    ///     innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers
-    ///     (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG
-    ///     Tax rates are heavily connected to the tax type used.
-    /// </summary>
-    /// <value>
-    ///     Tax type of the order. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie
-    ///     innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers
-    ///     (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG
-    ///     Tax rates are heavily connected to the tax type used.
-    /// </value>
-    [DataMember(Name = "taxType", EmitDefaultValue = false)]
+	/// <summary>
+	///     Tax type of the order. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie
+	///     innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers
+	///     (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG
+	///     Tax rates are heavily connected to the tax type used.
+	/// </summary>
+	/// <value>
+	///     Tax type of the order. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie
+	///     innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers
+	///     (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG
+	///     Tax rates are heavily connected to the tax type used.
+	/// </value>
+	[DataMember(Name = "taxType", EmitDefaultValue = false)]
 	public string TaxType { get; set; }
 
 
-    /// <summary>
-    ///     The date the order was sent to the customer
-    /// </summary>
-    /// <value>The date the order was sent to the customer</value>
-    [DataMember(Name = "sendDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     The date the order was sent to the customer
+	/// </summary>
+	/// <value>The date the order was sent to the customer</value>
+	[DataMember(Name = "sendDate", EmitDefaultValue = false)]
 	public DateTime? SendDate { get; set; }
 
-    /// <summary>
-    ///     Complete address of the recipient including name, street, city, zip and country.&lt;br&gt;       Line breaks can be
-    ///     used and will be displayed on the invoice pdf.
-    /// </summary>
-    /// <value>
-    ///     Complete address of the recipient including name, street, city, zip and country.&lt;br&gt;       Line breaks can
-    ///     be used and will be displayed on the invoice pdf.
-    /// </value>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+	/// <summary>
+	///     Complete address of the recipient including name, street, city, zip and country.&lt;br&gt;       Line breaks can be
+	///     used and will be displayed on the invoice pdf.
+	/// </summary>
+	/// <value>
+	///     Complete address of the recipient including name, street, city, zip and country.&lt;br&gt;       Line breaks can
+	///     be used and will be displayed on the invoice pdf.
+	/// </value>
+	[DataMember(Name = "address", EmitDefaultValue = false)]
 	public string Address { get; set; }
 
-    /// <summary>
-    ///     Currency used in the order. Needs to be currency code according to ISO-4217
-    /// </summary>
-    /// <value>Currency used in the order. Needs to be currency code according to ISO-4217</value>
-    [DataMember(Name = "currency", EmitDefaultValue = false)]
+	/// <summary>
+	///     Currency used in the order. Needs to be currency code according to ISO-4217
+	/// </summary>
+	/// <value>Currency used in the order. Needs to be currency code according to ISO-4217</value>
+	[DataMember(Name = "currency", EmitDefaultValue = false)]
 	public string Currency { get; set; }
 
-    /// <summary>
-    ///     Internal note of the customer. Contains data entered into field &#x27;Referenz/Bestellnummer&#x27;
-    /// </summary>
-    /// <value>Internal note of the customer. Contains data entered into field &#x27;Referenz/Bestellnummer&#x27;</value>
-    [DataMember(Name = "customerInternalNote", EmitDefaultValue = false)]
+	/// <summary>
+	///     Internal note of the customer. Contains data entered into field &#x27;Referenz/Bestellnummer&#x27;
+	/// </summary>
+	/// <value>Internal note of the customer. Contains data entered into field &#x27;Referenz/Bestellnummer&#x27;</value>
+	[DataMember(Name = "customerInternalNote", EmitDefaultValue = false)]
 	public string CustomerInternalNote { get; set; }
 
-    /// <summary>
-    ///     If true, the net amount of each position will be shown on the order. Otherwise gross amount
-    /// </summary>
-    /// <value>If true, the net amount of each position will be shown on the order. Otherwise gross amount</value>
-    [DataMember(Name = "showNet", EmitDefaultValue = false)]
+	/// <summary>
+	///     If true, the net amount of each position will be shown on the order. Otherwise gross amount
+	/// </summary>
+	/// <value>If true, the net amount of each position will be shown on the order. Otherwise gross amount</value>
+	[DataMember(Name = "showNet", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? ShowNet { get; set; }
 
 
-    /// <summary>
-    ///     Gets or Sets Origin
-    /// </summary>
-    [DataMember(Name = "origin", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Origin
+	/// </summary>
+	[DataMember(Name = "origin", EmitDefaultValue = false)]
 	public ModelOrderOrigin Origin { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelOrder instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelOrder to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelOrder input)
+	/// <summary>
+	///     Returns true if ModelOrder instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelOrder to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelOrder input)
 	{
 		if (input == null)
 			return false;
@@ -660,21 +660,21 @@ public class ModelOrder : IEquatable<ModelOrder>, IValidatableObject
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelOrder {\n");
@@ -712,30 +712,30 @@ public class ModelOrder : IEquatable<ModelOrder>, IValidatableObject
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelOrder);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

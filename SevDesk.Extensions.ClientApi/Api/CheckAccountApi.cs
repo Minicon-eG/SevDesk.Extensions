@@ -22,35 +22,35 @@ public class CheckAccountApi : ICheckAccountApi
 {
 	private ExceptionFactory _exceptionFactory = (name, response) => null;
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="CheckAccountApi" /> class.
-    /// </summary>
-    /// <returns></returns>
-    public CheckAccountApi(string basePath)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="CheckAccountApi" /> class.
+	/// </summary>
+	/// <returns></returns>
+	public CheckAccountApi(string basePath)
 	{
 		Configuration = new Configuration { BasePath = basePath };
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="CheckAccountApi" /> class
-    /// </summary>
-    /// <returns></returns>
-    public CheckAccountApi()
+	/// <summary>
+	///     Initializes a new instance of the <see cref="CheckAccountApi" /> class
+	/// </summary>
+	/// <returns></returns>
+	public CheckAccountApi()
 	{
 		Configuration = Configuration.Default;
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="CheckAccountApi" /> class
-    ///     using Configuration object
-    /// </summary>
-    /// <param name="configuration">An instance of Configuration</param>
-    /// <returns></returns>
-    public CheckAccountApi(Configuration configuration = null)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="CheckAccountApi" /> class
+	///     using Configuration object
+	/// </summary>
+	/// <param name="configuration">An instance of Configuration</param>
+	/// <returns></returns>
+	public CheckAccountApi(Configuration configuration = null)
 	{
 		if (configuration == null) // use the default one in Configuration
 			Configuration = Configuration.Default;
@@ -60,25 +60,25 @@ public class CheckAccountApi : ICheckAccountApi
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Gets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    public string GetBasePath()
+	/// <summary>
+	///     Gets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	public string GetBasePath()
 	{
 		return Configuration.ApiClient.RestClient.BaseUrl.ToString();
 	}
 
-    /// <summary>
-    ///     Gets or sets the configuration object
-    /// </summary>
-    /// <value>An instance of the Configuration</value>
-    public Configuration Configuration { get; set; }
+	/// <summary>
+	///     Gets or sets the configuration object
+	/// </summary>
+	/// <value>An instance of the Configuration</value>
+	public Configuration Configuration { get; set; }
 
-    /// <summary>
-    ///     Provides a factory method hook for the creation of exceptions.
-    /// </summary>
-    public ExceptionFactory ExceptionFactory
+	/// <summary>
+	///     Provides a factory method hook for the creation of exceptions.
+	/// </summary>
+	public ExceptionFactory ExceptionFactory
 	{
 		get
 		{
@@ -89,31 +89,31 @@ public class CheckAccountApi : ICheckAccountApi
 		set => _exceptionFactory = value;
 	}
 
-    /// <summary>
-    ///     Create a new check account Creates a new banking account on which transactions can be created.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the CheckAccount model! (optional)
-    /// </param>
-    /// <returns>InlineResponse20024</returns>
-    public InlineResponse20024 CreateCheckAccount(ModelCheckAccount body = null)
+	/// <summary>
+	///     Create a new check account Creates a new banking account on which transactions can be created.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the CheckAccount model! (optional)
+	/// </param>
+	/// <returns>InlineResponse20024</returns>
+	public InlineResponse20024 CreateCheckAccount(ModelCheckAccount body = null)
 	{
 		var localVarResponse = CreateCheckAccountWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new check account Creates a new banking account on which transactions can be created.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the CheckAccount model! (optional)
-    /// </param>
-    /// <returns>ApiResponse of InlineResponse20024</returns>
-    public ApiResponse<InlineResponse20024> CreateCheckAccountWithHttpInfo(ModelCheckAccount body = null)
+	/// <summary>
+	///     Create a new check account Creates a new banking account on which transactions can be created.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the CheckAccount model! (optional)
+	/// </param>
+	/// <returns>ApiResponse of InlineResponse20024</returns>
+	public ApiResponse<InlineResponse20024> CreateCheckAccountWithHttpInfo(ModelCheckAccount body = null)
 	{
 		var localVarPath = "/CheckAccount";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -166,31 +166,31 @@ public class CheckAccountApi : ICheckAccountApi
 			(InlineResponse20024)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20024)));
 	}
 
-    /// <summary>
-    ///     Create a new check account Creates a new banking account on which transactions can be created.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the CheckAccount model! (optional)
-    /// </param>
-    /// <returns>Task of InlineResponse20024</returns>
-    public async Task<InlineResponse20024> CreateCheckAccountAsync(ModelCheckAccount body = null)
+	/// <summary>
+	///     Create a new check account Creates a new banking account on which transactions can be created.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the CheckAccount model! (optional)
+	/// </param>
+	/// <returns>Task of InlineResponse20024</returns>
+	public async Task<InlineResponse20024> CreateCheckAccountAsync(ModelCheckAccount body = null)
 	{
 		var localVarResponse = await CreateCheckAccountAsyncWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new check account Creates a new banking account on which transactions can be created.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the CheckAccount model! (optional)
-    /// </param>
-    /// <returns>Task of ApiResponse (InlineResponse20024)</returns>
-    public async Task<ApiResponse<InlineResponse20024>> CreateCheckAccountAsyncWithHttpInfo(
+	/// <summary>
+	///     Create a new check account Creates a new banking account on which transactions can be created.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the CheckAccount model! (optional)
+	/// </param>
+	/// <returns>Task of ApiResponse (InlineResponse20024)</returns>
+	public async Task<ApiResponse<InlineResponse20024>> CreateCheckAccountAsyncWithHttpInfo(
 		ModelCheckAccount body = null)
 	{
 		var localVarPath = "/CheckAccount";
@@ -244,25 +244,25 @@ public class CheckAccountApi : ICheckAccountApi
 			(InlineResponse20024)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20024)));
 	}
 
-    /// <summary>
-    ///     Deletes a check account
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="checkAccountId">Id of check account to delete</param>
-    /// <returns>InlineResponse2003</returns>
-    public InlineResponse2003 DeleteCheckAccount(int? checkAccountId)
+	/// <summary>
+	///     Deletes a check account
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="checkAccountId">Id of check account to delete</param>
+	/// <returns>InlineResponse2003</returns>
+	public InlineResponse2003 DeleteCheckAccount(int? checkAccountId)
 	{
 		var localVarResponse = DeleteCheckAccountWithHttpInfo(checkAccountId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Deletes a check account
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="checkAccountId">Id of check account to delete</param>
-    /// <returns>ApiResponse of InlineResponse2003</returns>
-    public ApiResponse<InlineResponse2003> DeleteCheckAccountWithHttpInfo(int? checkAccountId)
+	/// <summary>
+	///     Deletes a check account
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="checkAccountId">Id of check account to delete</param>
+	/// <returns>ApiResponse of InlineResponse2003</returns>
+	public ApiResponse<InlineResponse2003> DeleteCheckAccountWithHttpInfo(int? checkAccountId)
 	{
 		// verify the required parameter 'checkAccountId' is set
 		if (checkAccountId == null)
@@ -318,25 +318,25 @@ public class CheckAccountApi : ICheckAccountApi
 			(InlineResponse2003)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2003)));
 	}
 
-    /// <summary>
-    ///     Deletes a check account
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="checkAccountId">Id of check account to delete</param>
-    /// <returns>Task of InlineResponse2003</returns>
-    public async Task<InlineResponse2003> DeleteCheckAccountAsync(int? checkAccountId)
+	/// <summary>
+	///     Deletes a check account
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="checkAccountId">Id of check account to delete</param>
+	/// <returns>Task of InlineResponse2003</returns>
+	public async Task<InlineResponse2003> DeleteCheckAccountAsync(int? checkAccountId)
 	{
 		var localVarResponse = await DeleteCheckAccountAsyncWithHttpInfo(checkAccountId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Deletes a check account
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="checkAccountId">Id of check account to delete</param>
-    /// <returns>Task of ApiResponse (InlineResponse2003)</returns>
-    public async Task<ApiResponse<InlineResponse2003>> DeleteCheckAccountAsyncWithHttpInfo(int? checkAccountId)
+	/// <summary>
+	///     Deletes a check account
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="checkAccountId">Id of check account to delete</param>
+	/// <returns>Task of ApiResponse (InlineResponse2003)</returns>
+	public async Task<ApiResponse<InlineResponse2003>> DeleteCheckAccountAsyncWithHttpInfo(int? checkAccountId)
 	{
 		// verify the required parameter 'checkAccountId' is set
 		if (checkAccountId == null)
@@ -392,31 +392,31 @@ public class CheckAccountApi : ICheckAccountApi
 			(InlineResponse2003)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2003)));
 	}
 
-    /// <summary>
-    ///     Get the balance at a given date Get the balance, calculated as the sum of all transactions sevDesk knows, up to and
-    ///     including the given date. Note that this balance does not have to be the actual bank account balance, e.g. if
-    ///     sevDesk did not import old transactions.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="checkAccountId">ID of check account</param>
-    /// <param name="date">Only consider transactions up to this date at 23:59:59</param>
-    /// <returns>InlineResponse20036</returns>
-    public InlineResponse20036 GetBalanceAtDate(int? checkAccountId, DateTime? date)
+	/// <summary>
+	///     Get the balance at a given date Get the balance, calculated as the sum of all transactions sevDesk knows, up to and
+	///     including the given date. Note that this balance does not have to be the actual bank account balance, e.g. if
+	///     sevDesk did not import old transactions.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="checkAccountId">ID of check account</param>
+	/// <param name="date">Only consider transactions up to this date at 23:59:59</param>
+	/// <returns>InlineResponse20036</returns>
+	public InlineResponse20036 GetBalanceAtDate(int? checkAccountId, DateTime? date)
 	{
 		var localVarResponse = GetBalanceAtDateWithHttpInfo(checkAccountId, date);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Get the balance at a given date Get the balance, calculated as the sum of all transactions sevDesk knows, up to and
-    ///     including the given date. Note that this balance does not have to be the actual bank account balance, e.g. if
-    ///     sevDesk did not import old transactions.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="checkAccountId">ID of check account</param>
-    /// <param name="date">Only consider transactions up to this date at 23:59:59</param>
-    /// <returns>ApiResponse of InlineResponse20036</returns>
-    public ApiResponse<InlineResponse20036> GetBalanceAtDateWithHttpInfo(int? checkAccountId, DateTime? date)
+	/// <summary>
+	///     Get the balance at a given date Get the balance, calculated as the sum of all transactions sevDesk knows, up to and
+	///     including the given date. Note that this balance does not have to be the actual bank account balance, e.g. if
+	///     sevDesk did not import old transactions.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="checkAccountId">ID of check account</param>
+	/// <param name="date">Only consider transactions up to this date at 23:59:59</param>
+	/// <returns>ApiResponse of InlineResponse20036</returns>
+	public ApiResponse<InlineResponse20036> GetBalanceAtDateWithHttpInfo(int? checkAccountId, DateTime? date)
 	{
 		// verify the required parameter 'checkAccountId' is set
 		if (checkAccountId == null)
@@ -479,31 +479,31 @@ public class CheckAccountApi : ICheckAccountApi
 			(InlineResponse20036)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20036)));
 	}
 
-    /// <summary>
-    ///     Get the balance at a given date Get the balance, calculated as the sum of all transactions sevDesk knows, up to and
-    ///     including the given date. Note that this balance does not have to be the actual bank account balance, e.g. if
-    ///     sevDesk did not import old transactions.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="checkAccountId">ID of check account</param>
-    /// <param name="date">Only consider transactions up to this date at 23:59:59</param>
-    /// <returns>Task of InlineResponse20036</returns>
-    public async Task<InlineResponse20036> GetBalanceAtDateAsync(int? checkAccountId, DateTime? date)
+	/// <summary>
+	///     Get the balance at a given date Get the balance, calculated as the sum of all transactions sevDesk knows, up to and
+	///     including the given date. Note that this balance does not have to be the actual bank account balance, e.g. if
+	///     sevDesk did not import old transactions.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="checkAccountId">ID of check account</param>
+	/// <param name="date">Only consider transactions up to this date at 23:59:59</param>
+	/// <returns>Task of InlineResponse20036</returns>
+	public async Task<InlineResponse20036> GetBalanceAtDateAsync(int? checkAccountId, DateTime? date)
 	{
 		var localVarResponse = await GetBalanceAtDateAsyncWithHttpInfo(checkAccountId, date);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Get the balance at a given date Get the balance, calculated as the sum of all transactions sevDesk knows, up to and
-    ///     including the given date. Note that this balance does not have to be the actual bank account balance, e.g. if
-    ///     sevDesk did not import old transactions.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="checkAccountId">ID of check account</param>
-    /// <param name="date">Only consider transactions up to this date at 23:59:59</param>
-    /// <returns>Task of ApiResponse (InlineResponse20036)</returns>
-    public async Task<ApiResponse<InlineResponse20036>> GetBalanceAtDateAsyncWithHttpInfo(int? checkAccountId,
+	/// <summary>
+	///     Get the balance at a given date Get the balance, calculated as the sum of all transactions sevDesk knows, up to and
+	///     including the given date. Note that this balance does not have to be the actual bank account balance, e.g. if
+	///     sevDesk did not import old transactions.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="checkAccountId">ID of check account</param>
+	/// <param name="date">Only consider transactions up to this date at 23:59:59</param>
+	/// <returns>Task of ApiResponse (InlineResponse20036)</returns>
+	public async Task<ApiResponse<InlineResponse20036>> GetBalanceAtDateAsyncWithHttpInfo(int? checkAccountId,
 		DateTime? date)
 	{
 		// verify the required parameter 'checkAccountId' is set
@@ -567,25 +567,25 @@ public class CheckAccountApi : ICheckAccountApi
 			(InlineResponse20036)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20036)));
 	}
 
-    /// <summary>
-    ///     Find check account by ID Retrieve an existing check account
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="checkAccountId">ID of check account</param>
-    /// <returns>InlineResponse20024</returns>
-    public InlineResponse20024 GetCheckAccountById(int? checkAccountId)
+	/// <summary>
+	///     Find check account by ID Retrieve an existing check account
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="checkAccountId">ID of check account</param>
+	/// <returns>InlineResponse20024</returns>
+	public InlineResponse20024 GetCheckAccountById(int? checkAccountId)
 	{
 		var localVarResponse = GetCheckAccountByIdWithHttpInfo(checkAccountId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find check account by ID Retrieve an existing check account
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="checkAccountId">ID of check account</param>
-    /// <returns>ApiResponse of InlineResponse20024</returns>
-    public ApiResponse<InlineResponse20024> GetCheckAccountByIdWithHttpInfo(int? checkAccountId)
+	/// <summary>
+	///     Find check account by ID Retrieve an existing check account
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="checkAccountId">ID of check account</param>
+	/// <returns>ApiResponse of InlineResponse20024</returns>
+	public ApiResponse<InlineResponse20024> GetCheckAccountByIdWithHttpInfo(int? checkAccountId)
 	{
 		// verify the required parameter 'checkAccountId' is set
 		if (checkAccountId == null)
@@ -641,25 +641,25 @@ public class CheckAccountApi : ICheckAccountApi
 			(InlineResponse20024)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20024)));
 	}
 
-    /// <summary>
-    ///     Find check account by ID Retrieve an existing check account
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="checkAccountId">ID of check account</param>
-    /// <returns>Task of InlineResponse20024</returns>
-    public async Task<InlineResponse20024> GetCheckAccountByIdAsync(int? checkAccountId)
+	/// <summary>
+	///     Find check account by ID Retrieve an existing check account
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="checkAccountId">ID of check account</param>
+	/// <returns>Task of InlineResponse20024</returns>
+	public async Task<InlineResponse20024> GetCheckAccountByIdAsync(int? checkAccountId)
 	{
 		var localVarResponse = await GetCheckAccountByIdAsyncWithHttpInfo(checkAccountId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find check account by ID Retrieve an existing check account
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="checkAccountId">ID of check account</param>
-    /// <returns>Task of ApiResponse (InlineResponse20024)</returns>
-    public async Task<ApiResponse<InlineResponse20024>> GetCheckAccountByIdAsyncWithHttpInfo(int? checkAccountId)
+	/// <summary>
+	///     Find check account by ID Retrieve an existing check account
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="checkAccountId">ID of check account</param>
+	/// <returns>Task of ApiResponse (InlineResponse20024)</returns>
+	public async Task<ApiResponse<InlineResponse20024>> GetCheckAccountByIdAsyncWithHttpInfo(int? checkAccountId)
 	{
 		// verify the required parameter 'checkAccountId' is set
 		if (checkAccountId == null)
@@ -715,23 +715,23 @@ public class CheckAccountApi : ICheckAccountApi
 			(InlineResponse20024)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20024)));
 	}
 
-    /// <summary>
-    ///     Retrieve check accounts Retrieve all check accounts
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>InlineResponse20024</returns>
-    public InlineResponse20024 GetCheckAccounts()
+	/// <summary>
+	///     Retrieve check accounts Retrieve all check accounts
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>InlineResponse20024</returns>
+	public InlineResponse20024 GetCheckAccounts()
 	{
 		var localVarResponse = GetCheckAccountsWithHttpInfo();
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve check accounts Retrieve all check accounts
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>ApiResponse of InlineResponse20024</returns>
-    public ApiResponse<InlineResponse20024> GetCheckAccountsWithHttpInfo()
+	/// <summary>
+	///     Retrieve check accounts Retrieve all check accounts
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>ApiResponse of InlineResponse20024</returns>
+	public ApiResponse<InlineResponse20024> GetCheckAccountsWithHttpInfo()
 	{
 		var localVarPath = "/CheckAccount";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -779,23 +779,23 @@ public class CheckAccountApi : ICheckAccountApi
 			(InlineResponse20024)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20024)));
 	}
 
-    /// <summary>
-    ///     Retrieve check accounts Retrieve all check accounts
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>Task of InlineResponse20024</returns>
-    public async Task<InlineResponse20024> GetCheckAccountsAsync()
+	/// <summary>
+	///     Retrieve check accounts Retrieve all check accounts
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>Task of InlineResponse20024</returns>
+	public async Task<InlineResponse20024> GetCheckAccountsAsync()
 	{
 		var localVarResponse = await GetCheckAccountsAsyncWithHttpInfo();
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve check accounts Retrieve all check accounts
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <returns>Task of ApiResponse (InlineResponse20024)</returns>
-    public async Task<ApiResponse<InlineResponse20024>> GetCheckAccountsAsyncWithHttpInfo()
+	/// <summary>
+	///     Retrieve check accounts Retrieve all check accounts
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <returns>Task of ApiResponse (InlineResponse20024)</returns>
+	public async Task<ApiResponse<InlineResponse20024>> GetCheckAccountsAsyncWithHttpInfo()
 	{
 		var localVarPath = "/CheckAccount";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -843,27 +843,27 @@ public class CheckAccountApi : ICheckAccountApi
 			(InlineResponse20024)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20024)));
 	}
 
-    /// <summary>
-    ///     Update an existing check account Update a check account
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="checkAccountId">ID of check account to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>InlineResponse20024</returns>
-    public InlineResponse20024 UpdateCheckAccount(int? checkAccountId, ModelCheckAccountUpdate body = null)
+	/// <summary>
+	///     Update an existing check account Update a check account
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="checkAccountId">ID of check account to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>InlineResponse20024</returns>
+	public InlineResponse20024 UpdateCheckAccount(int? checkAccountId, ModelCheckAccountUpdate body = null)
 	{
 		var localVarResponse = UpdateCheckAccountWithHttpInfo(checkAccountId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update an existing check account Update a check account
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="checkAccountId">ID of check account to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20024</returns>
-    public ApiResponse<InlineResponse20024> UpdateCheckAccountWithHttpInfo(int? checkAccountId,
+	/// <summary>
+	///     Update an existing check account Update a check account
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="checkAccountId">ID of check account to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20024</returns>
+	public ApiResponse<InlineResponse20024> UpdateCheckAccountWithHttpInfo(int? checkAccountId,
 		ModelCheckAccountUpdate body = null)
 	{
 		// verify the required parameter 'checkAccountId' is set
@@ -925,28 +925,28 @@ public class CheckAccountApi : ICheckAccountApi
 			(InlineResponse20024)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20024)));
 	}
 
-    /// <summary>
-    ///     Update an existing check account Update a check account
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="checkAccountId">ID of check account to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>Task of InlineResponse20024</returns>
-    public async Task<InlineResponse20024> UpdateCheckAccountAsync(int? checkAccountId,
+	/// <summary>
+	///     Update an existing check account Update a check account
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="checkAccountId">ID of check account to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>Task of InlineResponse20024</returns>
+	public async Task<InlineResponse20024> UpdateCheckAccountAsync(int? checkAccountId,
 		ModelCheckAccountUpdate body = null)
 	{
 		var localVarResponse = await UpdateCheckAccountAsyncWithHttpInfo(checkAccountId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update an existing check account Update a check account
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="checkAccountId">ID of check account to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20024)</returns>
-    public async Task<ApiResponse<InlineResponse20024>> UpdateCheckAccountAsyncWithHttpInfo(int? checkAccountId,
+	/// <summary>
+	///     Update an existing check account Update a check account
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="checkAccountId">ID of check account to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20024)</returns>
+	public async Task<ApiResponse<InlineResponse20024>> UpdateCheckAccountAsyncWithHttpInfo(int? checkAccountId,
 		ModelCheckAccountUpdate body = null)
 	{
 		// verify the required parameter 'checkAccountId' is set
@@ -1008,34 +1008,34 @@ public class CheckAccountApi : ICheckAccountApi
 			(InlineResponse20024)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20024)));
 	}
 
-    /// <summary>
-    ///     Sets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    [Obsolete(
+	/// <summary>
+	///     Sets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	[Obsolete(
 		"SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
 	public void SetBasePath(string basePath)
 	{
 		// do nothing
 	}
 
-    /// <summary>
-    ///     Gets the default header.
-    /// </summary>
-    /// <returns>Dictionary of HTTP header</returns>
-    [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
+	/// <summary>
+	///     Gets the default header.
+	/// </summary>
+	/// <returns>Dictionary of HTTP header</returns>
+	[Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
 	public IDictionary<string, string> DefaultHeader()
 	{
 		return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
 	}
 
-    /// <summary>
-    ///     Add default header.
-    /// </summary>
-    /// <param name="key">Header field name.</param>
-    /// <param name="value">Header field value.</param>
-    /// <returns></returns>
-    [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
+	/// <summary>
+	///     Add default header.
+	/// </summary>
+	/// <param name="key">Header field name.</param>
+	/// <param name="value">Header field value.</param>
+	/// <returns></returns>
+	[Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
 	public void AddDefaultHeader(string key, string value)
 	{
 		Configuration.AddDefaultHeader(key, value);

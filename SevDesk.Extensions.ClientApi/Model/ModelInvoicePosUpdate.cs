@@ -21,23 +21,23 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelInvoicePosUpdate : IEquatable<ModelInvoicePosUpdate>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelInvoicePosUpdate" /> class.
-    /// </summary>
-    /// <param name="invoice">invoice.</param>
-    /// <param name="part">part.</param>
-    /// <param name="quantity">Quantity of the article/part.</param>
-    /// <param name="price">Price of the article/part. Is either gross or net, depending on the sevDesk account setting..</param>
-    /// <param name="name">Name of the article/part..</param>
-    /// <param name="unity">unity.</param>
-    /// <param name="sevClient">sevClient.</param>
-    /// <param name="positionNumber">Position number of your position. Can be used to order multiple positions..</param>
-    /// <param name="text">A text describing your position..</param>
-    /// <param name="discount">An optional discount of the position..</param>
-    /// <param name="taxRate">Tax rate of the position..</param>
-    /// <param name="priceGross">Gross price of the part.</param>
-    /// <param name="priceTax">Tax on the price of the part.</param>
-    public ModelInvoicePosUpdate(ModelInvoicePosUpdateInvoice invoice = default, ModelInvoicePosPart part = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelInvoicePosUpdate" /> class.
+	/// </summary>
+	/// <param name="invoice">invoice.</param>
+	/// <param name="part">part.</param>
+	/// <param name="quantity">Quantity of the article/part.</param>
+	/// <param name="price">Price of the article/part. Is either gross or net, depending on the sevDesk account setting..</param>
+	/// <param name="name">Name of the article/part..</param>
+	/// <param name="unity">unity.</param>
+	/// <param name="sevClient">sevClient.</param>
+	/// <param name="positionNumber">Position number of your position. Can be used to order multiple positions..</param>
+	/// <param name="text">A text describing your position..</param>
+	/// <param name="discount">An optional discount of the position..</param>
+	/// <param name="taxRate">Tax rate of the position..</param>
+	/// <param name="priceGross">Gross price of the part.</param>
+	/// <param name="priceTax">Tax on the price of the part.</param>
+	public ModelInvoicePosUpdate(ModelInvoicePosUpdateInvoice invoice = default, ModelInvoicePosPart part = default,
 		float? quantity = default, float? price = default, string name = default, ModelInvoicePosUnity unity = default,
 		ModelInvoicePosSevClient sevClient = default, int? positionNumber = default, string text = default,
 		float? discount = default, float? taxRate = default, float? priceGross = default, float? priceTax = default)
@@ -57,162 +57,162 @@ public class ModelInvoicePosUpdate : IEquatable<ModelInvoicePosUpdate>, IValidat
 		PriceTax = priceTax;
 	}
 
-    /// <summary>
-    ///     The invoice position id
-    /// </summary>
-    /// <value>The invoice position id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     The invoice position id
+	/// </summary>
+	/// <value>The invoice position id</value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public int? Id { get; private set; }
 
-    /// <summary>
-    ///     The invoice position object name
-    /// </summary>
-    /// <value>The invoice position object name</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     The invoice position object name
+	/// </summary>
+	/// <value>The invoice position object name</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; private set; }
 
-    /// <summary>
-    ///     Date of invoice position creation
-    /// </summary>
-    /// <value>Date of invoice position creation</value>
-    [DataMember(Name = "create", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of invoice position creation
+	/// </summary>
+	/// <value>Date of invoice position creation</value>
+	[DataMember(Name = "create", EmitDefaultValue = false)]
 	public DateTime? Create { get; private set; }
 
-    /// <summary>
-    ///     Date of last invoice position update
-    /// </summary>
-    /// <value>Date of last invoice position update</value>
-    [DataMember(Name = "update", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of last invoice position update
+	/// </summary>
+	/// <value>Date of last invoice position update</value>
+	[DataMember(Name = "update", EmitDefaultValue = false)]
 	public DateTime? Update { get; private set; }
 
-    /// <summary>
-    ///     Gets or Sets Invoice
-    /// </summary>
-    [DataMember(Name = "invoice", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Invoice
+	/// </summary>
+	[DataMember(Name = "invoice", EmitDefaultValue = false)]
 	public ModelInvoicePosUpdateInvoice Invoice { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Part
-    /// </summary>
-    [DataMember(Name = "part", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Part
+	/// </summary>
+	[DataMember(Name = "part", EmitDefaultValue = false)]
 	public ModelInvoicePosPart Part { get; set; }
 
-    /// <summary>
-    ///     Quantity of the article/part
-    /// </summary>
-    /// <value>Quantity of the article/part</value>
-    [DataMember(Name = "quantity", EmitDefaultValue = false)]
+	/// <summary>
+	///     Quantity of the article/part
+	/// </summary>
+	/// <value>Quantity of the article/part</value>
+	[DataMember(Name = "quantity", EmitDefaultValue = false)]
 	public float? Quantity { get; set; }
 
-    /// <summary>
-    ///     Price of the article/part. Is either gross or net, depending on the sevDesk account setting.
-    /// </summary>
-    /// <value>Price of the article/part. Is either gross or net, depending on the sevDesk account setting.</value>
-    [DataMember(Name = "price", EmitDefaultValue = false)]
+	/// <summary>
+	///     Price of the article/part. Is either gross or net, depending on the sevDesk account setting.
+	/// </summary>
+	/// <value>Price of the article/part. Is either gross or net, depending on the sevDesk account setting.</value>
+	[DataMember(Name = "price", EmitDefaultValue = false)]
 	public float? Price { get; set; }
 
-    /// <summary>
-    ///     Name of the article/part.
-    /// </summary>
-    /// <value>Name of the article/part.</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+	/// <summary>
+	///     Name of the article/part.
+	/// </summary>
+	/// <value>Name of the article/part.</value>
+	[DataMember(Name = "name", EmitDefaultValue = false)]
 	public string Name { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Unity
-    /// </summary>
-    [DataMember(Name = "unity", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Unity
+	/// </summary>
+	[DataMember(Name = "unity", EmitDefaultValue = false)]
 	public ModelInvoicePosUnity Unity { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets SevClientReference
-    /// </summary>
-    [DataMember(Name = "sevClient", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets SevClientReference
+	/// </summary>
+	[DataMember(Name = "sevClient", EmitDefaultValue = false)]
 	public ModelInvoicePosSevClient SevClient { get; set; }
 
-    /// <summary>
-    ///     Position number of your position. Can be used to order multiple positions.
-    /// </summary>
-    /// <value>Position number of your position. Can be used to order multiple positions.</value>
-    [DataMember(Name = "positionNumber", EmitDefaultValue = false)]
+	/// <summary>
+	///     Position number of your position. Can be used to order multiple positions.
+	/// </summary>
+	/// <value>Position number of your position. Can be used to order multiple positions.</value>
+	[DataMember(Name = "positionNumber", EmitDefaultValue = false)]
 	public int? PositionNumber { get; set; }
 
-    /// <summary>
-    ///     A text describing your position.
-    /// </summary>
-    /// <value>A text describing your position.</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+	/// <summary>
+	///     A text describing your position.
+	/// </summary>
+	/// <value>A text describing your position.</value>
+	[DataMember(Name = "text", EmitDefaultValue = false)]
 	public string Text { get; set; }
 
-    /// <summary>
-    ///     An optional discount of the position.
-    /// </summary>
-    /// <value>An optional discount of the position.</value>
-    [DataMember(Name = "discount", EmitDefaultValue = false)]
+	/// <summary>
+	///     An optional discount of the position.
+	/// </summary>
+	/// <value>An optional discount of the position.</value>
+	[DataMember(Name = "discount", EmitDefaultValue = false)]
 	public float? Discount { get; set; }
 
-    /// <summary>
-    ///     Tax rate of the position.
-    /// </summary>
-    /// <value>Tax rate of the position.</value>
-    [DataMember(Name = "taxRate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Tax rate of the position.
+	/// </summary>
+	/// <value>Tax rate of the position.</value>
+	[DataMember(Name = "taxRate", EmitDefaultValue = false)]
 	public float? TaxRate { get; set; }
 
-    /// <summary>
-    ///     Discount sum of the position
-    /// </summary>
-    /// <value>Discount sum of the position</value>
-    [DataMember(Name = "sumDiscount", EmitDefaultValue = false)]
+	/// <summary>
+	///     Discount sum of the position
+	/// </summary>
+	/// <value>Discount sum of the position</value>
+	[DataMember(Name = "sumDiscount", EmitDefaultValue = false)]
 	public float? SumDiscount { get; private set; }
 
-    /// <summary>
-    ///     Net accounting sum of the position
-    /// </summary>
-    /// <value>Net accounting sum of the position</value>
-    [DataMember(Name = "sumNetAccounting", EmitDefaultValue = false)]
+	/// <summary>
+	///     Net accounting sum of the position
+	/// </summary>
+	/// <value>Net accounting sum of the position</value>
+	[DataMember(Name = "sumNetAccounting", EmitDefaultValue = false)]
 	public float? SumNetAccounting { get; private set; }
 
-    /// <summary>
-    ///     Tax accounting sum of the position
-    /// </summary>
-    /// <value>Tax accounting sum of the position</value>
-    [DataMember(Name = "sumTaxAccounting", EmitDefaultValue = false)]
+	/// <summary>
+	///     Tax accounting sum of the position
+	/// </summary>
+	/// <value>Tax accounting sum of the position</value>
+	[DataMember(Name = "sumTaxAccounting", EmitDefaultValue = false)]
 	public float? SumTaxAccounting { get; private set; }
 
-    /// <summary>
-    ///     Gross accounting sum of the position
-    /// </summary>
-    /// <value>Gross accounting sum of the position</value>
-    [DataMember(Name = "sumGrossAccounting", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gross accounting sum of the position
+	/// </summary>
+	/// <value>Gross accounting sum of the position</value>
+	[DataMember(Name = "sumGrossAccounting", EmitDefaultValue = false)]
 	public float? SumGrossAccounting { get; private set; }
 
-    /// <summary>
-    ///     Net price of the part
-    /// </summary>
-    /// <value>Net price of the part</value>
-    [DataMember(Name = "priceNet", EmitDefaultValue = false)]
+	/// <summary>
+	///     Net price of the part
+	/// </summary>
+	/// <value>Net price of the part</value>
+	[DataMember(Name = "priceNet", EmitDefaultValue = false)]
 	public float? PriceNet { get; private set; }
 
-    /// <summary>
-    ///     Gross price of the part
-    /// </summary>
-    /// <value>Gross price of the part</value>
-    [DataMember(Name = "priceGross", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gross price of the part
+	/// </summary>
+	/// <value>Gross price of the part</value>
+	[DataMember(Name = "priceGross", EmitDefaultValue = false)]
 	public float? PriceGross { get; set; }
 
-    /// <summary>
-    ///     Tax on the price of the part
-    /// </summary>
-    /// <value>Tax on the price of the part</value>
-    [DataMember(Name = "priceTax", EmitDefaultValue = false)]
+	/// <summary>
+	///     Tax on the price of the part
+	/// </summary>
+	/// <value>Tax on the price of the part</value>
+	[DataMember(Name = "priceTax", EmitDefaultValue = false)]
 	public float? PriceTax { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelInvoicePosUpdate instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelInvoicePosUpdate to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelInvoicePosUpdate input)
+	/// <summary>
+	///     Returns true if ModelInvoicePosUpdate instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelInvoicePosUpdate to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelInvoicePosUpdate input)
 	{
 		if (input == null)
 			return false;
@@ -330,21 +330,21 @@ public class ModelInvoicePosUpdate : IEquatable<ModelInvoicePosUpdate>, IValidat
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelInvoicePosUpdate {\n");
@@ -374,30 +374,30 @@ public class ModelInvoicePosUpdate : IEquatable<ModelInvoicePosUpdate>, IValidat
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelInvoicePosUpdate);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

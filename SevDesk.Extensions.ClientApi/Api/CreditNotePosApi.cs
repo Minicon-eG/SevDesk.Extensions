@@ -22,35 +22,35 @@ public class CreditNotePosApi : ICreditNotePosApi
 {
 	private ExceptionFactory _exceptionFactory = (name, response) => null;
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="CreditNotePosApi" /> class.
-    /// </summary>
-    /// <returns></returns>
-    public CreditNotePosApi(string basePath)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="CreditNotePosApi" /> class.
+	/// </summary>
+	/// <returns></returns>
+	public CreditNotePosApi(string basePath)
 	{
 		Configuration = new Configuration { BasePath = basePath };
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="CreditNotePosApi" /> class
-    /// </summary>
-    /// <returns></returns>
-    public CreditNotePosApi()
+	/// <summary>
+	///     Initializes a new instance of the <see cref="CreditNotePosApi" /> class
+	/// </summary>
+	/// <returns></returns>
+	public CreditNotePosApi()
 	{
 		Configuration = Configuration.Default;
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="CreditNotePosApi" /> class
-    ///     using Configuration object
-    /// </summary>
-    /// <param name="configuration">An instance of Configuration</param>
-    /// <returns></returns>
-    public CreditNotePosApi(Configuration configuration = null)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="CreditNotePosApi" /> class
+	///     using Configuration object
+	/// </summary>
+	/// <param name="configuration">An instance of Configuration</param>
+	/// <returns></returns>
+	public CreditNotePosApi(Configuration configuration = null)
 	{
 		if (configuration == null) // use the default one in Configuration
 			Configuration = Configuration.Default;
@@ -60,25 +60,25 @@ public class CreditNotePosApi : ICreditNotePosApi
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Gets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    public string GetBasePath()
+	/// <summary>
+	///     Gets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	public string GetBasePath()
 	{
 		return Configuration.ApiClient.RestClient.BaseUrl.ToString();
 	}
 
-    /// <summary>
-    ///     Gets or sets the configuration object
-    /// </summary>
-    /// <value>An instance of the Configuration</value>
-    public Configuration Configuration { get; set; }
+	/// <summary>
+	///     Gets or sets the configuration object
+	/// </summary>
+	/// <value>An instance of the Configuration</value>
+	public Configuration Configuration { get; set; }
 
-    /// <summary>
-    ///     Provides a factory method hook for the creation of exceptions.
-    /// </summary>
-    public ExceptionFactory ExceptionFactory
+	/// <summary>
+	///     Provides a factory method hook for the creation of exceptions.
+	/// </summary>
+	public ExceptionFactory ExceptionFactory
 	{
 		get
 		{
@@ -89,39 +89,39 @@ public class CreditNotePosApi : ICreditNotePosApi
 		set => _exceptionFactory = value;
 	}
 
-    /// <summary>
-    ///     Retrieve creditNote positions Retrieve all creditNote positions depending on the filters defined in the query.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">
-    ///     Retrieve all creditNote positions belonging to this creditNote. Must be provided with
-    ///     creditNote[objectName] (optional)
-    /// </param>
-    /// <param name="creditNoteObjectName">
-    ///     Only required if creditNote[id] was provided. &#x27;creditNote&#x27; should be used
-    ///     as value. (optional)
-    /// </param>
-    /// <returns>InlineResponse20033</returns>
-    public InlineResponse20033 GetcreditNotePositions(int? creditNoteId = null, string creditNoteObjectName = null)
+	/// <summary>
+	///     Retrieve creditNote positions Retrieve all creditNote positions depending on the filters defined in the query.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">
+	///     Retrieve all creditNote positions belonging to this creditNote. Must be provided with
+	///     creditNote[objectName] (optional)
+	/// </param>
+	/// <param name="creditNoteObjectName">
+	///     Only required if creditNote[id] was provided. &#x27;creditNote&#x27; should be used
+	///     as value. (optional)
+	/// </param>
+	/// <returns>InlineResponse20033</returns>
+	public InlineResponse20033 GetcreditNotePositions(int? creditNoteId = null, string creditNoteObjectName = null)
 	{
 		var localVarResponse = GetcreditNotePositionsWithHttpInfo(creditNoteId, creditNoteObjectName);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve creditNote positions Retrieve all creditNote positions depending on the filters defined in the query.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">
-    ///     Retrieve all creditNote positions belonging to this creditNote. Must be provided with
-    ///     creditNote[objectName] (optional)
-    /// </param>
-    /// <param name="creditNoteObjectName">
-    ///     Only required if creditNote[id] was provided. &#x27;creditNote&#x27; should be used
-    ///     as value. (optional)
-    /// </param>
-    /// <returns>ApiResponse of InlineResponse20033</returns>
-    public ApiResponse<InlineResponse20033> GetcreditNotePositionsWithHttpInfo(int? creditNoteId = null,
+	/// <summary>
+	///     Retrieve creditNote positions Retrieve all creditNote positions depending on the filters defined in the query.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">
+	///     Retrieve all creditNote positions belonging to this creditNote. Must be provided with
+	///     creditNote[objectName] (optional)
+	/// </param>
+	/// <param name="creditNoteObjectName">
+	///     Only required if creditNote[id] was provided. &#x27;creditNote&#x27; should be used
+	///     as value. (optional)
+	/// </param>
+	/// <returns>ApiResponse of InlineResponse20033</returns>
+	public ApiResponse<InlineResponse20033> GetcreditNotePositionsWithHttpInfo(int? creditNoteId = null,
 		string creditNoteObjectName = null)
 	{
 		var localVarPath = "/creditNotePos";
@@ -178,40 +178,40 @@ public class CreditNotePosApi : ICreditNotePosApi
 			(InlineResponse20033)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20033)));
 	}
 
-    /// <summary>
-    ///     Retrieve creditNote positions Retrieve all creditNote positions depending on the filters defined in the query.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">
-    ///     Retrieve all creditNote positions belonging to this creditNote. Must be provided with
-    ///     creditNote[objectName] (optional)
-    /// </param>
-    /// <param name="creditNoteObjectName">
-    ///     Only required if creditNote[id] was provided. &#x27;creditNote&#x27; should be used
-    ///     as value. (optional)
-    /// </param>
-    /// <returns>Task of InlineResponse20033</returns>
-    public async Task<InlineResponse20033> GetcreditNotePositionsAsync(int? creditNoteId = null,
+	/// <summary>
+	///     Retrieve creditNote positions Retrieve all creditNote positions depending on the filters defined in the query.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">
+	///     Retrieve all creditNote positions belonging to this creditNote. Must be provided with
+	///     creditNote[objectName] (optional)
+	/// </param>
+	/// <param name="creditNoteObjectName">
+	///     Only required if creditNote[id] was provided. &#x27;creditNote&#x27; should be used
+	///     as value. (optional)
+	/// </param>
+	/// <returns>Task of InlineResponse20033</returns>
+	public async Task<InlineResponse20033> GetcreditNotePositionsAsync(int? creditNoteId = null,
 		string creditNoteObjectName = null)
 	{
 		var localVarResponse = await GetcreditNotePositionsAsyncWithHttpInfo(creditNoteId, creditNoteObjectName);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve creditNote positions Retrieve all creditNote positions depending on the filters defined in the query.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="creditNoteId">
-    ///     Retrieve all creditNote positions belonging to this creditNote. Must be provided with
-    ///     creditNote[objectName] (optional)
-    /// </param>
-    /// <param name="creditNoteObjectName">
-    ///     Only required if creditNote[id] was provided. &#x27;creditNote&#x27; should be used
-    ///     as value. (optional)
-    /// </param>
-    /// <returns>Task of ApiResponse (InlineResponse20033)</returns>
-    public async Task<ApiResponse<InlineResponse20033>> GetcreditNotePositionsAsyncWithHttpInfo(
+	/// <summary>
+	///     Retrieve creditNote positions Retrieve all creditNote positions depending on the filters defined in the query.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="creditNoteId">
+	///     Retrieve all creditNote positions belonging to this creditNote. Must be provided with
+	///     creditNote[objectName] (optional)
+	/// </param>
+	/// <param name="creditNoteObjectName">
+	///     Only required if creditNote[id] was provided. &#x27;creditNote&#x27; should be used
+	///     as value. (optional)
+	/// </param>
+	/// <returns>Task of ApiResponse (InlineResponse20033)</returns>
+	public async Task<ApiResponse<InlineResponse20033>> GetcreditNotePositionsAsyncWithHttpInfo(
 		int? creditNoteId = null, string creditNoteObjectName = null)
 	{
 		var localVarPath = "/creditNotePos";
@@ -268,34 +268,34 @@ public class CreditNotePosApi : ICreditNotePosApi
 			(InlineResponse20033)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20033)));
 	}
 
-    /// <summary>
-    ///     Sets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    [Obsolete(
+	/// <summary>
+	///     Sets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	[Obsolete(
 		"SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
 	public void SetBasePath(string basePath)
 	{
 		// do nothing
 	}
 
-    /// <summary>
-    ///     Gets the default header.
-    /// </summary>
-    /// <returns>Dictionary of HTTP header</returns>
-    [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
+	/// <summary>
+	///     Gets the default header.
+	/// </summary>
+	/// <returns>Dictionary of HTTP header</returns>
+	[Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
 	public IDictionary<string, string> DefaultHeader()
 	{
 		return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
 	}
 
-    /// <summary>
-    ///     Add default header.
-    /// </summary>
-    /// <param name="key">Header field name.</param>
-    /// <param name="value">Header field value.</param>
-    /// <returns></returns>
-    [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
+	/// <summary>
+	///     Add default header.
+	/// </summary>
+	/// <param name="key">Header field name.</param>
+	/// <param name="value">Header field value.</param>
+	/// <returns></returns>
+	[Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
 	public void AddDefaultHeader(string key, string value)
 	{
 		Configuration.AddDefaultHeader(key, value);

@@ -15,11 +15,11 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\SevDesl.Extensions.Dtos\SevDesl.Extensions.Dtos.csproj"/>
+        <Folder Include="CustomPartials"/>
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="CustomPartials"/>
+        <ProjectReference Include="..\SevDesk.Extensions.Dtos\SevDesk.Extensions.Dtos.csproj"/>
     </ItemGroup>
 
 </Project>

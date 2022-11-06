@@ -22,68 +22,68 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class InlineResponse20016 : IEquatable<InlineResponse20016>, IValidatableObject
 {
-    /// <summary>
-    ///     Name of the communication way key
-    /// </summary>
-    /// <value>Name of the communication way key</value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Name of the communication way key
+	/// </summary>
+	/// <value>Name of the communication way key</value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum NameEnum
 	{
-        /// <summary>
-        ///     Enum Arbeit for value: Arbeit
-        /// </summary>
-        [EnumMember(Value = "Arbeit")] Arbeit = 1,
+		/// <summary>
+		///     Enum Arbeit for value: Arbeit
+		/// </summary>
+		[EnumMember(Value = "Arbeit")] Arbeit = 1,
 
-        /// <summary>
-        ///     Enum Autobox for value: Autobox
-        /// </summary>
-        [EnumMember(Value = "Autobox")] Autobox = 2,
+		/// <summary>
+		///     Enum Autobox for value: Autobox
+		/// </summary>
+		[EnumMember(Value = "Autobox")] Autobox = 2,
 
-        /// <summary>
-        ///     Enum Fax for value: Fax
-        /// </summary>
-        [EnumMember(Value = "Fax")] Fax = 3,
+		/// <summary>
+		///     Enum Fax for value: Fax
+		/// </summary>
+		[EnumMember(Value = "Fax")] Fax = 3,
 
-        /// <summary>
-        ///     Enum Mobil for value: Mobil
-        /// </summary>
-        [EnumMember(Value = "Mobil")] Mobil = 4,
+		/// <summary>
+		///     Enum Mobil for value: Mobil
+		/// </summary>
+		[EnumMember(Value = "Mobil")] Mobil = 4,
 
-        /// <summary>
-        ///     Enum Newsletter for value: Newsletter
-        /// </summary>
-        [EnumMember(Value = "Newsletter")] Newsletter = 5,
+		/// <summary>
+		///     Enum Newsletter for value: Newsletter
+		/// </summary>
+		[EnumMember(Value = "Newsletter")] Newsletter = 5,
 
-        /// <summary>
-        ///     Enum Privat for value: Privat
-        /// </summary>
-        [EnumMember(Value = "Privat")] Privat = 6,
+		/// <summary>
+		///     Enum Privat for value: Privat
+		/// </summary>
+		[EnumMember(Value = "Privat")] Privat = 6,
 
-        /// <summary>
-        ///     Enum Rechnungsadresse for value: Rechnungsadresse
-        /// </summary>
-        [EnumMember(Value = "Rechnungsadresse")]
+		/// <summary>
+		///     Enum Rechnungsadresse for value: Rechnungsadresse
+		/// </summary>
+		[EnumMember(Value = "Rechnungsadresse")]
 		Rechnungsadresse = 7,
 
-        /// <summary>
-        ///     Enum  for value:
-        /// </summary>
-        [EnumMember(Value = " ")] Unbekannt = 8
+		/// <summary>
+		///     Enum  for value:
+		/// </summary>
+		[EnumMember(Value = " ")] Unbekannt = 8
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="InlineResponse20016" /> class.
-    /// </summary>
-    /// <param name="id">
-    ///     The id of the communication way key 1. ID: 1 - Privat 2. ID: 2 - Arbeit 3. ID: 3 - Fax 4. ID: 4 -
-    ///     Mobil 5. ID: 5 - \&quot; \&quot; 6. ID: 6 - Autobox 7. ID: 7 - Newsletter 8. ID: 8 - Rechnungsadresse.
-    /// </param>
-    /// <param name="objectName">object name which is &#x27;CommunicationWayKey&#x27;..</param>
-    /// <param name="create">Date the communication way key was created.</param>
-    /// <param name="upadate">Date the communication way key was last updated.</param>
-    /// <param name="name">Name of the communication way key.</param>
-    /// <param name="translationCode">translationCode.</param>
-    public InlineResponse20016(string id = default, string objectName = default, DateTime? create = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="InlineResponse20016" /> class.
+	/// </summary>
+	/// <param name="id">
+	///     The id of the communication way key 1. ID: 1 - Privat 2. ID: 2 - Arbeit 3. ID: 3 - Fax 4. ID: 4 -
+	///     Mobil 5. ID: 5 - \&quot; \&quot; 6. ID: 6 - Autobox 7. ID: 7 - Newsletter 8. ID: 8 - Rechnungsadresse.
+	/// </param>
+	/// <param name="objectName">object name which is &#x27;CommunicationWayKey&#x27;..</param>
+	/// <param name="create">Date the communication way key was created.</param>
+	/// <param name="upadate">Date the communication way key was last updated.</param>
+	/// <param name="name">Name of the communication way key.</param>
+	/// <param name="translationCode">translationCode.</param>
+	public InlineResponse20016(string id = default, string objectName = default, DateTime? create = default,
 		DateTime? upadate = default, NameEnum? name = default, string translationCode = default)
 	{
 		Id = id;
@@ -94,58 +94,58 @@ public class InlineResponse20016 : IEquatable<InlineResponse20016>, IValidatable
 		TranslationCode = translationCode;
 	}
 
-    /// <summary>
-    ///     Name of the communication way key
-    /// </summary>
-    /// <value>Name of the communication way key</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+	/// <summary>
+	///     Name of the communication way key
+	/// </summary>
+	/// <value>Name of the communication way key</value>
+	[DataMember(Name = "name", EmitDefaultValue = false)]
 	public NameEnum? Name { get; set; }
 
-    /// <summary>
-    ///     The id of the communication way key 1. ID: 1 - Privat 2. ID: 2 - Arbeit 3. ID: 3 - Fax 4. ID: 4 - Mobil 5. ID: 5 -
-    ///     \&quot; \&quot; 6. ID: 6 - Autobox 7. ID: 7 - Newsletter 8. ID: 8 - Rechnungsadresse
-    /// </summary>
-    /// <value>
-    ///     The id of the communication way key 1. ID: 1 - Privat 2. ID: 2 - Arbeit 3. ID: 3 - Fax 4. ID: 4 - Mobil 5. ID: 5
-    ///     - \&quot; \&quot; 6. ID: 6 - Autobox 7. ID: 7 - Newsletter 8. ID: 8 - Rechnungsadresse
-    /// </value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     The id of the communication way key 1. ID: 1 - Privat 2. ID: 2 - Arbeit 3. ID: 3 - Fax 4. ID: 4 - Mobil 5. ID: 5 -
+	///     \&quot; \&quot; 6. ID: 6 - Autobox 7. ID: 7 - Newsletter 8. ID: 8 - Rechnungsadresse
+	/// </summary>
+	/// <value>
+	///     The id of the communication way key 1. ID: 1 - Privat 2. ID: 2 - Arbeit 3. ID: 3 - Fax 4. ID: 4 - Mobil 5. ID: 5
+	///     - \&quot; \&quot; 6. ID: 6 - Autobox 7. ID: 7 - Newsletter 8. ID: 8 - Rechnungsadresse
+	/// </value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public string Id { get; set; }
 
-    /// <summary>
-    ///     object name which is &#x27;CommunicationWayKey&#x27;.
-    /// </summary>
-    /// <value>object name which is &#x27;CommunicationWayKey&#x27;.</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     object name which is &#x27;CommunicationWayKey&#x27;.
+	/// </summary>
+	/// <value>object name which is &#x27;CommunicationWayKey&#x27;.</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; set; }
 
-    /// <summary>
-    ///     Date the communication way key was created
-    /// </summary>
-    /// <value>Date the communication way key was created</value>
-    [DataMember(Name = "create", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date the communication way key was created
+	/// </summary>
+	/// <value>Date the communication way key was created</value>
+	[DataMember(Name = "create", EmitDefaultValue = false)]
 	public DateTime? Create { get; set; }
 
-    /// <summary>
-    ///     Date the communication way key was last updated
-    /// </summary>
-    /// <value>Date the communication way key was last updated</value>
-    [DataMember(Name = "upadate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date the communication way key was last updated
+	/// </summary>
+	/// <value>Date the communication way key was last updated</value>
+	[DataMember(Name = "upadate", EmitDefaultValue = false)]
 	public DateTime? Upadate { get; set; }
 
 
-    /// <summary>
-    ///     Gets or Sets TranslationCode
-    /// </summary>
-    [DataMember(Name = "translationCode", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets TranslationCode
+	/// </summary>
+	[DataMember(Name = "translationCode", EmitDefaultValue = false)]
 	public string TranslationCode { get; set; }
 
-    /// <summary>
-    ///     Returns true if InlineResponse20016 instances are equal
-    /// </summary>
-    /// <param name="input">Instance of InlineResponse20016 to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(InlineResponse20016 input)
+	/// <summary>
+	///     Returns true if InlineResponse20016 instances are equal
+	/// </summary>
+	/// <param name="input">Instance of InlineResponse20016 to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(InlineResponse20016 input)
 	{
 		if (input == null)
 			return false;
@@ -183,21 +183,21 @@ public class InlineResponse20016 : IEquatable<InlineResponse20016>, IValidatable
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class InlineResponse20016 {\n");
@@ -211,30 +211,30 @@ public class InlineResponse20016 : IEquatable<InlineResponse20016>, IValidatable
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as InlineResponse20016);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

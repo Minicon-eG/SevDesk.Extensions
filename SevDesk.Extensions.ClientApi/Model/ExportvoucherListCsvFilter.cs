@@ -21,17 +21,17 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ExportvoucherListCsvFilter : IEquatable<ExportvoucherListCsvFilter>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ExportvoucherListCsvFilter" /> class.
-    /// </summary>
-    /// <param name="startDate">Start date of the voucher.</param>
-    /// <param name="endDate">End date of the voucher.</param>
-    /// <param name="startPayDate">Start pay date of the voucher.</param>
-    /// <param name="endPayDate">End pay date of the voucher.</param>
-    /// <param name="contact">contact.</param>
-    /// <param name="startAmount">filters the vouchers by amount.</param>
-    /// <param name="endAmount">filters the vouchers by amount.</param>
-    public ExportvoucherListCsvFilter(DateTime? startDate = default, DateTime? endDate = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ExportvoucherListCsvFilter" /> class.
+	/// </summary>
+	/// <param name="startDate">Start date of the voucher.</param>
+	/// <param name="endDate">End date of the voucher.</param>
+	/// <param name="startPayDate">Start pay date of the voucher.</param>
+	/// <param name="endPayDate">End pay date of the voucher.</param>
+	/// <param name="contact">contact.</param>
+	/// <param name="startAmount">filters the vouchers by amount.</param>
+	/// <param name="endAmount">filters the vouchers by amount.</param>
+	public ExportvoucherListCsvFilter(DateTime? startDate = default, DateTime? endDate = default,
 		DateTime? startPayDate = default, DateTime? endPayDate = default,
 		ExportvoucherListCsvFilterContact contact = default, int? startAmount = default, int? endAmount = default)
 	{
@@ -44,60 +44,60 @@ public class ExportvoucherListCsvFilter : IEquatable<ExportvoucherListCsvFilter>
 		EndAmount = endAmount;
 	}
 
-    /// <summary>
-    ///     Start date of the voucher
-    /// </summary>
-    /// <value>Start date of the voucher</value>
-    [DataMember(Name = "startDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Start date of the voucher
+	/// </summary>
+	/// <value>Start date of the voucher</value>
+	[DataMember(Name = "startDate", EmitDefaultValue = false)]
 	public DateTime? StartDate { get; set; }
 
-    /// <summary>
-    ///     End date of the voucher
-    /// </summary>
-    /// <value>End date of the voucher</value>
-    [DataMember(Name = "endDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     End date of the voucher
+	/// </summary>
+	/// <value>End date of the voucher</value>
+	[DataMember(Name = "endDate", EmitDefaultValue = false)]
 	public DateTime? EndDate { get; set; }
 
-    /// <summary>
-    ///     Start pay date of the voucher
-    /// </summary>
-    /// <value>Start pay date of the voucher</value>
-    [DataMember(Name = "startPayDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Start pay date of the voucher
+	/// </summary>
+	/// <value>Start pay date of the voucher</value>
+	[DataMember(Name = "startPayDate", EmitDefaultValue = false)]
 	public DateTime? StartPayDate { get; set; }
 
-    /// <summary>
-    ///     End pay date of the voucher
-    /// </summary>
-    /// <value>End pay date of the voucher</value>
-    [DataMember(Name = "endPayDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     End pay date of the voucher
+	/// </summary>
+	/// <value>End pay date of the voucher</value>
+	[DataMember(Name = "endPayDate", EmitDefaultValue = false)]
 	public DateTime? EndPayDate { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Contact
-    /// </summary>
-    [DataMember(Name = "contact", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Contact
+	/// </summary>
+	[DataMember(Name = "contact", EmitDefaultValue = false)]
 	public ExportvoucherListCsvFilterContact Contact { get; set; }
 
-    /// <summary>
-    ///     filters the vouchers by amount
-    /// </summary>
-    /// <value>filters the vouchers by amount</value>
-    [DataMember(Name = "startAmount", EmitDefaultValue = false)]
+	/// <summary>
+	///     filters the vouchers by amount
+	/// </summary>
+	/// <value>filters the vouchers by amount</value>
+	[DataMember(Name = "startAmount", EmitDefaultValue = false)]
 	public int? StartAmount { get; set; }
 
-    /// <summary>
-    ///     filters the vouchers by amount
-    /// </summary>
-    /// <value>filters the vouchers by amount</value>
-    [DataMember(Name = "endAmount", EmitDefaultValue = false)]
+	/// <summary>
+	///     filters the vouchers by amount
+	/// </summary>
+	/// <value>filters the vouchers by amount</value>
+	[DataMember(Name = "endAmount", EmitDefaultValue = false)]
 	public int? EndAmount { get; set; }
 
-    /// <summary>
-    ///     Returns true if ExportvoucherListCsvFilter instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ExportvoucherListCsvFilter to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ExportvoucherListCsvFilter input)
+	/// <summary>
+	///     Returns true if ExportvoucherListCsvFilter instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ExportvoucherListCsvFilter to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ExportvoucherListCsvFilter input)
 	{
 		if (input == null)
 			return false;
@@ -140,21 +140,21 @@ public class ExportvoucherListCsvFilter : IEquatable<ExportvoucherListCsvFilter>
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ExportvoucherListCsvFilter {\n");
@@ -169,30 +169,30 @@ public class ExportvoucherListCsvFilter : IEquatable<ExportvoucherListCsvFilter>
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ExportvoucherListCsvFilter);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

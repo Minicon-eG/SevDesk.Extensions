@@ -21,19 +21,19 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelEmailOrder : IEquatable<ModelEmailOrder>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelEmailOrder" /> class.
-    /// </summary>
-    /// <param name="_object">_object.</param>
-    /// <param name="from">The sender of the email (required).</param>
-    /// <param name="to">The recipient of the email (required).</param>
-    /// <param name="subject">The subject of the email (required).</param>
-    /// <param name="text">The text of the email.</param>
-    /// <param name="sevClient">sevClient.</param>
-    /// <param name="cc">A list of mail addresses which are in the cc.</param>
-    /// <param name="bcc">A list of mail addresses which are in the bcc.</param>
-    /// <param name="arrived">Date the mail arrived.</param>
-    public ModelEmailOrder(ModelEmailOrderObject _object = default, string from = default, string to = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelEmailOrder" /> class.
+	/// </summary>
+	/// <param name="_object">_object.</param>
+	/// <param name="from">The sender of the email (required).</param>
+	/// <param name="to">The recipient of the email (required).</param>
+	/// <param name="subject">The subject of the email (required).</param>
+	/// <param name="text">The text of the email.</param>
+	/// <param name="sevClient">sevClient.</param>
+	/// <param name="cc">A list of mail addresses which are in the cc.</param>
+	/// <param name="bcc">A list of mail addresses which are in the bcc.</param>
+	/// <param name="arrived">Date the mail arrived.</param>
+	public ModelEmailOrder(ModelEmailOrderObject _object = default, string from = default, string to = default,
 		string subject = default, string text = default, ModelEmailOrderSevClient sevClient = default,
 		string cc = default, string bcc = default, DateTime? arrived = default)
 	{
@@ -57,101 +57,101 @@ public class ModelEmailOrder : IEquatable<ModelEmailOrder>, IValidatableObject
 		Arrived = arrived;
 	}
 
-    /// <summary>
-    ///     The email id
-    /// </summary>
-    /// <value>The email id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     The email id
+	/// </summary>
+	/// <value>The email id</value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public int? Id { get; private set; }
 
-    /// <summary>
-    ///     The email object name
-    /// </summary>
-    /// <value>The email object name</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     The email object name
+	/// </summary>
+	/// <value>The email object name</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; private set; }
 
-    /// <summary>
-    ///     Date of mail creation
-    /// </summary>
-    /// <value>Date of mail creation</value>
-    [DataMember(Name = "create", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of mail creation
+	/// </summary>
+	/// <value>Date of mail creation</value>
+	[DataMember(Name = "create", EmitDefaultValue = false)]
 	public DateTime? Create { get; private set; }
 
-    /// <summary>
-    ///     Date of last mail update
-    /// </summary>
-    /// <value>Date of last mail update</value>
-    [DataMember(Name = "update", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of last mail update
+	/// </summary>
+	/// <value>Date of last mail update</value>
+	[DataMember(Name = "update", EmitDefaultValue = false)]
 	public DateTime? Update { get; private set; }
 
-    /// <summary>
-    ///     Gets or Sets _Object
-    /// </summary>
-    [DataMember(Name = "object", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets _Object
+	/// </summary>
+	[DataMember(Name = "object", EmitDefaultValue = false)]
 	public ModelEmailOrderObject _Object { get; set; }
 
-    /// <summary>
-    ///     The sender of the email
-    /// </summary>
-    /// <value>The sender of the email</value>
-    [DataMember(Name = "from", EmitDefaultValue = false)]
+	/// <summary>
+	///     The sender of the email
+	/// </summary>
+	/// <value>The sender of the email</value>
+	[DataMember(Name = "from", EmitDefaultValue = false)]
 	public string From { get; set; }
 
-    /// <summary>
-    ///     The recipient of the email
-    /// </summary>
-    /// <value>The recipient of the email</value>
-    [DataMember(Name = "to", EmitDefaultValue = false)]
+	/// <summary>
+	///     The recipient of the email
+	/// </summary>
+	/// <value>The recipient of the email</value>
+	[DataMember(Name = "to", EmitDefaultValue = false)]
 	public string To { get; set; }
 
-    /// <summary>
-    ///     The subject of the email
-    /// </summary>
-    /// <value>The subject of the email</value>
-    [DataMember(Name = "subject", EmitDefaultValue = false)]
+	/// <summary>
+	///     The subject of the email
+	/// </summary>
+	/// <value>The subject of the email</value>
+	[DataMember(Name = "subject", EmitDefaultValue = false)]
 	public string Subject { get; set; }
 
-    /// <summary>
-    ///     The text of the email
-    /// </summary>
-    /// <value>The text of the email</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+	/// <summary>
+	///     The text of the email
+	/// </summary>
+	/// <value>The text of the email</value>
+	[DataMember(Name = "text", EmitDefaultValue = false)]
 	public string Text { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets SevClientReference
-    /// </summary>
-    [DataMember(Name = "sevClient", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets SevClientReference
+	/// </summary>
+	[DataMember(Name = "sevClient", EmitDefaultValue = false)]
 	public ModelEmailOrderSevClient SevClient { get; set; }
 
-    /// <summary>
-    ///     A list of mail addresses which are in the cc
-    /// </summary>
-    /// <value>A list of mail addresses which are in the cc</value>
-    [DataMember(Name = "cc", EmitDefaultValue = false)]
+	/// <summary>
+	///     A list of mail addresses which are in the cc
+	/// </summary>
+	/// <value>A list of mail addresses which are in the cc</value>
+	[DataMember(Name = "cc", EmitDefaultValue = false)]
 	public string Cc { get; set; }
 
-    /// <summary>
-    ///     A list of mail addresses which are in the bcc
-    /// </summary>
-    /// <value>A list of mail addresses which are in the bcc</value>
-    [DataMember(Name = "bcc", EmitDefaultValue = false)]
+	/// <summary>
+	///     A list of mail addresses which are in the bcc
+	/// </summary>
+	/// <value>A list of mail addresses which are in the bcc</value>
+	[DataMember(Name = "bcc", EmitDefaultValue = false)]
 	public string Bcc { get; set; }
 
-    /// <summary>
-    ///     Date the mail arrived
-    /// </summary>
-    /// <value>Date the mail arrived</value>
-    [DataMember(Name = "arrived", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date the mail arrived
+	/// </summary>
+	/// <value>Date the mail arrived</value>
+	[DataMember(Name = "arrived", EmitDefaultValue = false)]
 	public DateTime? Arrived { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelEmailOrder instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelEmailOrder to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelEmailOrder input)
+	/// <summary>
+	///     Returns true if ModelEmailOrder instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelEmailOrder to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelEmailOrder input)
 	{
 		if (input == null)
 			return false;
@@ -224,21 +224,21 @@ public class ModelEmailOrder : IEquatable<ModelEmailOrder>, IValidatableObject
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelEmailOrder {\n");
@@ -259,30 +259,30 @@ public class ModelEmailOrder : IEquatable<ModelEmailOrder>, IValidatableObject
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelEmailOrder);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

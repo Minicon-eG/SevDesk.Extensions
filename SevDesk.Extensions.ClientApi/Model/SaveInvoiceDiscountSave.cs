@@ -21,16 +21,16 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class SaveInvoiceDiscountSave : IEquatable<SaveInvoiceDiscountSave>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="SaveInvoiceDiscountSave" /> class.
-    /// </summary>
-    /// <param name="discount">Defines if this is a discount or a surcharge (required).</param>
-    /// <param name="text">A text for your discount (required).</param>
-    /// <param name="percentage">Defines if this is a percentage or an absolute discount (required).</param>
-    /// <param name="value">Value of the discount (required).</param>
-    /// <param name="objectName">Object name of the discount (required).</param>
-    /// <param name="mapAll">Internal param (required).</param>
-    public SaveInvoiceDiscountSave(bool? discount = default, string text = default, bool? percentage = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="SaveInvoiceDiscountSave" /> class.
+	/// </summary>
+	/// <param name="discount">Defines if this is a discount or a surcharge (required).</param>
+	/// <param name="text">A text for your discount (required).</param>
+	/// <param name="percentage">Defines if this is a percentage or an absolute discount (required).</param>
+	/// <param name="value">Value of the discount (required).</param>
+	/// <param name="objectName">Object name of the discount (required).</param>
+	/// <param name="mapAll">Internal param (required).</param>
+	public SaveInvoiceDiscountSave(bool? discount = default, string text = default, bool? percentage = default,
 		decimal? value = default, string objectName = default, bool? mapAll = default)
 	{
 		// to ensure "discount" is required (not null)
@@ -65,57 +65,57 @@ public class SaveInvoiceDiscountSave : IEquatable<SaveInvoiceDiscountSave>, IVal
 		MapAll = mapAll;
 	}
 
-    /// <summary>
-    ///     Defines if this is a discount or a surcharge
-    /// </summary>
-    /// <value>Defines if this is a discount or a surcharge</value>
-    [DataMember(Name = "discount", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines if this is a discount or a surcharge
+	/// </summary>
+	/// <value>Defines if this is a discount or a surcharge</value>
+	[DataMember(Name = "discount", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? Discount { get; set; }
 
-    /// <summary>
-    ///     A text for your discount
-    /// </summary>
-    /// <value>A text for your discount</value>
-    [DataMember(Name = "text", EmitDefaultValue = false)]
+	/// <summary>
+	///     A text for your discount
+	/// </summary>
+	/// <value>A text for your discount</value>
+	[DataMember(Name = "text", EmitDefaultValue = false)]
 	public string Text { get; set; }
 
-    /// <summary>
-    ///     Defines if this is a percentage or an absolute discount
-    /// </summary>
-    /// <value>Defines if this is a percentage or an absolute discount</value>
-    [DataMember(Name = "percentage", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines if this is a percentage or an absolute discount
+	/// </summary>
+	/// <value>Defines if this is a percentage or an absolute discount</value>
+	[DataMember(Name = "percentage", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? Percentage { get; set; }
 
-    /// <summary>
-    ///     Value of the discount
-    /// </summary>
-    /// <value>Value of the discount</value>
-    [DataMember(Name = "value", EmitDefaultValue = false)]
+	/// <summary>
+	///     Value of the discount
+	/// </summary>
+	/// <value>Value of the discount</value>
+	[DataMember(Name = "value", EmitDefaultValue = false)]
 	public decimal? Value { get; set; }
 
-    /// <summary>
-    ///     Object name of the discount
-    /// </summary>
-    /// <value>Object name of the discount</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     Object name of the discount
+	/// </summary>
+	/// <value>Object name of the discount</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; set; }
 
-    /// <summary>
-    ///     Internal param
-    /// </summary>
-    /// <value>Internal param</value>
-    [DataMember(Name = "mapAll", EmitDefaultValue = false)]
+	/// <summary>
+	///     Internal param
+	/// </summary>
+	/// <value>Internal param</value>
+	[DataMember(Name = "mapAll", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? MapAll { get; set; }
 
-    /// <summary>
-    ///     Returns true if SaveInvoiceDiscountSave instances are equal
-    /// </summary>
-    /// <param name="input">Instance of SaveInvoiceDiscountSave to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(SaveInvoiceDiscountSave input)
+	/// <summary>
+	///     Returns true if SaveInvoiceDiscountSave instances are equal
+	/// </summary>
+	/// <param name="input">Instance of SaveInvoiceDiscountSave to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(SaveInvoiceDiscountSave input)
 	{
 		if (input == null)
 			return false;
@@ -153,21 +153,21 @@ public class SaveInvoiceDiscountSave : IEquatable<SaveInvoiceDiscountSave>, IVal
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class SaveInvoiceDiscountSave {\n");
@@ -181,30 +181,30 @@ public class SaveInvoiceDiscountSave : IEquatable<SaveInvoiceDiscountSave>, IVal
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as SaveInvoiceDiscountSave);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

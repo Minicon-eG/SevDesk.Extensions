@@ -22,35 +22,35 @@ public class InvoicePosApi : IInvoicePosApi
 {
 	private ExceptionFactory _exceptionFactory = (name, response) => null;
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="InvoicePosApi" /> class.
-    /// </summary>
-    /// <returns></returns>
-    public InvoicePosApi(string basePath)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="InvoicePosApi" /> class.
+	/// </summary>
+	/// <returns></returns>
+	public InvoicePosApi(string basePath)
 	{
 		Configuration = new Configuration { BasePath = basePath };
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="InvoicePosApi" /> class
-    /// </summary>
-    /// <returns></returns>
-    public InvoicePosApi()
+	/// <summary>
+	///     Initializes a new instance of the <see cref="InvoicePosApi" /> class
+	/// </summary>
+	/// <returns></returns>
+	public InvoicePosApi()
 	{
 		Configuration = Configuration.Default;
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="InvoicePosApi" /> class
-    ///     using Configuration object
-    /// </summary>
-    /// <param name="configuration">An instance of Configuration</param>
-    /// <returns></returns>
-    public InvoicePosApi(Configuration configuration = null)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="InvoicePosApi" /> class
+	///     using Configuration object
+	/// </summary>
+	/// <param name="configuration">An instance of Configuration</param>
+	/// <returns></returns>
+	public InvoicePosApi(Configuration configuration = null)
 	{
 		if (configuration == null) // use the default one in Configuration
 			Configuration = Configuration.Default;
@@ -60,25 +60,25 @@ public class InvoicePosApi : IInvoicePosApi
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Gets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    public string GetBasePath()
+	/// <summary>
+	///     Gets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	public string GetBasePath()
 	{
 		return Configuration.ApiClient.RestClient.BaseUrl.ToString();
 	}
 
-    /// <summary>
-    ///     Gets or sets the configuration object
-    /// </summary>
-    /// <value>An instance of the Configuration</value>
-    public Configuration Configuration { get; set; }
+	/// <summary>
+	///     Gets or sets the configuration object
+	/// </summary>
+	/// <value>An instance of the Configuration</value>
+	public Configuration Configuration { get; set; }
 
-    /// <summary>
-    ///     Provides a factory method hook for the creation of exceptions.
-    /// </summary>
-    public ExceptionFactory ExceptionFactory
+	/// <summary>
+	///     Provides a factory method hook for the creation of exceptions.
+	/// </summary>
+	public ExceptionFactory ExceptionFactory
 	{
 		get
 		{
@@ -89,52 +89,52 @@ public class InvoicePosApi : IInvoicePosApi
 		set => _exceptionFactory = value;
 	}
 
-    /// <summary>
-    ///     Retrieve InvoicePos There are a multitude of parameter which can be used to filter.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id">Retrieve all InvoicePos with this InvoicePos id (optional)</param>
-    /// <param name="invoiceId">
-    ///     Retrieve all invoices positions with this invoice. Must be provided with invoice[objectName]
-    ///     (optional)
-    /// </param>
-    /// <param name="invoiceObjectName">
-    ///     Only required if invoice[id] was provided. &#x27;Invoice&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <param name="partId">Retrieve all invoices positions with this part. Must be provided with part[objectName] (optional)</param>
-    /// <param name="partObjectName">
-    ///     Only required if part[id] was provided. &#x27;Part&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>InlineResponse20022</returns>
-    public InlineResponse20022 GetInvoicePos(decimal? id = null, decimal? invoiceId = null,
+	/// <summary>
+	///     Retrieve InvoicePos There are a multitude of parameter which can be used to filter.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="id">Retrieve all InvoicePos with this InvoicePos id (optional)</param>
+	/// <param name="invoiceId">
+	///     Retrieve all invoices positions with this invoice. Must be provided with invoice[objectName]
+	///     (optional)
+	/// </param>
+	/// <param name="invoiceObjectName">
+	///     Only required if invoice[id] was provided. &#x27;Invoice&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <param name="partId">Retrieve all invoices positions with this part. Must be provided with part[objectName] (optional)</param>
+	/// <param name="partObjectName">
+	///     Only required if part[id] was provided. &#x27;Part&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>InlineResponse20022</returns>
+	public InlineResponse20022 GetInvoicePos(decimal? id = null, decimal? invoiceId = null,
 		string invoiceObjectName = null, decimal? partId = null, string partObjectName = null)
 	{
 		var localVarResponse = GetInvoicePosWithHttpInfo(id, invoiceId, invoiceObjectName, partId, partObjectName);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve InvoicePos There are a multitude of parameter which can be used to filter.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id">Retrieve all InvoicePos with this InvoicePos id (optional)</param>
-    /// <param name="invoiceId">
-    ///     Retrieve all invoices positions with this invoice. Must be provided with invoice[objectName]
-    ///     (optional)
-    /// </param>
-    /// <param name="invoiceObjectName">
-    ///     Only required if invoice[id] was provided. &#x27;Invoice&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <param name="partId">Retrieve all invoices positions with this part. Must be provided with part[objectName] (optional)</param>
-    /// <param name="partObjectName">
-    ///     Only required if part[id] was provided. &#x27;Part&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>ApiResponse of InlineResponse20022</returns>
-    public ApiResponse<InlineResponse20022> GetInvoicePosWithHttpInfo(decimal? id = null, decimal? invoiceId = null,
+	/// <summary>
+	///     Retrieve InvoicePos There are a multitude of parameter which can be used to filter.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="id">Retrieve all InvoicePos with this InvoicePos id (optional)</param>
+	/// <param name="invoiceId">
+	///     Retrieve all invoices positions with this invoice. Must be provided with invoice[objectName]
+	///     (optional)
+	/// </param>
+	/// <param name="invoiceObjectName">
+	///     Only required if invoice[id] was provided. &#x27;Invoice&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <param name="partId">Retrieve all invoices positions with this part. Must be provided with part[objectName] (optional)</param>
+	/// <param name="partObjectName">
+	///     Only required if part[id] was provided. &#x27;Part&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>ApiResponse of InlineResponse20022</returns>
+	public ApiResponse<InlineResponse20022> GetInvoicePosWithHttpInfo(decimal? id = null, decimal? invoiceId = null,
 		string invoiceObjectName = null, decimal? partId = null, string partObjectName = null)
 	{
 		var localVarPath = "/InvoicePos";
@@ -200,26 +200,26 @@ public class InvoicePosApi : IInvoicePosApi
 			(InlineResponse20022)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20022)));
 	}
 
-    /// <summary>
-    ///     Retrieve InvoicePos There are a multitude of parameter which can be used to filter.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id">Retrieve all InvoicePos with this InvoicePos id (optional)</param>
-    /// <param name="invoiceId">
-    ///     Retrieve all invoices positions with this invoice. Must be provided with invoice[objectName]
-    ///     (optional)
-    /// </param>
-    /// <param name="invoiceObjectName">
-    ///     Only required if invoice[id] was provided. &#x27;Invoice&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <param name="partId">Retrieve all invoices positions with this part. Must be provided with part[objectName] (optional)</param>
-    /// <param name="partObjectName">
-    ///     Only required if part[id] was provided. &#x27;Part&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of InlineResponse20022</returns>
-    public async Task<InlineResponse20022> GetInvoicePosAsync(decimal? id = null, decimal? invoiceId = null,
+	/// <summary>
+	///     Retrieve InvoicePos There are a multitude of parameter which can be used to filter.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="id">Retrieve all InvoicePos with this InvoicePos id (optional)</param>
+	/// <param name="invoiceId">
+	///     Retrieve all invoices positions with this invoice. Must be provided with invoice[objectName]
+	///     (optional)
+	/// </param>
+	/// <param name="invoiceObjectName">
+	///     Only required if invoice[id] was provided. &#x27;Invoice&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <param name="partId">Retrieve all invoices positions with this part. Must be provided with part[objectName] (optional)</param>
+	/// <param name="partObjectName">
+	///     Only required if part[id] was provided. &#x27;Part&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of InlineResponse20022</returns>
+	public async Task<InlineResponse20022> GetInvoicePosAsync(decimal? id = null, decimal? invoiceId = null,
 		string invoiceObjectName = null, decimal? partId = null, string partObjectName = null)
 	{
 		var localVarResponse =
@@ -227,26 +227,26 @@ public class InvoicePosApi : IInvoicePosApi
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve InvoicePos There are a multitude of parameter which can be used to filter.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="id">Retrieve all InvoicePos with this InvoicePos id (optional)</param>
-    /// <param name="invoiceId">
-    ///     Retrieve all invoices positions with this invoice. Must be provided with invoice[objectName]
-    ///     (optional)
-    /// </param>
-    /// <param name="invoiceObjectName">
-    ///     Only required if invoice[id] was provided. &#x27;Invoice&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <param name="partId">Retrieve all invoices positions with this part. Must be provided with part[objectName] (optional)</param>
-    /// <param name="partObjectName">
-    ///     Only required if part[id] was provided. &#x27;Part&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of ApiResponse (InlineResponse20022)</returns>
-    public async Task<ApiResponse<InlineResponse20022>> GetInvoicePosAsyncWithHttpInfo(decimal? id = null,
+	/// <summary>
+	///     Retrieve InvoicePos There are a multitude of parameter which can be used to filter.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="id">Retrieve all InvoicePos with this InvoicePos id (optional)</param>
+	/// <param name="invoiceId">
+	///     Retrieve all invoices positions with this invoice. Must be provided with invoice[objectName]
+	///     (optional)
+	/// </param>
+	/// <param name="invoiceObjectName">
+	///     Only required if invoice[id] was provided. &#x27;Invoice&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <param name="partId">Retrieve all invoices positions with this part. Must be provided with part[objectName] (optional)</param>
+	/// <param name="partObjectName">
+	///     Only required if part[id] was provided. &#x27;Part&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of ApiResponse (InlineResponse20022)</returns>
+	public async Task<ApiResponse<InlineResponse20022>> GetInvoicePosAsyncWithHttpInfo(decimal? id = null,
 		decimal? invoiceId = null, string invoiceObjectName = null, decimal? partId = null,
 		string partObjectName = null)
 	{
@@ -313,34 +313,34 @@ public class InvoicePosApi : IInvoicePosApi
 			(InlineResponse20022)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20022)));
 	}
 
-    /// <summary>
-    ///     Sets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    [Obsolete(
+	/// <summary>
+	///     Sets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	[Obsolete(
 		"SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
 	public void SetBasePath(string basePath)
 	{
 		// do nothing
 	}
 
-    /// <summary>
-    ///     Gets the default header.
-    /// </summary>
-    /// <returns>Dictionary of HTTP header</returns>
-    [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
+	/// <summary>
+	///     Gets the default header.
+	/// </summary>
+	/// <returns>Dictionary of HTTP header</returns>
+	[Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
 	public IDictionary<string, string> DefaultHeader()
 	{
 		return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
 	}
 
-    /// <summary>
-    ///     Add default header.
-    /// </summary>
-    /// <param name="key">Header field name.</param>
-    /// <param name="value">Header field value.</param>
-    /// <returns></returns>
-    [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
+	/// <summary>
+	///     Add default header.
+	/// </summary>
+	/// <param name="key">Header field name.</param>
+	/// <param name="value">Header field value.</param>
+	/// <returns></returns>
+	[Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
 	public void AddDefaultHeader(string key, string value)
 	{
 		Configuration.AddDefaultHeader(key, value);

@@ -22,35 +22,35 @@ public class AccountingContactApi : IAccountingContactApi
 {
 	private ExceptionFactory _exceptionFactory = (name, response) => null;
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="AccountingContactApi" /> class.
-    /// </summary>
-    /// <returns></returns>
-    public AccountingContactApi(string basePath)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="AccountingContactApi" /> class.
+	/// </summary>
+	/// <returns></returns>
+	public AccountingContactApi(string basePath)
 	{
 		Configuration = new Configuration { BasePath = basePath };
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="AccountingContactApi" /> class
-    /// </summary>
-    /// <returns></returns>
-    public AccountingContactApi()
+	/// <summary>
+	///     Initializes a new instance of the <see cref="AccountingContactApi" /> class
+	/// </summary>
+	/// <returns></returns>
+	public AccountingContactApi()
 	{
 		Configuration = Configuration.Default;
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="AccountingContactApi" /> class
-    ///     using Configuration object
-    /// </summary>
-    /// <param name="configuration">An instance of Configuration</param>
-    /// <returns></returns>
-    public AccountingContactApi(Configuration configuration = null)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="AccountingContactApi" /> class
+	///     using Configuration object
+	/// </summary>
+	/// <param name="configuration">An instance of Configuration</param>
+	/// <returns></returns>
+	public AccountingContactApi(Configuration configuration = null)
 	{
 		if (configuration == null) // use the default one in Configuration
 			Configuration = Configuration.Default;
@@ -60,25 +60,25 @@ public class AccountingContactApi : IAccountingContactApi
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Gets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    public string GetBasePath()
+	/// <summary>
+	///     Gets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	public string GetBasePath()
 	{
 		return Configuration.ApiClient.RestClient.BaseUrl.ToString();
 	}
 
-    /// <summary>
-    ///     Gets or sets the configuration object
-    /// </summary>
-    /// <value>An instance of the Configuration</value>
-    public Configuration Configuration { get; set; }
+	/// <summary>
+	///     Gets or sets the configuration object
+	/// </summary>
+	/// <value>An instance of the Configuration</value>
+	public Configuration Configuration { get; set; }
 
-    /// <summary>
-    ///     Provides a factory method hook for the creation of exceptions.
-    /// </summary>
-    public ExceptionFactory ExceptionFactory
+	/// <summary>
+	///     Provides a factory method hook for the creation of exceptions.
+	/// </summary>
+	public ExceptionFactory ExceptionFactory
 	{
 		get
 		{
@@ -89,25 +89,25 @@ public class AccountingContactApi : IAccountingContactApi
 		set => _exceptionFactory = value;
 	}
 
-    /// <summary>
-    ///     Create a new accounting contact Creates a new accounting contact.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">Creation data (optional)</param>
-    /// <returns>GetAccountContactResponse</returns>
-    public GetAccountContactResponse CreateAccountingContact(ModelAccountingContact body = null)
+	/// <summary>
+	///     Create a new accounting contact Creates a new accounting contact.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">Creation data (optional)</param>
+	/// <returns>GetAccountContactResponse</returns>
+	public GetAccountContactResponse CreateAccountingContact(ModelAccountingContact body = null)
 	{
 		var localVarResponse = CreateAccountingContactWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new accounting contact Creates a new accounting contact.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">Creation data (optional)</param>
-    /// <returns>ApiResponse of GetAccountContactResponse</returns>
-    public ApiResponse<GetAccountContactResponse> CreateAccountingContactWithHttpInfo(
+	/// <summary>
+	///     Create a new accounting contact Creates a new accounting contact.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">Creation data (optional)</param>
+	/// <returns>ApiResponse of GetAccountContactResponse</returns>
+	public ApiResponse<GetAccountContactResponse> CreateAccountingContactWithHttpInfo(
 		ModelAccountingContact body = null)
 	{
 		var localVarPath = "/AccountingContact";
@@ -162,25 +162,25 @@ public class AccountingContactApi : IAccountingContactApi
 				typeof(GetAccountContactResponse)));
 	}
 
-    /// <summary>
-    ///     Create a new accounting contact Creates a new accounting contact.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">Creation data (optional)</param>
-    /// <returns>Task of GetAccountContactResponse</returns>
-    public async Task<GetAccountContactResponse> CreateAccountingContactAsync(ModelAccountingContact body = null)
+	/// <summary>
+	///     Create a new accounting contact Creates a new accounting contact.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">Creation data (optional)</param>
+	/// <returns>Task of GetAccountContactResponse</returns>
+	public async Task<GetAccountContactResponse> CreateAccountingContactAsync(ModelAccountingContact body = null)
 	{
 		var localVarResponse = await CreateAccountingContactAsyncWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new accounting contact Creates a new accounting contact.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">Creation data (optional)</param>
-    /// <returns>Task of ApiResponse (GetAccountContactResponse)</returns>
-    public async Task<ApiResponse<GetAccountContactResponse>> CreateAccountingContactAsyncWithHttpInfo(
+	/// <summary>
+	///     Create a new accounting contact Creates a new accounting contact.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">Creation data (optional)</param>
+	/// <returns>Task of ApiResponse (GetAccountContactResponse)</returns>
+	public async Task<ApiResponse<GetAccountContactResponse>> CreateAccountingContactAsyncWithHttpInfo(
 		ModelAccountingContact body = null)
 	{
 		var localVarPath = "/AccountingContact";
@@ -235,25 +235,25 @@ public class AccountingContactApi : IAccountingContactApi
 				typeof(GetAccountContactResponse)));
 	}
 
-    /// <summary>
-    ///     Deletes an accounting contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="accountingContactId">Id of accounting contact resource to delete</param>
-    /// <returns>InlineResponse2003</returns>
-    public InlineResponse2003 DeleteAccountingContact(int? accountingContactId)
+	/// <summary>
+	///     Deletes an accounting contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="accountingContactId">Id of accounting contact resource to delete</param>
+	/// <returns>InlineResponse2003</returns>
+	public InlineResponse2003 DeleteAccountingContact(int? accountingContactId)
 	{
 		var localVarResponse = DeleteAccountingContactWithHttpInfo(accountingContactId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Deletes an accounting contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="accountingContactId">Id of accounting contact resource to delete</param>
-    /// <returns>ApiResponse of InlineResponse2003</returns>
-    public ApiResponse<InlineResponse2003> DeleteAccountingContactWithHttpInfo(int? accountingContactId)
+	/// <summary>
+	///     Deletes an accounting contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="accountingContactId">Id of accounting contact resource to delete</param>
+	/// <returns>ApiResponse of InlineResponse2003</returns>
+	public ApiResponse<InlineResponse2003> DeleteAccountingContactWithHttpInfo(int? accountingContactId)
 	{
 		// verify the required parameter 'accountingContactId' is set
 		if (accountingContactId == null)
@@ -309,25 +309,25 @@ public class AccountingContactApi : IAccountingContactApi
 			(InlineResponse2003)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2003)));
 	}
 
-    /// <summary>
-    ///     Deletes an accounting contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="accountingContactId">Id of accounting contact resource to delete</param>
-    /// <returns>Task of InlineResponse2003</returns>
-    public async Task<InlineResponse2003> DeleteAccountingContactAsync(int? accountingContactId)
+	/// <summary>
+	///     Deletes an accounting contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="accountingContactId">Id of accounting contact resource to delete</param>
+	/// <returns>Task of InlineResponse2003</returns>
+	public async Task<InlineResponse2003> DeleteAccountingContactAsync(int? accountingContactId)
 	{
 		var localVarResponse = await DeleteAccountingContactAsyncWithHttpInfo(accountingContactId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Deletes an accounting contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="accountingContactId">Id of accounting contact resource to delete</param>
-    /// <returns>Task of ApiResponse (InlineResponse2003)</returns>
-    public async Task<ApiResponse<InlineResponse2003>> DeleteAccountingContactAsyncWithHttpInfo(
+	/// <summary>
+	///     Deletes an accounting contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="accountingContactId">Id of accounting contact resource to delete</param>
+	/// <returns>Task of ApiResponse (InlineResponse2003)</returns>
+	public async Task<ApiResponse<InlineResponse2003>> DeleteAccountingContactAsyncWithHttpInfo(
 		int? accountingContactId)
 	{
 		// verify the required parameter 'accountingContactId' is set
@@ -384,29 +384,29 @@ public class AccountingContactApi : IAccountingContactApi
 			(InlineResponse2003)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2003)));
 	}
 
-    /// <summary>
-    ///     Retrieve accounting contact Returns all accounting contact which have been added up until now. Filters can be
-    ///     added.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">ID of contact for which you want the accounting contact. (optional)</param>
-    /// <param name="contactObjectName">Object name. Only needed if you also defined the ID of a contact. (optional)</param>
-    /// <returns>GetAccountContactResponse</returns>
-    public GetAccountContactResponse GetAccountingContact(string contactId = null, string contactObjectName = null)
+	/// <summary>
+	///     Retrieve accounting contact Returns all accounting contact which have been added up until now. Filters can be
+	///     added.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">ID of contact for which you want the accounting contact. (optional)</param>
+	/// <param name="contactObjectName">Object name. Only needed if you also defined the ID of a contact. (optional)</param>
+	/// <returns>GetAccountContactResponse</returns>
+	public GetAccountContactResponse GetAccountingContact(string contactId = null, string contactObjectName = null)
 	{
 		var localVarResponse = GetAccountingContactWithHttpInfo(contactId, contactObjectName);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve accounting contact Returns all accounting contact which have been added up until now. Filters can be
-    ///     added.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">ID of contact for which you want the accounting contact. (optional)</param>
-    /// <param name="contactObjectName">Object name. Only needed if you also defined the ID of a contact. (optional)</param>
-    /// <returns>ApiResponse of GetAccountContactResponse</returns>
-    public ApiResponse<GetAccountContactResponse> GetAccountingContactWithHttpInfo(string contactId = null,
+	/// <summary>
+	///     Retrieve accounting contact Returns all accounting contact which have been added up until now. Filters can be
+	///     added.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">ID of contact for which you want the accounting contact. (optional)</param>
+	/// <param name="contactObjectName">Object name. Only needed if you also defined the ID of a contact. (optional)</param>
+	/// <returns>ApiResponse of GetAccountContactResponse</returns>
+	public ApiResponse<GetAccountContactResponse> GetAccountingContactWithHttpInfo(string contactId = null,
 		string contactObjectName = null)
 	{
 		var localVarPath = "/AccountingContact";
@@ -463,30 +463,30 @@ public class AccountingContactApi : IAccountingContactApi
 				typeof(GetAccountContactResponse)));
 	}
 
-    /// <summary>
-    ///     Retrieve accounting contact Returns all accounting contact which have been added up until now. Filters can be
-    ///     added.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">ID of contact for which you want the accounting contact. (optional)</param>
-    /// <param name="contactObjectName">Object name. Only needed if you also defined the ID of a contact. (optional)</param>
-    /// <returns>Task of GetAccountContactResponse</returns>
-    public async Task<GetAccountContactResponse> GetAccountingContactAsync(string contactId = null,
+	/// <summary>
+	///     Retrieve accounting contact Returns all accounting contact which have been added up until now. Filters can be
+	///     added.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">ID of contact for which you want the accounting contact. (optional)</param>
+	/// <param name="contactObjectName">Object name. Only needed if you also defined the ID of a contact. (optional)</param>
+	/// <returns>Task of GetAccountContactResponse</returns>
+	public async Task<GetAccountContactResponse> GetAccountingContactAsync(string contactId = null,
 		string contactObjectName = null)
 	{
 		var localVarResponse = await GetAccountingContactAsyncWithHttpInfo(contactId, contactObjectName);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve accounting contact Returns all accounting contact which have been added up until now. Filters can be
-    ///     added.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="contactId">ID of contact for which you want the accounting contact. (optional)</param>
-    /// <param name="contactObjectName">Object name. Only needed if you also defined the ID of a contact. (optional)</param>
-    /// <returns>Task of ApiResponse (GetAccountContactResponse)</returns>
-    public async Task<ApiResponse<GetAccountContactResponse>> GetAccountingContactAsyncWithHttpInfo(
+	/// <summary>
+	///     Retrieve accounting contact Returns all accounting contact which have been added up until now. Filters can be
+	///     added.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="contactId">ID of contact for which you want the accounting contact. (optional)</param>
+	/// <param name="contactObjectName">Object name. Only needed if you also defined the ID of a contact. (optional)</param>
+	/// <returns>Task of ApiResponse (GetAccountContactResponse)</returns>
+	public async Task<ApiResponse<GetAccountContactResponse>> GetAccountingContactAsyncWithHttpInfo(
 		string contactId = null, string contactObjectName = null)
 	{
 		var localVarPath = "/AccountingContact";
@@ -543,25 +543,25 @@ public class AccountingContactApi : IAccountingContactApi
 				typeof(GetAccountContactResponse)));
 	}
 
-    /// <summary>
-    ///     Find accounting contact by ID Returns a single accounting contac
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="accountingContactId">ID of accounting contact to return</param>
-    /// <returns>GetAccountContactResponse</returns>
-    public GetAccountContactResponse GetAccountingContactById(int? accountingContactId)
+	/// <summary>
+	///     Find accounting contact by ID Returns a single accounting contac
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="accountingContactId">ID of accounting contact to return</param>
+	/// <returns>GetAccountContactResponse</returns>
+	public GetAccountContactResponse GetAccountingContactById(int? accountingContactId)
 	{
 		var localVarResponse = GetAccountingContactByIdWithHttpInfo(accountingContactId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find accounting contact by ID Returns a single accounting contac
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="accountingContactId">ID of accounting contact to return</param>
-    /// <returns>ApiResponse of GetAccountContactResponse</returns>
-    public ApiResponse<GetAccountContactResponse> GetAccountingContactByIdWithHttpInfo(int? accountingContactId)
+	/// <summary>
+	///     Find accounting contact by ID Returns a single accounting contac
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="accountingContactId">ID of accounting contact to return</param>
+	/// <returns>ApiResponse of GetAccountContactResponse</returns>
+	public ApiResponse<GetAccountContactResponse> GetAccountingContactByIdWithHttpInfo(int? accountingContactId)
 	{
 		// verify the required parameter 'accountingContactId' is set
 		if (accountingContactId == null)
@@ -618,25 +618,25 @@ public class AccountingContactApi : IAccountingContactApi
 				typeof(GetAccountContactResponse)));
 	}
 
-    /// <summary>
-    ///     Find accounting contact by ID Returns a single accounting contac
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="accountingContactId">ID of accounting contact to return</param>
-    /// <returns>Task of GetAccountContactResponse</returns>
-    public async Task<GetAccountContactResponse> GetAccountingContactByIdAsync(int? accountingContactId)
+	/// <summary>
+	///     Find accounting contact by ID Returns a single accounting contac
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="accountingContactId">ID of accounting contact to return</param>
+	/// <returns>Task of GetAccountContactResponse</returns>
+	public async Task<GetAccountContactResponse> GetAccountingContactByIdAsync(int? accountingContactId)
 	{
 		var localVarResponse = await GetAccountingContactByIdAsyncWithHttpInfo(accountingContactId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find accounting contact by ID Returns a single accounting contac
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="accountingContactId">ID of accounting contact to return</param>
-    /// <returns>Task of ApiResponse (GetAccountContactResponse)</returns>
-    public async Task<ApiResponse<GetAccountContactResponse>> GetAccountingContactByIdAsyncWithHttpInfo(
+	/// <summary>
+	///     Find accounting contact by ID Returns a single accounting contac
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="accountingContactId">ID of accounting contact to return</param>
+	/// <returns>Task of ApiResponse (GetAccountContactResponse)</returns>
+	public async Task<ApiResponse<GetAccountContactResponse>> GetAccountingContactByIdAsyncWithHttpInfo(
 		int? accountingContactId)
 	{
 		// verify the required parameter 'accountingContactId' is set
@@ -694,28 +694,28 @@ public class AccountingContactApi : IAccountingContactApi
 				typeof(GetAccountContactResponse)));
 	}
 
-    /// <summary>
-    ///     Update an existing accounting contact Update an accounting contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="accountingContactId">ID of accounting contact to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>GetAccountContactResponse</returns>
-    public GetAccountContactResponse UpdateAccountingContact(int? accountingContactId,
+	/// <summary>
+	///     Update an existing accounting contact Update an accounting contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="accountingContactId">ID of accounting contact to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>GetAccountContactResponse</returns>
+	public GetAccountContactResponse UpdateAccountingContact(int? accountingContactId,
 		ModelAccountingContactUpdate body = null)
 	{
 		var localVarResponse = UpdateAccountingContactWithHttpInfo(accountingContactId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update an existing accounting contact Update an accounting contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="accountingContactId">ID of accounting contact to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>ApiResponse of GetAccountContactResponse</returns>
-    public ApiResponse<GetAccountContactResponse> UpdateAccountingContactWithHttpInfo(int? accountingContactId,
+	/// <summary>
+	///     Update an existing accounting contact Update an accounting contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="accountingContactId">ID of accounting contact to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>ApiResponse of GetAccountContactResponse</returns>
+	public ApiResponse<GetAccountContactResponse> UpdateAccountingContactWithHttpInfo(int? accountingContactId,
 		ModelAccountingContactUpdate body = null)
 	{
 		// verify the required parameter 'accountingContactId' is set
@@ -778,28 +778,28 @@ public class AccountingContactApi : IAccountingContactApi
 				typeof(GetAccountContactResponse)));
 	}
 
-    /// <summary>
-    ///     Update an existing accounting contact Update an accounting contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="accountingContactId">ID of accounting contact to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>Task of GetAccountContactResponse</returns>
-    public async Task<GetAccountContactResponse> UpdateAccountingContactAsync(int? accountingContactId,
+	/// <summary>
+	///     Update an existing accounting contact Update an accounting contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="accountingContactId">ID of accounting contact to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>Task of GetAccountContactResponse</returns>
+	public async Task<GetAccountContactResponse> UpdateAccountingContactAsync(int? accountingContactId,
 		ModelAccountingContactUpdate body = null)
 	{
 		var localVarResponse = await UpdateAccountingContactAsyncWithHttpInfo(accountingContactId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update an existing accounting contact Update an accounting contact
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="accountingContactId">ID of accounting contact to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>Task of ApiResponse (GetAccountContactResponse)</returns>
-    public async Task<ApiResponse<GetAccountContactResponse>> UpdateAccountingContactAsyncWithHttpInfo(
+	/// <summary>
+	///     Update an existing accounting contact Update an accounting contact
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="accountingContactId">ID of accounting contact to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>Task of ApiResponse (GetAccountContactResponse)</returns>
+	public async Task<ApiResponse<GetAccountContactResponse>> UpdateAccountingContactAsyncWithHttpInfo(
 		int? accountingContactId, ModelAccountingContactUpdate body = null)
 	{
 		// verify the required parameter 'accountingContactId' is set
@@ -862,34 +862,34 @@ public class AccountingContactApi : IAccountingContactApi
 				typeof(GetAccountContactResponse)));
 	}
 
-    /// <summary>
-    ///     Sets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    [Obsolete(
+	/// <summary>
+	///     Sets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	[Obsolete(
 		"SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
 	public void SetBasePath(string basePath)
 	{
 		// do nothing
 	}
 
-    /// <summary>
-    ///     Gets the default header.
-    /// </summary>
-    /// <returns>Dictionary of HTTP header</returns>
-    [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
+	/// <summary>
+	///     Gets the default header.
+	/// </summary>
+	/// <returns>Dictionary of HTTP header</returns>
+	[Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
 	public IDictionary<string, string> DefaultHeader()
 	{
 		return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
 	}
 
-    /// <summary>
-    ///     Add default header.
-    /// </summary>
-    /// <param name="key">Header field name.</param>
-    /// <param name="value">Header field value.</param>
-    /// <returns></returns>
-    [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
+	/// <summary>
+	///     Add default header.
+	/// </summary>
+	/// <param name="key">Header field name.</param>
+	/// <param name="value">Header field value.</param>
+	/// <returns></returns>
+	[Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
 	public void AddDefaultHeader(string key, string value)
 	{
 		Configuration.AddDefaultHeader(key, value);

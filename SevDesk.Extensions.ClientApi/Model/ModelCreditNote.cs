@@ -22,189 +22,189 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelCreditNote : IEquatable<ModelCreditNote>, IValidatableObject
 {
-    /// <summary>
-    ///     defines the booking category, for more information see the section \&quot;&lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Credit-note-booking-categories&#x27;&gt;Credit note booking categories&lt;/a&gt;\
-    ///     &quot;
-    /// </summary>
-    /// <value>
-    ///     defines the booking category, for more information see the section \&quot;&lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Credit-note-booking-categories&#x27;&gt;Credit note booking categories&lt;/a&gt;\
-    ///     &quot;
-    /// </value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     defines the booking category, for more information see the section \&quot;&lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Credit-note-booking-categories&#x27;&gt;Credit note booking categories&lt;/a&gt;\
+	///     &quot;
+	/// </summary>
+	/// <value>
+	///     defines the booking category, for more information see the section \&quot;&lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Credit-note-booking-categories&#x27;&gt;Credit note booking categories&lt;/a&gt;\
+	///     &quot;
+	/// </value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum BookingCategoryEnum
 	{
-        /// <summary>
-        ///     Enum PROVISION for value: PROVISION
-        /// </summary>
-        [EnumMember(Value = "PROVISION")] PROVISION = 1,
+		/// <summary>
+		///     Enum PROVISION for value: PROVISION
+		/// </summary>
+		[EnumMember(Value = "PROVISION")] PROVISION = 1,
 
-        /// <summary>
-        ///     Enum ROYALTYASSIGNED for value: ROYALTY_ASSIGNED
-        /// </summary>
-        [EnumMember(Value = "ROYALTY_ASSIGNED")]
+		/// <summary>
+		///     Enum ROYALTYASSIGNED for value: ROYALTY_ASSIGNED
+		/// </summary>
+		[EnumMember(Value = "ROYALTY_ASSIGNED")]
 		ROYALTYASSIGNED = 2,
 
-        /// <summary>
-        ///     Enum ROYALTYUNASSIGNED for value: ROYALTY_UNASSIGNED
-        /// </summary>
-        [EnumMember(Value = "ROYALTY_UNASSIGNED")]
+		/// <summary>
+		///     Enum ROYALTYUNASSIGNED for value: ROYALTY_UNASSIGNED
+		/// </summary>
+		[EnumMember(Value = "ROYALTY_UNASSIGNED")]
 		ROYALTYUNASSIGNED = 3,
 
-        /// <summary>
-        ///     Enum UNDERACHIEVEMENT for value: UNDERACHIEVEMENT
-        /// </summary>
-        [EnumMember(Value = "UNDERACHIEVEMENT")]
+		/// <summary>
+		///     Enum UNDERACHIEVEMENT for value: UNDERACHIEVEMENT
+		/// </summary>
+		[EnumMember(Value = "UNDERACHIEVEMENT")]
 		UNDERACHIEVEMENT = 4,
 
-        /// <summary>
-        ///     Enum ACCOUNTINGTYPE for value: ACCOUNTING_TYPE
-        /// </summary>
-        [EnumMember(Value = "ACCOUNTING_TYPE")]
+		/// <summary>
+		///     Enum ACCOUNTINGTYPE for value: ACCOUNTING_TYPE
+		/// </summary>
+		[EnumMember(Value = "ACCOUNTING_TYPE")]
 		ACCOUNTINGTYPE = 5
 	}
 
-    /// <summary>
-    ///     Type which was used to send the creditNote. IMPORTANT: Please refer to the creditNote section of the       *
-    ///     API-Overview to understand how this attribute can be used before using it!
-    /// </summary>
-    /// <value>
-    ///     Type which was used to send the creditNote. IMPORTANT: Please refer to the creditNote section of the       *
-    ///     API-Overview to understand how this attribute can be used before using it!
-    /// </value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Type which was used to send the creditNote. IMPORTANT: Please refer to the creditNote section of the       *
+	///     API-Overview to understand how this attribute can be used before using it!
+	/// </summary>
+	/// <value>
+	///     Type which was used to send the creditNote. IMPORTANT: Please refer to the creditNote section of the       *
+	///     API-Overview to understand how this attribute can be used before using it!
+	/// </value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum SendTypeEnum
 	{
-        /// <summary>
-        ///     Enum VPR for value: VPR
-        /// </summary>
-        [EnumMember(Value = "VPR")] VPR = 1,
+		/// <summary>
+		///     Enum VPR for value: VPR
+		/// </summary>
+		[EnumMember(Value = "VPR")] VPR = 1,
 
-        /// <summary>
-        ///     Enum VPDF for value: VPDF
-        /// </summary>
-        [EnumMember(Value = "VPDF")] VPDF = 2,
+		/// <summary>
+		///     Enum VPDF for value: VPDF
+		/// </summary>
+		[EnumMember(Value = "VPDF")] VPDF = 2,
 
-        /// <summary>
-        ///     Enum VM for value: VM
-        /// </summary>
-        [EnumMember(Value = "VM")] VM = 3,
+		/// <summary>
+		///     Enum VM for value: VM
+		/// </summary>
+		[EnumMember(Value = "VM")] VM = 3,
 
-        /// <summary>
-        ///     Enum VP for value: VP
-        /// </summary>
-        [EnumMember(Value = "VP")] VP = 4
+		/// <summary>
+		///     Enum VP for value: VP
+		/// </summary>
+		[EnumMember(Value = "VP")] VP = 4
 	}
 
-    /// <summary>
-    ///     Please have a look in       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-credit-notes
-    ///     &#x27;&gt;status of credit note&lt;/a&gt;      to see what the different status codes mean
-    /// </summary>
-    /// <value>
-    ///     Please have a look in       &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Types-and-status-of-credit-notes&#x27;&gt;status of credit note&lt;/a&gt;      to
-    ///     see what the different status codes mean
-    /// </value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Please have a look in       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-credit-notes
+	///     &#x27;&gt;status of credit note&lt;/a&gt;      to see what the different status codes mean
+	/// </summary>
+	/// <value>
+	///     Please have a look in       &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Types-and-status-of-credit-notes&#x27;&gt;status of credit note&lt;/a&gt;      to
+	///     see what the different status codes mean
+	/// </value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum StatusEnum
 	{
-        /// <summary>
-        ///     Enum _100 for value: 100
-        /// </summary>
-        [EnumMember(Value = "100")] _100 = 1,
+		/// <summary>
+		///     Enum _100 for value: 100
+		/// </summary>
+		[EnumMember(Value = "100")] _100 = 1,
 
-        /// <summary>
-        ///     Enum _200 for value: 200
-        /// </summary>
-        [EnumMember(Value = "200")] _200 = 2,
+		/// <summary>
+		///     Enum _200 for value: 200
+		/// </summary>
+		[EnumMember(Value = "200")] _200 = 2,
 
-        /// <summary>
-        ///     Enum _300 for value: 300
-        /// </summary>
-        [EnumMember(Value = "300")] _300 = 3,
+		/// <summary>
+		///     Enum _300 for value: 300
+		/// </summary>
+		[EnumMember(Value = "300")] _300 = 3,
 
-        /// <summary>
-        ///     Enum _500 for value: 500
-        /// </summary>
-        [EnumMember(Value = "500")] _500 = 4,
+		/// <summary>
+		///     Enum _500 for value: 500
+		/// </summary>
+		[EnumMember(Value = "500")] _500 = 4,
 
-        /// <summary>
-        ///     Enum _750 for value: 750
-        /// </summary>
-        [EnumMember(Value = "750")] _750 = 5,
+		/// <summary>
+		///     Enum _750 for value: 750
+		/// </summary>
+		[EnumMember(Value = "750")] _750 = 5,
 
-        /// <summary>
-        ///     Enum _1000 for value: 1000
-        /// </summary>
-        [EnumMember(Value = "1000")] _1000 = 6
+		/// <summary>
+		///     Enum _1000 for value: 1000
+		/// </summary>
+		[EnumMember(Value = "1000")] _1000 = 6
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelCreditNote" /> class.
-    /// </summary>
-    /// <param name="id">
-    ///     The creditNote id. &lt;span style&#x3D;&#x27;color:red&#x27;&gt;Required&lt;/span&gt; if you want to
-    ///     create/update an credit note position for an existing credit note\&quot;.
-    /// </param>
-    /// <param name="objectName">The creditNote object name (required).</param>
-    /// <param name="mapAll">mapAll (required).</param>
-    /// <param name="creditNoteNumber">The creditNote number (required).</param>
-    /// <param name="contact">contact (required).</param>
-    /// <param name="creditNoteDate">Needs to be provided as timestamp or dd.mm.yyyy (required).</param>
-    /// <param name="status">
-    ///     Please have a look in       &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Types-and-status-of-credit-notes&#x27;&gt;status of credit note&lt;/a&gt;      to
-    ///     see what the different status codes mean (required).
-    /// </param>
-    /// <param name="header">Normally consist of prefix plus the creditNote number (required).</param>
-    /// <param name="headText">Certain html tags can be used here to format your text.</param>
-    /// <param name="footText">Certain html tags can be used here to format your text.</param>
-    /// <param name="addressCountry">addressCountry (required).</param>
-    /// <param name="createUser">createUser.</param>
-    /// <param name="sevClient">sevClient.</param>
-    /// <param name="deliveryTerms">Delivery terms of the creditNote.</param>
-    /// <param name="paymentTerms">Payment terms of the creditNote.</param>
-    /// <param name="version">
-    ///     Version of the creditNote.&lt;br&gt;      Can be used if you have multiple drafts for the same
-    ///     creditNote.&lt;br&gt;      Should start with 0.
-    /// </param>
-    /// <param name="smallSettlement">
-    ///     Defines if the client uses the small settlement scheme.      If yes, the creditNote must
-    ///     not contain any vat.
-    /// </param>
-    /// <param name="contactPerson">contactPerson (required).</param>
-    /// <param name="taxRate">Is overwritten by creditNote position tax rates (required).</param>
-    /// <param name="taxSet">taxSet.</param>
-    /// <param name="taxText">A common tax text would be &#x27;Umsatzsteuer 19%&#x27; (required).</param>
-    /// <param name="taxType">
-    ///     Tax type of the creditNote. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu -
-    ///     Steuerfreie innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des
-    ///     Leistungsempfängers (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT
-    ///     according to §19 1 UStG Tax rates are heavily connected to the tax type used. (required).
-    /// </param>
-    /// <param name="creditNoteType">Type of the creditNote..</param>
-    /// <param name="sendDate">The date the creditNote was sent to the customer.</param>
-    /// <param name="address">
-    ///     Complete address of the recipient including name, street, city, zip and country.&lt;br&gt;
-    ///     Line breaks can be used and will be displayed on the invoice pdf..
-    /// </param>
-    /// <param name="bookingCategory">
-    ///     defines the booking category, for more information see the section \&quot;&lt;a href
-    ///     &#x3D;&#x27;https://api.sevdesk.de/#section/Credit-note-booking-categories&#x27;&gt;Credit note booking categories
-    ///     &lt;/a&gt;\&quot;.
-    /// </param>
-    /// <param name="currency">Currency used in the creditNote. Needs to be currency code according to ISO-4217 (required).</param>
-    /// <param name="customerInternalNote">
-    ///     Internal note of the customer. Contains data entered into field &#x27;
-    ///     Referenz/Bestellnummer&#x27;.
-    /// </param>
-    /// <param name="showNet">If true, the net amount of each position will be shown on the creditNote. Otherwise gross amount.</param>
-    /// <param name="sendType">
-    ///     Type which was used to send the creditNote. IMPORTANT: Please refer to the creditNote section of
-    ///     the       *     API-Overview to understand how this attribute can be used before using it!.
-    /// </param>
-    public ModelCreditNote(int? id = default, string objectName = default, bool? mapAll = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelCreditNote" /> class.
+	/// </summary>
+	/// <param name="id">
+	///     The creditNote id. &lt;span style&#x3D;&#x27;color:red&#x27;&gt;Required&lt;/span&gt; if you want to
+	///     create/update an credit note position for an existing credit note\&quot;.
+	/// </param>
+	/// <param name="objectName">The creditNote object name (required).</param>
+	/// <param name="mapAll">mapAll (required).</param>
+	/// <param name="creditNoteNumber">The creditNote number (required).</param>
+	/// <param name="contact">contact (required).</param>
+	/// <param name="creditNoteDate">Needs to be provided as timestamp or dd.mm.yyyy (required).</param>
+	/// <param name="status">
+	///     Please have a look in       &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Types-and-status-of-credit-notes&#x27;&gt;status of credit note&lt;/a&gt;      to
+	///     see what the different status codes mean (required).
+	/// </param>
+	/// <param name="header">Normally consist of prefix plus the creditNote number (required).</param>
+	/// <param name="headText">Certain html tags can be used here to format your text.</param>
+	/// <param name="footText">Certain html tags can be used here to format your text.</param>
+	/// <param name="addressCountry">addressCountry (required).</param>
+	/// <param name="createUser">createUser.</param>
+	/// <param name="sevClient">sevClient.</param>
+	/// <param name="deliveryTerms">Delivery terms of the creditNote.</param>
+	/// <param name="paymentTerms">Payment terms of the creditNote.</param>
+	/// <param name="version">
+	///     Version of the creditNote.&lt;br&gt;      Can be used if you have multiple drafts for the same
+	///     creditNote.&lt;br&gt;      Should start with 0.
+	/// </param>
+	/// <param name="smallSettlement">
+	///     Defines if the client uses the small settlement scheme.      If yes, the creditNote must
+	///     not contain any vat.
+	/// </param>
+	/// <param name="contactPerson">contactPerson (required).</param>
+	/// <param name="taxRate">Is overwritten by creditNote position tax rates (required).</param>
+	/// <param name="taxSet">taxSet.</param>
+	/// <param name="taxText">A common tax text would be &#x27;Umsatzsteuer 19%&#x27; (required).</param>
+	/// <param name="taxType">
+	///     Tax type of the creditNote. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu -
+	///     Steuerfreie innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des
+	///     Leistungsempfängers (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT
+	///     according to §19 1 UStG Tax rates are heavily connected to the tax type used. (required).
+	/// </param>
+	/// <param name="creditNoteType">Type of the creditNote..</param>
+	/// <param name="sendDate">The date the creditNote was sent to the customer.</param>
+	/// <param name="address">
+	///     Complete address of the recipient including name, street, city, zip and country.&lt;br&gt;
+	///     Line breaks can be used and will be displayed on the invoice pdf..
+	/// </param>
+	/// <param name="bookingCategory">
+	///     defines the booking category, for more information see the section \&quot;&lt;a href
+	///     &#x3D;&#x27;https://api.sevdesk.de/#section/Credit-note-booking-categories&#x27;&gt;Credit note booking categories
+	///     &lt;/a&gt;\&quot;.
+	/// </param>
+	/// <param name="currency">Currency used in the creditNote. Needs to be currency code according to ISO-4217 (required).</param>
+	/// <param name="customerInternalNote">
+	///     Internal note of the customer. Contains data entered into field &#x27;
+	///     Referenz/Bestellnummer&#x27;.
+	/// </param>
+	/// <param name="showNet">If true, the net amount of each position will be shown on the creditNote. Otherwise gross amount.</param>
+	/// <param name="sendType">
+	///     Type which was used to send the creditNote. IMPORTANT: Please refer to the creditNote section of
+	///     the       *     API-Overview to understand how this attribute can be used before using it!.
+	/// </param>
+	public ModelCreditNote(int? id = default, string objectName = default, bool? mapAll = default,
 		string creditNoteNumber = default, ModelCreditNoteContact contact = default, DateTime? creditNoteDate = default,
 		StatusEnum status = default, string header = default, string headText = default, string footText = default,
 		ModelCreditNoteAddressCountry addressCountry = default, ModelCreditNoteCreateUser createUser = default,
@@ -290,325 +290,325 @@ public class ModelCreditNote : IEquatable<ModelCreditNote>, IValidatableObject
 		SendType = sendType;
 	}
 
-    /// <summary>
-    ///     Please have a look in       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-credit-notes
-    ///     &#x27;&gt;status of credit note&lt;/a&gt;      to see what the different status codes mean
-    /// </summary>
-    /// <value>
-    ///     Please have a look in       &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Types-and-status-of-credit-notes&#x27;&gt;status of credit note&lt;/a&gt;      to
-    ///     see what the different status codes mean
-    /// </value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+	/// <summary>
+	///     Please have a look in       &lt;a href&#x3D;&#x27;https://api.sevdesk.de/#section/Types-and-status-of-credit-notes
+	///     &#x27;&gt;status of credit note&lt;/a&gt;      to see what the different status codes mean
+	/// </summary>
+	/// <value>
+	///     Please have a look in       &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Types-and-status-of-credit-notes&#x27;&gt;status of credit note&lt;/a&gt;      to
+	///     see what the different status codes mean
+	/// </value>
+	[DataMember(Name = "status", EmitDefaultValue = false)]
 	public StatusEnum Status { get; set; }
 
-    /// <summary>
-    ///     defines the booking category, for more information see the section \&quot;&lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Credit-note-booking-categories&#x27;&gt;Credit note booking categories&lt;/a&gt;\
-    ///     &quot;
-    /// </summary>
-    /// <value>
-    ///     defines the booking category, for more information see the section \&quot;&lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/Credit-note-booking-categories&#x27;&gt;Credit note booking categories&lt;/a&gt;\
-    ///     &quot;
-    /// </value>
-    [DataMember(Name = "bookingCategory", EmitDefaultValue = false)]
+	/// <summary>
+	///     defines the booking category, for more information see the section \&quot;&lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Credit-note-booking-categories&#x27;&gt;Credit note booking categories&lt;/a&gt;\
+	///     &quot;
+	/// </summary>
+	/// <value>
+	///     defines the booking category, for more information see the section \&quot;&lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/Credit-note-booking-categories&#x27;&gt;Credit note booking categories&lt;/a&gt;\
+	///     &quot;
+	/// </value>
+	[DataMember(Name = "bookingCategory", EmitDefaultValue = false)]
 	public BookingCategoryEnum? BookingCategory { get; set; }
 
-    /// <summary>
-    ///     Type which was used to send the creditNote. IMPORTANT: Please refer to the creditNote section of the       *
-    ///     API-Overview to understand how this attribute can be used before using it!
-    /// </summary>
-    /// <value>
-    ///     Type which was used to send the creditNote. IMPORTANT: Please refer to the creditNote section of the       *
-    ///     API-Overview to understand how this attribute can be used before using it!
-    /// </value>
-    [DataMember(Name = "sendType", EmitDefaultValue = false)]
+	/// <summary>
+	///     Type which was used to send the creditNote. IMPORTANT: Please refer to the creditNote section of the       *
+	///     API-Overview to understand how this attribute can be used before using it!
+	/// </summary>
+	/// <value>
+	///     Type which was used to send the creditNote. IMPORTANT: Please refer to the creditNote section of the       *
+	///     API-Overview to understand how this attribute can be used before using it!
+	/// </value>
+	[DataMember(Name = "sendType", EmitDefaultValue = false)]
 	public SendTypeEnum? SendType { get; set; }
 
-    /// <summary>
-    ///     The creditNote id. &lt;span style&#x3D;&#x27;color:red&#x27;&gt;Required&lt;/span&gt; if you want to create/update
-    ///     an credit note position for an existing credit note\&quot;
-    /// </summary>
-    /// <value>
-    ///     The creditNote id. &lt;span style&#x3D;&#x27;color:red&#x27;&gt;Required&lt;/span&gt; if you want to
-    ///     create/update an credit note position for an existing credit note\&quot;
-    /// </value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     The creditNote id. &lt;span style&#x3D;&#x27;color:red&#x27;&gt;Required&lt;/span&gt; if you want to create/update
+	///     an credit note position for an existing credit note\&quot;
+	/// </summary>
+	/// <value>
+	///     The creditNote id. &lt;span style&#x3D;&#x27;color:red&#x27;&gt;Required&lt;/span&gt; if you want to
+	///     create/update an credit note position for an existing credit note\&quot;
+	/// </value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public int? Id { get; set; }
 
-    /// <summary>
-    ///     The creditNote object name
-    /// </summary>
-    /// <value>The creditNote object name</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     The creditNote object name
+	/// </summary>
+	/// <value>The creditNote object name</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets MapAll
-    /// </summary>
-    [DataMember(Name = "mapAll", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets MapAll
+	/// </summary>
+	[DataMember(Name = "mapAll", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? MapAll { get; set; }
 
-    /// <summary>
-    ///     Date of creditNote creation
-    /// </summary>
-    /// <value>Date of creditNote creation</value>
-    [DataMember(Name = "create", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of creditNote creation
+	/// </summary>
+	/// <value>Date of creditNote creation</value>
+	[DataMember(Name = "create", EmitDefaultValue = false)]
 	public DateTime? Create { get; private set; }
 
-    /// <summary>
-    ///     Date of last creditNote update
-    /// </summary>
-    /// <value>Date of last creditNote update</value>
-    [DataMember(Name = "update", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of last creditNote update
+	/// </summary>
+	/// <value>Date of last creditNote update</value>
+	[DataMember(Name = "update", EmitDefaultValue = false)]
 	public DateTime? Update { get; private set; }
 
-    /// <summary>
-    ///     The creditNote number
-    /// </summary>
-    /// <value>The creditNote number</value>
-    [DataMember(Name = "creditNoteNumber", EmitDefaultValue = false)]
+	/// <summary>
+	///     The creditNote number
+	/// </summary>
+	/// <value>The creditNote number</value>
+	[DataMember(Name = "creditNoteNumber", EmitDefaultValue = false)]
 	public string CreditNoteNumber { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Contact
-    /// </summary>
-    [DataMember(Name = "contact", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Contact
+	/// </summary>
+	[DataMember(Name = "contact", EmitDefaultValue = false)]
 	public ModelCreditNoteContact Contact { get; set; }
 
-    /// <summary>
-    ///     Needs to be provided as timestamp or dd.mm.yyyy
-    /// </summary>
-    /// <value>Needs to be provided as timestamp or dd.mm.yyyy</value>
-    [DataMember(Name = "creditNoteDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Needs to be provided as timestamp or dd.mm.yyyy
+	/// </summary>
+	/// <value>Needs to be provided as timestamp or dd.mm.yyyy</value>
+	[DataMember(Name = "creditNoteDate", EmitDefaultValue = false)]
 	public DateTime? CreditNoteDate { get; set; }
 
 
-    /// <summary>
-    ///     Normally consist of prefix plus the creditNote number
-    /// </summary>
-    /// <value>Normally consist of prefix plus the creditNote number</value>
-    [DataMember(Name = "header", EmitDefaultValue = false)]
+	/// <summary>
+	///     Normally consist of prefix plus the creditNote number
+	/// </summary>
+	/// <value>Normally consist of prefix plus the creditNote number</value>
+	[DataMember(Name = "header", EmitDefaultValue = false)]
 	public string Header { get; set; }
 
-    /// <summary>
-    ///     Certain html tags can be used here to format your text
-    /// </summary>
-    /// <value>Certain html tags can be used here to format your text</value>
-    [DataMember(Name = "headText", EmitDefaultValue = false)]
+	/// <summary>
+	///     Certain html tags can be used here to format your text
+	/// </summary>
+	/// <value>Certain html tags can be used here to format your text</value>
+	[DataMember(Name = "headText", EmitDefaultValue = false)]
 	public string HeadText { get; set; }
 
-    /// <summary>
-    ///     Certain html tags can be used here to format your text
-    /// </summary>
-    /// <value>Certain html tags can be used here to format your text</value>
-    [DataMember(Name = "footText", EmitDefaultValue = false)]
+	/// <summary>
+	///     Certain html tags can be used here to format your text
+	/// </summary>
+	/// <value>Certain html tags can be used here to format your text</value>
+	[DataMember(Name = "footText", EmitDefaultValue = false)]
 	public string FootText { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets AddressCountry
-    /// </summary>
-    [DataMember(Name = "addressCountry", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets AddressCountry
+	/// </summary>
+	[DataMember(Name = "addressCountry", EmitDefaultValue = false)]
 	public ModelCreditNoteAddressCountry AddressCountry { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets CreateUser
-    /// </summary>
-    [DataMember(Name = "createUser", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets CreateUser
+	/// </summary>
+	[DataMember(Name = "createUser", EmitDefaultValue = false)]
 	public ModelCreditNoteCreateUser CreateUser { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets SevClientReference
-    /// </summary>
-    [DataMember(Name = "sevClient", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets SevClientReference
+	/// </summary>
+	[DataMember(Name = "sevClient", EmitDefaultValue = false)]
 	public ModelCreditNoteSevClient SevClient { get; set; }
 
-    /// <summary>
-    ///     Delivery terms of the creditNote
-    /// </summary>
-    /// <value>Delivery terms of the creditNote</value>
-    [DataMember(Name = "deliveryTerms", EmitDefaultValue = false)]
+	/// <summary>
+	///     Delivery terms of the creditNote
+	/// </summary>
+	/// <value>Delivery terms of the creditNote</value>
+	[DataMember(Name = "deliveryTerms", EmitDefaultValue = false)]
 	public string DeliveryTerms { get; set; }
 
-    /// <summary>
-    ///     Payment terms of the creditNote
-    /// </summary>
-    /// <value>Payment terms of the creditNote</value>
-    [DataMember(Name = "paymentTerms", EmitDefaultValue = false)]
+	/// <summary>
+	///     Payment terms of the creditNote
+	/// </summary>
+	/// <value>Payment terms of the creditNote</value>
+	[DataMember(Name = "paymentTerms", EmitDefaultValue = false)]
 	public string PaymentTerms { get; set; }
 
-    /// <summary>
-    ///     Version of the creditNote.&lt;br&gt;      Can be used if you have multiple drafts for the same creditNote.&lt;br
-    ///     &gt;      Should start with 0
-    /// </summary>
-    /// <value>
-    ///     Version of the creditNote.&lt;br&gt;      Can be used if you have multiple drafts for the same creditNote.&lt;br
-    ///     &gt;      Should start with 0
-    /// </value>
-    [DataMember(Name = "version", EmitDefaultValue = false)]
+	/// <summary>
+	///     Version of the creditNote.&lt;br&gt;      Can be used if you have multiple drafts for the same creditNote.&lt;br
+	///     &gt;      Should start with 0
+	/// </summary>
+	/// <value>
+	///     Version of the creditNote.&lt;br&gt;      Can be used if you have multiple drafts for the same creditNote.&lt;br
+	///     &gt;      Should start with 0
+	/// </value>
+	[DataMember(Name = "version", EmitDefaultValue = false)]
 	public int? Version { get; set; }
 
-    /// <summary>
-    ///     Defines if the client uses the small settlement scheme.      If yes, the creditNote must not contain any vat
-    /// </summary>
-    /// <value>Defines if the client uses the small settlement scheme.      If yes, the creditNote must not contain any vat</value>
-    [DataMember(Name = "smallSettlement", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines if the client uses the small settlement scheme.      If yes, the creditNote must not contain any vat
+	/// </summary>
+	/// <value>Defines if the client uses the small settlement scheme.      If yes, the creditNote must not contain any vat</value>
+	[DataMember(Name = "smallSettlement", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? SmallSettlement { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets ContactPerson
-    /// </summary>
-    [DataMember(Name = "contactPerson", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets ContactPerson
+	/// </summary>
+	[DataMember(Name = "contactPerson", EmitDefaultValue = false)]
 	public ModelCreditNoteContactPerson ContactPerson { get; set; }
 
-    /// <summary>
-    ///     Is overwritten by creditNote position tax rates
-    /// </summary>
-    /// <value>Is overwritten by creditNote position tax rates</value>
-    [DataMember(Name = "taxRate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Is overwritten by creditNote position tax rates
+	/// </summary>
+	/// <value>Is overwritten by creditNote position tax rates</value>
+	[DataMember(Name = "taxRate", EmitDefaultValue = false)]
 	public float? TaxRate { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets TaxSet
-    /// </summary>
-    [DataMember(Name = "taxSet", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets TaxSet
+	/// </summary>
+	[DataMember(Name = "taxSet", EmitDefaultValue = false)]
 	public ModelCreditNoteTaxSet TaxSet { get; set; }
 
-    /// <summary>
-    ///     A common tax text would be &#x27;Umsatzsteuer 19%&#x27;
-    /// </summary>
-    /// <value>A common tax text would be &#x27;Umsatzsteuer 19%&#x27;</value>
-    [DataMember(Name = "taxText", EmitDefaultValue = false)]
+	/// <summary>
+	///     A common tax text would be &#x27;Umsatzsteuer 19%&#x27;
+	/// </summary>
+	/// <value>A common tax text would be &#x27;Umsatzsteuer 19%&#x27;</value>
+	[DataMember(Name = "taxText", EmitDefaultValue = false)]
 	public string TaxText { get; set; }
 
-    /// <summary>
-    ///     Tax type of the creditNote. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie
-    ///     innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers
-    ///     (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG
-    ///     Tax rates are heavily connected to the tax type used.
-    /// </summary>
-    /// <value>
-    ///     Tax type of the creditNote. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie
-    ///     innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers
-    ///     (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG
-    ///     Tax rates are heavily connected to the tax type used.
-    /// </value>
-    [DataMember(Name = "taxType", EmitDefaultValue = false)]
+	/// <summary>
+	///     Tax type of the creditNote. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie
+	///     innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers
+	///     (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG
+	///     Tax rates are heavily connected to the tax type used.
+	/// </summary>
+	/// <value>
+	///     Tax type of the creditNote. There are four tax types: 1. default - Umsatzsteuer ausweisen 2. eu - Steuerfreie
+	///     innergemeinschaftliche Lieferung (Europäische Union) 3. noteu - Steuerschuldnerschaft des Leistungsempfängers
+	///     (außerhalb EU, z. B. Schweiz) 4. custom - Using custom tax set 5. ss - Not subject to VAT according to §19 1 UStG
+	///     Tax rates are heavily connected to the tax type used.
+	/// </value>
+	[DataMember(Name = "taxType", EmitDefaultValue = false)]
 	public string TaxType { get; set; }
 
-    /// <summary>
-    ///     Type of the creditNote.
-    /// </summary>
-    /// <value>Type of the creditNote.</value>
-    [DataMember(Name = "creditNoteType", EmitDefaultValue = false)]
+	/// <summary>
+	///     Type of the creditNote.
+	/// </summary>
+	/// <value>Type of the creditNote.</value>
+	[DataMember(Name = "creditNoteType", EmitDefaultValue = false)]
 	public string CreditNoteType { get; set; }
 
-    /// <summary>
-    ///     The date the creditNote was sent to the customer
-    /// </summary>
-    /// <value>The date the creditNote was sent to the customer</value>
-    [DataMember(Name = "sendDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     The date the creditNote was sent to the customer
+	/// </summary>
+	/// <value>The date the creditNote was sent to the customer</value>
+	[DataMember(Name = "sendDate", EmitDefaultValue = false)]
 	public DateTime? SendDate { get; set; }
 
-    /// <summary>
-    ///     Complete address of the recipient including name, street, city, zip and country.&lt;br&gt;       Line breaks can be
-    ///     used and will be displayed on the invoice pdf.
-    /// </summary>
-    /// <value>
-    ///     Complete address of the recipient including name, street, city, zip and country.&lt;br&gt;       Line breaks can
-    ///     be used and will be displayed on the invoice pdf.
-    /// </value>
-    [DataMember(Name = "address", EmitDefaultValue = false)]
+	/// <summary>
+	///     Complete address of the recipient including name, street, city, zip and country.&lt;br&gt;       Line breaks can be
+	///     used and will be displayed on the invoice pdf.
+	/// </summary>
+	/// <value>
+	///     Complete address of the recipient including name, street, city, zip and country.&lt;br&gt;       Line breaks can
+	///     be used and will be displayed on the invoice pdf.
+	/// </value>
+	[DataMember(Name = "address", EmitDefaultValue = false)]
 	public string Address { get; set; }
 
 
-    /// <summary>
-    ///     Currency used in the creditNote. Needs to be currency code according to ISO-4217
-    /// </summary>
-    /// <value>Currency used in the creditNote. Needs to be currency code according to ISO-4217</value>
-    [DataMember(Name = "currency", EmitDefaultValue = false)]
+	/// <summary>
+	///     Currency used in the creditNote. Needs to be currency code according to ISO-4217
+	/// </summary>
+	/// <value>Currency used in the creditNote. Needs to be currency code according to ISO-4217</value>
+	[DataMember(Name = "currency", EmitDefaultValue = false)]
 	public string Currency { get; set; }
 
-    /// <summary>
-    ///     Net sum of the creditNote
-    /// </summary>
-    /// <value>Net sum of the creditNote</value>
-    [DataMember(Name = "sumNet", EmitDefaultValue = false)]
+	/// <summary>
+	///     Net sum of the creditNote
+	/// </summary>
+	/// <value>Net sum of the creditNote</value>
+	[DataMember(Name = "sumNet", EmitDefaultValue = false)]
 	public float? SumNet { get; private set; }
 
-    /// <summary>
-    ///     Tax sum of the creditNote
-    /// </summary>
-    /// <value>Tax sum of the creditNote</value>
-    [DataMember(Name = "sumTax", EmitDefaultValue = false)]
+	/// <summary>
+	///     Tax sum of the creditNote
+	/// </summary>
+	/// <value>Tax sum of the creditNote</value>
+	[DataMember(Name = "sumTax", EmitDefaultValue = false)]
 	public float? SumTax { get; private set; }
 
-    /// <summary>
-    ///     Gross sum of the creditNote
-    /// </summary>
-    /// <value>Gross sum of the creditNote</value>
-    [DataMember(Name = "sumGross", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gross sum of the creditNote
+	/// </summary>
+	/// <value>Gross sum of the creditNote</value>
+	[DataMember(Name = "sumGross", EmitDefaultValue = false)]
 	public float? SumGross { get; private set; }
 
-    /// <summary>
-    ///     Sum of all discounts in the creditNote
-    /// </summary>
-    /// <value>Sum of all discounts in the creditNote</value>
-    [DataMember(Name = "sumDiscounts", EmitDefaultValue = false)]
+	/// <summary>
+	///     Sum of all discounts in the creditNote
+	/// </summary>
+	/// <value>Sum of all discounts in the creditNote</value>
+	[DataMember(Name = "sumDiscounts", EmitDefaultValue = false)]
 	public float? SumDiscounts { get; private set; }
 
-    /// <summary>
-    ///     Net sum of the creditNote in the foreign currency
-    /// </summary>
-    /// <value>Net sum of the creditNote in the foreign currency</value>
-    [DataMember(Name = "sumNetForeignCurrency", EmitDefaultValue = false)]
+	/// <summary>
+	///     Net sum of the creditNote in the foreign currency
+	/// </summary>
+	/// <value>Net sum of the creditNote in the foreign currency</value>
+	[DataMember(Name = "sumNetForeignCurrency", EmitDefaultValue = false)]
 	public float? SumNetForeignCurrency { get; private set; }
 
-    /// <summary>
-    ///     Tax sum of the creditNote in the foreign currency
-    /// </summary>
-    /// <value>Tax sum of the creditNote in the foreign currency</value>
-    [DataMember(Name = "sumTaxForeignCurrency", EmitDefaultValue = false)]
+	/// <summary>
+	///     Tax sum of the creditNote in the foreign currency
+	/// </summary>
+	/// <value>Tax sum of the creditNote in the foreign currency</value>
+	[DataMember(Name = "sumTaxForeignCurrency", EmitDefaultValue = false)]
 	public float? SumTaxForeignCurrency { get; private set; }
 
-    /// <summary>
-    ///     Gross sum of the creditNote in the foreign currency
-    /// </summary>
-    /// <value>Gross sum of the creditNote in the foreign currency</value>
-    [DataMember(Name = "sumGrossForeignCurrency", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gross sum of the creditNote in the foreign currency
+	/// </summary>
+	/// <value>Gross sum of the creditNote in the foreign currency</value>
+	[DataMember(Name = "sumGrossForeignCurrency", EmitDefaultValue = false)]
 	public float? SumGrossForeignCurrency { get; private set; }
 
-    /// <summary>
-    ///     Discounts sum of the creditNote in the foreign currency
-    /// </summary>
-    /// <value>Discounts sum of the creditNote in the foreign currency</value>
-    [DataMember(Name = "sumDiscountsForeignCurrency", EmitDefaultValue = false)]
+	/// <summary>
+	///     Discounts sum of the creditNote in the foreign currency
+	/// </summary>
+	/// <value>Discounts sum of the creditNote in the foreign currency</value>
+	[DataMember(Name = "sumDiscountsForeignCurrency", EmitDefaultValue = false)]
 	public float? SumDiscountsForeignCurrency { get; private set; }
 
-    /// <summary>
-    ///     Internal note of the customer. Contains data entered into field &#x27;Referenz/Bestellnummer&#x27;
-    /// </summary>
-    /// <value>Internal note of the customer. Contains data entered into field &#x27;Referenz/Bestellnummer&#x27;</value>
-    [DataMember(Name = "customerInternalNote", EmitDefaultValue = false)]
+	/// <summary>
+	///     Internal note of the customer. Contains data entered into field &#x27;Referenz/Bestellnummer&#x27;
+	/// </summary>
+	/// <value>Internal note of the customer. Contains data entered into field &#x27;Referenz/Bestellnummer&#x27;</value>
+	[DataMember(Name = "customerInternalNote", EmitDefaultValue = false)]
 	public string CustomerInternalNote { get; set; }
 
-    /// <summary>
-    ///     If true, the net amount of each position will be shown on the creditNote. Otherwise gross amount
-    /// </summary>
-    /// <value>If true, the net amount of each position will be shown on the creditNote. Otherwise gross amount</value>
-    [DataMember(Name = "showNet", EmitDefaultValue = false)]
+	/// <summary>
+	///     If true, the net amount of each position will be shown on the creditNote. Otherwise gross amount
+	/// </summary>
+	/// <value>If true, the net amount of each position will be shown on the creditNote. Otherwise gross amount</value>
+	[DataMember(Name = "showNet", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? ShowNet { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelCreditNote instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelCreditNote to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelCreditNote input)
+	/// <summary>
+	///     Returns true if ModelCreditNote instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelCreditNote to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelCreditNote input)
 	{
 		if (input == null)
 			return false;
@@ -816,22 +816,22 @@ public class ModelCreditNote : IEquatable<ModelCreditNote>, IValidatableObject
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelCreditNote {\n");
@@ -879,30 +879,30 @@ public class ModelCreditNote : IEquatable<ModelCreditNote>, IValidatableObject
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelCreditNote);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

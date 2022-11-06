@@ -18,10 +18,10 @@ namespace SevDesk.Extensions.ClientApi.Client;
 /// </summary>
 public class SwaggerDateConverter : IsoDateTimeConverter
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="SwaggerDateConverter" /> class.
-    /// </summary>
-    public SwaggerDateConverter()
+	/// <summary>
+	///     Initializes a new instance of the <see cref="SwaggerDateConverter" /> class.
+	/// </summary>
+	public SwaggerDateConverter()
 	{
 		// full-date   = date-fullyear "-" date-month "-" date-mday
 		DateTimeFormat = "yyyy-MM-dd";

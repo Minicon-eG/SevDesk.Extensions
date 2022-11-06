@@ -21,36 +21,36 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class FactoryCreateBody : IEquatable<FactoryCreateBody>, IValidatableObject
 {
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="FactoryCreateBody" /> class.
-    /// </summary>
-    /// <param name="name">Name of the tag.</param>
-    /// <param name="_object">_object.</param>
-    public FactoryCreateBody(string name = default, TagFactorycreateObject _object = default)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="FactoryCreateBody" /> class.
+	/// </summary>
+	/// <param name="name">Name of the tag.</param>
+	/// <param name="_object">_object.</param>
+	public FactoryCreateBody(string name = default, TagFactorycreateObject _object = default)
 	{
 		Name = name;
 		_Object = _object;
 	}
 
-    /// <summary>
-    ///     Name of the tag
-    /// </summary>
-    /// <value>Name of the tag</value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+	/// <summary>
+	///     Name of the tag
+	/// </summary>
+	/// <value>Name of the tag</value>
+	[DataMember(Name = "name", EmitDefaultValue = false)]
 	public string Name { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets _Object
-    /// </summary>
-    [DataMember(Name = "object", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets _Object
+	/// </summary>
+	[DataMember(Name = "object", EmitDefaultValue = false)]
 	public TagFactorycreateObject _Object { get; set; }
 
-    /// <summary>
-    ///     Returns true if FactoryCreateBody instances are equal
-    /// </summary>
-    /// <param name="input">Instance of FactoryCreateBody to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(FactoryCreateBody input)
+	/// <summary>
+	///     Returns true if FactoryCreateBody instances are equal
+	/// </summary>
+	/// <param name="input">Instance of FactoryCreateBody to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(FactoryCreateBody input)
 	{
 		if (input == null)
 			return false;
@@ -68,21 +68,21 @@ public class FactoryCreateBody : IEquatable<FactoryCreateBody>, IValidatableObje
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class FactoryCreateBody {\n");
@@ -92,30 +92,30 @@ public class FactoryCreateBody : IEquatable<FactoryCreateBody>, IValidatableObje
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as FactoryCreateBody);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

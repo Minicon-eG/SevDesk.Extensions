@@ -22,35 +22,35 @@ public class OrderApi : IOrderApi
 {
 	private ExceptionFactory _exceptionFactory = (name, response) => null;
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="OrderApi" /> class.
-    /// </summary>
-    /// <returns></returns>
-    public OrderApi(string basePath)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="OrderApi" /> class.
+	/// </summary>
+	/// <returns></returns>
+	public OrderApi(string basePath)
 	{
 		Configuration = new Configuration { BasePath = basePath };
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="OrderApi" /> class
-    /// </summary>
-    /// <returns></returns>
-    public OrderApi()
+	/// <summary>
+	///     Initializes a new instance of the <see cref="OrderApi" /> class
+	/// </summary>
+	/// <returns></returns>
+	public OrderApi()
 	{
 		Configuration = Configuration.Default;
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="OrderApi" /> class
-    ///     using Configuration object
-    /// </summary>
-    /// <param name="configuration">An instance of Configuration</param>
-    /// <returns></returns>
-    public OrderApi(Configuration configuration = null)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="OrderApi" /> class
+	///     using Configuration object
+	/// </summary>
+	/// <param name="configuration">An instance of Configuration</param>
+	/// <returns></returns>
+	public OrderApi(Configuration configuration = null)
 	{
 		if (configuration == null) // use the default one in Configuration
 			Configuration = Configuration.Default;
@@ -60,25 +60,25 @@ public class OrderApi : IOrderApi
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Gets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    public string GetBasePath()
+	/// <summary>
+	///     Gets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	public string GetBasePath()
 	{
 		return Configuration.ApiClient.RestClient.BaseUrl.ToString();
 	}
 
-    /// <summary>
-    ///     Gets or sets the configuration object
-    /// </summary>
-    /// <value>An instance of the Configuration</value>
-    public Configuration Configuration { get; set; }
+	/// <summary>
+	///     Gets or sets the configuration object
+	/// </summary>
+	/// <value>An instance of the Configuration</value>
+	public Configuration Configuration { get; set; }
 
-    /// <summary>
-    ///     Provides a factory method hook for the creation of exceptions.
-    /// </summary>
-    public ExceptionFactory ExceptionFactory
+	/// <summary>
+	///     Provides a factory method hook for the creation of exceptions.
+	/// </summary>
+	public ExceptionFactory ExceptionFactory
 	{
 		get
 		{
@@ -89,30 +89,30 @@ public class OrderApi : IOrderApi
 		set => _exceptionFactory = value;
 	}
 
-    /// <summary>
-    ///     Create contract note from order Create contract note from order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">the id of the order</param>
-    /// <param name="orderObjectName">Model name, which is &#x27;Order&#x27;</param>
-    /// <param name="body">Create contract note (optional)</param>
-    /// <returns>InlineResponse20010</returns>
-    public InlineResponse20010 CreateContractNoteFromOrder(int? orderId, string orderObjectName,
+	/// <summary>
+	///     Create contract note from order Create contract note from order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">the id of the order</param>
+	/// <param name="orderObjectName">Model name, which is &#x27;Order&#x27;</param>
+	/// <param name="body">Create contract note (optional)</param>
+	/// <returns>InlineResponse20010</returns>
+	public InlineResponse20010 CreateContractNoteFromOrder(int? orderId, string orderObjectName,
 		ModelCreatePackingListFromOrder body = null)
 	{
 		var localVarResponse = CreateContractNoteFromOrderWithHttpInfo(orderId, orderObjectName, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create contract note from order Create contract note from order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">the id of the order</param>
-    /// <param name="orderObjectName">Model name, which is &#x27;Order&#x27;</param>
-    /// <param name="body">Create contract note (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20010</returns>
-    public ApiResponse<InlineResponse20010> CreateContractNoteFromOrderWithHttpInfo(int? orderId,
+	/// <summary>
+	///     Create contract note from order Create contract note from order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">the id of the order</param>
+	/// <param name="orderObjectName">Model name, which is &#x27;Order&#x27;</param>
+	/// <param name="body">Create contract note (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20010</returns>
+	public ApiResponse<InlineResponse20010> CreateContractNoteFromOrderWithHttpInfo(int? orderId,
 		string orderObjectName, ModelCreatePackingListFromOrder body = null)
 	{
 		// verify the required parameter 'orderId' is set
@@ -182,30 +182,30 @@ public class OrderApi : IOrderApi
 			(InlineResponse20010)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20010)));
 	}
 
-    /// <summary>
-    ///     Create contract note from order Create contract note from order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">the id of the order</param>
-    /// <param name="orderObjectName">Model name, which is &#x27;Order&#x27;</param>
-    /// <param name="body">Create contract note (optional)</param>
-    /// <returns>Task of InlineResponse20010</returns>
-    public async Task<InlineResponse20010> CreateContractNoteFromOrderAsync(int? orderId, string orderObjectName,
+	/// <summary>
+	///     Create contract note from order Create contract note from order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">the id of the order</param>
+	/// <param name="orderObjectName">Model name, which is &#x27;Order&#x27;</param>
+	/// <param name="body">Create contract note (optional)</param>
+	/// <returns>Task of InlineResponse20010</returns>
+	public async Task<InlineResponse20010> CreateContractNoteFromOrderAsync(int? orderId, string orderObjectName,
 		ModelCreatePackingListFromOrder body = null)
 	{
 		var localVarResponse = await CreateContractNoteFromOrderAsyncWithHttpInfo(orderId, orderObjectName, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create contract note from order Create contract note from order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">the id of the order</param>
-    /// <param name="orderObjectName">Model name, which is &#x27;Order&#x27;</param>
-    /// <param name="body">Create contract note (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20010)</returns>
-    public async Task<ApiResponse<InlineResponse20010>> CreateContractNoteFromOrderAsyncWithHttpInfo(int? orderId,
+	/// <summary>
+	///     Create contract note from order Create contract note from order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">the id of the order</param>
+	/// <param name="orderObjectName">Model name, which is &#x27;Order&#x27;</param>
+	/// <param name="body">Create contract note (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20010)</returns>
+	public async Task<ApiResponse<InlineResponse20010>> CreateContractNoteFromOrderAsyncWithHttpInfo(int? orderId,
 		string orderObjectName, ModelCreatePackingListFromOrder body = null)
 	{
 		// verify the required parameter 'orderId' is set
@@ -275,31 +275,31 @@ public class OrderApi : IOrderApi
 			(InlineResponse20010)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20010)));
 	}
 
-    /// <summary>
-    ///     Create a new order Creates an order to which positions can be added later.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the order model! (optional)
-    /// </param>
-    /// <returns>SaveOrderResponse</returns>
-    public SaveOrderResponse CreateOrder(SaveOrder body = null)
+	/// <summary>
+	///     Create a new order Creates an order to which positions can be added later.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the order model! (optional)
+	/// </param>
+	/// <returns>SaveOrderResponse</returns>
+	public SaveOrderResponse CreateOrder(SaveOrder body = null)
 	{
 		var localVarResponse = CreateOrderWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new order Creates an order to which positions can be added later.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the order model! (optional)
-    /// </param>
-    /// <returns>ApiResponse of SaveOrderResponse</returns>
-    public ApiResponse<SaveOrderResponse> CreateOrderWithHttpInfo(SaveOrder body = null)
+	/// <summary>
+	///     Create a new order Creates an order to which positions can be added later.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the order model! (optional)
+	/// </param>
+	/// <returns>ApiResponse of SaveOrderResponse</returns>
+	public ApiResponse<SaveOrderResponse> CreateOrderWithHttpInfo(SaveOrder body = null)
 	{
 		var localVarPath = "/Order/Factory/saveOrder";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -352,31 +352,31 @@ public class OrderApi : IOrderApi
 			(SaveOrderResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SaveOrderResponse)));
 	}
 
-    /// <summary>
-    ///     Create a new order Creates an order to which positions can be added later.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the order model! (optional)
-    /// </param>
-    /// <returns>Task of SaveOrderResponse</returns>
-    public async Task<SaveOrderResponse> CreateOrderAsync(SaveOrder body = null)
+	/// <summary>
+	///     Create a new order Creates an order to which positions can be added later.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the order model! (optional)
+	/// </param>
+	/// <returns>Task of SaveOrderResponse</returns>
+	public async Task<SaveOrderResponse> CreateOrderAsync(SaveOrder body = null)
 	{
 		var localVarResponse = await CreateOrderAsyncWithHttpInfo(body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create a new order Creates an order to which positions can be added later.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="body">
-    ///     Creation data. Please be aware, that you need to provide at least all required parameter
-    ///     of the order model! (optional)
-    /// </param>
-    /// <returns>Task of ApiResponse (SaveOrderResponse)</returns>
-    public async Task<ApiResponse<SaveOrderResponse>> CreateOrderAsyncWithHttpInfo(SaveOrder body = null)
+	/// <summary>
+	///     Create a new order Creates an order to which positions can be added later.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="body">
+	///     Creation data. Please be aware, that you need to provide at least all required parameter
+	///     of the order model! (optional)
+	/// </param>
+	/// <returns>Task of ApiResponse (SaveOrderResponse)</returns>
+	public async Task<ApiResponse<SaveOrderResponse>> CreateOrderAsyncWithHttpInfo(SaveOrder body = null)
 	{
 		var localVarPath = "/Order/Factory/saveOrder";
 		var localVarPathParams = new Dictionary<string, string>();
@@ -429,30 +429,30 @@ public class OrderApi : IOrderApi
 			(SaveOrderResponse)Configuration.ApiClient.Deserialize(localVarResponse, typeof(SaveOrderResponse)));
 	}
 
-    /// <summary>
-    ///     Create packing list from order Create packing list from order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">the id of the order</param>
-    /// <param name="orderObjectName">Model name, which is &#x27;Order&#x27;</param>
-    /// <param name="body">Create packing list (optional)</param>
-    /// <returns>InlineResponse20010</returns>
-    public InlineResponse20010 CreatePackingListFromOrder(int? orderId, string orderObjectName,
+	/// <summary>
+	///     Create packing list from order Create packing list from order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">the id of the order</param>
+	/// <param name="orderObjectName">Model name, which is &#x27;Order&#x27;</param>
+	/// <param name="body">Create packing list (optional)</param>
+	/// <returns>InlineResponse20010</returns>
+	public InlineResponse20010 CreatePackingListFromOrder(int? orderId, string orderObjectName,
 		ModelCreatePackingListFromOrder body = null)
 	{
 		var localVarResponse = CreatePackingListFromOrderWithHttpInfo(orderId, orderObjectName, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create packing list from order Create packing list from order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">the id of the order</param>
-    /// <param name="orderObjectName">Model name, which is &#x27;Order&#x27;</param>
-    /// <param name="body">Create packing list (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20010</returns>
-    public ApiResponse<InlineResponse20010> CreatePackingListFromOrderWithHttpInfo(int? orderId, string orderObjectName,
+	/// <summary>
+	///     Create packing list from order Create packing list from order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">the id of the order</param>
+	/// <param name="orderObjectName">Model name, which is &#x27;Order&#x27;</param>
+	/// <param name="body">Create packing list (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20010</returns>
+	public ApiResponse<InlineResponse20010> CreatePackingListFromOrderWithHttpInfo(int? orderId, string orderObjectName,
 		ModelCreatePackingListFromOrder body = null)
 	{
 		// verify the required parameter 'orderId' is set
@@ -522,30 +522,30 @@ public class OrderApi : IOrderApi
 			(InlineResponse20010)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20010)));
 	}
 
-    /// <summary>
-    ///     Create packing list from order Create packing list from order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">the id of the order</param>
-    /// <param name="orderObjectName">Model name, which is &#x27;Order&#x27;</param>
-    /// <param name="body">Create packing list (optional)</param>
-    /// <returns>Task of InlineResponse20010</returns>
-    public async Task<InlineResponse20010> CreatePackingListFromOrderAsync(int? orderId, string orderObjectName,
+	/// <summary>
+	///     Create packing list from order Create packing list from order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">the id of the order</param>
+	/// <param name="orderObjectName">Model name, which is &#x27;Order&#x27;</param>
+	/// <param name="body">Create packing list (optional)</param>
+	/// <returns>Task of InlineResponse20010</returns>
+	public async Task<InlineResponse20010> CreatePackingListFromOrderAsync(int? orderId, string orderObjectName,
 		ModelCreatePackingListFromOrder body = null)
 	{
 		var localVarResponse = await CreatePackingListFromOrderAsyncWithHttpInfo(orderId, orderObjectName, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Create packing list from order Create packing list from order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">the id of the order</param>
-    /// <param name="orderObjectName">Model name, which is &#x27;Order&#x27;</param>
-    /// <param name="body">Create packing list (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20010)</returns>
-    public async Task<ApiResponse<InlineResponse20010>> CreatePackingListFromOrderAsyncWithHttpInfo(int? orderId,
+	/// <summary>
+	///     Create packing list from order Create packing list from order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">the id of the order</param>
+	/// <param name="orderObjectName">Model name, which is &#x27;Order&#x27;</param>
+	/// <param name="body">Create packing list (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20010)</returns>
+	public async Task<ApiResponse<InlineResponse20010>> CreatePackingListFromOrderAsyncWithHttpInfo(int? orderId,
 		string orderObjectName, ModelCreatePackingListFromOrder body = null)
 	{
 		// verify the required parameter 'orderId' is set
@@ -615,25 +615,25 @@ public class OrderApi : IOrderApi
 			(InlineResponse20010)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20010)));
 	}
 
-    /// <summary>
-    ///     Deletes an order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">Id of order resource to delete</param>
-    /// <returns>InlineResponse2003</returns>
-    public InlineResponse2003 DeleteOrder(int? orderId)
+	/// <summary>
+	///     Deletes an order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">Id of order resource to delete</param>
+	/// <returns>InlineResponse2003</returns>
+	public InlineResponse2003 DeleteOrder(int? orderId)
 	{
 		var localVarResponse = DeleteOrderWithHttpInfo(orderId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Deletes an order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">Id of order resource to delete</param>
-    /// <returns>ApiResponse of InlineResponse2003</returns>
-    public ApiResponse<InlineResponse2003> DeleteOrderWithHttpInfo(int? orderId)
+	/// <summary>
+	///     Deletes an order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">Id of order resource to delete</param>
+	/// <returns>ApiResponse of InlineResponse2003</returns>
+	public ApiResponse<InlineResponse2003> DeleteOrderWithHttpInfo(int? orderId)
 	{
 		// verify the required parameter 'orderId' is set
 		if (orderId == null)
@@ -687,25 +687,25 @@ public class OrderApi : IOrderApi
 			(InlineResponse2003)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2003)));
 	}
 
-    /// <summary>
-    ///     Deletes an order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">Id of order resource to delete</param>
-    /// <returns>Task of InlineResponse2003</returns>
-    public async Task<InlineResponse2003> DeleteOrderAsync(int? orderId)
+	/// <summary>
+	///     Deletes an order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">Id of order resource to delete</param>
+	/// <returns>Task of InlineResponse2003</returns>
+	public async Task<InlineResponse2003> DeleteOrderAsync(int? orderId)
 	{
 		var localVarResponse = await DeleteOrderAsyncWithHttpInfo(orderId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Deletes an order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">Id of order resource to delete</param>
-    /// <returns>Task of ApiResponse (InlineResponse2003)</returns>
-    public async Task<ApiResponse<InlineResponse2003>> DeleteOrderAsyncWithHttpInfo(int? orderId)
+	/// <summary>
+	///     Deletes an order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">Id of order resource to delete</param>
+	/// <returns>Task of ApiResponse (InlineResponse2003)</returns>
+	public async Task<ApiResponse<InlineResponse2003>> DeleteOrderAsyncWithHttpInfo(int? orderId)
 	{
 		// verify the required parameter 'orderId' is set
 		if (orderId == null)
@@ -759,38 +759,38 @@ public class OrderApi : IOrderApi
 			(InlineResponse2003)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2003)));
 	}
 
-    /// <summary>
-    ///     Find order discounts Returns all discounts of an order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to return the positions</param>
-    /// <param name="limit">limits the number of entries returned (optional)</param>
-    /// <param name="offset">set the index where the returned entries start (optional)</param>
-    /// <param name="embed">
-    ///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
-    ///     (optional)
-    /// </param>
-    /// <returns>InlineResponse2009</returns>
-    public InlineResponse2009 GetDiscounts(int? orderId, int? limit = null, int? offset = null,
+	/// <summary>
+	///     Find order discounts Returns all discounts of an order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to return the positions</param>
+	/// <param name="limit">limits the number of entries returned (optional)</param>
+	/// <param name="offset">set the index where the returned entries start (optional)</param>
+	/// <param name="embed">
+	///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
+	///     (optional)
+	/// </param>
+	/// <returns>InlineResponse2009</returns>
+	public InlineResponse2009 GetDiscounts(int? orderId, int? limit = null, int? offset = null,
 		List<string> embed = null)
 	{
 		var localVarResponse = GetDiscountsWithHttpInfo(orderId, limit, offset, embed);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find order discounts Returns all discounts of an order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to return the positions</param>
-    /// <param name="limit">limits the number of entries returned (optional)</param>
-    /// <param name="offset">set the index where the returned entries start (optional)</param>
-    /// <param name="embed">
-    ///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
-    ///     (optional)
-    /// </param>
-    /// <returns>ApiResponse of InlineResponse2009</returns>
-    public ApiResponse<InlineResponse2009> GetDiscountsWithHttpInfo(int? orderId, int? limit = null, int? offset = null,
+	/// <summary>
+	///     Find order discounts Returns all discounts of an order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to return the positions</param>
+	/// <param name="limit">limits the number of entries returned (optional)</param>
+	/// <param name="offset">set the index where the returned entries start (optional)</param>
+	/// <param name="embed">
+	///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
+	///     (optional)
+	/// </param>
+	/// <returns>ApiResponse of InlineResponse2009</returns>
+	public ApiResponse<InlineResponse2009> GetDiscountsWithHttpInfo(int? orderId, int? limit = null, int? offset = null,
 		List<string> embed = null)
 	{
 		// verify the required parameter 'orderId' is set
@@ -854,38 +854,38 @@ public class OrderApi : IOrderApi
 			(InlineResponse2009)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2009)));
 	}
 
-    /// <summary>
-    ///     Find order discounts Returns all discounts of an order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to return the positions</param>
-    /// <param name="limit">limits the number of entries returned (optional)</param>
-    /// <param name="offset">set the index where the returned entries start (optional)</param>
-    /// <param name="embed">
-    ///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of InlineResponse2009</returns>
-    public async Task<InlineResponse2009> GetDiscountsAsync(int? orderId, int? limit = null, int? offset = null,
+	/// <summary>
+	///     Find order discounts Returns all discounts of an order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to return the positions</param>
+	/// <param name="limit">limits the number of entries returned (optional)</param>
+	/// <param name="offset">set the index where the returned entries start (optional)</param>
+	/// <param name="embed">
+	///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of InlineResponse2009</returns>
+	public async Task<InlineResponse2009> GetDiscountsAsync(int? orderId, int? limit = null, int? offset = null,
 		List<string> embed = null)
 	{
 		var localVarResponse = await GetDiscountsAsyncWithHttpInfo(orderId, limit, offset, embed);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find order discounts Returns all discounts of an order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to return the positions</param>
-    /// <param name="limit">limits the number of entries returned (optional)</param>
-    /// <param name="offset">set the index where the returned entries start (optional)</param>
-    /// <param name="embed">
-    ///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of ApiResponse (InlineResponse2009)</returns>
-    public async Task<ApiResponse<InlineResponse2009>> GetDiscountsAsyncWithHttpInfo(int? orderId, int? limit = null,
+	/// <summary>
+	///     Find order discounts Returns all discounts of an order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to return the positions</param>
+	/// <param name="limit">limits the number of entries returned (optional)</param>
+	/// <param name="offset">set the index where the returned entries start (optional)</param>
+	/// <param name="embed">
+	///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of ApiResponse (InlineResponse2009)</returns>
+	public async Task<ApiResponse<InlineResponse2009>> GetDiscountsAsyncWithHttpInfo(int? orderId, int? limit = null,
 		int? offset = null, List<string> embed = null)
 	{
 		// verify the required parameter 'orderId' is set
@@ -949,25 +949,25 @@ public class OrderApi : IOrderApi
 			(InlineResponse2009)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2009)));
 	}
 
-    /// <summary>
-    ///     Find order by ID Returns a single order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to return</param>
-    /// <returns>InlineResponse20010</returns>
-    public InlineResponse20010 GetOrderById(int? orderId)
+	/// <summary>
+	///     Find order by ID Returns a single order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to return</param>
+	/// <returns>InlineResponse20010</returns>
+	public InlineResponse20010 GetOrderById(int? orderId)
 	{
 		var localVarResponse = GetOrderByIdWithHttpInfo(orderId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find order by ID Returns a single order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to return</param>
-    /// <returns>ApiResponse of InlineResponse20010</returns>
-    public ApiResponse<InlineResponse20010> GetOrderByIdWithHttpInfo(int? orderId)
+	/// <summary>
+	///     Find order by ID Returns a single order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to return</param>
+	/// <returns>ApiResponse of InlineResponse20010</returns>
+	public ApiResponse<InlineResponse20010> GetOrderByIdWithHttpInfo(int? orderId)
 	{
 		// verify the required parameter 'orderId' is set
 		if (orderId == null)
@@ -1021,25 +1021,25 @@ public class OrderApi : IOrderApi
 			(InlineResponse20010)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20010)));
 	}
 
-    /// <summary>
-    ///     Find order by ID Returns a single order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to return</param>
-    /// <returns>Task of InlineResponse20010</returns>
-    public async Task<InlineResponse20010> GetOrderByIdAsync(int? orderId)
+	/// <summary>
+	///     Find order by ID Returns a single order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to return</param>
+	/// <returns>Task of InlineResponse20010</returns>
+	public async Task<InlineResponse20010> GetOrderByIdAsync(int? orderId)
 	{
 		var localVarResponse = await GetOrderByIdAsyncWithHttpInfo(orderId);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find order by ID Returns a single order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to return</param>
-    /// <returns>Task of ApiResponse (InlineResponse20010)</returns>
-    public async Task<ApiResponse<InlineResponse20010>> GetOrderByIdAsyncWithHttpInfo(int? orderId)
+	/// <summary>
+	///     Find order by ID Returns a single order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to return</param>
+	/// <returns>Task of ApiResponse (InlineResponse20010)</returns>
+	public async Task<ApiResponse<InlineResponse20010>> GetOrderByIdAsyncWithHttpInfo(int? orderId)
 	{
 		// verify the required parameter 'orderId' is set
 		if (orderId == null)
@@ -1093,38 +1093,38 @@ public class OrderApi : IOrderApi
 			(InlineResponse20010)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20010)));
 	}
 
-    /// <summary>
-    ///     Find order positions Returns all positions of an order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to return the positions</param>
-    /// <param name="limit">limits the number of entries returned (optional)</param>
-    /// <param name="offset">set the index where the returned entries start (optional)</param>
-    /// <param name="embed">
-    ///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
-    ///     (optional)
-    /// </param>
-    /// <returns>InlineResponse2007</returns>
-    public InlineResponse2007 GetOrderPositionsById(int? orderId, int? limit = null, int? offset = null,
+	/// <summary>
+	///     Find order positions Returns all positions of an order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to return the positions</param>
+	/// <param name="limit">limits the number of entries returned (optional)</param>
+	/// <param name="offset">set the index where the returned entries start (optional)</param>
+	/// <param name="embed">
+	///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
+	///     (optional)
+	/// </param>
+	/// <returns>InlineResponse2007</returns>
+	public InlineResponse2007 GetOrderPositionsById(int? orderId, int? limit = null, int? offset = null,
 		List<string> embed = null)
 	{
 		var localVarResponse = GetOrderPositionsByIdWithHttpInfo(orderId, limit, offset, embed);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find order positions Returns all positions of an order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to return the positions</param>
-    /// <param name="limit">limits the number of entries returned (optional)</param>
-    /// <param name="offset">set the index where the returned entries start (optional)</param>
-    /// <param name="embed">
-    ///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
-    ///     (optional)
-    /// </param>
-    /// <returns>ApiResponse of InlineResponse2007</returns>
-    public ApiResponse<InlineResponse2007> GetOrderPositionsByIdWithHttpInfo(int? orderId, int? limit = null,
+	/// <summary>
+	///     Find order positions Returns all positions of an order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to return the positions</param>
+	/// <param name="limit">limits the number of entries returned (optional)</param>
+	/// <param name="offset">set the index where the returned entries start (optional)</param>
+	/// <param name="embed">
+	///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
+	///     (optional)
+	/// </param>
+	/// <returns>ApiResponse of InlineResponse2007</returns>
+	public ApiResponse<InlineResponse2007> GetOrderPositionsByIdWithHttpInfo(int? orderId, int? limit = null,
 		int? offset = null, List<string> embed = null)
 	{
 		// verify the required parameter 'orderId' is set
@@ -1189,38 +1189,38 @@ public class OrderApi : IOrderApi
 			(InlineResponse2007)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2007)));
 	}
 
-    /// <summary>
-    ///     Find order positions Returns all positions of an order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to return the positions</param>
-    /// <param name="limit">limits the number of entries returned (optional)</param>
-    /// <param name="offset">set the index where the returned entries start (optional)</param>
-    /// <param name="embed">
-    ///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of InlineResponse2007</returns>
-    public async Task<InlineResponse2007> GetOrderPositionsByIdAsync(int? orderId, int? limit = null,
+	/// <summary>
+	///     Find order positions Returns all positions of an order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to return the positions</param>
+	/// <param name="limit">limits the number of entries returned (optional)</param>
+	/// <param name="offset">set the index where the returned entries start (optional)</param>
+	/// <param name="embed">
+	///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of InlineResponse2007</returns>
+	public async Task<InlineResponse2007> GetOrderPositionsByIdAsync(int? orderId, int? limit = null,
 		int? offset = null, List<string> embed = null)
 	{
 		var localVarResponse = await GetOrderPositionsByIdAsyncWithHttpInfo(orderId, limit, offset, embed);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find order positions Returns all positions of an order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to return the positions</param>
-    /// <param name="limit">limits the number of entries returned (optional)</param>
-    /// <param name="offset">set the index where the returned entries start (optional)</param>
-    /// <param name="embed">
-    ///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of ApiResponse (InlineResponse2007)</returns>
-    public async Task<ApiResponse<InlineResponse2007>> GetOrderPositionsByIdAsyncWithHttpInfo(int? orderId,
+	/// <summary>
+	///     Find order positions Returns all positions of an order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to return the positions</param>
+	/// <param name="limit">limits the number of entries returned (optional)</param>
+	/// <param name="offset">set the index where the returned entries start (optional)</param>
+	/// <param name="embed">
+	///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of ApiResponse (InlineResponse2007)</returns>
+	public async Task<ApiResponse<InlineResponse2007>> GetOrderPositionsByIdAsyncWithHttpInfo(int? orderId,
 		int? limit = null, int? offset = null, List<string> embed = null)
 	{
 		// verify the required parameter 'orderId' is set
@@ -1285,23 +1285,23 @@ public class OrderApi : IOrderApi
 			(InlineResponse2007)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2007)));
 	}
 
-    /// <summary>
-    ///     Retrieve orders There are a multitude of parameter which can be used to filter. A few of them are attached but
-    ///     for a complete list please check out &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/How-to-filter-for-certain-orders&#x27;&gt;this&lt;/a&gt; list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="status">Status of the order (optional)</param>
-    /// <param name="orderNumber">Retrieve all orders with this order number (optional)</param>
-    /// <param name="startDate">Retrieve all orders with a date equal or higher (optional)</param>
-    /// <param name="endDate">Retrieve all orders with a date equal or lower (optional)</param>
-    /// <param name="contactId">Retrieve all orders with this contact. Must be provided with contact[objectName] (optional)</param>
-    /// <param name="contactObjectName">
-    ///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>InlineResponse20010</returns>
-    public InlineResponse20010 GetOrders(int? status = null, string orderNumber = null, int? startDate = null,
+	/// <summary>
+	///     Retrieve orders There are a multitude of parameter which can be used to filter. A few of them are attached but
+	///     for a complete list please check out &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/How-to-filter-for-certain-orders&#x27;&gt;this&lt;/a&gt; list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="status">Status of the order (optional)</param>
+	/// <param name="orderNumber">Retrieve all orders with this order number (optional)</param>
+	/// <param name="startDate">Retrieve all orders with a date equal or higher (optional)</param>
+	/// <param name="endDate">Retrieve all orders with a date equal or lower (optional)</param>
+	/// <param name="contactId">Retrieve all orders with this contact. Must be provided with contact[objectName] (optional)</param>
+	/// <param name="contactObjectName">
+	///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>InlineResponse20010</returns>
+	public InlineResponse20010 GetOrders(int? status = null, string orderNumber = null, int? startDate = null,
 		int? endDate = null, int? contactId = null, string contactObjectName = null)
 	{
 		var localVarResponse =
@@ -1309,23 +1309,23 @@ public class OrderApi : IOrderApi
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve orders There are a multitude of parameter which can be used to filter. A few of them are attached but
-    ///     for a complete list please check out &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/How-to-filter-for-certain-orders&#x27;&gt;this&lt;/a&gt; list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="status">Status of the order (optional)</param>
-    /// <param name="orderNumber">Retrieve all orders with this order number (optional)</param>
-    /// <param name="startDate">Retrieve all orders with a date equal or higher (optional)</param>
-    /// <param name="endDate">Retrieve all orders with a date equal or lower (optional)</param>
-    /// <param name="contactId">Retrieve all orders with this contact. Must be provided with contact[objectName] (optional)</param>
-    /// <param name="contactObjectName">
-    ///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>ApiResponse of InlineResponse20010</returns>
-    public ApiResponse<InlineResponse20010> GetOrdersWithHttpInfo(int? status = null, string orderNumber = null,
+	/// <summary>
+	///     Retrieve orders There are a multitude of parameter which can be used to filter. A few of them are attached but
+	///     for a complete list please check out &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/How-to-filter-for-certain-orders&#x27;&gt;this&lt;/a&gt; list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="status">Status of the order (optional)</param>
+	/// <param name="orderNumber">Retrieve all orders with this order number (optional)</param>
+	/// <param name="startDate">Retrieve all orders with a date equal or higher (optional)</param>
+	/// <param name="endDate">Retrieve all orders with a date equal or lower (optional)</param>
+	/// <param name="contactId">Retrieve all orders with this contact. Must be provided with contact[objectName] (optional)</param>
+	/// <param name="contactObjectName">
+	///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>ApiResponse of InlineResponse20010</returns>
+	public ApiResponse<InlineResponse20010> GetOrdersWithHttpInfo(int? status = null, string orderNumber = null,
 		int? startDate = null, int? endDate = null, int? contactId = null, string contactObjectName = null)
 	{
 		var localVarPath = "/Order";
@@ -1393,23 +1393,23 @@ public class OrderApi : IOrderApi
 			(InlineResponse20010)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20010)));
 	}
 
-    /// <summary>
-    ///     Retrieve orders There are a multitude of parameter which can be used to filter. A few of them are attached but
-    ///     for a complete list please check out &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/How-to-filter-for-certain-orders&#x27;&gt;this&lt;/a&gt; list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="status">Status of the order (optional)</param>
-    /// <param name="orderNumber">Retrieve all orders with this order number (optional)</param>
-    /// <param name="startDate">Retrieve all orders with a date equal or higher (optional)</param>
-    /// <param name="endDate">Retrieve all orders with a date equal or lower (optional)</param>
-    /// <param name="contactId">Retrieve all orders with this contact. Must be provided with contact[objectName] (optional)</param>
-    /// <param name="contactObjectName">
-    ///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of InlineResponse20010</returns>
-    public async Task<InlineResponse20010> GetOrdersAsync(int? status = null, string orderNumber = null,
+	/// <summary>
+	///     Retrieve orders There are a multitude of parameter which can be used to filter. A few of them are attached but
+	///     for a complete list please check out &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/How-to-filter-for-certain-orders&#x27;&gt;this&lt;/a&gt; list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="status">Status of the order (optional)</param>
+	/// <param name="orderNumber">Retrieve all orders with this order number (optional)</param>
+	/// <param name="startDate">Retrieve all orders with a date equal or higher (optional)</param>
+	/// <param name="endDate">Retrieve all orders with a date equal or lower (optional)</param>
+	/// <param name="contactId">Retrieve all orders with this contact. Must be provided with contact[objectName] (optional)</param>
+	/// <param name="contactObjectName">
+	///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of InlineResponse20010</returns>
+	public async Task<InlineResponse20010> GetOrdersAsync(int? status = null, string orderNumber = null,
 		int? startDate = null, int? endDate = null, int? contactId = null, string contactObjectName = null)
 	{
 		var localVarResponse =
@@ -1417,23 +1417,23 @@ public class OrderApi : IOrderApi
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve orders There are a multitude of parameter which can be used to filter. A few of them are attached but
-    ///     for a complete list please check out &lt;a href&#x3D;&#x27;
-    ///     https://api.sevdesk.de/#section/How-to-filter-for-certain-orders&#x27;&gt;this&lt;/a&gt; list
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="status">Status of the order (optional)</param>
-    /// <param name="orderNumber">Retrieve all orders with this order number (optional)</param>
-    /// <param name="startDate">Retrieve all orders with a date equal or higher (optional)</param>
-    /// <param name="endDate">Retrieve all orders with a date equal or lower (optional)</param>
-    /// <param name="contactId">Retrieve all orders with this contact. Must be provided with contact[objectName] (optional)</param>
-    /// <param name="contactObjectName">
-    ///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of ApiResponse (InlineResponse20010)</returns>
-    public async Task<ApiResponse<InlineResponse20010>> GetOrdersAsyncWithHttpInfo(int? status = null,
+	/// <summary>
+	///     Retrieve orders There are a multitude of parameter which can be used to filter. A few of them are attached but
+	///     for a complete list please check out &lt;a href&#x3D;&#x27;
+	///     https://api.sevdesk.de/#section/How-to-filter-for-certain-orders&#x27;&gt;this&lt;/a&gt; list
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="status">Status of the order (optional)</param>
+	/// <param name="orderNumber">Retrieve all orders with this order number (optional)</param>
+	/// <param name="startDate">Retrieve all orders with a date equal or higher (optional)</param>
+	/// <param name="endDate">Retrieve all orders with a date equal or lower (optional)</param>
+	/// <param name="contactId">Retrieve all orders with this contact. Must be provided with contact[objectName] (optional)</param>
+	/// <param name="contactObjectName">
+	///     Only required if contact[id] was provided. &#x27;Contact&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of ApiResponse (InlineResponse20010)</returns>
+	public async Task<ApiResponse<InlineResponse20010>> GetOrdersAsyncWithHttpInfo(int? status = null,
 		string orderNumber = null, int? startDate = null, int? endDate = null, int? contactId = null,
 		string contactObjectName = null)
 	{
@@ -1502,38 +1502,38 @@ public class OrderApi : IOrderApi
 			(InlineResponse20010)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20010)));
 	}
 
-    /// <summary>
-    ///     Find related objects Get related objects of a specified order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to return the positions</param>
-    /// <param name="includeItself">Define if the related objects include the order itself (optional)</param>
-    /// <param name="sortByType">Define if you want the related objects sorted by type (optional)</param>
-    /// <param name="embed">
-    ///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
-    ///     (optional)
-    /// </param>
-    /// <returns>InlineResponse20038</returns>
-    public InlineResponse20038 GetRelatedObjects(int? orderId, bool? includeItself = null, bool? sortByType = null,
+	/// <summary>
+	///     Find related objects Get related objects of a specified order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to return the positions</param>
+	/// <param name="includeItself">Define if the related objects include the order itself (optional)</param>
+	/// <param name="sortByType">Define if you want the related objects sorted by type (optional)</param>
+	/// <param name="embed">
+	///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
+	///     (optional)
+	/// </param>
+	/// <returns>InlineResponse20038</returns>
+	public InlineResponse20038 GetRelatedObjects(int? orderId, bool? includeItself = null, bool? sortByType = null,
 		List<string> embed = null)
 	{
 		var localVarResponse = GetRelatedObjectsWithHttpInfo(orderId, includeItself, sortByType, embed);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find related objects Get related objects of a specified order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to return the positions</param>
-    /// <param name="includeItself">Define if the related objects include the order itself (optional)</param>
-    /// <param name="sortByType">Define if you want the related objects sorted by type (optional)</param>
-    /// <param name="embed">
-    ///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
-    ///     (optional)
-    /// </param>
-    /// <returns>ApiResponse of InlineResponse20038</returns>
-    public ApiResponse<InlineResponse20038> GetRelatedObjectsWithHttpInfo(int? orderId, bool? includeItself = null,
+	/// <summary>
+	///     Find related objects Get related objects of a specified order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to return the positions</param>
+	/// <param name="includeItself">Define if the related objects include the order itself (optional)</param>
+	/// <param name="sortByType">Define if you want the related objects sorted by type (optional)</param>
+	/// <param name="embed">
+	///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
+	///     (optional)
+	/// </param>
+	/// <returns>ApiResponse of InlineResponse20038</returns>
+	public ApiResponse<InlineResponse20038> GetRelatedObjectsWithHttpInfo(int? orderId, bool? includeItself = null,
 		bool? sortByType = null, List<string> embed = null)
 	{
 		// verify the required parameter 'orderId' is set
@@ -1599,38 +1599,38 @@ public class OrderApi : IOrderApi
 			(InlineResponse20038)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20038)));
 	}
 
-    /// <summary>
-    ///     Find related objects Get related objects of a specified order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to return the positions</param>
-    /// <param name="includeItself">Define if the related objects include the order itself (optional)</param>
-    /// <param name="sortByType">Define if you want the related objects sorted by type (optional)</param>
-    /// <param name="embed">
-    ///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of InlineResponse20038</returns>
-    public async Task<InlineResponse20038> GetRelatedObjectsAsync(int? orderId, bool? includeItself = null,
+	/// <summary>
+	///     Find related objects Get related objects of a specified order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to return the positions</param>
+	/// <param name="includeItself">Define if the related objects include the order itself (optional)</param>
+	/// <param name="sortByType">Define if you want the related objects sorted by type (optional)</param>
+	/// <param name="embed">
+	///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of InlineResponse20038</returns>
+	public async Task<InlineResponse20038> GetRelatedObjectsAsync(int? orderId, bool? includeItself = null,
 		bool? sortByType = null, List<string> embed = null)
 	{
 		var localVarResponse = await GetRelatedObjectsAsyncWithHttpInfo(orderId, includeItself, sortByType, embed);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Find related objects Get related objects of a specified order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to return the positions</param>
-    /// <param name="includeItself">Define if the related objects include the order itself (optional)</param>
-    /// <param name="sortByType">Define if you want the related objects sorted by type (optional)</param>
-    /// <param name="embed">
-    ///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of ApiResponse (InlineResponse20038)</returns>
-    public async Task<ApiResponse<InlineResponse20038>> GetRelatedObjectsAsyncWithHttpInfo(int? orderId,
+	/// <summary>
+	///     Find related objects Get related objects of a specified order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to return the positions</param>
+	/// <param name="includeItself">Define if the related objects include the order itself (optional)</param>
+	/// <param name="sortByType">Define if you want the related objects sorted by type (optional)</param>
+	/// <param name="embed">
+	///     Get some additional information. Embed can handle multiple values, they must be separated by comma.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of ApiResponse (InlineResponse20038)</returns>
+	public async Task<ApiResponse<InlineResponse20038>> GetRelatedObjectsAsyncWithHttpInfo(int? orderId,
 		bool? includeItself = null, bool? sortByType = null, List<string> embed = null)
 	{
 		// verify the required parameter 'orderId' is set
@@ -1696,31 +1696,31 @@ public class OrderApi : IOrderApi
 			(InlineResponse20038)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20038)));
 	}
 
-    /// <summary>
-    ///     Retrieve pdf document of an order Retrieves the pdf document of an order with additional metadata and commit the
-    ///     order.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order from which you want the pdf</param>
-    /// <param name="download">If u want to download the pdf of the order. (optional)</param>
-    /// <param name="preventSendBy">Defines if u want to send the order. (optional)</param>
-    /// <returns>CreditNoteGetPdfResponse</returns>
-    public CreditNoteGetPdfResponse OrderGetPdf(int? orderId, bool? download = null, bool? preventSendBy = null)
+	/// <summary>
+	///     Retrieve pdf document of an order Retrieves the pdf document of an order with additional metadata and commit the
+	///     order.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order from which you want the pdf</param>
+	/// <param name="download">If u want to download the pdf of the order. (optional)</param>
+	/// <param name="preventSendBy">Defines if u want to send the order. (optional)</param>
+	/// <returns>CreditNoteGetPdfResponse</returns>
+	public CreditNoteGetPdfResponse OrderGetPdf(int? orderId, bool? download = null, bool? preventSendBy = null)
 	{
 		var localVarResponse = OrderGetPdfWithHttpInfo(orderId, download, preventSendBy);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve pdf document of an order Retrieves the pdf document of an order with additional metadata and commit the
-    ///     order.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order from which you want the pdf</param>
-    /// <param name="download">If u want to download the pdf of the order. (optional)</param>
-    /// <param name="preventSendBy">Defines if u want to send the order. (optional)</param>
-    /// <returns>ApiResponse of CreditNoteGetPdfResponse</returns>
-    public ApiResponse<CreditNoteGetPdfResponse> OrderGetPdfWithHttpInfo(int? orderId, bool? download = null,
+	/// <summary>
+	///     Retrieve pdf document of an order Retrieves the pdf document of an order with additional metadata and commit the
+	///     order.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order from which you want the pdf</param>
+	/// <param name="download">If u want to download the pdf of the order. (optional)</param>
+	/// <param name="preventSendBy">Defines if u want to send the order. (optional)</param>
+	/// <returns>ApiResponse of CreditNoteGetPdfResponse</returns>
+	public ApiResponse<CreditNoteGetPdfResponse> OrderGetPdfWithHttpInfo(int? orderId, bool? download = null,
 		bool? preventSendBy = null)
 	{
 		// verify the required parameter 'orderId' is set
@@ -1783,32 +1783,32 @@ public class OrderApi : IOrderApi
 				typeof(CreditNoteGetPdfResponse)));
 	}
 
-    /// <summary>
-    ///     Retrieve pdf document of an order Retrieves the pdf document of an order with additional metadata and commit the
-    ///     order.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order from which you want the pdf</param>
-    /// <param name="download">If u want to download the pdf of the order. (optional)</param>
-    /// <param name="preventSendBy">Defines if u want to send the order. (optional)</param>
-    /// <returns>Task of CreditNoteGetPdfResponse</returns>
-    public async Task<CreditNoteGetPdfResponse> OrderGetPdfAsync(int? orderId, bool? download = null,
+	/// <summary>
+	///     Retrieve pdf document of an order Retrieves the pdf document of an order with additional metadata and commit the
+	///     order.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order from which you want the pdf</param>
+	/// <param name="download">If u want to download the pdf of the order. (optional)</param>
+	/// <param name="preventSendBy">Defines if u want to send the order. (optional)</param>
+	/// <returns>Task of CreditNoteGetPdfResponse</returns>
+	public async Task<CreditNoteGetPdfResponse> OrderGetPdfAsync(int? orderId, bool? download = null,
 		bool? preventSendBy = null)
 	{
 		var localVarResponse = await OrderGetPdfAsyncWithHttpInfo(orderId, download, preventSendBy);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve pdf document of an order Retrieves the pdf document of an order with additional metadata and commit the
-    ///     order.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order from which you want the pdf</param>
-    /// <param name="download">If u want to download the pdf of the order. (optional)</param>
-    /// <param name="preventSendBy">Defines if u want to send the order. (optional)</param>
-    /// <returns>Task of ApiResponse (CreditNoteGetPdfResponse)</returns>
-    public async Task<ApiResponse<CreditNoteGetPdfResponse>> OrderGetPdfAsyncWithHttpInfo(int? orderId,
+	/// <summary>
+	///     Retrieve pdf document of an order Retrieves the pdf document of an order with additional metadata and commit the
+	///     order.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order from which you want the pdf</param>
+	/// <param name="download">If u want to download the pdf of the order. (optional)</param>
+	/// <param name="preventSendBy">Defines if u want to send the order. (optional)</param>
+	/// <returns>Task of ApiResponse (CreditNoteGetPdfResponse)</returns>
+	public async Task<ApiResponse<CreditNoteGetPdfResponse>> OrderGetPdfAsyncWithHttpInfo(int? orderId,
 		bool? download = null, bool? preventSendBy = null)
 	{
 		// verify the required parameter 'orderId' is set
@@ -1871,27 +1871,27 @@ public class OrderApi : IOrderApi
 				typeof(CreditNoteGetPdfResponse)));
 	}
 
-    /// <summary>
-    ///     Mark order as sent Marks an order as sent by a chosen send type.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to mark as sent</param>
-    /// <param name="body">Specify the send type (optional)</param>
-    /// <returns>InlineResponse20027</returns>
-    public InlineResponse20027 OrderSendBy(int? orderId, OrderIdSendByBody body = null)
+	/// <summary>
+	///     Mark order as sent Marks an order as sent by a chosen send type.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to mark as sent</param>
+	/// <param name="body">Specify the send type (optional)</param>
+	/// <returns>InlineResponse20027</returns>
+	public InlineResponse20027 OrderSendBy(int? orderId, OrderIdSendByBody body = null)
 	{
 		var localVarResponse = OrderSendByWithHttpInfo(orderId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Mark order as sent Marks an order as sent by a chosen send type.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to mark as sent</param>
-    /// <param name="body">Specify the send type (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20027</returns>
-    public ApiResponse<InlineResponse20027> OrderSendByWithHttpInfo(int? orderId, OrderIdSendByBody body = null)
+	/// <summary>
+	///     Mark order as sent Marks an order as sent by a chosen send type.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to mark as sent</param>
+	/// <param name="body">Specify the send type (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20027</returns>
+	public ApiResponse<InlineResponse20027> OrderSendByWithHttpInfo(int? orderId, OrderIdSendByBody body = null)
 	{
 		// verify the required parameter 'orderId' is set
 		if (orderId == null)
@@ -1950,27 +1950,27 @@ public class OrderApi : IOrderApi
 			(InlineResponse20027)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20027)));
 	}
 
-    /// <summary>
-    ///     Mark order as sent Marks an order as sent by a chosen send type.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to mark as sent</param>
-    /// <param name="body">Specify the send type (optional)</param>
-    /// <returns>Task of InlineResponse20027</returns>
-    public async Task<InlineResponse20027> OrderSendByAsync(int? orderId, OrderIdSendByBody body = null)
+	/// <summary>
+	///     Mark order as sent Marks an order as sent by a chosen send type.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to mark as sent</param>
+	/// <param name="body">Specify the send type (optional)</param>
+	/// <returns>Task of InlineResponse20027</returns>
+	public async Task<InlineResponse20027> OrderSendByAsync(int? orderId, OrderIdSendByBody body = null)
 	{
 		var localVarResponse = await OrderSendByAsyncWithHttpInfo(orderId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Mark order as sent Marks an order as sent by a chosen send type.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to mark as sent</param>
-    /// <param name="body">Specify the send type (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20027)</returns>
-    public async Task<ApiResponse<InlineResponse20027>> OrderSendByAsyncWithHttpInfo(int? orderId,
+	/// <summary>
+	///     Mark order as sent Marks an order as sent by a chosen send type.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to mark as sent</param>
+	/// <param name="body">Specify the send type (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20027)</returns>
+	public async Task<ApiResponse<InlineResponse20027>> OrderSendByAsyncWithHttpInfo(int? orderId,
 		OrderIdSendByBody body = null)
 	{
 		// verify the required parameter 'orderId' is set
@@ -2030,31 +2030,31 @@ public class OrderApi : IOrderApi
 			(InlineResponse20027)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20027)));
 	}
 
-    /// <summary>
-    ///     Send order via email This endpoint sends the specified order to a customer via email.&lt;br&gt;      This will
-    ///     automatically mark the order as sent.&lt;br&gt;      Please note, that in production an order is not allowed to be
-    ///     changed after this happened!
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to be sent via email</param>
-    /// <param name="body">Mail data (optional)</param>
-    /// <returns>InlineResponse2013</returns>
-    public InlineResponse2013 SendorderViaEMail(int? orderId, OrderIdSendViaEmailBody body = null)
+	/// <summary>
+	///     Send order via email This endpoint sends the specified order to a customer via email.&lt;br&gt;      This will
+	///     automatically mark the order as sent.&lt;br&gt;      Please note, that in production an order is not allowed to be
+	///     changed after this happened!
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to be sent via email</param>
+	/// <param name="body">Mail data (optional)</param>
+	/// <returns>InlineResponse2013</returns>
+	public InlineResponse2013 SendorderViaEMail(int? orderId, OrderIdSendViaEmailBody body = null)
 	{
 		var localVarResponse = SendorderViaEMailWithHttpInfo(orderId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Send order via email This endpoint sends the specified order to a customer via email.&lt;br&gt;      This will
-    ///     automatically mark the order as sent.&lt;br&gt;      Please note, that in production an order is not allowed to be
-    ///     changed after this happened!
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to be sent via email</param>
-    /// <param name="body">Mail data (optional)</param>
-    /// <returns>ApiResponse of InlineResponse2013</returns>
-    public ApiResponse<InlineResponse2013> SendorderViaEMailWithHttpInfo(int? orderId,
+	/// <summary>
+	///     Send order via email This endpoint sends the specified order to a customer via email.&lt;br&gt;      This will
+	///     automatically mark the order as sent.&lt;br&gt;      Please note, that in production an order is not allowed to be
+	///     changed after this happened!
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to be sent via email</param>
+	/// <param name="body">Mail data (optional)</param>
+	/// <returns>ApiResponse of InlineResponse2013</returns>
+	public ApiResponse<InlineResponse2013> SendorderViaEMailWithHttpInfo(int? orderId,
 		OrderIdSendViaEmailBody body = null)
 	{
 		// verify the required parameter 'orderId' is set
@@ -2115,31 +2115,31 @@ public class OrderApi : IOrderApi
 			(InlineResponse2013)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2013)));
 	}
 
-    /// <summary>
-    ///     Send order via email This endpoint sends the specified order to a customer via email.&lt;br&gt;      This will
-    ///     automatically mark the order as sent.&lt;br&gt;      Please note, that in production an order is not allowed to be
-    ///     changed after this happened!
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to be sent via email</param>
-    /// <param name="body">Mail data (optional)</param>
-    /// <returns>Task of InlineResponse2013</returns>
-    public async Task<InlineResponse2013> SendorderViaEMailAsync(int? orderId, OrderIdSendViaEmailBody body = null)
+	/// <summary>
+	///     Send order via email This endpoint sends the specified order to a customer via email.&lt;br&gt;      This will
+	///     automatically mark the order as sent.&lt;br&gt;      Please note, that in production an order is not allowed to be
+	///     changed after this happened!
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to be sent via email</param>
+	/// <param name="body">Mail data (optional)</param>
+	/// <returns>Task of InlineResponse2013</returns>
+	public async Task<InlineResponse2013> SendorderViaEMailAsync(int? orderId, OrderIdSendViaEmailBody body = null)
 	{
 		var localVarResponse = await SendorderViaEMailAsyncWithHttpInfo(orderId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Send order via email This endpoint sends the specified order to a customer via email.&lt;br&gt;      This will
-    ///     automatically mark the order as sent.&lt;br&gt;      Please note, that in production an order is not allowed to be
-    ///     changed after this happened!
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to be sent via email</param>
-    /// <param name="body">Mail data (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse2013)</returns>
-    public async Task<ApiResponse<InlineResponse2013>> SendorderViaEMailAsyncWithHttpInfo(int? orderId,
+	/// <summary>
+	///     Send order via email This endpoint sends the specified order to a customer via email.&lt;br&gt;      This will
+	///     automatically mark the order as sent.&lt;br&gt;      Please note, that in production an order is not allowed to be
+	///     changed after this happened!
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to be sent via email</param>
+	/// <param name="body">Mail data (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse2013)</returns>
+	public async Task<ApiResponse<InlineResponse2013>> SendorderViaEMailAsyncWithHttpInfo(int? orderId,
 		OrderIdSendViaEmailBody body = null)
 	{
 		// verify the required parameter 'orderId' is set
@@ -2200,27 +2200,27 @@ public class OrderApi : IOrderApi
 			(InlineResponse2013)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse2013)));
 	}
 
-    /// <summary>
-    ///     Update an existing order Update an order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>InlineResponse20010</returns>
-    public InlineResponse20010 UpdateOrder(int? orderId, ModelOrderUpdate body = null)
+	/// <summary>
+	///     Update an existing order Update an order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>InlineResponse20010</returns>
+	public InlineResponse20010 UpdateOrder(int? orderId, ModelOrderUpdate body = null)
 	{
 		var localVarResponse = UpdateOrderWithHttpInfo(orderId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update an existing order Update an order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>ApiResponse of InlineResponse20010</returns>
-    public ApiResponse<InlineResponse20010> UpdateOrderWithHttpInfo(int? orderId, ModelOrderUpdate body = null)
+	/// <summary>
+	///     Update an existing order Update an order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>ApiResponse of InlineResponse20010</returns>
+	public ApiResponse<InlineResponse20010> UpdateOrderWithHttpInfo(int? orderId, ModelOrderUpdate body = null)
 	{
 		// verify the required parameter 'orderId' is set
 		if (orderId == null)
@@ -2279,27 +2279,27 @@ public class OrderApi : IOrderApi
 			(InlineResponse20010)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20010)));
 	}
 
-    /// <summary>
-    ///     Update an existing order Update an order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>Task of InlineResponse20010</returns>
-    public async Task<InlineResponse20010> UpdateOrderAsync(int? orderId, ModelOrderUpdate body = null)
+	/// <summary>
+	///     Update an existing order Update an order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>Task of InlineResponse20010</returns>
+	public async Task<InlineResponse20010> UpdateOrderAsync(int? orderId, ModelOrderUpdate body = null)
 	{
 		var localVarResponse = await UpdateOrderAsyncWithHttpInfo(orderId, body);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Update an existing order Update an order
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="orderId">ID of order to update</param>
-    /// <param name="body">Update data (optional)</param>
-    /// <returns>Task of ApiResponse (InlineResponse20010)</returns>
-    public async Task<ApiResponse<InlineResponse20010>> UpdateOrderAsyncWithHttpInfo(int? orderId,
+	/// <summary>
+	///     Update an existing order Update an order
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="orderId">ID of order to update</param>
+	/// <param name="body">Update data (optional)</param>
+	/// <returns>Task of ApiResponse (InlineResponse20010)</returns>
+	public async Task<ApiResponse<InlineResponse20010>> UpdateOrderAsyncWithHttpInfo(int? orderId,
 		ModelOrderUpdate body = null)
 	{
 		// verify the required parameter 'orderId' is set
@@ -2359,34 +2359,34 @@ public class OrderApi : IOrderApi
 			(InlineResponse20010)Configuration.ApiClient.Deserialize(localVarResponse, typeof(InlineResponse20010)));
 	}
 
-    /// <summary>
-    ///     Sets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    [Obsolete(
+	/// <summary>
+	///     Sets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	[Obsolete(
 		"SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
 	public void SetBasePath(string basePath)
 	{
 		// do nothing
 	}
 
-    /// <summary>
-    ///     Gets the default header.
-    /// </summary>
-    /// <returns>Dictionary of HTTP header</returns>
-    [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
+	/// <summary>
+	///     Gets the default header.
+	/// </summary>
+	/// <returns>Dictionary of HTTP header</returns>
+	[Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
 	public IDictionary<string, string> DefaultHeader()
 	{
 		return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
 	}
 
-    /// <summary>
-    ///     Add default header.
-    /// </summary>
-    /// <param name="key">Header field name.</param>
-    /// <param name="value">Header field value.</param>
-    /// <returns></returns>
-    [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
+	/// <summary>
+	///     Add default header.
+	/// </summary>
+	/// <param name="key">Header field name.</param>
+	/// <param name="value">Header field value.</param>
+	/// <returns></returns>
+	[Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
 	public void AddDefaultHeader(string key, string value)
 	{
 		Configuration.AddDefaultHeader(key, value);

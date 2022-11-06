@@ -22,56 +22,56 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelCheckAccountTransaction : IEquatable<ModelCheckAccountTransaction>, IValidatableObject
 {
-    /// <summary>
-    ///     Status of the check account transaction.&lt;br&gt;       100 &lt;-&gt; Created&lt;br&gt;       200 &lt;-&gt; Linked
-    ///     &lt;br&gt;       300 &lt;-&gt; Private&lt;br&gt;       400 &lt;-&gt; Booked
-    /// </summary>
-    /// <value>
-    ///     Status of the check account transaction.&lt;br&gt;       100 &lt;-&gt; Created&lt;br&gt;       200 &lt;-&gt;
-    ///     Linked&lt;br&gt;       300 &lt;-&gt; Private&lt;br&gt;       400 &lt;-&gt; Booked
-    /// </value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Status of the check account transaction.&lt;br&gt;       100 &lt;-&gt; Created&lt;br&gt;       200 &lt;-&gt; Linked
+	///     &lt;br&gt;       300 &lt;-&gt; Private&lt;br&gt;       400 &lt;-&gt; Booked
+	/// </summary>
+	/// <value>
+	///     Status of the check account transaction.&lt;br&gt;       100 &lt;-&gt; Created&lt;br&gt;       200 &lt;-&gt;
+	///     Linked&lt;br&gt;       300 &lt;-&gt; Private&lt;br&gt;       400 &lt;-&gt; Booked
+	/// </value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum StatusEnum
 	{
-        /// <summary>
-        ///     Enum NUMBER_100 for value: 100
-        /// </summary>
-        [EnumMember(Value = "100")] NUMBER_100 = 1,
+		/// <summary>
+		///     Enum NUMBER_100 for value: 100
+		/// </summary>
+		[EnumMember(Value = "100")] NUMBER_100 = 1,
 
-        /// <summary>
-        ///     Enum NUMBER_200 for value: 200
-        /// </summary>
-        [EnumMember(Value = "200")] NUMBER_200 = 2,
+		/// <summary>
+		///     Enum NUMBER_200 for value: 200
+		/// </summary>
+		[EnumMember(Value = "200")] NUMBER_200 = 2,
 
-        /// <summary>
-        ///     Enum NUMBER_300 for value: 300
-        /// </summary>
-        [EnumMember(Value = "300")] NUMBER_300 = 3,
+		/// <summary>
+		///     Enum NUMBER_300 for value: 300
+		/// </summary>
+		[EnumMember(Value = "300")] NUMBER_300 = 3,
 
-        /// <summary>
-        ///     Enum NUMBER_400 for value: 400
-        /// </summary>
-        [EnumMember(Value = "400")] NUMBER_400 = 4
+		/// <summary>
+		///     Enum NUMBER_400 for value: 400
+		/// </summary>
+		[EnumMember(Value = "400")] NUMBER_400 = 4
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelCheckAccountTransaction" /> class.
-    /// </summary>
-    /// <param name="sevClient">sevClient.</param>
-    /// <param name="valueDate">Date the check account transaction was booked (required).</param>
-    /// <param name="entryDate">Date the check account transaction was imported.</param>
-    /// <param name="paymtPurpose">the purpose of the transaction.</param>
-    /// <param name="amount">Amount of the transaction (required).</param>
-    /// <param name="payeePayerName">Name of the payee/payer (required).</param>
-    /// <param name="checkAccount">checkAccount (required).</param>
-    /// <param name="status">
-    ///     Status of the check account transaction.&lt;br&gt;       100 &lt;-&gt; Created&lt;br&gt;       200
-    ///     &lt;-&gt; Linked&lt;br&gt;       300 &lt;-&gt; Private&lt;br&gt;       400 &lt;-&gt; Booked (required).
-    /// </param>
-    /// <param name="enshrined">Defines if the transaction has been enshrined and can not be changed any more..</param>
-    /// <param name="sourceTransaction">sourceTransaction.</param>
-    /// <param name="targetTransaction">targetTransaction.</param>
-    public ModelCheckAccountTransaction(ModelCheckAccountTransactionSevClient sevClient = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelCheckAccountTransaction" /> class.
+	/// </summary>
+	/// <param name="sevClient">sevClient.</param>
+	/// <param name="valueDate">Date the check account transaction was booked (required).</param>
+	/// <param name="entryDate">Date the check account transaction was imported.</param>
+	/// <param name="paymtPurpose">the purpose of the transaction.</param>
+	/// <param name="amount">Amount of the transaction (required).</param>
+	/// <param name="payeePayerName">Name of the payee/payer (required).</param>
+	/// <param name="checkAccount">checkAccount (required).</param>
+	/// <param name="status">
+	///     Status of the check account transaction.&lt;br&gt;       100 &lt;-&gt; Created&lt;br&gt;       200
+	///     &lt;-&gt; Linked&lt;br&gt;       300 &lt;-&gt; Private&lt;br&gt;       400 &lt;-&gt; Booked (required).
+	/// </param>
+	/// <param name="enshrined">Defines if the transaction has been enshrined and can not be changed any more..</param>
+	/// <param name="sourceTransaction">sourceTransaction.</param>
+	/// <param name="targetTransaction">targetTransaction.</param>
+	public ModelCheckAccountTransaction(ModelCheckAccountTransactionSevClient sevClient = default,
 		DateTime? valueDate = default, DateTime? entryDate = default, string paymtPurpose = default,
 		float? amount = default, string payeePayerName = default,
 		ModelCheckAccountTransactionCheckAccount checkAccount = default, StatusEnum status = default,
@@ -111,118 +111,118 @@ public class ModelCheckAccountTransaction : IEquatable<ModelCheckAccountTransact
 		TargetTransaction = targetTransaction;
 	}
 
-    /// <summary>
-    ///     Status of the check account transaction.&lt;br&gt;       100 &lt;-&gt; Created&lt;br&gt;       200 &lt;-&gt; Linked
-    ///     &lt;br&gt;       300 &lt;-&gt; Private&lt;br&gt;       400 &lt;-&gt; Booked
-    /// </summary>
-    /// <value>
-    ///     Status of the check account transaction.&lt;br&gt;       100 &lt;-&gt; Created&lt;br&gt;       200 &lt;-&gt;
-    ///     Linked&lt;br&gt;       300 &lt;-&gt; Private&lt;br&gt;       400 &lt;-&gt; Booked
-    /// </value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+	/// <summary>
+	///     Status of the check account transaction.&lt;br&gt;       100 &lt;-&gt; Created&lt;br&gt;       200 &lt;-&gt; Linked
+	///     &lt;br&gt;       300 &lt;-&gt; Private&lt;br&gt;       400 &lt;-&gt; Booked
+	/// </summary>
+	/// <value>
+	///     Status of the check account transaction.&lt;br&gt;       100 &lt;-&gt; Created&lt;br&gt;       200 &lt;-&gt;
+	///     Linked&lt;br&gt;       300 &lt;-&gt; Private&lt;br&gt;       400 &lt;-&gt; Booked
+	/// </value>
+	[DataMember(Name = "status", EmitDefaultValue = false)]
 	public StatusEnum Status { get; set; }
 
-    /// <summary>
-    ///     The check account transaction id
-    /// </summary>
-    /// <value>The check account transaction id</value>
-    [DataMember(Name = "id", EmitDefaultValue = false)]
+	/// <summary>
+	///     The check account transaction id
+	/// </summary>
+	/// <value>The check account transaction id</value>
+	[DataMember(Name = "id", EmitDefaultValue = false)]
 	public int? Id { get; private set; }
 
-    /// <summary>
-    ///     The check account transaction object name
-    /// </summary>
-    /// <value>The check account transaction object name</value>
-    [DataMember(Name = "objectName", EmitDefaultValue = false)]
+	/// <summary>
+	///     The check account transaction object name
+	/// </summary>
+	/// <value>The check account transaction object name</value>
+	[DataMember(Name = "objectName", EmitDefaultValue = false)]
 	public string ObjectName { get; private set; }
 
-    /// <summary>
-    ///     Date of check account transaction creation
-    /// </summary>
-    /// <value>Date of check account transaction creation</value>
-    [DataMember(Name = "create", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of check account transaction creation
+	/// </summary>
+	/// <value>Date of check account transaction creation</value>
+	[DataMember(Name = "create", EmitDefaultValue = false)]
 	public DateTime? Create { get; private set; }
 
-    /// <summary>
-    ///     Date of last check account transaction update
-    /// </summary>
-    /// <value>Date of last check account transaction update</value>
-    [DataMember(Name = "update", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date of last check account transaction update
+	/// </summary>
+	/// <value>Date of last check account transaction update</value>
+	[DataMember(Name = "update", EmitDefaultValue = false)]
 	public DateTime? Update { get; private set; }
 
-    /// <summary>
-    ///     Gets or Sets SevClientReference
-    /// </summary>
-    [DataMember(Name = "sevClient", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets SevClientReference
+	/// </summary>
+	[DataMember(Name = "sevClient", EmitDefaultValue = false)]
 	public ModelCheckAccountTransactionSevClient SevClient { get; set; }
 
-    /// <summary>
-    ///     Date the check account transaction was booked
-    /// </summary>
-    /// <value>Date the check account transaction was booked</value>
-    [DataMember(Name = "valueDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date the check account transaction was booked
+	/// </summary>
+	/// <value>Date the check account transaction was booked</value>
+	[DataMember(Name = "valueDate", EmitDefaultValue = false)]
 	public DateTime? ValueDate { get; set; }
 
-    /// <summary>
-    ///     Date the check account transaction was imported
-    /// </summary>
-    /// <value>Date the check account transaction was imported</value>
-    [DataMember(Name = "entryDate", EmitDefaultValue = false)]
+	/// <summary>
+	///     Date the check account transaction was imported
+	/// </summary>
+	/// <value>Date the check account transaction was imported</value>
+	[DataMember(Name = "entryDate", EmitDefaultValue = false)]
 	public DateTime? EntryDate { get; set; }
 
-    /// <summary>
-    ///     the purpose of the transaction
-    /// </summary>
-    /// <value>the purpose of the transaction</value>
-    [DataMember(Name = "paymtPurpose", EmitDefaultValue = false)]
+	/// <summary>
+	///     the purpose of the transaction
+	/// </summary>
+	/// <value>the purpose of the transaction</value>
+	[DataMember(Name = "paymtPurpose", EmitDefaultValue = false)]
 	public string PaymtPurpose { get; set; }
 
-    /// <summary>
-    ///     Amount of the transaction
-    /// </summary>
-    /// <value>Amount of the transaction</value>
-    [DataMember(Name = "amount", EmitDefaultValue = false)]
+	/// <summary>
+	///     Amount of the transaction
+	/// </summary>
+	/// <value>Amount of the transaction</value>
+	[DataMember(Name = "amount", EmitDefaultValue = false)]
 	public float? Amount { get; set; }
 
-    /// <summary>
-    ///     Name of the payee/payer
-    /// </summary>
-    /// <value>Name of the payee/payer</value>
-    [DataMember(Name = "payeePayerName", EmitDefaultValue = false)]
+	/// <summary>
+	///     Name of the payee/payer
+	/// </summary>
+	/// <value>Name of the payee/payer</value>
+	[DataMember(Name = "payeePayerName", EmitDefaultValue = false)]
 	public string PayeePayerName { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets CheckAccount
-    /// </summary>
-    [DataMember(Name = "checkAccount", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets CheckAccount
+	/// </summary>
+	[DataMember(Name = "checkAccount", EmitDefaultValue = false)]
 	public ModelCheckAccountTransactionCheckAccount CheckAccount { get; set; }
 
 
-    /// <summary>
-    ///     Defines if the transaction has been enshrined and can not be changed any more.
-    /// </summary>
-    /// <value>Defines if the transaction has been enshrined and can not be changed any more.</value>
-    [DataMember(Name = "enshrined", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines if the transaction has been enshrined and can not be changed any more.
+	/// </summary>
+	/// <value>Defines if the transaction has been enshrined and can not be changed any more.</value>
+	[DataMember(Name = "enshrined", EmitDefaultValue = false)]
 	public DateTime? Enshrined { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets SourceTransaction
-    /// </summary>
-    [DataMember(Name = "sourceTransaction", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets SourceTransaction
+	/// </summary>
+	[DataMember(Name = "sourceTransaction", EmitDefaultValue = false)]
 	public ModelCheckAccountTransactionSourceTransaction SourceTransaction { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets TargetTransaction
-    /// </summary>
-    [DataMember(Name = "targetTransaction", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets TargetTransaction
+	/// </summary>
+	[DataMember(Name = "targetTransaction", EmitDefaultValue = false)]
 	public ModelCheckAccountTransactionTargetTransaction TargetTransaction { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelCheckAccountTransaction instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelCheckAccountTransaction to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelCheckAccountTransaction input)
+	/// <summary>
+	///     Returns true if ModelCheckAccountTransaction instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelCheckAccountTransaction to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelCheckAccountTransaction input)
 	{
 		if (input == null)
 			return false;
@@ -305,21 +305,21 @@ public class ModelCheckAccountTransaction : IEquatable<ModelCheckAccountTransact
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelCheckAccountTransaction {\n");
@@ -342,30 +342,30 @@ public class ModelCheckAccountTransaction : IEquatable<ModelCheckAccountTransact
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelCheckAccountTransaction);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

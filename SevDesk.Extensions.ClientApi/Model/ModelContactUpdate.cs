@@ -23,86 +23,86 @@ namespace SevDesk.Extensions.ClientApi.Model;
 [DataContract]
 public class ModelContactUpdate : IEquatable<ModelContactUpdate>, IValidatableObject
 {
-    /// <summary>
-    ///     Defines which tax regulation the contact is using.
-    /// </summary>
-    /// <value>Defines which tax regulation the contact is using.</value>
-    [JsonConverter(typeof(StringEnumConverter))]
+	/// <summary>
+	///     Defines which tax regulation the contact is using.
+	/// </summary>
+	/// <value>Defines which tax regulation the contact is using.</value>
+	[JsonConverter(typeof(StringEnumConverter))]
 	public enum TaxTypeEnum
 	{
-        /// <summary>
-        ///     Enum Default for value: default
-        /// </summary>
-        [EnumMember(Value = "default")] Default = 1,
+		/// <summary>
+		///     Enum Default for value: default
+		/// </summary>
+		[EnumMember(Value = "default")] Default = 1,
 
-        /// <summary>
-        ///     Enum Eu for value: eu
-        /// </summary>
-        [EnumMember(Value = "eu")] Eu = 2,
+		/// <summary>
+		///     Enum Eu for value: eu
+		/// </summary>
+		[EnumMember(Value = "eu")] Eu = 2,
 
-        /// <summary>
-        ///     Enum Noteu for value: noteu
-        /// </summary>
-        [EnumMember(Value = "noteu")] Noteu = 3,
+		/// <summary>
+		///     Enum Noteu for value: noteu
+		/// </summary>
+		[EnumMember(Value = "noteu")] Noteu = 3,
 
-        /// <summary>
-        ///     Enum Custom for value: custom
-        /// </summary>
-        [EnumMember(Value = "custom")] Custom = 4,
+		/// <summary>
+		///     Enum Custom for value: custom
+		/// </summary>
+		[EnumMember(Value = "custom")] Custom = 4,
 
-        /// <summary>
-        ///     Enum Ss for value: ss
-        /// </summary>
-        [EnumMember(Value = "ss")] Ss = 5
+		/// <summary>
+		///     Enum Ss for value: ss
+		/// </summary>
+		[EnumMember(Value = "ss")] Ss = 5
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="ModelContactUpdate" /> class.
-    /// </summary>
-    /// <param name="name">
-    ///     The organization name.&lt;br&gt; Be aware that the type of contact will depend on this attribute.
-    ///     &lt;br&gt; If it holds a value, the contact will be regarded as an organization..
-    /// </param>
-    /// <param name="status">
-    ///     Defines the status of the contact. 100 &lt;-&gt; Lead - 500 &lt;-&gt; Pending - 1000 &lt;-&gt;
-    ///     Active. (default to 100).
-    /// </param>
-    /// <param name="customerNumber">The customer number.</param>
-    /// <param name="parent">parent.</param>
-    /// <param name="surename">
-    ///     The &lt;b&gt;first&lt;/b&gt; name of the contact.&lt;br&gt; Yeah... not quite right in literally
-    ///     every way. We know.&lt;br&gt; Not to be used for organizations..
-    /// </param>
-    /// <param name="familyname">The last name of the contact.&lt;br&gt; Not to be used for organizations..</param>
-    /// <param name="titel">A non-academic title for the contact. Not to be used for organizations..</param>
-    /// <param name="category">category.</param>
-    /// <param name="description">A description for the contact..</param>
-    /// <param name="academicTitle">A academic title for the contact. Not to be used for organizations..</param>
-    /// <param name="gender">Gender of the contact.&lt;br&gt; Not to be used for organizations..</param>
-    /// <param name="name2">Second name of the contact.&lt;br&gt; Not to be used for organizations..</param>
-    /// <param name="birthday">Birthday of the contact.&lt;br&gt; Not to be used for organizations..</param>
-    /// <param name="vatNumber">Vat number of the contact..</param>
-    /// <param name="bankAccount">Bank account number (IBAN) of the contact..</param>
-    /// <param name="bankNumber">Bank number of the bank used by the contact..</param>
-    /// <param name="defaultCashbackTime">
-    ///     Absolute time in days which the contact has to pay his invoices and subsequently get
-    ///     a cashback..
-    /// </param>
-    /// <param name="defaultCashbackPercent">Percentage of the invoice sum the contact gets back if he payed invoices in time..</param>
-    /// <param name="defaultTimeToPay">The payment goal in days which is set for every invoice of the contact..</param>
-    /// <param name="taxNumber">The tax number of the contact..</param>
-    /// <param name="taxOffice">The tax office of the contact (only for greek customers)..</param>
-    /// <param name="exemptVat">Defines if the contact is freed from paying vat..</param>
-    /// <param name="taxType">Defines which tax regulation the contact is using..</param>
-    /// <param name="taxSet">taxSet.</param>
-    /// <param name="defaultDiscountAmount">
-    ///     The default discount the contact gets for every invoice.&lt;br&gt; Depending on
-    ///     defaultDiscountPercentage attribute, in percent or absolute value..
-    /// </param>
-    /// <param name="defaultDiscountPercentage">Defines if the discount is a percentage (true) or an absolute value (false)..</param>
-    /// <param name="buyerReference">Buyer reference of the contact..</param>
-    /// <param name="governmentAgency">Defines whether the contact is a government agency (true) or not (false)..</param>
-    public ModelContactUpdate(string name = default, int? status = 100, string customerNumber = default,
+	/// <summary>
+	///     Initializes a new instance of the <see cref="ModelContactUpdate" /> class.
+	/// </summary>
+	/// <param name="name">
+	///     The organization name.&lt;br&gt; Be aware that the type of contact will depend on this attribute.
+	///     &lt;br&gt; If it holds a value, the contact will be regarded as an organization..
+	/// </param>
+	/// <param name="status">
+	///     Defines the status of the contact. 100 &lt;-&gt; Lead - 500 &lt;-&gt; Pending - 1000 &lt;-&gt;
+	///     Active. (default to 100).
+	/// </param>
+	/// <param name="customerNumber">The customer number.</param>
+	/// <param name="parent">parent.</param>
+	/// <param name="surename">
+	///     The &lt;b&gt;first&lt;/b&gt; name of the contact.&lt;br&gt; Yeah... not quite right in literally
+	///     every way. We know.&lt;br&gt; Not to be used for organizations..
+	/// </param>
+	/// <param name="familyname">The last name of the contact.&lt;br&gt; Not to be used for organizations..</param>
+	/// <param name="titel">A non-academic title for the contact. Not to be used for organizations..</param>
+	/// <param name="category">category.</param>
+	/// <param name="description">A description for the contact..</param>
+	/// <param name="academicTitle">A academic title for the contact. Not to be used for organizations..</param>
+	/// <param name="gender">Gender of the contact.&lt;br&gt; Not to be used for organizations..</param>
+	/// <param name="name2">Second name of the contact.&lt;br&gt; Not to be used for organizations..</param>
+	/// <param name="birthday">Birthday of the contact.&lt;br&gt; Not to be used for organizations..</param>
+	/// <param name="vatNumber">Vat number of the contact..</param>
+	/// <param name="bankAccount">Bank account number (IBAN) of the contact..</param>
+	/// <param name="bankNumber">Bank number of the bank used by the contact..</param>
+	/// <param name="defaultCashbackTime">
+	///     Absolute time in days which the contact has to pay his invoices and subsequently get
+	///     a cashback..
+	/// </param>
+	/// <param name="defaultCashbackPercent">Percentage of the invoice sum the contact gets back if he payed invoices in time..</param>
+	/// <param name="defaultTimeToPay">The payment goal in days which is set for every invoice of the contact..</param>
+	/// <param name="taxNumber">The tax number of the contact..</param>
+	/// <param name="taxOffice">The tax office of the contact (only for greek customers)..</param>
+	/// <param name="exemptVat">Defines if the contact is freed from paying vat..</param>
+	/// <param name="taxType">Defines which tax regulation the contact is using..</param>
+	/// <param name="taxSet">taxSet.</param>
+	/// <param name="defaultDiscountAmount">
+	///     The default discount the contact gets for every invoice.&lt;br&gt; Depending on
+	///     defaultDiscountPercentage attribute, in percent or absolute value..
+	/// </param>
+	/// <param name="defaultDiscountPercentage">Defines if the discount is a percentage (true) or an absolute value (false)..</param>
+	/// <param name="buyerReference">Buyer reference of the contact..</param>
+	/// <param name="governmentAgency">Defines whether the contact is a government agency (true) or not (false)..</param>
+	public ModelContactUpdate(string name = default, int? status = 100, string customerNumber = default,
 		ModelContactUpdateParent parent = default, string surename = default, string familyname = default,
 		string titel = default, ModelContactUpdateCategory category = default, string description = default,
 		string academicTitle = default, string gender = default, string name2 = default, DateTime? birthday = default,
@@ -146,222 +146,222 @@ public class ModelContactUpdate : IEquatable<ModelContactUpdate>, IValidatableOb
 		GovernmentAgency = governmentAgency;
 	}
 
-    /// <summary>
-    ///     Defines which tax regulation the contact is using.
-    /// </summary>
-    /// <value>Defines which tax regulation the contact is using.</value>
-    [DataMember(Name = "taxType", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines which tax regulation the contact is using.
+	/// </summary>
+	/// <value>Defines which tax regulation the contact is using.</value>
+	[DataMember(Name = "taxType", EmitDefaultValue = false)]
 	public TaxTypeEnum? TaxType { get; set; }
 
-    /// <summary>
-    ///     The organization name.&lt;br&gt; Be aware that the type of contact will depend on this attribute.&lt;br&gt; If it
-    ///     holds a value, the contact will be regarded as an organization.
-    /// </summary>
-    /// <value>
-    ///     The organization name.&lt;br&gt; Be aware that the type of contact will depend on this attribute.&lt;br&gt; If
-    ///     it holds a value, the contact will be regarded as an organization.
-    /// </value>
-    [DataMember(Name = "name", EmitDefaultValue = false)]
+	/// <summary>
+	///     The organization name.&lt;br&gt; Be aware that the type of contact will depend on this attribute.&lt;br&gt; If it
+	///     holds a value, the contact will be regarded as an organization.
+	/// </summary>
+	/// <value>
+	///     The organization name.&lt;br&gt; Be aware that the type of contact will depend on this attribute.&lt;br&gt; If
+	///     it holds a value, the contact will be regarded as an organization.
+	/// </value>
+	[DataMember(Name = "name", EmitDefaultValue = false)]
 	public string Name { get; set; }
 
-    /// <summary>
-    ///     Defines the status of the contact. 100 &lt;-&gt; Lead - 500 &lt;-&gt; Pending - 1000 &lt;-&gt; Active.
-    /// </summary>
-    /// <value>Defines the status of the contact. 100 &lt;-&gt; Lead - 500 &lt;-&gt; Pending - 1000 &lt;-&gt; Active.</value>
-    [DataMember(Name = "status", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines the status of the contact. 100 &lt;-&gt; Lead - 500 &lt;-&gt; Pending - 1000 &lt;-&gt; Active.
+	/// </summary>
+	/// <value>Defines the status of the contact. 100 &lt;-&gt; Lead - 500 &lt;-&gt; Pending - 1000 &lt;-&gt; Active.</value>
+	[DataMember(Name = "status", EmitDefaultValue = false)]
 	public int? Status { get; set; }
 
-    /// <summary>
-    ///     The customer number
-    /// </summary>
-    /// <value>The customer number</value>
-    [DataMember(Name = "customerNumber", EmitDefaultValue = false)]
+	/// <summary>
+	///     The customer number
+	/// </summary>
+	/// <value>The customer number</value>
+	[DataMember(Name = "customerNumber", EmitDefaultValue = false)]
 	public string CustomerNumber { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Parent
-    /// </summary>
-    [DataMember(Name = "parent", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Parent
+	/// </summary>
+	[DataMember(Name = "parent", EmitDefaultValue = false)]
 	public ModelContactUpdateParent Parent { get; set; }
 
-    /// <summary>
-    ///     The &lt;b&gt;first&lt;/b&gt; name of the contact.&lt;br&gt; Yeah... not quite right in literally every way. We
-    ///     know.&lt;br&gt; Not to be used for organizations.
-    /// </summary>
-    /// <value>
-    ///     The &lt;b&gt;first&lt;/b&gt; name of the contact.&lt;br&gt; Yeah... not quite right in literally every way. We
-    ///     know.&lt;br&gt; Not to be used for organizations.
-    /// </value>
-    [DataMember(Name = "surename", EmitDefaultValue = false)]
+	/// <summary>
+	///     The &lt;b&gt;first&lt;/b&gt; name of the contact.&lt;br&gt; Yeah... not quite right in literally every way. We
+	///     know.&lt;br&gt; Not to be used for organizations.
+	/// </summary>
+	/// <value>
+	///     The &lt;b&gt;first&lt;/b&gt; name of the contact.&lt;br&gt; Yeah... not quite right in literally every way. We
+	///     know.&lt;br&gt; Not to be used for organizations.
+	/// </value>
+	[DataMember(Name = "surename", EmitDefaultValue = false)]
 	public string Surename { get; set; }
 
-    /// <summary>
-    ///     The last name of the contact.&lt;br&gt; Not to be used for organizations.
-    /// </summary>
-    /// <value>The last name of the contact.&lt;br&gt; Not to be used for organizations.</value>
-    [DataMember(Name = "familyname", EmitDefaultValue = false)]
+	/// <summary>
+	///     The last name of the contact.&lt;br&gt; Not to be used for organizations.
+	/// </summary>
+	/// <value>The last name of the contact.&lt;br&gt; Not to be used for organizations.</value>
+	[DataMember(Name = "familyname", EmitDefaultValue = false)]
 	public string Familyname { get; set; }
 
-    /// <summary>
-    ///     A non-academic title for the contact. Not to be used for organizations.
-    /// </summary>
-    /// <value>A non-academic title for the contact. Not to be used for organizations.</value>
-    [DataMember(Name = "titel", EmitDefaultValue = false)]
+	/// <summary>
+	///     A non-academic title for the contact. Not to be used for organizations.
+	/// </summary>
+	/// <value>A non-academic title for the contact. Not to be used for organizations.</value>
+	[DataMember(Name = "titel", EmitDefaultValue = false)]
 	public string Titel { get; set; }
 
-    /// <summary>
-    ///     Gets or Sets Category
-    /// </summary>
-    [DataMember(Name = "category", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets Category
+	/// </summary>
+	[DataMember(Name = "category", EmitDefaultValue = false)]
 	public ModelContactUpdateCategory Category { get; set; }
 
-    /// <summary>
-    ///     A description for the contact.
-    /// </summary>
-    /// <value>A description for the contact.</value>
-    [DataMember(Name = "description", EmitDefaultValue = false)]
+	/// <summary>
+	///     A description for the contact.
+	/// </summary>
+	/// <value>A description for the contact.</value>
+	[DataMember(Name = "description", EmitDefaultValue = false)]
 	public string Description { get; set; }
 
-    /// <summary>
-    ///     A academic title for the contact. Not to be used for organizations.
-    /// </summary>
-    /// <value>A academic title for the contact. Not to be used for organizations.</value>
-    [DataMember(Name = "academicTitle", EmitDefaultValue = false)]
+	/// <summary>
+	///     A academic title for the contact. Not to be used for organizations.
+	/// </summary>
+	/// <value>A academic title for the contact. Not to be used for organizations.</value>
+	[DataMember(Name = "academicTitle", EmitDefaultValue = false)]
 	public string AcademicTitle { get; set; }
 
-    /// <summary>
-    ///     Gender of the contact.&lt;br&gt; Not to be used for organizations.
-    /// </summary>
-    /// <value>Gender of the contact.&lt;br&gt; Not to be used for organizations.</value>
-    [DataMember(Name = "gender", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gender of the contact.&lt;br&gt; Not to be used for organizations.
+	/// </summary>
+	/// <value>Gender of the contact.&lt;br&gt; Not to be used for organizations.</value>
+	[DataMember(Name = "gender", EmitDefaultValue = false)]
 	public string Gender { get; set; }
 
-    /// <summary>
-    ///     Second name of the contact.&lt;br&gt; Not to be used for organizations.
-    /// </summary>
-    /// <value>Second name of the contact.&lt;br&gt; Not to be used for organizations.</value>
-    [DataMember(Name = "name2", EmitDefaultValue = false)]
+	/// <summary>
+	///     Second name of the contact.&lt;br&gt; Not to be used for organizations.
+	/// </summary>
+	/// <value>Second name of the contact.&lt;br&gt; Not to be used for organizations.</value>
+	[DataMember(Name = "name2", EmitDefaultValue = false)]
 	public string Name2 { get; set; }
 
-    /// <summary>
-    ///     Birthday of the contact.&lt;br&gt; Not to be used for organizations.
-    /// </summary>
-    /// <value>Birthday of the contact.&lt;br&gt; Not to be used for organizations.</value>
-    [DataMember(Name = "birthday", EmitDefaultValue = false)]
+	/// <summary>
+	///     Birthday of the contact.&lt;br&gt; Not to be used for organizations.
+	/// </summary>
+	/// <value>Birthday of the contact.&lt;br&gt; Not to be used for organizations.</value>
+	[DataMember(Name = "birthday", EmitDefaultValue = false)]
 	[JsonConverter(typeof(SwaggerDateConverter))]
 	public DateTime? Birthday { get; set; }
 
-    /// <summary>
-    ///     Vat number of the contact.
-    /// </summary>
-    /// <value>Vat number of the contact.</value>
-    [DataMember(Name = "vatNumber", EmitDefaultValue = false)]
+	/// <summary>
+	///     Vat number of the contact.
+	/// </summary>
+	/// <value>Vat number of the contact.</value>
+	[DataMember(Name = "vatNumber", EmitDefaultValue = false)]
 	public string VatNumber { get; set; }
 
-    /// <summary>
-    ///     Bank account number (IBAN) of the contact.
-    /// </summary>
-    /// <value>Bank account number (IBAN) of the contact.</value>
-    [DataMember(Name = "bankAccount", EmitDefaultValue = false)]
+	/// <summary>
+	///     Bank account number (IBAN) of the contact.
+	/// </summary>
+	/// <value>Bank account number (IBAN) of the contact.</value>
+	[DataMember(Name = "bankAccount", EmitDefaultValue = false)]
 	public string BankAccount { get; set; }
 
-    /// <summary>
-    ///     Bank number of the bank used by the contact.
-    /// </summary>
-    /// <value>Bank number of the bank used by the contact.</value>
-    [DataMember(Name = "bankNumber", EmitDefaultValue = false)]
+	/// <summary>
+	///     Bank number of the bank used by the contact.
+	/// </summary>
+	/// <value>Bank number of the bank used by the contact.</value>
+	[DataMember(Name = "bankNumber", EmitDefaultValue = false)]
 	public string BankNumber { get; set; }
 
-    /// <summary>
-    ///     Absolute time in days which the contact has to pay his invoices and subsequently get a cashback.
-    /// </summary>
-    /// <value>Absolute time in days which the contact has to pay his invoices and subsequently get a cashback.</value>
-    [DataMember(Name = "defaultCashbackTime", EmitDefaultValue = false)]
+	/// <summary>
+	///     Absolute time in days which the contact has to pay his invoices and subsequently get a cashback.
+	/// </summary>
+	/// <value>Absolute time in days which the contact has to pay his invoices and subsequently get a cashback.</value>
+	[DataMember(Name = "defaultCashbackTime", EmitDefaultValue = false)]
 	public int? DefaultCashbackTime { get; set; }
 
-    /// <summary>
-    ///     Percentage of the invoice sum the contact gets back if he payed invoices in time.
-    /// </summary>
-    /// <value>Percentage of the invoice sum the contact gets back if he payed invoices in time.</value>
-    [DataMember(Name = "defaultCashbackPercent", EmitDefaultValue = false)]
+	/// <summary>
+	///     Percentage of the invoice sum the contact gets back if he payed invoices in time.
+	/// </summary>
+	/// <value>Percentage of the invoice sum the contact gets back if he payed invoices in time.</value>
+	[DataMember(Name = "defaultCashbackPercent", EmitDefaultValue = false)]
 	public float? DefaultCashbackPercent { get; set; }
 
-    /// <summary>
-    ///     The payment goal in days which is set for every invoice of the contact.
-    /// </summary>
-    /// <value>The payment goal in days which is set for every invoice of the contact.</value>
-    [DataMember(Name = "defaultTimeToPay", EmitDefaultValue = false)]
+	/// <summary>
+	///     The payment goal in days which is set for every invoice of the contact.
+	/// </summary>
+	/// <value>The payment goal in days which is set for every invoice of the contact.</value>
+	[DataMember(Name = "defaultTimeToPay", EmitDefaultValue = false)]
 	public int? DefaultTimeToPay { get; set; }
 
-    /// <summary>
-    ///     The tax number of the contact.
-    /// </summary>
-    /// <value>The tax number of the contact.</value>
-    [DataMember(Name = "taxNumber", EmitDefaultValue = false)]
+	/// <summary>
+	///     The tax number of the contact.
+	/// </summary>
+	/// <value>The tax number of the contact.</value>
+	[DataMember(Name = "taxNumber", EmitDefaultValue = false)]
 	public string TaxNumber { get; set; }
 
-    /// <summary>
-    ///     The tax office of the contact (only for greek customers).
-    /// </summary>
-    /// <value>The tax office of the contact (only for greek customers).</value>
-    [DataMember(Name = "taxOffice", EmitDefaultValue = false)]
+	/// <summary>
+	///     The tax office of the contact (only for greek customers).
+	/// </summary>
+	/// <value>The tax office of the contact (only for greek customers).</value>
+	[DataMember(Name = "taxOffice", EmitDefaultValue = false)]
 	public string TaxOffice { get; set; }
 
-    /// <summary>
-    ///     Defines if the contact is freed from paying vat.
-    /// </summary>
-    /// <value>Defines if the contact is freed from paying vat.</value>
-    [DataMember(Name = "exemptVat", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines if the contact is freed from paying vat.
+	/// </summary>
+	/// <value>Defines if the contact is freed from paying vat.</value>
+	[DataMember(Name = "exemptVat", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? ExemptVat { get; set; }
 
 
-    /// <summary>
-    ///     Gets or Sets TaxSet
-    /// </summary>
-    [DataMember(Name = "taxSet", EmitDefaultValue = false)]
+	/// <summary>
+	///     Gets or Sets TaxSet
+	/// </summary>
+	[DataMember(Name = "taxSet", EmitDefaultValue = false)]
 	public ModelContactTaxSet TaxSet { get; set; }
 
-    /// <summary>
-    ///     The default discount the contact gets for every invoice.&lt;br&gt; Depending on defaultDiscountPercentage
-    ///     attribute, in percent or absolute value.
-    /// </summary>
-    /// <value>
-    ///     The default discount the contact gets for every invoice.&lt;br&gt; Depending on defaultDiscountPercentage
-    ///     attribute, in percent or absolute value.
-    /// </value>
-    [DataMember(Name = "defaultDiscountAmount", EmitDefaultValue = false)]
+	/// <summary>
+	///     The default discount the contact gets for every invoice.&lt;br&gt; Depending on defaultDiscountPercentage
+	///     attribute, in percent or absolute value.
+	/// </summary>
+	/// <value>
+	///     The default discount the contact gets for every invoice.&lt;br&gt; Depending on defaultDiscountPercentage
+	///     attribute, in percent or absolute value.
+	/// </value>
+	[DataMember(Name = "defaultDiscountAmount", EmitDefaultValue = false)]
 	public float? DefaultDiscountAmount { get; set; }
 
-    /// <summary>
-    ///     Defines if the discount is a percentage (true) or an absolute value (false).
-    /// </summary>
-    /// <value>Defines if the discount is a percentage (true) or an absolute value (false).</value>
-    [DataMember(Name = "defaultDiscountPercentage", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines if the discount is a percentage (true) or an absolute value (false).
+	/// </summary>
+	/// <value>Defines if the discount is a percentage (true) or an absolute value (false).</value>
+	[DataMember(Name = "defaultDiscountPercentage", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? DefaultDiscountPercentage { get; set; }
 
-    /// <summary>
-    ///     Buyer reference of the contact.
-    /// </summary>
-    /// <value>Buyer reference of the contact.</value>
-    [DataMember(Name = "buyerReference", EmitDefaultValue = false)]
+	/// <summary>
+	///     Buyer reference of the contact.
+	/// </summary>
+	/// <value>Buyer reference of the contact.</value>
+	[DataMember(Name = "buyerReference", EmitDefaultValue = false)]
 	public string BuyerReference { get; set; }
 
-    /// <summary>
-    ///     Defines whether the contact is a government agency (true) or not (false).
-    /// </summary>
-    /// <value>Defines whether the contact is a government agency (true) or not (false).</value>
-    [DataMember(Name = "governmentAgency", EmitDefaultValue = false)]
+	/// <summary>
+	///     Defines whether the contact is a government agency (true) or not (false).
+	/// </summary>
+	/// <value>Defines whether the contact is a government agency (true) or not (false).</value>
+	[DataMember(Name = "governmentAgency", EmitDefaultValue = false)]
 	[JsonConverter(typeof(BooleanJsonConverter))]
 	public bool? GovernmentAgency { get; set; }
 
-    /// <summary>
-    ///     Returns true if ModelContactUpdate instances are equal
-    /// </summary>
-    /// <param name="input">Instance of ModelContactUpdate to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ModelContactUpdate input)
+	/// <summary>
+	///     Returns true if ModelContactUpdate instances are equal
+	/// </summary>
+	/// <param name="input">Instance of ModelContactUpdate to be compared</param>
+	/// <returns>Boolean</returns>
+	public bool Equals(ModelContactUpdate input)
 	{
 		if (input == null)
 			return false;
@@ -509,21 +509,21 @@ public class ModelContactUpdate : IEquatable<ModelContactUpdate>, IValidatableOb
 			);
 	}
 
-    /// <summary>
-    ///     To validate all properties of the instance
-    /// </summary>
-    /// <param name="validationContext">Validation context</param>
-    /// <returns>Validation Result</returns>
-    IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+	/// <summary>
+	///     To validate all properties of the instance
+	/// </summary>
+	/// <param name="validationContext">Validation context</param>
+	/// <returns>Validation Result</returns>
+	IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
 	{
 		yield break;
 	}
 
-    /// <summary>
-    ///     Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
+	/// <summary>
+	///     Returns the string presentation of the object
+	/// </summary>
+	/// <returns>String presentation of the object</returns>
+	public override string ToString()
 	{
 		var sb = new StringBuilder();
 		sb.Append("class ModelContactUpdate {\n");
@@ -559,30 +559,30 @@ public class ModelContactUpdate : IEquatable<ModelContactUpdate>, IValidatableOb
 		return sb.ToString();
 	}
 
-    /// <summary>
-    ///     Returns the JSON string presentation of the object
-    /// </summary>
-    /// <returns>JSON string presentation of the object</returns>
-    public virtual string ToJson()
+	/// <summary>
+	///     Returns the JSON string presentation of the object
+	/// </summary>
+	/// <returns>JSON string presentation of the object</returns>
+	public virtual string ToJson()
 	{
 		return JsonConvert.SerializeObject(this, Formatting.Indented);
 	}
 
-    /// <summary>
-    ///     Returns true if objects are equal
-    /// </summary>
-    /// <param name="input">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object input)
+	/// <summary>
+	///     Returns true if objects are equal
+	/// </summary>
+	/// <param name="input">Object to be compared</param>
+	/// <returns>Boolean</returns>
+	public override bool Equals(object input)
 	{
 		return Equals(input as ModelContactUpdate);
 	}
 
-    /// <summary>
-    ///     Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
+	/// <summary>
+	///     Gets the hash code
+	/// </summary>
+	/// <returns>Hash code</returns>
+	public override int GetHashCode()
 	{
 		unchecked // Overflow is fine, just wrap
 		{

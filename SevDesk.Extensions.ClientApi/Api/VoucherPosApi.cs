@@ -22,35 +22,35 @@ public class VoucherPosApi : IVoucherPosApi
 {
 	private ExceptionFactory _exceptionFactory = (name, response) => null;
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="VoucherPosApi" /> class.
-    /// </summary>
-    /// <returns></returns>
-    public VoucherPosApi(string basePath)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="VoucherPosApi" /> class.
+	/// </summary>
+	/// <returns></returns>
+	public VoucherPosApi(string basePath)
 	{
 		Configuration = new Configuration { BasePath = basePath };
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="VoucherPosApi" /> class
-    /// </summary>
-    /// <returns></returns>
-    public VoucherPosApi()
+	/// <summary>
+	///     Initializes a new instance of the <see cref="VoucherPosApi" /> class
+	/// </summary>
+	/// <returns></returns>
+	public VoucherPosApi()
 	{
 		Configuration = Configuration.Default;
 
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="VoucherPosApi" /> class
-    ///     using Configuration object
-    /// </summary>
-    /// <param name="configuration">An instance of Configuration</param>
-    /// <returns></returns>
-    public VoucherPosApi(Configuration configuration = null)
+	/// <summary>
+	///     Initializes a new instance of the <see cref="VoucherPosApi" /> class
+	///     using Configuration object
+	/// </summary>
+	/// <param name="configuration">An instance of Configuration</param>
+	/// <returns></returns>
+	public VoucherPosApi(Configuration configuration = null)
 	{
 		if (configuration == null) // use the default one in Configuration
 			Configuration = Configuration.Default;
@@ -60,25 +60,25 @@ public class VoucherPosApi : IVoucherPosApi
 		ExceptionFactory = Configuration.DefaultExceptionFactory;
 	}
 
-    /// <summary>
-    ///     Gets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    public string GetBasePath()
+	/// <summary>
+	///     Gets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	public string GetBasePath()
 	{
 		return Configuration.ApiClient.RestClient.BaseUrl.ToString();
 	}
 
-    /// <summary>
-    ///     Gets or sets the configuration object
-    /// </summary>
-    /// <value>An instance of the Configuration</value>
-    public Configuration Configuration { get; set; }
+	/// <summary>
+	///     Gets or sets the configuration object
+	/// </summary>
+	/// <value>An instance of the Configuration</value>
+	public Configuration Configuration { get; set; }
 
-    /// <summary>
-    ///     Provides a factory method hook for the creation of exceptions.
-    /// </summary>
-    public ExceptionFactory ExceptionFactory
+	/// <summary>
+	///     Provides a factory method hook for the creation of exceptions.
+	/// </summary>
+	public ExceptionFactory ExceptionFactory
 	{
 		get
 		{
@@ -89,39 +89,39 @@ public class VoucherPosApi : IVoucherPosApi
 		set => _exceptionFactory = value;
 	}
 
-    /// <summary>
-    ///     Retrieve voucher positions Retrieve all voucher positions depending on the filters defined in the query.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="voucherId">
-    ///     Retrieve all vouchers positions belonging to this voucher. Must be provided with
-    ///     voucher[objectName] (optional)
-    /// </param>
-    /// <param name="voucherObjectName">
-    ///     Only required if voucher[id] was provided. &#x27;Voucher&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>GetVoucherPositionsResponse</returns>
-    public GetVoucherPositionsResponse GetVoucherPositions(int? voucherId = null, string voucherObjectName = null)
+	/// <summary>
+	///     Retrieve voucher positions Retrieve all voucher positions depending on the filters defined in the query.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="voucherId">
+	///     Retrieve all vouchers positions belonging to this voucher. Must be provided with
+	///     voucher[objectName] (optional)
+	/// </param>
+	/// <param name="voucherObjectName">
+	///     Only required if voucher[id] was provided. &#x27;Voucher&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>GetVoucherPositionsResponse</returns>
+	public GetVoucherPositionsResponse GetVoucherPositions(int? voucherId = null, string voucherObjectName = null)
 	{
 		var localVarResponse = GetVoucherPositionsWithHttpInfo(voucherId, voucherObjectName);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve voucher positions Retrieve all voucher positions depending on the filters defined in the query.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="voucherId">
-    ///     Retrieve all vouchers positions belonging to this voucher. Must be provided with
-    ///     voucher[objectName] (optional)
-    /// </param>
-    /// <param name="voucherObjectName">
-    ///     Only required if voucher[id] was provided. &#x27;Voucher&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>ApiResponse of GetVoucherPositionsResponse</returns>
-    public ApiResponse<GetVoucherPositionsResponse> GetVoucherPositionsWithHttpInfo(int? voucherId = null,
+	/// <summary>
+	///     Retrieve voucher positions Retrieve all voucher positions depending on the filters defined in the query.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="voucherId">
+	///     Retrieve all vouchers positions belonging to this voucher. Must be provided with
+	///     voucher[objectName] (optional)
+	/// </param>
+	/// <param name="voucherObjectName">
+	///     Only required if voucher[id] was provided. &#x27;Voucher&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>ApiResponse of GetVoucherPositionsResponse</returns>
+	public ApiResponse<GetVoucherPositionsResponse> GetVoucherPositionsWithHttpInfo(int? voucherId = null,
 		string voucherObjectName = null)
 	{
 		var localVarPath = "/VoucherPos";
@@ -178,40 +178,40 @@ public class VoucherPosApi : IVoucherPosApi
 				typeof(GetVoucherPositionsResponse)));
 	}
 
-    /// <summary>
-    ///     Retrieve voucher positions Retrieve all voucher positions depending on the filters defined in the query.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="voucherId">
-    ///     Retrieve all vouchers positions belonging to this voucher. Must be provided with
-    ///     voucher[objectName] (optional)
-    /// </param>
-    /// <param name="voucherObjectName">
-    ///     Only required if voucher[id] was provided. &#x27;Voucher&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of GetVoucherPositionsResponse</returns>
-    public async Task<GetVoucherPositionsResponse> GetVoucherPositionsAsync(int? voucherId = null,
+	/// <summary>
+	///     Retrieve voucher positions Retrieve all voucher positions depending on the filters defined in the query.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="voucherId">
+	///     Retrieve all vouchers positions belonging to this voucher. Must be provided with
+	///     voucher[objectName] (optional)
+	/// </param>
+	/// <param name="voucherObjectName">
+	///     Only required if voucher[id] was provided. &#x27;Voucher&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of GetVoucherPositionsResponse</returns>
+	public async Task<GetVoucherPositionsResponse> GetVoucherPositionsAsync(int? voucherId = null,
 		string voucherObjectName = null)
 	{
 		var localVarResponse = await GetVoucherPositionsAsyncWithHttpInfo(voucherId, voucherObjectName);
 		return localVarResponse.Data;
 	}
 
-    /// <summary>
-    ///     Retrieve voucher positions Retrieve all voucher positions depending on the filters defined in the query.
-    /// </summary>
-    /// <exception cref="ApiException">Thrown when fails to make API call</exception>
-    /// <param name="voucherId">
-    ///     Retrieve all vouchers positions belonging to this voucher. Must be provided with
-    ///     voucher[objectName] (optional)
-    /// </param>
-    /// <param name="voucherObjectName">
-    ///     Only required if voucher[id] was provided. &#x27;Voucher&#x27; should be used as value.
-    ///     (optional)
-    /// </param>
-    /// <returns>Task of ApiResponse (GetVoucherPositionsResponse)</returns>
-    public async Task<ApiResponse<GetVoucherPositionsResponse>> GetVoucherPositionsAsyncWithHttpInfo(
+	/// <summary>
+	///     Retrieve voucher positions Retrieve all voucher positions depending on the filters defined in the query.
+	/// </summary>
+	/// <exception cref="ApiException">Thrown when fails to make API call</exception>
+	/// <param name="voucherId">
+	///     Retrieve all vouchers positions belonging to this voucher. Must be provided with
+	///     voucher[objectName] (optional)
+	/// </param>
+	/// <param name="voucherObjectName">
+	///     Only required if voucher[id] was provided. &#x27;Voucher&#x27; should be used as value.
+	///     (optional)
+	/// </param>
+	/// <returns>Task of ApiResponse (GetVoucherPositionsResponse)</returns>
+	public async Task<ApiResponse<GetVoucherPositionsResponse>> GetVoucherPositionsAsyncWithHttpInfo(
 		int? voucherId = null, string voucherObjectName = null)
 	{
 		var localVarPath = "/VoucherPos";
@@ -268,34 +268,34 @@ public class VoucherPosApi : IVoucherPosApi
 				typeof(GetVoucherPositionsResponse)));
 	}
 
-    /// <summary>
-    ///     Sets the base path of the API client.
-    /// </summary>
-    /// <value>The base path</value>
-    [Obsolete(
+	/// <summary>
+	///     Sets the base path of the API client.
+	/// </summary>
+	/// <value>The base path</value>
+	[Obsolete(
 		"SetBasePath is deprecated, please do 'Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
 	public void SetBasePath(string basePath)
 	{
 		// do nothing
 	}
 
-    /// <summary>
-    ///     Gets the default header.
-    /// </summary>
-    /// <returns>Dictionary of HTTP header</returns>
-    [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
+	/// <summary>
+	///     Gets the default header.
+	/// </summary>
+	/// <returns>Dictionary of HTTP header</returns>
+	[Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
 	public IDictionary<string, string> DefaultHeader()
 	{
 		return new ReadOnlyDictionary<string, string>(Configuration.DefaultHeader);
 	}
 
-    /// <summary>
-    ///     Add default header.
-    /// </summary>
-    /// <param name="key">Header field name.</param>
-    /// <param name="value">Header field value.</param>
-    /// <returns></returns>
-    [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
+	/// <summary>
+	///     Add default header.
+	/// </summary>
+	/// <param name="key">Header field name.</param>
+	/// <param name="value">Header field value.</param>
+	/// <returns></returns>
+	[Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
 	public void AddDefaultHeader(string key, string value)
 	{
 		Configuration.AddDefaultHeader(key, value);
