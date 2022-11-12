@@ -61,7 +61,7 @@ public sealed class AssignSupplierOrganizationHandler
 					? request.SupplierMapping[voucher.SupplierName!] 
 					: voucher.SupplierName!;
 				
-				if (!contacts.ContainsKey(voucher.SupplierName!))
+				if (!contacts.ContainsKey(supplierName))
 				{
 					_logger.LogWarning(
 						"Supplier is not present: {Supplier}",

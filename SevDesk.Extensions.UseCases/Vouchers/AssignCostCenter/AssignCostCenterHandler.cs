@@ -1,10 +1,11 @@
+using System.Diagnostics.Metrics;
 using Extensions.Dictionary;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using SevDesk.Extensions.ClientApi;
 using SevDesk.Extensions.ClientApi.Api;
-using SevDesk.Extensions.ClientApi.Client;
 using SevDesk.Extensions.ClientApi.Model;
+using SevDesk.Extensions.Core.Extensions.Converting;
 using SevDesk.Extensions.UseCases.Extensions.ClientApi;
 using SevDesk.Extensions.UseCases.Extensions.Linq;
 
@@ -30,42 +31,63 @@ public sealed class AssignCostCenterHandler
 		CancellationToken cancellationToken
 	)
 	{
-		var costCentres = await _apiFactory.RefitApi<ICostCentreApi>().GetCostCentreAsync(cancellationToken);
-
+		var costCentres =  _apiFactory.RefitApi<ICostCentreApi>().GetCostCentreAsync(cancellationToken);
+		var contactsApi = _apiFactory.Api<ContactApi>();
+		var contactResponse = contactsApi.GetContactsAsync(ContactDepth.OnlyOrganizations);
+		
 		var api = _apiFactory.Api<VoucherApi>();
+		
+		var items =  api.GetAllDraftModelVoucherResponses(request.DaysToLookBack);
 
-		var items = await api.GetAllDraftModelVoucherResponses(request.DaysToLookBack);
+		await Task.WhenAll(items, costCentres, contactResponse);
 
+		// Get the final supplierName from its id or Name
+		var supplierNameOrIdToName = contactResponse.Result.Objects
+			.Select(e => new KeyValuePair<string, string>(e.Name, e.Name))
+			.Union(contactResponse.Result.Objects.Select(e => new KeyValuePair<string, string>(e.Id, e.Name)))
+			.ToDictionary(e => e.Key, e => e.Value);
+		
 		var filteredItems = items
+			.Result
 			.Where(e => e.CostCentre is null)
-			.And(e => ContainsSupplier(request, e))
+			.And(e => e.Supplier?.Id is not null)
+			.And(e => IsSupplierKnownAndNeedToBeMapped(request, e, supplierNameOrIdToName))
 			.ToList();
 
+		// Get mapped SupplierName to CostCenter
+		var supplierNameToCostCenter = request.Mapping
+			.SelectMany(mapping => mapping.Value.Select(item => (SupplierName: item, CostCenter: mapping.Key)))
+			.ToDictionary(e => e.SupplierName, e => e.CostCenter);
+
+		// Merge the two dictionaries for supplierIdToNameMapping
+		var supplierNameOrIdToCostCenter  = supplierNameOrIdToName
+			.Where(item => supplierNameToCostCenter.Keys.Contains(item.Value))
+			.Select(item => (SupplierNameOrId: item.Key, CostCenter: supplierNameToCostCenter[item.Value]))
+				.ToDictionary(e => e.SupplierNameOrId, e => e.CostCenter);
+
 		List<ModelVoucherResponse> updated = new();
-		var targetCostCenter = ModelVoucherUpdateCostCentre(request.CostCenterName, costCentres.Objects);
+
 		foreach (var voucher in filteredItems)
 		{
-			try
-			{
-				_ = await api.UpdateVoucherAsync(
-					int.Parse(voucher.Id),
-					new ModelVoucherUpdate
-					(
-						costCentre: targetCostCenter
-					)
-				);
-				updated.Add(voucher);
-			}
-			catch (ApiException ex) when (ex.Message.Contains(
-				                              "Cannot deserialize the current JSON object"))
-			{
-				_logger.LogDebug("{Exception}", ex);
-			}
+			var costCentre = ModelVoucherUpdateCostCentre(
+				supplierNameOrIdToCostCenter[voucher.Supplier!.Id],
+				costCentres.Result.Objects
+			);
+			_ = await api.UpdateVoucherAsync(
+				int.Parse(voucher.Id),
+				new ModelVoucherUpdate
+				(
+					costCentre: costCentre
+				)
+			);
+			
+			updated.Add(voucher);
 
 			_logger.LogInformation(
-				"Updated V:{Voucher} Request:{Request}",
+				"Updated Voucher:{Voucher} Request:{Request} to CostCenter:{CostCenter}",
 				voucher.Id,
-				request.ToDictionary()
+				request.ToJson(),
+				costCentre.Id
 			);
 		}
 
@@ -75,15 +97,21 @@ public sealed class AssignCostCenterHandler
 		};
 	}
 
-	private static bool ContainsSupplier(AssignCostCenterRequest request, ModelVoucherResponse e)
+	private static bool IsSupplierKnownAndNeedToBeMapped(AssignCostCenterRequest request, ModelVoucherResponse voucher, Dictionary<string, string> supplierIdToNameMapping)
 	{
-		return request
-			.SupplierNames
-			.Contains(e.SupplierName, StringComparer.InvariantCultureIgnoreCase);
+		if (voucher.Supplier?.Id is null)
+		{
+			return false;
+		}
+		
+		return (supplierIdToNameMapping.ContainsKey(voucher.Supplier.Id))
+			&& request.Mapping.Values.Any(item => item.Contains(supplierIdToNameMapping[voucher.Supplier.Id]));
+			
 	}
 
 	private ModelVoucherUpdateCostCentre ModelVoucherUpdateCostCentre(
-		string costCentre, List<CostCentreResponse> costCentres
+		string costCentre,
+		IEnumerable<CostCentreResponse> costCentres
 	)
 	{
 		return new ModelVoucherUpdateCostCentre(

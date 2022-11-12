@@ -12,20 +12,13 @@ public sealed class AssignCostCenterRequest : IRequest<AssignCostCenterResponse>
 	{
 	}
 
-	public AssignCostCenterRequest(string[] supplierNames, string costCenterName, int daysToLookBack)
+	public AssignCostCenterRequest(Dictionary<string, string[]> mapping , int daysToLookBack)
 	{
-		SupplierNames = supplierNames;
-		CostCenterName = costCenterName;
+		Mapping = mapping;
 		DaysToLookBack = daysToLookBack;
 	}
 
-	[Required]
-	[StringLengthEnumerable(100, MinimumLength = 1)]
-	public string[] SupplierNames { get; init; } = Array.Empty<string>();
-
-	[Required]
-	[StringLength(50, MinimumLength = 1)]
-	public string CostCenterName { get; init; } = default!;
-
+	[StringLengthDictionaryKey(100, 1)] 
+	public Dictionary<string, string[]> Mapping { get; init; } = new();
 	[Range(1, Year * 3)] public int DaysToLookBack { get; init; } = Year;
 }
