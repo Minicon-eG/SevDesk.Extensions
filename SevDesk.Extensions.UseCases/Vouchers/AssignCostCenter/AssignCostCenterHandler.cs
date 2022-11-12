@@ -84,9 +84,8 @@ public sealed class AssignCostCenterHandler
 			updated.Add(voucher);
 
 			_logger.LogInformation(
-				"Updated Voucher:{Voucher} Request:{Request} to CostCenter:{CostCenter}",
+				"Updated Voucher:{Voucher} -> CostCenter:{CostCenter}",
 				voucher.Id,
-				request.ToJson(),
 				costCentre.Id
 			);
 		}
