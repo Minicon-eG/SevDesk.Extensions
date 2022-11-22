@@ -31,9 +31,15 @@ public sealed class AssignSupplierOrganizationHandler
 	)
 	{
 		var contactsApi = _apiFactory.Api<ContactApi>();
-		var contactResponse = await contactsApi.GetContactsAsync(ContactDepth.OnlyOrganizations);
+		var getContactsAsync = contactsApi.GetContactsAsync(ContactDepth.OnlyOrganizations);
 
-		var contacts = contactResponse
+		IVoucherApi api = _apiFactory.Api<VoucherApi>();
+		var getVouchersAsync =  request.OnlyDrafts ? api.GetAllDraftModelVoucherResponsesAsync(request.DaysToLookBack) : api.GetAllModelVoucherResponsesAsync(request.DaysToLookBack);
+
+		await Task.WhenAll(getVouchersAsync, getContactsAsync);
+
+		var contacts = getContactsAsync
+			.Result
 			.Objects
 			.GroupBy(item => item.Name)
 			.Select(
@@ -45,10 +51,9 @@ public sealed class AssignSupplierOrganizationHandler
 					id: int.Parse(e.Id)
 				)
 			);
-		IVoucherApi api = _apiFactory.Api<VoucherApi>();
-		var items = await api.GetAllDraftModelVoucherResponses(request.DaysToLookBack);
-
-		var filteredItems = items
+		
+		var filteredItems = getVouchersAsync
+			.Result
 			.Where(IsSupplierNameNotEmpty)
 			.And(HasNoSupplierAssigned)
 			.ToList();

@@ -12,9 +12,15 @@ public sealed class AssignSupplierOrganizationRequest : IRequest<AssignSupplierO
 	{
 	}
 
-	public AssignSupplierOrganizationRequest(int daysToLookBack)
+	public AssignSupplierOrganizationRequest(
+		int daysToLookBack,
+		bool onlyDrafts,
+		IDictionary<string, string> supplierMapping
+	)
 	{
 		DaysToLookBack = daysToLookBack;
+		OnlyDrafts = onlyDrafts;
+		SupplierMapping = supplierMapping.ToDictionary(e => e.Key, e => e.Value);
 	}
 
 	[Range(1, Year * 3)] public int DaysToLookBack { get; init; } = Year;
@@ -22,4 +28,6 @@ public sealed class AssignSupplierOrganizationRequest : IRequest<AssignSupplierO
 	[StringLengthDictionaryKey(50, 1)] 
 	[StringLengthDictionaryValue(50, 1)]
 	public Dictionary<string, string> SupplierMapping { get; init; } = new();
+	
+	public bool OnlyDrafts { get; init; } = false;
 }

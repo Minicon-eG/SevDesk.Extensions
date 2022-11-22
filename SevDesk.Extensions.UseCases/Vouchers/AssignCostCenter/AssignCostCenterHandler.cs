@@ -1,11 +1,8 @@
-using System.Diagnostics.Metrics;
-using Extensions.Dictionary;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using SevDesk.Extensions.ClientApi;
 using SevDesk.Extensions.ClientApi.Api;
 using SevDesk.Extensions.ClientApi.Model;
-using SevDesk.Extensions.Core.Extensions.Converting;
 using SevDesk.Extensions.UseCases.Extensions.ClientApi;
 using SevDesk.Extensions.UseCases.Extensions.Linq;
 
@@ -31,23 +28,23 @@ public sealed class AssignCostCenterHandler
 		CancellationToken cancellationToken
 	)
 	{
-		var costCentres =  _apiFactory.RefitApi<ICostCentreApi>().GetCostCentreAsync(cancellationToken);
-		var contactsApi = _apiFactory.Api<ContactApi>();
-		var contactResponse = contactsApi.GetContactsAsync(ContactDepth.OnlyOrganizations);
+		var getCostCentreAsync =  _apiFactory.RefitApi<ICostCentreApi>().GetCostCentreAsync(cancellationToken);
+		var getContactsAsync = _apiFactory.Api<ContactApi>().GetContactsAsync(ContactDepth.OnlyOrganizations);
 		
 		var api = _apiFactory.Api<VoucherApi>();
-		
-		var items =  api.GetAllDraftModelVoucherResponses(request.DaysToLookBack);
+		var getVouchersAsync =  request.OnlyDrafts ? api.GetAllDraftModelVoucherResponsesAsync(request.DaysToLookBack) : api.GetAllModelVoucherResponsesAsync(request.DaysToLookBack);
 
-		await Task.WhenAll(items, costCentres, contactResponse);
+		await Task.WhenAll(getVouchersAsync, getCostCentreAsync, getContactsAsync);
 
 		// Get the final supplierName from its id or Name
-		var supplierNameOrIdToName = contactResponse.Result.Objects
+		var supplierNameOrIdToName = getContactsAsync
+			.Result
+			.Objects
 			.Select(e => new KeyValuePair<string, string>(e.Name, e.Name))
-			.Union(contactResponse.Result.Objects.Select(e => new KeyValuePair<string, string>(e.Id, e.Name)))
+			.Union(getContactsAsync.Result.Objects.Select(e => new KeyValuePair<string, string>(e.Id, e.Name)))
 			.ToDictionary(e => e.Key, e => e.Value);
 		
-		var filteredItems = items
+		var filteredItems = getVouchersAsync
 			.Result
 			.Where(e => e.CostCentre is null)
 			.And(e => e.Supplier?.Id is not null)
@@ -71,7 +68,7 @@ public sealed class AssignCostCenterHandler
 		{
 			var costCentre = ModelVoucherUpdateCostCentre(
 				supplierNameOrIdToCostCenter[voucher.Supplier!.Id],
-				costCentres.Result.Objects
+				getCostCentreAsync.Result.Objects
 			);
 			_ = await api.UpdateVoucherAsync(
 				int.Parse(voucher.Id),
