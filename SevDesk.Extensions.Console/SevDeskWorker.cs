@@ -2,6 +2,7 @@ using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
+using SevDesk.Extensions.UseCases.Vouchers.AssignAccountingType;
 using SevDesk.Extensions.UseCases.Vouchers.AssignCostCenter;
 using SevDesk.Extensions.UseCases.Vouchers.AssignSupplierOrganization;
 
@@ -32,6 +33,9 @@ public sealed class SevDeskWorker : BackgroundService
 					break;
 				case ConsoleKey.D2:
 					await SendFromOptions<AssignCostCenterRequest>(_serviceProvider);
+					break;
+				case ConsoleKey.D3:
+					await SendFromOptions<AssignAccountingTypeRequest>(_serviceProvider);
 					break;
 				default:
 					await Task.Delay(1000, stoppingToken);

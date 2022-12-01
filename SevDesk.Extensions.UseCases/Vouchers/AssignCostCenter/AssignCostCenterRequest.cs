@@ -11,17 +11,23 @@ public sealed class AssignCostCenterRequest : IRequest<AssignCostCenterResponse>
 	public AssignCostCenterRequest()
 	{
 	}
-	
-	public AssignCostCenterRequest(Dictionary<string, string[]> mapping , int daysToLookBack, bool onlyDrafts)
+
+	public AssignCostCenterRequest(
+		Dictionary<string, string[]> mapping,
+		int daysToLookBack,
+		bool onlyDrafts,
+		Dictionary<string, int[]> vouchers
+	)
 	{
 		Mapping = mapping;
 		DaysToLookBack = daysToLookBack;
 		OnlyDrafts = onlyDrafts;
+		Vouchers = vouchers;
 	}
 
-	[StringLengthDictionaryKey(100, 1)] 
-	public Dictionary<string, string[]> Mapping { get; init; } = new();
+	[StringLengthDictionaryKey(100, 1)] public Dictionary<string, string[]> Mapping { get; init; } = new();
+	[StringLengthDictionaryKey(100, 1)] public Dictionary<string, int[]> Vouchers { get; init; } = new();
 	[Range(1, Year * 3)] public int DaysToLookBack { get; init; } = Year;
-	
+
 	public bool OnlyDrafts { get; init; } = false;
 }

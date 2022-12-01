@@ -10,7 +10,7 @@ using SevDesk.Extensions.UseCases.Vouchers.AssignSupplierOrganization;
 
 var configuration = new ConfigurationBuilder()
 	.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-	.AddUserSecrets<Program>()
+	.AddUserSecrets<Program>(optional: false, reloadOnChange: true)
 	.AddCommandLine(args)
 	.Build();
 await Host.CreateDefaultBuilder(args)
