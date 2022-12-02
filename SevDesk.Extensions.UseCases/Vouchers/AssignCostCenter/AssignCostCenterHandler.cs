@@ -97,10 +97,16 @@ public sealed class AssignCostCenterHandler
 			{
 				continue;
 			}
+			
 			var costCentre = ModelVoucherUpdateCostCentre(
 				costCentreName,
 				costCentres.Objects
 			);
+
+			if (IsSameCostCenter(costCentre, voucher))
+			{
+				continue;
+			}
 			_ = await api.UpdateVoucherAsync(
 				int.Parse(voucher.Id),
 				new ModelVoucherUpdate
@@ -112,11 +118,16 @@ public sealed class AssignCostCenterHandler
 			updated.Add(voucher);
 
 			_logger.LogInformation(
-				"Updated Voucher: {Voucher} -> CostCenter: {CostCenter}",
+				"Updated Voucher by Supplier: {Voucher} -> CostCenter: {CostCenter}",
 				voucher.Id,
 				costCentre.Id
 			);
 		}
+	}
+
+	private static bool IsSameCostCenter(ModelVoucherUpdateCostCentre costCentre, ModelVoucherResponse voucher)
+	{
+		return costCentre.Id.ToString() == voucher.CostCentre?.Id;
 	}
 
 	private static Dictionary<string, string> SupplierNameOrIdToCostCenter(
@@ -176,7 +187,7 @@ public sealed class AssignCostCenterHandler
 			updated.Add(voucher);
 
 			_logger.LogInformation(
-				"Updated Voucher: {Voucher} -> CostCenter: {CostCenter}",
+				"Updated Voucher by Id: {Voucher} -> CostCenter: {CostCenter}",
 				voucher.Id,
 				costCentre.Id
 			);

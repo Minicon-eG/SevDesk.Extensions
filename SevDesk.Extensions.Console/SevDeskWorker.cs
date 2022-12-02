@@ -47,11 +47,8 @@ public sealed class SevDeskWorker : BackgroundService
 	private async Task SendFromOptions<T>(IServiceProvider serviceProvider) where T : class
 	{
 		var mediatr = serviceProvider.GetRequiredService<IMediator>();
-		var request = serviceProvider.GetRequiredService<IOptions<T>>().Value;
+		var request = serviceProvider.GetRequiredService<IOptionsSnapshot<T>>().Value;
 
-		await mediatr
-			.Send(
-				request
-			);
+		await mediatr.Send(request);
 	}
 }
